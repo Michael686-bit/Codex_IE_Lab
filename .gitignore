@@ -1,0 +1,30 @@
+# Codex credentials and raw state
+auth.json
+raw/
+.codex-private/
+*.jsonl
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+*.db
+*.db-shm
+*.db-wal
+*.log
+
+# Secrets and private keys
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa*
+id_ed25519*
+Cookies*
+Login Data*
+
+# Temporary/editor files
+__pycache__/
+*.pyc
+.DS_Store
+*~

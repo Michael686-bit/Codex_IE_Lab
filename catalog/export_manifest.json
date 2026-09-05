@@ -1,0 +1,28 @@
+{
+  "export_version": 1,
+  "generated_at": "2026-09-05T12:33:37.391770+08:00",
+  "thread_scope": "user",
+  "thread_count": 78,
+  "archived_count": 1,
+  "message_count": 1972,
+  "redaction_count": 28,
+  "missing_rollout_count": 0,
+  "attachments_exported": false,
+  "excluded_record_types": [
+    "session_meta",
+    "turn_context",
+    "world_state",
+    "reasoning",
+    "tool calls and outputs",
+    "subagent activity"
+  ],
+  "project_counts": {
+    "S1 IE_lab 拆垛": 46,
+    "VLA G1 项目": 6,
+    "VLA 项目": 4,
+    "无项目对话": 16,
+    "本地对话云端接口": 1,
+    "遥操主臂 和 synthnova": 3,
+    "银河通用s1 项目 代码": 2
+  }
+}
