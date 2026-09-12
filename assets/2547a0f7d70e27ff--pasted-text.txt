@@ -1,0 +1,348 @@
+galbot@galbot-echo:~/ie_lab/projects/chassis_env/workspace$ /home/galbot/ie_lab/bin/s1-python \
+>   /home/galbot/Lsy03/navigation_tests/s1_navigation_cli.py \
+>   payload-status-4317
+A new version 1.9.1 is available. Visit https://github.com/GalaxyGeneralRobotics/GalbotSDK/releases for upgrade instructions
+{
+  "mode": "payload_4317_status_readonly",
+  "query_ok": true,
+  "motion_commands_sent": false,
+  "controller_switch_sent": false,
+  "bounding_box_changes_sent": false,
+  "attachment_changes_sent": false,
+  "box_tag": 4317,
+  "profile": "4317_left_mount_20260831_193312_191",
+  "expected_filter_box": {
+    "box_size": [
+      0.6,
+      0.5,
+      0.375
+    ],
+    "box_pose": [
+      0.08846454589905783,
+      -0.20926272696685333,
+      -0.15890000000000004,
+      0.011116385394816377,
+      -0.0003861212335707756,
+      0.6973011501467578,
+      0.7166919721122567
+    ],
+    "box_tag": 4317,
+    "parent_link_name": "left_arm_end_effector_mount_link"
+  },
+  "filter_registered": false,
+  "filter_profile_matches": false,
+  "bounding_boxes": [],
+  "attachment_status": "not_queryable_via_current_public_sdk_api"
+}
+galbot@galbot-echo:~/ie_lab/projects/chassis_env/workspace$ /home/galbot/ie_lab/bin/s1-python \
+>   /home/galbot/Lsy03/navigation_tests/s1_navigation_cli.py \
+>   relative \
+>   --x 1.0 \
+>   --y 0.0 \
+>   --yaw 0.0 \
+>   --max-vx 0.10 \
+>   --max-vy 0.10 \
+>   --max-vyaw 0.15 \
+>   --timeout 300 \
+>   --max-distance 12 \
+>   --omni-plan false \
+>   --execute
+
+{
+  "ok": false,
+  "outcome": "failed_closed",
+  "error": {
+    "type": "NavigationCliError",
+    "message": "static path was not reachable in all three checks"
+  }
+}
+galbot@galbot-echo:~/ie_lab/projects/chassis_env/workspace$
+galbot@galbot-echo:~/ie_lab/projects/chassis_env/workspace$ /home/galbot/ie_lab/bin/s1-python \
+>   /home/galbot/Lsy03/navigation_tests/s1_navigation_cli.py \
+>   payload-register-4317 \
+>   --execute
+A new version 1.9.1 is available. Visit https://github.com/GalaxyGeneralRobotics/GalbotSDK/releases for upgrade instructions
+
+REAL-ROBOT NAVIGATION PAYLOAD REGISTRATION (payload-register-4317 --execute)
+  expected physical motion: none
+  mobile base/arms/grippers/lift: no motion commands
+  fusion filter: {'box_size': [0.6, 0.5, 0.375], 'box_pose': [0.08846454589905783, -0.20926272696685333, -0.15890000000000004, 0.011116385394816377, -0.0003861212335707756, 0.6973011501467578, 0.7166919721122567], 'box_tag': 4317, 'parent_link_name': 'left_arm_end_effector_mount_link'}
+  PNS collision box: {'box_size': [0.4, 0.3, 0.175], 'box_pose': [0.08846454589905783, -0.20926272696685333, -0.15890000000000004, 0.011116385394816377, -0.0003861212335707756, 0.6973011501467578, 0.7166919721122567], 'box_tag': 4317, 'parent_link_name': 'left_arm_end_effector_mount_link'}
+  ignored robot links: ['left_arm_end_effector_mount_link', 'right_arm_end_effector_mount_link', 'left_fingertip_end_effector_mount_link', 'right_fingertip_end_effector_mount_link']
+  tracking frame: left_arm_end_effector_mount_link; the box follows base/torso/arm TF while the recorded rigid grasp remains valid
+  invalid after crate slip, release, regrasp, or grasp-geometry change
+  state persists until payload-remove-4317 --execute succeeds
+
+{
+  "ok": false,
+  "outcome": "failed_closed",
+  "error": {
+    "type": "NavigationCliError",
+    "message": "attach_box_to_link failed: (False, 'WAIT_INITIALIZED'); filter-removal rollback attempted"
+  }
+}
+galbot@galbot-echo:~/ie_lab/projects/chassis_env/workspace$ /home/galbot/ie_lab/bin/s1-python   /home/galbot/Lsy03/navigation_tests/s1_navigation_cli.py   payload-status-4317
+{
+  "mode": "payload_4317_status_readonly",
+  "query_ok": true,
+  "motion_commands_sent": false,
+  "controller_switch_sent": false,
+  "bounding_box_changes_sent": false,
+  "attachment_changes_sent": false,
+  "box_tag": 4317,
+  "profile": "4317_left_mount_20260831_193312_191",
+  "expected_filter_box": {
+    "box_size": [
+      0.6,
+      0.5,
+      0.375
+    ],
+    "box_pose": [
+      0.08846454589905783,
+      -0.20926272696685333,
+      -0.15890000000000004,
+      0.011116385394816377,
+      -0.0003861212335707756,
+      0.6973011501467578,
+      0.7166919721122567
+    ],
+    "box_tag": 4317,
+    "parent_link_name": "left_arm_end_effector_mount_link"
+  },
+  "filter_registered": false,
+  "filter_profile_matches": false,
+  "bounding_boxes": [],
+  "attachment_status": "not_queryable_via_current_public_sdk_api"
+}
+galbot@galbot-echo:~/ie_lab/projects/chassis_env/workspace$ /home/galbot/ie_lab/bin/s1-python \
+>   /home/galbot/Lsy03/navigation_tests/s1_navigation_cli.py.before_external_omni_noninteractive_20260901 \
+>   payload-status-4317
+A new version 1.9.1 is available. Visit https://github.com/GalaxyGeneralRobotics/GalbotSDK/releases for upgrade instructions
+{
+  "mode": "payload_4317_status_readonly",
+  "query_ok": true,
+  "motion_commands_sent": false,
+  "controller_switch_sent": false,
+  "bounding_box_changes_sent": false,
+  "attachment_changes_sent": false,
+  "box_tag": 4317,
+  "profile": "4317_left_mount_20260831_193312_191",
+  "expected_filter_box": {
+    "box_size": [
+      0.6,
+      0.5,
+      0.375
+    ],
+    "box_pose": [
+      0.08846454589905783,
+      -0.20926272696685333,
+      -0.15890000000000004,
+      0.011116385394816377,
+      -0.0003861212335707756,
+      0.6973011501467578,
+      0.7166919721122567
+    ],
+    "box_tag": 4317,
+    "parent_link_name": "left_arm_end_effector_mount_link"
+  },
+  "filter_registered": false,
+  "filter_profile_matches": false,
+  "bounding_boxes": [],
+  "attachment_status": "not_queryable_via_current_public_sdk_api"
+}
+galbot@galbot-echo:~/ie_lab/projects/chassis_env/workspace$ /home/galbot/ie_lab/bin/s1-python   /home/galbot/Lsy03/navigation_tests/s1_navigation_cli.py.before_external_omni_noninteractive_20260901   payload-register-4317
+A new version 1.9.1 is available. Visit https://github.com/GalaxyGeneralRobotics/GalbotSDK/releases for upgrade instructions
+
+REAL-ROBOT NAVIGATION PAYLOAD REGISTRATION PREVIEW
+  expected physical motion: none
+  mobile base/arms/grippers/lift: no motion commands
+  fusion filter: {'box_size': [0.6, 0.5, 0.375], 'box_pose': [0.08846454589905783, -0.20926272696685333, -0.15890000000000004, 0.011116385394816377, -0.0003861212335707756, 0.6973011501467578, 0.7166919721122567], 'box_tag': 4317, 'parent_link_name': 'left_arm_end_effector_mount_link'}
+  PNS collision box: {'box_size': [0.4, 0.3, 0.175], 'box_pose': [0.08846454589905783, -0.20926272696685333, -0.15890000000000004, 0.011116385394816377, -0.0003861212335707756, 0.6973011501467578, 0.7166919721122567], 'box_tag': 4317, 'parent_link_name': 'left_arm_end_effector_mount_link'}
+  ignored robot links: ['left_arm_end_effector_mount_link', 'right_arm_end_effector_mount_link', 'left_fingertip_end_effector_mount_link', 'right_fingertip_end_effector_mount_link']
+  tracking frame: left_arm_end_effector_mount_link; the box follows base/torso/arm TF while the recorded rigid grasp remains valid
+  invalid after crate slip, release, regrasp, or grasp-geometry change
+  state persists until payload-remove-4317 succeeds
+
+Type REGISTER_NAV_PAYLOAD_4317_LEFT_MOUNT to register this exact carried-crate profile: REGISTER_NAV_PAYLOAD_4317_LEFT_MOUNT
+{
+  "mode": "guarded_payload_4317_register",
+  "motion_commands_sent": false,
+  "controller_switch_sent": false,
+  "bounding_box_changes_sent": true,
+  "attachment_changes_sent": true,
+  "profile": "4317_left_mount_20260831_193312_191",
+  "filter_box": {
+    "box_size": [
+      0.6,
+      0.5,
+      0.375
+    ],
+    "box_pose": [
+      0.08846454589905783,
+      -0.20926272696685333,
+      -0.15890000000000004,
+      0.011116385394816377,
+      -0.0003861212335707756,
+      0.6973011501467578,
+      0.7166919721122567
+    ],
+    "box_tag": 4317,
+    "parent_link_name": "left_arm_end_effector_mount_link"
+  },
+  "collision_box": {
+    "box_size": [
+      0.4,
+      0.3,
+      0.175
+    ],
+    "box_pose": [
+      0.08846454589905783,
+      -0.20926272696685333,
+      -0.15890000000000004,
+      0.011116385394816377,
+      -0.0003861212335707756,
+      0.6973011501467578,
+      0.7166919721122567
+    ],
+    "box_tag": 4317,
+    "parent_link_name": "left_arm_end_effector_mount_link"
+  },
+  "ignore_collision_links": [
+    "left_arm_end_effector_mount_link",
+    "right_arm_end_effector_mount_link",
+    "left_fingertip_end_effector_mount_link",
+    "right_fingertip_end_effector_mount_link"
+  ],
+  "registration_retained_until_explicit_remove": true,
+  "before": {
+    "localized": true,
+    "current_pose_map": [
+      1.6065373420715332,
+      0.746565580368042,
+      -0.008748511783778667,
+      0.0012730669198724974,
+      -0.0001357009543007244,
+      -0.02921643684251066,
+      0.9995722888836486
+    ],
+    "navigation_status": {
+      "name": "UNKNOWN",
+      "value": 0,
+      "repr": "<NavigationTaskStatus.UNKNOWN: 0>"
+    },
+    "bounding_boxes": []
+  },
+  "parent_frame_validation": {
+    "parent_link_name": "left_arm_end_effector_mount_link",
+    "available_in_frame_names": true,
+    "base_link_from_parent_pose": [
+      0.7021830368810743,
+      0.2529516708622746,
+      0.783409875258724,
+      -0.03464516449464695,
+      -0.06777873011634356,
+      0.02136883125947542,
+      0.996869665187761
+    ],
+    "tf_timestamp_ns": 1788329901452797733
+  },
+  "add_bounding_box_return": [
+    true,
+    "SUCCESS"
+  ],
+  "bounding_boxes_after_add": [
+    {
+      "box_size": [
+        0.6000000238418579,
+        0.5,
+        0.375
+      ],
+      "box_pose": [
+        0.08846454322338104,
+        -0.20926272869110107,
+        -0.15889999270439148,
+        0.011116385459899902,
+        -0.0003861214790958911,
+        0.6973011493682861,
+        0.7166919708251953
+      ],
+      "box_tag": 4317,
+      "parent_link_name": "left_arm_end_effector_mount_link"
+    }
+  ],
+  "attach_box_to_link_return": [
+    true,
+    "SUCCESS"
+  ],
+  "ok": true,
+  "outcome": "payload_registered"
+}
+galbot@galbot-echo:~/ie_lab/projects/chassis_env/workspace$ /home/galbot/ie_lab/bin/s1-python   /home/galbot/Lsy03/navigation_tests/s1_navigation_cli.py.before_external_omni_noninteractive_20260901   payload-remove-4317
+A new version 1.9.1 is available. Visit https://github.com/GalaxyGeneralRobotics/GalbotSDK/releases for upgrade instructions
+
+REAL-ROBOT NAVIGATION PAYLOAD REMOVAL PREVIEW
+  expected physical motion: none
+  mobile base/arms/grippers/lift: no motion commands
+  detach PNS collision box tag: 4317
+  remove fusion filter box tag: 4317
+  run this only after navigation has stopped
+
+Type REMOVE_NAV_PAYLOAD_4317 to detach and remove payload tag 4317: REMOVE_NAV_PAYLOAD_4317
+{
+  "mode": "guarded_payload_4317_remove",
+  "motion_commands_sent": false,
+  "controller_switch_sent": false,
+  "bounding_box_changes_sent": true,
+  "attachment_changes_sent": true,
+  "box_tag": 4317,
+  "before": {
+    "localized": true,
+    "current_pose_map": [
+      1.6182109117507935,
+      0.7528064250946045,
+      -0.0015972488326951861,
+      0.0010160359698360186,
+      -0.0004696961136604996,
+      -0.029517244374953924,
+      0.9995636444674136
+    ],
+    "navigation_status": {
+      "name": "UNKNOWN",
+      "value": 0,
+      "repr": "<NavigationTaskStatus.UNKNOWN: 0>"
+    },
+    "bounding_boxes": [
+      {
+        "box_size": [
+          0.6000000238418579,
+          0.5,
+          0.375
+        ],
+        "box_pose": [
+          0.08846454322338104,
+          -0.20926272869110107,
+          -0.15889999270439148,
+          0.011116385459899902,
+          -0.0003861214790958911,
+          0.6973011493682861,
+          0.7166919708251953
+        ],
+        "box_tag": 4317,
+        "parent_link_name": "left_arm_end_effector_mount_link"
+      }
+    ]
+  },
+  "detach_box_from_link_return": [
+    true,
+    "SUCCESS"
+  ],
+  "remove_bounding_box_return": [
+    true,
+    "SUCCESS"
+  ],
+  "bounding_boxes_after_remove": [],
+  "filter_removed": true,
+  "ok": true,
+  "outcome": "payload_removed"
+}
+galbot@galbot-echo:~/ie_lab/projects/chassis_env/workspace$

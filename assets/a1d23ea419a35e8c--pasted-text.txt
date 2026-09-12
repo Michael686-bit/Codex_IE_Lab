@@ -1,0 +1,75 @@
+}
+galbot@galbot-echo:~/ie_lab/projects/s1_continuous_destack/deploy$ ./run.sh dev-continue-mode01-primary \
+>   mode01_20260909_11 mode01_20260909_12 \
+>   --stop-after-primary-close
+control lock acquired safely: /home/galbot/ie_lab/control.lock (operator=codex-assisted-user)
+development run/source: mode01_20260909_12 d13954905d557f8d45b28470e13be38164de2b7c76f5dc77e7e6204a81081e09
+SingletonLogger auto-initialized successfully for project: irmv_core
+[2026-09-09 01:42:16.028] [debug] [7] [algorithm_factory.h:91] [Register] RALPinocchio registered successfully!
+[2026-09-09 01:42:16.028] [debug] [7] [algorithm_factory.h:91] [Register] SerialKinematicsScrewQPName registered successfully!
+[2026-09-09 01:42:16.028] [debug] [7] [algorithm_factory.h:91] [Register] SerialKinematicsHumanoid registered successfully!
+[2026-09-09 01:42:16.028] [debug] [7] [algorithm_factory.h:91] [Register] SerialKinematicsPinocchioName registered successfully!
+[2026-09-09 01:42:16.028] [debug] [7] [algorithm_factory.h:91] [Register] SerialKinematicsScrewLMName registered successfully!
+[2026-09-09 01:42:16.028] [debug] [7] [algorithm_factory.h:91] [Register] FastIKPlanner registered successfully!
+[2026-09-09 01:42:16.028] [debug] [7] [algorithm_factory.h:91] [Register] ConstrainedOMPLPlanner registered successfully!
+[2026-09-09 01:42:16.028] [debug] [7] [algorithm_factory.h:91] [Register] AutoFallbackPlanner registered successfully!
+[2026-09-09 01:42:16.028] [debug] [7] [algorithm_factory.h:91] [Register] OMPLConfigPlanner registered successfully!
+[2026-09-09 01:42:16.028] [debug] [7] [algorithm_factory.h:91] [Register] ValidatorPinocchioName registered successfully!
+[2026-09-09 01:42:16.028] [debug] [7] [algorithm_factory.h:91] [Register] IterativeSplineGenerator registered successfully!
+[2026-09-09 01:42:16.028] [debug] [7] [algorithm_factory.h:91] [Register] TrajectorySplineCubic registered successfully!
+[2026-09-09 01:42:16.028] [debug] [7] [algorithm_factory.h:91] [Register] OptimizedSplineGenerator registered successfully!
+[2026-09-09 01:42:16.028] [debug] [7] [algorithm_factory.h:91] [Register] TrajectoryTOTP registered successfully!
+[2026-09-09 01:42:16.028] [debug] [7] [algorithm_factory.h:91] [Register] TimeOptimalGenerator registered successfully!
+[2026-09-09 01:42:16.028] [debug] [7] [algorithm_factory.h:91] [Register] IterativeSplineGenerator registered successfully!
+[2026-09-09 01:42:16.028] [debug] [7] [algorithm_factory.h:91] [Register] TrajectoryTOTP registered successfully!
+[2026-09-09 01:42:16.028] [debug] [7] [algorithm_factory.h:91] [Register] TimeOptimalGenerator registered successfully!
+[2026-09-09 01:42:21.026] [info] [7] [ral_core.cpp:76] [getInstance] Creating new RALCore instance
+[2026-09-09 01:42:21.033] [debug] [7] [kinematics_pinocchio.cpp:315] [SerialKinematicsPinocchio] SerialKinematicsPinocchio initialized with 7 active DoF.
+[2026-09-09 01:42:21.033] [debug] [7] [kinematics_pinocchio.cpp:316] [SerialKinematicsPinocchio] Base frame: left_arm_base_link (ID: 23), End effector frame: left_arm_end_effector_mount_link (ID: 39)
+[2026-09-09 01:42:21.033] [debug] [7] [kinematics_pinocchio.cpp:318] [SerialKinematicsPinocchio] Serial chain has 8 links
+[2026-09-09 01:42:21.033] [info] [7] [serial_kinematics_interface.cpp:131] [Impl] Created SerialKinematicsInterface with type: pinocchio
+[2026-09-09 01:42:21.060] [info] [7] [ral_core.cpp:76] [getInstance] Creating new RALCore instance
+[2026-09-09 01:42:21.067] [debug] [7] [kinematics_pinocchio.cpp:315] [SerialKinematicsPinocchio] SerialKinematicsPinocchio initialized with 7 active DoF.
+[2026-09-09 01:42:21.067] [debug] [7] [kinematics_pinocchio.cpp:316] [SerialKinematicsPinocchio] Base frame: left_arm_base_link (ID: 23), End effector frame: left_arm_end_effector_mount_link (ID: 39)
+[2026-09-09 01:42:21.067] [debug] [7] [kinematics_pinocchio.cpp:318] [SerialKinematicsPinocchio] Serial chain has 8 links
+[2026-09-09 01:42:21.067] [info] [7] [serial_kinematics_interface.cpp:131] [Impl] Created SerialKinematicsInterface with type: pinocchio
+[2026-09-09 01:42:21.070] [debug] [7] [ral_core.cpp:70] [getInstance] Returning existing RALCore instance
+[2026-09-09 01:42:21.107] [info] [7] [composite_geometry_provider.cpp:80] [addProvider] CompositeGeometryProvider: Added provider type 'mesh'
+[2026-09-09 01:42:21.107] [info] [7] [composite_geometry_provider.cpp:80] [addProvider] CompositeGeometryProvider: Added provider type 'pointcloud'
+[2026-09-09 01:42:21.107] [info] [7] [composite_geometry_provider.cpp:140] [setDefaultProvider] CompositeGeometryProvider: Set default provider to 'mesh'
+[2026-09-09 01:42:21.108] [debug] [7] [ral_core.cpp:70] [getInstance] Returning existing RALCore instance
+[2026-09-09 01:42:21.110] [debug] [7] [kinematics_pinocchio.cpp:315] [SerialKinematicsPinocchio] SerialKinematicsPinocchio initialized with 7 active DoF.
+[2026-09-09 01:42:21.110] [debug] [7] [kinematics_pinocchio.cpp:316] [SerialKinematicsPinocchio] Base frame: left_arm_base_link (ID: 23), End effector frame: left_arm_end_effector_mount_link (ID: 39)
+[2026-09-09 01:42:21.110] [debug] [7] [kinematics_pinocchio.cpp:318] [SerialKinematicsPinocchio] Serial chain has 8 links
+[2026-09-09 01:42:21.110] [info] [7] [planner_base.cpp:229] [createKinematics] Created kinematics instance with type: pinocchio
+[2026-09-09 01:42:21.112] [debug] [7] [fast_ik_planner.cpp:102] [FastIKPlanner] FastIKPlanner: Loaded config from TOML: min_cartesian_trans_distance=0.01, min_cartesian_angle_distance=0.01
+[2026-09-09 01:42:21.114] [info] [7] [trajectory_joint_space.cpp:81] [TrajectoryJointSpace] Loaded 7 joint names from ral_params.toml [ral.active_joints]
+[2026-09-09 01:42:21.125] [debug] [7] [iterative_spline_generator.cpp:161] [generate] IterativeSplineGenerator: Generated trajectory successfully
+[2026-09-09 01:42:21.125] [info] [7] [trajectory_joint_space.cpp:207] [init] Joint space trajectory initialized with 7 joints, group: left_arm, device: left_arm
+[2026-09-09 01:42:21.125] [info] [7] [planners_interface.cpp:349] [trajPlan] The total time of the trajectory is: 0.5335750686029688
+{
+  "ok": false,
+  "error_type": "StepFailed",
+  "error": "step mode01_primary_grasp_close failed after 1 attempt(s): S1 primitive planning failed: SDK_COLLISION_BASE_UNSTABLE: base sample 2 exceeds the commissioned no-motion threshold"
+}
+galbot@galbot-echo:~/ie_lab/projects/s1_continuous_destack/deploy$ ./run.sh dev-continue-mode01-primary \
+>   mode01_20260909_12 mode01_20260909_13 \
+>   --resume-after-primary-close
+control lock acquired safely: /home/galbot/ie_lab/control.lock (operator=codex-assisted-user)
+development run/source: mode01_20260909_13 d13954905d557f8d45b28470e13be38164de2b7c76f5dc77e7e6204a81081e09
+{
+  "ok": false,
+  "error_type": "GateRefused",
+  "error": "mode01 lift/draw requires the exact operator-confirmed primary close stop"
+}
+galbot@galbot-echo:~/ie_lab/projects/s1_continuous_destack/deploy$ ./run.sh dev-continue-mode01-primary \
+>   mode01_20260909_12 mode01_20260909_13 \
+>   --resume-after-primary-close
+control lock acquired safely: /home/galbot/ie_lab/control.lock (operator=codex-assisted-user)
+development run/source: mode01_20260909_13 d13954905d557f8d45b28470e13be38164de2b7c76f5dc77e7e6204a81081e09
+{
+  "ok": false,
+  "error_type": "GateRefused",
+  "error": "mode01 lift/draw requires the exact operator-confirmed primary close stop"
+}
+galbot@galbot-echo:~/ie_lab/projects/s1_continuous_destack/deploy$

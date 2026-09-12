@@ -1,0 +1,423 @@
+<div id="vlaDeploymentMemory" class="vla-deployment-memory" role="group" aria-label="VLA 模型显存和多卡部署对比">
+  <h2>VLA 模型显存与多卡部署建议</h2>
+  <p class="text-small text-muted">上图看单卡/低卡显存，下图看一套服务器的总 GPU 显存。带 * 的数字是估算；新模型优先采用官方拓扑，未公布的部分按权重规模和量化方式估算。</p>
+
+  <div class="viz-controls" aria-label="显示的训练阶段">
+    <button type="button" aria-pressed="true" data-mode="infer"><span class="legend-swatch" data-color="infer" aria-hidden="true"></span>推理 / 使用</button>
+    <button type="button" aria-pressed="true" data-mode="lora"><span class="legend-swatch" data-color="lora" aria-hidden="true"></span>LoRA / PEFT</button>
+    <button type="button" aria-pressed="true" data-mode="official"><span class="legend-swatch" data-color="official" aria-hidden="true"></span>常规 / 官方微调</button>
+    <button type="button" aria-pressed="true" data-mode="full"><span class="legend-swatch" data-color="full" aria-hidden="true"></span>全参微调</button>
+  </div>
+
+  <h3>单卡 / 低卡显存（估算）</h3>
+  <div class="chart-wrap stage-wrap">
+    <svg id="vlaStageChart" class="vla-memory-chart" role="img" aria-label="各 VLA 模型在不同阶段的单卡显存估算，横轴单位为 GB"></svg>
+  </div>
+
+  <h3>服务器部署基线（总 GPU 显存）</h3>
+  <p class="text-small text-muted chart-note">对数刻度用于同时展示 24GB 级单卡方案和 1TB 级多卡方案；这里的“总显存”是 GPU 显存之和，不代表单卡必须能装下完整模型。</p>
+  <div class="chart-wrap server-wrap">
+    <svg id="vlaServerChart" class="vla-memory-chart" role="img" aria-label="各 VLA 模型的服务器部署基线，总 GPU 显存横轴采用对数刻度，单位为 GB"></svg>
+  </div>
+
+  <div class="recommendations" aria-label="部署建议">
+    <div><span>ACT</span><strong>1×4090（24GB）</strong></div>
+    <div><span>SmolVLA</span><strong>1×4090（24GB）</strong></div>
+    <div><span>π0.5</span><strong>1×80GB+</strong></div>
+    <div><span>LingBot-VLA 2.0</span><strong>推理 1×48GB；训练 4×48GB 起</strong></div>
+    <div><span>π0.7</span><strong>暂不采购</strong></div>
+    <div><span>UniFoLM-VLA-0</span><strong>推理 1×48GB；全参 4×80GB</strong></div>
+    <div><span>DeepSeek-V4-Flash</span><strong>4×H200 / 4×B200；高吞吐需更多卡</strong></div>
+    <div><span>DeepSeek-V4.1-Flash</span><strong>8-way TP；8×80GB 起（估算）</strong></div>
+    <div><span>GLM-5.3-Flash</span><strong>4×80/96GB 起（量化估算）</strong></div>
+  </div>
+  <div id="vlaDeploymentStatus" class="sr-only" aria-live="polite">当前显示全部阶段。</div>
+
+  <style>
+    #vlaDeploymentMemory {
+      color: var(--foreground);
+      font-size: var(--font-size-base);
+      width: 100%;
+    }
+    #vlaDeploymentMemory h2 {
+      margin: 0 0 4px;
+      font-weight: 500;
+    }
+    #vlaDeploymentMemory h3 {
+      margin: 16px 0 3px;
+      font-weight: 500;
+    }
+    #vlaDeploymentMemory p {
+      margin: 0 0 10px;
+    }
+    #vlaDeploymentMemory .viz-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px 16px;
+      align-items: center;
+      margin: 0 0 8px;
+    }
+    #vlaDeploymentMemory .viz-controls button {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 0;
+      margin: 0;
+      border: 0;
+      background: transparent;
+      color: var(--foreground);
+      font: inherit;
+      cursor: pointer;
+    }
+    #vlaDeploymentMemory .viz-controls button[aria-pressed="false"] {
+      color: var(--muted-foreground);
+      text-decoration: line-through;
+    }
+    #vlaDeploymentMemory .legend-swatch {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      background: var(--viz-series-1);
+    }
+    #vlaDeploymentMemory .legend-swatch[data-color="lora"] { background: var(--viz-series-2); }
+    #vlaDeploymentMemory .legend-swatch[data-color="official"] { background: var(--viz-series-3); }
+    #vlaDeploymentMemory .legend-swatch[data-color="full"] { background: var(--viz-series-4); }
+    #vlaDeploymentMemory .chart-wrap {
+      width: 100%;
+    }
+    #vlaDeploymentMemory svg {
+      display: block;
+      width: 100%;
+      height: auto;
+      overflow: visible;
+    }
+    #vlaDeploymentMemory svg text {
+      fill: var(--foreground);
+      font-size: 12px;
+    }
+    #vlaDeploymentMemory svg .grid line {
+      stroke: var(--border);
+      stroke-width: 1;
+      opacity: 0.55;
+    }
+    #vlaDeploymentMemory svg .axis path,
+    #vlaDeploymentMemory svg .axis line,
+    #vlaDeploymentMemory svg rect[data-chart-frame] {
+      stroke: var(--border);
+      stroke-width: 1;
+      fill: none;
+    }
+    #vlaDeploymentMemory svg .axis text,
+    #vlaDeploymentMemory svg .axis-title,
+    #vlaDeploymentMemory svg .mode-label {
+      fill: var(--muted-foreground);
+      font-size: 11px;
+    }
+    #vlaDeploymentMemory svg .model-label {
+      fill: var(--foreground);
+      font-size: 12px;
+    }
+    #vlaDeploymentMemory svg .bar {
+      stroke: none;
+      shape-rendering: crispEdges;
+    }
+    #vlaDeploymentMemory svg .bar.open-right {
+      opacity: 0.28;
+    }
+    #vlaDeploymentMemory svg .server-bar {
+      opacity: 0.72;
+    }
+    #vlaDeploymentMemory svg .open-arrow {
+      fill: none;
+      stroke-width: 1.5;
+    }
+    #vlaDeploymentMemory svg .point {
+      stroke: var(--background);
+      stroke-width: 1.5;
+    }
+    #vlaDeploymentMemory svg .value-label {
+      font-size: 11px;
+      fill: var(--foreground);
+    }
+    #vlaDeploymentMemory svg .recommendation {
+      font-size: 12px;
+      fill: var(--foreground);
+    }
+    #vlaDeploymentMemory .recommendations {
+      display: none;
+    }
+    @media (max-width: 599px) {
+      #vlaDeploymentMemory .recommendations {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 3px 12px;
+        margin-top: 4px;
+      }
+      #vlaDeploymentMemory .recommendations div {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        border-top: 1px solid var(--border);
+        padding-top: 4px;
+      }
+      #vlaDeploymentMemory .recommendations strong {
+        font-weight: 500;
+        text-align: right;
+      }
+    }
+  </style>
+
+  <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+  <script>
+    (() => {
+      const root = document.getElementById("vlaDeploymentMemory");
+      const stageSvg = d3.select(root.querySelector("#vlaStageChart"));
+      const serverSvg = d3.select(root.querySelector("#vlaServerChart"));
+      const status = root.querySelector("#vlaDeploymentStatus");
+      const active = { infer: true, lora: true, official: true, full: true };
+      const colors = {
+        infer: "var(--viz-series-1)",
+        lora: "var(--viz-series-2)",
+        official: "var(--viz-series-3)",
+        full: "var(--viz-series-4)"
+      };
+      const modeNames = {
+        infer: "推理 / 使用",
+        lora: "LoRA / PEFT",
+        official: "常规 / 官方微调",
+        full: "全参微调"
+      };
+      const models = [
+        {
+          name: "ACT",
+          lines: ["ACT"],
+          recommendation: "1×4090（24GB）",
+          infer: { lo: 1, hi: 2, label: "≈1–2" },
+          lora: null,
+          official: { lo: 2, hi: 6, label: "2–6" },
+          full: { lo: 2, hi: 6, label: "2–6" },
+          server: { lo: 24, hi: 24, label: "1×24", point: true, tooltip: "单卡即可" }
+        },
+        {
+          name: "SmolVLA",
+          lines: ["SmolVLA"],
+          recommendation: "1×4090（24GB）",
+          infer: { lo: 4, hi: 8, label: "≈4–8" },
+          lora: { lo: 6, hi: 12, label: "≈6–12" },
+          official: { lo: 10, hi: 16, label: "10–16" },
+          full: { lo: 12, hi: 20, label: "≈12–20" },
+          server: { lo: 24, hi: 24, label: "1×24", point: true, tooltip: "单卡即可" }
+        },
+        {
+          name: "π0.5",
+          lines: ["π0.5"],
+          recommendation: "1×80GB+",
+          infer: { lo: 8, hi: 24, label: ">8；建议 16–24", openStart: true },
+          lora: { lo: 22.5, hi: 110, label: ">22.5", openRight: true },
+          official: { lo: 24, hi: 40, label: "24–40" },
+          full: { lo: 70, hi: 110, label: ">70", openRight: true },
+          server: { lo: 80, hi: 1300, label: "1×80GB+", openRight: true, tooltip: "80GB+；具体上下文和量化决定余量" }
+        },
+        {
+          name: "LingBot-VLA 2.0",
+          lines: ["LingBot-VLA", "2.0"],
+          recommendation: "推理 1×48GB；训练 4×48GB 起",
+          infer: { lo: 20, hi: 30, label: "≈20–30" },
+          lora: { lo: 32, hi: 48, label: "≈32–48*" },
+          official: { lo: 49, hi: 49, label: "≈49 / 卡", point: true },
+          full: { lo: 48, hi: 96, label: "48 起 → 80/96 舒适", openStart: true },
+          server: { lo: 48, hi: 192, label: "48（推理）→192（4×48）", tooltip: "推理约1×48GB；官方微调参考4×A6000，约49GB/卡" }
+        },
+        {
+          name: "π0.7",
+          lines: ["π0.7"],
+          recommendation: "暂不采购",
+          infer: null,
+          lora: null,
+          official: null,
+          full: null,
+          server: null
+        },
+        {
+          name: "宇树 UniFoLM-VLA-0",
+          lines: ["UniFoLM", "VLA-0"],
+          recommendation: "推理 1×48GB；全参 4×80GB",
+          infer: { lo: 24, hi: 48, label: "24 勉强 → 48 推荐" },
+          lora: { lo: 32, hi: 48, label: "≈32–48*" },
+          official: { lo: 48, hi: 80, label: "≈48–80*" },
+          full: { lo: 80, hi: 80, label: "4×80 / 卡", point: true },
+          server: { lo: 48, hi: 320, label: "48（推理）→320（4×80）", tooltip: "推理建议1×48GB；全参微调建议4×80GB" }
+        },
+        {
+          name: "DeepSeek-V4-Flash",
+          lines: ["DeepSeek-V4", "Flash"],
+          recommendation: "4×H200 / 4×B200",
+          infer: null,
+          lora: null,
+          official: null,
+          full: null,
+          server: { lo: 564, hi: 720, label: "4×H200 → 4×B200", tooltip: "官方部署基线：4×H200（141GB/卡）或4×B200（180GB/卡）；高吞吐拓扑需更多卡" }
+        },
+        {
+          name: "DeepSeek-V4.1-Flash",
+          lines: ["DeepSeek-V4.1", "Flash"],
+          recommendation: "8-way TP；8×80GB 起*",
+          infer: null,
+          lora: null,
+          official: null,
+          full: null,
+          server: { lo: 640, hi: 1128, label: "8×80GB 起* → 8×141GB*", tooltip: "官方参考推理脚本使用MP=8；卡型与量化未固定，显存为估算" }
+        },
+        {
+          name: "GLM-5.3-Flash",
+          lines: ["GLM-5.3", "Flash"],
+          recommendation: "4×80/96GB 起*",
+          infer: null,
+          lora: null,
+          official: { lo: 57, hi: 57, label: "≈57 / 卡*", point: true },
+          full: null,
+          server: { lo: 320, hi: 384, label: "4×80/96GB*", tooltip: "量化部署估算；官方资料未固定推理 GPU 数量" }
+        }
+      ];
+      const stageRefs = [1, 2, 4, 6, 8, 10, 12, 16, 20, 22.5, 24, 30, 32, 40, 48, 49, 70, 80, 96];
+      const stageXMax = Math.ceil((d3.max(stageRefs) * 1.08) / 10) * 10;
+      const serverRefs = [16, 24, 48, 80, 192, 320, 384, 564, 640, 720, 1128, 1300];
+      const serverXMax = Math.ceil((d3.max(serverRefs) * 1.12) / 100) * 100;
+
+      function addModelLabel(g, model, left, yCenter) {
+        const label = g.append("text").attr("class", "model-label").attr("x", left - 10).attr("text-anchor", "end");
+        const lines = model.lines;
+        const startY = yCenter - (lines.length - 1) * 7;
+        lines.forEach((line, i) => label.append("tspan").attr("x", left - 10).attr("y", startY + i * 14).text(line));
+      }
+
+      function renderStage() {
+        const width = Math.max(root.querySelector(".stage-wrap").clientWidth || 736, 320);
+        const narrow = width < 600;
+        const left = narrow ? 88 : 132;
+        const right = narrow ? 12 : 218;
+        const top = 30;
+        const rowHeight = 66;
+        const plotBottom = top + models.length * rowHeight - 8;
+        const bottom = 44;
+        const height = plotBottom + bottom;
+        const plotRight = width - right;
+        const x = d3.scaleLinear().domain([0, stageXMax]).range([left, plotRight]);
+        const barHeight = 8;
+        stageSvg.attr("viewBox", `0 0 ${width} ${height}`).selectAll("*").remove();
+        stageSvg.append("title").text("VLA 模型单卡显存需求");
+        stageSvg.append("desc").text("各模型按推理、LoRA、常规微调和全参微调显示单卡显存估算；新模型主要采用多卡部署。");
+        const frame = stageSvg.append("g");
+        frame.append("rect").attr("data-chart-frame", "true").attr("x", left).attr("y", top - 10).attr("width", Math.max(0, plotRight - left)).attr("height", plotBottom - top + 10);
+        const ticks = narrow ? [0, 50, 100] : [0, 20, 40, 60, 80, 100];
+        frame.append("g").attr("class", "grid").selectAll("line").data(ticks.filter(v => v <= stageXMax)).join("line").attr("x1", d => x(d)).attr("x2", d => x(d)).attr("y1", top - 10).attr("y2", plotBottom);
+        const axis = frame.append("g").attr("class", "axis").attr("transform", `translate(0,${plotBottom})`).call(d3.axisBottom(x).tickValues(ticks.filter(v => v <= stageXMax)).tickFormat(d => `${d}`));
+        axis.selectAll("text").attr("fill", "var(--muted-foreground)");
+        axis.selectAll("path,line").attr("stroke", "var(--border)");
+        frame.append("text").attr("class", "axis-title").attr("data-axis", "x").attr("x", (left + plotRight) / 2).attr("y", height - 7).attr("text-anchor", "middle").text("单卡显存 / GB");
+        frame.append("text").attr("class", "axis-title").attr("data-axis", "y").attr("transform", `translate(14 ${(top + plotBottom) / 2}) rotate(-90)`).attr("text-anchor", "middle").text("模型");
+        if (!narrow) frame.append("text").attr("class", "mode-label").attr("x", plotRight + 14).attr("y", top - 16).text("推荐 / 备注");
+
+        const rows = frame.append("g").selectAll("g.model-row").data(models).join("g").attr("class", "model-row").attr("transform", (_, i) => `translate(0,${top + i * rowHeight})`);
+        rows.each(function(model) {
+          const g = d3.select(this);
+          const allMissing = !model.infer && !model.lora && !model.official && !model.full;
+          addModelLabel(g, model, left, 35);
+          if (allMissing) g.append("text").attr("class", "value-label").attr("x", left + 5).attr("y", 35).text("部署以多卡为主；见下图");
+          ["infer", "lora", "official", "full"].forEach((mode, modeIndex) => {
+            if (!active[mode]) return;
+            const item = model[mode];
+            const y = 8 + modeIndex * 12;
+            if (!item) {
+              g.append("text").attr("class", "mode-label").attr("x", left + 4).attr("y", y + 8).text("—");
+              return;
+            }
+            const x0 = x(Math.max(0, item.lo));
+            const x1 = x(Math.min(stageXMax, item.hi));
+            const tooltip = `${model.name}｜${modeNames[mode]}：${item.label} GB`;
+            if (item.point || item.lo === item.hi) {
+              g.append("circle").attr("class", "point").attr("cx", x0).attr("cy", y + barHeight / 2).attr("r", 4).attr("fill", colors[mode]).attr("data-tooltip", tooltip);
+            } else {
+              g.append("rect").attr("class", `bar${item.openRight ? " open-right" : ""}`).attr("x", x0).attr("y", y).attr("width", Math.max(1, x1 - x0)).attr("height", barHeight).attr("fill", colors[mode]).attr("data-tooltip", tooltip);
+              if (item.openRight) g.append("path").attr("class", "open-arrow").attr("style", `stroke:${colors[mode]}`).attr("d", `M${plotRight - 8},${y + barHeight / 2 - 3} L${plotRight - 2},${y + barHeight / 2} L${plotRight - 8},${y + barHeight / 2 + 3}`).attr("data-tooltip", tooltip);
+              if (item.openStart) g.append("path").attr("class", "open-arrow").attr("style", `stroke:${colors[mode]}`).attr("d", `M${x0 + 8},${y + barHeight / 2 - 3} L${x0 + 2},${y + barHeight / 2} L${x0 + 8},${y + barHeight / 2 + 3}`).attr("data-tooltip", tooltip);
+            }
+            const nearRight = x1 > plotRight - 100;
+            g.append("text").attr("class", "value-label").attr("x", nearRight ? plotRight - 4 : x1 + 5).attr("y", y + 8).attr("text-anchor", nearRight ? "end" : "start").text(item.label);
+          });
+          if (!narrow) g.append("text").attr("class", "recommendation").attr("x", plotRight + 14).attr("y", 35).text(model.recommendation);
+        });
+        frame.append("text").attr("class", "mode-label").attr("x", left).attr("y", top - 16).text("估算区间 / 单卡");
+      }
+
+      function renderServer() {
+        const width = Math.max(root.querySelector(".server-wrap").clientWidth || 736, 320);
+        const narrow = width < 600;
+        const left = narrow ? 88 : 132;
+        const right = narrow ? 12 : 280;
+        const top = 28;
+        const rowHeight = 48;
+        const plotBottom = top + models.length * rowHeight - 6;
+        const bottom = 44;
+        const height = plotBottom + bottom;
+        const plotRight = width - right;
+        const x = d3.scaleLog().domain([16, serverXMax]).range([left, plotRight]);
+        const barHeight = 12;
+        serverSvg.attr("viewBox", `0 0 ${width} ${height}`).selectAll("*").remove();
+        serverSvg.append("title").text("VLA 模型服务器部署基线");
+        serverSvg.append("desc").text("横轴为一套服务器的总 GPU 显存，采用对数刻度；区间表示推理到训练或更宽裕配置。");
+        const frame = serverSvg.append("g");
+        frame.append("rect").attr("data-chart-frame", "true").attr("x", left).attr("y", top - 10).attr("width", Math.max(0, plotRight - left)).attr("height", plotBottom - top + 10);
+        const ticks = [16, 32, 64, 128, 256, 512, 1024].filter(v => v <= serverXMax);
+        frame.append("g").attr("class", "grid").selectAll("line").data(ticks).join("line").attr("x1", d => x(d)).attr("x2", d => x(d)).attr("y1", top - 10).attr("y2", plotBottom);
+        const axis = frame.append("g").attr("class", "axis").attr("transform", `translate(0,${plotBottom})`).call(d3.axisBottom(x).tickValues(ticks).tickFormat(d => d >= 1024 ? `${d / 1024}k` : `${d}`));
+        axis.selectAll("text").attr("fill", "var(--muted-foreground)");
+        axis.selectAll("path,line").attr("stroke", "var(--border)");
+        frame.append("text").attr("class", "axis-title").attr("data-axis", "x").attr("x", (left + plotRight) / 2).attr("y", height - 7).attr("text-anchor", "middle").text("总 GPU 显存 / GB（对数刻度）");
+        frame.append("text").attr("class", "axis-title").attr("data-axis", "y").attr("transform", `translate(14 ${(top + plotBottom) / 2}) rotate(-90)`).attr("text-anchor", "middle").text("模型");
+        if (!narrow) frame.append("text").attr("class", "mode-label").attr("x", plotRight + 14).attr("y", top - 16).text("部署拓扑 / 备注");
+        const rows = frame.append("g").selectAll("g.server-row").data(models).join("g").attr("class", "server-row").attr("transform", (_, i) => `translate(0,${top + i * rowHeight})`);
+        rows.each(function(model) {
+          const g = d3.select(this);
+          addModelLabel(g, model, left, 25);
+          const item = model.server;
+          if (!item) {
+            g.append("text").attr("class", "value-label").attr("x", left + 5).attr("y", 29).text("—");
+          } else {
+            const x0 = x(Math.max(16, item.lo));
+            const x1 = x(Math.min(serverXMax, item.hi));
+            const tooltip = `${model.name}｜服务器基线：${item.tooltip || item.label}`;
+            if (item.point || item.lo === item.hi) {
+              g.append("circle").attr("class", "point server-bar").attr("cx", x0).attr("cy", 19).attr("r", 5).attr("fill", "var(--viz-series-5)").attr("data-tooltip", tooltip);
+            } else {
+              g.append("rect").attr("class", "server-bar").attr("x", x0).attr("y", 13).attr("width", Math.max(1, x1 - x0)).attr("height", barHeight).attr("fill", "var(--viz-series-5)").attr("data-tooltip", tooltip);
+              if (item.openRight) g.append("path").attr("class", "open-arrow").attr("style", "stroke:var(--viz-series-5)").attr("d", `M${plotRight - 8},19 L${plotRight - 2},19`).attr("data-tooltip", tooltip);
+            }
+            const nearRight = x1 > plotRight - 112;
+            g.append("text").attr("class", "value-label").attr("x", nearRight ? plotRight - 4 : x1 + 6).attr("y", 21).attr("text-anchor", nearRight ? "end" : "start").text(item.label);
+          }
+          if (!narrow) g.append("text").attr("class", "recommendation").attr("x", plotRight + 14).attr("y", 25).text(model.recommendation);
+        });
+        frame.append("text").attr("class", "mode-label").attr("x", left).attr("y", top - 16).text("总显存 / 一套部署");
+      }
+
+      root.querySelectorAll(".viz-controls button").forEach(button => {
+        button.addEventListener("click", () => {
+          const mode = button.dataset.mode;
+          active[mode] = !active[mode];
+          button.setAttribute("aria-pressed", String(active[mode]));
+          const visible = Object.keys(active).filter(key => active[key]).map(key => modeNames[key]);
+          status.textContent = visible.length ? `当前显示：${visible.join("、")}。` : "当前未显示任何阶段。";
+          renderStage();
+        });
+      });
+
+      const stageObserver = new ResizeObserver(renderStage);
+      const serverObserver = new ResizeObserver(renderServer);
+      stageObserver.observe(root.querySelector(".stage-wrap"));
+      serverObserver.observe(root.querySelector(".server-wrap"));
+      renderStage();
+      renderServer();
+    })();
+  </script>
+</div>

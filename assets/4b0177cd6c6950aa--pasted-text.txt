@@ -1,0 +1,246 @@
+galbot@galbot-echo:~$ /home/galbot/ie_lab/bin/s1-python \
+  /home/galbot/Lsy03/navigation_tests/s1_navigation_cli.py
+  payload-status-4317
+A new version 1.9.1 is available. Visit [https://github.com/GalaxyGeneralRobotics/GalbotSDK/releases](https://github.com/GalaxyGeneralRobotics/GalbotSDK/releases) for upgrade instructions
+{
+  "mode": "payload_4317_status_readonly",
+  "query_ok": true,
+  "motion_commands_sent": false,
+  "controller_switch_sent": false,
+  "bounding_box_changes_sent": false,
+  "attachment_changes_sent": false,
+  "box_tag": 4317,
+  "filter_registered": false,
+  "bounding_boxes": [],
+  "attachment_status": "not_queryable_via_current_public_sdk_api"
+}
+galbot@galbot-echo:~$
+
+是否正常？
+
+
+
+
+显示更多
+
+14:03
+
+
+
+
+
+
+耗时 14秒
+
+
+
+
+
+
+
+正常。
+结果说明：
+查询成功，且没有发送任何运动或控制器切换命令。
+filter_registered: false、bounding_boxes: []：当前融合服务没有登记 4317 箱体过滤框。
+attachment_status: not_queryable...：SDK 没有查询 PNS 附着箱体的公开接口，因此不能仅凭本次结果判断是否存在旧 attachment。
+1.9.1 available 只是升级提示；当前继续使用已验证的 SDK 1.9.0，不要现在升级。
+下一步登记前，请先确认：当前箱子确实处于“抓取后上抬 100 mm、底盘沿自身 X 方向后退 50 mm”的记录姿态。确认后我再给你登记命令。
+
+
+14:03
+
+
+
+
+
+
+
+
+当前箱子确实处于“抓取后上抬 100 mm、底盘沿自身 X 方向后退 50 mm”的记录姿态
+
+
+
+
+
+
+14:04
+
+
+
+
+
+
+耗时 9秒
+
+
+
+
+
+
+
+条件已满足。现在只登记箱体模型，不会让底盘、机械臂、夹爪或升降机构运动，但会修改 fusion/PNS 导航状态。
+执行：
+/home/galbot/ie_lab/bin/s1-python \
+  /home/galbot/Lsy03/navigation_tests/s1_navigation_cli.py \
+  payload-register-4317
+确认预览中的参数后，输入：
+REGISTER_NAV_PAYLOAD_4317
+成功时应看到：
+"ok": true
+"outcome": "payload_registered"
+并且 add_bounding_box_return 与 attach_box_to_link_return 的首项均为 true。
+请把完整输出发给我，暂时不要执行导航。若附着失败，脚本会尝试自动移除刚添加的过滤框。
+
+
+14:04
+
+
+
+
+
+
+
+
+galbot@galbot-echo:~$ /home/galbot/ie_lab/bin/s1-python \
+  /home/galbot/Lsy03/navigation_tests/s1_navigation_cli.py
+  payload-register-4317
+
+REAL-ROBOT NAVIGATION PAYLOAD REGISTRATION PREVIEW
+  expected physical motion: none
+  mobile base/arms/grippers/lift: no motion commands
+  fusion filter: {'box_size': [0.6, 0.5, 0.375], 'box_pose': [0.7279888460008149, 0.010631593018877838, 0.6475703621456774, 0.007822533824083105, 0.002328962580697679, 0.702281742839225, 0.7118523285509012], 'box_tag': 4317, 'parent_link_name': 'base_link'}
+  PNS collision box: {'box_size': [0.4, 0.3, 0.175], 'box_pose': [0.7279888460008149, 0.010631593018877838, 0.6475703621456774, 0.007822533824083105, 0.002328962580697679, 0.702281742839225, 0.7118523285509012], 'box_tag': 4317, 'parent_link_name': 'base_link'}
+  ignored robot links: ['left_arm_end_effector_mount_link', 'right_arm_end_effector_mount_link', 'left_fingertip_end_effector_mount_link', 'right_fingertip_end_effector_mount_link']
+  validity boundary: recorded +100 mm lift and -50 mm base-X retreat pose only
+  state persists until payload-remove-4317 succeeds
+Type REGISTER_NAV_PAYLOAD_4317 to register this exact carried-crate profile: REGISTER_NAV_PAYLOAD_4317
+{
+  "mode": "guarded_payload_4317_register",
+  "motion_commands_sent": false,
+  "controller_switch_sent": false,
+  "bounding_box_changes_sent": true,
+  "attachment_changes_sent": true,
+  "filter_box": {
+    "box_size": [
+      0.6,
+      0.5,
+      0.375
+    ],
+    "box_pose": [
+      0.7279888460008149,
+      0.010631593018877838,
+      0.6475703621456774,
+      0.007822533824083105,
+      0.002328962580697679,
+      0.702281742839225,
+      0.7118523285509012
+    ],
+    "box_tag": 4317,
+    "parent_link_name": "base_link"
+  },
+  "collision_box": {
+    "box_size": [
+      0.4,
+      0.3,
+      0.175
+    ],
+    "box_pose": [
+      0.7279888460008149,
+      0.010631593018877838,
+      0.6475703621456774,
+      0.007822533824083105,
+      0.002328962580697679,
+      0.702281742839225,
+      0.7118523285509012
+    ],
+    "box_tag": 4317,
+    "parent_link_name": "base_link"
+  },
+  "ignore_collision_links": [
+    "left_arm_end_effector_mount_link",
+    "right_arm_end_effector_mount_link",
+    "left_fingertip_end_effector_mount_link",
+    "right_fingertip_end_effector_mount_link"
+  ],
+  "registration_retained_until_explicit_remove": true,
+  "before": {
+    "localized": true,
+    "current_pose_map": [
+      0.5779834985733032,
+      0.3887382745742798,
+      -0.007944359444081783,
+      0.0012525433339915326,
+      0.0007412511599225088,
+      -0.0221325717402847,
+      0.9997539852134002
+    ],
+    "navigation_status": {
+      "name": "UNKNOWN",
+      "value": 0,
+      "repr": "<NavigationTaskStatus.UNKNOWN: 0>"
+    },
+    "bounding_boxes": []
+  },
+  "add_bounding_box_return": [
+    true,
+    "SUCCESS"
+  ],
+  "bounding_boxes_after_add": [
+    {
+      "box_size": [
+        0.6000000238418579,
+        0.5,
+        0.375
+      ],
+      "box_pose": [
+        0.7279888391494751,
+        0.010631592944264412,
+        0.6475703716278076,
+        0.007822533138096333,
+        0.002328962553292513,
+        0.7022815942764282,
+        0.7118523716926575
+      ],
+      "box_tag": 4317,
+      "parent_link_name": "base_link"
+    }
+  ],
+  "attach_box_to_link_return": [
+    true,
+    "SUCCESS"
+  ],
+  "ok": true,
+  "outcome": "payload_registered"
+}
+galbot@galbot-echo:~$
+
+
+
+
+显示更多
+
+14:05
+
+
+
+
+
+
+耗时 42秒
+
+
+
+登记成功，结果正常：
+add_bounding_box: SUCCESS
+过滤框已回读到 tag 4317
+attach_box_to_link: SUCCESS
+没有发送运动或控制器切换命令
+现在验证过滤框是否跨 SDK 会话保持：
+/home/galbot/ie_lab/bin/s1-python \
+  /home/galbot/Lsy03/navigation_tests/s1_navigation_cli.py \
+  payload-status-4317
+预期看到：
+"filter_registered": true
+请把输出发给我。期间不要改变机械臂、夹爪或升降姿态，否则当前箱体相对 base_link 的记录位姿会失效。
+
+已编辑 knowledge_base.md+13-0查看更改撤销审核

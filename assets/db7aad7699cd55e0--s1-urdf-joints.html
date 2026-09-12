@@ -1,0 +1,100 @@
+<div id="s1-urdf-lab">
+  <style>
+    #s1-urdf-lab{font:13px/1.35 ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--foreground);display:grid;grid-template-columns:minmax(0,1fr) 270px;gap:14px;height:620px;min-height:520px}
+    #s1-urdf-lab *{box-sizing:border-box}
+    #s1-urdf-lab .stage{position:relative;min-width:0;border:1px solid var(--border);border-radius:12px;overflow:hidden;background:color-mix(in srgb,var(--background) 94%,var(--viz-series-1) 6%)}
+    #s1-urdf-lab canvas{display:block;width:100%;height:100%;touch-action:none}
+    #s1-urdf-lab .title{position:absolute;left:14px;top:12px;z-index:2;pointer-events:none}
+    #s1-urdf-lab .title b{display:block;font-size:15px;letter-spacing:.01em}
+    #s1-urdf-lab .title span{display:block;margin-top:3px;color:var(--muted-foreground);font-size:12px}
+    #s1-urdf-lab .legend{position:absolute;left:14px;bottom:12px;display:flex;gap:12px;flex-wrap:wrap;color:var(--muted-foreground);pointer-events:none}
+    #s1-urdf-lab .legend i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px}
+    #s1-urdf-lab .controls{min-width:0;overflow:auto;padding:2px 5px 2px 1px}
+    #s1-urdf-lab .toolbar{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:10px}
+    #s1-urdf-lab button{font:inherit;color:var(--foreground);background:var(--background);border:1px solid var(--border);border-radius:7px;padding:7px 8px;cursor:pointer}
+    #s1-urdf-lab button:hover{border-color:var(--viz-series-1)}
+    #s1-urdf-lab button[data-active="true"]{border-color:var(--viz-series-1);box-shadow:inset 0 0 0 1px var(--viz-series-1)}
+    #s1-urdf-lab .joint{padding:7px 0 8px;border-top:1px solid var(--border)}
+    #s1-urdf-lab .joint:first-of-type{border-top:0}
+    #s1-urdf-lab .joint-head{display:flex;justify-content:space-between;gap:8px;align-items:baseline;margin-bottom:4px}
+    #s1-urdf-lab .joint-head button{border:0;background:transparent;padding:0;text-align:left;font-weight:650}
+    #s1-urdf-lab .joint-head output{font-variant-numeric:tabular-nums;color:var(--muted-foreground);white-space:nowrap}
+    #s1-urdf-lab input[type=range]{width:100%;accent-color:var(--viz-series-1);cursor:pointer}
+    #s1-urdf-lab .range{display:flex;justify-content:space-between;color:var(--muted-foreground);font-size:10px;margin-top:-2px}
+    #s1-urdf-lab .hint{margin:8px 0 0;color:var(--muted-foreground);font-size:11px}
+    @media(max-width:680px){#s1-urdf-lab{grid-template-columns:1fr;height:auto}#s1-urdf-lab .stage{height:420px}#s1-urdf-lab .controls{max-height:none;padding-right:1px}#s1-urdf-lab .toolbar{grid-template-columns:repeat(3,1fr)}}
+  </style>
+  <div class="stage">
+    <div class="title"><b>S1 左臂 · URDF 运动学</b><span>拖动画面旋转 / 滚轮缩放 / 滑块改变关节</span></div>
+    <canvas aria-label="Galbot S1 左臂关节运动学三维视图"></canvas>
+    <div class="legend"><span><i style="background:var(--viz-series-1)"></i>左臂</span><span><i style="background:var(--viz-series-2)"></i>当前关节轴</span><span><i style="background:var(--muted-foreground)"></i>机身 / 右臂</span></div>
+  </div>
+  <div class="controls">
+    <div class="toolbar">
+      <button type="button" data-preset="zero">URDF 零位</button>
+      <button type="button" data-preset="snapshot">历史快照</button>
+      <button type="button" data-preset="demo">逐轴演示</button>
+    </div>
+    <div class="joints"></div>
+    <div class="hint">只做本地几何显示，不连接机器人。零位和历史快照都不是安全运动目标。</div>
+  </div>
+  <script type="module">
+    import * as THREE from 'https://esm.sh/three@0.169.0';
+    import {OrbitControls} from 'https://esm.sh/three@0.169.0/examples/jsm/controls/OrbitControls.js';
+    const root=document.getElementById('s1-urdf-lab'), canvas=root.querySelector('canvas'), stage=root.querySelector('.stage');
+    const css=n=>getComputedStyle(root).getPropertyValue(n).trim();
+    const renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true}); renderer.setPixelRatio(Math.min(devicePixelRatio,2)); renderer.outputColorSpace=THREE.SRGBColorSpace;
+    const scene=new THREE.Scene(), camera=new THREE.PerspectiveCamera(36,1,.01,20); camera.position.set(3.4,2.25,3.4);
+    const orbit=new OrbitControls(camera,canvas); orbit.target.set(0,1.3,0); orbit.enableDamping=true; orbit.minDistance=1.8; orbit.maxDistance=7;
+    scene.add(new THREE.HemisphereLight(0xffffff,0x536070,2.1)); const sun=new THREE.DirectionalLight(0xffffff,2.3);sun.position.set(3,5,4);scene.add(sun);
+    const world=new THREE.Group();scene.add(world);
+    const C={left:new THREE.Color(css('--viz-series-1')),axis:new THREE.Color(css('--viz-series-2')),body:new THREE.Color(css('--muted-foreground')),tip:new THREE.Color(css('--viz-series-3'))};
+    const mat=c=>new THREE.MeshStandardMaterial({color:c,roughness:.55,metalness:.12});
+    const bodyMat=mat(C.body), leftMat=mat(C.left), axisMat=mat(C.axis), tipMat=mat(C.tip);
+    const box=(s,p,m=bodyMat)=>{const o=new THREE.Mesh(new THREE.BoxGeometry(...s),m);o.position.set(...p);world.add(o);return o};
+    const cyl=(r,h,p,m=bodyMat)=>{const o=new THREE.Mesh(new THREE.CylinderGeometry(r,r,h,24),m);o.position.set(...p);world.add(o);return o};
+    box([.67,.26,.57],[0,.30,0]); cyl(.19,.76,[0,.80,0]); box([.39,.36,.37],[0,1.28,0]); box([.25,.25,.23],[.07,1.63,0]);
+    [[.27,.13,.27],[-.27,.13,.27],[.27,.13,-.27],[-.27,.13,-.27]].forEach(p=>cyl(.075,.12,p));
+    const grid=new THREE.GridHelper(3.4,17,css('--border'),css('--border'));grid.material.transparent=true;grid.material.opacity=.55;world.add(grid);
+    const joints=[
+      {n:'joint1',label:'肩部第 1 轴',lo:-2.94092,hi:2.94092,xyz:[0,0,0],rpy:[0,0,.5236]},
+      {n:'joint2',label:'肩部第 2 轴',lo:-1.98082,hi:1.71912,xyz:[0,0,0],rpy:[1.5708,0,3.141585]},
+      {n:'joint3',label:'上臂姿态轴',lo:-2.92342,hi:2.92342,xyz:[0,.49,0],rpy:[1.5708,1.0472,3.141585]},
+      {n:'joint4',label:'主要肘部轴',lo:-2.5918,hi:1.8938,xyz:[0,0,0],rpy:[-1.5708,0,0]},
+      {n:'joint5',label:'前臂姿态轴',lo:-2.92342,hi:2.92342,xyz:[0,-.4307,.00006757],rpy:[-1.5708,0,-3.141585]},
+      {n:'joint6',label:'手腕弯曲轴',lo:-.75922,hi:.75922,xyz:[0,0,0],rpy:[1.570793,-1.570793,3.141593]},
+      {n:'joint7',label:'末端旋转轴',lo:-1.56202,hi:1.56202,xyz:[0,0,0],rpy:[-1.5708,0,-3.141585]}
+    ];
+    const q=joints.map(()=>0), snapshot=[.778807,-1.784247,-.236796,-1.689812,-.229330,-.277627,-.748966]; let selected=3, rafDemo=0;
+    const controls=root.querySelector('.joints');
+    joints.forEach((j,i)=>{const el=document.createElement('div');el.className='joint';el.innerHTML=`<div class="joint-head"><button type="button" data-joint="${i}">${i+1}. ${j.label}</button><output>0.000 rad · 0.0°</output></div><input aria-label="${j.n}" type="range" min="${j.lo}" max="${j.hi}" step="0.001" value="0"><div class="range"><span>${j.lo.toFixed(2)}</span><span>${j.hi.toFixed(2)} rad</span></div>`;controls.appendChild(el);const input=el.querySelector('input'),out=el.querySelector('output'); input.addEventListener('input',()=>{stopDemo();q[i]=+input.value;selected=i;sync();});el.querySelector('button').addEventListener('click',()=>{selected=i;sync();});j.input=input;j.out=out;});
+    function rx(a){const c=Math.cos(a),s=Math.sin(a);return new THREE.Matrix4().set(1,0,0,0,0,c,-s,0,0,s,c,0,0,0,0,1)}
+    function ry(a){const c=Math.cos(a),s=Math.sin(a);return new THREE.Matrix4().set(c,0,s,0,0,1,0,0,-s,0,c,0,0,0,0,1)}
+    function rz(a){const c=Math.cos(a),s=Math.sin(a);return new THREE.Matrix4().set(c,-s,0,0,s,c,0,0,0,0,1,0,0,0,0,1)}
+    function trans(v){return new THREE.Matrix4().makeTranslation(...v)}
+    function origin(j){return trans(j.xyz).multiply(rz(j.rpy[2])).multiply(ry(j.rpy[1])).multiply(rx(j.rpy[0]))}
+    function display(v){return new THREE.Vector3(v.x,v.z,-v.y)}
+    function urdfPose(qv,mirror=false){
+      let M=trans([.0985,mirror?-.28025:.28025,1.445]).multiply(rx(mirror?-1.309:1.309)).multiply(rz(-3.141585)); const ps=[],axes=[];
+      joints.forEach((j,i)=>{const jj={...j,rpy:[j.rpy[0]*(mirror?-1:1),j.rpy[1],j.rpy[2]*(mirror?-1:1)],xyz:[j.xyz[0],j.xyz[1]*(mirror?-1:1),j.xyz[2]]};M=M.clone().multiply(origin(jj));ps.push(display(new THREE.Vector3().setFromMatrixPosition(M)));const z=new THREE.Vector3(0,0,1).transformDirection(M);axes.push(display(z).normalize());M=M.clone().multiply(rz(qv[i]*(mirror?-1:1)));});
+      const tip=M.clone().multiply(trans([-.18,0,0]));ps.push(display(new THREE.Vector3().setFromMatrixPosition(tip)));return {ps,axes};
+    }
+    const armGroup=new THREE.Group();world.add(armGroup);
+    function segment(a,b,r,m){const d=b.clone().sub(a),o=new THREE.Mesh(new THREE.CylinderGeometry(r,r,d.length(),18),m);o.position.copy(a).add(b).multiplyScalar(.5);o.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),d.clone().normalize());armGroup.add(o)}
+    function drawArm(pose,isLeft){
+      const key=[0,2,4,7];for(let k=0;k<key.length-1;k++)segment(pose.ps[key[k]],pose.ps[key[k+1]],k===0?.055:.045,isLeft?leftMat:bodyMat);
+      pose.ps.slice(0,7).forEach((p,i)=>{const s=new THREE.Mesh(new THREE.SphereGeometry(i===selected&&isLeft?.067:.048,20,12),i===selected&&isLeft?axisMat:(isLeft?leftMat:bodyMat));s.position.copy(p);armGroup.add(s)});
+      if(isLeft){const a=pose.ps[selected],b=a.clone().add(pose.axes[selected].clone().multiplyScalar(.25));segment(a,b,.012,axisMat);const cone=new THREE.Mesh(new THREE.ConeGeometry(.035,.10,18),axisMat);cone.position.copy(b);cone.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),pose.axes[selected]);armGroup.add(cone);const tip=new THREE.Mesh(new THREE.SphereGeometry(.06,20,12),tipMat);tip.position.copy(pose.ps[7]);armGroup.add(tip);}
+    }
+    function sync(){
+      joints.forEach((j,i)=>{j.input.value=q[i];j.out.textContent=`${q[i].toFixed(3)} rad · ${(q[i]*180/Math.PI).toFixed(1)}°`;j.out.parentElement.querySelector('button').style.color=i===selected?'var(--viz-series-2)':'';});
+      armGroup.clear();drawArm(urdfPose(q,false),true);drawArm(urdfPose(joints.map(()=>0),true),false);
+    }
+    function setPose(v){v.forEach((x,i)=>q[i]=Math.max(joints[i].lo,Math.min(joints[i].hi,x)));sync()}
+    function stopDemo(){cancelAnimationFrame(rafDemo);rafDemo=0;root.querySelector('[data-preset=demo]').dataset.active='false'}
+    function demo(){stopDemo();root.querySelector('[data-preset=demo]').dataset.active='true';const start=performance.now();function tick(t){const sec=(t-start)/1000,idx=Math.floor(sec/2.8)%7,phase=(sec%2.8)/2.8;selected=idx;for(let i=0;i<7;i++)q[i]=0;const j=joints[idx],amp=Math.min(1.0,(j.hi-j.lo)*.24);q[idx]=Math.sin(phase*Math.PI*2)*amp;sync();rafDemo=requestAnimationFrame(tick)}rafDemo=requestAnimationFrame(tick)}
+    root.querySelectorAll('[data-preset]').forEach(b=>b.addEventListener('click',()=>{if(b.dataset.preset==='zero'){stopDemo();setPose(q.map(()=>0))}else if(b.dataset.preset==='snapshot'){stopDemo();setPose(snapshot)}else demo()}));
+    const ro=new ResizeObserver(()=>{const w=stage.clientWidth,h=stage.clientHeight;renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix()});ro.observe(stage);
+    function animate(){orbit.update();renderer.render(scene,camera);requestAnimationFrame(animate)}sync();animate();
+  </script>
+</div>

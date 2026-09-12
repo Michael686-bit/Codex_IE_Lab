@@ -1,0 +1,63 @@
+publisher]: got segment left_arm_camera_link
+[robot_state_publisher-1] [INFO] [1788245663.277998216] [live_lidar_robot_state_publisher]: got segment left_arm_end_effector_mount_link
+[robot_state_publisher-1] [INFO] [1788245663.277999910] [live_lidar_robot_state_publisher]: got segment left_arm_link1
+[robot_state_publisher-1] [INFO] [1788245663.278001591] [live_lidar_robot_state_publisher]: got segment left_arm_link2
+[robot_state_publisher-1] [INFO] [1788245663.278003228] [live_lidar_robot_state_publisher]: got segment left_arm_link3
+[robot_state_publisher-1] [INFO] [1788245663.278004795] [live_lidar_robot_state_publisher]: got segment left_arm_link4
+[robot_state_publisher-1] [INFO] [1788245663.278006317] [live_lidar_robot_state_publisher]: got segment left_arm_link5
+[robot_state_publisher-1] [INFO] [1788245663.278007833] [live_lidar_robot_state_publisher]: got segment left_arm_link6
+[robot_state_publisher-1] [INFO] [1788245663.278009793] [live_lidar_robot_state_publisher]: got segment left_arm_link7
+[robot_state_publisher-1] [INFO] [1788245663.278011355] [live_lidar_robot_state_publisher]: got segment left_fixed_contact_link
+[robot_state_publisher-1] [INFO] [1788245663.278013019] [live_lidar_robot_state_publisher]: got segment left_gripper_base_link
+[robot_state_publisher-1] [INFO] [1788245663.278014629] [live_lidar_robot_state_publisher]: got segment left_passive_link
+[robot_state_publisher-1] [INFO] [1788245663.278016334] [live_lidar_robot_state_publisher]: got segment omni_chassis_base_link
+[robot_state_publisher-1] [INFO] [1788245663.278017991] [live_lidar_robot_state_publisher]: got segment omni_chassis_column_mount_link
+[robot_state_publisher-1] [INFO] [1788245663.278019605] [live_lidar_robot_state_publisher]: got segment right_active_contact_link
+[robot_state_publisher-1] [INFO] [1788245663.278021201] [live_lidar_robot_state_publisher]: got segment right_active_link1
+[robot_state_publisher-1] [INFO] [1788245663.278022837] [live_lidar_robot_state_publisher]: got segment right_active_link2
+[robot_state_publisher-1] [INFO] [1788245663.278024421] [live_lidar_robot_state_publisher]: got segment right_adapter_flange_link
+[robot_state_publisher-1] [INFO] [1788245663.278026009] [live_lidar_robot_state_publisher]: got segment right_arm_base_link
+[robot_state_publisher-1] [INFO] [1788245663.278027688] [live_lidar_robot_state_publisher]: got segment right_arm_camera_link
+[robot_state_publisher-1] [INFO] [1788245663.278029305] [live_lidar_robot_state_publisher]: got segment right_arm_end_effector_mount_link
+[robot_state_publisher-1] [INFO] [1788245663.278030929] [live_lidar_robot_state_publisher]: got segment right_arm_link1
+[robot_state_publisher-1] [INFO] [1788245663.278032609] [live_lidar_robot_state_publisher]: got segment right_arm_link2
+[robot_state_publisher-1] [INFO] [1788245663.278034173] [live_lidar_robot_state_publisher]: got segment right_arm_link3
+[robot_state_publisher-1] [INFO] [1788245663.278035749] [live_lidar_robot_state_publisher]: got segment right_arm_link4
+[robot_state_publisher-1] [INFO] [1788245663.278037347] [live_lidar_robot_state_publisher]: got segment right_arm_link5
+[robot_state_publisher-1] [INFO] [1788245663.278038897] [live_lidar_robot_state_publisher]: got segment right_arm_link6
+[robot_state_publisher-1] [INFO] [1788245663.278040597] [live_lidar_robot_state_publisher]: got segment right_arm_link7
+[robot_state_publisher-1] [INFO] [1788245663.278042291] [live_lidar_robot_state_publisher]: got segment right_fixed_contact_link
+[robot_state_publisher-1] [INFO] [1788245663.278044031] [live_lidar_robot_state_publisher]: got segment right_gripper_base_link
+[robot_state_publisher-1] [INFO] [1788245663.278045591] [live_lidar_robot_state_publisher]: got segment right_passive_link
+[robot_state_publisher-1] [INFO] [1788245663.278047198] [live_lidar_robot_state_publisher]: got segment torso_base_link
+[robot_state_publisher-1] [INFO] [1788245663.278061847] [live_lidar_robot_state_publisher]: got segment torso_head_mount_link
+[robot_state_publisher-1] [INFO] [1788245663.278063671] [live_lidar_robot_state_publisher]: got segment torso_left_arm_mount_link
+[robot_state_publisher-1] [INFO] [1788245663.278065255] [live_lidar_robot_state_publisher]: got segment torso_lift_link1
+[robot_state_publisher-1] [INFO] [1788245663.278066901] [live_lidar_robot_state_publisher]: got segment torso_right_arm_mount_link
+[robot_state_publisher-1] [INFO] [1788245663.278068472] [live_lidar_robot_state_publisher]: got segment wheel_driving_link1
+[robot_state_publisher-1] [INFO] [1788245663.278070210] [live_lidar_robot_state_publisher]: got segment wheel_driving_link2
+[robot_state_publisher-1] [INFO] [1788245663.278071787] [live_lidar_robot_state_publisher]: got segment wheel_driving_link3
+[robot_state_publisher-1] [INFO] [1788245663.278073389] [live_lidar_robot_state_publisher]: got segment wheel_driving_link4
+[robot_state_publisher-1] [INFO] [1788245663.278075020] [live_lidar_robot_state_publisher]: got segment wheel_steering_link1
+[robot_state_publisher-1] [INFO] [1788245663.278076658] [live_lidar_robot_state_publisher]: got segment wheel_steering_link2
+[robot_state_publisher-1] [INFO] [1788245663.278078251] [live_lidar_robot_state_publisher]: got segment wheel_steering_link3
+[robot_state_publisher-1] [INFO] [1788245663.278079933] [live_lidar_robot_state_publisher]: got segment wheel_steering_link4
+[carried_box_markers.py-3] [INFO] [1788245663.433713044] [carried_4317_box_markers]: Publishing profile 4317_left_mount_20260831_193312_191: frame-locked 4317 physical/filter boxes in left_arm_end_effector_mount_link; markers follow the live arm TF
+[live_lidar_ssh_bridge.py-2] Traceback (most recent call last):
+[live_lidar_ssh_bridge.py-2]   File "/home/lsy03/文档/ChatGPT/S1/experiments/20260822_s1_rviz_demo/ros2_ws/install/s1_rviz_demo/lib/s1_rviz_demo/live_lidar_ssh_bridge.py", line 300, in <module>
+[live_lidar_ssh_bridge.py-2]     main()
+[live_lidar_ssh_bridge.py-2]   File "/home/lsy03/文档/ChatGPT/S1/experiments/20260822_s1_rviz_demo/ros2_ws/install/s1_rviz_demo/lib/s1_rviz_demo/live_lidar_ssh_bridge.py", line 285, in main
+[live_lidar_ssh_bridge.py-2]     node = LiveLidarSshBridge()
+[live_lidar_ssh_bridge.py-2]   File "/home/lsy03/文档/ChatGPT/S1/experiments/20260822_s1_rviz_demo/ros2_ws/install/s1_rviz_demo/lib/s1_rviz_demo/live_lidar_ssh_bridge.py", line 89, in __init__
+[live_lidar_ssh_bridge.py-2]     raise FileNotFoundError(f"SSH ControlPath does not exist: {socket_path}")
+[live_lidar_ssh_bridge.py-2] FileNotFoundError: SSH ControlPath does not exist: /tmp/s1_codex_mux_20260831_lidar
+[ERROR] [live_lidar_ssh_bridge.py-2]: process has died [pid 634080, exit code 1, cmd '/home/lsy03/文档/ChatGPT/S1/experiments/20260822_s1_rviz_demo/ros2_ws/install/s1_rviz_demo/lib/s1_rviz_demo/live_lidar_ssh_bridge.py --ros-args -r __node:=live_lidar_ssh_bridge --params-file /tmp/launch_params_7iqqndp1'].
+[rviz2-4] [INFO] [1788245663.664258875] [rviz2]: Stereo is NOT SUPPORTED
+[rviz2-4] [INFO] [1788245663.664301885] [rviz2]: OpenGl version: 4.6 (GLSL 4.6)
+[rviz2-4] [INFO] [1788245663.687855204] [rviz2]: Stereo is NOT SUPPORTED
+[rviz2-4] [ERROR] [1788245664.052809150] [rviz2]: The link left_active_link2 is has unrealistic inertia, so the equivalent inertia box will not be shown.
+[rviz2-4]
+[rviz2-4] [ERROR] [1788245664.239137358] [rviz2]: The link right_active_link2 is has unrealistic inertia, so the equivalent inertia box will not be shown.
+[rviz2-4]
+[rviz2-4] [ERROR] [1788245664.408590317] [rviz2]: The link torso_lift_link1 is has unrealistic inertia, so the equivalent inertia box will not be shown.
+[rviz2-4]

@@ -1,0 +1,169 @@
+b/systemd/system/docker.service.
+Created symlink /etc/systemd/system/sockets.target.wants/docker.socket → /lib/systemd/system/docker.socket.
+正在处理用于 man-db (2.10.2-1) 的触发器 ...
+● docker.service - Docker Application Container Engine
+     Loaded: loaded (/lib/systemd/system/docker.service; enabled; vendor preset: enabled)
+     Active: active (running) since Fri 2026-09-04 09:42:34 CST; 2s ago
+TriggeredBy: ● docker.socket
+       Docs: https://docs.docker.com
+   Main PID: 749272 (dockerd)
+      Tasks: 20
+     Memory: 26.1M
+        CPU: 428ms
+     CGroup: /system.slice/docker.service
+             └─749272 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/co…
+
+9月 04 09:42:33 lsy03-System-Product-Name dockerd[749272]: time="2026-09-04T…."
+9月 04 09:42:33 lsy03-System-Product-Name dockerd[749272]: time="2026-09-04T…1"
+9月 04 09:42:33 lsy03-System-Product-Name dockerd[749272]: time="2026-09-04T…1"
+9月 04 09:42:34 lsy03-System-Product-Name dockerd[749272]: time="2026-09-04T…."
+9月 04 09:42:34 lsy03-System-Product-Name dockerd[749272]: time="2026-09-04T….3
+9月 04 09:42:34 lsy03-System-Product-Name dockerd[749272]: time="2026-09-04T…t"
+9月 04 09:42:34 lsy03-System-Product-Name dockerd[749272]: time="2026-09-04T…n"
+9月 04 09:42:34 lsy03-System-Product-Name dockerd[749272]: time="2026-09-04T…n"
+9月 04 09:42:34 lsy03-System-Product-Name dockerd[749272]: time="2026-09-04T…k"
+9月 04 09:42:34 lsy03-System-Product-Name systemd[1]: Started Docker Applica…e.
+Hint: Some lines were ellipsized, use -l to show in full.
+lsy03@lsy03-System-Product-Name:~$ sudo docker version
+Client:
+ Version:           29.1.3
+ API version:       1.52
+ Go version:        go1.24.4
+ Git commit:        29.1.3-0ubuntu3~22.04.2
+ Built:             Wed Apr 29 22:18:59 2026
+ OS/Arch:           linux/amd64
+ Context:           default
+
+Server:
+ Engine:
+  Version:          29.1.3
+  API version:      1.52 (minimum version 1.44)
+  Go version:       go1.24.4
+  Git commit:       29.1.3-0ubuntu3~22.04.2
+  Built:            Wed Apr 29 22:18:59 2026
+  OS/Arch:          linux/amd64
+  Experimental:     false
+ containerd:
+  Version:          2.2.1
+  GitCommit:
+ runc:
+  Version:          1.3.4-0ubuntu1~22.04.1
+  GitCommit:
+ docker-init:
+  Version:          0.19.0
+  GitCommit:
+lsy03@lsy03-System-Product-Name:~$ sudo usermod -aG docker "$USER"
+newgrp docker
+lsy03@lsy03-System-Product-Name:~$ docker version
+docker info
+Client:
+ Version:           29.1.3
+ API version:       1.52
+ Go version:        go1.24.4
+ Git commit:        29.1.3-0ubuntu3~22.04.2
+ Built:             Wed Apr 29 22:18:59 2026
+ OS/Arch:           linux/amd64
+ Context:           default
+
+Server:
+ Engine:
+  Version:          29.1.3
+  API version:      1.52 (minimum version 1.44)
+  Go version:       go1.24.4
+  Git commit:       29.1.3-0ubuntu3~22.04.2
+  Built:            Wed Apr 29 22:18:59 2026
+  OS/Arch:          linux/amd64
+  Experimental:     false
+ containerd:
+  Version:          2.2.1
+  GitCommit:
+ runc:
+  Version:          1.3.4-0ubuntu1~22.04.1
+  GitCommit:
+ docker-init:
+  Version:          0.19.0
+  GitCommit:
+Client:
+ Version:    29.1.3
+ Context:    default
+ Debug Mode: false
+ Plugins:
+  trust: Manage trust on Docker images (Docker Inc.)
+    Version:  29.1.3
+    Path:     /usr/libexec/docker/cli-plugins/docker-trust
+
+Server:
+ Containers: 0
+  Running: 0
+  Paused: 0
+  Stopped: 0
+ Images: 0
+ Server Version: 29.1.3
+ Storage Driver: overlayfs
+  driver-type: io.containerd.snapshotter.v1
+ Logging Driver: json-file
+ Cgroup Driver: systemd
+ Cgroup Version: 2
+ Plugins:
+  Volume: local
+  Network: bridge host ipvlan macvlan null overlay
+  Log: awslogs fluentd gcplogs gelf journald json-file local splunk syslog
+ CDI spec directories:
+  /etc/cdi
+  /var/run/cdi
+ Swarm: inactive
+ Runtimes: io.containerd.runc.v2 runc
+ Default Runtime: runc
+ Init Binary: docker-init
+ containerd version:
+ runc version:
+ init version:
+ Security Options:
+  apparmor
+  seccomp
+   Profile: builtin
+  cgroupns
+ Kernel Version: 6.5.0-18-generic
+ Operating System: Ubuntu 22.04.4 LTS
+ OSType: linux
+ Architecture: x86_64
+ CPUs: 32
+ Total Memory: 125.5GiB
+ Name: lsy03-System-Product-Name
+ ID: c4ebedfd-b917-44e3-b376-6615c156ac15
+ Docker Root Dir: /var/lib/docker
+ Debug Mode: false
+ Experimental: false
+ Insecure Registries:
+  127.0.0.0/8
+  ::1/128
+ Live Restore Enabled: false
+ Firewall Backend: iptables
+
+lsy03@lsy03-System-Product-Name:~$ curl -fsSL \
+  https://nvidia.github.io/libnvidia-container/gpgkey \
+  -o /tmp/nvidia-container-toolkit.gpgkey
+lsy03@lsy03-System-Product-Name:~$ sudo gpg --dearmor --yes \
+  -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg \
+  /tmp/nvidia-container-toolkit.gpgkey
+lsy03@lsy03-System-Product-Name:~$ curl -fsSL \
+  https://nvidia.github.io/libnvidia-container/stable/deb/nvidia-container-toolkit.list \
+  -o /tmp/nvidia-container-toolkit.list
+lsy03@lsy03-System-Product-Name:~$ sed 's#deb https://#deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://#g' \
+  /tmp/nvidia-container-toolkit.list |
+  sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list >/dev/null
+
+sudo apt-get update
+sudo apt-get install -y nvidia-container-toolkit
+正在读取软件包列表... 完成
+E: 无法获得锁 /var/lib/apt/lists/lock。锁正由进程 474542（apt-get）持有
+N: 请注意，直接移除锁文件不一定是合适的解决方案，且可能损坏您的系统。
+E: 无法对目录 /var/lib/apt/lists/ 加锁
+正在读取软件包列表... 完成
+正在分析软件包的依赖关系树... 完成
+正在读取状态信息... 完成
+E: 无法定位软件包 nvidia-container-toolkit
+lsy03@lsy03-System-Product-Name:~$ sudo nvidia-ctk runtime configure --runtime=docker
+sudo systemctl restart docker
+sudo: nvidia-ctk：找不到命令
+lsy03@lsy03-System-Product-Name:~$

@@ -1,0 +1,112 @@
+<div id="box-pose-difference" aria-label="D01箱体中心与FDP差异散点图">
+  <style>
+    #box-pose-difference {
+      --background: light-dark(#ffffff, #17191d);
+      --foreground: light-dark(#20242a, #f2f4f7);
+      --muted-foreground: light-dark(#5f6873, #aeb7c2);
+      --border: light-dark(#cfd5dc, #454d57);
+      --viz-series-1: light-dark(#1967d2, #79aefc);
+      --viz-series-2: light-dark(#d45f00, #ff9f58);
+      --viz-series-3: light-dark(#16834b, #69d49a);
+      --viz-series-4: light-dark(#8a3ffc, #ba9aff);
+      --viz-series-5: light-dark(#ad285f, #f28db6);
+      color: var(--foreground);
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      width: 100%;
+      max-width: 1024px;
+      margin: 0 auto;
+    }
+    #box-pose-difference .bd-title { font-size: 16px; font-weight: 500; margin: 0 0 10px; }
+    #box-pose-difference .bd-note { color: var(--muted-foreground); font-size: 12px; margin: 0 0 8px; }
+    #box-pose-difference .bd-grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: 20px; }
+    #box-pose-difference svg { width: 100%; height: auto; overflow: visible; }
+    #box-pose-difference .frame { fill: none; stroke: var(--border); stroke-width: 1; }
+    #box-pose-difference .gridline { stroke: var(--border); stroke-width: 1; opacity: .42; }
+    #box-pose-difference .axis { stroke: var(--foreground); stroke-width: 1.2; }
+    #box-pose-difference .tick, #box-pose-difference .axis-title, #box-pose-difference .panel-title { fill: var(--foreground); font-size: 12px; }
+    #box-pose-difference .tick { fill: var(--muted-foreground); font-size: 11px; }
+    #box-pose-difference .panel-title { font-size: 13px; font-weight: 500; }
+    #box-pose-difference .zero { stroke: var(--foreground); stroke-width: 1; opacity: .65; stroke-dasharray: 4 4; }
+    #box-pose-difference .reference { fill: var(--viz-series-1); stroke: var(--background); stroke-width: 2; }
+    #box-pose-difference .point { stroke: var(--background); stroke-width: 1.5; }
+    #box-pose-difference .label { fill: var(--foreground); font-size: 11px; }
+    #box-pose-difference .arrow { fill: none; stroke-width: 1.2; opacity: .72; }
+    #box-pose-difference .legend { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 2px; }
+    #box-pose-difference .legend-item { color: var(--foreground); font-size: 12px; display: inline-flex; align-items: center; gap: 5px; }
+    #box-pose-difference .swatch { width: 9px; height: 9px; border-radius: 50%; display: inline-block; }
+    @media (max-width: 640px) {
+      #box-pose-difference .bd-grid { grid-template-columns: 1fr; gap: 12px; }
+      #box-pose-difference .label { font-size: 10px; }
+    }
+  </style>
+  <h3 class="bd-title">D01 箱体中心相对 FDP 的位置差异</h3>
+  <p class="bd-note">单位：mm；坐标为“实验候选 − FDP”。FDP 是对照结果，不是独立真值。每个候选仍有对应的拒绝原因。</p>
+  <div class="bd-grid">
+    <svg viewBox="0 0 610 430" role="img" aria-label="箱体中心XY差异散点图">
+      <title>箱体中心 XY 差异</title>
+      <desc>FDP位于原点，其他点表示四种实验几何候选相对FDP的X和Y平移差，箭头从FDP指向候选。</desc>
+      <text class="panel-title" x="305" y="20" text-anchor="middle">箱体中心 XY 差异</text>
+      <rect class="frame" data-chart-frame x="70" y="40" width="480" height="330"/>
+      <g aria-hidden="true">
+        <line class="gridline" x1="70" y1="205" x2="550" y2="205"/>
+        <line class="gridline" x1="310" y1="40" x2="310" y2="370"/>
+        <line class="zero" x1="310" y1="40" x2="310" y2="370"/>
+        <line class="zero" x1="70" y1="205" x2="550" y2="205"/>
+        <line class="axis" x1="70" y1="370" x2="550" y2="370"/>
+        <line class="axis" x1="70" y1="40" x2="70" y2="370"/>
+      </g>
+      <g class="tick" aria-hidden="true">
+        <text x="70" y="388" text-anchor="middle">−25</text><text x="190" y="388" text-anchor="middle">−12.5</text><text x="310" y="388" text-anchor="middle">0</text><text x="430" y="388" text-anchor="middle">12.5</text><text x="550" y="388" text-anchor="middle">25</text>
+        <text x="60" y="374" text-anchor="end">−25</text><text x="60" y="291" text-anchor="end">−12.5</text><text x="60" y="209" text-anchor="end">0</text><text x="60" y="126" text-anchor="end">12.5</text><text x="60" y="44" text-anchor="end">25</text>
+      </g>
+      <text class="axis-title" data-axis="x" x="310" y="418" text-anchor="middle">ΔX (mm)</text>
+      <text class="axis-title" data-axis="y" transform="translate(16 205) rotate(-90)" text-anchor="middle">ΔY (mm)</text>
+      <g aria-hidden="true">
+        <line class="arrow" style="stroke:var(--viz-series-2)" x1="310" y1="205" x2="348.2" y2="207.0"/>
+        <line class="arrow" style="stroke:var(--viz-series-3)" x1="310" y1="205" x2="289.5" y2="313.0"/>
+        <line class="arrow" style="stroke:var(--viz-series-4)" x1="310" y1="205" x2="368.3" y2="328.2"/>
+        <line class="arrow" style="stroke:var(--viz-series-5)" x1="310" y1="205" x2="370.1" y2="326.5"/>
+      </g>
+      <circle class="reference" data-chart-hit cx="310" cy="205" r="6" data-tooltip="FDP 对照：ΔX=0.0 mm，ΔY=0.0 mm"/>
+      <circle class="point" data-chart-hit cx="348.2" cy="207.0" r="5" style="fill:var(--viz-series-2)" data-tooltip="箱口矩形：ΔX=+3.98 mm，ΔY=−0.31 mm"/>
+      <circle class="point" data-chart-hit cx="289.5" cy="313.0" r="5" style="fill:var(--viz-series-3)" data-tooltip="箱壁中心：ΔX=−2.14 mm，ΔY=−16.37 mm"/>
+      <circle class="point" data-chart-hit cx="368.3" cy="328.2" r="5" style="fill:var(--viz-series-4)" data-tooltip="多平面 v3：ΔX=+6.07 mm，ΔY=−18.63 mm"/>
+      <circle class="point" data-chart-hit cx="370.1" cy="326.5" r="5" style="fill:var(--viz-series-5)" data-tooltip="多平面 v4：ΔX=+6.26 mm，ΔY=−18.41 mm"/>
+      <text class="label" x="319" y="195">FDP</text>
+      <text class="label" x="357" y="198">箱口</text>
+      <text class="label" x="255" y="325">箱壁</text>
+      <text class="label" x="378" y="343">v3</text>
+      <text class="label" x="379" y="316">v4</text>
+    </svg>
+    <svg viewBox="0 0 450 430" role="img" aria-label="XY中心距离与yaw差散点图">
+      <title>中心距离与 yaw 差</title>
+      <desc>横轴是箱体中心XY距离，纵轴是姿态yaw对称差；FDP在原点。</desc>
+      <text class="panel-title" x="225" y="20" text-anchor="middle">平移差 vs yaw 差</text>
+      <rect class="frame" data-chart-frame x="66" y="40" width="340" height="330"/>
+      <g aria-hidden="true">
+        <line class="gridline" x1="66" y1="205" x2="406" y2="205"/><line class="gridline" x1="236" y1="40" x2="236" y2="370"/>
+        <line class="zero" x1="236" y1="40" x2="236" y2="370"/><line class="zero" x1="66" y1="370" x2="406" y2="370"/>
+        <line class="axis" x1="66" y1="370" x2="406" y2="370"/><line class="axis" x1="66" y1="40" x2="66" y2="370"/>
+      </g>
+      <g class="tick" aria-hidden="true">
+        <text x="66" y="388" text-anchor="middle">0</text><text x="236" y="388" text-anchor="middle">10</text><text x="406" y="388" text-anchor="middle">20</text>
+        <text x="58" y="374" text-anchor="end">0</text><text x="58" y="291" text-anchor="end">1</text><text x="58" y="209" text-anchor="end">2</text><text x="58" y="126" text-anchor="end">3</text><text x="58" y="44" text-anchor="end">4</text>
+      </g>
+      <text class="axis-title" data-axis="x" x="236" y="418" text-anchor="middle">XY 中心距离 (mm)</text>
+      <text class="axis-title" data-axis="y" transform="translate(16 205) rotate(-90)" text-anchor="middle">yaw 对称差 (°)</text>
+      <circle class="reference" data-chart-hit cx="66" cy="370" r="6" data-tooltip="FDP 对照：XY=0.00 mm，yaw=0.00°"/>
+      <circle class="point" data-chart-hit cx="99.8" cy="214" r="5" style="fill:var(--viz-series-2)" data-tooltip="箱口矩形：XY=3.99 mm，yaw=1.89°"/>
+      <circle class="point" data-chart-hit cx="346.6" cy="343.1" r="5" style="fill:var(--viz-series-3)" data-tooltip="箱壁中心：XY=16.51 mm，yaw=0.33°"/>
+      <circle class="point" data-chart-hit cx="402.5" cy="210.8" r="5" style="fill:var(--viz-series-4)" data-tooltip="多平面 v3：XY=19.59 mm，yaw=1.93°"/>
+      <circle class="point" data-chart-hit cx="402.5" cy="308.3" r="5" style="fill:var(--viz-series-5)" data-tooltip="多平面 v4：XY=19.44 mm，yaw=0.75°"/>
+      <text class="label" x="78" y="360">FDP</text><text class="label" x="105" y="207">箱口</text><text class="label" x="350" y="357">箱壁</text><text class="label" x="334" y="203">v3</text><text class="label" x="333" y="302">v4</text>
+    </svg>
+  </div>
+  <div class="legend" aria-label="图例">
+    <span class="legend-item"><span class="swatch" style="background:var(--viz-series-1)"></span>FDP 对照</span>
+    <span class="legend-item"><span class="swatch" style="background:var(--viz-series-2)"></span>箱口矩形</span>
+    <span class="legend-item"><span class="swatch" style="background:var(--viz-series-3)"></span>箱壁中心</span>
+    <span class="legend-item"><span class="swatch" style="background:var(--viz-series-4)"></span>多平面 v3</span>
+    <span class="legend-item"><span class="swatch" style="background:var(--viz-series-5)"></span>多平面 v4</span>
+  </div>
+</div>

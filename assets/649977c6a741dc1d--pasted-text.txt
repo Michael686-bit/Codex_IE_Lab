@@ -1,0 +1,803 @@
+galbot@galbot-echo:~/ie_lab/projects/s1_continuous_destack/deploy$ ./run.sh dev-scenario mode10 dev_mode00_202609091020_note02
+development RUN_ID: dev_mode00_202609091020_note02
+control lock acquired safely: /home/galbot/ie_lab/control.lock (operator=codex-assisted-user)
+development run/source: dev_mode00_202609091020_note02 d13954905d557f8d45b28470e13be38164de2b7c76f5dc77e7e6204a81081e09
+SingletonLogger auto-initialized successfully for project: irmv_core
+[2026-09-09 02:21:05.502] [debug] [7] [algorithm_factory.h:91] [Register] RALPinocchio registered successfully!
+[2026-09-09 02:21:05.502] [debug] [7] [algorithm_factory.h:91] [Register] SerialKinematicsScrewQPName registered successfully!
+[2026-09-09 02:21:05.502] [debug] [7] [algorithm_factory.h:91] [Register] SerialKinematicsHumanoid registered successfully!
+[2026-09-09 02:21:05.502] [debug] [7] [algorithm_factory.h:91] [Register] SerialKinematicsPinocchioName registered successfully!
+[2026-09-09 02:21:05.502] [debug] [7] [algorithm_factory.h:91] [Register] SerialKinematicsScrewLMName registered successfully!
+[2026-09-09 02:21:05.502] [debug] [7] [algorithm_factory.h:91] [Register] FastIKPlanner registered successfully!
+[2026-09-09 02:21:05.502] [debug] [7] [algorithm_factory.h:91] [Register] ConstrainedOMPLPlanner registered successfully!
+[2026-09-09 02:21:05.502] [debug] [7] [algorithm_factory.h:91] [Register] AutoFallbackPlanner registered successfully!
+[2026-09-09 02:21:05.502] [debug] [7] [algorithm_factory.h:91] [Register] OMPLConfigPlanner registered successfully!
+[2026-09-09 02:21:05.502] [debug] [7] [algorithm_factory.h:91] [Register] ValidatorPinocchioName registered successfully!
+[2026-09-09 02:21:05.502] [debug] [7] [algorithm_factory.h:91] [Register] IterativeSplineGenerator registered successfully!
+[2026-09-09 02:21:05.502] [debug] [7] [algorithm_factory.h:91] [Register] TrajectorySplineCubic registered successfully!
+[2026-09-09 02:21:05.502] [debug] [7] [algorithm_factory.h:91] [Register] OptimizedSplineGenerator registered successfully!
+[2026-09-09 02:21:05.502] [debug] [7] [algorithm_factory.h:91] [Register] TrajectoryTOTP registered successfully!
+[2026-09-09 02:21:05.502] [debug] [7] [algorithm_factory.h:91] [Register] TimeOptimalGenerator registered successfully!
+[2026-09-09 02:21:05.502] [debug] [7] [algorithm_factory.h:91] [Register] IterativeSplineGenerator registered successfully!
+[2026-09-09 02:21:05.502] [debug] [7] [algorithm_factory.h:91] [Register] TrajectoryTOTP registered successfully!
+[2026-09-09 02:21:05.502] [debug] [7] [algorithm_factory.h:91] [Register] TimeOptimalGenerator registered successfully!
+[2026-09-09 02:21:09.637] [info] [7] [ral_core.cpp:76] [getInstance] Creating new RALCore instance
+[2026-09-09 02:21:09.645] [debug] [7] [kinematics_pinocchio.cpp:315] [SerialKinematicsPinocchio] SerialKinematicsPinocchio initialized with 7 active DoF.
+[2026-09-09 02:21:09.645] [debug] [7] [kinematics_pinocchio.cpp:316] [SerialKinematicsPinocchio] Base frame: left_arm_base_link (ID: 23), End effector frame: left_arm_end_effector_mount_link (ID: 39)
+[2026-09-09 02:21:09.645] [debug] [7] [kinematics_pinocchio.cpp:318] [SerialKinematicsPinocchio] Serial chain has 8 links
+[2026-09-09 02:21:09.645] [info] [7] [serial_kinematics_interface.cpp:131] [Impl] Created SerialKinematicsInterface with type: pinocchio
+[2026-09-09 02:21:09.648] [debug] [7] [ral_core.cpp:70] [getInstance] Returning existing RALCore instance
+[2026-09-09 02:21:09.683] [info] [7] [composite_geometry_provider.cpp:80] [addProvider] CompositeGeometryProvider: Added provider type 'mesh'
+[2026-09-09 02:21:09.683] [info] [7] [composite_geometry_provider.cpp:80] [addProvider] CompositeGeometryProvider: Added provider type 'pointcloud'
+[2026-09-09 02:21:09.683] [info] [7] [composite_geometry_provider.cpp:140] [setDefaultProvider] CompositeGeometryProvider: Set default provider to 'mesh'
+[2026-09-09 02:21:09.684] [debug] [7] [ral_core.cpp:70] [getInstance] Returning existing RALCore instance
+[2026-09-09 02:21:09.686] [debug] [7] [kinematics_pinocchio.cpp:315] [SerialKinematicsPinocchio] SerialKinematicsPinocchio initialized with 7 active DoF.
+[2026-09-09 02:21:09.686] [debug] [7] [kinematics_pinocchio.cpp:316] [SerialKinematicsPinocchio] Base frame: left_arm_base_link (ID: 23), End effector frame: left_arm_end_effector_mount_link (ID: 39)
+[2026-09-09 02:21:09.686] [debug] [7] [kinematics_pinocchio.cpp:318] [SerialKinematicsPinocchio] Serial chain has 8 links
+[2026-09-09 02:21:09.686] [info] [7] [planner_base.cpp:229] [createKinematics] Created kinematics instance with type: pinocchio
+[2026-09-09 02:21:09.688] [debug] [7] [fast_ik_planner.cpp:102] [FastIKPlanner] FastIKPlanner: Loaded config from TOML: min_cartesian_trans_distance=0.01, min_cartesian_angle_distance=0.01
+[2026-09-09 02:21:09.690] [info] [7] [trajectory_joint_space.cpp:81] [TrajectoryJointSpace] Loaded 7 joint names from ral_params.toml [ral.active_joints]
+[2026-09-09 02:21:09.695] [debug] [7] [iterative_spline_generator.cpp:161] [generate] IterativeSplineGenerator: Generated trajectory successfully
+[2026-09-09 02:21:09.696] [info] [7] [trajectory_joint_space.cpp:207] [init] Joint space trajectory initialized with 7 joints, group: left_arm, device: left_arm
+[2026-09-09 02:21:09.696] [info] [7] [planners_interface.cpp:349] [trajPlan] The total time of the trajectory is: 3.6565836888985173
+[2026-09-09 02:21:09.857] [debug] [7] [ral_core.cpp:70] [getInstance] Returning existing RALCore instance
+[2026-09-09 02:21:09.860] [debug] [7] [kinematics_pinocchio.cpp:315] [SerialKinematicsPinocchio] SerialKinematicsPinocchio initialized with 7 active DoF.
+[2026-09-09 02:21:09.860] [debug] [7] [kinematics_pinocchio.cpp:316] [SerialKinematicsPinocchio] Base frame: right_arm_base_link (ID: 57), End effector frame: right_arm_end_effector_mount_link (ID: 73)
+[2026-09-09 02:21:09.860] [debug] [7] [kinematics_pinocchio.cpp:318] [SerialKinematicsPinocchio] Serial chain has 8 links
+[2026-09-09 02:21:09.860] [info] [7] [serial_kinematics_interface.cpp:131] [Impl] Created SerialKinematicsInterface with type: pinocchio
+[2026-09-09 02:21:09.862] [debug] [7] [ral_core.cpp:70] [getInstance] Returning existing RALCore instance
+[2026-09-09 02:21:09.898] [debug] [7] [ral_core.cpp:70] [getInstance] Returning existing RALCore instance
+[2026-09-09 02:21:09.900] [debug] [7] [kinematics_pinocchio.cpp:315] [SerialKinematicsPinocchio] SerialKinematicsPinocchio initialized with 7 active DoF.
+[2026-09-09 02:21:09.900] [debug] [7] [kinematics_pinocchio.cpp:316] [SerialKinematicsPinocchio] Base frame: right_arm_base_link (ID: 57), End effector frame: right_arm_end_effector_mount_link (ID: 73)
+[2026-09-09 02:21:09.900] [debug] [7] [kinematics_pinocchio.cpp:318] [SerialKinematicsPinocchio] Serial chain has 8 links
+[2026-09-09 02:21:09.900] [info] [7] [planner_base.cpp:229] [createKinematics] Created kinematics instance with type: pinocchio
+[2026-09-09 02:21:09.902] [debug] [7] [fast_ik_planner.cpp:102] [FastIKPlanner] FastIKPlanner: Loaded config from TOML: min_cartesian_trans_distance=0.01, min_cartesian_angle_distance=0.01
+[2026-09-09 02:21:09.904] [info] [7] [trajectory_joint_space.cpp:81] [TrajectoryJointSpace] Loaded 7 joint names from ral_params.toml [ral.active_joints]
+[2026-09-09 02:21:09.913] [debug] [7] [iterative_spline_generator.cpp:161] [generate] IterativeSplineGenerator: Generated trajectory successfully
+[2026-09-09 02:21:09.913] [info] [7] [trajectory_joint_space.cpp:207] [init] Joint space trajectory initialized with 7 joints, group: right_arm, device: right_arm
+[2026-09-09 02:21:09.913] [info] [7] [planners_interface.cpp:349] [trajPlan] The total time of the trajectory is: 5.470627226031867
+{
+  "adapter_health": {
+    "actuating": true,
+    "adapter": "s1",
+    "command_session_active": false,
+    "healthy": true,
+    "runtime_modules_loaded": false,
+    "schema": "s1_destack.adapter_health.v1",
+    "sdk_status": "not_initialized",
+    "services": {
+      "healthy": true,
+      "schema": "s1_destack.service_health.v1",
+      "services": {
+        "fdp": {
+          "detail": {
+            "activate_2d_tracker": false,
+            "activate_kalman_filter": false,
+            "default_mesh": "/home/c/workspace/260611_sjtu_workbin_movement/test_project/源代码/DualMobManip/deps/mesh/EU4322_midcut_target175mm.obj",
+            "est_refine_iter": 3,
+            "fdp_src": "/home/c/workspace/260611_sjtu_workbin_movement/migrate_back/g1_workbin_perception/third_party/FoundationPose-plus-plus/src",
+            "gpu": {
+              "cuda_available": true,
+              "device_count": 1,
+              "device_name": "NVIDIA GeForce RTX 4090",
+              "torch": "2.4.1+cu121",
+              "torch_cuda": "12.1"
+            },
+            "import_error": null,
+            "ok": true,
+            "service": "local_fdp_4090",
+            "track_refine_iter": 1,
+            "tracker_count": 1
+          },
+          "error": null,
+          "healthy": true,
+          "name": "fdp",
+          "status_code": 200,
+          "url": "http://10.34.216.13:7876/health"
+        },
+        "lingbot": {
+          "detail": {
+            "checkpoint": "/workspace/LingBot-Depth-Weights/model.pt",
+            "code_dir": "/workspace/LingBot-Depth",
+            "device": "cuda",
+            "loaded": true,
+            "ok": true,
+            "service": "lingbot-depth"
+          },
+          "error": null,
+          "healthy": true,
+          "name": "lingbot",
+          "status_code": 200,
+          "url": "http://10.34.216.11:7865/health"
+        },
+        "sam3": {
+          "detail": {
+            "checkpoint": "/workspace/SAM3-Runtime/sam3.pt",
+            "device": "cuda",
+            "loaded": true,
+            "ok": true,
+            "service": "sam3"
+          },
+          "error": null,
+          "healthy": true,
+          "name": "sam3",
+          "status_code": 200,
+          "url": "http://10.34.216.11:7861/health"
+        }
+      }
+    }
+  },
+  "blocked_reason": "StepFailed:step survey_front failed after 2 attempt(s): SAM_RAW_DEPTH_XY_REFINEMENT_INVALID: raw mask envelope dimensions 0.408 x 0.399 m do not match crate 0.400 x 0.300 m",
+  "carried_state": "none",
+  "cycle_count": 0,
+  "execution_readiness": {
+    "blocking_evidence": {},
+    "command_session_active": false,
+    "dependencies": {
+      "capture_client": true,
+      "fdp_client": true,
+      "imc_planner": true,
+      "perception_client": true,
+      "whole_body_path_checker": true
+    },
+    "failure_codes": [],
+    "imc_planner_readiness": {
+      "arm_planner_ready": true,
+      "collision_checker": {
+        "base_pose_provider": {
+          "configured": true,
+          "motion_commands_sent": false,
+          "read_api_allowlist": [
+            "get_current_pose",
+            "is_localized"
+          ],
+          "ready": true,
+          "sample_count": 3,
+          "sample_interval_s": 0.15,
+          "schema": "s1_destack.stable_base_provider_readiness.v1",
+          "session_bound": false
+        },
+        "failure_codes": [],
+        "motion_commands_sent": false,
+        "ready": true,
+        "runtime_identity_validation_deferred_to_robot_session": true,
+        "schema": "s1_destack.production_collision_pre_session_readiness.v1",
+        "session_binding_deferred_to_robot_session": true
+      },
+      "failure_codes": [],
+      "motion_commands_sent": false,
+      "ready": true,
+      "ros_required": false,
+      "runtime_resources_ready": true,
+      "schema": "s1_destack.imc_execution_readiness.v1",
+      "urdf_package_resolution": {
+        "package_name": "galbot_s1_description",
+        "package_root": "/data/galbot/config/galbot_description/galbot_s1_description",
+        "policy": "private_absolute_path_rewrite_no_ros_runtime",
+        "resolved_urdf_sha256": "6d7364722b2838fbee7b3a80cd77fc109c690204ba7f30c53f802d64373913d4",
+        "resolved_uri_count": 74,
+        "resource_path_set_sha256": "9fd740fc67be43a07642c4ec2b3870f878f6fdc79fab77e6a2c7b998b7d23b02",
+        "resources": [
+          {
+            "absolute_path": "/data/galbot/config/galbot_description/galbot_s1_description/meshes/hash/183ac105b5ab9dd8b6fa7343cb2b29bb2ea992d8486bd989d43802407669b2da.stl",
+            "uri": "package://galbot_s1_description/meshes/tool/left_active_link/collision/convex_hull/active_link_convex_hull_gr002_v1_1_0.stl"
+          },
+          {
+            "absolute_path": "/data/galbot/config/galbot_description/galbot_s1_description/meshes/hash/70405baf1044ff04768591a2e327a2706beac0d1d3733edfe3fa641a637b0da9.stl",
+            "uri": "package://galbot_s1_description/meshes/tool/left_fingertip_active_link/collision/convex_hull/left_fingertip_active_link_convex_hull_gr002_v1_1_0.stl"
+          },
+          {
+            "absolute_path": "/data/galbot/config/galbot_description/galbot_s1_description/meshes/hash/a02726108065ed844be4677d19740ab524112dae7fbc16948dd1fdeedef6ce1c.stl",
+            "uri": "package://galbot_s1_description/meshes/tool/left_fingertip_active_link/collision/original/left_fingertip_active_link_gr002_v1_1_0.stl"
+          },
+          {
+            "absolute_path": "/data/galbot/config/galbot_description/galbot_s1_description/meshes/hash/f400e2ab2644ef0efba090768f54da4462768fd0eed5482e2ebfa2af474a63f6.stl",
+            "uri": "package://galbot_s1_description/meshes/tool/left_gripper_base_link/collision/convex_hull/left_gripper_base_link_convex_hull_gr002_v1_1_0.stl"
+          },
+          {
+            "absolute_path": "/data/galbot/config/galbot_description/galbot_s1_description/meshes/hash/1feac4fdb331ed798f5502bb6bad5a736babf679bc3bef3c324116247cdcb679.stl",
+            "uri": "package://galbot_s1_description/meshes/tool/left_gripper_base_link/collision/original/left_gripper_base_link_gr002_v1_1_0.stl"
+          },
+          {
+            "absolute_path": "/data/galbot/config/galbot_description/galbot_s1_description/meshes/hash/dc41695137551a7f1f8366e234be2be9f59714439f75e2a5075450d174f0fb51.stl",
+            "uri": "package://galbot_s1_description/meshes/tool/left_gripper_flange_link/collision/convex_hull/gripper_flange_link_convex_hull_gr002_v1_1_0.stl"
+          },
+          {
+            "absolute_path": "/data/galbot/config/galbot_description/galbot_s1_description/meshes/hash/187e5cc13e8d51cdc5e44fa3f225a7c069b53e968d5c408345e7233e6cc14723.stl",
+            "uri": "package://galbot_s1_description/meshes/tool/left_passive_link/collision/convex_hull/passive_link_convex_hull_gr002_v1_1_0.stl"
+          },
+          {
+            "absolute_path": "/data/galbot/config/galbot_description/galbot_s1_description/meshes/hash/7cf495ff608e483c82109920c009575c2698a0ed760b5f8a4017c4684be0e46f.stl",
+            "uri": "package://galbot_s1_description/meshes/tool/right_active_link/collision/convex_hull/active_link_convex_hull_gr002_v1_1_0.stl"
+          },
+          {
+            "absolute_path": "/data/galbot/config/galbot_description/galbot_s1_description/meshes/hash/3ff6728f788a57ebdafae8a2c658c75a92749e29a0aaf8d9dd1c2d69df95149b.stl",
+            "uri": "package://galbot_s1_description/meshes/tool/right_fingertip_active_link/collision/convex_hull/right_fingertip_active_link_convex_hull_gr002_v1_1_0.stl"
+          },
+          {
+            "absolute_path": "/data/galbot/config/galbot_description/galbot_s1_description/meshes/hash/8f9486508bdd9826eb04783fbe90fbea457d5f1aca8d34f7446523d98910ed4f.stl",
+            "uri": "package://galbot_s1_description/meshes/tool/right_fingertip_active_link/collision/original/right_fingertip_active_link_gr002_v1_1_0.stl"
+          },
+          {
+            "absolute_path": "/data/galbot/config/galbot_description/galbot_s1_description/meshes/hash/412ea5426df3389146636d4aec0e8ea520ef0deb4df5b4a545774271c7a8e80b.stl",
+            "uri": "package://galbot_s1_description/meshes/tool/right_gripper_base_link/collision/convex_hull/right_gripper_base_link_convex_hull_gr002_v1_1_0.stl"
+          },
+          {
+            "absolute_path": "/data/galbot/config/galbot_description/galbot_s1_description/meshes/hash/466d463490d1d1c9357a146c208b5beb6ffda98202765945459439ac55730661.stl",
+            "uri": "package://galbot_s1_description/meshes/tool/right_gripper_base_link/collision/original/right_gripper_base_link_gr002_v1_1_0.stl"
+          },
+          {
+            "absolute_path": "/data/galbot/config/galbot_description/galbot_s1_description/meshes/hash/dc41695137551a7f1f8366e234be2be9f59714439f75e2a5075450d174f0fb51.stl",
+            "uri": "package://galbot_s1_description/meshes/tool/right_gripper_flange_link/collision/convex_hull/gripper_flange_link_convex_hull_gr002_v1_1_0.stl"
+          },
+          {
+            "absolute_path": "/data/galbot/config/galbot_description/galbot_s1_description/meshes/hash/5b305236896e45f96e6ac993a24fe1163ef07c61cc6ff56ada6718921ce07cb8.stl",
+            "uri": "package://galbot_s1_description/meshes/tool/right_passive_link/collision/convex_hull/passive_link_convex_hull_gr002_v1_1_0.stl"
+          },
+          {
+            "absolute_path": "/data/galbot/config/galbot_description/galbot_s1_description/meshes/hash/d83a457e1e392a6dbf1767141794485cacc9a7aa93e44d3237feba57ca5e0025.stl",
+            "uri": "package://galbot_s1_description/meshes/v2_0_0/collision/convex_hull/column_base_link.stl"
+          },
+          {
+            "absolute_path": "/data/galbot/config/galbot_description/galbot_s1_description/meshes/hash/065ba2dfbc6de464c77f0d3225b74e16b3cee3f2f2abf27c940c073d1ea63df0.stl",
+            "uri": "package://galbot_s1_description/meshes/v2_0_0/collision/convex_hull/head_link1.stl"
+          },
+          {
+            "absolute_path": "/data/galbot/config/galbot_description/galbot_s1_description/meshes/hash/06e3d7275f6c1dee7dcdccbb633a9d04f6cf28b3f0f8e05dc82b5939df03449d.stl",
+            "uri": "package://galbot_s1_description/meshes/v2_0_0/collision/convex_hull/head_link2.stl"
+          },
+          {
+            "absolute_path": "/data/galbot/config/galbot_description/galbot_s1_description/meshes/hash/9f86da46c744a5b72054f67aa85db1a086405cd51cabf08f78aa514d272ec32c.stl",
+            "uri": "package://galbot_s1_description/meshes/v2_0_0/collision/convex_hull/left_arm_base_link.stl"
+          },
+          {
+            "absolute_path": "/data/galbot/config/galbot_description/galbot_s1_description/meshes/hash/4d70b6f04477de79f67edd860810d5b77e70a4b6d7d975737ac923660af494c4.stl",
+            "uri": "package://galbot_s1_description/meshes/v2_0_0/collision/convex_hull/left_arm_link1.stl"
+          },
+          {
+            "absolute_path": "/data/galbot/config/galbot_description/galbot_s1_description/meshes/hash/76baa80c9dec6673ca27921d2d49afeb75a4d29eaeedc21c70b5a0a34d1dead2.stl",
+            "uri": "package://galbot_s1_description/meshes/v2_0_0/collision/convex_hull/left_arm_link2.stl"
+          },
+          {
+            "absolute_path": "/data/galbot/config/galbot_description/galbot_s1_description/meshes/hash/b049dcac8338d2fc5b1322f3b1c89cd44fcd6bd0592b921505ca29bcab22f7fe.stl",
+            "uri": "package://galbot_s1_description/meshes/v2_0_0/collision/convex_hull/left_arm_link3.stl"
+          },
+          {
+            "absolute_path": "/data/galbot/config/galbot_description/galbot_s1_description/meshes/hash/7e0383730eb8b8cb7735fbceb4b68aa7c81bd170e7d9d179dacafbb7b185a41b.stl",
+            "uri": "package://galbot_s1_description/meshes/v2_0_0/collision/convex_hull/left_arm_link4.stl"
+          },
+          {
+            "absolute_path": "/data/galbot/config/galbot_description/galbot_s1_description/meshes/hash/e1297dd8854322b3dc66403dd2cd05966a11df81c2ab4d5564d0a99b2a7c1671.stl",
+            "uri": "package://galbot_s1_description/meshes/v2_0_0/collision/convex_hull/left_arm_link5.stl"
+          },
+          {
+            "absolute_path": "/data/galbot/config/galbot_description/galbot_s1_description/meshes/hash/48d618d295ba2264945bdd73802726babc9bff47c07e1b809f939a46c1feba1c.stl",
+            "uri": "package://galbot_s1_description/meshes/v2_0_0/collision/convex_hull/left_arm_link6.stl"
+          },
+          {
+            "absolute_path": "/data/galbot/config/galbot_description/galbot_s1_description/meshes/hash/b3f3507870becc9beacfcbbd548e806ad31087e055cf23d90da07250b83567af.stl",
+            "uri": "package://galbot_s1_description/meshes/v2_0_0/collision/convex_hull/left_arm_link7.stl"
+          },
+          {
+            "absolute_path": "/data/galbot/config/galbot_description/galbot_s1_description/meshes/hash/9a860f4e2147ecaa8be4e85a09aca586ef120ad7ab542410001a717d761abb20.stl",
+            "uri": "package://galbot_s1_description/meshes/v2_0_0/collision/convex_hull/omni_chassis_base_link.stl"
+          },
+          {
+            "absolute_path": "/data/galbot/config/galbot_description/galbot_s1_description/meshes/hash/9a911b72fe45c8b598cbc19dea6b6cb005559886a82a80efade654f671f14a03.stl",
+            "uri": "package://galbot_s1_description/meshes/v2_0_0/collision/convex_hull/right_arm_base_link.stl"
+          },
+          {
+            "absolute_path": "/data/galbot/config/galbot_description/galbot_s1_description/meshes/hash/ae16c495be5b8df639f88d50b12ea1226d2728a624836e3ec8354e5015fbc1be.stl",
+            "uri": "package://galbot_s1_description/meshes/v2_0_0/collision/convex_hull/right_arm_link1.stl"
+          },
+          {
+            "absolute_path": "/data/galbot/config/galbot_description/galbot_s1_description/meshes/hash/d8fea7237a7fffe1e98ca249339e5c5ef070517a367cd36946d9e36cbdd04447.stl",
+            "uri": "package://galbot_s1_description/meshes/v2_0_0/collision/convex_hull/right_arm_link2.stl"
+          },
+          {
+            "absolute_path": "/data/galbot/config/galbot_description/galbot_s1_description/meshes/hash/0ff81044ef84c8c4d3fe9629944e084e40fcce9796cfdfe94628a37d762fef09.stl",
+            "uri": "package://galbot_s1_description/meshes/v2_0_0/collision/convex_hull/right_arm_link3.stl"
+          },
+          {
+            "absolute_path": "/data/galbot/config/galbot_description/galbot_s1_description/meshes/hash/4d3a9a2f70d566b381b036defc795604363c58a0bec9d76770cb8af59819b7d8.stl",
+            "uri": "package://galbot_s1_description/meshes/v2_0_0/collision/convex_hull/right_arm_link4.stl"
+          },
+          {
+            "absolute_path": "/data/galbot/config/galbot_description/galbot_s1_description/meshes/hash/ee02209870e5263c6afb7c1d2584c3676323647b542a84ee27501ce738970be0.stl",
+            "uri": "package://galbot_s1_description/meshes/v2_0_0/collision/convex_hull/right_arm_link5.stl"
+          },
+          {
+            "absolute_path": "/data/galbot/config/galbot_description/galbot_s1_description/meshes/hash/046ab4ea7430581aed84b041780c73012b090e90e36365d2e70819992fd2fae3.stl",
+            "uri": "package://galbot_s1_description/meshes/v2_0_0/collision/convex_hull/right_arm_link6.stl"
+          },
+          {
+            "absolute_path": "/data/galbot/config/galbot_description/galbot_s1_description/meshes/hash/74a2a9487f4eb343feafb415e553e8b48b8ede42b83a67130abc2b76b01033e7.stl",
+            "uri": "package://galbot_s1_description/meshes/v2_0_0/collision/convex_hull/right_arm_link7.stl"
+          },
+          {
+            "absolute_path": "/data/galbot/config/galbot_description/galbot_s1_description/meshes/hash/0360dd2dcfd88878a9fc7c63bd58de7d4a0784efc13cf2cebf0888b49807788e.stl",
+            "uri": "package://galbot_s1_description/meshes/v2_0_0/collision/convex_hull/torso_base_link.stl"
+          },
+          {
+            "absolute_path": "/data/galbot/config/galbot_description/galbot_s1_description/meshes/hash/646be7660318adc94a4af0c197527ec9223a8f435b021622e0915297b1347f91.stl",
+            "uri": "package://galbot_s1_description/meshes/v2_0_0/collision/convex_hull/torso_lift_link1.stl"
+          },
+          {
+            "absolute_path": "/data/galbot/config/galbot_description/galbot_s1_description/meshes/hash/86efaf6e1a4bf9a8c1056708cf64992f95e371127c6db4566e5dd0e74af9a1a0.stl",
+            "uri": "package://galbot_s1_description/meshes/v2_0_0/collision/convex_hull/wheel_driving_link1.stl"
+          },
+          {
+            "absolute_path": "/data/galbot/config/galbot_description/galbot_s1_description/meshes/hash/da2ca447a4b49195a66bfb3b302bf5b608894b74d36827ec7678edfb019849e4.stl",
+            "uri": "package://galbot_s1_description/meshes/v2_0_0/collision/convex_hull/wheel_driving_link2.stl"
+          },
+          {
+            "absolute_path": "/data/galbot/config/galbot_description/galbot_s1_description/meshes/hash/501089f7e693998cd014058b8d82c348a7d864fc7080ffb94ce18afcbf9fca39.stl",
+            "uri": "package://galbot_s1_description/meshes/v2_0_0/collision/convex_hull/wheel_driving_link3.stl"
+          },
+          {
+            "absolute_path": "/data/galbot/config/galbot_description/galbot_s1_description/meshes/hash/da2ca447a4b49195a66bfb3b302bf5b608894b74d36827ec7678edfb019849e4.stl",
+            "uri": "package://galbot_s1_description/meshes/v2_0_0/collision/convex_hull/wheel_driving_link4.stl"
+          },
+          {
+            "absolute_path": "/data/galbot/config/galbot_description/galbot_s1_description/meshes/hash/66a0fa0596132e2e058df00fbeae8a0872396e00d60ad9a26ae5f593358dc27e.stl",
+            "uri": "package://galbot_s1_description/meshes/v2_0_0/collision/convex_hull/wheel_steering_link1.stl"
+          },
+          {
+            "absolute_path": "/data/galbot/config/galbot_description/galbot_s1_description/meshes/hash/159293e98176e688c6406b019bc4e317f8aee19764c250be244aacfbc63c974a.stl",
+            "uri": "package://galbot_s1_description/meshes/v2_0_0/collision/convex_hull/wheel_steering_link2.stl"
+          },
+          {
+            "absolute_path": "/data/galbot/config/galbot_description/galbot_s1_description/meshes/hash/4d0d39fa04a0c93bfdff257a5cadffa43ec79056d473c70c771880f4772cf3f9.stl",
+            "uri": "package://galbot_s1_description/meshes/v2_0_0/collision/convex_hull/wheel_steering_link3.stl"
+          },
+          {
+            "absolute_path": "/data/galbot/config/galbot_description/galbot_s1_description/meshes/hash/159293e98176e688c6406b019bc4e317f8aee19764c250be244aacfbc63c974a.stl",
+            "uri": "package://galbot_s1_description/meshes/v2_0_0/collision/convex_hull/wheel_steering_link4.stl"
+          },
+          {
+            "absolute_path": "/data/galbot/config/galbot_description/galbot_s1_description/meshes/hash/2a76ffa0a4c1618c4276fb7cd95d85d7d9975ca32bd6228e8a0429fd4a59f8ef.stl",
+            "uri": "package://galbot_s1_description/meshes/v2_0_0/collision/original/column_base_link.stl"
+          },
+          {
+            "absolute_path": "/data/galbot/config/galbot_description/galbot_s1_description/meshes/hash/c1b14d8ee4c72941aa7ea491526a244009ccad915f6bfc62565f04618b7c6340.stl",
+            "uri": "package://galbot_s1_description/meshes/v2_0_0/collision/original/head_link1.stl"
+          },
+          {
+            "absolute_path": "/data/galbot/config/galbot_description/galbot_s1_description/meshes/hash/75554b501f143799eba57d4064cbd57653b57ab6f15ab1d7a2c5093d09d3917f.stl",
+            "uri": "package://galbot_s1_description/meshes/v2_0_0/collision/original/head_link2.stl"
+          },
+          {
+            "absolute_path": "/data/galbot/config/galbot_description/galbot_s1_description/meshes/hash/9cff0ebba49356df90fca6c583910b79f06782fb0cb977d071188b5f0022636f.stl",
+            "uri": "package://galbot_s1_description/meshes/v2_0_0/collision/original/left_arm_base_link.stl"
+          },
+          {
+            "absolute_path": "/data/galbot/config/galbot_description/galbot_s1_description/meshes/hash/f3f35e1c0c6affb06aceb45cca0e87e1dd3ad4b99423cc92b3c699b9666cd24a.stl",
+            "uri": "package://galbot_s1_description/meshes/v2_0_0/collision/original/left_arm_link1.stl"
+          },
+          {
+            "absolute_path": "/data/galbot/config/galbot_description/galbot_s1_description/meshes/hash/02cb945c052e805d9e96d7febbb4e2866bb0131e47e7ae3fa48cc592e067918a.stl",
+            "uri": "package://galbot_s1_description/meshes/v2_0_0/collision/original/left_arm_link2.stl"
+          },
+          {
+            "absolute_path": "/data/galbot/config/galbot_description/galbot_s1_description/meshes/hash/2938524682f5e2e8aff3c84fba5ab3ebb9931264c8725d364b47874f3e2eff77.stl",
+            "uri": "package://galbot_s1_description/meshes/v2_0_0/collision/original/left_arm_link3.stl"
+          },
+          {
+            "absolute_path": "/data/galbot/config/galbot_description/galbot_s1_description/meshes/hash/d63f64ee6a11d9a2ca0ff4dc99ae8de55a6fa09667aabc4a30217b83d4003e1a.stl",
+            "uri": "package://galbot_s1_description/meshes/v2_0_0/collision/original/left_arm_link4.stl"
+          },
+          {
+            "absolute_path": "/data/galbot/config/galbot_description/galbot_s1_description/meshes/hash/d3aaba70b7de16cc646cd6c626b63246a682945ac361646a8e20ef1fe1e3fb46.stl",
+            "uri": "package://galbot_s1_description/meshes/v2_0_0/collision/original/left_arm_link5.stl"
+          },
+          {
+            "absolute_path": "/data/galbot/config/galbot_description/galbot_s1_description/meshes/hash/7af021eb06143aafa905a55277c4651d067cf78a5fe7be8c80c831ba2404fbf6.stl",
+            "uri": "package://galbot_s1_description/meshes/v2_0_0/collision/original/left_arm_link6.stl"
+          },
+          {
+            "absolute_path": "/data/galbot/config/galbot_description/galbot_s1_description/meshes/hash/e8cc49ad0a669f45dd00adf06ecc37d6f6c6d743f503ac45b9de29bec7e7cf65.stl",
+            "uri": "package://galbot_s1_description/meshes/v2_0_0/collision/original/left_arm_link7.stl"
+          },
+          {
+            "absolute_path": "/data/galbot/config/galbot_description/galbot_s1_description/meshes/hash/dd6f4d30d4647b2240b38830abd9191390ec384cf0afa82237ad8ea70cabe158.stl",
+            "uri": "package://galbot_s1_description/meshes/v2_0_0/collision/original/omni_chassis_base_link.stl"
+          },
+          {
+            "absolute_path": "/data/galbot/config/galbot_description/galbot_s1_description/meshes/hash/5b24ac459b39318b65080b39863e0f27eea9ae70cfb93280935235da1362e250.stl",
+            "uri": "package://galbot_s1_description/meshes/v2_0_0/collision/original/right_arm_base_link.stl"
+          },
+          {
+            "absolute_path": "/data/galbot/config/galbot_description/galbot_s1_description/meshes/hash/801f80def551bf242c1b5ffd48dddf196c0e4653c6a609dc159869786a5dd7d0.stl",
+            "uri": "package://galbot_s1_description/meshes/v2_0_0/collision/original/right_arm_link1.stl"
+          },
+          {
+            "absolute_path": "/data/galbot/config/galbot_description/galbot_s1_description/meshes/hash/3af34b48860430b08bbf8dc0568b2f2fed323ebc252e276db1e932a422d1c520.stl",
+            "uri": "package://galbot_s1_description/meshes/v2_0_0/collision/original/right_arm_link2.stl"
+          },
+          {
+            "absolute_path": "/data/galbot/config/galbot_description/galbot_s1_description/meshes/hash/0d2440399eb414d39f99b5d3f279e656f79ca84605987090c8b612e5eaeec6cd.stl",
+            "uri": "package://galbot_s1_description/meshes/v2_0_0/collision/original/right_arm_link3.stl"
+          },
+          {
+            "absolute_path": "/data/galbot/config/galbot_description/galbot_s1_description/meshes/hash/cdde723281a9a4f1ddd7d97ca5c700a6b12d3a661992e5da8aaa532bac52a7f7.stl",
+            "uri": "package://galbot_s1_description/meshes/v2_0_0/collision/original/right_arm_link4.stl"
+          },
+          {
+            "absolute_path": "/data/galbot/config/galbot_description/galbot_s1_description/meshes/hash/b365eac74375c088d09de0ea9bf45306bc8918beee5186564fd29751a3827309.stl",
+            "uri": "package://galbot_s1_description/meshes/v2_0_0/collision/original/right_arm_link5.stl"
+          },
+          {
+            "absolute_path": "/data/galbot/config/galbot_description/galbot_s1_description/meshes/hash/90493c8ba39f9add8168c02ad5656bc421590260a070a322f939064a0a586cd2.stl",
+            "uri": "package://galbot_s1_description/meshes/v2_0_0/collision/original/right_arm_link6.stl"
+          },
+          {
+            "absolute_path": "/data/galbot/config/galbot_description/galbot_s1_description/meshes/hash/9306409774c3e69056011ab96d036fbe8cc28f11293409373d8117461dd6ba6d.stl",
+            "uri": "package://galbot_s1_description/meshes/v2_0_0/collision/original/right_arm_link7.stl"
+          },
+          {
+            "absolute_path": "/data/galbot/config/galbot_description/galbot_s1_description/meshes/hash/875b1c7298a2554a4aa2d5deac2c3d7ef9616cd31e73dacfe405fb153b2a4126.stl",
+            "uri": "package://galbot_s1_description/meshes/v2_0_0/collision/original/torso_base_link.stl"
+          },
+          {
+            "absolute_path": "/data/galbot/config/galbot_description/galbot_s1_description/meshes/hash/eadbbfd8cd235c0dd8ed4b939dd44acfbca891c79cd4627888bc5bc3bfc69635.stl",
+            "uri": "package://galbot_s1_description/meshes/v2_0_0/collision/original/torso_lift_link1.stl"
+          },
+          {
+            "absolute_path": "/data/galbot/config/galbot_description/galbot_s1_description/meshes/hash/592f0fc9c7e518744b01e4dae29f6870fee0b904ed24b66943baf8d36f163119.stl",
+            "uri": "package://galbot_s1_description/meshes/v2_0_0/collision/original/wheel_driving_link1.stl"
+          },
+          {
+            "absolute_path": "/data/galbot/config/galbot_description/galbot_s1_description/meshes/hash/5ee4dea8c7d74bc8eb7620a16c906cb2786d1a58e55206e020716670ddd73c81.stl",
+            "uri": "package://galbot_s1_description/meshes/v2_0_0/collision/original/wheel_driving_link2.stl"
+          },
+          {
+            "absolute_path": "/data/galbot/config/galbot_description/galbot_s1_description/meshes/hash/11ce0f42e7d0426675af4f16b2df496679a99937ed00552cc8c972af779e0727.stl",
+            "uri": "package://galbot_s1_description/meshes/v2_0_0/collision/original/wheel_driving_link3.stl"
+          },
+          {
+            "absolute_path": "/data/galbot/config/galbot_description/galbot_s1_description/meshes/hash/2a108f23b9cfb64718e8f733c1b1fc4debd2f5d5903bdc10173b3fb34ea13e65.stl",
+            "uri": "package://galbot_s1_description/meshes/v2_0_0/collision/original/wheel_driving_link4.stl"
+          },
+          {
+            "absolute_path": "/data/galbot/config/galbot_description/galbot_s1_description/meshes/hash/37686d01f665d8453f1afc637b9bbd4b6d6af5e7f4e29b89e9a749cda62d88b6.stl",
+            "uri": "package://galbot_s1_description/meshes/v2_0_0/collision/original/wheel_steering_link1.stl"
+          },
+          {
+            "absolute_path": "/data/galbot/config/galbot_description/galbot_s1_description/meshes/hash/a324bafb26aaae64b760e1ab5dea30f6716576cd17a27f6699e10c789fcc605c.stl",
+            "uri": "package://galbot_s1_description/meshes/v2_0_0/collision/original/wheel_steering_link2.stl"
+          },
+          {
+            "absolute_path": "/data/galbot/config/galbot_description/galbot_s1_description/meshes/hash/1d32a5f14284e1565fa88f4a5512fe02fd7fb1aa0f576a2f299d3ef4a9405cf3.stl",
+            "uri": "package://galbot_s1_description/meshes/v2_0_0/collision/original/wheel_steering_link3.stl"
+          },
+          {
+            "absolute_path": "/data/galbot/config/galbot_description/galbot_s1_description/meshes/hash/5e032ab90aaee1e42d5ce4900391a5d58e0b132ffca01d313c1e343e870fa5f4.stl",
+            "uri": "package://galbot_s1_description/meshes/v2_0_0/collision/original/wheel_steering_link4.stl"
+          }
+        ],
+        "ros_runtime_used": false,
+        "schema": "s1_destack.urdf_package_resolution.v1",
+        "source_modified": false,
+        "source_urdf": "/data/galbot/config/galbot_description/galbot_s1_description/galbot_s1_cali_user.urdf",
+        "source_urdf_sha256": "8bb3275b0c3679f8cab8611442d868cb847aa57b11f3bcf75592a89b8496a7b7"
+      },
+      "whole_body_path_checker_ready": true
+    },
+    "navigation_handoff": {
+      "automatic_continuous_execution_allowed": false,
+      "required_operations": [
+        "prepare_fdp",
+        "prepare_observation",
+        "reset_robot",
+        "transport"
+      ],
+      "sdk_prior_goal_clearance_proven": false,
+      "supervised_commissioning_allowed": true
+    },
+    "production_services_readiness": {
+      "capture_client_configured": true,
+      "failure_codes": [],
+      "fdp_client": {
+        "active_mask_depth_geometry_limit_m": 0.2,
+        "active_mode": "10",
+        "commissioned_geometry_limits_m": {
+          "00": 0.15,
+          "01": 0.15,
+          "10": 0.2
+        },
+        "commissioned_secondary_propagation_modes": [
+          "10"
+        ],
+        "commissioning_status": "ready_with_configured_local_geometry_gate_and_unverified_synchronous_service_response_binding",
+        "configured_geometry_limit_present": true,
+        "explicit_source_roi_index_required": true,
+        "failure_codes": [],
+        "local_geometry_lock_required": true,
+        "mask_depth_geometry_configured_scope": [
+          "00",
+          "01",
+          "10"
+        ],
+        "mask_depth_geometry_runtime_acceptance_required_for_every_capture": true,
+        "mask_depth_geometry_runtime_gate_enabled": true,
+        "mask_depth_geometry_runtime_recalculation_required": true,
+        "motion_commands_sent": false,
+        "ready": true,
+        "required_operations": [
+          "capture_achieved_tcp",
+          "capture_primary_fdp",
+          "capture_secondary_fdp",
+          "dual_lift_to_level",
+          "lock_primary_fdp",
+          "lock_secondary_fdp",
+          "navigate_station",
+          "preflight",
+          "prepare_fdp",
+          "prepare_observation",
+          "primary_draw",
+          "primary_grasp_close",
+          "primary_lift",
+          "primary_pregrasp",
+          "release",
+          "reset_robot",
+          "secondary_contact",
+          "secondary_grasp_close",
+          "secondary_pregrasp",
+          "secondary_safe_clearance",
+          "select_unload_slot",
+          "survey",
+          "transport",
+          "verify_carried"
+        ],
+        "ros_used": false,
+        "same_capture_masks_required": true,
+        "schema": "s1_destack.fdp_client_pre_session_readiness.v3",
+        "secondary_failure_code": "FDP_SECONDARY_PROPAGATION_MODEL_UNVERIFIED",
+        "secondary_propagation_model_physically_revalidated": true,
+        "service_response_assurance": "synchronous_transport_only_unverified",
+        "service_response_echo_contract_required": false,
+        "service_response_echo_physically_revalidated": false,
+        "software_contract_ready": true,
+        "workbin_response_echo_contract_required": false,
+        "workbin_response_echo_physically_revalidated": false
+      },
+      "mode01_supervised_full_regression_scope": false,
+      "motion_commands_sent": false,
+      "ready": true,
+      "required_operations": [
+        "capture_achieved_tcp",
+        "capture_primary_fdp",
+        "capture_secondary_fdp",
+        "dual_lift_to_level",
+        "lock_primary_fdp",
+        "lock_secondary_fdp",
+        "navigate_station",
+        "preflight",
+        "prepare_fdp",
+        "prepare_observation",
+        "primary_draw",
+        "primary_grasp_close",
+        "primary_lift",
+        "primary_pregrasp",
+        "release",
+        "reset_robot",
+        "secondary_contact",
+        "secondary_grasp_close",
+        "secondary_pregrasp",
+        "secondary_safe_clearance",
+        "select_unload_slot",
+        "survey",
+        "transport",
+        "verify_carried"
+      ],
+      "ros_required": false,
+      "schema": "s1_destack.production_services_pre_session_readiness.v1",
+      "survey_client_configured": true
+    },
+    "ready": true,
+    "required_operations": [
+      "capture_achieved_tcp",
+      "capture_primary_fdp",
+      "capture_secondary_fdp",
+      "dual_lift_to_level",
+      "lock_primary_fdp",
+      "lock_secondary_fdp",
+      "navigate_station",
+      "preflight",
+      "prepare_fdp",
+      "prepare_observation",
+      "primary_draw",
+      "primary_grasp_close",
+      "primary_lift",
+      "primary_pregrasp",
+      "release",
+      "reset_robot",
+      "secondary_contact",
+      "secondary_grasp_close",
+      "secondary_pregrasp",
+      "secondary_safe_clearance",
+      "select_unload_slot",
+      "survey",
+      "transport",
+      "verify_carried"
+    ],
+    "ros_required": false,
+    "runtime_modules_loaded": false,
+    "schema": "s1_destack.direct_execution_readiness.v1",
+    "sdk_initialized": false,
+    "sdk_map_runtime_identity_readiness": {
+      "automatic_continuous_execution_allowed": false,
+      "expected_map_id": "room0804",
+      "failure_codes": [],
+      "host_map_attestation_required_before_container_start": true,
+      "host_map_attestation_verified_here": false,
+      "map_files_read": false,
+      "map_state_changed": false,
+      "motion_commands_sent": false,
+      "ready": true,
+      "reason": "critical-gated commissioning uses the separately host-attested existing map; SDK runtime map identity remains unverified",
+      "required": true,
+      "required_operations": [
+        "navigate_station",
+        "transport"
+      ],
+      "runtime_map_identity_available": false,
+      "schema": "s1_destack.sdk_map_runtime_identity_readiness.v2",
+      "sdk_initialized": false,
+      "sdk_runtime_map_identity_verified": false,
+      "supervised_commissioning_allowed": true
+    },
+    "semantic_recovery_state_readiness": {
+      "failure_codes": [],
+      "motion_commands_sent": false,
+      "provider_available": true,
+      "ready": true,
+      "reason": null,
+      "required": false,
+      "required_fields": [
+        "motion_active",
+        "carried_state",
+        "at_unload",
+        "grippers_open",
+        "collision_check_enabled"
+      ],
+      "required_operations": [],
+      "schema": "s1_destack.recovery_semantic_state_provider_readiness.v1",
+      "scope": "mode00_prepare_fdp_or_maintenance_restore_abort_safe_or_h4_mode00_post_release_reset_return_or_h4_mode10_post_release_return_front_read_only",
+      "sdk_initialized": false,
+      "status": "not_required"
+    },
+    "source_bound_motion_evidence_readiness": {
+      "collision_approval_claimed": false,
+      "collision_check_performed": false,
+      "commissioned_mode00_operations": [],
+      "commissioned_mode10_operations": [
+        "dual_lift_to_level",
+        "primary_draw",
+        "primary_grasp_close",
+        "primary_lift",
+        "primary_pregrasp",
+        "secondary_contact",
+        "secondary_grasp_close",
+        "secondary_pregrasp",
+        "secondary_safe_clearance"
+      ],
+      "failure_codes": [],
+      "mode01_contact_free_commissioning_operations": [],
+      "mode01_full_regression_commissioning_operations": [],
+      "mode01_primary_continuation_operations": [],
+      "mode01_secondary_pregrasp_commissioning_operations": [],
+      "mode01_secondary_to_unload_commissioning_operations": [],
+      "motion_commands_sent": false,
+      "physical_commissioning_claimed": false,
+      "provider_readiness": {
+        "collision_approval_claimed": false,
+        "collision_check_performed": false,
+        "failure_codes": [],
+        "motion_commands_sent": false,
+        "physical_commissioning_claimed": false,
+        "ready": true,
+        "ready_scope": "read_only_same_source_fk_calibration_provider_only",
+        "schema": "s1_destack.source_bound_motion_provider_readiness.v1",
+        "sdk_initialized": false,
+        "settings_sha256": "67dc9b3645cf59170898339acfa5ef0fc83edb94e9f658659d43a51b49d5a8a6",
+        "threshold_status": "conservative_fail_closed_pending_physical_commissioning",
+        "tool_identity_sha256": "2d738617cb7eda2b1914ad328f5cdfed4ff5b9a0632328b230b7b5afce16f0e6"
+      },
+      "ready": true,
+      "ready_scope": "read_only_same_source_fk_calibration_provider_only",
+      "reason": null,
+      "required_operations": [
+        "dual_lift_to_level",
+        "primary_draw",
+        "primary_grasp_close",
+        "primary_lift",
+        "primary_pregrasp",
+        "secondary_contact",
+        "secondary_grasp_close",
+        "secondary_pregrasp",
+        "secondary_safe_clearance"
+      ],
+      "schema": "s1_destack.source_bound_motion_workflow_readiness.v2",
+      "sdk_initialized": false,
+      "threshold_status": "conservative_fail_closed_pending_physical_commissioning",
+      "uncommissioned_operations": []
+    },
+    "startup_semantic_state_readiness": {
+      "failure_codes": [],
+      "motion_commands_sent": false,
+      "preflight_minimum_sample_count": 3,
+      "preflight_runtime_probe_required": true,
+      "provider_available": true,
+      "provider_readiness": {
+        "acceptance_requires_probe_accepted": true,
+        "controller_identity_claimed": false,
+        "infers_custody_from_gripper_width": false,
+        "motion_commands_sent": false,
+        "operator_no_stop_means_empty": true,
+        "preflight_probe_required": true,
+        "provider_available": true,
+        "ready": true,
+        "sample_count": 3,
+        "schema": "s1_destack.startup_semantic_state_provider_readiness.v1",
+        "sdk_initialized": false,
+        "semantic_state_observed": false
+      },
+      "ready": true,
+      "reason": null,
+      "required": true,
+      "runtime_acceptance_condition": "preflight_probe.accepted_is_true_after_three_or_more_fresh_samples",
+      "schema": "s1_destack.startup_semantic_state_readiness.v2",
+      "sdk_initialized": false,
+      "semantic_state_observed": false
+    },
+    "unknown_operations": [],
+    "unsupported_operations": {}
+  },
+  "run_dir": "/data/runs/dev_mode00_202609091020_note02",
+  "run_id": "dev_mode00_202609091020_note02",
+  "scenario": "mode10",
+  "scenario_result": {
+    "actual_route": [
+      "preflight",
+      "prepare_front_observation",
+      "navigate_front"
+    ],
+    "expected_route": [
+      "preflight",
+      "prepare_front_observation",
+      "navigate_front",
+      "survey_front",
+      "mode10_prepare_fdp",
+      "mode10_capture_primary",
+      "mode10_lock_primary",
+      "mode10_primary_pregrasp",
+      "mode10_primary_grasp_close",
+      "mode10_primary_lift",
+      "mode10_primary_draw",
+      "mode10_capture_secondary",
+      "mode10_lock_secondary",
+      "mode10_secondary_safe_clearance",
+      "mode10_secondary_pregrasp",
+      "mode10_secondary_contact",
+      "mode10_secondary_grasp_close",
+      "mode10_capture_achieved_tcp",
+      "mode10_dual_lift_to_level",
+      "verify_carried",
+      "select_unload_slot",
+      "transport",
+      "release",
+      "reset_robot",
+      "return_front"
+    ],
+    "failure_reason": "WRONG_TERMINAL_STATE",
+    "mission_completed_empty": false,
+    "name": "mode10",
+    "passed": false,
+    "stopped_at_cycle_limit": false
+  },
+  "schema": "s1_destack.cli_mission_result.v1",
+  "state": "BLOCKED",
+  "success": false
+}
+galbot@galbot-echo:~/ie_lab/projects/s1_continuous_destack/deploy$

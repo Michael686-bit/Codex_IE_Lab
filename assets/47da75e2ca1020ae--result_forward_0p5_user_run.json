@@ -1,0 +1,62 @@
+{
+  "date": "2026-08-27",
+  "operator": "user",
+  "execution_location": "S1 host managed SDK environment",
+  "command_mode": "navigate_relative_goal_v2",
+  "requested_base_link_displacement_m": [0.5, 0.0, 0.0],
+  "max_velocity": [0.1, 0.1, 0.15],
+  "timeout_s": 30.0,
+  "collision_check_enabled": true,
+  "static_path_checks": [true, true, true],
+  "start_pose_map": [
+    0.07944861799478531,
+    0.0748864933848381,
+    -0.012857923284173012,
+    0.002085125304796528,
+    -0.0003777775074193574,
+    -0.08064267914591071,
+    0.9967408228003848
+  ],
+  "expected_goal_pose_map": [
+    0.5729452335791099,
+    -0.005494144693324682,
+    -0.01264952711152609,
+    0.002085125304796528,
+    -0.0003777775074193574,
+    -0.08064267914591071,
+    0.9967408228003848
+  ],
+  "immediate_final_pose_map": [
+    0.5450056195259094,
+    -0.0005102271097712219,
+    -0.008383027277886868,
+    0.0025203009525627995,
+    0.0013886837797823079,
+    -0.07969454989000678,
+    0.9968151776323921
+  ],
+  "later_readback_pose_map": [
+    0.54588383436203,
+    -0.0037363518495112658,
+    -0.009181353263556957,
+    0.0025099487008970202,
+    0.001100907291659884,
+    -0.07973173105207469,
+    0.9968125898202198
+  ],
+  "later_displacement_in_start_base_link_m": [
+    0.4730094426343116,
+    -0.002600797618823762,
+    0.0034904237483545774
+  ],
+  "later_planar_distance_m": 0.4730151824839271,
+  "forward_shortfall_m": 0.026990557365688395,
+  "forward_completion_percent": 94.60188852686233,
+  "navigate_to_goal_v2_return": [true, "SUCCESS"],
+  "goal_arrival": false,
+  "navigation_status": "UNKNOWN",
+  "script_ok": false,
+  "script_outcome": "terminal_result_not_arrived",
+  "cleanup_stop_navigation": [true, "SUCCESS"],
+  "interpretation": "The base moved in the requested forward direction and stopped about 2.7 cm short. PNS/SDK returned SUCCESS, but the separate goal-arrival query returned false, so the guarded CLI did not report full verified arrival."
+}

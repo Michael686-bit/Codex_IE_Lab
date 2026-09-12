@@ -1,0 +1,439 @@
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2441:[2026-09-08_09-11-17.133] [mlog.c:59] I/m2 max SoftPosError:5400
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2449:[2026-09-08_09-11-17.153] [mlog.c:59] I/m3 max SoftPosError:5400
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2457:[2026-09-08_09-11-17.163] [mlog.c:59] I/m4 max SoftPosError:5400
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2465:[2026-09-08_09-11-17.183] [mlog.c:59] I/m5 max SoftPosError:5400
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2474:[2026-09-08_09-11-17.233] [mlog.c:59] I/zeroError enable id 1, i0 pos 294115
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2476:[2026-09-08_09-11-17.233] [mlog.c:59] I/zeroError enable id 2, i1 pos 352386
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2478:[2026-09-08_09-11-17.243] [mlog.c:59] I/zeroError enable id 3, i2 pos 321152
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2480:[2026-09-08_09-11-17.243] [mlog.c:59] I/zeroError enable id 4, i3 pos 262237
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2482:[2026-09-08_09-11-17.253] [mlog.c:59] I/zeroError enable id 5, i4 pos 262137
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2505:[2026-09-08_09-11-17.357] [mlog.c:59] I/head headInit getMotorInterface
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2506:[2026-09-08_09-11-17.357] [mlog.c:59] I/head init hMotor group 3
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2508:[2026-09-08_09-11-17.357] [mlog.c:59] I/head probe motor type ...
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2509:[2026-09-08_09-11-17.357] [mlog.c:59] I/head zero motor 8 is online, cnt 1
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2510:[2026-09-08_09-11-17.357] [mlog.c:59] I/head zero motor 9 is online, cnt 2
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2511:[2026-09-08_09-11-17.357] [mlog.c:59] I/head motor type is LINGCHA_TYPE
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2513:[2026-09-08_09-11-17.467] [mlog.c:59] I/zeroErrMotorInit
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2514:[2026-09-08_09-11-17.577] [mlog.c:59] I/zeroErrMotorInit
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2517:[2026-09-08_09-11-17.907] [mlog.c:59] I/zeroError enable id 8, i0 pos 261070
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2519:[2026-09-08_09-11-17.907] [mlog.c:59] I/zeroError enable id 9, i1 pos 262347
+root@galbot-xcu:~#
+root@galbot-xcu:~# grep -nE 'using_wbc|enable_modify_embosa_cfg' \
+>   /data/config/default/SingoriX/galbot_g1-v2.2/robot_config.toml \
+>   /data/config/system.cfg 2>/dev/null^C
+root@galbot-xcu:~# clear
+
+root@galbot-xcu:~# pgrep -af 'singorix_wbcs_main|singorix|wbc'
+3692 /data/bin/singorix_wbcs_main /userdata/user_config/base
+root@galbot-xcu:~#
+root@galbot-xcu:~# grep -iE 'right_arm|left_arm|driver_state|max_error_level|custom_error|error code' \
+>   /userdata/log/SingoriX/info/singorix_wbcs_main.INFO | tail -n 200
+E20260908 20:47:53.161313 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint7_custom_error, error code: 1, description: Not yet identified
+E20260908 20:47:53.161339 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint3_custom_error, error code: 1, description: Not yet identified
+E20260908 20:47:54.162291 3692 wbcs_interface.cpp:315] Error component: WBCSManager, error code: 20, description: Sync left_arm ...
+E20260908 20:47:54.162472 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint1_error, error code: 200, description: Not yet identified
+E20260908 20:47:54.162500 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint4_custom_error, error code: 1, description: Not yet identified
+E20260908 20:47:54.162529 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint2_custom_error, error code: 1, description: Not yet identified
+E20260908 20:47:54.162556 3692 wbcs_interface.cpp:386] Errors component: left_arm_max_error_level, error code: 30000, description: ErrorSafetyMedium
+E20260908 20:47:54.162584 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint1_custom_error, error code: 59, description: Not yet identified
+E20260908 20:47:54.162611 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint6_custom_error, error code: 1, description: Not yet identified
+E20260908 20:47:54.162639 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint5_custom_error, error code: 1, description: Not yet identified
+E20260908 20:47:54.162666 3692 wbcs_interface.cpp:386] Errors component: left_arm_driver_state, error code: 45, description: DriverError
+E20260908 20:47:54.162694 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint7_custom_error, error code: 1, description: Not yet identified
+E20260908 20:47:54.162720 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint3_custom_error, error code: 1, description: Not yet identified
+E20260908 20:47:55.163340 3692 wbcs_interface.cpp:315] Error component: WBCSManager, error code: 20, description: Sync left_arm ...
+E20260908 20:47:55.163541 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint1_error, error code: 200, description: Not yet identified
+E20260908 20:47:55.163569 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint4_custom_error, error code: 1, description: Not yet identified
+E20260908 20:47:55.163595 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint2_custom_error, error code: 1, description: Not yet identified
+E20260908 20:47:55.163623 3692 wbcs_interface.cpp:386] Errors component: left_arm_max_error_level, error code: 30000, description: ErrorSafetyMedium
+E20260908 20:47:55.163653 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint1_custom_error, error code: 59, description: Not yet identified
+E20260908 20:47:55.163680 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint6_custom_error, error code: 1, description: Not yet identified
+E20260908 20:47:55.163707 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint5_custom_error, error code: 1, description: Not yet identified
+E20260908 20:47:55.163733 3692 wbcs_interface.cpp:386] Errors component: left_arm_driver_state, error code: 45, description: DriverError
+E20260908 20:47:55.163759 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint7_custom_error, error code: 1, description: Not yet identified
+E20260908 20:47:55.163787 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint3_custom_error, error code: 1, description: Not yet identified
+E20260908 20:47:56.164398 3692 wbcs_interface.cpp:315] Error component: WBCSManager, error code: 20, description: Sync left_arm ...
+E20260908 20:47:56.164558 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint1_error, error code: 200, description: Not yet identified
+E20260908 20:47:56.164585 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint4_custom_error, error code: 1, description: Not yet identified
+E20260908 20:47:56.164612 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint2_custom_error, error code: 1, description: Not yet identified
+E20260908 20:47:56.164638 3692 wbcs_interface.cpp:386] Errors component: left_arm_max_error_level, error code: 30000, description: ErrorSafetyMedium
+E20260908 20:47:56.164664 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint1_custom_error, error code: 59, description: Not yet identified
+E20260908 20:47:56.164690 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint6_custom_error, error code: 1, description: Not yet identified
+E20260908 20:47:56.164715 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint5_custom_error, error code: 1, description: Not yet identified
+E20260908 20:47:56.164741 3692 wbcs_interface.cpp:386] Errors component: left_arm_driver_state, error code: 45, description: DriverError
+E20260908 20:47:56.164767 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint7_custom_error, error code: 1, description: Not yet identified
+E20260908 20:47:56.164793 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint3_custom_error, error code: 1, description: Not yet identified
+E20260908 20:47:57.165352 3692 wbcs_interface.cpp:315] Error component: WBCSManager, error code: 20, description: Sync left_arm ...
+E20260908 20:47:57.165528 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint1_error, error code: 200, description: Not yet identified
+E20260908 20:47:57.165556 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint4_custom_error, error code: 1, description: Not yet identified
+E20260908 20:47:57.165582 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint2_custom_error, error code: 1, description: Not yet identified
+E20260908 20:47:57.165608 3692 wbcs_interface.cpp:386] Errors component: left_arm_max_error_level, error code: 30000, description: ErrorSafetyMedium
+E20260908 20:47:57.165635 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint1_custom_error, error code: 59, description: Not yet identified
+E20260908 20:47:57.165661 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint6_custom_error, error code: 1, description: Not yet identified
+E20260908 20:47:57.165687 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint5_custom_error, error code: 1, description: Not yet identified
+E20260908 20:47:57.165714 3692 wbcs_interface.cpp:386] Errors component: left_arm_driver_state, error code: 45, description: DriverError
+E20260908 20:47:57.165740 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint7_custom_error, error code: 1, description: Not yet identified
+E20260908 20:47:57.165765 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint3_custom_error, error code: 1, description: Not yet identified
+E20260908 20:47:58.169914 3692 wbcs_interface.cpp:315] Error component: WBCSManager, error code: 20, description: Sync left_arm ...
+E20260908 20:47:58.170147 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint1_error, error code: 200, description: Not yet identified
+E20260908 20:47:58.170175 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint4_custom_error, error code: 1, description: Not yet identified
+E20260908 20:47:58.170202 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint2_custom_error, error code: 1, description: Not yet identified
+E20260908 20:47:58.170229 3692 wbcs_interface.cpp:386] Errors component: left_arm_max_error_level, error code: 30000, description: ErrorSafetyMedium
+E20260908 20:47:58.170256 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint1_custom_error, error code: 59, description: Not yet identified
+E20260908 20:47:58.170282 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint6_custom_error, error code: 1, description: Not yet identified
+E20260908 20:47:58.170308 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint5_custom_error, error code: 1, description: Not yet identified
+E20260908 20:47:58.170362 3692 wbcs_interface.cpp:386] Errors component: left_arm_driver_state, error code: 45, description: DriverError
+E20260908 20:47:58.170391 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint7_custom_error, error code: 1, description: Not yet identified
+E20260908 20:47:58.170419 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint3_custom_error, error code: 1, description: Not yet identified
+E20260908 20:47:59.171004 3692 wbcs_interface.cpp:315] Error component: WBCSManager, error code: 20, description: Sync left_arm ...
+E20260908 20:47:59.171174 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint1_error, error code: 200, description: Not yet identified
+E20260908 20:47:59.171206 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint4_custom_error, error code: 1, description: Not yet identified
+E20260908 20:47:59.171236 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint2_custom_error, error code: 1, description: Not yet identified
+E20260908 20:47:59.171262 3692 wbcs_interface.cpp:386] Errors component: left_arm_max_error_level, error code: 30000, description: ErrorSafetyMedium
+E20260908 20:47:59.171291 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint1_custom_error, error code: 59, description: Not yet identified
+E20260908 20:47:59.171318 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint6_custom_error, error code: 1, description: Not yet identified
+E20260908 20:47:59.171349 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint5_custom_error, error code: 1, description: Not yet identified
+E20260908 20:47:59.171379 3692 wbcs_interface.cpp:386] Errors component: left_arm_driver_state, error code: 45, description: DriverError
+E20260908 20:47:59.171408 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint7_custom_error, error code: 1, description: Not yet identified
+E20260908 20:47:59.171435 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint3_custom_error, error code: 1, description: Not yet identified
+E20260908 20:48:00.173183 3692 wbcs_interface.cpp:315] Error component: WBCSManager, error code: 20, description: Sync left_arm ...
+E20260908 20:48:00.173345 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint1_error, error code: 200, description: Not yet identified
+E20260908 20:48:00.173373 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint4_custom_error, error code: 1, description: Not yet identified
+E20260908 20:48:00.173399 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint2_custom_error, error code: 1, description: Not yet identified
+E20260908 20:48:00.173426 3692 wbcs_interface.cpp:386] Errors component: left_arm_max_error_level, error code: 30000, description: ErrorSafetyMedium
+E20260908 20:48:00.173452 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint1_custom_error, error code: 59, description: Not yet identified
+E20260908 20:48:00.173479 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint6_custom_error, error code: 1, description: Not yet identified
+E20260908 20:48:00.173505 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint5_custom_error, error code: 1, description: Not yet identified
+E20260908 20:48:00.173531 3692 wbcs_interface.cpp:386] Errors component: left_arm_driver_state, error code: 45, description: DriverError
+E20260908 20:48:00.173557 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint7_custom_error, error code: 1, description: Not yet identified
+E20260908 20:48:00.173582 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint3_custom_error, error code: 1, description: Not yet identified
+E20260908 20:48:01.174218 3692 wbcs_interface.cpp:315] Error component: WBCSManager, error code: 20, description: Sync left_arm ...
+E20260908 20:48:01.174379 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint1_error, error code: 200, description: Not yet identified
+E20260908 20:48:01.174407 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint4_custom_error, error code: 1, description: Not yet identified
+E20260908 20:48:01.174433 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint2_custom_error, error code: 1, description: Not yet identified
+E20260908 20:48:01.174459 3692 wbcs_interface.cpp:386] Errors component: left_arm_max_error_level, error code: 30000, description: ErrorSafetyMedium
+E20260908 20:48:01.174485 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint1_custom_error, error code: 59, description: Not yet identified
+E20260908 20:48:01.174511 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint6_custom_error, error code: 1, description: Not yet identified
+E20260908 20:48:01.174537 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint5_custom_error, error code: 1, description: Not yet identified
+E20260908 20:48:01.174562 3692 wbcs_interface.cpp:386] Errors component: left_arm_driver_state, error code: 45, description: DriverError
+E20260908 20:48:01.174588 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint7_custom_error, error code: 1, description: Not yet identified
+E20260908 20:48:01.174614 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint3_custom_error, error code: 1, description: Not yet identified
+E20260908 20:48:02.175395 3692 wbcs_interface.cpp:315] Error component: WBCSManager, error code: 20, description: Sync left_arm ...
+E20260908 20:48:02.175562 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint1_error, error code: 200, description: Not yet identified
+E20260908 20:48:02.175590 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint4_custom_error, error code: 1, description: Not yet identified
+E20260908 20:48:02.175616 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint2_custom_error, error code: 1, description: Not yet identified
+E20260908 20:48:02.175643 3692 wbcs_interface.cpp:386] Errors component: left_arm_max_error_level, error code: 30000, description: ErrorSafetyMedium
+E20260908 20:48:02.175668 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint1_custom_error, error code: 59, description: Not yet identified
+E20260908 20:48:02.175694 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint6_custom_error, error code: 1, description: Not yet identified
+E20260908 20:48:02.175721 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint5_custom_error, error code: 1, description: Not yet identified
+E20260908 20:48:02.175746 3692 wbcs_interface.cpp:386] Errors component: left_arm_driver_state, error code: 45, description: DriverError
+E20260908 20:48:02.175772 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint7_custom_error, error code: 1, description: Not yet identified
+E20260908 20:48:02.175798 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint3_custom_error, error code: 1, description: Not yet identified
+E20260908 20:48:03.176372 3692 wbcs_interface.cpp:315] Error component: WBCSManager, error code: 20, description: Sync left_arm ...
+E20260908 20:48:03.176531 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint1_error, error code: 200, description: Not yet identified
+E20260908 20:48:03.176559 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint4_custom_error, error code: 1, description: Not yet identified
+E20260908 20:48:03.176585 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint2_custom_error, error code: 1, description: Not yet identified
+E20260908 20:48:03.176612 3692 wbcs_interface.cpp:386] Errors component: left_arm_max_error_level, error code: 30000, description: ErrorSafetyMedium
+E20260908 20:48:03.176638 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint1_custom_error, error code: 59, description: Not yet identified
+E20260908 20:48:03.176665 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint6_custom_error, error code: 1, description: Not yet identified
+E20260908 20:48:03.176691 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint5_custom_error, error code: 1, description: Not yet identified
+E20260908 20:48:03.176717 3692 wbcs_interface.cpp:386] Errors component: left_arm_driver_state, error code: 45, description: DriverError
+E20260908 20:48:03.176742 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint7_custom_error, error code: 1, description: Not yet identified
+E20260908 20:48:03.176768 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint3_custom_error, error code: 1, description: Not yet identified
+E20260908 20:48:04.177381 3692 wbcs_interface.cpp:315] Error component: WBCSManager, error code: 20, description: Sync left_arm ...
+E20260908 20:48:04.177558 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint1_error, error code: 200, description: Not yet identified
+E20260908 20:48:04.177586 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint4_custom_error, error code: 1, description: Not yet identified
+E20260908 20:48:04.177615 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint2_custom_error, error code: 1, description: Not yet identified
+E20260908 20:48:04.177642 3692 wbcs_interface.cpp:386] Errors component: left_arm_max_error_level, error code: 30000, description: ErrorSafetyMedium
+E20260908 20:48:04.177669 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint1_custom_error, error code: 59, description: Not yet identified
+E20260908 20:48:04.177696 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint6_custom_error, error code: 1, description: Not yet identified
+E20260908 20:48:04.177754 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint5_custom_error, error code: 1, description: Not yet identified
+E20260908 20:48:04.177782 3692 wbcs_interface.cpp:386] Errors component: left_arm_driver_state, error code: 45, description: DriverError
+E20260908 20:48:04.177810 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint7_custom_error, error code: 1, description: Not yet identified
+E20260908 20:48:04.177836 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint3_custom_error, error code: 1, description: Not yet identified
+E20260908 20:48:05.182611 3692 wbcs_interface.cpp:315] Error component: WBCSManager, error code: 20, description: Sync left_arm ...
+E20260908 20:48:05.182773 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint1_error, error code: 200, description: Not yet identified
+E20260908 20:48:05.182800 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint4_custom_error, error code: 1, description: Not yet identified
+E20260908 20:48:05.182826 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint2_custom_error, error code: 1, description: Not yet identified
+E20260908 20:48:05.182853 3692 wbcs_interface.cpp:386] Errors component: left_arm_max_error_level, error code: 30000, description: ErrorSafetyMedium
+E20260908 20:48:05.182878 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint1_custom_error, error code: 59, description: Not yet identified
+E20260908 20:48:05.182904 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint6_custom_error, error code: 1, description: Not yet identified
+E20260908 20:48:05.182930 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint5_custom_error, error code: 1, description: Not yet identified
+E20260908 20:48:05.182955 3692 wbcs_interface.cpp:386] Errors component: left_arm_driver_state, error code: 45, description: DriverError
+E20260908 20:48:05.182984 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint7_custom_error, error code: 1, description: Not yet identified
+E20260908 20:48:05.183011 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint3_custom_error, error code: 1, description: Not yet identified
+E20260908 20:48:06.186348 3692 wbcs_interface.cpp:315] Error component: WBCSManager, error code: 20, description: Sync left_arm ...
+E20260908 20:48:06.186514 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint1_error, error code: 200, description: Not yet identified
+E20260908 20:48:06.186541 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint4_custom_error, error code: 1, description: Not yet identified
+E20260908 20:48:06.186567 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint2_custom_error, error code: 1, description: Not yet identified
+E20260908 20:48:06.186594 3692 wbcs_interface.cpp:386] Errors component: left_arm_max_error_level, error code: 30000, description: ErrorSafetyMedium
+E20260908 20:48:06.186619 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint1_custom_error, error code: 59, description: Not yet identified
+E20260908 20:48:06.186646 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint6_custom_error, error code: 1, description: Not yet identified
+E20260908 20:48:06.186672 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint5_custom_error, error code: 1, description: Not yet identified
+E20260908 20:48:06.186698 3692 wbcs_interface.cpp:386] Errors component: left_arm_driver_state, error code: 45, description: DriverError
+E20260908 20:48:06.186724 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint7_custom_error, error code: 1, description: Not yet identified
+E20260908 20:48:06.186750 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint3_custom_error, error code: 1, description: Not yet identified
+E20260908 20:48:07.188752 3692 wbcs_interface.cpp:315] Error component: WBCSManager, error code: 20, description: Sync left_arm ...
+E20260908 20:48:07.188911 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint1_error, error code: 200, description: Not yet identified
+E20260908 20:48:07.188938 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint4_custom_error, error code: 1, description: Not yet identified
+E20260908 20:48:07.188964 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint2_custom_error, error code: 1, description: Not yet identified
+E20260908 20:48:07.188991 3692 wbcs_interface.cpp:386] Errors component: left_arm_max_error_level, error code: 30000, description: ErrorSafetyMedium
+E20260908 20:48:07.189016 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint1_custom_error, error code: 59, description: Not yet identified
+E20260908 20:48:07.189043 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint6_custom_error, error code: 1, description: Not yet identified
+E20260908 20:48:07.189069 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint5_custom_error, error code: 1, description: Not yet identified
+E20260908 20:48:07.189095 3692 wbcs_interface.cpp:386] Errors component: left_arm_driver_state, error code: 45, description: DriverError
+E20260908 20:48:07.189120 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint7_custom_error, error code: 1, description: Not yet identified
+E20260908 20:48:07.189146 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint3_custom_error, error code: 1, description: Not yet identified
+E20260908 20:48:08.194444 3692 wbcs_interface.cpp:315] Error component: WBCSManager, error code: 20, description: Sync left_arm ...
+E20260908 20:48:08.194624 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint1_error, error code: 200, description: Not yet identified
+E20260908 20:48:08.194653 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint4_custom_error, error code: 1, description: Not yet identified
+E20260908 20:48:08.194680 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint2_custom_error, error code: 1, description: Not yet identified
+E20260908 20:48:08.194706 3692 wbcs_interface.cpp:386] Errors component: left_arm_max_error_level, error code: 30000, description: ErrorSafetyMedium
+E20260908 20:48:08.194732 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint1_custom_error, error code: 59, description: Not yet identified
+E20260908 20:48:08.194758 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint6_custom_error, error code: 1, description: Not yet identified
+E20260908 20:48:08.194784 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint5_custom_error, error code: 1, description: Not yet identified
+E20260908 20:48:08.194810 3692 wbcs_interface.cpp:386] Errors component: left_arm_driver_state, error code: 45, description: DriverError
+E20260908 20:48:08.194836 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint7_custom_error, error code: 1, description: Not yet identified
+E20260908 20:48:08.194862 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint3_custom_error, error code: 1, description: Not yet identified
+E20260908 20:48:09.195427 3692 wbcs_interface.cpp:315] Error component: WBCSManager, error code: 20, description: Sync left_arm ...
+E20260908 20:48:09.195590 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint1_error, error code: 200, description: Not yet identified
+E20260908 20:48:09.195618 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint4_custom_error, error code: 1, description: Not yet identified
+E20260908 20:48:09.195647 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint2_custom_error, error code: 1, description: Not yet identified
+E20260908 20:48:09.195674 3692 wbcs_interface.cpp:386] Errors component: left_arm_max_error_level, error code: 30000, description: ErrorSafetyMedium
+E20260908 20:48:09.195703 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint1_custom_error, error code: 59, description: Not yet identified
+E20260908 20:48:09.195729 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint6_custom_error, error code: 1, description: Not yet identified
+E20260908 20:48:09.195757 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint5_custom_error, error code: 1, description: Not yet identified
+E20260908 20:48:09.195783 3692 wbcs_interface.cpp:386] Errors component: left_arm_driver_state, error code: 45, description: DriverError
+E20260908 20:48:09.195810 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint7_custom_error, error code: 1, description: Not yet identified
+E20260908 20:48:09.195836 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint3_custom_error, error code: 1, description: Not yet identified
+E20260908 20:48:10.196400 3692 wbcs_interface.cpp:315] Error component: WBCSManager, error code: 20, description: Sync left_arm ...
+E20260908 20:48:10.196582 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint1_error, error code: 200, description: Not yet identified
+E20260908 20:48:10.196609 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint4_custom_error, error code: 1, description: Not yet identified
+E20260908 20:48:10.196636 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint2_custom_error, error code: 1, description: Not yet identified
+E20260908 20:48:10.196663 3692 wbcs_interface.cpp:386] Errors component: left_arm_max_error_level, error code: 30000, description: ErrorSafetyMedium
+E20260908 20:48:10.196688 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint1_custom_error, error code: 59, description: Not yet identified
+E20260908 20:48:10.196731 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint6_custom_error, error code: 1, description: Not yet identified
+E20260908 20:48:10.196759 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint5_custom_error, error code: 1, description: Not yet identified
+E20260908 20:48:10.196786 3692 wbcs_interface.cpp:386] Errors component: left_arm_driver_state, error code: 45, description: DriverError
+E20260908 20:48:10.196812 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint7_custom_error, error code: 1, description: Not yet identified
+E20260908 20:48:10.196838 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint3_custom_error, error code: 1, description: Not yet identified
+E20260908 20:48:11.198322 3692 wbcs_interface.cpp:315] Error component: WBCSManager, error code: 20, description: Sync left_arm ...
+E20260908 20:48:11.198590 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint1_error, error code: 200, description: Not yet identified
+E20260908 20:48:11.198618 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint4_custom_error, error code: 1, description: Not yet identified
+E20260908 20:48:11.198645 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint2_custom_error, error code: 1, description: Not yet identified
+E20260908 20:48:11.198672 3692 wbcs_interface.cpp:386] Errors component: left_arm_max_error_level, error code: 30000, description: ErrorSafetyMedium
+E20260908 20:48:11.198699 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint1_custom_error, error code: 59, description: Not yet identified
+E20260908 20:48:11.198725 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint6_custom_error, error code: 1, description: Not yet identified
+E20260908 20:48:11.198751 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint5_custom_error, error code: 1, description: Not yet identified
+E20260908 20:48:11.198796 3692 wbcs_interface.cpp:386] Errors component: left_arm_driver_state, error code: 45, description: DriverError
+E20260908 20:48:11.198824 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint7_custom_error, error code: 1, description: Not yet identified
+E20260908 20:48:11.198851 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint3_custom_error, error code: 1, description: Not yet identified
+root@galbot-xcu:~#
+root@galbot-xcu:~# grep -RniE 'left_arm|right_arm|driver|mcu|motor|fault|estop|brake|error' \
+>   /userdata/log/mp_core /userdata/log/secure_core 2>/dev/null | tail -n 200
+/userdata/log/secure_core/20260907-142637.187_secure_core_topic.txt:43834:[2026-09-07_20-00-05.960] [mlog.c:59] I/head headEStop 3 ...
+/userdata/log/secure_core/20260907-142637.187_secure_core_topic.txt:43835:[2026-09-07_20-00-06.960] [mlog.c:59] I/leg legEStop 3 ...
+/userdata/log/secure_core/20260907-142637.187_secure_core_topic.txt:43836:[2026-09-07_20-00-06.960] [mlog.c:59] I/head headEStop 3 ...
+/userdata/log/secure_core/20260907-142637.187_secure_core_topic.txt:43840:[2026-09-07_20-00-07.870] [mlog.c:59] I/leg group 2, -->state changed: estop to init
+/userdata/log/secure_core/20260907-142637.187_secure_core_topic.txt:43841:[2026-09-07_20-00-07.871] [mlog.c:59] I/head group 3, -->state changed: estop to init
+/userdata/log/secure_core/20260907-142637.187_secure_core_topic.txt:43843:[2026-09-07_20-00-07.871] [mlog.c:59] I/leg legInit getMotorInterface
+/userdata/log/secure_core/20260907-142637.187_secure_core_topic.txt:43865:[2026-09-07_20-00-15.170] [mlog.c:59] I/leg init lMotor group 3
+/userdata/log/secure_core/20260907-142637.187_secure_core_topic.txt:43866:[2026-09-07_20-00-15.170] [mlog.c:59] I/zeroErrMotorInit
+/userdata/log/secure_core/20260907-142637.187_secure_core_topic.txt:43867:[2026-09-07_20-00-15.190] [mlog.c:59] I/zeroErrMotorInit
+/userdata/log/secure_core/20260907-142637.187_secure_core_topic.txt:43868:[2026-09-07_20-00-15.200] [mlog.c:59] I/zeroErrMotorInit
+/userdata/log/secure_core/20260907-142637.187_secure_core_topic.txt:43869:[2026-09-07_20-00-15.220] [mlog.c:59] I/zeroErrMotorInit
+/userdata/log/secure_core/20260907-142637.187_secure_core_topic.txt:43870:[2026-09-07_20-00-15.240] [mlog.c:59] I/zeroErrMotorInit
+/userdata/log/secure_core/20260907-142637.187_secure_core_topic.txt:43872:[2026-09-07_20-00-15.450] [mlog.c:59] I/leg check motor limit range
+/userdata/log/secure_core/20260907-142637.187_secure_core_topic.txt:43877:[2026-09-07_20-00-15.461] [mlog.c:59] I/m1 max SoftPosError:5400
+/userdata/log/secure_core/20260907-142637.187_secure_core_topic.txt:43885:[2026-09-07_20-00-15.471] [mlog.c:59] I/m2 max SoftPosError:5400
+/userdata/log/secure_core/20260907-142637.187_secure_core_topic.txt:43893:[2026-09-07_20-00-15.490] [mlog.c:59] I/m3 max SoftPosError:5400
+/userdata/log/secure_core/20260907-142637.187_secure_core_topic.txt:43901:[2026-09-07_20-00-15.501] [mlog.c:59] I/m4 max SoftPosError:5400
+/userdata/log/secure_core/20260907-142637.187_secure_core_topic.txt:43909:[2026-09-07_20-00-15.520] [mlog.c:59] I/m5 max SoftPosError:5400
+/userdata/log/secure_core/20260907-142637.187_secure_core_topic.txt:43918:[2026-09-07_20-00-15.570] [mlog.c:59] I/zeroError enable id 1, i0 pos 294103
+/userdata/log/secure_core/20260907-142637.187_secure_core_topic.txt:43920:[2026-09-07_20-00-15.571] [mlog.c:59] I/zeroError enable id 2, i1 pos 352628
+/userdata/log/secure_core/20260907-142637.187_secure_core_topic.txt:43922:[2026-09-07_20-00-15.580] [mlog.c:59] I/zeroError enable id 3, i2 pos 321134
+/userdata/log/secure_core/20260907-142637.187_secure_core_topic.txt:43924:[2026-09-07_20-00-15.581] [mlog.c:59] I/zeroError enable id 4, i3 pos 262181
+/userdata/log/secure_core/20260907-142637.187_secure_core_topic.txt:43926:[2026-09-07_20-00-15.590] [mlog.c:59] I/zeroError enable id 5, i4 pos 262171
+/userdata/log/secure_core/20260907-142637.187_secure_core_topic.txt:43949:[2026-09-07_20-00-15.694] [mlog.c:59] I/head headInit getMotorInterface
+/userdata/log/secure_core/20260907-142637.187_secure_core_topic.txt:43950:[2026-09-07_20-00-15.694] [mlog.c:59] I/head init hMotor group 3
+/userdata/log/secure_core/20260907-142637.187_secure_core_topic.txt:43952:[2026-09-07_20-00-15.694] [mlog.c:59] I/head probe motor type ...
+/userdata/log/secure_core/20260907-142637.187_secure_core_topic.txt:43953:[2026-09-07_20-00-15.694] [mlog.c:59] I/head zero motor 8 is online, cnt 1
+/userdata/log/secure_core/20260907-142637.187_secure_core_topic.txt:43954:[2026-09-07_20-00-15.695] [mlog.c:59] I/head zero motor 9 is online, cnt 2
+/userdata/log/secure_core/20260907-142637.187_secure_core_topic.txt:43955:[2026-09-07_20-00-15.695] [mlog.c:59] I/head motor type is LINGCHA_TYPE
+/userdata/log/secure_core/20260907-142637.187_secure_core_topic.txt:43957:[2026-09-07_20-00-15.804] [mlog.c:59] I/zeroErrMotorInit
+/userdata/log/secure_core/20260907-142637.187_secure_core_topic.txt:43958:[2026-09-07_20-00-15.914] [mlog.c:59] I/zeroErrMotorInit
+/userdata/log/secure_core/20260907-142637.187_secure_core_topic.txt:43962:[2026-09-07_20-00-16.244] [mlog.c:59] I/zeroError enable id 8, i0 pos 261086
+/userdata/log/secure_core/20260907-142637.187_secure_core_topic.txt:43964:[2026-09-07_20-00-16.245] [mlog.c:59] I/zeroError enable id 9, i1 pos 262351
+/userdata/log/secure_core/20260907-142637.187_secure_core_topic.txt:44248:[2026-09-07_20-02-18.796] [mlog.c:59] I/leg group 2, -->state changed: run to estop
+/userdata/log/secure_core/20260907-142637.187_secure_core_topic.txt:44249:[2026-09-07_20-02-18.797] [mlog.c:59] I/head group 3, -->state changed: run to estop
+/userdata/log/secure_core/20260907-142637.187_secure_core_topic.txt:44250:[2026-09-07_20-02-18.797] [mlog.c:59] I/leg legEStop 3 ...
+/userdata/log/secure_core/20260907-142637.187_secure_core_topic.txt:44252:[2026-09-07_20-02-18.797] [mlog.c:59] I/head headEStop 3 ...
+/userdata/log/secure_core/20260907-142637.187_secure_core_topic.txt:44260:[2026-09-07_20-02-19.796] [mlog.c:59] I/leg legEStop 3 ...
+/userdata/log/secure_core/20260907-142637.187_secure_core_topic.txt:44261:[2026-09-07_20-02-19.796] [mlog.c:59] I/head headEStop 3 ...
+/userdata/log/secure_core/20260907-142637.187_secure_core_topic.txt:44263:[2026-09-07_20-02-20.796] [mlog.c:59] I/leg legEStop 3 ...
+/userdata/log/secure_core/20260907-142637.187_secure_core_topic.txt:44264:[2026-09-07_20-02-20.796] [mlog.c:59] I/head headEStop 3 ...
+/userdata/log/secure_core/20260907-142637.187_secure_core_topic.txt:44266:[2026-09-07_20-02-21.696] [mlog.c:59] I/leg group 2, -->state changed: estop to init
+/userdata/log/secure_core/20260907-142637.187_secure_core_topic.txt:44267:[2026-09-07_20-02-21.697] [mlog.c:59] I/head group 3, -->state changed: estop to init
+/userdata/log/secure_core/20260907-142637.187_secure_core_topic.txt:44269:[2026-09-07_20-02-21.697] [mlog.c:59] I/leg legInit getMotorInterface
+/userdata/log/secure_core/20260907-142637.187_secure_core_topic.txt:44293:[2026-09-07_20-02-28.996] [mlog.c:59] I/leg init lMotor group 3
+/userdata/log/secure_core/20260907-142637.187_secure_core_topic.txt:44294:[2026-09-07_20-02-28.996] [mlog.c:59] I/zeroErrMotorInit
+/userdata/log/secure_core/20260907-142637.187_secure_core_topic.txt:44295:[2026-09-07_20-02-29.016] [mlog.c:59] I/zeroErrMotorInit
+/userdata/log/secure_core/20260907-142637.187_secure_core_topic.txt:44296:[2026-09-07_20-02-29.036] [mlog.c:59] I/zeroErrMotorInit
+/userdata/log/secure_core/20260907-142637.187_secure_core_topic.txt:44297:[2026-09-07_20-02-29.046] [mlog.c:59] I/zeroErrMotorInit
+/userdata/log/secure_core/20260907-142637.187_secure_core_topic.txt:44298:[2026-09-07_20-02-29.066] [mlog.c:59] I/zeroErrMotorInit
+/userdata/log/secure_core/20260907-142637.187_secure_core_topic.txt:44299:[2026-09-07_20-02-29.286] [mlog.c:59] I/leg check motor limit range
+/userdata/log/secure_core/20260907-142637.187_secure_core_topic.txt:44304:[2026-09-07_20-02-29.287] [mlog.c:59] I/m1 max SoftPosError:5400
+/userdata/log/secure_core/20260907-142637.187_secure_core_topic.txt:44312:[2026-09-07_20-02-29.306] [mlog.c:59] I/m2 max SoftPosError:5400
+/userdata/log/secure_core/20260907-142637.187_secure_core_topic.txt:44320:[2026-09-07_20-02-29.317] [mlog.c:59] I/m3 max SoftPosError:5400
+/userdata/log/secure_core/20260907-142637.187_secure_core_topic.txt:44328:[2026-09-07_20-02-29.336] [mlog.c:59] I/m4 max SoftPosError:5400
+/userdata/log/secure_core/20260907-142637.187_secure_core_topic.txt:44336:[2026-09-07_20-02-29.347] [mlog.c:59] I/m5 max SoftPosError:5400
+/userdata/log/secure_core/20260907-142637.187_secure_core_topic.txt:44345:[2026-09-07_20-02-29.396] [mlog.c:59] I/zeroError enable id 1, i0 pos 294113
+/userdata/log/secure_core/20260907-142637.187_secure_core_topic.txt:44347:[2026-09-07_20-02-29.406] [mlog.c:59] I/zeroError enable id 2, i1 pos 352566
+/userdata/log/secure_core/20260907-142637.187_secure_core_topic.txt:44349:[2026-09-07_20-02-29.407] [mlog.c:59] I/zeroError enable id 3, i2 pos 321142
+/userdata/log/secure_core/20260907-142637.187_secure_core_topic.txt:44351:[2026-09-07_20-02-29.416] [mlog.c:59] I/zeroError enable id 4, i3 pos 262181
+/userdata/log/secure_core/20260907-142637.187_secure_core_topic.txt:44353:[2026-09-07_20-02-29.417] [mlog.c:59] I/zeroError enable id 5, i4 pos 262179
+/userdata/log/secure_core/20260907-142637.187_secure_core_topic.txt:44376:[2026-09-07_20-02-29.529] [mlog.c:59] I/head headInit getMotorInterface
+/userdata/log/secure_core/20260907-142637.187_secure_core_topic.txt:44377:[2026-09-07_20-02-29.529] [mlog.c:59] I/head init hMotor group 3
+/userdata/log/secure_core/20260907-142637.187_secure_core_topic.txt:44379:[2026-09-07_20-02-29.529] [mlog.c:59] I/head probe motor type ...
+/userdata/log/secure_core/20260907-142637.187_secure_core_topic.txt:44380:[2026-09-07_20-02-29.530] [mlog.c:59] I/head zero motor 8 is online, cnt 1
+/userdata/log/secure_core/20260907-142637.187_secure_core_topic.txt:44381:[2026-09-07_20-02-29.530] [mlog.c:59] I/head zero motor 9 is online, cnt 2
+/userdata/log/secure_core/20260907-142637.187_secure_core_topic.txt:44382:[2026-09-07_20-02-29.530] [mlog.c:59] I/head motor type is LINGCHA_TYPE
+/userdata/log/secure_core/20260907-142637.187_secure_core_topic.txt:44384:[2026-09-07_20-02-29.629] [mlog.c:59] I/zeroErrMotorInit
+/userdata/log/secure_core/20260907-142637.187_secure_core_topic.txt:44385:[2026-09-07_20-02-29.739] [mlog.c:59] I/zeroErrMotorInit
+/userdata/log/secure_core/20260907-142637.187_secure_core_topic.txt:44389:[2026-09-07_20-02-30.069] [mlog.c:59] I/zeroError enable id 8, i0 pos 261084
+/userdata/log/secure_core/20260907-142637.187_secure_core_topic.txt:44391:[2026-09-07_20-02-30.070] [mlog.c:59] I/zeroError enable id 9, i1 pos 262351
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:72:[2026-09-08_08-55-47.992] [mlog.c:59] I/zeroErrMotorSetMode id 0 -> mode 3
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:73:[2026-09-08_08-55-47.992] [mlog.c:59] I/zeroErrMotorSetMode id 1 -> mode 3
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:74:[2026-09-08_08-55-47.992] [mlog.c:59] I/zeroErrMotorSetMode id 2 -> mode 3
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:75:[2026-09-08_08-55-47.993] [mlog.c:59] I/zeroErrMotorSetMode id 3 -> mode 3
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:76:[2026-09-08_08-55-47.993] [mlog.c:59] I/zeroErrMotorSetMode id 4 -> mode 3
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:104:[2026-09-08_08-55-48.008] [mlog.c:59] I/zeroErrMotorSetMode id 7 -> mode 3
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:105:[2026-09-08_08-55-48.008] [mlog.c:59] I/zeroErrMotorSetMode id 8 -> mode 3
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:1929:[2026-09-08_09-09-49.169] [mlog.c:59] I/leg group 2, -->state changed: run to estop
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:1930:[2026-09-08_09-09-49.169] [mlog.c:59] I/head group 3, -->state changed: run to estop
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:1931:[2026-09-08_09-09-49.169] [mlog.c:59] I/leg legEStop 3 ...
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:1933:[2026-09-08_09-09-49.170] [mlog.c:59] I/head headEStop 3 ...
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:1942:[2026-09-08_09-09-50.169] [mlog.c:59] I/leg legEStop 3 ...
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:1943:[2026-09-08_09-09-50.169] [mlog.c:59] I/head headEStop 3 ...
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:1944:[2026-09-08_09-09-51.169] [mlog.c:59] I/leg legEStop 3 ...
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:1945:[2026-09-08_09-09-51.169] [mlog.c:59] I/head headEStop 3 ...
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:1947:[2026-09-08_09-09-52.169] [mlog.c:59] I/leg legEStop 3 ...
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:1948:[2026-09-08_09-09-52.169] [mlog.c:59] I/head headEStop 3 ...
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:1950:[2026-09-08_09-09-53.169] [mlog.c:59] I/leg legEStop 3 ...
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:1951:[2026-09-08_09-09-53.169] [mlog.c:59] I/head headEStop 3 ...
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:1953:[2026-09-08_09-09-54.169] [mlog.c:59] I/leg legEStop 3 ...
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:1954:[2026-09-08_09-09-54.169] [mlog.c:59] I/head headEStop 3 ...
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:1955:[2026-09-08_09-09-55.169] [mlog.c:59] I/leg legEStop 3 ...
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:1956:[2026-09-08_09-09-55.169] [mlog.c:59] I/head headEStop 3 ...
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:1959:[2026-09-08_09-09-56.169] [mlog.c:59] I/leg legEStop 3 ...
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:1960:[2026-09-08_09-09-56.169] [mlog.c:59] I/head headEStop 3 ...
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:1961:[2026-09-08_09-09-57.169] [mlog.c:59] I/leg legEStop 3 ...
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:1962:[2026-09-08_09-09-57.169] [mlog.c:59] I/head headEStop 3 ...
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:1964:[2026-09-08_09-09-57.559] [mlog.c:59] I/leg group 2, -->state changed: estop to init
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:1965:[2026-09-08_09-09-57.559] [mlog.c:59] I/head group 3, -->state changed: estop to init
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:1967:[2026-09-08_09-09-57.559] [mlog.c:59] I/leg legInit getMotorInterface
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:1991:[2026-09-08_09-10-04.859] [mlog.c:59] I/leg init lMotor group 3
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:1992:[2026-09-08_09-10-04.859] [mlog.c:59] I/zeroErrMotorInit
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:1993:[2026-09-08_09-10-04.869] [mlog.c:59] I/zeroErrMotorInit
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:1994:[2026-09-08_09-10-04.889] [mlog.c:59] I/zeroErrMotorInit
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:1995:[2026-09-08_09-10-04.909] [mlog.c:59] I/zeroErrMotorInit
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:1996:[2026-09-08_09-10-04.929] [mlog.c:59] I/zeroErrMotorInit
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:1997:[2026-09-08_09-10-05.139] [mlog.c:59] I/leg check motor limit range
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2002:[2026-09-08_09-10-05.149] [mlog.c:59] I/m1 max SoftPosError:5400
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2010:[2026-09-08_09-10-05.159] [mlog.c:59] I/m2 max SoftPosError:5400
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2018:[2026-09-08_09-10-05.179] [mlog.c:59] I/m3 max SoftPosError:5400
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2026:[2026-09-08_09-10-05.189] [mlog.c:59] I/m4 max SoftPosError:5400
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2034:[2026-09-08_09-10-05.209] [mlog.c:59] I/m5 max SoftPosError:5400
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2043:[2026-09-08_09-10-05.259] [mlog.c:59] I/zeroError enable id 1, i0 pos 294123
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2045:[2026-09-08_09-10-05.259] [mlog.c:59] I/zeroError enable id 2, i1 pos 352479
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2047:[2026-09-08_09-10-05.269] [mlog.c:59] I/zeroError enable id 3, i2 pos 321145
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2049:[2026-09-08_09-10-05.269] [mlog.c:59] I/zeroError enable id 4, i3 pos 262174
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2051:[2026-09-08_09-10-05.269] [mlog.c:59] I/zeroError enable id 5, i4 pos 262186
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2074:[2026-09-08_09-10-05.383] [mlog.c:59] I/head headInit getMotorInterface
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2075:[2026-09-08_09-10-05.383] [mlog.c:59] I/head init hMotor group 3
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2077:[2026-09-08_09-10-05.383] [mlog.c:59] I/head probe motor type ...
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2078:[2026-09-08_09-10-05.383] [mlog.c:59] I/head zero motor 8 is online, cnt 1
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2079:[2026-09-08_09-10-05.383] [mlog.c:59] I/head zero motor 9 is online, cnt 2
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2080:[2026-09-08_09-10-05.383] [mlog.c:59] I/head motor type is LINGCHA_TYPE
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2082:[2026-09-08_09-10-05.483] [mlog.c:59] I/zeroErrMotorInit
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2083:[2026-09-08_09-10-05.603] [mlog.c:59] I/zeroErrMotorInit
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2086:[2026-09-08_09-10-05.923] [mlog.c:59] I/zeroError enable id 8, i0 pos 261070
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2088:[2026-09-08_09-10-05.933] [mlog.c:59] I/zeroError enable id 9, i1 pos 262345
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2165:[2026-09-08_09-10-32.105] [mlog.c:59] I/leg group 2, -->state changed: run to estop
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2166:[2026-09-08_09-10-32.105] [mlog.c:59] I/head group 3, -->state changed: run to estop
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2167:[2026-09-08_09-10-32.105] [mlog.c:59] I/leg legEStop 3 ...
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2169:[2026-09-08_09-10-32.106] [mlog.c:59] I/head headEStop 3 ...
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2177:[2026-09-08_09-10-33.106] [mlog.c:59] I/leg legEStop 3 ...
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2178:[2026-09-08_09-10-33.106] [mlog.c:59] I/head headEStop 3 ...
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2180:[2026-09-08_09-10-33.716] [mlog.c:59] I/leg group 2, -->state changed: estop to init
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2181:[2026-09-08_09-10-33.716] [mlog.c:59] I/head group 3, -->state changed: estop to init
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2183:[2026-09-08_09-10-33.716] [mlog.c:59] I/leg legInit getMotorInterface
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2207:[2026-09-08_09-10-41.026] [mlog.c:59] I/leg init lMotor group 3
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2208:[2026-09-08_09-10-41.026] [mlog.c:59] I/zeroErrMotorInit
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2209:[2026-09-08_09-10-41.036] [mlog.c:59] I/zeroErrMotorInit
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2210:[2026-09-08_09-10-41.056] [mlog.c:59] I/zeroErrMotorInit
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2211:[2026-09-08_09-10-41.076] [mlog.c:59] I/zeroErrMotorInit
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2212:[2026-09-08_09-10-41.086] [mlog.c:59] I/zeroErrMotorInit
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2213:[2026-09-08_09-10-41.306] [mlog.c:59] I/leg check motor limit range
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2218:[2026-09-08_09-10-41.316] [mlog.c:59] I/m1 max SoftPosError:5400
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2226:[2026-09-08_09-10-41.326] [mlog.c:59] I/m2 max SoftPosError:5400
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2234:[2026-09-08_09-10-41.346] [mlog.c:59] I/m3 max SoftPosError:5400
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2242:[2026-09-08_09-10-41.356] [mlog.c:59] I/m4 max SoftPosError:5400
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2250:[2026-09-08_09-10-41.366] [mlog.c:59] I/m5 max SoftPosError:5400
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2259:[2026-09-08_09-10-41.426] [mlog.c:59] I/zeroError enable id 1, i0 pos 294123
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2261:[2026-09-08_09-10-41.426] [mlog.c:59] I/zeroError enable id 2, i1 pos 352439
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2263:[2026-09-08_09-10-41.426] [mlog.c:59] I/zeroError enable id 3, i2 pos 321144
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2265:[2026-09-08_09-10-41.436] [mlog.c:59] I/zeroError enable id 4, i3 pos 262210
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2267:[2026-09-08_09-10-41.436] [mlog.c:59] I/zeroError enable id 5, i4 pos 262161
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2290:[2026-09-08_09-10-41.550] [mlog.c:59] I/head headInit getMotorInterface
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2291:[2026-09-08_09-10-41.550] [mlog.c:59] I/head init hMotor group 3
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2293:[2026-09-08_09-10-41.550] [mlog.c:59] I/head probe motor type ...
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2294:[2026-09-08_09-10-41.550] [mlog.c:59] I/head zero motor 8 is online, cnt 1
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2295:[2026-09-08_09-10-41.550] [mlog.c:59] I/head zero motor 9 is online, cnt 2
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2296:[2026-09-08_09-10-41.550] [mlog.c:59] I/head motor type is LINGCHA_TYPE
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2298:[2026-09-08_09-10-41.650] [mlog.c:59] I/zeroErrMotorInit
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2299:[2026-09-08_09-10-41.760] [mlog.c:59] I/zeroErrMotorInit
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2302:[2026-09-08_09-10-42.090] [mlog.c:59] I/zeroError enable id 8, i0 pos 261071
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2304:[2026-09-08_09-10-42.090] [mlog.c:59] I/zeroError enable id 9, i1 pos 262347
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2380:[2026-09-08_09-11-07.662] [mlog.c:59] I/leg group 2, -->state changed: run to estop
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2381:[2026-09-08_09-11-07.662] [mlog.c:59] I/head group 3, -->state changed: run to estop
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2382:[2026-09-08_09-11-07.662] [mlog.c:59] I/leg legEStop 3 ...
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2384:[2026-09-08_09-11-07.663] [mlog.c:59] I/head headEStop 3 ...
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2392:[2026-09-08_09-11-08.663] [mlog.c:59] I/leg legEStop 3 ...
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2393:[2026-09-08_09-11-08.663] [mlog.c:59] I/head headEStop 3 ...
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2395:[2026-09-08_09-11-09.533] [mlog.c:59] I/leg group 2, -->state changed: estop to init
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2396:[2026-09-08_09-11-09.533] [mlog.c:59] I/head group 3, -->state changed: estop to init
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2398:[2026-09-08_09-11-09.533] [mlog.c:59] I/leg legInit getMotorInterface
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2422:[2026-09-08_09-11-16.833] [mlog.c:59] I/leg init lMotor group 3
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2423:[2026-09-08_09-11-16.833] [mlog.c:59] I/zeroErrMotorInit
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2424:[2026-09-08_09-11-16.853] [mlog.c:59] I/zeroErrMotorInit
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2425:[2026-09-08_09-11-16.863] [mlog.c:59] I/zeroErrMotorInit
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2426:[2026-09-08_09-11-16.883] [mlog.c:59] I/zeroErrMotorInit
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2427:[2026-09-08_09-11-16.903] [mlog.c:59] I/zeroErrMotorInit
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2428:[2026-09-08_09-11-17.113] [mlog.c:59] I/leg check motor limit range
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2433:[2026-09-08_09-11-17.123] [mlog.c:59] I/m1 max SoftPosError:5400
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2441:[2026-09-08_09-11-17.133] [mlog.c:59] I/m2 max SoftPosError:5400
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2449:[2026-09-08_09-11-17.153] [mlog.c:59] I/m3 max SoftPosError:5400
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2457:[2026-09-08_09-11-17.163] [mlog.c:59] I/m4 max SoftPosError:5400
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2465:[2026-09-08_09-11-17.183] [mlog.c:59] I/m5 max SoftPosError:5400
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2474:[2026-09-08_09-11-17.233] [mlog.c:59] I/zeroError enable id 1, i0 pos 294115
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2476:[2026-09-08_09-11-17.233] [mlog.c:59] I/zeroError enable id 2, i1 pos 352386
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2478:[2026-09-08_09-11-17.243] [mlog.c:59] I/zeroError enable id 3, i2 pos 321152
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2480:[2026-09-08_09-11-17.243] [mlog.c:59] I/zeroError enable id 4, i3 pos 262237
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2482:[2026-09-08_09-11-17.253] [mlog.c:59] I/zeroError enable id 5, i4 pos 262137
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2505:[2026-09-08_09-11-17.357] [mlog.c:59] I/head headInit getMotorInterface
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2506:[2026-09-08_09-11-17.357] [mlog.c:59] I/head init hMotor group 3
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2508:[2026-09-08_09-11-17.357] [mlog.c:59] I/head probe motor type ...
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2509:[2026-09-08_09-11-17.357] [mlog.c:59] I/head zero motor 8 is online, cnt 1
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2510:[2026-09-08_09-11-17.357] [mlog.c:59] I/head zero motor 9 is online, cnt 2
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2511:[2026-09-08_09-11-17.357] [mlog.c:59] I/head motor type is LINGCHA_TYPE
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2513:[2026-09-08_09-11-17.467] [mlog.c:59] I/zeroErrMotorInit
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2514:[2026-09-08_09-11-17.577] [mlog.c:59] I/zeroErrMotorInit
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2517:[2026-09-08_09-11-17.907] [mlog.c:59] I/zeroError enable id 8, i0 pos 261070
+/userdata/log/secure_core/20260908-085536.012_secure_core_topic.txt:2519:[2026-09-08_09-11-17.907] [mlog.c:59] I/zeroError enable id 9, i1 pos 262347
+root@galbot-xcu:~#
+root@galbot-xcu:~# grep -nE 'using_wbc|enable_modify_embosa_cfg' \
+>   /data/config/default/SingoriX/galbot_g1-v2.2/robot_config.toml \
+>   /data/config/system.cfg 2>/dev/null
+/data/config/system.cfg:10:    "enable_modify_embosa_cfg": false,
+root@galbot-xcu:~#

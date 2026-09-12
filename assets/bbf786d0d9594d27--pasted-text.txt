@@ -1,0 +1,230 @@
+按刚才确定的 B 方案和实验组织方式，开始第一轮离线实现，不再重复制定总体计划。
+实验名称：4317 箱口矩形重建与轻量位姿估计实验。
+在当前 S1 仓库中新建独立实验目录：
+experiments/20260907_bin_rim_pose
+执行要求：
+1. 先阅读项目规定的文档，核对现有代码、冻结数据和坐标约定。此前讨论中的技术判断作为待核验假设，不直接视为事实。
+2. 复用 FDP 基线实验中已保存、人工确认目标的冻结案例；记录输入路径与哈希，不修改原案例，不覆盖原实验结果。
+3. 新算法、配置、测试、诊断图和报告放在新实验目录；已有基线工具优先通过清晰接口复用。
+4. 实现箱沿提取、箱口矩形重建和 4317 语义位姿输出，保持 T_base_link_from_4317_semantic 的坐标、单位和对称约定。
+5. 区分直接观测与尺寸先验推断；观测不足或存在无法消除的歧义时，输出拒绝原因，不强行给出有效位姿。
+6. 用同一冻结输入与已保存的 ROI、FDP 结果对照，但不把它们当作真值。
+本轮允许修改本地实验代码、运行离线验证并更新实验文档。
+不连接机器人、不调用外部感知服务、不修改 third_party 或生产抓取规则；暂不加入 ICP。
+第一轮交付：
+- 可复现的离线运行命令；
+- 箱口中心、四角、长短轴与语义位姿结果；
+- RGB 和点云诊断图；
+- 必要的几何与坐标验证；
+- 结果报告，说明失败情况、未解决问题及下一步建议。
+在上述范围内自主推进，无需逐步询问。遇到影响算法成立或坐标正确性的关键缺失时，说明证据与阻塞。
+完成后停在“单个冻结案例的箱口恢复、语义位姿输出与诊断报告”，暂不进入抓取目标接入、多帧采集或真机执行。
+
+
+
+
+
+显示更多
+
+14:24
+
+
+
+
+
+
+已处理 13分钟 56秒
+
+
+
+
+我会先核对冻结案例、语义坐标和可复用的基线接口，再在独立目录实现箱沿重建与离线诊断。所有结果写入新实验；观测不足时保留候选和拒绝原因，不强行输出有效位姿。
+
+
+
+
+已读取文件运行了命令
+
+
+已查看 1 张图像
+
+
+
+已读取文件运行了命令
+
+
+已查看 1 张图像
+
+
+
+已读取文件
+
+
+冻结案例的哈希和人工目标确认已通过检查。发现最终 ROI mask 包含箱壁、箱内区域和少量背景，不能直接作为箱沿点集；另外，OBJ 文件的原始轴与基线语义轴不同，需要核查 FDP 是否做过居中和轴变换。我会从观测独立提取箱沿，并把这些坐标差异写入审计记录。
+
+
+
+
+已读取文件运行了命令
+
+
+已查看 1 张图像
+
+
+
+  运行了命令
+
+
+我的意思是你要不先做离线实验，因为现在S1 机器人别人还在调
+
+
+
+
+
+
+
+14:30
+
+
+
+
+
+
+编辑了文件运行了命令
+
+
+明白，当前一直是纯离线实验：只读取本机已保存的 RGB-D 和人工确认案例，没有连接 S1 或调用外部感知服务，不会影响别人调试。初版已拟合出矩形候选，但发现不同高度的箱壁截面也可能通过矩形检查；我正在补充箱沿高度和歧义检查，避免把它们误认成箱口。
+
+
+
+
+编辑了文件读取文件运行了命令
+
+
+矩形候选已经重建出来，XY 中心明显更接近保存的 FDP 结果。不过，同一帧中有多个高度或倾角不同的平面都能支撑四边拟合，目前无法可靠区分真正的箱口平面。最终结果会保留候选中心、四角和轴向用于诊断，同时拒绝输出有效位姿；接下来验证坐标转换、拒绝门禁和复现命令。
+
+
+
+
+  运行了命令
+
+
+已查看 2 张图像
+
+
+
+  正在运行 cat > experiments/20260907_bin_rim_pose/tests/test_frozen_case.py <<'PY'
+"""Integration tests use only the one confirmed local frame, if present."""
+import json
+import sys
+import unittest
+from pathlib import Path
+import numpy as np
+ROOT=Path(__file__).resolve().parents[1]
+sys.path[:0]=[str(ROOT),str(ROOT.parent/'20260903_fdp_baseline')]
+from run_offline import load_case,load_reference,backend_result,verify_geometry,offline_audit
+from bin_rim_pose.geometry import estimate
+CASE=ROOT.parent/'20260903_fdp_baseline/cases/right_wrist_20260907_01_lingbot_operator1'
+REFERENCE=ROOT.parent/'20260903_fdp_baseline/outputs/fdp_20260907_01_lingbot_operator1'
+
+
+class ContractTests(unittest.TestCase):
+    def test_rejected_candidate_is_not_published_as_pose(self):
+        r={'ok':False,'candidate':{'T_base_link_from_4317_semantic':np.eye(4).tolist()},'rejection_reasons':['ambiguous_rim_planes']}
+        official=backend_result(r,{},'camera')
+        self.assertFalse(official['ok'])
+        self.assertIsNone(official['matrices']['T_base_link_from_4317_semantic'])
+
+    def test_network_guard(self):
+        with self.assertRaisesRegex(RuntimeError,'network operation prohibited'):
+            offline_audit('socket.connect',(None,('127.0.0.1',1234)))
+
+
+@unittest.skipUnless((CASE/'manifest.json').exists() and REFERENCE.exists(),'frozen local assets unavailable')
+class FrozenCaseTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.case=load_case(CASE);cls.cfg=json.loads((ROOT/'config/default.json').read_text())
+
+    def test_archived_FDP_request_and_coordinates(self):
+        _,checks=load_reference(REFERENCE,self.case)
+        self.assertTrue(all(checks['archived_request_matches_case'].values()))
+        self.assertTrue(checks['fdp_coordinate_replay_exact'])
+
+    def test_different_mask_rejected_by_reference_binding(self):
+        case=dict(self.case);case['mask']=case['mask'].copy();case['mask'][0,0]=~case['mask'][0,0]
+        with self.assertRaisesRegex(ValueError,'archived input mismatch'):
+            load_reference(REFERENCE,case)
+
+    def test_real_frame_plane_ambiguity_retains_candidate_but_rejects(self):
+        c=self.case
+        r,_=estimate(c['rgb'],c['depth_m'],c['mask'],c['intrinsics'],c['base_from_camera'],self.cfg)
+        self.assertFalse(r['ok'])
+        self.assertIn('ambiguous_rim_planes',r['rejection_reasons'])
+        self.assertIsNotNone(r['candidate'])
+        self.assertTrue(any(a.get('unresolved_competitor') for a in r['plane_alternatives']))
+        checks=verify_geometry(r['candidate'],c['intrinsics'],c['base_from_camera'],self.cfg)
+        self.assertTrue(checks['ok'])
+        self.assertIsNone(backend_result(r,checks,'camera')['matrices']['T_base_link_from_4317_semantic'])
+
+if __name__=='__main__':unittest.main()
+PY
+OPENBLAS_NUM_THREADS=1 python3 -B -m unittest discover -s experiments/20260907_bin_rim_pose/tests -v > experiments/20260907_bin_rim_pose/tests/VALIDATION_20260907.txt 2>&1
+cat experiments/20260907_bin_rim_pose/tests/VALIDATION_20260907.txt正在运行 cat > experiments/20260907_bin_rim_pose/tests/test_frozen_case.py <<'PY'
+"""Integration tests use only the one confirmed local frame, if present."""
+import json
+import sys
+import unittest
+from pathlib import Path
+import numpy as np
+ROOT=Path(__file__).resolve().parents[1]
+sys.path[:0]=[str(ROOT),str(ROOT.parent/'20260903_fdp_baseline')]
+from run_offline import load_case,load_reference,backend_result,verify_geometry,offline_audit
+from bin_rim_pose.geometry import estimate
+CASE=ROOT.parent/'20260903_fdp_baseline/cases/right_wrist_20260907_01_lingbot_operator1'
+REFERENCE=ROOT.parent/'20260903_fdp_baseline/outputs/fdp_20260907_01_lingbot_operator1'
+
+
+class ContractTests(unittest.TestCase):
+    def test_rejected_candidate_is_not_published_as_pose(self):
+        r={'ok':False,'candidate':{'T_base_link_from_4317_semantic':np.eye(4).tolist()},'rejection_reasons':['ambiguous_rim_planes']}
+        official=backend_result(r,{},'camera')
+        self.assertFalse(official['ok'])
+        self.assertIsNone(official['matrices']['T_base_link_from_4317_semantic'])
+
+    def test_network_guard(self):
+        with self.assertRaisesRegex(RuntimeError,'network operation prohibited'):
+            offline_audit('socket.connect',(None,('127.0.0.1',1234)))
+
+
+@unittest.skipUnless((CASE/'manifest.json').exists() and REFERENCE.exists(),'frozen local assets unavailable')
+class FrozenCaseTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.case=load_case(CASE);cls.cfg=json.loads((ROOT/'config/default.json').read_text())
+
+    def test_archived_FDP_request_and_coordinates(self):
+        _,checks=load_reference(REFERENCE,self.case)
+        self.assertTrue(all(checks['archived_request_matches_case'].values()))
+        self.assertTrue(checks['fdp_coordinate_replay_exact'])
+
+    def test_different_mask_rejected_by_reference_binding(self):
+        case=dict(self.case);case['mask']=case['mask'].copy();case['mask'][0,0]=~case['mask'][0,0]
+        with self.assertRaisesRegex(ValueError,'archived input mismatch'):
+            load_reference(REFERENCE,case)
+
+    def test_real_frame_plane_ambiguity_retains_candidate_but_rejects(self):
+        c=self.case
+        r,_=estimate(c['rgb'],c['depth_m'],c['mask'],c['intrinsics'],c['base_from_camera'],self.cfg)
+        self.assertFalse(r['ok'])
+        self.assertIn('ambiguous_rim_planes',r['rejection_reasons'])
+        self.assertIsNotNone(r['candidate'])
+        self.assertTrue(any(a.get('unresolved_competitor') for a in r['plane_alternatives']))
+        checks=verify_geometry(r['candidate'],c['intrinsics'],c['base_from_camera'],self.cfg)
+        self.assertTrue(checks['ok'])
+        self.assertIsNone(backend_result(r,checks,'camera')['matrices']['T_base_link_from_4317_semantic'])
+
+if __name__=='__main__':unittest.main()
+PY
+OPENBLAS_NUM_THREADS=1 python3 -B -m unittest discover -s experiments/20260907_bin_rim_pose/tests -v > experiments/20260907_bin_rim_pose/tests/VALIDATION_20260907.txt 2>&1
+cat experiments/20260907_bin_rim_pose/tests/VALIDATION_20260907.txt

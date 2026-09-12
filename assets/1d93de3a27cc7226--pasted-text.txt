@@ -1,0 +1,79 @@
+galbot@galbot-echo:~/g1_arm_smoke_test_20260904$ ./run_g1_arm_smoke_test.sh
+2026-09-09 15:54:09,216 INFO 模式：DRY-RUN（无运动命令）
+2026-09-09 15:54:09,216 INFO 日志：/home/galbot/g1_arm_smoke_test_20260904/logs/g1_arm_smoke_test_20260909_155409.log
+2026-09-09 15:54:09,216 INFO PID=26605 host=galbot-echo
+2026-09-09 15:54:09,218 INFO URDF：/userdata/update/manual_update/config/galbot_description/galbot_one_golf_description/galbot_one_golf.urdf
+2026-09-09 15:54:09,219 INFO 限位同时与标定 URDF 取保守交集：/userdata/user_config/base/pns_galbot_description/galbot_one_golf_description/galbot_one_golf_cali.urdf
+2026-09-09 15:54:09,289 INFO Python：/usr/bin/python3 3.8.10；SDK：1.9.0 (/data/galbot/lib/galbot_sdk/__init__.py)
+2026-09-09 15:54:09,289 INFO 初始化 GalbotRobot；此步骤尚未发送运动命令
+2026-09-09 15:54:10,566 INFO 预检新鲜度：时间戳已递增；最大变化 0.0000 度（阈值 0.2000 度）；最大速度 0.000000 rad/s
+2026-09-09 15:54:10,567 INFO 反馈时间戳：min=1788940450529085696 max=1788940450529085696，轴间跨度 0.000 ms，距本机 wall clock 37.914 ms
+2026-09-09 15:54:10,567 INFO SDK 记录的活动控制器：left_arm_pvt_ctrl
+2026-09-09 15:54:10,567 INFO 关节计划（* 为待微动关节）：
+2026-09-09 15:54:10,567 INFO     #  joint                    current(deg)  target(deg)   limits(deg)
+2026-09-09 15:54:10,567 INFO    1  left_arm_joint1               44.030       44.030   [-172.135,  172.135]
+2026-09-09 15:54:10,567 INFO    2  left_arm_joint2               -7.512       -7.512   [ -92.135,   92.135]
+2026-09-09 15:54:10,567 INFO    3  left_arm_joint3              -19.793      -19.793   [-167.130,  167.130]
+2026-09-09 15:54:10,567 INFO    4  left_arm_joint4               -0.847       -0.847   [-147.135,  107.135]
+2026-09-09 15:54:10,567 INFO    5  left_arm_joint5               -6.275       -6.275   [-167.130,  167.130]
+2026-09-09 15:54:10,567 INFO    6  left_arm_joint6                1.791        1.791   [ -47.135,   42.135]
+2026-09-09 15:54:10,567 INFO *  7  left_arm_joint7                1.565        2.565   [ -88.133,   88.133]
+2026-09-09 15:54:10,567 INFO DRY-RUN 完成：未调用 set_joint_positions()，机械臂未收到运动命令
+2026-09-09 15:54:10,568 INFO 清理：request_shutdown 完成
+2026-09-09 15:54:11,268 INFO 清理：wait_for_shutdown 完成
+2026-09-09 15:54:11,327 INFO 清理：destroy 完成
+galbot@galbot-echo:~/g1_arm_smoke_test_20260904$ ./run_g1_arm_smoke_test.sh \
+>   --execute \
+>   --arm left \
+>   --joint-index 7 \
+>   --delta-deg 1.0 \
+>   --speed-rad-s 0.03
+2026-09-09 15:54:32,458 INFO 模式：真机微动作
+2026-09-09 15:54:32,459 INFO 日志：/home/galbot/g1_arm_smoke_test_20260904/logs/g1_arm_smoke_test_20260909_155432.log
+2026-09-09 15:54:32,459 INFO PID=26893 host=galbot-echo
+2026-09-09 15:54:32,459 INFO 已获取本实验单实例锁：/tmp/g1_arm_smoke_test_robot.lock
+2026-09-09 15:54:32,461 INFO URDF：/userdata/update/manual_update/config/galbot_description/galbot_one_golf_description/galbot_one_golf.urdf
+2026-09-09 15:54:32,462 INFO 限位同时与标定 URDF 取保守交集：/userdata/user_config/base/pns_galbot_description/galbot_one_golf_description/galbot_one_golf_cali.urdf
+2026-09-09 15:54:32,530 INFO Python：/usr/bin/python3 3.8.10；SDK：1.9.0 (/data/galbot/lib/galbot_sdk/__init__.py)
+2026-09-09 15:54:32,531 INFO 初始化 GalbotRobot；此步骤尚未发送运动命令
+2026-09-09 15:54:33,709 INFO 预检新鲜度：时间戳已递增；最大变化 0.0000 度（阈值 0.2000 度）；最大速度 0.000000 rad/s
+2026-09-09 15:54:33,709 INFO 反馈时间戳：min=1788940473564227072 max=1788940473564227072，轴间跨度 0.000 ms，距本机 wall clock 145.178 ms
+2026-09-09 15:54:33,709 INFO SDK 记录的活动控制器：left_arm_pvt_ctrl
+2026-09-09 15:54:33,709 INFO 关节计划（* 为待微动关节）：
+2026-09-09 15:54:33,709 INFO     #  joint                    current(deg)  target(deg)   limits(deg)
+2026-09-09 15:54:33,709 INFO    1  left_arm_joint1               44.030       44.030   [-172.135,  172.135]
+2026-09-09 15:54:33,709 INFO    2  left_arm_joint2               -7.512       -7.512   [ -92.135,   92.135]
+2026-09-09 15:54:33,710 INFO    3  left_arm_joint3              -19.793      -19.793   [-167.130,  167.130]
+2026-09-09 15:54:33,710 INFO    4  left_arm_joint4               -0.847       -0.847   [-147.135,  107.135]
+2026-09-09 15:54:33,710 INFO    5  left_arm_joint5               -6.275       -6.275   [-167.130,  167.130]
+2026-09-09 15:54:33,710 INFO    6  left_arm_joint6                1.791        1.791   [ -47.135,   42.135]
+2026-09-09 15:54:33,710 INFO *  7  left_arm_joint7                1.565        2.565   [ -88.133,   88.133]
+2026-09-09 15:54:34,062 INFO 关节计划（* 为待微动关节）：
+2026-09-09 15:54:34,062 INFO     #  joint                    current(deg)  target(deg)   limits(deg)
+2026-09-09 15:54:34,062 INFO    1  left_arm_joint1               44.030       44.030   [-172.135,  172.135]
+2026-09-09 15:54:34,062 INFO    2  left_arm_joint2               -7.512       -7.512   [ -92.135,   92.135]
+2026-09-09 15:54:34,062 INFO    3  left_arm_joint3              -19.793      -19.793   [-167.130,  167.130]
+2026-09-09 15:54:34,062 INFO    4  left_arm_joint4               -0.847       -0.847   [-147.135,  107.135]
+2026-09-09 15:54:34,062 INFO    5  left_arm_joint5               -6.275       -6.275   [-167.130,  167.130]
+2026-09-09 15:54:34,062 INFO    6  left_arm_joint6                1.791        1.791   [ -47.135,   42.135]
+2026-09-09 15:54:34,062 INFO *  7  left_arm_joint7                1.565        2.565   [ -88.133,   88.133]
+
+危险确认：下一步会让真实机械臂运动。
+请确认：现场有人看护；物理急停可立即触达；机器人周围 2 米无人和障碍物；
+没有其他程序或人员正在控制机械臂；已目视确认当前姿态和运动方向安全。
+计划：left_arm_joint7 相对移动 +1.000 度，随后在成功验证后返回原位。
+软件退出或 Ctrl+C 不能替代物理急停；出现异常请立即使用物理急停。
+若全部确认，请准确输入：MOVE LEFT_ARM_JOINT7 +1.000 DEG
+> MOVE LEFT_ARM_JOINT7 +1.000 DEG
+2026-09-09 15:54:50,953 INFO 最终目标：left_arm_joint7 0.027323 -> 0.044776 rad（+1.000 度）
+2026-09-09 15:54:50,954 INFO 阶段 1/3 保持当前位置：仅向 left_arm_joint7 发送 0.027323 rad (1.565 deg) 的阻塞式位置命令
+2026-09-09 15:54:50,954 INFO 阶段 1/3 保持当前位置：ControlStatus=ControlStatus.FAULT
+2026-09-09 15:54:50,954 ERROR 安全中止：保持当前位置命令失败（ControlStatus.FAULT）；不自动重试或反向运动
+2026-09-09 15:54:50,954 ERROR 运动流程已开始，请由现场人员目视确认当前机械臂姿态
+2026-09-09 15:54:50,954 ERROR 尝试停止当前轨迹并保持当前位置；物理急停仍是最终安全手段
+2026-09-09 15:54:50,964 ERROR stop_trajectory_execution() 返回：ControlStatus.SUCCESS
+2026-09-09 15:54:51,015 ERROR 停止后反馈位置(deg)=[44.0305, -7.5119, -19.7933, -0.8473, -6.2746, 1.7908, 1.5655]，速度(rad/s)=[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+2026-09-09 15:54:51,015 INFO 清理：request_shutdown 完成
+2026-09-09 15:54:51,516 INFO 清理：wait_for_shutdown 完成
+2026-09-09 15:54:52,027 INFO 清理：destroy 完成
+galbot@galbot-echo:~/g1_arm_smoke_test_20260904$

@@ -1,0 +1,143 @@
+{
+  "branches": {
+    "rim": {
+      "final_roi": {
+        "candidate_center_base_m": [
+          1.3964296671208971,
+          0.2550179212400171,
+          0.48618901568388356
+        ],
+        "candidate_top_center_base_m": [
+          1.3972527801669088,
+          0.2551825794051954,
+          0.5736849891489644
+        ],
+        "candidate_yaw_deg": 93.18300761027903,
+        "ok": false,
+        "rejection_reasons": [
+          "ambiguous_rim_planes"
+        ]
+      },
+      "sam": {
+        "candidate_center_base_m": [
+          1.3966194966951189,
+          0.2552422018181397,
+          0.48550558582994635
+        ],
+        "candidate_top_center_base_m": [
+          1.3977027300442972,
+          0.25527429836655746,
+          0.5729988745744141
+        ],
+        "candidate_yaw_deg": 93.54895254452856,
+        "ok": false,
+        "rejection_reasons": [
+          "insufficient_support_edge_3",
+          "ambiguous_rim_planes"
+        ]
+      },
+      "sam_to_final_roi_box_center_delta": {
+        "l2_m": 0.0007439176098365137,
+        "vector_m": [
+          -0.00018982957422175595,
+          -0.00022428057812262647,
+          0.0006834298539372119
+        ]
+      },
+      "sam_to_final_roi_top_center_delta": {
+        "l2_m": 0.0008256030943773716,
+        "vector_m": [
+          -0.0004499498773884447,
+          -9.171896136206392e-05,
+          0.0006861145745502562
+        ]
+      },
+      "yaw_180_symmetric_delta_deg": 0.36594493424952645
+    },
+    "wall": {
+      "final_roi": {
+        "candidate_center_base_m": [
+          1.3903156373961583,
+          0.23896142749422308,
+          0.5051991637825315
+        ],
+        "candidate_top_center_base_m": [
+          1.3903156373961583,
+          0.23896142749422308,
+          0.5926991637825315
+        ],
+        "candidate_yaw_deg": 91.6135341684403,
+        "ok": false,
+        "rejection_reasons": [
+          "insufficient_support_edge_2",
+          "rectangle_inlier_fraction_too_low",
+          "wall_height_extent_incompatible_with_upright_model"
+        ]
+      },
+      "sam": {
+        "candidate_center_base_m": [
+          1.3899267835844624,
+          0.23755566490757746,
+          0.5047037367514203
+        ],
+        "candidate_top_center_base_m": [
+          1.3899267835844624,
+          0.23755566490757746,
+          0.5922037367514204
+        ],
+        "candidate_yaw_deg": 91.77978055864185,
+        "ok": false,
+        "rejection_reasons": [
+          "insufficient_support_edge_2",
+          "rectangle_inlier_fraction_too_low",
+          "wall_height_extent_incompatible_with_upright_model"
+        ]
+      },
+      "sam_to_final_roi_box_center_delta": {
+        "l2_m": 0.0015403972474782625,
+        "vector_m": [
+          0.000388853811695844,
+          0.0014057625866456258,
+          0.0004954270311111619
+        ]
+      },
+      "sam_to_final_roi_top_center_delta": {
+        "l2_m": 0.0015403972474782625,
+        "vector_m": [
+          0.000388853811695844,
+          0.0014057625866456258,
+          0.0004954270311111619
+        ]
+      },
+      "yaw_180_symmetric_delta_deg": 0.1662463902015503
+    }
+  },
+  "controlled_variables": [
+    "RGB",
+    "LingBot depth float32 NPY",
+    "K",
+    "capture-time T_base_link_from_camera",
+    "selected SAM index",
+    "object dimensions",
+    "algorithm source",
+    "configuration"
+  ],
+  "frozen_input_reference_hashes_identical": true,
+  "mask_relation": {
+    "final_roi_added_pixels_vs_sam": 1436,
+    "final_roi_mask_array_sha256": "9c400b610a88d16d32ae06d8246b4f744e4de80146312786878aa906ab8fcaf3",
+    "final_roi_removed_pixels_vs_sam": 0,
+    "mask_array_sha256": "7900109ddaf56d76092335acc4b53ca6668885f2f833a1e21540df20453af15e",
+    "mask_pixels": 30512,
+    "role": "selected mask decoded from hash-verified reference/sam3_response.json",
+    "sam_vs_final_roi_iou": 0.9550519594340804,
+    "selected_sam_index": 1,
+    "source": "sam_selected"
+  },
+  "motion_commands_sent": false,
+  "network_services_called": false,
+  "only_changed_variable": "analysis mask: selected original SAM mask versus final ROI mask",
+  "references_are_ground_truth": false,
+  "schema": "s1.bin_rim_pose.mask_ablation.v1",
+  "source_and_config_identical": true
+}

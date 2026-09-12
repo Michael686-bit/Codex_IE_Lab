@@ -1,0 +1,215 @@
+galbot@galbot-echo:~/ie_lab/projects/dual_arm_v5/workspace/s1_sjtu_0806/scripts$ ./run_s1_mode00_one_click.py
+[一键运行] run_id=s1_mode00_sam_to_sam_20260904_162514_741
+[一键运行] 真实动作：SAM→感知→FDP→抓取→提起→卸货点高位松爪→SAM；不执行put/down。
+[一键运行] 持箱运输阶段临时关闭碰撞；其余底盘导航开启碰撞。请保持急停就绪。
+
+当前正式流程：
+   1. [沿用原工程] 固定配置与服务预检
+   2. [S1替代] 用已记录SAM观察点恢复并校验地图定位（不运动）
+   3. [S1替代] SAM拍摄前先将S1单轨腰部低速移动到H4 0.420m
+   4. [S1替代] 双臂移动到2026-08-13示教的对称SAM拍摄姿势（仅手臂）
+   5. [沿用原工程] SAM位右腕RGB-D被动采集
+   6. [沿用原工程] SAM3 + LingBot选择4317/H4目标箱
+   7. [S1替代] 由fresh SAM结果计算0.80m观察点并用官方SDK导航（碰撞开启）
+   8. [S1替代] 2026-08-15 mode10示教FDP双臂位姿，S1原生IMC实时规划/执行
+   9. [沿用原工程] FDP位右腕RGB-D被动采集
+  10. [沿用原工程] SAM3 + LingBot + ROI + FoundationPose++
+  11. [沿用原工程] mode-00短边几何；叠加S1实测位姿标定
+  12. [S1替代] 官方S1 SDK打开双GE103到100mm
+  13. [S1替代] S1原生IMC PTP到双臂预抓取位
+  14. [S1替代] S1原生IMC LIN内收100mm并SDK合爪
+  15. [S1替代] S1原生IMC LIN上抬100mm，持箱停止
+  16. [S1替代] 按实时箱体—底盘关系补偿卸货目标，腰部升至0.520m并持箱导航
+  17. [已实测] 卸货点保持提起高度，直接张开双爪到100mm；不执行put/down
+  18. [已实测] 腰部保持0.520m，双臂用IMC回到SAM姿势
+  19. [已实测] 碰撞开启，以官方SDK导航回批准的SAM地图位
+  20. [闭环终点] 空手、开爪、双臂SAM、底盘SAM
+
+原mainpipeline中当前不能直接用的部分：
+  - [暂不启用] 原ROS /move_waist：G1多关节腰与S1单轨腰接口不同。
+  - [暂不启用] 原头部相机+头部雷达投影深度：当前正式抓取链使用右腕RGB-D，头部雷达不参与FDP。
+  - [暂不启用] 原 /target_pos 与 NavStatusSubscriber ROS状态机：改用官方S1 SDK navigate_to_goal_v2。
+  - [暂不启用] 原绕垛90度和多箱循环：本脚本只做单箱闭环。
+  - [临时设置] 持箱导航碰撞关闭：已记录自持箱误判问题；松爪后的SAM回程恢复碰撞检查。
+  - [临时取消] 固定put/down和双臂外撤：卸货点保持提起高度直接松爪，然后回SAM。
+
+[开始] S1 4317/H4/mode-00单箱完整事务 unattended=True
+[警告] 启动持箱状态保护已关闭；忽略已有状态标记: /home/galbot/ie_lab/state/s1_sjtu_carried_crate.state
+s1_sjtu_0806_slim is running inertly; no SDK object or motion command has been started.
+
+========================================================================
+[1/20] [沿用原工程] 固定配置与服务预检
+========================================================================
+
+[运行] preflight
+{
+  "ok": false,
+  "platform": {
+    "machine": "aarch64",
+    "python": "3.8.10"
+  },
+  "versions": {
+    "numpy": "1.23.5",
+    "scipy": "1.10.0",
+    "rotation_as_matrix_shape": [
+      3,
+      3
+    ],
+    "fdp_execution": "remote_http"
+  },
+  "sdk": {
+    "ok": true,
+    "classes": [
+      "GalbotRobot",
+      "GalbotMotion",
+      "GalbotNavigation"
+    ]
+  },
+  "fdp": {
+    "ok": false,
+    "url": "http://10.34.216.13:7876/health",
+    "error": "ConnectionError(MaxRetryError(\"HTTPConnectionPool(host='10.34.216.13', port=7876): Max retries exceeded with url: /health (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0xffff4668e910>: Failed to establish a new connection: [Errno 111] Connection refused'))\"))"
+  },
+  "foundationpose_source": {
+    "ok": true,
+    "mode": "remote_http",
+    "service_url": "http://10.34.216.13:7876",
+    "local_source_mounted": false
+  },
+  "vendor_models": {
+    "ok": true,
+    "description_root": "/data/galbot/config/galbot_description",
+    "tools_root": "/data/galbot/config/default/service_motion_plan/tools",
+    "active_urdf": {
+      "path": "/data/galbot/config/galbot_description/galbot_s1_description/galbot_s1_cali.urdf",
+      "size_bytes": 39675,
+      "sha256": "104bcf2d70f87ec8af6b3b90e179390b006afbf7f9489264699599a5f4e5ebfa",
+      "readable": true,
+      "writable": false
+    },
+    "ge103v1_root": "/data/galbot/config/default/service_motion_plan/tools/GE103v1",
+    "ge103v1_package_mesh_root": "/data/galbot/config/galbot_description/galbot_S1_V1_description/meshes/tools_GE10301",
+    "ge103v1_assets": {
+      "left_arm_GE103v1.toml": {
+        "path": "/data/galbot/config/default/service_motion_plan/tools/GE103v1/left_arm_GE103v1.toml",
+        "size_bytes": 763,
+        "sha256": "35ca8307414970a9d824a855822dc7f9b354707226ca7a6efb8f6dd5a3905bdf",
+        "readable": true,
+        "writable": false
+      },
+      "right_arm_GE103v1.toml": {
+        "path": "/data/galbot/config/default/service_motion_plan/tools/GE103v1/right_arm_GE103v1.toml",
+        "size_bytes": 789,
+        "sha256": "0ffe011e89561359c4ce227da7912a4aa9c7e59bb807c028a3befc8a63b495dc",
+        "readable": true,
+        "writable": false
+      },
+      "left_arm_GE103v1.urdf": {
+        "path": "/data/galbot/config/default/service_motion_plan/tools/GE103v1/left_arm_GE103v1.urdf",
+        "size_bytes": 8381,
+        "sha256": "324cbc2aa1760723fb5fe964abba5ba2c66e43cbd1365a9ad0371ecb28f85709",
+        "readable": true,
+        "writable": false
+      },
+      "right_arm_GE103v1.urdf": {
+        "path": "/data/galbot/config/default/service_motion_plan/tools/GE103v1/right_arm_GE103v1.urdf",
+        "size_bytes": 8363,
+        "sha256": "296533c93c82352c8cd641003e339ea2ccbd0661b5dab427a879cc437b25ea96",
+        "readable": true,
+        "writable": false
+      },
+      "left_arm_GE103v1_spheres.urdf": {
+        "path": "/data/galbot/config/default/service_motion_plan/tools/GE103v1/left_arm_GE103v1_spheres.urdf",
+        "size_bytes": 8290,
+        "sha256": "d591b7686fc502e2770cc49b0cfcd79e76241c2581db863c11de6c21eb8d0bef",
+        "readable": true,
+        "writable": false
+      },
+      "right_arm_GE103v1_spheres.urdf": {
+        "path": "/data/galbot/config/default/service_motion_plan/tools/GE103v1/right_arm_GE103v1_spheres.urdf",
+        "size_bytes": 8278,
+        "sha256": "7a092e9a947d28128adf96323e5c77134bd28c05f936e6aa216c38b5f68c5c00",
+        "readable": true,
+        "writable": false
+      }
+    },
+    "mounts": {
+      "galbot_description": {
+        "mount_point": "/data/galbot/config/galbot_description",
+        "mount_options": [
+          "ro",
+          "relatime"
+        ],
+        "filesystem": "ext4",
+        "source": "/dev/nvme0n1p1",
+        "super_options": [
+          "rw"
+        ],
+        "path": "/data/galbot/config/galbot_description",
+        "exact_mount": true,
+        "match_count": 1,
+        "read_only": true
+      },
+      "motion_plan_tools": {
+        "mount_point": "/data/galbot/config/default/service_motion_plan/tools",
+        "mount_options": [
+          "ro",
+          "relatime"
+        ],
+        "filesystem": "ext4",
+        "source": "/dev/nvme0n1p1",
+        "super_options": [
+          "rw"
+        ],
+        "path": "/data/galbot/config/default/service_motion_plan/tools",
+        "exact_mount": true,
+        "match_count": 1,
+        "read_only": true
+      }
+    },
+    "files_read_only": true,
+    "mounts_read_only": true
+  },
+  "ros": {
+    "rospy_available": true
+  },
+  "thor": {
+    "sam3": {
+      "ok": true,
+      "url": "http://10.34.216.11:7861/health",
+      "status_code": 200,
+      "body": "{\"ok\":true,\"service\":\"sam3\",\"loaded\":true,\"device\":\"cuda\",\"checkpoint\":\"/workspace/SAM3-Runtime/sam3.pt\"}"
+    },
+    "lingbot_depth": {
+      "ok": true,
+      "url": "http://10.34.216.11:7865/health",
+      "status_code": 200,
+      "body": "{\"ok\":true,\"service\":\"lingbot-depth\",\"loaded\":true,\"code_dir\":\"/workspace/LingBot-Depth\",\"checkpoint\":\"/workspace/LingBot-Depth-Weights/model.pt\",\"device\":\"cuda\"}"
+    }
+  },
+  "paths": {
+    "g1_perception_root": true,
+    "mesh_path": true,
+    "map_mount": true
+  },
+  "motion_inputs": {
+    "pick_pose_configured": false,
+    "unload_pose_configured": true,
+    "placement_height_configured": false
+  },
+  "perception_contract": {
+    "crate_model": "4317",
+    "crate_dimensions_m": [
+      0.4,
+      0.3,
+      0.175
+    ],
+    "crate_mesh_height_m": 0.175,
+    "expected_height_level": 4,
+    "height_level_unit_m": 0.165,
+    "mesh_path": "/opt/s1-sjtu/assets/mesh/EU4322_midcut_target175mm.obj"
+  }
+}
+[停止] 后续阶段不会启动。硬件急停仍是首要停止手段。
+[拒绝] stage preflight failed with exit 1
+galbot@galbot-echo:~/ie_lab/projects/dual_arm_v5/workspace/s1_sjtu_0806/scripts$

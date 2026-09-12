@@ -1,0 +1,190 @@
+{
+  "accuracy_validated": false,
+  "case_id": "right_wrist_20260907_01_lingbot_operator1",
+  "dataset_scope": {
+    "D01_fdp_available": true,
+    "D02_D12_comparison_status": "not_available; no FDP responses were called or saved",
+    "D02_D12_fdp_available": false,
+    "cross_frame_identity_established": false
+  },
+  "delta": {
+    "center_translation_m": [
+      -0.004693855419576787,
+      -0.002565211739157469,
+      -0.00368746286469146
+    ],
+    "center_translation_norm_mm": 6.496920220002721,
+    "rotation_geodesic_deg": 4.026267171971487,
+    "short_edge_midpoint_delta_m": [
+      [
+        -0.01664446807276576,
+        0.00018619675755665588,
+        -0.008155224308079134
+      ],
+      [
+        -0.0028417715353121764,
+        -0.0014942137578669856,
+        0.0011137202689632808
+      ]
+    ],
+    "short_edge_midpoint_delta_norms_mm": [
+      18.53592916939769,
+      3.3983397491435645
+    ],
+    "top_center_delta_m": [
+      -0.009743119804038969,
+      -0.0006540085001551788,
+      -0.0035207520195579267
+    ],
+    "top_center_delta_norm_mm": 10.380356709542925,
+    "yaw_180_symmetric_deg": 1.9611761651211796,
+    "yaw_signed_deg": 1.9611761651211796
+  },
+  "fdp_reference": {
+    "center_base_m": [
+      1.3924520179032205,
+      0.25532801272544026,
+      0.5059034262309072
+    ],
+    "dimensions_m": [
+      0.4000000059604645,
+      0.30000001192092896,
+      0.175
+    ],
+    "matrix": [
+      [
+        -0.022480835863758257,
+        -0.9980805008508841,
+        0.05770587867956739,
+        1.3924520179032205
+      ],
+      [
+        0.9994786818252626,
+        -0.023775193605396636,
+        -0.021842322731454887,
+        0.25532801272544026
+      ],
+      [
+        0.02317236109731076,
+        0.05718470521823166,
+        0.9980947331984747,
+        0.5059034262309072
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "saved_pose_accuracy_validated": false,
+    "short_edge_midpoints_base_m": [
+      [
+        1.393005115047933,
+        0.453312548830169,
+        0.5978711876742949
+      ],
+      [
+        1.4019974495274323,
+        0.05352107014270688,
+        0.5886022430972525
+      ]
+    ],
+    "top_center_base_m": [
+      1.3975012822876827,
+      0.25341680948643797,
+      0.5932367153857737
+    ],
+    "yaw_deg": 91.28851158941187
+  },
+  "fdp_reference_run": "/home/lsy03/文档/ChatGPT/S1/experiments/20260903_fdp_baseline/outputs/fdp_20260907_01_lingbot_operator1",
+  "logical_id": "D01",
+  "references_are_ground_truth": false,
+  "safety": {
+    "grasp_target_generated": false,
+    "motion_commands_sent": false,
+    "network_services_called": false,
+    "robot_accessed": false
+  },
+  "schema": "s1.v5_shell_fit_fdp_comparison.v1",
+  "shell_candidate": {
+    "center_base_m": [
+      1.3877581624836437,
+      0.2527628009862828,
+      0.5022159633662158
+    ],
+    "dimensions_m": [
+      0.40211850400000004,
+      0.300248262,
+      0.175
+    ],
+    "fit_residuals": {
+      "facing_cosine_p10": 0.15122941780477964,
+      "inlier_fraction_model": 0.7279202279202279,
+      "inlier_fraction_observed": 0.5008989572096368,
+      "observed_points": 2781,
+      "p50_m": 0.008595738616891769,
+      "p90_m": 0.03355782072768167,
+      "p95_m": 0.05735556269723481,
+      "rmse_m": 0.02549508229712648,
+      "surface_role_counts": {
+        "inner_shell": 218,
+        "outer_shell": 344,
+        "rim_flange": 140
+      },
+      "visible_model_points": 702
+    },
+    "matrix": [
+      [
+        -0.05668734661599428,
+        -0.9983919795018579,
+        0.0,
+        1.3877581624836437
+      ],
+      [
+        0.9983919795018579,
+        -0.05668734661599428,
+        0.0,
+        0.2527628009862828
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        0.5022159633662158
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "short_edge_midpoints_base_m": [
+      [
+        1.3763606469751672,
+        0.4534987455877257,
+        0.5897159633662158
+      ],
+      [
+        1.3991556779921202,
+        0.05202685638483989,
+        0.5897159633662158
+      ]
+    ],
+    "surface_role_counts": {
+      "inner_shell": 218,
+      "outer_shell": 344,
+      "rim_flange": 140
+    },
+    "top_center_base_m": [
+      1.3877581624836437,
+      0.2527628009862828,
+      0.5897159633662158
+    ],
+    "yaw_deg": 93.24968775453304
+  },
+  "shell_fit_gate_ok": true,
+  "shell_fit_rejection_reasons": [],
+  "v5_method": "bin_shell_fit_v5_3"
+}

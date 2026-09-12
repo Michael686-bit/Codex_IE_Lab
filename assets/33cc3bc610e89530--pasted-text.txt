@@ -1,0 +1,536 @@
+lsy03@lsy03-System-Product-Name:~/文档/ChatGPT/S1/experiments/20260903_fdp_baseline$ read -r -p '输入本次确认的 target_roi.index: ' FDP_REVIEWED_INDEX
+输入本次确认的 target_roi.index: 1
+lsy03@lsy03-System-Product-Name:~/文档/ChatGPT/S1/experiments/20260903_fdp_baseline$ read -r -p '输入目标描述: ' FDP_OPERATOR_NOTE
+输入目标描述: 右侧绿色mask箱子
+lsy03@lsy03-System-Product-Name:~/文档/ChatGPT/S1/experiments/20260903_fdp_baseline$ FDP_RGB_HASH=$(python3 -c \
+'import json,sys; print(json.load(open(sys.argv[1]))["files"]["rgb"]["sha256"])' \
+"$FDP_SOURCE_CASE/manifest.json")
+
+FDP_MASK_HASH=$(python3 -c \
+'import json,sys; print(json.load(open(sys.argv[1]))["files"]["mask"]["sha256"])' \
+"$FDP_SOURCE_CASE/manifest.json")
+
+FDP_CASE="cases/operator_${FDP_BATCH_ID}"
+
+python3 scripts/confirm_frozen_target.py \
+  --source-case-dir "$FDP_SOURCE_CASE" \
+  --output-case-dir "$FDP_CASE" \
+  --sam-index "$FDP_REVIEWED_INDEX" \
+  --expected-rgb-sha256 "$FDP_RGB_HASH" \
+  --expected-mask-sha256 "$FDP_MASK_HASH" \
+  --operator-statement "$FDP_OPERATOR_NOTE"
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+FileNotFoundError: [Errno 2] No such file or directory: '/manifest.json'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+FileNotFoundError: [Errno 2] No such file or directory: '/manifest.json'
+Traceback (most recent call last):
+  File "/home/lsy03/文档/ChatGPT/S1/experiments/20260903_fdp_baseline/fdp_baseline/io_utils.py", line 37, in load_json
+    with Path(path).open("r", encoding="utf-8") as handle:
+  File "/usr/lib/python3.10/pathlib.py", line 1119, in open
+    return self._accessor.open(self, mode, buffering, encoding, errors,
+FileNotFoundError: [Errno 2] No such file or directory: '/home/lsy03/文档/ChatGPT/S1/experiments/20260903_fdp_baseline/manifest.json'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lsy03/文档/ChatGPT/S1/experiments/20260903_fdp_baseline/fdp_baseline/case.py", line 35, in load_case
+    manifest = load_json(case_dir / "manifest.json")
+  File "/home/lsy03/文档/ChatGPT/S1/experiments/20260903_fdp_baseline/fdp_baseline/io_utils.py", line 40, in load_json
+    raise ValueError("cannot load JSON %s: %s" % (path, exc))
+ValueError: cannot load JSON /home/lsy03/文档/ChatGPT/S1/experiments/20260903_fdp_baseline/manifest.json: [Errno 2] No such file or directory: '/home/lsy03/文档/ChatGPT/S1/experiments/20260903_fdp_baseline/manifest.json'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lsy03/文档/ChatGPT/S1/experiments/20260903_fdp_baseline/scripts/confirm_frozen_target.py", line 81, in <module>
+    main()
+  File "/home/lsy03/文档/ChatGPT/S1/experiments/20260903_fdp_baseline/scripts/confirm_frozen_target.py", line 28, in main
+    case = load_case(args.source_case_dir)
+  File "/home/lsy03/文档/ChatGPT/S1/experiments/20260903_fdp_baseline/fdp_baseline/case.py", line 37, in load_case
+    raise CaseError(str(exc))
+fdp_baseline.case.CaseError: cannot load JSON /home/lsy03/文档/ChatGPT/S1/experiments/20260903_fdp_baseline/manifest.json: [Errno 2] No such file or directory: '/home/lsy03/文档/ChatGPT/S1/experiments/20260903_fdp_baseline/manifest.json'
+lsy03@lsy03-System-Product-Name:~/文档/ChatGPT/S1/experiments/20260903_fdp_baseline$
+
+现在是什么问题？
+
+…
+11:09
+用时 10秒
+问题是这几个环境变量没有设置：
+
+FDP_SOURCE_CASE=""
+FDP_BATCH_ID=""
+所以命令实际变成了：
+
+/manifest.json
+因此人工确认脚本没有执行成功，也没有调用 FDP；只是路径变量为空导致本地读取失败。
+
+请重新明确设置本批次路径：
+
+cd /home/lsy03/文档/ChatGPT/S1/experiments/20260903_fdp_baseline
+
+FDP_BATCH_ID=full_20260907_110222_165338253
+
+FDP_PERCEPTION="outputs/perception_${FDP_BATCH_ID}"
+FDP_SOURCE_CASE="cases/batches/${FDP_BATCH_ID}/right_wrist_20260907_01_lingbot"
+FDP_CASE="cases/operator_${FDP_BATCH_ID}"
+
+printf 'FDP_SOURCE_CASE=%s\n' "$FDP_SOURCE_CASE"
+ls -l "$FDP_SOURCE_CASE/manifest.json"
+如果最后一条能看到 manifest.json，继续执行：
+
+python3 scripts/verify_case.py \
+  --case-dir "$FDP_SOURCE_CASE"
+然后重新计算哈希并确认目标：
+
+FDP_RGB_HASH=$(python3 -c \
+'import json,sys; print(json.load(open(sys.argv[1]))["files"]["rgb"]["sha256"])' \
+"$FDP_SOURCE_CASE/manifest.json")
+
+FDP_MASK_HASH=$(python3 -c \
+'import json,sys; print(json.load(open(sys.argv[1]))["files"]["mask"]["sha256"])' \
+"$FDP_SOURCE_CASE/manifest.json")
+
+python3 scripts/confirm_frozen_target.py \
+  --source-case-dir "$FDP_SOURCE_CASE" \
+  --output-case-dir "$FDP_CASE" \
+  --sam-index 1 \
+  --expected-rgb-sha256 "$FDP_RGB_HASH" \
+  --expected-mask-sha256 "$FDP_MASK_HASH" \
+  --operator-statement '右侧绿色mask箱子'
+如果 ls 提示找不到 manifest.json，说明本批案例还没有从 S1 复制回来，需要重新执行之前的 scp 复制命令。
+
+11:09
+"positive_depth_points": 921600,
+"positive_depth_ratio": 1.0,
+"rgb_shape": [
+  720,
+  1280,
+  3
+]
+}
+}
+lsy03@lsy03-System-Product-Name:~/文档/ChatGPT/S1/experiments/20260903_fdp_baseline$ FDP_RGB_HASH=$(python3 -c
+'import json,sys; print(json.load(open(sys.argv[1]))["files"]["rgb"]["sha256"])'
+"$FDP_SOURCE_CASE/manifest.json")
+
+FDP_MASK_HASH=$(python3 -c
+'import json,sys; print(json.load(open(sys.argv[1]))["files"]["mask"]["sha256"])'
+"$FDP_SOURCE_CASE/manifest.json")
+
+python3 scripts/confirm_frozen_target.py
+--source-case-dir "$FDP_SOURCE_CASE"
+--output-case-dir "$FDP_CASE"
+--sam-index 1
+--expected-rgb-sha256 "$FDP_RGB_HASH"
+--expected-mask-sha256 "$FDP_MASK_HASH"
+--operator-statement '右侧绿色mask箱子'
+{
+"case_id": "operator_full_20260907_110222_165338253",
+"gates": {
+"human_review_required": false,
+"production_target_is_4317_h4": true,
+"ready_for_fdp": true,
+"strict_unique_4317_h4": false,
+"operator_confirmed_target": true
+},
+"validation": {
+"ok": true,
+"rgb_shape": [
+720,
+1280,
+3
+],
+"depth_shape": [
+720,
+1280
+],
+"mask_shape": [
+720,
+1280
+],
+"mask_pixels": 31948,
+"mask_ratio": 0.03466579861111111,
+"positive_depth_points": 921600,
+"positive_depth_ratio": 1.0,
+"positive_depth_min_m": 0.27300000190734863,
+"positive_depth_median_m": 2.937000036239624,
+"positive_depth_max_m": 7.5,
+"base_from_camera_quality": {
+"valid": true,
+"shape": [
+4,
+4
+],
+"finite": true,
+"rotation_determinant": 1.0000000000000004,
+"rotation_orthogonality_error_fro": 6.142782955257895e-16,
+"bottom_row_error_l2": 0.0
+},
+"hashes_verified": true
+}
+}
+lsy03@lsy03-System-Product-Name:~/文档/ChatGPT/S1/experiments/20260903_fdp_baseline$
+
+现在好了吗
+
+…
+11:10
+用时 12秒
+现在已经好了。人工目标确认成功：
+
+operator_confirmed_target: true
+ready_for_fdp: true
+目标：SAM index 1
+RGB、LingBot 深度、mask、K、TF 和 mesh 哈希全部通过
+还没有调用 FDP，也没有任何机器人运动
+positive_depth_ratio: 1.0 是 LingBot 补全深度分支的结果，表示 720×1280 的每个像素都有有效深度，属于正常现象。
+
+现在执行最后的 FDP 推理：
+
+cd /home/lsy03/文档/ChatGPT/S1/experiments/20260903_fdp_baseline
+
+FDP_BATCH_ID=full_20260907_110222_165338253
+FDP_CASE="cases/operator_${FDP_BATCH_ID}"
+FDP_OUT="outputs/fdp_${FDP_BATCH_ID}"
+
+test -f "$FDP_CASE/manifest.json"
+test ! -e "$FDP_OUT"
+
+python3 scripts/replay_fdp_case.py \
+  --case-dir "$FDP_CASE" \
+  --output-dir "$FDP_OUT" \
+  --service-url http://10.34.216.13:7876 \
+  --timeout-s 180 \
+  --call-service
+这一步会把本批次的：
+
+RGB + LingBot 深度 + 绿色 ROI mask + K + 4317 mesh 路径
+发送给 FoundationPose++，不会访问机器人，也不会执行运动。
+
+完成后查看：
+
+cat "$FDP_OUT/run_result.json"
+
+xdg-open "$FDP_OUT/foundationpose_vis.png"
+
+python3 -m json.tool \
+  "$FDP_OUT/normalized_pose.json"
+成功标志是：
+
+"status": "fdp_response_normalized"
+"ok": true
+此时本轮整段流程就完成到：
+
+SAM3 → LingBot → ROI → 人工目标确认 → FDP → base_link 下 4317 语义位姿
+11:11
+lsy03@lsy03-System-Product-Name:~/文档/ChatGPT/S1/experiments/20260903_fdp_baseline$ cd /home/lsy03/文档/ChatGPT/S1/experiments/20260903_fdp_baseline
+
+FDP_BATCH_ID=full_20260907_110222_165338253
+FDP_CASE="cases/operator_${FDP_BATCH_ID}"
+FDP_OUT="outputs/fdp_${FDP_BATCH_ID}"
+
+test -f "$FDP_CASE/manifest.json"
+test ! -e "$FDP_OUT"
+
+python3 scripts/replay_fdp_case.py \
+  --case-dir "$FDP_CASE" \
+  --output-dir "$FDP_OUT" \
+  --service-url http://10.34.216.13:7876 \
+  --timeout-s 180 \
+  --call-service
+Traceback (most recent call last):
+  File "/home/lsy03/文档/ChatGPT/S1/experiments/20260903_fdp_baseline/fdp_baseline/client.py", line 99, in call_first_frame
+    result = response.json()
+  File "/usr/lib/python3/dist-packages/requests/models.py", line 900, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "/usr/lib/python3.10/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.10/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.10/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lsy03/文档/ChatGPT/S1/experiments/20260903_fdp_baseline/scripts/replay_fdp_case.py", line 138, in <module>
+    raise SystemExit(main())
+  File "/home/lsy03/文档/ChatGPT/S1/experiments/20260903_fdp_baseline/scripts/replay_fdp_case.py", line 105, in main
+    raw = call_first_frame(
+  File "/home/lsy03/文档/ChatGPT/S1/experiments/20260903_fdp_baseline/fdp_baseline/client.py", line 101, in call_first_frame
+    raise FdpClientError("FDP returned non-JSON HTTP %s: %s" % (response.status_code, response.text[:500]))
+fdp_baseline.client.FdpClientError: FDP returned non-JSON HTTP 502:
+lsy03@lsy03-System-Product-Name:~/文档/ChatGPT/S1/experiments/20260903_fdp_baseline$
+这是什么问题？
+
+…
+11:11
+
+用时 31秒
+根因是 FDP 服务返回了：
+
+HTTP 502 Bad Gateway
+这表示请求已经到达 10.34.216.13:7876，但 FDP 网关没有从后端 FoundationPose++ 进程拿到有效 JSON。不是你的 RGB-D、ROI、mask 或案例校验失败。
+
+本地请求已经成功生成，摘要中确认：
+
+hashes_verified: true
+input_bundle_exact_for_fdp: true
+motion_commands_sent: false
+当前目录里只有：
+
+request_payload.json.gz
+request_summary.json
+因为服务返回的不是 JSON，所以还没有：
+
+raw_response.json
+normalized_pose.json
+foundationpose_vis.png
+不要重复使用这个输出目录。先检查服务是否仍可访问：
+
+curl -i --max-time 10 \
+  http://10.34.216.13:7876/
+根路径返回 404 也能说明 HTTP 服务可达；如果仍返回 502、连接失败或超时，说明服务端需要重启或检查后端日志。
+
+服务恢复后，用新目录重试：
+
+cd /home/lsy03/文档/ChatGPT/S1/experiments/20260903_fdp_baseline
+
+FDP_BATCH_ID=full_20260907_110222_165338253
+FDP_CASE="cases/operator_${FDP_BATCH_ID}"
+FDP_OUT="outputs/fdp_retry_${FDP_BATCH_ID}_$(date +%H%M%S_%N)"
+
+python3 scripts/replay_fdp_case.py \
+  --case-dir "$FDP_CASE" \
+  --output-dir "$FDP_OUT" \
+  --service-url http://10.34.216.13:7876 \
+  --timeout-s 180 \
+  --call-service
+如果服务端仍然返回 502，这一帧的输入不需要重新采集；需要 FDP 服务维护者检查网关和 FoundationPose++ 后端进程，尤其是服务端 mesh 路径：
+
+/opt/s1-sjtu/assets/mesh/EU4322_midcut_target175mm.obj
+11:12
+你直接帮我排查问题
+
+11:12
+已处理 30秒
+我来直接排查：先确认 FDP 主机端口、HTTP 网关和可能的健康入口，再核对失败请求的本地输入与服务路径。先做只读网络诊断，不重新发送整帧数据，也不连接或控制机器人。
+
+
+Planning network diagnostics with escalation
+Planning network diagnostics with escalation
+
+
+
+
+环境信息
+
+变更
+
+本地
+
+master
+
+提交或推送
+
+侧边聊天
+
+我们现在的 S1 箱体位姿感知解耦与对比验证实验 目前的目标是什么？目前的进度是什么？ 后续的计划又是什么？
+
+来源
+
+10.34.216.13:7876
+Codex App Tools
+
+查看全部
+FDP剥离解耦实验 中的输入和输出是什么？ 是否我需要给它一个指定的箱体然后它才能找到一个匹配的位置，从而计算FDP？
+
+10:31
+需要明确“要估计哪一只箱子”，但不需要提前告诉 FDP 这只箱子的位置。箱子的位置和朝向，正是 FDP 要计算的结果。
+
+这里要区分两个层次：整个解耦实验和其中的 FDP 模块。
+
+1. 整个解耦实验的输入、输出
+类别	内容
+现场观测输入	右腕 RGB 图像、原始深度
+标定输入	相机内参 K、拍摄时刻 T_base_link_from_camera
+目标配置	当前使用的 4317 箱体 mesh、尺寸和 H4 筛选条件
+最终输出	箱体在 base_link 下的位置和朝向：T_base_link_from_4317_semantic
+中间产物	SAM3 masks、补全深度、ROI、选中目标的 mask、FDP 原始位姿和检查结果
+如果目标不明确或数据检查不通过，实验应输出失败原因，停止进入下一阶段。
+
+2. FDP 模块本身的输入、输出
+RGB 图像
+深度图（当前生产分支用 LingBot 补全深度）
+选中箱体的最终 mask
+相机内参 K
+对应箱型的三维 mesh
+             ↓
+     FoundationPose++
+             ↓
+T_camera_from_fdp_mesh
+箱体 mesh 在相机坐标系下的位置和朝向
+之后再由实验代码利用拍摄时刻 TF，完成相机到 base_link 的变换、语义轴转换和对称归一化。
+
+TF 是后续坐标转换需要的，不是当前 FDP 首帧接口的直接输入。
+
+3. “指定箱体”到底指定什么？
+有两件不同的事：
+
+指定箱型：告诉系统使用哪种三维模型，例如 4317 mesh。
+指定实例：画面中有多只箱子时，明确这次估计其中哪一只，用它的 mask 表达。
+当前流程是：
+
+你配置要处理 4317/H4
+          ↓
+SAM3 找到多个候选区域
+          ↓
+ROI 几何分析与目标选择
+          ↓
+明确其中一个目标 mask
+          ↓
+FDP 计算这只箱子的位姿
+所以，不一定需要你手工圈箱子。当前实验在自动选择与严格唯一性检查都通过时，可以自动确定目标；有多个符合条件的候选时，则需要解决目标选择问题，不能直接猜一只。
+
+你说的“匹配的位置”，可以理解为：**FDP 根据已指定的图像目标区域，估计三维 mesh 应当如何平移、旋转，才能与当前 RGB-D 观测对齐。**它不是先在整张图里选箱，再计算位姿；选箱发生在 FDP 之前。
+
+10:31
+模块与 mask 的关系
+SAM3	生成最初的多个候选 mask
+LingBot	提供补全深度，不负责生成分割 mask
+ROI 几何模块	用 mask 筛选深度点，估计几何，并加工 mask
+目标选择模块	决定使用哪个候选的 mask
+FoundationPose++	接收最终 mask，估计这个目标的位姿
+
+这几个东西的产物是不是都叫mask？ 但是其实产物都不同？
+10:33
+**不是，这几个模块的产物并不都叫 mask。**你贴的表描述的是“它们如何使用或处理 mask”，并不是“它们各自输出什么”。
+
+准确区分如下：
+
+模块	主要输出	输出是什么
+SAM3	多个候选 mask，以及 boxes、scores	二维分割区域、矩形框和分数
+LingBot	补全深度图 D_dense	每个像素对应的深度值
+ROI 几何模块	多个 箱体 ROI 对象	每个对象包含粗中心、yaw、尺寸、层高、角点，以及加工后的 mask
+目标选择模块	一个选中的 ROI及选择信息	从候选中选出一个，沿用它携带的 mask
+FoundationPose++	4×4 位姿矩阵	目标在相机坐标系下的位置和朝向
+这里容易混淆的是：
+
+① SAM3 mask 和 final ROI mask 都属于 mask，但内容可能不同。
+
+SAM3 mask：神经网络从 RGB 图像分割出的区域。
+final ROI mask：在分割区域基础上，经过 ROI 几何处理后得到的区域。
+两者都是与图像对齐的二维二值数组。
+② 深度图虽然也是二维数组，但不是 mask。
+
+mask 的像素值回答：“这个像素选不选？”
+深度图的像素值回答：“这个位置有多深？”
+③ ROI 不等于 mask。
+
+在当前代码中，ROI 是一个包含多种信息的数据对象，mask 只是其中一个字段。目标选择模块选的是整个 ROI，之后把其中的 mask 提取出来交给 FDP。
+
+因此这条链应读成：
+
+SAM3 分割区域 + LingBot 深度图
+                ↓
+     多个 ROI：几何信息 + mask
+                ↓
+          选中一个 ROI
+                ↓
+取出它的 mask，与 RGB、深度、K、mesh 一起输入 FDP
+                ↓
+          输出位姿矩阵
+mask 是这条链中传递的一类数据，不是所有中间产物的统称。
+
+10:33
+模型已从 GPT-6 Astra 更改为 GPT-5.6 Luna。
+我的意思是指定实例：画面中有多只箱子时，明确这次估计其中哪一只，用它的 mask 表达。
+ROI 的原理是啥？ 主要在干啥？
+
+10:47
+用时 19秒
+对，你说的“指定实例”就是：
+
+画面里有多个箱子时，明确选择其中某一个箱子，并把这个箱子的 mask 交给 FDP。
+
+ROI（Region of Interest，感兴趣区域）的核心作用，就是把 SAM3 给出的“二维候选区域”进一步转换成“一个具体的箱体候选对象”，然后帮助选择目标实例。
+
+流程可以理解为：
+
+SAM3 产生多个候选 mask
+          ↓
+对每个 mask 结合深度计算三维点云
+          ↓
+估计箱体的中心、尺寸、朝向和高度
+          ↓
+形成多个 Box ROI 候选
+          ↓
+选择其中一个目标 ROI
+          ↓
+取出该 ROI 的 final mask
+          ↓
+交给 FDP 计算位姿
+具体来说，ROI 对每个 SAM mask 做这些事情：
+
+用 mask 从深度图中筛选出属于该候选的深度像素。
+
+利用相机内参 K，把像素和深度反投影成三维点。
+
+利用拍摄时刻的 TF，把点转换到 base_link。
+
+从三维点估计箱体的：
+
+中心位置；
+长宽尺寸；
+顶面高度；
+yaw 朝向；
+堆垛层级，例如 H4。
+将测量尺寸与配置中的箱体模板匹配，例如当前 4317 的约 0.4 × 0.3 × 0.175 m。
+
+为这个候选保存一个 ROI 对象，其中包含几何信息和 mask。
+
+所以 ROI 不是简单地“截取一块图像”，而是类似：
+
+BoxROI =
+{
+    实例编号,
+    箱型,
+    层级,
+    三维中心,
+    长宽高,
+    yaw,
+    四个角点,
+    mask
+}
+最后，目标选择模块从多个 BoxROI 中选出一个。例如当前流程会检查它是否是 4317/H4，并在严格模式下要求符合条件的候选只有一个。
+
+要特别区分两种 mask：
+
+SAM3 mask：神经网络从 RGB 图像中分割出的初始候选区域。
+ROI final mask：经过深度几何拟合、箱体角点投影和形态学处理后的目标区域。
+最终送给 FDP 的，是选中实例的 final ROI mask，而不是所有箱子的 mask：
+
+RGB
++ 深度
++ 选中箱子的 final ROI mask
++ K
++ 4317 mesh
+        ↓
+FoundationPose++
+        ↓
+这一只箱子的 6D 位姿
+因此，ROI 阶段主要解决的是：
+
+“这几个候选区域分别像不像箱体？它们各自在哪里？尺寸和层级是什么？这次到底选哪一只？”
+
+而 FDP 解决的是：
+
+“对于已经选定的这一只箱子，它的精确三维位置和朝向是多少？”
+
+当前实验里，如果你人工明确指定某个实例，也可以直接使用它对应的 SAM mask，再通过 ROI 做几何验证，最后将该实例的 final mask 送入 FDP。
+
+10:48

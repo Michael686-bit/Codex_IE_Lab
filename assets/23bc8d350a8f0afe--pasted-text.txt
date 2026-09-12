@@ -1,0 +1,390 @@
+更新的时候，旧版记得备份一下
+
+
+
+
+
+
+14:34
+
+
+
+
+
+
+耗时 6分钟 53秒
+
+
+
+已完成更新，旧版已完整备份。
+旧版备份：[s1_navigation_cli.py.before_pns_attach_ready_retry_20260902](/home/lsy03/文档/ChatGPT/S1/experiments/20260827_s1_navigation/s1_navigation_cli.py.before_pns_attach_ready_retry_20260902)SHA-256：7bc3cc5631955c2977a747eb219baceb495d7504e22bdce879917d977d07e4fa
+
+新版本：[s1_navigation_cli.py (line 50)](/home/lsy03/文档/ChatGPT/S1/experiments/20260827_s1_navigation/s1_navigation_cli.py:50)SHA-256：053a4818e12b7f57374a36d509d8a63ee2a23e909c978ab1d0064cee6a46c2bb
+
+新版本包含：
+WAIT_INITIALIZED 每 0.25 秒重试，最长 5 秒
+其他 attach 错误立即失败，不盲目重试
+失败后删除过滤框并再次查询，验证回滚是否成功
+JSON 保存每次 attach 尝试和完整回滚结果
+地图目标的 max-distance 门禁提前到 add/attach 之前
+携带物可达性检查仍在注册之后执行
+测试文件已扩展：[test_s1_navigation_cli.py (line 431)](/home/lsy03/文档/ChatGPT/S1/experiments/20260827_s1_navigation/test_s1_navigation_cli.py:431)
+本地伪 SDK 测试结果：23/23 通过，语法检查和 git diff --check 均通过。
+本次没有连接、部署或运行 S1，也没有调用真实 SDK 或改变机器人状态。
+
+
+14:41
+
+
+
+
+
+
+
+
+galbot@galbot-echo:~/ie_lab/projects/chassis_env/workspace$ /home/galbot/ie_lab…
+
+我这看好像还是有问题，你看看
+
+
+
+
+
+
+14:46
+
+
+
+
+
+
+你在 22秒 后停止了
+
+
+
+
+我先只读检查你这次的完整输出，重点看新版是否真的运行到了重试分支、每次 attach_box_to_link 的状态、是否完成回滚，以及远端实际执行的文件哈希是否还是旧版。不会改代码、连接机器人或发送任何命令。
+
+
+
+
+已读取 galbot@galbot-echo:~/ie_lab/projects/chassis_env/workspace$ /home/galbot/ie_lab…
+
+
+
+
+
+
+问题已经确定：你这次
+
+
+14:46
+
+
+
+
+
+
+
+
+继续
+
+
+
+
+
+
+14:47
+
+
+
+
+
+
+问题找到了：你这次在 S1 上运行的仍然是旧版，不是刚更新的新版。
+证据非常明确：
+输出仍是旧错误：
+attach_box_to_link failed: (False, 'WAIT_INITIALIZED');
+filter-removal rollback attempted
+新版如果持续等待超时，应该显示：
+attach_box_to_link remained WAIT_INITIALIZED for 5.00 s;
+filter-removal rollback verified
+新版错误 JSON 还会包含：
+"details": {
+  "payload_registration": {
+    "attach_box_to_link_attempts": [...],
+    "filter_rollback_verified": true
+  }
+}
+你贴出的结果里完全没有这些新字段，说明 attach_box_to_link() 仍然只调用了一次。
+原因是我上一轮只更新了本地仓库，并明确没有部署到 S1：
+本地新版哈希：053a4818...
+S1 原当前版哈希大概率仍是：7bc3cc56...
+这次实际过程是：
+S1 旧当前版立即调用 attach，返回 WAIT_INITIALIZED 并回滚。
+带人工确认的旧备份版等待你输入口令后注册成功。
+旧备份版又成功 detach/remove。
+再次运行 S1 旧当前版，仍立即调用 attach，所以再次失败。
+因此，新版重试逻辑还没有被真机验证。最后一次失败后，fusion 过滤框已回滚；结合前一次成功 remove，当前应当仍是未注册状态，但可再用只读 payload-status-4317 确认。
+下一步应先在 S1 上备份现有当前文件，再部署本地哈希为 053a4818… 的新版，核对远端 SHA-256 后才运行注册测试。部署本身不运动机器人，但会修改 S1 上的脚本文件；我尚未执行。
+
+
+14:47
+
+
+
+
+
+
+
+
+接下来我应该如何操作？需要上传你的最新代码吗？
+
+
+
+
+
+
+14:48
+
+
+
+
+
+
+耗时 44秒
+
+
+
+
+
+
+
+是的，需要先把本地最新版上传到 S1。你刚才验证的是 S1 上尚未更新的旧文件。
+1. 在本地电脑终端执行
+不要在 galbot@galbot-echo 终端执行：
+cd '/home/lsy03/文档/ChatGPT/S1'
+
+sha256sum \
+  experiments/20260827_s1_navigation/s1_navigation_cli.py
+必须得到：
+053a4818e12b7f57374a36d509d8a63ee2a23e909c978ab1d0064cee6a46c2bb
+先上传为临时文件，不直接覆盖：
+scp \
+  experiments/20260827_s1_navigation/s1_navigation_cli.py \
+  galbot@10.34.216.17:/home/galbot/Lsy03/navigation_tests/s1_navigation_cli.py.incoming_053a4818
+2. 在 S1 终端检查并备份旧版
+cd /home/galbot/Lsy03/navigation_tests
+
+sha256sum \
+  s1_navigation_cli.py \
+  s1_navigation_cli.py.incoming_053a4818
+预期：
+旧文件：7bc3cc5631955c2977a747eb219baceb495d7504e22bdce879917d977d07e4fa
+新文件：053a4818e12b7f57374a36d509d8a63ee2a23e909c978ab1d0064cee6a46c2bb
+如果旧文件哈希不是 7bc3cc56…，先不要覆盖，把输出发给我。
+确认后备份：
+cp -p \
+  s1_navigation_cli.py \
+  s1_navigation_cli.py.before_pns_attach_ready_retry_20260902_7bc3cc56
+检查备份：
+sha256sum \
+  s1_navigation_cli.py \
+  s1_navigation_cli.py.before_pns_attach_ready_retry_20260902_7bc3cc56
+两者此时必须都是 7bc3cc56…。
+3. 安装新版本
+chmod --reference=s1_navigation_cli.py \
+  s1_navigation_cli.py.incoming_053a4818
+
+mv \
+  s1_navigation_cli.py.incoming_053a4818 \
+  s1_navigation_cli.py
+
+sha256sum s1_navigation_cli.py
+必须得到：
+053a4818e12b7f57374a36d509d8a63ee2a23e909c978ab1d0064cee6a46c2bb
+4. 先只读查询状态
+/home/galbot/ie_lab/bin/s1-python \
+  /home/galbot/Lsy03/navigation_tests/s1_navigation_cli.py \
+  payload-status-4317
+如果显示：
+filter_registered: true
+先不要重新注册，把完整输出发给我。
+如果显示 false，才进入下一步。
+5. 验证新版注册逻辑
+这一步预期无物理运动，不切换控制器，不控制底盘、机械臂、夹爪或升降柱；但会改变 fusion/PNS 导航状态。必须确认导航已经停止，并且箱子仍保持记录的左臂刚性抓持姿态，没有滑移、释放或重新抓取。
+/home/galbot/ie_lab/bin/s1-python \
+  /home/galbot/Lsy03/navigation_tests/s1_navigation_cli.py \
+  payload-register-4317 \
+  --execute
+新版输出应满足以下一种情况：
+成功：出现 attach_box_to_link_attempts 和 attach_attempt_count，最终 payload_registered。
+五秒后仍失败：出现 remained WAIT_INITIALIZED for 5.00 s，并包含完整 details 和 filter_rollback_verified。
+先不要运行导航。把上传哈希、状态查询和注册完整输出发给我，我再判断是否真正解决。
+
+
+14:48
+
+
+
+
+
+
+
+
+galbot@galbot-echo:~/Lsy03/navigation_tests$ /home/galbot/ie_lab/bin/s1-python …
+
+现在是不是就已经可以了？ 算是已经成功了，我已经看到TSDF 中的体素变化了
+
+
+
+
+
+
+15:06
+
+
+
+
+
+
+耗时 28秒
+
+
+
+这次注册流程本身已经成功，但你随后又执行了删除，所以日志结束时当前状态是“未注册”。
+注册成功的证据：
+add_bounding_box_return: [true, "SUCCESS"]
+过滤框按完整 profile 回读成功
+attach_box_to_link_return: [true, "SUCCESS"]
+第一次 attach 就成功：attach_attempt_count: 1
+rollback_attempted: false
+最终：ok: true
+最终：outcome: "payload_registered"
+这也证明 S1 上运行的是新版，因为已经出现了：
+attach_ready_timeout_s
+attach_retry_interval_s
+attach_box_to_link_attempts
+attach_attempt_count
+不过紧接着你运行了：
+payload-remove-4317 --execute
+删除也成功：
+detach：SUCCESS
+remove：SUCCESS
+bounding_boxes_after_remove: []
+filter_removed: true
+outcome: "payload_removed"
+所以当前结论是：
+新版代码和注册/删除链路均已成功验证；但当前箱体过滤框和 PNS attachment 已被你删除，现在不能按“已注册”状态进行携箱导航。
+
+你观察到 TSDF 体素变化，与过滤框生效后新输入点被过滤、随后删除过滤框后重新融合的预期现象一致。不过这次只能称为很强的运行时观察；add_bounding_box() 不保证追溯清除注册前已经融合的旧体素。
+若准备携箱导航，需要在箱子仍保持记录的左臂抓持姿态时重新执行一次注册，并且这次不要删除：
+/home/galbot/ie_lab/bin/s1-python \
+  /home/galbot/Lsy03/navigation_tests/s1_navigation_cli.py \
+  payload-register-4317 \
+  --execute
+随后只读确认：
+/home/galbot/ie_lab/bin/s1-python \
+  /home/galbot/Lsy03/navigation_tests/s1_navigation_cli.py \
+  payload-status-4317
+应看到：
+filter_registered: true
+filter_profile_matches: true
+然后把完整输出发给我，先不要直接导航。
+
+
+15:07
+
+
+
+
+
+
+
+
+galbot@galbot-echo:~/Lsy03/navigation_tests$ /home/galbot/ie_lab/bin/s1-python \
+  /home/galbot/Lsy03/navigation_tests/s1_navigation_cli.py
+  payload-status-4317
+A new version 1.9.1 is available. Visit [https://github.com/GalaxyGeneralRobotics/GalbotSDK/releases](https://github.com/GalaxyGeneralRobotics/GalbotSDK/releases) for upgrade instructions
+{
+  "mode": "payload_4317_status_readonly",
+  "query_ok": true,
+  "motion_commands_sent": false,
+  "controller_switch_sent": false,
+  "bounding_box_changes_sent": false,
+  "attachment_changes_sent": false,
+  "box_tag": 4317,
+  "profile": "4317_left_mount_20260831_193312_191",
+  "expected_filter_box": {
+    "box_size": [
+      0.6,
+      0.5,
+      0.375
+    ],
+    "box_pose": [
+      0.08846454589905783,
+      -0.20926272696685333,
+      -0.15890000000000004,
+      0.011116385394816377,
+      -0.0003861212335707756,
+      0.6973011501467578,
+      0.7166919721122567
+    ],
+    "box_tag": 4317,
+    "parent_link_name": "left_arm_end_effector_mount_link"
+  },
+  "filter_registered": false,
+  "filter_profile_matches": false,
+  "bounding_boxes": [],
+  "attachment_status": "not_queryable_via_current_public_sdk_api"
+}
+galbot@galbot-echo:~/Lsy03/navigation_tests$
+
+
+
+
+
+显示更多
+
+15:07
+
+
+
+
+
+
+确认：当前箱子 4317 未注册。
+filter_registered: false
+filter_profile_matches: false
+bounding_boxes: []
+上一次 payload-remove-4317 的 detach 和 remove 都返回成功
+因此当前没有 fusion 过滤框，PNS attachment 也应已解除。不要按携箱已建模状态导航。
+如果箱子仍保持原记录的左臂抓持姿态、没有滑移或重新抓取，可重新执行 payload-register-4317 --execute；该操作预期无物理运动，只改变 fusion/PNS 导航状态。注册成功后不要再运行 remove，直至携箱导航全部结束。
+
+
+15:07
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+帮我批准
+
+
+
+
+
+
+
+5.3 Codex Spark轻度5.3 Codex Spark极高5.6 Sol高

@@ -1,0 +1,103 @@
+lsy03@lsy03-System-Product-Name:~/文档/ChatGPT/VLA G1 项目$ set -a
+source /home/lsy03/.config/synthnova/credentials.env
+set +a
+
+SYNTHNOVA_MODULE_ROOT="/home/lsy03/Lsy03_document/仿真软件/extracted/synthnova_delivery_20260801/delivery_dir/synthnova_delivery/module" \
+  bash docker/run.sh lerobot-calibrate \
+  --teleop.type=gp001 \
+  --teleop.id=gp001-main \
+  --teleop.source_mode=live_driver \
+  --teleop.port=/dev/ttyACM0 \
+  --teleop.calibration_dir=/workspace/.docker-cache/huggingface/lerobot/calibration/teleoperators/gp001 \
+  --teleop.position_unit=unknown
+/opt/conda/lib/python3.11/site-packages/requests/__init__.py:113: RequestsDependencyWarning: urllib3 (2.7.0) or chardet (7.4.3)/charset_normalizer (3.3.2) doesn't match a supported version!
+  warnings.warn(
+INFO 2026-09-10 08:23:07 calibrate.py:82 {'robot': None,
+ 'teleop': {'calibration_cross_talk_ratio': 0.35,
+            'calibration_dir': PosixPath('/workspace/.docker-cache/huggingface/lerobot/calibration/teleoperators/gp001'),
+            'calibration_interactive': True,
+            'calibration_min_excursion': 0.03,
+            'calibration_min_samples': 20,
+            'calibration_motion_s': 3.0,
+            'calibration_repetitions': 2,
+            'calibration_return_tolerance': 0.05,
+            'calibration_static_s': 5.0,
+            'capture_path': None,
+            'direction': 1,
+            'id': 'gp001-main',
+            'max_output_speed_rad_s': 0.025,
+            'port': '/dev/ttyACM0',
+            'position_unit': 'unknown',
+            'queue_size': 256,
+            'robot': 'golf',
+            'scale': 1.0,
+            'source_max_age_s': 0.2,
+            'source_mode': 'live_driver'}}
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.11/pathlib.py", line 1116, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/workspace/.docker-cache/huggingface/lerobot/calibration/teleoperators/gp001'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.11/pathlib.py", line 1116, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/workspace/.docker-cache/huggingface/lerobot/calibration/teleoperators'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.11/pathlib.py", line 1116, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/workspace/.docker-cache/huggingface/lerobot/calibration'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/conda/lib/python3.11/pathlib.py", line 1116, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/workspace/.docker-cache/huggingface/lerobot'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/vla-venv/lib/python3.11/site-packages/lerobot/teleoperators/utils.py", line 104, in make_teleoperator_from_config
+    return cast("Teleoperator", make_device_from_device_class(config))
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/vla-venv/lib/python3.11/site-packages/lerobot/utils/import_utils.py", line 131, in make_device_from_device_class
+    return cls(config)
+           ^^^^^^^^^^^
+  File "/workspace/lerobot_teleoperator_gp001/device.py", line 164, in __init__
+    super().__init__(config)
+  File "/opt/vla-venv/lib/python3.11/site-packages/lerobot/teleoperators/teleoperator.py", line 52, in __init__
+    self.calibration_dir.mkdir(parents=True, exist_ok=True)
+  File "/opt/conda/lib/python3.11/pathlib.py", line 1120, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "/opt/conda/lib/python3.11/pathlib.py", line 1120, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "/opt/conda/lib/python3.11/pathlib.py", line 1120, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  [Previous line repeated 1 more time]
+  File "/opt/conda/lib/python3.11/pathlib.py", line 1116, in mkdir
+    os.mkdir(self, mode)
+PermissionError: [Errno 13] Permission denied: '/workspace/.docker-cache/huggingface'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/vla-venv/bin/lerobot-calibrate", line 6, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/opt/vla-venv/lib/python3.11/site-packages/lerobot/scripts/lerobot_calibrate.py", line 99, in main
+    calibrate()
+  File "/opt/vla-venv/lib/python3.11/site-packages/draccus/argparsing.py", line 225, in wrapper_inner
+    response = fn(cfg, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/vla-venv/lib/python3.11/site-packages/lerobot/scripts/lerobot_calibrate.py", line 87, in calibrate
+    device = make_teleoperator_from_config(cfg.device)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/vla-venv/lib/python3.11/site-packages/lerobot/teleoperators/utils.py", line 106, in make_teleoperator_from_config
+    raise ValueError(f"Error creating robot with config {config}: {e}") from e
+ValueError: Error creating robot with config GP001TeleopConfig(id='gp001-main', calibration_dir=PosixPath('/workspace/.docker-cache/huggingface/lerobot/calibration/teleoperators/gp001'), capture_path=None, source_mode='live_driver', port='/dev/ttyACM0', robot='golf', queue_size=256, direction=1, scale=1.0, source_max_age_s=0.2, max_output_speed_rad_s=0.025, position_unit='unknown', calibration_interactive=True, calibration_static_s=5.0, calibration_motion_s=3.0, calibration_repetitions=2, calibration_min_samples=20, calibration_min_excursion=0.03, calibration_cross_talk_ratio=0.35, calibration_return_tolerance=0.05): [Errno 13] Permission denied: '/workspace/.docker-cache/huggingface'
+lsy03@lsy03-System-Product-Name:~/文档/ChatGPT/VLA G1 项目$

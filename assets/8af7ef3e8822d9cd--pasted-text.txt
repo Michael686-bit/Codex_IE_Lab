@@ -1,0 +1,1422 @@
+#!/usr/bin/env python3
+"""Safe learning CLI for S1 navigation state and map-goal navigation.
+
+Run with the managed S1 host environment:
+
+    /home/galbot/ie_lab/bin/s1-python s1_navigation_cli.py pose
+    /home/galbot/ie_lab/bin/s1-python s1_navigation_cli.py navigate \
+        --x 1.0 --y -1.0 --yaw -1.0
+
+The navigation command always enables v2 collision checking.  It does not
+model an unregistered carried payload or enable PNS whole-body collision
+checking; the on-site operator remains responsible for physical clearance.
+"""
+
+from __future__ import annotations
+
+import argparse
+import fcntl
+import json
+import math
+import os
+import sys
+import time
+from pathlib import Path
+from typing import Any, Dict, Optional, Sequence, Tuple
+
+import numpy as np
+
+from galbot_sdk.s1 import (
+    ControlStatus,
+    GalbotNavigation,
+    GalbotRobot,
+    S1ControllerName,
+)
+
+
+CONTROL_LOCK = Path("/home/galbot/ie_lab/control.lock")
+DEFAULT_MAX_VEL = (0.10, 0.10, 0.15)
+DEFAULT_TIMEOUT_S = 30.0
+DEFAULT_MAX_DISTANCE_M = 2.0
+DEFAULT_LOCALIZATION_DIAGNOSTIC_S = 10.0
+DEFAULT_LOCALIZATION_SAMPLE_INTERVAL_S = 1.0
+DEFAULT_PROBE_DISTANCES_M = (0.10, 0.20, 0.30, 0.40, 0.50, 0.60, 0.80, 1.00, 1.20)
+DEFAULT_PROBE_CHECK_COUNT = 3
+DEFAULT_PROBE_CHECK_INTERVAL_S = 0.15
+REACHABILITY_WARMUP_S = 1.0
+REACHABILITY_CHECK_COUNT = 3
+REACHABILITY_CHECK_INTERVAL_S = 0.25
+POST_NAV_OBSERVATION_S = 3.0
+POST_NAV_OBSERVATION_INTERVAL_S = 0.25
+
+# Recorded 4317 carried-crate profile copied from the current production helper
+# tools/host_s1_navigate_unload_v2.py.  This pose is valid only for the recorded
+# post-grasp state: +100 mm lift followed by a -50 mm base-X retreat.  The
+# fusion filter is deliberately larger than the physical collision box so it
+# can suppress crate edge/depth noise without shrinking the PNS collision body.
+CARRIED_4317_BOX_TAG = 4317
+CARRIED_4317_BOX_FILTER = {
+    "box_size": [0.60, 0.50, 0.375],
+    "box_pose": [
+        0.7279888460008149,
+        0.010631593018877838,
+        0.6475703621456774,
+        0.007822533824083105,
+        0.002328962580697679,
+        0.702281742839225,
+        0.7118523285509012,
+    ],
+    "box_tag": CARRIED_4317_BOX_TAG,
+    "parent_link_name": "base_link",
+}
+CARRIED_4317_BOX_COLLISION = {
+    **CARRIED_4317_BOX_FILTER,
+    "box_size": [0.40, 0.30, 0.175],
+}
+CARRIED_4317_IGNORE_COLLISION_LINKS = [
+    "left_arm_end_effector_mount_link",
+    "right_arm_end_effector_mount_link",
+    "left_fingertip_end_effector_mount_link",
+    "right_fingertip_end_effector_mount_link",
+]
+
+
+class NavigationCliError(RuntimeError):
+    """Fail-closed user-facing CLI error."""
+
+
+class ExclusiveRobotLock:
+    def __init__(self, path: Path) -> None:
+        self._path = path
+        self._handle = None
+
+    def __enter__(self):
+        self._handle = self._path.open("a+")
+        try:
+            fcntl.flock(self._handle.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+        except BlockingIOError as exc:
+            self._handle.close()
+            self._handle = None
+            raise NavigationCliError(
+                f"robot control lock is already held: {self._path}"
+            ) from exc
+        self._handle.seek(0)
+        self._handle.truncate()
+        self._handle.write(
+            json.dumps(
+                {
+                    "pid": os.getpid(),
+                    "command": " ".join(sys.argv),
+                    "started_unix_s": time.time(),
+                },
+                ensure_ascii=False,
+            )
+            + "\n"
+        )
+        self._handle.flush()
+        return self
+
+    def __exit__(self, exc_type, exc, traceback) -> None:
+        if self._handle is not None:
+            self._handle.seek(0)
+            self._handle.truncate()
+            self._handle.flush()
+            fcntl.flock(self._handle.fileno(), fcntl.LOCK_UN)
+            self._handle.close()
+            self._handle = None
+
+
+def _finite_pose(values: Any, label: str) -> np.ndarray:
+    pose = np.asarray(values, dtype=np.float64).reshape(-1)
+    if pose.size != 7:
+        raise NavigationCliError(f"{label}: expected 7 values, got {pose.size}")
+    if not np.all(np.isfinite(pose)):
+        raise NavigationCliError(f"{label}: contains a non-finite value")
+    quaternion_norm = float(np.linalg.norm(pose[3:]))
+    if abs(quaternion_norm - 1.0) > 1e-3:
+        raise NavigationCliError(
+            f"{label}: quaternion norm is {quaternion_norm}, expected 1"
+        )
+    return pose
+
+
+def _yaw_to_quaternion(yaw_rad: float) -> Tuple[float, float, float, float]:
+    return (0.0, 0.0, math.sin(yaw_rad / 2.0), math.cos(yaw_rad / 2.0))
+
+
+def _quaternion_multiply(
+    first: Sequence[float], second: Sequence[float]
+) -> np.ndarray:
+    x1, y1, z1, w1 = [float(value) for value in first]
+    x2, y2, z2, w2 = [float(value) for value in second]
+    return np.array(
+        [
+            w1*x2 + x1*w2 + y1*z2 - z1*y2,
+            w1*y2 - x1*z2 + y1*w2 + z1*x2,
+            w1*z2 + x1*y2 - y1*x2 + z1*w2,
+            w1*w2 - x1*x2 - y1*y2 - z1*z2,
+        ],
+        dtype=np.float64,
+    )
+
+
+def _rotate_vector_by_quaternion(
+    vector: Sequence[float], quaternion: Sequence[float]
+) -> np.ndarray:
+    x, y, z, w = [float(value) for value in quaternion]
+    rotation = np.array(
+        [
+            [1 - 2*(y*y + z*z), 2*(x*y - z*w), 2*(x*z + y*w)],
+            [2*(x*y + z*w), 1 - 2*(x*x + z*z), 2*(y*z - x*w)],
+            [2*(x*z - y*w), 2*(y*z + x*w), 1 - 2*(x*x + y*y)],
+        ],
+        dtype=np.float64,
+    )
+    return rotation @ np.asarray(vector, dtype=np.float64)
+
+
+def _quaternion_angle(first: Sequence[float], second: Sequence[float]) -> float:
+    q1 = np.asarray(first, dtype=np.float64)
+    q2 = np.asarray(second, dtype=np.float64)
+    q1 /= np.linalg.norm(q1)
+    q2 /= np.linalg.norm(q2)
+    dot = float(np.clip(abs(np.dot(q1, q2)), 0.0, 1.0))
+    return 2.0 * math.acos(dot)
+
+
+def _status_record(status: Any) -> Dict[str, Any]:
+    return {
+        "name": str(getattr(status, "name", status)),
+        "value": int(status) if hasattr(status, "__int__") else None,
+        "repr": repr(status),
+    }
+
+
+def _sdk_tuple_record(value: Any) -> Any:
+    return list(value) if isinstance(value, (tuple, list)) else repr(value)
+
+
+def _sdk_tuple_succeeded(value: Any) -> bool:
+    return bool(isinstance(value, (tuple, list)) and value and bool(value[0]))
+
+
+def _box_tag_matches(box: Any, expected_tag: Any) -> bool:
+    return isinstance(box, dict) and str(box.get("box_tag")) == str(expected_tag)
+
+
+def _navigation_must_be_idle(state: Dict[str, Any], operation: str) -> None:
+    status_name = state["navigation_status"]["name"]
+    if status_name in {"RUNNING", "OCCUPIED"}:
+        raise NavigationCliError(
+            f"navigation status is {status_name}; refusing {operation}"
+        )
+
+
+def _observe_post_navigation_state(
+    navigation: GalbotNavigation,
+    goal: np.ndarray,
+) -> Sequence[Dict[str, Any]]:
+    """Sample read-only terminal evidence after a blocking v2 call returns.
+
+    The SDK documents ``check_goal_arrival()`` as false both while navigating
+    and when there is no active goal.  A single call after blocking navigation
+    therefore cannot distinguish delayed state propagation from a completed
+    task whose active-goal state has already been cleared.
+    """
+    deadline = time.monotonic() + POST_NAV_OBSERVATION_S
+    samples = []
+    while True:
+        sampled_at = time.monotonic()
+        pose = _finite_pose(navigation.get_current_pose(), "post-navigation pose")
+        samples.append(
+            {
+                "elapsed_s": POST_NAV_OBSERVATION_S
+                - max(0.0, deadline - sampled_at),
+                "pose_map": pose.tolist(),
+                "position_error_m": float(np.linalg.norm(pose[:3] - goal[:3])),
+                "orientation_error_rad": _quaternion_angle(pose[3:], goal[3:]),
+                "goal_arrival": bool(navigation.check_goal_arrival()),
+                "navigation_status": _status_record(
+                    navigation.get_navigation_status()
+                ),
+            }
+        )
+        remaining = deadline - time.monotonic()
+        if remaining <= 0.0:
+            break
+        time.sleep(min(POST_NAV_OBSERVATION_INTERVAL_S, remaining))
+    return samples
+
+
+class S1SdkSession:
+    def __init__(self) -> None:
+        self.robot = GalbotRobot()
+        self.navigation = GalbotNavigation()
+        self.robot_initialized = False
+        self.navigation_command_attempted = False
+        self.navigation_terminal_success = False
+
+    def __enter__(self):
+        if not bool(self.robot.init()):
+            raise NavigationCliError("GalbotRobot.init() returned false")
+        self.robot_initialized = True
+        try:
+            if not bool(self.navigation.init()):
+                raise NavigationCliError("GalbotNavigation.init() returned false")
+        except BaseException:
+            self.robot.request_shutdown()
+            self.robot.wait_for_shutdown()
+            self.robot.destroy()
+            self.robot_initialized = False
+            raise
+        return self
+
+    def __exit__(self, exc_type, exc, traceback) -> None:
+        if self.navigation_command_attempted and not self.navigation_terminal_success:
+            try:
+                stop_result = self.navigation.stop_navigation()
+                print(
+                    json.dumps(
+                        {"cleanup_stop_navigation": list(stop_result)},
+                        ensure_ascii=False,
+                        default=str,
+                    ),
+                    file=sys.stderr,
+                )
+            except BaseException as stop_exc:
+                print(
+                    json.dumps(
+                        {
+                            "cleanup_stop_navigation_failed": {
+                                "type": type(stop_exc).__name__,
+                                "message": str(stop_exc),
+                            }
+                        },
+                        ensure_ascii=False,
+                    ),
+                    file=sys.stderr,
+                )
+        if self.robot_initialized:
+            try:
+                self.robot.request_shutdown()
+                self.robot.wait_for_shutdown()
+                self.robot.destroy()
+            except BaseException as cleanup_exc:
+                print(
+                    json.dumps(
+                        {
+                            "cleanup_sdk_failed": {
+                                "type": type(cleanup_exc).__name__,
+                                "message": str(cleanup_exc),
+                            }
+                        },
+                        ensure_ascii=False,
+                    ),
+                    file=sys.stderr,
+                )
+
+
+def _read_navigation_state(session: S1SdkSession) -> Dict[str, Any]:
+    localized = bool(session.navigation.is_localized())
+    pose = (
+        _finite_pose(session.navigation.get_current_pose(), "current map pose")
+        if localized
+        else None
+    )
+    return {
+        "localized": localized,
+        "current_pose_map": pose.tolist() if pose is not None else None,
+        "navigation_status": _status_record(
+            session.navigation.get_navigation_status()
+        ),
+        "bounding_boxes": list(session.navigation.get_bounding_box()),
+    }
+
+
+def command_pose(args: argparse.Namespace) -> int:
+    del args
+    with ExclusiveRobotLock(CONTROL_LOCK):
+        with S1SdkSession() as session:
+            result = {
+                "mode": "pose_readonly",
+                "motion_commands_sent": False,
+                **_read_navigation_state(session),
+                "ok": True,
+            }
+            print(json.dumps(result, ensure_ascii=False, indent=2, default=str))
+    return 0
+
+
+def _sample_localization_state(
+    navigation: GalbotNavigation,
+    timeout_s: float,
+    interval_s: float,
+) -> Dict[str, Any]:
+    started = time.monotonic()
+    deadline = started + timeout_s
+    samples = []
+    first_localized_elapsed_s = None
+
+    while True:
+        sampled_at = time.monotonic()
+        localized = bool(navigation.is_localized())
+        pose = (
+            _finite_pose(navigation.get_current_pose(), "current map pose")
+            if localized
+            else None
+        )
+        elapsed_s = sampled_at - started
+        if localized and first_localized_elapsed_s is None:
+            first_localized_elapsed_s = elapsed_s
+        samples.append(
+            {
+                "elapsed_s": elapsed_s,
+                "localized": localized,
+                "current_pose_map": pose.tolist() if pose is not None else None,
+                "navigation_status": _status_record(
+                    navigation.get_navigation_status()
+                ),
+            }
+        )
+
+        remaining = deadline - time.monotonic()
+        if remaining <= 0.0:
+            break
+        time.sleep(min(interval_s, remaining))
+
+    final_sample = samples[-1]
+    return {
+        "observation_duration_s": timeout_s,
+        "sample_interval_s": interval_s,
+        "samples": samples,
+        "localized_ever": any(item["localized"] for item in samples),
+        "first_localized_elapsed_s": first_localized_elapsed_s,
+        "navigation_ready": bool(
+            final_sample["localized"]
+            and final_sample["current_pose_map"] is not None
+        ),
+        "final_localized": final_sample["localized"],
+        "final_pose_map": final_sample["current_pose_map"],
+    }
+
+
+def command_diagnose_localization(args: argparse.Namespace) -> int:
+    if not math.isfinite(args.timeout) or args.timeout <= 0.0:
+        raise NavigationCliError("timeout must be a finite value greater than zero")
+    if not math.isfinite(args.interval) or args.interval <= 0.0:
+        raise NavigationCliError("interval must be a finite value greater than zero")
+    if args.interval > args.timeout:
+        raise NavigationCliError("interval must not exceed timeout")
+
+    with ExclusiveRobotLock(CONTROL_LOCK):
+        with S1SdkSession() as session:
+            result = {
+                "mode": "diagnose_localization_readonly",
+                "query_ok": True,
+                "motion_commands_sent": False,
+                "controller_switch_sent": False,
+                "relocalization_sent": False,
+                "stop_navigation_sent": False,
+                "bounding_boxes": list(session.navigation.get_bounding_box()),
+                **_sample_localization_state(
+                    session.navigation,
+                    timeout_s=args.timeout,
+                    interval_s=args.interval,
+                ),
+            }
+            print(json.dumps(result, ensure_ascii=False, indent=2, default=str))
+    return 0
+
+
+def command_payload_4317_status(args: argparse.Namespace) -> int:
+    del args
+    with ExclusiveRobotLock(CONTROL_LOCK):
+        with S1SdkSession() as session:
+            boxes = list(session.navigation.get_bounding_box())
+            result = {
+                "mode": "payload_4317_status_readonly",
+                "query_ok": True,
+                "motion_commands_sent": False,
+                "controller_switch_sent": False,
+                "bounding_box_changes_sent": False,
+                "attachment_changes_sent": False,
+                "box_tag": CARRIED_4317_BOX_TAG,
+                "filter_registered": any(
+                    _box_tag_matches(box, CARRIED_4317_BOX_TAG) for box in boxes
+                ),
+                "bounding_boxes": boxes,
+                "attachment_status": "not_queryable_via_current_public_sdk_api",
+            }
+            print(json.dumps(result, ensure_ascii=False, indent=2, default=str))
+    return 0
+
+
+def command_payload_4317_register(args: argparse.Namespace) -> int:
+    del args
+    phrase = "REGISTER_NAV_PAYLOAD_4317"
+    result: Dict[str, Any] = {
+        "mode": "guarded_payload_4317_register",
+        "motion_commands_sent": False,
+        "controller_switch_sent": False,
+        "bounding_box_changes_sent": False,
+        "attachment_changes_sent": False,
+        "filter_box": CARRIED_4317_BOX_FILTER,
+        "collision_box": CARRIED_4317_BOX_COLLISION,
+        "ignore_collision_links": CARRIED_4317_IGNORE_COLLISION_LINKS,
+        "registration_retained_until_explicit_remove": False,
+    }
+
+    with ExclusiveRobotLock(CONTROL_LOCK):
+        with S1SdkSession() as session:
+            before = _read_navigation_state(session)
+            result["before"] = before
+            _navigation_must_be_idle(before, "payload registration")
+            if any(
+                _box_tag_matches(box, CARRIED_4317_BOX_TAG)
+                for box in before["bounding_boxes"]
+            ):
+                raise NavigationCliError(
+                    "bounding-box tag 4317 is already registered; inspect status or "
+                    "remove the existing profile before registering it again"
+                )
+
+            print("\nREAL-ROBOT NAVIGATION PAYLOAD REGISTRATION PREVIEW")
+            print("  expected physical motion: none")
+            print("  mobile base/arms/grippers/lift: no motion commands")
+            print(f"  fusion filter: {CARRIED_4317_BOX_FILTER}")
+            print(f"  PNS collision box: {CARRIED_4317_BOX_COLLISION}")
+            print(
+                "  ignored robot links: "
+                f"{CARRIED_4317_IGNORE_COLLISION_LINKS}"
+            )
+            print(
+                "  validity boundary: recorded +100 mm lift and -50 mm base-X "
+                "retreat pose only"
+            )
+            print("  state persists until payload-remove-4317 succeeds")
+            print()
+            confirmation = input(
+                f"Type {phrase} to register this exact carried-crate profile: "
+            ).strip()
+            if confirmation != phrase:
+                result["ok"] = False
+                result["outcome"] = "cancelled_before_state_change"
+                print(json.dumps(result, ensure_ascii=False, indent=2, default=str))
+                return 2
+
+            add_return = session.navigation.add_bounding_box(
+                CARRIED_4317_BOX_FILTER
+            )
+            result["bounding_box_changes_sent"] = True
+            result["add_bounding_box_return"] = _sdk_tuple_record(add_return)
+            if not _sdk_tuple_succeeded(add_return):
+                raise NavigationCliError(
+                    f"add_bounding_box failed: {add_return!r}"
+                )
+
+            boxes_after_add = list(session.navigation.get_bounding_box())
+            result["bounding_boxes_after_add"] = boxes_after_add
+            if not any(
+                _box_tag_matches(box, CARRIED_4317_BOX_TAG)
+                for box in boxes_after_add
+            ):
+                rollback_return = session.navigation.remove_bounding_box(
+                    CARRIED_4317_BOX_TAG
+                )
+                result["rollback_remove_bounding_box_return"] = _sdk_tuple_record(
+                    rollback_return
+                )
+                raise NavigationCliError(
+                    "fusion accepted tag 4317 but get_bounding_box did not return it; "
+                    "the filter removal rollback was attempted"
+                )
+
+            attach_return = session.navigation.attach_box_to_link(
+                CARRIED_4317_BOX_COLLISION,
+                CARRIED_4317_IGNORE_COLLISION_LINKS,
+            )
+            result["attachment_changes_sent"] = True
+            result["attach_box_to_link_return"] = _sdk_tuple_record(attach_return)
+            if not _sdk_tuple_succeeded(attach_return):
+                rollback_return = session.navigation.remove_bounding_box(
+                    CARRIED_4317_BOX_TAG
+                )
+                result["rollback_remove_bounding_box_return"] = _sdk_tuple_record(
+                    rollback_return
+                )
+                raise NavigationCliError(
+                    f"attach_box_to_link failed: {attach_return!r}; "
+                    "the fusion filter removal rollback was attempted"
+                )
+
+            result["ok"] = True
+            result["outcome"] = "payload_registered"
+            result["registration_retained_until_explicit_remove"] = True
+            print(json.dumps(result, ensure_ascii=False, indent=2, default=str))
+    return 0
+
+
+def command_payload_4317_remove(args: argparse.Namespace) -> int:
+    del args
+    phrase = "REMOVE_NAV_PAYLOAD_4317"
+    result: Dict[str, Any] = {
+        "mode": "guarded_payload_4317_remove",
+        "motion_commands_sent": False,
+        "controller_switch_sent": False,
+        "bounding_box_changes_sent": False,
+        "attachment_changes_sent": False,
+        "box_tag": CARRIED_4317_BOX_TAG,
+    }
+
+    with ExclusiveRobotLock(CONTROL_LOCK):
+        with S1SdkSession() as session:
+            before = _read_navigation_state(session)
+            result["before"] = before
+            _navigation_must_be_idle(before, "payload removal")
+
+            print("\nREAL-ROBOT NAVIGATION PAYLOAD REMOVAL PREVIEW")
+            print("  expected physical motion: none")
+            print("  mobile base/arms/grippers/lift: no motion commands")
+            print("  detach PNS collision box tag: 4317")
+            print("  remove fusion filter box tag: 4317")
+            print("  run this only after navigation has stopped")
+            print()
+            confirmation = input(
+                f"Type {phrase} to detach and remove payload tag 4317: "
+            ).strip()
+            if confirmation != phrase:
+                result["ok"] = False
+                result["outcome"] = "cancelled_before_state_change"
+                print(json.dumps(result, ensure_ascii=False, indent=2, default=str))
+                return 2
+
+            detach_return = session.navigation.detach_box_from_link(
+                CARRIED_4317_BOX_TAG
+            )
+            result["attachment_changes_sent"] = True
+            result["detach_box_from_link_return"] = _sdk_tuple_record(
+                detach_return
+            )
+
+            remove_return = session.navigation.remove_bounding_box(
+                CARRIED_4317_BOX_TAG
+            )
+            result["bounding_box_changes_sent"] = True
+            result["remove_bounding_box_return"] = _sdk_tuple_record(
+                remove_return
+            )
+
+            boxes_after_remove = list(session.navigation.get_bounding_box())
+            result["bounding_boxes_after_remove"] = boxes_after_remove
+            filter_removed = not any(
+                _box_tag_matches(box, CARRIED_4317_BOX_TAG)
+                for box in boxes_after_remove
+            )
+            result["filter_removed"] = filter_removed
+            result["ok"] = bool(
+                _sdk_tuple_succeeded(detach_return)
+                and _sdk_tuple_succeeded(remove_return)
+                and filter_removed
+            )
+            result["outcome"] = (
+                "payload_removed"
+                if result["ok"]
+                else "payload_removal_not_fully_verified"
+            )
+            print(json.dumps(result, ensure_ascii=False, indent=2, default=str))
+            return 0 if result["ok"] else 1
+
+
+def command_relocalize(args: argparse.Namespace) -> int:
+    if not all(math.isfinite(value) for value in (args.x, args.y, args.yaw)):
+        raise NavigationCliError("x, y, and yaw must be finite")
+    if not math.isfinite(args.observe) or args.observe <= 0.0:
+        raise NavigationCliError("observe must be a finite value greater than zero")
+    if not math.isfinite(args.interval) or args.interval <= 0.0:
+        raise NavigationCliError("interval must be a finite value greater than zero")
+    if args.interval > args.observe:
+        raise NavigationCliError("interval must not exceed observe")
+
+    qx, qy, qz, qw = _yaw_to_quaternion(args.yaw)
+    initial_pose = np.array(
+        [args.x, args.y, 0.0, qx, qy, qz, qw], dtype=np.float64
+    )
+    phrase = (
+        f"RELOCALIZE_MAP_{args.x:.3f}_{args.y:.3f}_YAW_{args.yaw:.3f}"
+    )
+    result: Dict[str, Any] = {
+        "mode": "guarded_relocalization",
+        "initial_pose_map": initial_pose.tolist(),
+        "motion_commands_sent": False,
+        "controller_switch_sent": False,
+        "navigation_command_attempted": False,
+        "relocalization_sent": False,
+        "stop_navigation_sent": False,
+    }
+
+    with ExclusiveRobotLock(CONTROL_LOCK):
+        with S1SdkSession() as session:
+            before = _read_navigation_state(session)
+            result["before"] = before
+            _navigation_must_be_idle(before, "relocalization")
+
+            print("\nREAL-ROBOT RELOCALIZATION PREVIEW")
+            print("  state change: reset the S1 map-frame initial pose estimate")
+            print(f"  estimated map pose [x, y, yaw]: {[args.x, args.y, args.yaw]}")
+            print(f"  SDK pose [x,y,z,qx,qy,qz,qw]: {initial_pose.tolist()}")
+            print("  expected physical motion: none")
+            print("  mobile base/arms/grippers/lift: no motion commands")
+            print("  risk: an inaccurate estimate can make later navigation unsafe")
+            print("  keep all later navigation disabled until localization is verified")
+            print()
+            confirmation = input(
+                f"Type {phrase} to authorize this exact relocalization: "
+            ).strip()
+            if confirmation != phrase:
+                result["ok"] = False
+                result["outcome"] = "cancelled_before_state_change"
+                print(json.dumps(result, ensure_ascii=False, indent=2, default=str))
+                return 2
+
+            relocalize_return = session.navigation.relocalize(initial_pose)
+            result["relocalization_sent"] = True
+            result["relocalize_return"] = list(relocalize_return)
+            observations = _sample_localization_state(
+                session.navigation,
+                timeout_s=args.observe,
+                interval_s=args.interval,
+            )
+            result["after"] = observations
+
+            final_pose_values = observations["final_pose_map"]
+            if final_pose_values is not None:
+                final_pose = _finite_pose(final_pose_values, "final map pose")
+                result["position_delta_from_initial_m"] = float(
+                    np.linalg.norm(final_pose[:3] - initial_pose[:3])
+                )
+                result["orientation_delta_from_initial_rad"] = _quaternion_angle(
+                    final_pose[3:], initial_pose[3:]
+                )
+            else:
+                result["position_delta_from_initial_m"] = None
+                result["orientation_delta_from_initial_rad"] = None
+
+            return_success = bool(relocalize_return[0]) if relocalize_return else False
+            result["ok"] = bool(
+                return_success and observations["navigation_ready"]
+            )
+            result["outcome"] = (
+                "localized_after_relocalization"
+                if result["ok"]
+                else "relocalization_not_verified"
+            )
+            print(json.dumps(result, ensure_ascii=False, indent=2, default=str))
+            return 0 if result["ok"] else 1
+
+
+def command_probe_relative(args: argparse.Namespace) -> int:
+    direction_vectors = {
+        "forward": (1.0, 0.0),
+        "backward": (-1.0, 0.0),
+        "left": (0.0, 1.0),
+        "right": (0.0, -1.0),
+    }
+    directions = (
+        tuple(direction_vectors)
+        if args.direction == "all"
+        else (args.direction,)
+    )
+    distances = sorted(set(float(value) for value in args.distances))
+    if not distances or not all(math.isfinite(value) for value in distances):
+        raise NavigationCliError("distances must contain finite values")
+    if any(value <= 0.0 or value > args.max_distance for value in distances):
+        raise NavigationCliError(
+            "every distance must be greater than zero and no larger than "
+            f"max_distance={args.max_distance}"
+        )
+    if not math.isfinite(args.max_distance) or args.max_distance <= 0.0:
+        raise NavigationCliError("max_distance must be finite and greater than zero")
+    if not 1 <= args.checks <= 5:
+        raise NavigationCliError("checks must be in [1, 5]")
+    if not math.isfinite(args.interval) or args.interval < 0.0:
+        raise NavigationCliError("interval must be finite and non-negative")
+
+    result: Dict[str, Any] = {
+        "mode": "probe_relative_reachability_readonly",
+        "query_only": True,
+        "motion_commands_sent": False,
+        "controller_switch_sent": False,
+        "navigation_command_attempted": False,
+        "relocalization_sent": False,
+        "stop_navigation_sent": False,
+        "bounding_box_changes_sent": False,
+        "attachment_changes_sent": False,
+        "directions": list(directions),
+        "distances_m": distances,
+        "checks_per_target": args.checks,
+        "queries": [],
+    }
+
+    with ExclusiveRobotLock(CONTROL_LOCK):
+        with S1SdkSession() as session:
+            if not bool(session.navigation.is_localized()):
+                raise NavigationCliError("navigation is not localized")
+            start = _finite_pose(
+                session.navigation.get_current_pose(), "current map pose"
+            )
+            result["start_pose_map"] = start.tolist()
+            result["bounding_boxes"] = list(
+                session.navigation.get_bounding_box()
+            )
+            time.sleep(REACHABILITY_WARMUP_S)
+
+            summaries: Dict[str, Any] = {}
+            for direction in directions:
+                unit_x, unit_y = direction_vectors[direction]
+                direction_results = []
+                for distance in distances:
+                    local_displacement = [
+                        unit_x * distance,
+                        unit_y * distance,
+                        0.0,
+                    ]
+                    goal = start.copy()
+                    goal[:3] += _rotate_vector_by_quaternion(
+                        local_displacement, start[3:]
+                    )
+                    checks = []
+                    for check_index in range(args.checks):
+                        begin = time.monotonic()
+                        reachable = bool(
+                            session.navigation.check_path_reachability(goal, start)
+                        )
+                        checks.append(
+                            {
+                                "index": check_index,
+                                "reachable": reachable,
+                                "duration_s": time.monotonic() - begin,
+                            }
+                        )
+                        if check_index + 1 < args.checks and args.interval > 0.0:
+                            time.sleep(args.interval)
+                    reachable_count = sum(
+                        1 for item in checks if item["reachable"]
+                    )
+                    if reachable_count == args.checks:
+                        classification = "stably_reachable"
+                    elif reachable_count == 0:
+                        classification = "stably_unreachable"
+                    else:
+                        classification = "mixed"
+                    record = {
+                        "direction": direction,
+                        "distance_m": distance,
+                        "displacement_base_link_m": local_displacement,
+                        "goal_pose_map": goal.tolist(),
+                        "checks": checks,
+                        "reachable_count": reachable_count,
+                        "classification": classification,
+                    }
+                    result["queries"].append(record)
+                    direction_results.append(record)
+
+                reachable_distances = [
+                    item["distance_m"]
+                    for item in direction_results
+                    if item["classification"] == "stably_reachable"
+                ]
+                unreachable_distances = [
+                    item["distance_m"]
+                    for item in direction_results
+                    if item["classification"] == "stably_unreachable"
+                ]
+                mixed_distances = [
+                    item["distance_m"]
+                    for item in direction_results
+                    if item["classification"] == "mixed"
+                ]
+                summaries[direction] = {
+                    "last_stably_reachable_m": (
+                        max(reachable_distances) if reachable_distances else None
+                    ),
+                    "first_stably_unreachable_m": (
+                        min(unreachable_distances) if unreachable_distances else None
+                    ),
+                    "mixed_distances_m": mixed_distances,
+                }
+
+            result["summary"] = summaries
+            result["ok"] = True
+            print(json.dumps(result, ensure_ascii=False, indent=2, default=str))
+    return 0
+
+
+def _stable_reachability_checks(
+    navigation: GalbotNavigation,
+    goal: np.ndarray,
+    start: np.ndarray,
+) -> Sequence[Dict[str, Any]]:
+    time.sleep(REACHABILITY_WARMUP_S)
+    checks = []
+    for index in range(REACHABILITY_CHECK_COUNT):
+        begin = time.monotonic()
+        reachable = bool(navigation.check_path_reachability(goal, start))
+        checks.append(
+            {
+                "index": index,
+                "reachable": reachable,
+                "duration_s": time.monotonic() - begin,
+            }
+        )
+        if index + 1 < REACHABILITY_CHECK_COUNT:
+            time.sleep(REACHABILITY_CHECK_INTERVAL_S)
+    return checks
+
+
+def _print_motion_preview(
+    start: np.ndarray,
+    goal: np.ndarray,
+    planar_distance_m: float,
+    max_vel: np.ndarray,
+    timeout_s: float,
+    bounding_boxes: Sequence[Any],
+) -> str:
+    phrase = (
+        f"NAVIGATE_MAP_{goal[0]:.3f}_{goal[1]:.3f}_YAW_"
+        f"{2.0 * math.atan2(goal[5], goal[6]):.3f}"
+    )
+    print("\nREAL-ROBOT NAVIGATION PREVIEW")
+    print("  device: S1 mobile base")
+    print(f"  start map pose: {start.tolist()}")
+    print(f"  goal map pose:  {goal.tolist()}")
+    print(f"  planar distance: {planar_distance_m:.3f} m")
+    print(f"  maximum velocity [vx, vy, vyaw]: {max_vel.tolist()}")
+    print(f"  timeout: {timeout_s:.1f} s")
+    print("  v2 collision checking: enabled")
+    print("  omnidirectional planning: enabled")
+    print(f"  registered navigation bounding boxes: {len(bounding_boxes)}")
+    if not bounding_boxes:
+        print("  WARNING: no carried-payload bounding box is registered")
+    print("  WARNING: PNS whole-body collision checking is not guaranteed by this CLI")
+    print("  arms/grippers/lift: no commands")
+    print("  physical emergency stop must remain ready")
+    print()
+    return phrase
+
+
+def command_navigate(args: argparse.Namespace) -> int:
+    if not all(
+        math.isfinite(value)
+        for value in (
+            args.x,
+            args.y,
+            args.yaw,
+            args.max_vx,
+            args.max_vy,
+            args.max_vyaw,
+            args.timeout,
+            args.max_distance,
+        )
+    ):
+        raise NavigationCliError("all numeric arguments must be finite")
+    for name, value in (
+        ("max_vx", args.max_vx),
+        ("max_vy", args.max_vy),
+        ("max_vyaw", args.max_vyaw),
+    ):
+        if not 0.05 <= value <= 1.5:
+            raise NavigationCliError(f"{name} must be in [0.05, 1.5]")
+    if args.timeout <= 0.0:
+        raise NavigationCliError("timeout must be greater than zero")
+    if args.max_distance <= 0.0:
+        raise NavigationCliError("max_distance must be greater than zero")
+
+    qx, qy, qz, qw = _yaw_to_quaternion(args.yaw)
+    goal = np.array(
+        [args.x, args.y, 0.0, qx, qy, qz, qw], dtype=np.float64
+    )
+    max_vel = np.array(
+        [args.max_vx, args.max_vy, args.max_vyaw], dtype=np.float64
+    )
+
+    result: Dict[str, Any] = {
+        "mode": "navigate_map_goal_v2",
+        "goal_frame": "map",
+        "goal_pose": goal.tolist(),
+        "max_velocity": max_vel.tolist(),
+        "timeout_s": args.timeout,
+        "enable_collision_check": True,
+        "omni_plan": True,
+        "controller_switch_sent": False,
+        "navigation_command_attempted": False,
+        "relocalization_sent": False,
+    }
+
+    with ExclusiveRobotLock(CONTROL_LOCK):
+        with S1SdkSession() as session:
+            if not bool(session.navigation.is_localized()):
+                raise NavigationCliError("navigation is not localized")
+            start = _finite_pose(
+                session.navigation.get_current_pose(), "current map pose"
+            )
+            planar_distance = float(np.linalg.norm(goal[:2] - start[:2]))
+            result["start_pose"] = start.tolist()
+            result["planar_distance_m"] = planar_distance
+            if planar_distance > args.max_distance:
+                raise NavigationCliError(
+                    f"planar distance {planar_distance:.3f} m exceeds "
+                    f"configured maximum {args.max_distance:.3f} m"
+                )
+
+            checks = _stable_reachability_checks(
+                session.navigation, goal, start
+            )
+            result["static_path_checks"] = checks
+            if not all(item["reachable"] for item in checks):
+                raise NavigationCliError(
+                    "static path was not reachable in all three checks"
+                )
+
+            bounding_boxes = list(session.navigation.get_bounding_box())
+            result["bounding_boxes"] = bounding_boxes
+            phrase = _print_motion_preview(
+                start,
+                goal,
+                planar_distance,
+                max_vel,
+                args.timeout,
+                bounding_boxes,
+            )
+            confirmation = input(
+                f"Type {phrase} to authorize this exact navigation: "
+            ).strip()
+            if confirmation != phrase:
+                result["ok"] = False
+                result["outcome"] = "cancelled_before_motion"
+                print(json.dumps(result, ensure_ascii=False, indent=2, default=str))
+                return 2
+
+            controller_status = session.robot.switch_controller(
+                S1ControllerName.SWERVE_CHASSIS_POSE_CTRL
+            )
+            result["controller_switch_sent"] = True
+            result["controller_switch_status"] = str(
+                getattr(controller_status, "name", controller_status)
+            )
+            if controller_status != ControlStatus.SUCCESS:
+                raise NavigationCliError(
+                    "failed to switch to SWERVE_CHASSIS_POSE_CTRL: "
+                    + result["controller_switch_status"]
+                )
+
+            session.navigation_command_attempted = True
+            result["navigation_command_attempted"] = True
+            navigation_return = session.navigation.navigate_to_goal_v2(
+                goal,
+                max_vel,
+                pose_frame="map",
+                enable_collision_check=True,
+                is_blocking=True,
+                timeout=args.timeout,
+                omni_plan=True,
+            )
+            result["navigate_to_goal_v2_return"] = list(navigation_return)
+
+            observations = _observe_post_navigation_state(
+                session.navigation, goal
+            )
+            final_observation = observations[-1]
+            result["post_navigation_observation_s"] = POST_NAV_OBSERVATION_S
+            result["terminal_observations"] = observations
+            result["final_pose"] = final_observation["pose_map"]
+            result["position_error_m"] = final_observation["position_error_m"]
+            result["orientation_error_rad"] = final_observation[
+                "orientation_error_rad"
+            ]
+            result["goal_arrival"] = any(
+                item["goal_arrival"] for item in observations
+            )
+            result["navigation_status"] = final_observation[
+                "navigation_status"
+            ]
+
+            return_success = bool(navigation_return[0]) if navigation_return else False
+            result["ok"] = bool(return_success and result["goal_arrival"])
+            result["outcome"] = (
+                "completed" if result["ok"] else "terminal_result_not_arrived"
+            )
+            session.navigation_terminal_success = result["ok"]
+            print(json.dumps(result, ensure_ascii=False, indent=2, default=str))
+            return 0 if result["ok"] else 1
+
+
+def command_relative(args: argparse.Namespace) -> int:
+    numeric_values = (
+        args.x,
+        args.y,
+        args.yaw,
+        args.max_vx,
+        args.max_vy,
+        args.max_vyaw,
+        args.timeout,
+        args.max_distance,
+    )
+    if not all(math.isfinite(value) for value in numeric_values):
+        raise NavigationCliError("all numeric arguments must be finite")
+    for name, value in (
+        ("max_vx", args.max_vx),
+        ("max_vy", args.max_vy),
+        ("max_vyaw", args.max_vyaw),
+    ):
+        if not 0.05 <= value <= 1.5:
+            raise NavigationCliError(f"{name} must be in [0.05, 1.5]")
+    if args.timeout <= 0.0:
+        raise NavigationCliError("timeout must be greater than zero")
+    if args.max_distance <= 0.0:
+        raise NavigationCliError("max_distance must be greater than zero")
+
+    relative_distance = math.hypot(args.x, args.y)
+    if relative_distance > args.max_distance:
+        raise NavigationCliError(
+            f"relative distance {relative_distance:.3f} m exceeds configured "
+            f"maximum {args.max_distance:.3f} m"
+        )
+
+    local_quaternion = np.asarray(_yaw_to_quaternion(args.yaw), dtype=np.float64)
+    local_goal = np.array(
+        [args.x, args.y, 0.0, *local_quaternion.tolist()], dtype=np.float64
+    )
+    max_vel = np.array(
+        [args.max_vx, args.max_vy, args.max_vyaw], dtype=np.float64
+    )
+    result: Dict[str, Any] = {
+        "mode": "navigate_relative_goal_v2",
+        "goal_frame": "base_link",
+        "relative_goal_pose": local_goal.tolist(),
+        "relative_distance_m": relative_distance,
+        "max_velocity": max_vel.tolist(),
+        "timeout_s": args.timeout,
+        "enable_collision_check": True,
+        "omni_plan": True,
+        "controller_switch_sent": False,
+        "navigation_command_attempted": False,
+        "relocalization_sent": False,
+    }
+
+    with ExclusiveRobotLock(CONTROL_LOCK):
+        with S1SdkSession() as session:
+            if not bool(session.navigation.is_localized()):
+                raise NavigationCliError("navigation is not localized")
+            start = _finite_pose(
+                session.navigation.get_current_pose(), "current map pose"
+            )
+            expected_map_goal = start.copy()
+            expected_map_goal[:3] += _rotate_vector_by_quaternion(
+                [args.x, args.y, 0.0], start[3:]
+            )
+            expected_map_goal[3:] = _quaternion_multiply(
+                start[3:], local_quaternion
+            )
+            expected_map_goal[3:] /= np.linalg.norm(expected_map_goal[3:])
+            result["start_pose_map"] = start.tolist()
+            result["expected_goal_pose_map"] = expected_map_goal.tolist()
+
+            checks = _stable_reachability_checks(
+                session.navigation, expected_map_goal, start
+            )
+            result["static_path_checks"] = checks
+            if not all(item["reachable"] for item in checks):
+                raise NavigationCliError(
+                    "static path was not reachable in all three checks"
+                )
+
+            bounding_boxes = list(session.navigation.get_bounding_box())
+            result["bounding_boxes"] = bounding_boxes
+            phrase = (
+                f"NAVIGATE_BASE_{args.x:.3f}_{args.y:.3f}_YAW_{args.yaw:.3f}"
+            )
+            print("\nREAL-ROBOT RELATIVE NAVIGATION PREVIEW")
+            print("  device: S1 mobile base")
+            print(f"  start map pose: {start.tolist()}")
+            print(f"  relative base_link goal: {local_goal.tolist()}")
+            print(f"  expected map goal: {expected_map_goal.tolist()}")
+            print(f"  relative planar distance: {relative_distance:.3f} m")
+            print(f"  maximum velocity [vx, vy, vyaw]: {max_vel.tolist()}")
+            print(f"  timeout: {args.timeout:.1f} s")
+            print("  v2 collision checking: enabled")
+            print("  omnidirectional planning: enabled")
+            print(f"  registered navigation bounding boxes: {len(bounding_boxes)}")
+            if not bounding_boxes:
+                print("  WARNING: no carried-payload bounding box is registered")
+            print("  WARNING: PNS whole-body collision checking is not guaranteed")
+            print("  arms/grippers/lift: no commands")
+            print("  physical emergency stop must remain ready")
+            print()
+            confirmation = input(
+                f"Type {phrase} to authorize this exact navigation: "
+            ).strip()
+            if confirmation != phrase:
+                result["ok"] = False
+                result["outcome"] = "cancelled_before_motion"
+                print(json.dumps(result, ensure_ascii=False, indent=2, default=str))
+                return 2
+
+            controller_status = session.robot.switch_controller(
+                S1ControllerName.SWERVE_CHASSIS_POSE_CTRL
+            )
+            result["controller_switch_sent"] = True
+            result["controller_switch_status"] = str(
+                getattr(controller_status, "name", controller_status)
+            )
+            if controller_status != ControlStatus.SUCCESS:
+                raise NavigationCliError(
+                    "failed to switch to SWERVE_CHASSIS_POSE_CTRL: "
+                    + result["controller_switch_status"]
+                )
+
+            session.navigation_command_attempted = True
+            result["navigation_command_attempted"] = True
+            navigation_return = session.navigation.navigate_to_goal_v2(
+                local_goal,
+                max_vel,
+                pose_frame="base_link",
+                enable_collision_check=True,
+                is_blocking=True,
+                timeout=args.timeout,
+                omni_plan=True,
+            )
+            result["navigate_to_goal_v2_return"] = list(navigation_return)
+
+            observations = _observe_post_navigation_state(
+                session.navigation, expected_map_goal
+            )
+            final_observation = observations[-1]
+            result["post_navigation_observation_s"] = POST_NAV_OBSERVATION_S
+            result["terminal_observations"] = observations
+            result["final_pose_map"] = final_observation["pose_map"]
+            result["position_error_m"] = final_observation["position_error_m"]
+            result["orientation_error_rad"] = final_observation[
+                "orientation_error_rad"
+            ]
+            result["goal_arrival"] = any(
+                item["goal_arrival"] for item in observations
+            )
+            result["navigation_status"] = final_observation[
+                "navigation_status"
+            ]
+            return_success = bool(navigation_return[0]) if navigation_return else False
+            result["ok"] = bool(return_success and result["goal_arrival"])
+            result["outcome"] = (
+                "completed" if result["ok"] else "terminal_result_not_arrived"
+            )
+            session.navigation_terminal_success = result["ok"]
+            print(json.dumps(result, ensure_ascii=False, indent=2, default=str))
+            return 0 if result["ok"] else 1
+
+
+def _build_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(
+        description="S1 navigation state and guarded map-goal navigation"
+    )
+    subparsers = parser.add_subparsers(dest="command", required=True)
+
+    pose_parser = subparsers.add_parser(
+        "pose", help="read localization and current map pose without motion"
+    )
+    pose_parser.set_defaults(handler=command_pose)
+
+    diagnose_localization_parser = subparsers.add_parser(
+        "diagnose-localization",
+        help="observe localization readiness over time without changing state",
+    )
+    diagnose_localization_parser.add_argument(
+        "--timeout",
+        type=float,
+        default=DEFAULT_LOCALIZATION_DIAGNOSTIC_S,
+        help="total read-only observation duration in seconds",
+    )
+    diagnose_localization_parser.add_argument(
+        "--interval",
+        type=float,
+        default=DEFAULT_LOCALIZATION_SAMPLE_INTERVAL_S,
+        help="sampling interval in seconds",
+    )
+    diagnose_localization_parser.set_defaults(
+        handler=command_diagnose_localization
+    )
+
+    payload_status_parser = subparsers.add_parser(
+        "payload-status-4317",
+        help="read fusion-filter status for the recorded carried 4317 crate",
+    )
+    payload_status_parser.set_defaults(handler=command_payload_4317_status)
+
+    payload_register_parser = subparsers.add_parser(
+        "payload-register-4317",
+        help=(
+            "register the recorded carried 4317 crate with fusion and PNS; "
+            "changes navigation state without physical motion"
+        ),
+    )
+    payload_register_parser.set_defaults(handler=command_payload_4317_register)
+
+    payload_remove_parser = subparsers.add_parser(
+        "payload-remove-4317",
+        help=(
+            "detach/remove carried 4317 navigation geometry; changes "
+            "navigation state without physical motion"
+        ),
+    )
+    payload_remove_parser.set_defaults(handler=command_payload_4317_remove)
+
+    relocalize_parser = subparsers.add_parser(
+        "relocalize",
+        help="guarded map-pose initialization; changes localization state only",
+    )
+    relocalize_parser.add_argument("--x", type=float, required=True, help="map x, m")
+    relocalize_parser.add_argument("--y", type=float, required=True, help="map y, m")
+    relocalize_parser.add_argument(
+        "--yaw", type=float, required=True, help="map yaw, rad"
+    )
+    relocalize_parser.add_argument(
+        "--observe",
+        type=float,
+        default=DEFAULT_LOCALIZATION_DIAGNOSTIC_S,
+        help="read-only observation duration after the relocalization call",
+    )
+    relocalize_parser.add_argument(
+        "--interval",
+        type=float,
+        default=DEFAULT_LOCALIZATION_SAMPLE_INTERVAL_S,
+        help="post-call sampling interval in seconds",
+    )
+    relocalize_parser.set_defaults(handler=command_relocalize)
+
+    probe_parser = subparsers.add_parser(
+        "probe-relative",
+        help="read-only reachability scan at relative base_link distances",
+    )
+    probe_parser.add_argument(
+        "--direction",
+        choices=("forward", "backward", "left", "right", "all"),
+        default="forward",
+        help="base_link direction to scan; default forward",
+    )
+    probe_parser.add_argument(
+        "--distances",
+        type=float,
+        nargs="+",
+        default=DEFAULT_PROBE_DISTANCES_M,
+        help="positive distances in meters",
+    )
+    probe_parser.add_argument(
+        "--checks",
+        type=int,
+        default=DEFAULT_PROBE_CHECK_COUNT,
+        help="repeated checks per exact target, in [1, 5]",
+    )
+    probe_parser.add_argument(
+        "--interval",
+        type=float,
+        default=DEFAULT_PROBE_CHECK_INTERVAL_S,
+        help="seconds between repeated checks",
+    )
+    probe_parser.add_argument(
+        "--max-distance",
+        type=float,
+        default=2.0,
+        help="reject any probe distance above this bound",
+    )
+    probe_parser.set_defaults(handler=command_probe_relative)
+
+    navigate_parser = subparsers.add_parser(
+        "navigate", help="navigate to a guarded map-frame x/y/yaw goal"
+    )
+    navigate_parser.add_argument("--x", type=float, required=True, help="map x, m")
+    navigate_parser.add_argument("--y", type=float, required=True, help="map y, m")
+    navigate_parser.add_argument(
+        "--yaw", type=float, required=True, help="map yaw, rad"
+    )
+    navigate_parser.add_argument(
+        "--max-vx", type=float, default=DEFAULT_MAX_VEL[0]
+    )
+    navigate_parser.add_argument(
+        "--max-vy", type=float, default=DEFAULT_MAX_VEL[1]
+    )
+    navigate_parser.add_argument(
+        "--max-vyaw", type=float, default=DEFAULT_MAX_VEL[2]
+    )
+    navigate_parser.add_argument(
+        "--timeout", type=float, default=DEFAULT_TIMEOUT_S
+    )
+    navigate_parser.add_argument(
+        "--max-distance",
+        type=float,
+        default=DEFAULT_MAX_DISTANCE_M,
+        help="fail closed if the current planar distance exceeds this value",
+    )
+    navigate_parser.set_defaults(handler=command_navigate)
+
+    relative_parser = subparsers.add_parser(
+        "relative",
+        help="navigate by a guarded x/y/yaw offset in the current base_link frame",
+    )
+    relative_parser.add_argument(
+        "--x", type=float, required=True, help="relative x, m; positive is forward"
+    )
+    relative_parser.add_argument(
+        "--y", type=float, required=True, help="relative y, m; positive is left"
+    )
+    relative_parser.add_argument(
+        "--yaw", type=float, required=True, help="relative yaw, rad"
+    )
+    relative_parser.add_argument(
+        "--max-vx", type=float, default=DEFAULT_MAX_VEL[0]
+    )
+    relative_parser.add_argument(
+        "--max-vy", type=float, default=DEFAULT_MAX_VEL[1]
+    )
+    relative_parser.add_argument(
+        "--max-vyaw", type=float, default=DEFAULT_MAX_VEL[2]
+    )
+    relative_parser.add_argument(
+        "--timeout", type=float, default=DEFAULT_TIMEOUT_S
+    )
+    relative_parser.add_argument(
+        "--max-distance",
+        type=float,
+        default=DEFAULT_MAX_DISTANCE_M,
+        help="fail closed if the relative planar distance exceeds this value",
+    )
+    relative_parser.set_defaults(handler=command_relative)
+    return parser
+
+
+def main(argv: Optional[Sequence[str]] = None) -> int:
+    parser = _build_parser()
+    args = parser.parse_args(argv)
+    try:
+        return int(args.handler(args))
+    except KeyboardInterrupt:
+        print("Interrupted by operator.", file=sys.stderr)
+        return 130
+    except BaseException as exc:
+        print(
+            json.dumps(
+                {
+                    "ok": False,
+                    "outcome": "failed_closed",
+                    "error": {
+                        "type": type(exc).__name__,
+                        "message": str(exc),
+                    },
+                },
+                ensure_ascii=False,
+                indent=2,
+            )
+        )
+        return 1
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

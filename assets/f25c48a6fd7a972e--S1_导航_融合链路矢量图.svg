@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="120" viewBox="0 0 1200 120" role="img" aria-labelledby="title desc">
+  <title id="title">S1 点云融合与导航数据链路</title>
+  <desc id="desc">三路激光雷达和全局静态点云，经 galbot_fusion_main 与 NVIDIA nvblox 生成体素地图和三维 ESDF，并提供给 PNS 导航与 Motion 运动规划。</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#52677A"/>
+    </marker>
+    <style>
+      .title { font: 500 20px "Noto Sans CJK SC", sans-serif; fill: #17324D; }
+      .body { font: 400 15px "Noto Sans CJK SC", sans-serif; fill: #34495E; }
+      .mono { font: 400 14px "Noto Sans Mono CJK SC", monospace; fill: #34495E; }
+      .tag { font: 500 13px "Noto Sans CJK SC", sans-serif; fill: #7A5411; }
+      .arrow { stroke: #52677A; stroke-width: 3; fill: none; marker-end: url(#arrow); }
+    </style>
+  </defs>
+
+  <rect x="12" y="39" width="210" height="70" rx="8" fill="#EDF4FF" stroke="#7EA5F8" stroke-width="2"/>
+  <text x="117" y="67" text-anchor="middle" class="title">传感器输入</text>
+  <text x="117" y="92" text-anchor="middle" class="body">三路 LiDAR + 全局静态 PCD</text>
+
+  <path d="M 225 74 H 247" class="arrow"/>
+
+  <rect x="252" y="39" width="210" height="70" rx="8" fill="#EAF8F5" stroke="#62B9A9" stroke-width="2"/>
+  <text x="357" y="67" text-anchor="middle" class="title">融合服务</text>
+  <text x="357" y="92" text-anchor="middle" class="mono">galbot_fusion_main / nvblox</text>
+  <rect x="279" y="7" width="156" height="24" rx="12" fill="#FFF4DF" stroke="#E7B85A" stroke-width="1.4"/>
+  <text x="357" y="23" text-anchor="middle" class="tag">1 x 1 x 3 m 自体过滤框</text>
+
+  <path d="M 465 74 H 487" class="arrow"/>
+
+  <rect x="492" y="39" width="218" height="70" rx="8" fill="#F2EEFF" stroke="#A690E8" stroke-width="2"/>
+  <text x="601" y="67" text-anchor="middle" class="title">体素地图</text>
+  <text x="601" y="92" text-anchor="middle" class="body">TSDF / Occupancy / Freespace</text>
+
+  <path d="M 713 74 H 735" class="arrow"/>
+
+  <rect x="740" y="39" width="198" height="70" rx="8" fill="#F6F8FA" stroke="#AAB8C5" stroke-width="2"/>
+  <text x="839" y="67" text-anchor="middle" class="title">融合输出</text>
+  <text x="839" y="92" text-anchor="middle" class="body">3D ESDF / DDS</text>
+
+  <path d="M 941 74 H 963" class="arrow"/>
+
+  <rect x="968" y="39" width="220" height="70" rx="8" fill="#FFF4E8" stroke="#E8A058" stroke-width="2"/>
+  <text x="1078" y="67" text-anchor="middle" class="title">下游服务</text>
+  <text x="1078" y="92" text-anchor="middle" class="body">PNS 导航 / Motion 规划</text>
+</svg>

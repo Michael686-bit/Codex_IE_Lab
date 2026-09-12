@@ -1,0 +1,715 @@
+galbot@galbot-echo:~$ /home/galbot/ie_lab/bin/s1-python \
+>   /home/galbot/Lsy03/navigation_tests/s1_navigation_cli.py \
+>   relative \
+>   --x 1.0 \
+>   --y 0.0 \
+>   --yaw 0.0 \
+>   --max-vx 0.10 \
+>   --max-vy 0.10 \
+>   --max-vyaw 0.15 \
+>   --timeout 30 \
+>   --max-distance 1.2 \
+>   --omni-plan true \
+>   --execute
+A new version 1.9.1 is available. Visit https://github.com/GalaxyGeneralRobotics/GalbotSDK/releases for upgrade instructions
+{
+  "ok": false,
+  "outcome": "failed_closed",
+  "error": {
+    "type": "NavigationCliError",
+    "message": "static path was not reachable in all three checks"
+  }
+}
+galbot@galbot-echo:~$ /home/galbot/ie_lab/bin/s1-python   /home/galbot/Lsy03/navigation_tests/s1_navigation_cli.py   relative   --x 1.0   --y 0.0   --yaw 0.0   --max-vx 0.10   --max-vy 0.10   --max-vyaw 0.15   --timeout 30   --max-distance 1.2   --omni-plan true   --execute
+A new version 1.9.1 is available. Visit https://github.com/GalaxyGeneralRobotics/GalbotSDK/releases for upgrade instructions
+
+REAL-ROBOT RELATIVE NAVIGATION (--execute)
+  device: S1 mobile base
+  start map pose: [0.035626959055662155, 0.0007439876790158451, -0.011655024252831936, 0.0016707224628286495, -0.000376440838189343, -0.013311849606186593, 0.999909926762811]
+  relative base_link goal: [1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0]
+  expected map goal: [1.0352722649603774, -0.025878571306911916, -0.010946691203260767, 0.0016707224628286495, -0.000376440838189343, -0.013311849606186593, 0.999909926762811]
+  relative planar distance: 1.000 m
+  maximum velocity [vx, vy, vyaw]: [0.1, 0.1, 0.15]
+  timeout: 30.0 s
+  v2 collision checking: enabled
+  omnidirectional planning: enabled
+  registered navigation bounding boxes: 0
+  WARNING: no carried-payload bounding box is registered
+  WARNING: PNS whole-body collision checking is not guaranteed
+  arms/grippers/lift: no commands
+  physical emergency stop must remain ready
+
+{"event": "navigation_progress", "elapsed_s": 5.855999916093424e-06, "pose_map": [0.035021405667066574, 0.00808230135589838, -0.011671814136207104, 0.001354645866562291, 0.0002138405491558167, -0.014059033110964396, 0.9999002264200066], "position_error_m": 1.0008274817331377, "orientation_error_rad": 0.002006702670206731, "goal_arrival": false, "navigation_status": {"name": "RUNNING", "value": 1, "repr": "<NavigationTaskStatus.RUNNING: 1>"}}
+{"event": "navigation_progress", "elapsed_s": 1.0038793899998382, "pose_map": [0.10004875063896179, 0.006432096939533949, -0.009797363542020321, 0.0019242576106210706, -0.0005227957026499149, -0.01371231341054064, 0.9999039935805001], "position_error_m": 0.9357821979372678, "orientation_error_rad": 0.0009921820060711933, "goal_arrival": false, "navigation_status": {"name": "RUNNING", "value": 1, "repr": "<NavigationTaskStatus.RUNNING: 1>"}}
+{"event": "navigation_progress", "elapsed_s": 2.007800617000157, "pose_map": [0.15430493652820587, 0.005239074118435383, -0.00956754945218563, 0.0015392731081045833, 0.00022465193797538047, -0.014250906180657413, 0.999897240641675], "position_error_m": 0.8815178067706317, "orientation_error_rad": 0.002245510880134428, "goal_arrival": false, "navigation_status": {"name": "RUNNING", "value": 1, "repr": "<NavigationTaskStatus.RUNNING: 1>"}}
+{"event": "navigation_progress", "elapsed_s": 3.01201403999994, "pose_map": [0.25744524598121643, -0.00044057026389054954, -0.008434191346168518, 0.001884168471265274, 0.00032037325106282037, -0.013705552397652627, 0.9999042479675878], "position_error_m": 0.7782469248295201, "orientation_error_rad": 0.001656675283859309, "goal_arrival": false, "navigation_status": {"name": "RUNNING", "value": 1, "repr": "<NavigationTaskStatus.RUNNING: 1>"}}
+{"event": "navigation_progress", "elapsed_s": 4.016073339999821, "pose_map": [0.3452150523662567, -0.0013110245345160365, -0.009246747009456158, 0.0017676955019603128, 0.0005940127102614501, -0.0141711478062041, 0.999897845267889], "position_error_m": 0.6904964958765853, "orientation_error_rad": 0.002599787265611542, "goal_arrival": false, "navigation_status": {"name": "RUNNING", "value": 1, "repr": "<NavigationTaskStatus.RUNNING: 1>"}}
+{"event": "navigation_progress", "elapsed_s": 5.019925897000121, "pose_map": [0.438690185546875, -0.002841526409611106, -0.009990870952606201, 0.002194810207317515, 0.0008573357361222032, -0.013849941622232657, 0.999901308580327], "position_error_m": 0.5970274671296877, "orientation_error_rad": 0.0028889376957898574, "goal_arrival": false, "navigation_status": {"name": "RUNNING", "value": 1, "repr": "<NavigationTaskStatus.RUNNING: 1>"}}
+{"event": "navigation_progress", "elapsed_s": 6.0242791989999205, "pose_map": [0.5367897152900696, -0.006715800613164902, -0.008590199053287506, 0.0020597679965393923, 0.0010516737353867365, -0.013783986316153431, 0.999902321759176], "position_error_m": 0.49885630913292545, "orientation_error_rad": 0.0031073069090763648, "goal_arrival": false, "navigation_status": {"name": "RUNNING", "value": 1, "repr": "<NavigationTaskStatus.RUNNING: 1>"}}
+{"event": "navigation_progress", "elapsed_s": 7.028282353000122, "pose_map": [0.6272311210632324, -0.013370474800467491, -0.00742347864434123, 0.0008125025499039714, 0.0007619770814283013, -0.013435175560097384, 0.9999091235148339], "position_error_m": 0.4082480136116285, "orientation_error_rad": 0.0028619902612388613, "goal_arrival": false, "navigation_status": {"name": "RUNNING", "value": 1, "repr": "<NavigationTaskStatus.RUNNING: 1>"}}
+{"event": "navigation_progress", "elapsed_s": 8.032167629000014, "pose_map": [0.7253736257553101, -0.012797217816114426, -0.00930214487016201, 0.0017647505758995755, 0.0014349437812123539, -0.013687390034865634, 0.9999037363395454], "position_error_m": 0.3101789691822213, "orientation_error_rad": 0.0037046054802601135, "goal_arrival": false, "navigation_status": {"name": "RUNNING", "value": 1, "repr": "<NavigationTaskStatus.RUNNING: 1>"}}
+{"event": "navigation_progress", "elapsed_s": 9.036284232000071, "pose_map": [0.8211915493011475, -0.015426525846123695, -0.010304740630090237, 0.0013915240591935735, 0.0013113108236040105, -0.013599539632041956, 0.9999056938764341], "position_error_m": 0.2143366748179621, "orientation_error_rad": 0.0034694331773948085, "goal_arrival": false, "navigation_status": {"name": "RUNNING", "value": 1, "repr": "<NavigationTaskStatus.RUNNING: 1>"}}
+{"event": "navigation_progress", "elapsed_s": 10.040351998999995, "pose_map": [0.9237021803855896, -0.018666177988052368, -0.008065550588071346, 0.0012334425456782985, 0.0011228600295689732, -0.013531101748762755, 0.999907059226159], "position_error_m": 0.11184007940204496, "orientation_error_rad": 0.0031541699749952, "goal_arrival": false, "navigation_status": {"name": "RUNNING", "value": 1, "repr": "<NavigationTaskStatus.RUNNING: 1>"}}
+{"event": "navigation_progress", "elapsed_s": 11.044223203000001, "pose_map": [1.0006645917892456, -0.023066610097885132, -0.011668075807392597, 0.001022868280362286, 0.001205437322221787, -0.013923841418322607, 0.9999018088299975], "position_error_m": 0.03472921772669267, "orientation_error_rad": 0.003631338232851321, "goal_arrival": false, "navigation_status": {"name": "RUNNING", "value": 1, "repr": "<NavigationTaskStatus.RUNNING: 1>"}}
+{"event": "navigation_progress", "elapsed_s": 12.047562284999913, "pose_map": [1.0145223140716553, -0.01832486316561699, -0.010477795265614986, 0.0010545120219215783, 0.0010557538169797443, -0.014258096394450873, 0.9998972347573925], "position_error_m": 0.02208707386614591, "orientation_error_rad": 0.0036477071323368637, "goal_arrival": false, "navigation_status": {"name": "UNKNOWN", "value": 0, "repr": "<NavigationTaskStatus.UNKNOWN: 0>"}}
+{"event": "navigation_progress", "elapsed_s": 13.050983745999929, "pose_map": [1.014732003211975, -0.014832262881100178, -0.0064080627635121346, 0.0012637567717908354, 0.0010714612835361801, -0.013979427970407042, 0.9999009103321989], "position_error_m": 0.023759680777424866, "orientation_error_rad": 0.003291069374449718, "goal_arrival": false, "navigation_status": {"name": "UNKNOWN", "value": 0, "repr": "<NavigationTaskStatus.UNKNOWN: 0>"}}
+{"event": "navigation_progress", "elapsed_s": 14.054850611999882, "pose_map": [1.0159236192703247, -0.018978126347064972, -0.010776644572615623, 0.0009164938254811013, 0.0012064721357367828, -0.014401384931450519, 0.9998951467909573], "position_error_m": 0.020543007241873447, "orientation_error_rad": 0.004128816540488024, "goal_arrival": false, "navigation_status": {"name": "UNKNOWN", "value": 0, "repr": "<NavigationTaskStatus.UNKNOWN: 0>"}}
+{"event": "navigation_progress", "elapsed_s": 15.058307711999987, "pose_map": [1.0163787603378296, -0.018115894868969917, -0.00911177322268486, 0.0009293255265664224, 0.0017252535866092154, -0.01441308926437921, 0.9998942057597818], "position_error_m": 0.020508305302921925, "orientation_error_rad": 0.004971827828477913, "goal_arrival": false, "navigation_status": {"name": "UNKNOWN", "value": 0, "repr": "<NavigationTaskStatus.UNKNOWN: 0>"}}
+{"event": "navigation_progress", "elapsed_s": 16.062525812999866, "pose_map": [1.0153692960739136, -0.018245883285999298, -0.007897162809967995, 0.0008153632871013232, 0.0014967979605050865, -0.014194017450113944, 0.9998978071019066], "position_error_m": 0.021533362959408553, "orientation_error_rad": 0.004480639242893574, "goal_arrival": false, "navigation_status": {"name": "UNKNOWN", "value": 0, "repr": "<NavigationTaskStatus.UNKNOWN: 0>"}}
+{"event": "navigation_progress", "elapsed_s": 17.06596717499997, "pose_map": [1.0147544145584106, -0.019008636474609375, -0.006736994720995426, 0.0012482618076698254, 0.0011547684151188087, -0.014019698127751308, 0.9999002732356732], "position_error_m": 0.022043133493003388, "orientation_error_rad": 0.0034780559307515378, "goal_arrival": false, "navigation_status": {"name": "UNKNOWN", "value": 0, "repr": "<NavigationTaskStatus.UNKNOWN: 0>"}}
+{"event": "navigation_progress", "elapsed_s": 18.069788159999916, "pose_map": [1.013817310333252, -0.019307848066091537, -0.012627199292182922, 0.0009774352948052286, 0.0006484970217329945, -0.013875710736464675, 0.999903039661054], "position_error_m": 0.02250141305332625, "orientation_error_rad": 0.0027196557172311495, "goal_arrival": false, "navigation_status": {"name": "UNKNOWN", "value": 0, "repr": "<NavigationTaskStatus.UNKNOWN: 0>"}}
+{"event": "navigation_progress", "elapsed_s": 19.07344484799978, "pose_map": [1.0152411460876465, -0.0238669291138649, -0.013023706153035164, 0.0006782134327278142, 0.0006129167840852192, -0.013698177297696679, 0.9999057577083335], "position_error_m": 0.0202387356005238, "orientation_error_rad": 0.002907348976349031, "goal_arrival": false, "navigation_status": {"name": "UNKNOWN", "value": 0, "repr": "<NavigationTaskStatus.UNKNOWN: 0>"}}
+{"event": "navigation_progress", "elapsed_s": 20.07727327099974, "pose_map": [1.0188056230545044, -0.01880333013832569, -0.011405130848288536, 0.0010102448059550182, 0.0010131903205925184, -0.01355075971832904, 0.9999071605713514], "position_error_m": 0.017928176152582926, "orientation_error_rad": 0.0031140916335991465, "goal_arrival": false, "navigation_status": {"name": "UNKNOWN", "value": 0, "repr": "<NavigationTaskStatus.UNKNOWN: 0>"}}
+{"event": "navigation_progress", "elapsed_s": 21.080954695999935, "pose_map": [1.0185858011245728, -0.02030417136847973, -0.009605307132005692, 0.0015895637489002985, 0.0009480331530576695, -0.013246921695061753, 0.9999105427916208], "position_error_m": 0.01764401658477529, "orientation_error_rad": 0.002657091916143149, "goal_arrival": false, "navigation_status": {"name": "UNKNOWN", "value": 0, "repr": "<NavigationTaskStatus.UNKNOWN: 0>"}}
+{"event": "navigation_progress", "elapsed_s": 22.084728989999803, "pose_map": [1.0137150287628174, -0.022625090554356575, -0.0094678346067667, 0.0010154647310043111, 0.0009165192831099022, -0.013429650637174634, 0.9999088825025745], "position_error_m": 0.0218514664569139, "orientation_error_rad": 0.002908599055256582, "goal_arrival": false, "navigation_status": {"name": "UNKNOWN", "value": 0, "repr": "<NavigationTaskStatus.UNKNOWN: 0>"}}
+{"event": "navigation_progress", "elapsed_s": 23.088533178000034, "pose_map": [1.0186012983322144, -0.020996280014514923, -0.009580694139003754, 0.001465926616568947, 0.0009061990129043855, -0.013430626968619805, 0.9999083198582427], "position_error_m": 0.017424805438245206, "orientation_error_rad": 0.00260861435336152, "goal_arrival": false, "navigation_status": {"name": "UNKNOWN", "value": 0, "repr": "<NavigationTaskStatus.UNKNOWN: 0>"}}
+{"event": "navigation_progress", "elapsed_s": 24.092277571000068, "pose_map": [1.0099236965179443, -0.024308664724230766, -0.010126587003469467, 0.0005069803691644186, 0.0010321448214018207, -0.01359387735959436, 0.9999069377428608], "position_error_m": 0.025410373859067355, "orientation_error_rad": 0.0036975444728073186, "goal_arrival": false, "navigation_status": {"name": "UNKNOWN", "value": 0, "repr": "<NavigationTaskStatus.UNKNOWN: 0>"}}
+{"event": "navigation_progress", "elapsed_s": 25.096711804999813, "pose_map": [1.0092413425445557, -0.02098863199353218, -0.006774813402444124, 0.0014956348396347485, 0.0013577550097431622, -0.01343373119691894, 0.9999077229644189], "position_error_m": 0.02681277666881991, "orientation_error_rad": 0.0034945395518782233, "goal_arrival": false, "navigation_status": {"name": "UNKNOWN", "value": 0, "repr": "<NavigationTaskStatus.UNKNOWN: 0>"}}
+{"event": "navigation_progress", "elapsed_s": 26.10093772900018, "pose_map": [1.010102391242981, -0.020328339189291, -0.008349614217877388, 0.0017298807218003387, 0.0013773940790040707, -0.013422731460550773, 0.9999074660079189], "position_error_m": 0.02590506568949715, "orientation_error_rad": 0.0035166678850922727, "goal_arrival": false, "navigation_status": {"name": "UNKNOWN", "value": 0, "repr": "<NavigationTaskStatus.UNKNOWN: 0>"}}
+^C{
+  "mode": "navigate_relative_goal_v2",
+  "goal_frame": "base_link",
+  "relative_goal_pose": [
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1.0
+  ],
+  "relative_distance_m": 1.0,
+  "max_velocity": [
+    0.1,
+    0.1,
+    0.15
+  ],
+  "timeout_s": 30.0,
+  "enable_collision_check": true,
+  "omni_plan": true,
+  "execution_authorized_by_flag": true,
+  "add_bounding_box_requested": false,
+  "attach_box_to_link_requested": false,
+  "automatic_payload_registration": false,
+  "controller_switch_sent": true,
+  "navigation_command_attempted": true,
+  "relocalization_sent": false,
+  "start_pose_map": [
+    0.035626959055662155,
+    0.0007439876790158451,
+    -0.011655024252831936,
+    0.0016707224628286495,
+    -0.000376440838189343,
+    -0.013311849606186593,
+    0.999909926762811
+  ],
+  "expected_goal_pose_map": [
+    1.0352722649603774,
+    -0.025878571306911916,
+    -0.010946691203260767,
+    0.0016707224628286495,
+    -0.000376440838189343,
+    -0.013311849606186593,
+    0.999909926762811
+  ],
+  "static_path_checks": [
+    {
+      "index": 0,
+      "reachable": true,
+      "duration_s": 0.10139672300010716
+    },
+    {
+      "index": 1,
+      "reachable": true,
+      "duration_s": 0.10070150799992916
+    },
+    {
+      "index": 2,
+      "reachable": true,
+      "duration_s": 0.1009690670002783
+    }
+  ],
+  "bounding_boxes": [],
+  "controller_switch_status": "SUCCESS",
+  "navigate_to_goal_v2_return": [
+    true,
+    "SUCCESS"
+  ],
+  "monitor": {
+    "ok": false,
+    "outcome": "interrupted_and_stopped",
+    "terminal_reason": "signal",
+    "signal_number": 2,
+    "elapsed_s": 26.815313141999923,
+    "poll_count": 134,
+    "progress_samples": [
+      {
+        "elapsed_s": 5.855999916093424e-06,
+        "pose_map": [
+          0.035021405667066574,
+          0.00808230135589838,
+          -0.011671814136207104,
+          0.001354645866562291,
+          0.0002138405491558167,
+          -0.014059033110964396,
+          0.9999002264200066
+        ],
+        "position_error_m": 1.0008274817331377,
+        "orientation_error_rad": 0.002006702670206731,
+        "goal_arrival": false,
+        "navigation_status": {
+          "name": "RUNNING",
+          "value": 1,
+          "repr": "<NavigationTaskStatus.RUNNING: 1>"
+        }
+      },
+      {
+        "elapsed_s": 1.0038793899998382,
+        "pose_map": [
+          0.10004875063896179,
+          0.006432096939533949,
+          -0.009797363542020321,
+          0.0019242576106210706,
+          -0.0005227957026499149,
+          -0.01371231341054064,
+          0.9999039935805001
+        ],
+        "position_error_m": 0.9357821979372678,
+        "orientation_error_rad": 0.0009921820060711933,
+        "goal_arrival": false,
+        "navigation_status": {
+          "name": "RUNNING",
+          "value": 1,
+          "repr": "<NavigationTaskStatus.RUNNING: 1>"
+        }
+      },
+      {
+        "elapsed_s": 2.007800617000157,
+        "pose_map": [
+          0.15430493652820587,
+          0.005239074118435383,
+          -0.00956754945218563,
+          0.0015392731081045833,
+          0.00022465193797538047,
+          -0.014250906180657413,
+          0.999897240641675
+        ],
+        "position_error_m": 0.8815178067706317,
+        "orientation_error_rad": 0.002245510880134428,
+        "goal_arrival": false,
+        "navigation_status": {
+          "name": "RUNNING",
+          "value": 1,
+          "repr": "<NavigationTaskStatus.RUNNING: 1>"
+        }
+      },
+      {
+        "elapsed_s": 3.01201403999994,
+        "pose_map": [
+          0.25744524598121643,
+          -0.00044057026389054954,
+          -0.008434191346168518,
+          0.001884168471265274,
+          0.00032037325106282037,
+          -0.013705552397652627,
+          0.9999042479675878
+        ],
+        "position_error_m": 0.7782469248295201,
+        "orientation_error_rad": 0.001656675283859309,
+        "goal_arrival": false,
+        "navigation_status": {
+          "name": "RUNNING",
+          "value": 1,
+          "repr": "<NavigationTaskStatus.RUNNING: 1>"
+        }
+      },
+      {
+        "elapsed_s": 4.016073339999821,
+        "pose_map": [
+          0.3452150523662567,
+          -0.0013110245345160365,
+          -0.009246747009456158,
+          0.0017676955019603128,
+          0.0005940127102614501,
+          -0.0141711478062041,
+          0.999897845267889
+        ],
+        "position_error_m": 0.6904964958765853,
+        "orientation_error_rad": 0.002599787265611542,
+        "goal_arrival": false,
+        "navigation_status": {
+          "name": "RUNNING",
+          "value": 1,
+          "repr": "<NavigationTaskStatus.RUNNING: 1>"
+        }
+      },
+      {
+        "elapsed_s": 5.019925897000121,
+        "pose_map": [
+          0.438690185546875,
+          -0.002841526409611106,
+          -0.009990870952606201,
+          0.002194810207317515,
+          0.0008573357361222032,
+          -0.013849941622232657,
+          0.999901308580327
+        ],
+        "position_error_m": 0.5970274671296877,
+        "orientation_error_rad": 0.0028889376957898574,
+        "goal_arrival": false,
+        "navigation_status": {
+          "name": "RUNNING",
+          "value": 1,
+          "repr": "<NavigationTaskStatus.RUNNING: 1>"
+        }
+      },
+      {
+        "elapsed_s": 6.0242791989999205,
+        "pose_map": [
+          0.5367897152900696,
+          -0.006715800613164902,
+          -0.008590199053287506,
+          0.0020597679965393923,
+          0.0010516737353867365,
+          -0.013783986316153431,
+          0.999902321759176
+        ],
+        "position_error_m": 0.49885630913292545,
+        "orientation_error_rad": 0.0031073069090763648,
+        "goal_arrival": false,
+        "navigation_status": {
+          "name": "RUNNING",
+          "value": 1,
+          "repr": "<NavigationTaskStatus.RUNNING: 1>"
+        }
+      },
+      {
+        "elapsed_s": 7.028282353000122,
+        "pose_map": [
+          0.6272311210632324,
+          -0.013370474800467491,
+          -0.00742347864434123,
+          0.0008125025499039714,
+          0.0007619770814283013,
+          -0.013435175560097384,
+          0.9999091235148339
+        ],
+        "position_error_m": 0.4082480136116285,
+        "orientation_error_rad": 0.0028619902612388613,
+        "goal_arrival": false,
+        "navigation_status": {
+          "name": "RUNNING",
+          "value": 1,
+          "repr": "<NavigationTaskStatus.RUNNING: 1>"
+        }
+      },
+      {
+        "elapsed_s": 8.032167629000014,
+        "pose_map": [
+          0.7253736257553101,
+          -0.012797217816114426,
+          -0.00930214487016201,
+          0.0017647505758995755,
+          0.0014349437812123539,
+          -0.013687390034865634,
+          0.9999037363395454
+        ],
+        "position_error_m": 0.3101789691822213,
+        "orientation_error_rad": 0.0037046054802601135,
+        "goal_arrival": false,
+        "navigation_status": {
+          "name": "RUNNING",
+          "value": 1,
+          "repr": "<NavigationTaskStatus.RUNNING: 1>"
+        }
+      },
+      {
+        "elapsed_s": 9.036284232000071,
+        "pose_map": [
+          0.8211915493011475,
+          -0.015426525846123695,
+          -0.010304740630090237,
+          0.0013915240591935735,
+          0.0013113108236040105,
+          -0.013599539632041956,
+          0.9999056938764341
+        ],
+        "position_error_m": 0.2143366748179621,
+        "orientation_error_rad": 0.0034694331773948085,
+        "goal_arrival": false,
+        "navigation_status": {
+          "name": "RUNNING",
+          "value": 1,
+          "repr": "<NavigationTaskStatus.RUNNING: 1>"
+        }
+      },
+      {
+        "elapsed_s": 10.040351998999995,
+        "pose_map": [
+          0.9237021803855896,
+          -0.018666177988052368,
+          -0.008065550588071346,
+          0.0012334425456782985,
+          0.0011228600295689732,
+          -0.013531101748762755,
+          0.999907059226159
+        ],
+        "position_error_m": 0.11184007940204496,
+        "orientation_error_rad": 0.0031541699749952,
+        "goal_arrival": false,
+        "navigation_status": {
+          "name": "RUNNING",
+          "value": 1,
+          "repr": "<NavigationTaskStatus.RUNNING: 1>"
+        }
+      },
+      {
+        "elapsed_s": 11.044223203000001,
+        "pose_map": [
+          1.0006645917892456,
+          -0.023066610097885132,
+          -0.011668075807392597,
+          0.001022868280362286,
+          0.001205437322221787,
+          -0.013923841418322607,
+          0.9999018088299975
+        ],
+        "position_error_m": 0.03472921772669267,
+        "orientation_error_rad": 0.003631338232851321,
+        "goal_arrival": false,
+        "navigation_status": {
+          "name": "RUNNING",
+          "value": 1,
+          "repr": "<NavigationTaskStatus.RUNNING: 1>"
+        }
+      },
+      {
+        "elapsed_s": 12.047562284999913,
+        "pose_map": [
+          1.0145223140716553,
+          -0.01832486316561699,
+          -0.010477795265614986,
+          0.0010545120219215783,
+          0.0010557538169797443,
+          -0.014258096394450873,
+          0.9998972347573925
+        ],
+        "position_error_m": 0.02208707386614591,
+        "orientation_error_rad": 0.0036477071323368637,
+        "goal_arrival": false,
+        "navigation_status": {
+          "name": "UNKNOWN",
+          "value": 0,
+          "repr": "<NavigationTaskStatus.UNKNOWN: 0>"
+        }
+      },
+      {
+        "elapsed_s": 13.050983745999929,
+        "pose_map": [
+          1.014732003211975,
+          -0.014832262881100178,
+          -0.0064080627635121346,
+          0.0012637567717908354,
+          0.0010714612835361801,
+          -0.013979427970407042,
+          0.9999009103321989
+        ],
+        "position_error_m": 0.023759680777424866,
+        "orientation_error_rad": 0.003291069374449718,
+        "goal_arrival": false,
+        "navigation_status": {
+          "name": "UNKNOWN",
+          "value": 0,
+          "repr": "<NavigationTaskStatus.UNKNOWN: 0>"
+        }
+      },
+      {
+        "elapsed_s": 14.054850611999882,
+        "pose_map": [
+          1.0159236192703247,
+          -0.018978126347064972,
+          -0.010776644572615623,
+          0.0009164938254811013,
+          0.0012064721357367828,
+          -0.014401384931450519,
+          0.9998951467909573
+        ],
+        "position_error_m": 0.020543007241873447,
+        "orientation_error_rad": 0.004128816540488024,
+        "goal_arrival": false,
+        "navigation_status": {
+          "name": "UNKNOWN",
+          "value": 0,
+          "repr": "<NavigationTaskStatus.UNKNOWN: 0>"
+        }
+      },
+      {
+        "elapsed_s": 15.058307711999987,
+        "pose_map": [
+          1.0163787603378296,
+          -0.018115894868969917,
+          -0.00911177322268486,
+          0.0009293255265664224,
+          0.0017252535866092154,
+          -0.01441308926437921,
+          0.9998942057597818
+        ],
+        "position_error_m": 0.020508305302921925,
+        "orientation_error_rad": 0.004971827828477913,
+        "goal_arrival": false,
+        "navigation_status": {
+          "name": "UNKNOWN",
+          "value": 0,
+          "repr": "<NavigationTaskStatus.UNKNOWN: 0>"
+        }
+      },
+      {
+        "elapsed_s": 16.062525812999866,
+        "pose_map": [
+          1.0153692960739136,
+          -0.018245883285999298,
+          -0.007897162809967995,
+          0.0008153632871013232,
+          0.0014967979605050865,
+          -0.014194017450113944,
+          0.9998978071019066
+        ],
+        "position_error_m": 0.021533362959408553,
+        "orientation_error_rad": 0.004480639242893574,
+        "goal_arrival": false,
+        "navigation_status": {
+          "name": "UNKNOWN",
+          "value": 0,
+          "repr": "<NavigationTaskStatus.UNKNOWN: 0>"
+        }
+      },
+      {
+        "elapsed_s": 17.06596717499997,
+        "pose_map": [
+          1.0147544145584106,
+          -0.019008636474609375,
+          -0.006736994720995426,
+          0.0012482618076698254,
+          0.0011547684151188087,
+          -0.014019698127751308,
+          0.9999002732356732
+        ],
+        "position_error_m": 0.022043133493003388,
+        "orientation_error_rad": 0.0034780559307515378,
+        "goal_arrival": false,
+        "navigation_status": {
+          "name": "UNKNOWN",
+          "value": 0,
+          "repr": "<NavigationTaskStatus.UNKNOWN: 0>"
+        }
+      },
+      {
+        "elapsed_s": 18.069788159999916,
+        "pose_map": [
+          1.013817310333252,
+          -0.019307848066091537,
+          -0.012627199292182922,
+          0.0009774352948052286,
+          0.0006484970217329945,
+          -0.013875710736464675,
+          0.999903039661054
+        ],
+        "position_error_m": 0.02250141305332625,
+        "orientation_error_rad": 0.0027196557172311495,
+        "goal_arrival": false,
+        "navigation_status": {
+          "name": "UNKNOWN",
+          "value": 0,
+          "repr": "<NavigationTaskStatus.UNKNOWN: 0>"
+        }
+      },
+      {
+        "elapsed_s": 19.07344484799978,
+        "pose_map": [
+          1.0152411460876465,
+          -0.0238669291138649,
+          -0.013023706153035164,
+          0.0006782134327278142,
+          0.0006129167840852192,
+          -0.013698177297696679,
+          0.9999057577083335
+        ],
+        "position_error_m": 0.0202387356005238,
+        "orientation_error_rad": 0.002907348976349031,
+        "goal_arrival": false,
+        "navigation_status": {
+          "name": "UNKNOWN",
+          "value": 0,
+          "repr": "<NavigationTaskStatus.UNKNOWN: 0>"
+        }
+      },
+      {
+        "elapsed_s": 20.07727327099974,
+        "pose_map": [
+          1.0188056230545044,
+          -0.01880333013832569,
+          -0.011405130848288536,
+          0.0010102448059550182,
+          0.0010131903205925184,
+          -0.01355075971832904,
+          0.9999071605713514
+        ],
+        "position_error_m": 0.017928176152582926,
+        "orientation_error_rad": 0.0031140916335991465,
+        "goal_arrival": false,
+        "navigation_status": {
+          "name": "UNKNOWN",
+          "value": 0,
+          "repr": "<NavigationTaskStatus.UNKNOWN: 0>"
+        }
+      },
+      {
+        "elapsed_s": 21.080954695999935,
+        "pose_map": [
+          1.0185858011245728,
+          -0.02030417136847973,
+          -0.009605307132005692,
+          0.0015895637489002985,
+          0.0009480331530576695,
+          -0.013246921695061753,
+          0.9999105427916208
+        ],
+        "position_error_m": 0.01764401658477529,
+        "orientation_error_rad": 0.002657091916143149,
+        "goal_arrival": false,
+        "navigation_status": {
+          "name": "UNKNOWN",
+          "value": 0,
+          "repr": "<NavigationTaskStatus.UNKNOWN: 0>"
+        }
+      },
+      {
+        "elapsed_s": 22.084728989999803,
+        "pose_map": [
+          1.0137150287628174,
+          -0.022625090554356575,
+          -0.0094678346067667,
+          0.0010154647310043111,
+          0.0009165192831099022,
+          -0.013429650637174634,
+          0.9999088825025745
+        ],
+        "position_error_m": 0.0218514664569139,
+        "orientation_error_rad": 0.002908599055256582,
+        "goal_arrival": false,
+        "navigation_status": {
+          "name": "UNKNOWN",
+          "value": 0,
+          "repr": "<NavigationTaskStatus.UNKNOWN: 0>"
+        }
+      },
+      {
+        "elapsed_s": 23.088533178000034,
+        "pose_map": [
+          1.0186012983322144,
+          -0.020996280014514923,
+          -0.009580694139003754,
+          0.001465926616568947,
+          0.0009061990129043855,
+          -0.013430626968619805,
+          0.9999083198582427
+        ],
+        "position_error_m": 0.017424805438245206,
+        "orientation_error_rad": 0.00260861435336152,
+        "goal_arrival": false,
+        "navigation_status": {
+          "name": "UNKNOWN",
+          "value": 0,
+          "repr": "<NavigationTaskStatus.UNKNOWN: 0>"
+        }
+      },
+      {
+        "elapsed_s": 24.092277571000068,
+        "pose_map": [
+          1.0099236965179443,
+          -0.024308664724230766,
+          -0.010126587003469467,
+          0.0005069803691644186,
+          0.0010321448214018207,
+          -0.01359387735959436,
+          0.9999069377428608
+        ],
+        "position_error_m": 0.025410373859067355,
+        "orientation_error_rad": 0.0036975444728073186,
+        "goal_arrival": false,
+        "navigation_status": {
+          "name": "UNKNOWN",
+          "value": 0,
+          "repr": "<NavigationTaskStatus.UNKNOWN: 0>"
+        }
+      },
+      {
+        "elapsed_s": 25.096711804999813,
+        "pose_map": [
+          1.0092413425445557,
+          -0.02098863199353218,
+          -0.006774813402444124,
+          0.0014956348396347485,
+          0.0013577550097431622,
+          -0.01343373119691894,
+          0.9999077229644189
+        ],
+        "position_error_m": 0.02681277666881991,
+        "orientation_error_rad": 0.0034945395518782233,
+        "goal_arrival": false,
+        "navigation_status": {
+          "name": "UNKNOWN",
+          "value": 0,
+          "repr": "<NavigationTaskStatus.UNKNOWN: 0>"
+        }
+      },
+      {
+        "elapsed_s": 26.10093772900018,
+        "pose_map": [
+          1.010102391242981,
+          -0.020328339189291,
+          -0.008349614217877388,
+          0.0017298807218003387,
+          0.0013773940790040707,
+          -0.013422731460550773,
+          0.9999074660079189
+        ],
+        "position_error_m": 0.02590506568949715,
+        "orientation_error_rad": 0.0035166678850922727,
+        "goal_arrival": false,
+        "navigation_status": {
+          "name": "UNKNOWN",
+          "value": 0,
+          "repr": "<NavigationTaskStatus.UNKNOWN: 0>"
+        }
+      }
+    ],
+    "stop": {
+      "stop_navigation_sent": true,
+      "stop_confirmed": true,
+      "status_samples": [
+        {
+          "name": "UNKNOWN",
+          "value": 0,
+          "repr": "<NavigationTaskStatus.UNKNOWN: 0>"
+        }
+      ],
+      "stop_navigation_return": [
+        true,
+        "SUCCESS"
+      ],
+      "final_navigation_status": {
+        "name": "UNKNOWN",
+        "value": 0,
+        "repr": "<NavigationTaskStatus.UNKNOWN: 0>"
+      },
+      "wait_timeout_s": 5.0
+    },
+    "terminal_handled": true
+  },
+  "ok": false,
+  "outcome": "interrupted_and_stopped"
+}
+{"cleanup_sdk_failed": {"type": "KeyboardInterrupt", "message": ""}}
+Segmentation fault
+galbot@galbot-echo:~$ /home/galbot/ie_lab/bin/s1-python   /home/galbot/Lsy03/navigation_tests/s1_navigation_cli.py   relative   --x 1.0   --y 0.0   --yaw 0.0   --max-vx 0.10   --max-vy 0.10   --max-vyaw 0.15   --timeout 30   --max-distance 1.2   --omni-plan true   --execute

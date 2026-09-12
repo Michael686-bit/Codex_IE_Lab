@@ -1,0 +1,4850 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-09-12T09:59:21.942656+08:00",
+  "links": [
+    {
+      "url": "http://10.34.216.11:7861",
+      "references": [
+        {
+          "thread_id": "01a08a92-29da-7d11-a7af-2daedc602d32",
+          "turn_id": "asset:f2a1e8ab130fff35",
+          "role": "asset"
+        }
+      ],
+      "status": "skipped",
+      "http_status": null,
+      "final_url": null,
+      "detail": "私有、回环或保留地址"
+    },
+    {
+      "url": "http://10.34.216.11:7861/health",
+      "references": [
+        {
+          "thread_id": "01a083b5-ac49-7f82-a8f2-3200b0782754",
+          "turn_id": "asset:649977c6a741dc1d",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a08a92-29da-7d11-a7af-2daedc602d32",
+          "turn_id": "asset:f2a1e8ab130fff35",
+          "role": "asset"
+        },
+        {
+          "thread_id": "unknown-attachment",
+          "turn_id": "asset:ea60016055615305",
+          "role": "asset"
+        }
+      ],
+      "status": "skipped",
+      "http_status": null,
+      "final_url": null,
+      "detail": "私有、回环或保留地址"
+    },
+    {
+      "url": "http://10.34.216.11:7865",
+      "references": [
+        {
+          "thread_id": "01a08a92-29da-7d11-a7af-2daedc602d32",
+          "turn_id": "asset:f2a1e8ab130fff35",
+          "role": "asset"
+        }
+      ],
+      "status": "skipped",
+      "http_status": null,
+      "final_url": null,
+      "detail": "私有、回环或保留地址"
+    },
+    {
+      "url": "http://10.34.216.11:7865/health",
+      "references": [
+        {
+          "thread_id": "01a083b5-ac49-7f82-a8f2-3200b0782754",
+          "turn_id": "asset:649977c6a741dc1d",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a08a92-29da-7d11-a7af-2daedc602d32",
+          "turn_id": "asset:f2a1e8ab130fff35",
+          "role": "asset"
+        },
+        {
+          "thread_id": "unknown-attachment",
+          "turn_id": "asset:ea60016055615305",
+          "role": "asset"
+        }
+      ],
+      "status": "skipped",
+      "http_status": null,
+      "final_url": null,
+      "detail": "私有、回环或保留地址"
+    },
+    {
+      "url": "http://10.34.216.132:11311",
+      "references": [
+        {
+          "thread_id": "01a08a92-29da-7d11-a7af-2daedc602d32",
+          "turn_id": "asset:b2016760391ba48a",
+          "role": "asset"
+        }
+      ],
+      "status": "skipped",
+      "http_status": null,
+      "final_url": null,
+      "detail": "私有、回环或保留地址"
+    },
+    {
+      "url": "http://10.34.216.13:7876",
+      "references": [
+        {
+          "thread_id": "01a07984-d67d-7b11-956f-9a304cca746c",
+          "turn_id": "01a079a8-e0f4-7201-acb0-00115bc88aae",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a07984-d67d-7b11-956f-9a304cca746c",
+          "turn_id": "01a079b7-ad59-76b3-a651-5036bcf52730",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a07984-d67d-7b11-956f-9a304cca746c",
+          "turn_id": "01a079d2-360a-7a30-9922-f90dd95a38f6",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a07984-d67d-7b11-956f-9a304cca746c",
+          "turn_id": "01a079d8-dcfc-78f1-86de-faaaa5e8b9d7",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a07984-d67d-7b11-956f-9a304cca746c",
+          "turn_id": "01a079d9-a99e-7570-a5c7-dbf1f555bc28",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a07984-d67d-7b11-956f-9a304cca746c",
+          "turn_id": "01a079d9-a99e-7570-a5c7-dbf1f555bc28",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a07984-d67d-7b11-956f-9a304cca746c",
+          "turn_id": "01a079dc-3d51-79e3-ae67-91e8227d0c2b",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a07984-d67d-7b11-956f-9a304cca746c",
+          "turn_id": "asset:0007098de5136e17",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a07984-d67d-7b11-956f-9a304cca746c",
+          "turn_id": "asset:5d1e4f1fdc3d9945",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a07984-d67d-7b11-956f-9a304cca746c",
+          "turn_id": "asset:cf5e1ca6d2da6de3",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a07984-d67d-7b11-956f-9a304cca746c",
+          "turn_id": "asset:dc4dc812afdbb0cc",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a07a64-4465-7a30-b23b-8006cf8e6ffd",
+          "turn_id": "asset:c12fdd0162fafd69",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a07a68-f5e7-7703-93af-9eb2265ced75",
+          "turn_id": "asset:dc4dc812afdbb0cc",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a07bb0-0384-7f43-aa7d-1bb4a0842edb",
+          "turn_id": "asset:fea73be873ae0b53",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a08a92-29da-7d11-a7af-2daedc602d32",
+          "turn_id": "asset:f2a1e8ab130fff35",
+          "role": "asset"
+        },
+        {
+          "thread_id": "unknown-attachment",
+          "turn_id": "asset:33cc3bc610e89530",
+          "role": "asset"
+        },
+        {
+          "thread_id": "unknown-attachment",
+          "turn_id": "asset:ea60016055615305",
+          "role": "asset"
+        }
+      ],
+      "status": "skipped",
+      "http_status": null,
+      "final_url": null,
+      "detail": "私有、回环或保留地址"
+    },
+    {
+      "url": "http://10.34.216.13:7876/",
+      "references": [
+        {
+          "thread_id": "01a07984-d67d-7b11-956f-9a304cca746c",
+          "turn_id": "01a079d9-a99e-7570-a5c7-dbf1f555bc28",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "unknown-attachment",
+          "turn_id": "asset:33cc3bc610e89530",
+          "role": "asset"
+        }
+      ],
+      "status": "skipped",
+      "http_status": null,
+      "final_url": null,
+      "detail": "私有、回环或保留地址"
+    },
+    {
+      "url": "http://10.34.216.13:7876/first_frame_track",
+      "references": [
+        {
+          "thread_id": "01a066f8-8b17-7851-a5b7-d87301508295",
+          "turn_id": "01a06706-2fe1-7471-97a1-e8ec214f599f",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a07984-d67d-7b11-956f-9a304cca746c",
+          "turn_id": "01a0799d-d646-7b40-8220-39463c5fc220",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a07984-d67d-7b11-956f-9a304cca746c",
+          "turn_id": "asset:5d1e4f1fdc3d9945",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a07984-d67d-7b11-956f-9a304cca746c",
+          "turn_id": "asset:cf5e1ca6d2da6de3",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a07984-d67d-7b11-956f-9a304cca746c",
+          "turn_id": "asset:dc4dc812afdbb0cc",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a07a68-f5e7-7703-93af-9eb2265ced75",
+          "turn_id": "asset:dc4dc812afdbb0cc",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a07bb0-0384-7f43-aa7d-1bb4a0842edb",
+          "turn_id": "01a07fd3-fd0c-7b91-a140-fa13179d81dd",
+          "role": "assistant"
+        }
+      ],
+      "status": "skipped",
+      "http_status": null,
+      "final_url": null,
+      "detail": "私有、回环或保留地址"
+    },
+    {
+      "url": "http://10.34.216.13:7876/health",
+      "references": [
+        {
+          "thread_id": "01a07bb0-0384-7f43-aa7d-1bb4a0842edb",
+          "turn_id": "01a07fd3-fd0c-7b91-a140-fa13179d81dd",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a083b5-ac49-7f82-a8f2-3200b0782754",
+          "turn_id": "asset:649977c6a741dc1d",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a08a92-29da-7d11-a7af-2daedc602d32",
+          "turn_id": "asset:f2a1e8ab130fff35",
+          "role": "asset"
+        },
+        {
+          "thread_id": "unknown-attachment",
+          "turn_id": "asset:ea60016055615305",
+          "role": "asset"
+        }
+      ],
+      "status": "skipped",
+      "http_status": null,
+      "final_url": null,
+      "detail": "私有、回环或保留地址"
+    },
+    {
+      "url": "http://127.0.0.1:18000",
+      "references": [
+        {
+          "thread_id": "01a06710-9ce5-75d1-95c5-6beb503bf8ae",
+          "turn_id": "01a06a1f-1f30-73f1-b3b4-9cffdb6ad1de",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a06710-9ce5-75d1-95c5-6beb503bf8ae",
+          "turn_id": "01a06a70-0aa9-7ca0-9de2-d87c7eb0dbd5",
+          "role": "user"
+        }
+      ],
+      "status": "skipped",
+      "http_status": null,
+      "final_url": null,
+      "detail": "私有、回环或保留地址"
+    },
+    {
+      "url": "http://127.0.0.1:18001",
+      "references": [
+        {
+          "thread_id": "01a06710-9ce5-75d1-95c5-6beb503bf8ae",
+          "turn_id": "01a06a1f-1f30-73f1-b3b4-9cffdb6ad1de",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a06710-9ce5-75d1-95c5-6beb503bf8ae",
+          "turn_id": "01a06a70-0aa9-7ca0-9de2-d87c7eb0dbd5",
+          "role": "user"
+        }
+      ],
+      "status": "skipped",
+      "http_status": null,
+      "final_url": null,
+      "detail": "私有、回环或保留地址"
+    },
+    {
+      "url": "http://127.0.0.1:18002",
+      "references": [
+        {
+          "thread_id": "01a06710-9ce5-75d1-95c5-6beb503bf8ae",
+          "turn_id": "01a06a1f-1f30-73f1-b3b4-9cffdb6ad1de",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a06710-9ce5-75d1-95c5-6beb503bf8ae",
+          "turn_id": "01a06a70-0aa9-7ca0-9de2-d87c7eb0dbd5",
+          "role": "user"
+        }
+      ],
+      "status": "skipped",
+      "http_status": null,
+      "final_url": null,
+      "detail": "私有、回环或保留地址"
+    },
+    {
+      "url": "http://127.0.0.1:19000",
+      "references": [
+        {
+          "thread_id": "01a06710-9ce5-75d1-95c5-6beb503bf8ae",
+          "turn_id": "01a06a1f-1f30-73f1-b3b4-9cffdb6ad1de",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a06710-9ce5-75d1-95c5-6beb503bf8ae",
+          "turn_id": "01a06a70-0aa9-7ca0-9de2-d87c7eb0dbd5",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a06b17-c10c-73e1-981e-e69c0f12ccaf",
+          "turn_id": "01a06b1b-44de-7cd3-b370-fb9b31065501",
+          "role": "assistant"
+        }
+      ],
+      "status": "skipped",
+      "http_status": null,
+      "final_url": null,
+      "detail": "私有、回环或保留地址"
+    },
+    {
+      "url": "http://fishros.com/install",
+      "references": [
+        {
+          "thread_id": "01a02731-e698-7092-ae82-d3144a0993e8",
+          "turn_id": "01a02749-f9fa-71e0-9b1b-d732a87f6c01",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a02731-e698-7092-ae82-d3144a0993e8",
+          "turn_id": "01a0274c-24e0-7b73-b8b4-0d62c0f45ac5",
+          "role": "assistant"
+        }
+      ],
+      "status": "redirected",
+      "http_status": 200,
+      "final_url": "https://fishros.com/install/",
+      "detail": ""
+    },
+    {
+      "url": "http://localhost:19000/05_teleoperation/",
+      "references": [
+        {
+          "thread_id": "01a089f0-b6ba-7730-a34b-441fe7e76663",
+          "turn_id": "asset:6d6e6d275b67e627",
+          "role": "asset"
+        }
+      ],
+      "status": "skipped",
+      "http_status": null,
+      "final_url": null,
+      "detail": "本机或局域网主机"
+    },
+    {
+      "url": "http://mirrors.aliyun.com/ubuntu",
+      "references": [
+        {
+          "thread_id": "01a02731-e698-7092-ae82-d3144a0993e8",
+          "turn_id": "01a02753-bc70-7f81-b1c0-a1325c8fa033",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a02731-e698-7092-ae82-d3144a0993e8",
+          "turn_id": "01a0277e-5cbe-71f1-b93c-c94cb20b23c8",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a06710-9ce5-75d1-95c5-6beb503bf8ae",
+          "turn_id": "01a06a12-99b0-7632-aefe-e547cf4d4d0a",
+          "role": "user"
+        }
+      ],
+      "status": "redirected",
+      "http_status": 200,
+      "final_url": "http://mirrors.aliyun.com/ubuntu/",
+      "detail": ""
+    },
+    {
+      "url": "http://www.w3.org/2000/svg",
+      "references": [
+        {
+          "thread_id": "01a01df3-9890-77e3-8973-d284818c5a4a",
+          "turn_id": "asset:74013d42f0ca0511",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a04627-06e4-70a1-bb16-558f610aedc5",
+          "turn_id": "asset:48acdea41f247a25",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a089f0-b6ba-7730-a34b-441fe7e76663",
+          "turn_id": "asset:6d6e6d275b67e627",
+          "role": "asset"
+        },
+        {
+          "thread_id": "visualizations",
+          "turn_id": "asset:48acdea41f247a25",
+          "role": "asset"
+        },
+        {
+          "thread_id": "visualizations",
+          "turn_id": "asset:9da21573323777cb",
+          "role": "asset"
+        },
+        {
+          "thread_id": "visualizations",
+          "turn_id": "visualization:room0804-pose-picker.html",
+          "role": "visualization"
+        },
+        {
+          "thread_id": "visualizations",
+          "turn_id": "visualization:v5-fdp-scatter.html",
+          "role": "visualization"
+        }
+      ],
+      "status": "redirected",
+      "http_status": 200,
+      "final_url": "https://www.w3.org/2000/svg",
+      "detail": ""
+    },
+    {
+      "url": "https://Michael686-bit@github.com",
+      "references": [
+        {
+          "thread_id": "01a06fc0-a86b-7612-8db0-a4af84419644",
+          "turn_id": "01a06fe2-d1b8-74b2-b034-2c01f488a9cf",
+          "role": "user"
+        }
+      ],
+      "status": "skipped",
+      "http_status": null,
+      "final_url": null,
+      "detail": "URL 含用户信息，跳过请求"
+    },
+    {
+      "url": "https://api.github.com/repos/ros-infrastructure/ros-apt-source/releases/latest",
+      "references": [
+        {
+          "thread_id": "01a02731-e698-7092-ae82-d3144a0993e8",
+          "turn_id": "01a02745-a2b1-7932-9941-6826319a7b4e",
+          "role": "assistant"
+        }
+      ],
+      "status": "http_error",
+      "http_status": 403,
+      "final_url": null,
+      "detail": "rate limit exceeded"
+    },
+    {
+      "url": "https://catalog.ngc.nvidia.com/orgs/nvidia/-/containers/l4t-jetpack/-",
+      "references": [
+        {
+          "thread_id": "01a08f2f-fa2d-7240-b59e-2afecc1a7542",
+          "turn_id": "asset:0077a0bcc90ae74c",
+          "role": "asset"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://catalog.ngc.nvidia.com/orgs/nvidia/-/containers/l4t-jetpack/-",
+      "detail": ""
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js",
+      "references": [
+        {
+          "thread_id": "visualizations",
+          "turn_id": "asset:212e0f737956b2ff",
+          "role": "asset"
+        },
+        {
+          "thread_id": "visualizations",
+          "turn_id": "asset:6553940296ae0ff6",
+          "role": "asset"
+        },
+        {
+          "thread_id": "visualizations",
+          "turn_id": "asset:6e65ddb00d61b0c5",
+          "role": "asset"
+        },
+        {
+          "thread_id": "visualizations",
+          "turn_id": "asset:9da21573323777cb",
+          "role": "asset"
+        },
+        {
+          "thread_id": "visualizations",
+          "turn_id": "asset:c2cb6cc05b4a689f",
+          "role": "asset"
+        },
+        {
+          "thread_id": "visualizations",
+          "turn_id": "visualization:v5-fdp-scatter.html",
+          "role": "visualization"
+        },
+        {
+          "thread_id": "visualizations",
+          "turn_id": "visualization:vla-deployment-memory.html",
+          "role": "visualization"
+        },
+        {
+          "thread_id": "visualizations",
+          "turn_id": "visualization:vla-gpu-memory.html",
+          "role": "visualization"
+        },
+        {
+          "thread_id": "visualizations",
+          "turn_id": "visualization:vla-total-gpu-memory-modes.html",
+          "role": "visualization"
+        },
+        {
+          "thread_id": "visualizations",
+          "turn_id": "visualization:vla-total-gpu-memory.html",
+          "role": "visualization"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js",
+      "detail": ""
+    },
+    {
+      "url": "https://chatgpt.com/share/6a97c216-77a4-83ee-935d-efd3b727e778",
+      "references": [
+        {
+          "thread_id": "01a060cb-ba03-7842-b505-80c0c7b8ff53",
+          "turn_id": "01a060ce-5424-7b40-8c85-aa11190316d2",
+          "role": "user"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://chatgpt.com/share/6a97c216-77a4-83ee-935d-efd3b727e778",
+      "detail": ""
+    },
+    {
+      "url": "https://chrony-project.org/doc/4.2/chrony.conf.html",
+      "references": [
+        {
+          "thread_id": "01a08a8d-f846-7a83-881a-f5f06bf6497f",
+          "turn_id": "01a08b3a-b61c-7f72-b6ad-2c4e08d7d3ac",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://chrony-project.org/doc/4.2/chrony.conf.html",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/",
+      "references": [
+        {
+          "thread_id": "01a066da-16e2-7e71-ac06-566fe700cc5c",
+          "turn_id": "01a066dd-054f-70e2-9c42-109ea62c37f4",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://developer.galbot.com/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.7.0/s1/zh/api_cpp_reference/",
+      "references": [
+        {
+          "thread_id": "01a01e3e-cdfe-78f3-a3e1-15e3a83e6eb6",
+          "turn_id": "01a01e6e-8ef0-7d92-9210-28c6a54d605f",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://developer.galbot.com/docs/SDK/1.7.0/s1/zh/api_cpp_reference/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.8.1/g1/en/examples_python/",
+      "references": [
+        {
+          "thread_id": "01a01e3e-cdfe-78f3-a3e1-15e3a83e6eb6",
+          "turn_id": "01a01e6e-8ef0-7d92-9210-28c6a54d605f",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://developer.galbot.com/docs/SDK/1.8.1/g1/en/examples_python/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.8.1/s1/en/troubleshooting/",
+      "references": [
+        {
+          "thread_id": "01a0667b-ce68-75f0-b8e7-bbfb74cfbf87",
+          "turn_id": "01a06689-1b14-7fe0-b7a3-82714c5d0735",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://developer.galbot.com/docs/SDK/1.8.1/s1/en/troubleshooting/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.9.0/g1/en/examples_python/",
+      "references": [
+        {
+          "thread_id": "01a08df8-1d88-7410-a613-fd529d9a3bdb",
+          "turn_id": "01a08e40-ccc2-7422-89d8-684ec3c7a4f1",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a08e0c-eda8-79d3-8b02-b11244304c95",
+          "turn_id": "01a08e1f-6d62-7ab1-800b-783655272f16",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://developer.galbot.com/docs/SDK/1.9.0/g1/en/examples_python/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.9.0/s1/zh/api_python_reference/",
+      "references": [
+        {
+          "thread_id": "01a04115-4425-7671-aeee-ac88e18292d4",
+          "turn_id": "01a041df-1e49-7d03-b9a0-1ee1e0d9b379",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://developer.galbot.com/docs/SDK/1.9.0/s1/zh/api_python_reference/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/en/api_python_reference/",
+      "references": [
+        {
+          "thread_id": "01a066da-16e2-7e71-ac06-566fe700cc5c",
+          "turn_id": "01a066dd-054f-70e2-9c42-109ea62c37f4",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a08df8-1d88-7410-a613-fd529d9a3bdb",
+          "turn_id": "01a08e40-ccc2-7422-89d8-684ec3c7a4f1",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a08df8-1d88-7410-a613-fd529d9a3bdb",
+          "turn_id": "01a08e40-ccc2-7422-89d8-684ec3c7a4f1",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a08df8-1d88-7410-a613-fd529d9a3bdb",
+          "turn_id": "01a08e56-fae6-7803-a888-e70c117e3a12",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a08df8-1d88-7410-a613-fd529d9a3bdb",
+          "turn_id": "asset:b541ee02818bc953",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a08e0c-eda8-79d3-8b02-b11244304c95",
+          "turn_id": "01a08e1f-6d62-7ab1-800b-783655272f16",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a08e41-15ac-76d3-8dcf-53662ef71607",
+          "turn_id": "01a08e41-cb34-71d2-a204-ca6e0d453684",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/en/api_python_reference/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/",
+      "references": [
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07ed2-d420-7f93-bf87-1e71cc3e7716",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07fd2-5ca2-79e1-8b0b-ff611b1522af",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
+          "turn_id": "asset:6cbd365afb6a1066",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a080cb-5824-7282-89bc-2dd1013446a2",
+          "turn_id": "01a080d2-19aa-7463-8e62-dcb8beba71b2",
+          "role": "user"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/api_cpp_reference",
+      "references": [
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07ed2-d420-7f93-bf87-1e71cc3e7716",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07fd2-5ca2-79e1-8b0b-ff611b1522af",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
+          "turn_id": "asset:6cbd365afb6a1066",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a080cb-5824-7282-89bc-2dd1013446a2",
+          "turn_id": "01a080d2-19aa-7463-8e62-dcb8beba71b2",
+          "role": "user"
+        }
+      ],
+      "status": "redirected",
+      "http_status": 200,
+      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/api_cpp_reference/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/api_python_reference",
+      "references": [
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07ed2-d420-7f93-bf87-1e71cc3e7716",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07fd2-5ca2-79e1-8b0b-ff611b1522af",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
+          "turn_id": "asset:6cbd365afb6a1066",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a080cb-5824-7282-89bc-2dd1013446a2",
+          "turn_id": "01a080d2-19aa-7463-8e62-dcb8beba71b2",
+          "role": "user"
+        }
+      ],
+      "status": "redirected",
+      "http_status": 200,
+      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/api_python_reference/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/examples_cpp",
+      "references": [
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07ed2-d420-7f93-bf87-1e71cc3e7716",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07fd2-5ca2-79e1-8b0b-ff611b1522af",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
+          "turn_id": "asset:6cbd365afb6a1066",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a080cb-5824-7282-89bc-2dd1013446a2",
+          "turn_id": "01a080d2-19aa-7463-8e62-dcb8beba71b2",
+          "role": "user"
+        }
+      ],
+      "status": "redirected",
+      "http_status": 200,
+      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/examples_cpp/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/examples_python",
+      "references": [
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07ed2-d420-7f93-bf87-1e71cc3e7716",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07fd2-5ca2-79e1-8b0b-ff611b1522af",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
+          "turn_id": "asset:6cbd365afb6a1066",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a080cb-5824-7282-89bc-2dd1013446a2",
+          "turn_id": "01a080d2-19aa-7463-8e62-dcb8beba71b2",
+          "role": "user"
+        }
+      ],
+      "status": "redirected",
+      "http_status": 200,
+      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/examples_python/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_and_configuration",
+      "references": [
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07ed2-d420-7f93-bf87-1e71cc3e7716",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07fd2-5ca2-79e1-8b0b-ff611b1522af",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
+          "turn_id": "asset:6cbd365afb6a1066",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a080cb-5824-7282-89bc-2dd1013446a2",
+          "turn_id": "01a080d2-19aa-7463-8e62-dcb8beba71b2",
+          "role": "user"
+        }
+      ],
+      "status": "redirected",
+      "http_status": 200,
+      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_and_configuration/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_and_configuration/",
+      "references": [
+        {
+          "thread_id": "01a08557-cea5-7d83-a980-12ff835028e5",
+          "turn_id": "01a08557-d0bf-7ff3-aabe-722d23bdf725",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_and_configuration/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_docker_deployment",
+      "references": [
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07ed2-d420-7f93-bf87-1e71cc3e7716",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07fd2-5ca2-79e1-8b0b-ff611b1522af",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
+          "turn_id": "asset:6cbd365afb6a1066",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a080cb-5824-7282-89bc-2dd1013446a2",
+          "turn_id": "01a080d2-19aa-7463-8e62-dcb8beba71b2",
+          "role": "user"
+        }
+      ],
+      "status": "redirected",
+      "http_status": 200,
+      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_docker_deployment/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_docker_deployment#",
+      "references": [
+        {
+          "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
+          "turn_id": "asset:6cbd365afb6a1066",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a080cb-5824-7282-89bc-2dd1013446a2",
+          "turn_id": "01a080d2-19aa-7463-8e62-dcb8beba71b2",
+          "role": "user"
+        }
+      ],
+      "status": "redirected",
+      "http_status": 200,
+      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_docker_deployment/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_docker_deployment#1-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE",
+      "references": [
+        {
+          "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
+          "turn_id": "asset:6cbd365afb6a1066",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a080cb-5824-7282-89bc-2dd1013446a2",
+          "turn_id": "01a080d2-19aa-7463-8e62-dcb8beba71b2",
+          "role": "user"
+        }
+      ],
+      "status": "redirected",
+      "http_status": 200,
+      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_docker_deployment/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_docker_deployment#2-%E8%8E%B7%E5%8F%96%E9%95%9C%E5%83%8F",
+      "references": [
+        {
+          "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
+          "turn_id": "asset:6cbd365afb6a1066",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a080cb-5824-7282-89bc-2dd1013446a2",
+          "turn_id": "01a080d2-19aa-7463-8e62-dcb8beba71b2",
+          "role": "user"
+        }
+      ],
+      "status": "redirected",
+      "http_status": 200,
+      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_docker_deployment/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_docker_deployment#3-%E5%90%AF%E5%8A%A8%E5%AE%B9%E5%99%A8",
+      "references": [
+        {
+          "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
+          "turn_id": "asset:6cbd365afb6a1066",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a080cb-5824-7282-89bc-2dd1013446a2",
+          "turn_id": "01a080d2-19aa-7463-8e62-dcb8beba71b2",
+          "role": "user"
+        }
+      ],
+      "status": "redirected",
+      "http_status": 200,
+      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_docker_deployment/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_docker_deployment#__docusaurus_skipToContent_fallback",
+      "references": [
+        {
+          "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
+          "turn_id": "asset:6cbd365afb6a1066",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a080cb-5824-7282-89bc-2dd1013446a2",
+          "turn_id": "01a080d2-19aa-7463-8e62-dcb8beba71b2",
+          "role": "user"
+        }
+      ],
+      "status": "redirected",
+      "http_status": 200,
+      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_docker_deployment/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_deployment",
+      "references": [
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07ed2-d420-7f93-bf87-1e71cc3e7716",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07fd2-5ca2-79e1-8b0b-ff611b1522af",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
+          "turn_id": "asset:6cbd365afb6a1066",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a080cb-5824-7282-89bc-2dd1013446a2",
+          "turn_id": "01a080d2-19aa-7463-8e62-dcb8beba71b2",
+          "role": "user"
+        }
+      ],
+      "status": "redirected",
+      "http_status": 200,
+      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_deployment/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_ubuntu",
+      "references": [
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07ed2-d420-7f93-bf87-1e71cc3e7716",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07fd2-5ca2-79e1-8b0b-ff611b1522af",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
+          "turn_id": "asset:6cbd365afb6a1066",
+          "role": "asset"
+        }
+      ],
+      "status": "redirected",
+      "http_status": 200,
+      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_ubuntu/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_ubuntu#",
+      "references": [
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07ed2-d420-7f93-bf87-1e71cc3e7716",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
+          "turn_id": "asset:6cbd365afb6a1066",
+          "role": "asset"
+        }
+      ],
+      "status": "redirected",
+      "http_status": 200,
+      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_ubuntu/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_ubuntu#1-%E7%89%A9%E7%90%86%E8%BF%9E%E6%8E%A5",
+      "references": [
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07ed2-d420-7f93-bf87-1e71cc3e7716",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
+          "turn_id": "asset:6cbd365afb6a1066",
+          "role": "asset"
+        }
+      ],
+      "status": "redirected",
+      "http_status": 200,
+      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_ubuntu/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_ubuntu#2-%E9%85%8D%E7%BD%AE%E7%BD%91%E7%BB%9C",
+      "references": [
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07ed2-d420-7f93-bf87-1e71cc3e7716",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
+          "turn_id": "asset:6cbd365afb6a1066",
+          "role": "asset"
+        }
+      ],
+      "status": "redirected",
+      "http_status": 200,
+      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_ubuntu/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_ubuntu#21-%E9%85%8D%E7%BD%AEpc%E7%BD%91%E5%8F%A3ip",
+      "references": [
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07ed2-d420-7f93-bf87-1e71cc3e7716",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
+          "turn_id": "asset:6cbd365afb6a1066",
+          "role": "asset"
+        }
+      ],
+      "status": "redirected",
+      "http_status": 200,
+      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_ubuntu/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_ubuntu#22-%E4%B8%80%E9%94%AE%E9%85%8D%E7%BD%AEpcxcuhpu%E7%AB%AFip",
+      "references": [
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07ed2-d420-7f93-bf87-1e71cc3e7716",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
+          "turn_id": "asset:6cbd365afb6a1066",
+          "role": "asset"
+        }
+      ],
+      "status": "redirected",
+      "http_status": 200,
+      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_ubuntu/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_ubuntu#3-%E5%9C%A8pc%E4%B8%8A%E5%AE%89%E8%A3%85sdk",
+      "references": [
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07ed2-d420-7f93-bf87-1e71cc3e7716",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
+          "turn_id": "asset:6cbd365afb6a1066",
+          "role": "asset"
+        }
+      ],
+      "status": "redirected",
+      "http_status": 200,
+      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_ubuntu/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_ubuntu#4-%E7%BC%96%E8%AF%91%E7%A8%8B%E5%BA%8F",
+      "references": [
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07ed2-d420-7f93-bf87-1e71cc3e7716",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
+          "turn_id": "asset:6cbd365afb6a1066",
+          "role": "asset"
+        }
+      ],
+      "status": "redirected",
+      "http_status": 200,
+      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_ubuntu/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_ubuntu#5-%E8%BF%90%E8%A1%8C%E7%A8%8B%E5%BA%8F",
+      "references": [
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07ed2-d420-7f93-bf87-1e71cc3e7716",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
+          "turn_id": "asset:6cbd365afb6a1066",
+          "role": "asset"
+        }
+      ],
+      "status": "redirected",
+      "http_status": 200,
+      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_ubuntu/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_ubuntu#__docusaurus_skipToContent_fallback",
+      "references": [
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07ed2-d420-7f93-bf87-1e71cc3e7716",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
+          "turn_id": "asset:6cbd365afb6a1066",
+          "role": "asset"
+        }
+      ],
+      "status": "redirected",
+      "http_status": 200,
+      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_ubuntu/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_ubuntu/",
+      "references": [
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07fb5-f26f-7650-a7c5-a65f819093aa",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07fd2-5ca2-79e1-8b0b-ff611b1522af",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_ubuntu/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_ubuntu/#",
+      "references": [
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07fd2-5ca2-79e1-8b0b-ff611b1522af",
+          "role": "user"
+        }
+      ],
+      "status": "redirected",
+      "http_status": 200,
+      "final_url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_ubuntu/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_ubuntu/#1-%E7%89%A9%E7%90%86%E8%BF%9E%E6%8E%A5",
+      "references": [
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07fd2-5ca2-79e1-8b0b-ff611b1522af",
+          "role": "user"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_ubuntu/#1-%E7%89%A9%E7%90%86%E8%BF%9E%E6%8E%A5",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_ubuntu/#2-%E9%85%8D%E7%BD%AE%E7%BD%91%E7%BB%9C",
+      "references": [
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07fd2-5ca2-79e1-8b0b-ff611b1522af",
+          "role": "user"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_ubuntu/#2-%E9%85%8D%E7%BD%AE%E7%BD%91%E7%BB%9C",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_ubuntu/#21-%E9%85%8D%E7%BD%AEpc%E7%BD%91%E5%8F%A3ip",
+      "references": [
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07fd2-5ca2-79e1-8b0b-ff611b1522af",
+          "role": "user"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_ubuntu/#21-%E9%85%8D%E7%BD%AEpc%E7%BD%91%E5%8F%A3ip",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_ubuntu/#22-%E4%B8%80%E9%94%AE%E9%85%8D%E7%BD%AEpcxcuhpu%E7%AB%AFip",
+      "references": [
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07fd2-5ca2-79e1-8b0b-ff611b1522af",
+          "role": "user"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_ubuntu/#22-%E4%B8%80%E9%94%AE%E9%85%8D%E7%BD%AEpcxcuhpu%E7%AB%AFip",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_ubuntu/#3-%E5%9C%A8pc%E4%B8%8A%E5%AE%89%E8%A3%85sdk",
+      "references": [
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07fd2-5ca2-79e1-8b0b-ff611b1522af",
+          "role": "user"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_ubuntu/#3-%E5%9C%A8pc%E4%B8%8A%E5%AE%89%E8%A3%85sdk",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_ubuntu/#4-%E7%BC%96%E8%AF%91%E7%A8%8B%E5%BA%8F",
+      "references": [
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07fd2-5ca2-79e1-8b0b-ff611b1522af",
+          "role": "user"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_ubuntu/#4-%E7%BC%96%E8%AF%91%E7%A8%8B%E5%BA%8F",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_ubuntu/#5-%E8%BF%90%E8%A1%8C%E7%A8%8B%E5%BA%8F",
+      "references": [
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07fd2-5ca2-79e1-8b0b-ff611b1522af",
+          "role": "user"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_ubuntu/#5-%E8%BF%90%E8%A1%8C%E7%A8%8B%E5%BA%8F",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_ubuntu/#__docusaurus_skipToContent_fallback",
+      "references": [
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07fd2-5ca2-79e1-8b0b-ff611b1522af",
+          "role": "user"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_ubuntu/#__docusaurus_skipToContent_fallback",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_vmware",
+      "references": [
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07ed2-d420-7f93-bf87-1e71cc3e7716",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07fd2-5ca2-79e1-8b0b-ff611b1522af",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
+          "turn_id": "asset:6cbd365afb6a1066",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a080cb-5824-7282-89bc-2dd1013446a2",
+          "turn_id": "01a080d2-19aa-7463-8e62-dcb8beba71b2",
+          "role": "user"
+        }
+      ],
+      "status": "redirected",
+      "http_status": 200,
+      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_vmware/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_wsl2",
+      "references": [
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07ed2-d420-7f93-bf87-1e71cc3e7716",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07fd2-5ca2-79e1-8b0b-ff611b1522af",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
+          "turn_id": "asset:6cbd365afb6a1066",
+          "role": "asset"
+        }
+      ],
+      "status": "redirected",
+      "http_status": 200,
+      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_wsl2/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_robot_deployment",
+      "references": [
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07ed2-d420-7f93-bf87-1e71cc3e7716",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07fd2-5ca2-79e1-8b0b-ff611b1522af",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
+          "turn_id": "asset:6cbd365afb6a1066",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a080cb-5824-7282-89bc-2dd1013446a2",
+          "turn_id": "01a080d2-19aa-7463-8e62-dcb8beba71b2",
+          "role": "user"
+        }
+      ],
+      "status": "redirected",
+      "http_status": 200,
+      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_robot_deployment/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_robot_deployment#",
+      "references": [
+        {
+          "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
+          "turn_id": "asset:6cbd365afb6a1066",
+          "role": "asset"
+        }
+      ],
+      "status": "redirected",
+      "http_status": 200,
+      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_robot_deployment/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_robot_deployment#1-%E8%BF%9E%E6%8E%A5%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%BD%91%E7%BB%9C",
+      "references": [
+        {
+          "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
+          "turn_id": "asset:6cbd365afb6a1066",
+          "role": "asset"
+        }
+      ],
+      "status": "redirected",
+      "http_status": 200,
+      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_robot_deployment/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_robot_deployment#2-%E9%83%A8%E7%BD%B2sdk%E5%88%B0%E6%9C%BA%E5%99%A8%E4%BA%BA",
+      "references": [
+        {
+          "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
+          "turn_id": "asset:6cbd365afb6a1066",
+          "role": "asset"
+        }
+      ],
+      "status": "redirected",
+      "http_status": 200,
+      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_robot_deployment/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_robot_deployment#3-%E8%BF%90%E8%A1%8C%E7%A8%8B%E5%BA%8F",
+      "references": [
+        {
+          "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
+          "turn_id": "asset:6cbd365afb6a1066",
+          "role": "asset"
+        }
+      ],
+      "status": "redirected",
+      "http_status": 200,
+      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_robot_deployment/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_robot_deployment#31-python%E7%A8%8B%E5%BA%8F",
+      "references": [
+        {
+          "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
+          "turn_id": "asset:6cbd365afb6a1066",
+          "role": "asset"
+        }
+      ],
+      "status": "redirected",
+      "http_status": 200,
+      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_robot_deployment/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_robot_deployment#32-c%E7%A8%8B%E5%BA%8F",
+      "references": [
+        {
+          "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
+          "turn_id": "asset:6cbd365afb6a1066",
+          "role": "asset"
+        }
+      ],
+      "status": "redirected",
+      "http_status": 200,
+      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_robot_deployment/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_robot_deployment#__docusaurus_skipToContent_fallback",
+      "references": [
+        {
+          "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
+          "turn_id": "asset:6cbd365afb6a1066",
+          "role": "asset"
+        }
+      ],
+      "status": "redirected",
+      "http_status": 200,
+      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_robot_deployment/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_robot_deployment/",
+      "references": [
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07fb5-f26f-7650-a7c5-a65f819093aa",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07fd2-5ca2-79e1-8b0b-ff611b1522af",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_robot_deployment/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_system_requirements",
+      "references": [
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07ed2-d420-7f93-bf87-1e71cc3e7716",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07fd2-5ca2-79e1-8b0b-ff611b1522af",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
+          "turn_id": "asset:6cbd365afb6a1066",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a080cb-5824-7282-89bc-2dd1013446a2",
+          "turn_id": "01a080d2-19aa-7463-8e62-dcb8beba71b2",
+          "role": "user"
+        }
+      ],
+      "status": "redirected",
+      "http_status": 200,
+      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_system_requirements/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_terminology",
+      "references": [
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07ed2-d420-7f93-bf87-1e71cc3e7716",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07fd2-5ca2-79e1-8b0b-ff611b1522af",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
+          "turn_id": "asset:6cbd365afb6a1066",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a080cb-5824-7282-89bc-2dd1013446a2",
+          "turn_id": "01a080d2-19aa-7463-8e62-dcb8beba71b2",
+          "role": "user"
+        }
+      ],
+      "status": "redirected",
+      "http_status": 200,
+      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_terminology/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_version_compatibility",
+      "references": [
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07ed2-d420-7f93-bf87-1e71cc3e7716",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07fd2-5ca2-79e1-8b0b-ff611b1522af",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
+          "turn_id": "asset:6cbd365afb6a1066",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a080cb-5824-7282-89bc-2dd1013446a2",
+          "turn_id": "01a080d2-19aa-7463-8e62-dcb8beba71b2",
+          "role": "user"
+        }
+      ],
+      "status": "redirected",
+      "http_status": 200,
+      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_version_compatibility/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_version_compatibility#",
+      "references": [
+        {
+          "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
+          "turn_id": "asset:6cbd365afb6a1066",
+          "role": "asset"
+        }
+      ],
+      "status": "redirected",
+      "http_status": 200,
+      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_version_compatibility/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_version_compatibility#%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8",
+      "references": [
+        {
+          "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
+          "turn_id": "asset:6cbd365afb6a1066",
+          "role": "asset"
+        }
+      ],
+      "status": "redirected",
+      "http_status": 200,
+      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_version_compatibility/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_version_compatibility#__docusaurus_skipToContent_fallback",
+      "references": [
+        {
+          "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
+          "turn_id": "asset:6cbd365afb6a1066",
+          "role": "asset"
+        }
+      ],
+      "status": "redirected",
+      "http_status": 200,
+      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_version_compatibility/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/license",
+      "references": [
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07ed2-d420-7f93-bf87-1e71cc3e7716",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07fd2-5ca2-79e1-8b0b-ff611b1522af",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
+          "turn_id": "asset:6cbd365afb6a1066",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a080cb-5824-7282-89bc-2dd1013446a2",
+          "turn_id": "01a080d2-19aa-7463-8e62-dcb8beba71b2",
+          "role": "user"
+        }
+      ],
+      "status": "redirected",
+      "http_status": 200,
+      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/license/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/overview",
+      "references": [
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07ed2-d420-7f93-bf87-1e71cc3e7716",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07fd2-5ca2-79e1-8b0b-ff611b1522af",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
+          "turn_id": "asset:6cbd365afb6a1066",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a080cb-5824-7282-89bc-2dd1013446a2",
+          "turn_id": "01a080d2-19aa-7463-8e62-dcb8beba71b2",
+          "role": "user"
+        }
+      ],
+      "status": "redirected",
+      "http_status": 200,
+      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/overview/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/routine_operations",
+      "references": [
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07ed2-d420-7f93-bf87-1e71cc3e7716",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07fd2-5ca2-79e1-8b0b-ff611b1522af",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
+          "turn_id": "asset:6cbd365afb6a1066",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a080cb-5824-7282-89bc-2dd1013446a2",
+          "turn_id": "01a080d2-19aa-7463-8e62-dcb8beba71b2",
+          "role": "user"
+        }
+      ],
+      "status": "redirected",
+      "http_status": 200,
+      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/routine_operations/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/troubleshooting",
+      "references": [
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07ed2-d420-7f93-bf87-1e71cc3e7716",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07fd2-5ca2-79e1-8b0b-ff611b1522af",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
+          "turn_id": "asset:6cbd365afb6a1066",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a080cb-5824-7282-89bc-2dd1013446a2",
+          "turn_id": "01a080d2-19aa-7463-8e62-dcb8beba71b2",
+          "role": "user"
+        }
+      ],
+      "status": "redirected",
+      "http_status": 200,
+      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/troubleshooting/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/tutorials",
+      "references": [
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07ed2-d420-7f93-bf87-1e71cc3e7716",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07fd2-5ca2-79e1-8b0b-ff611b1522af",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
+          "turn_id": "asset:6cbd365afb6a1066",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a080cb-5824-7282-89bc-2dd1013446a2",
+          "turn_id": "01a080d2-19aa-7463-8e62-dcb8beba71b2",
+          "role": "user"
+        }
+      ],
+      "status": "redirected",
+      "http_status": 200,
+      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/tutorials/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.9.1/s1/en/api_python_reference/",
+      "references": [
+        {
+          "thread_id": "01a0667b-ce68-75f0-b8e7-bbfb74cfbf87",
+          "turn_id": "01a06680-5e1d-7080-af61-fa13826dc377",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a0667b-ce68-75f0-b8e7-bbfb74cfbf87",
+          "turn_id": "asset:8f7267aa4bcdb93e",
+          "role": "asset"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://developer.galbot.com/docs/SDK/1.9.1/s1/en/api_python_reference/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.9.1/s1/en/examples_python/",
+      "references": [
+        {
+          "thread_id": "01a0667b-ce68-75f0-b8e7-bbfb74cfbf87",
+          "turn_id": "01a06689-1b14-7fe0-b7a3-82714c5d0735",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://developer.galbot.com/docs/SDK/1.9.1/s1/en/examples_python/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.9.1/s1/zh/",
+      "references": [
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07ed2-d420-7f93-bf87-1e71cc3e7716",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07fd2-5ca2-79e1-8b0b-ff611b1522af",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
+          "turn_id": "asset:6cbd365afb6a1066",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a080cb-5824-7282-89bc-2dd1013446a2",
+          "turn_id": "01a080d2-19aa-7463-8e62-dcb8beba71b2",
+          "role": "user"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://developer.galbot.com/docs/SDK/1.9.1/s1/zh/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.9.1/s1/zh/api_python_reference#galbotrobot-set_base_pose-function",
+      "references": [
+        {
+          "thread_id": "01a04115-4425-7671-aeee-ac88e18292d4",
+          "turn_id": "01a042d4-e942-74f2-95f5-30320cebbd38",
+          "role": "user"
+        }
+      ],
+      "status": "redirected",
+      "http_status": 200,
+      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/s1/zh/api_python_reference/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.9.1/s1/zh/api_python_reference/",
+      "references": [
+        {
+          "thread_id": "01a01e3e-cdfe-78f3-a3e1-15e3a83e6eb6",
+          "turn_id": "01a01f1c-d53b-7fb2-b0f5-79c12ef37ac7",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a04115-4425-7671-aeee-ac88e18292d4",
+          "turn_id": "01a041df-1e49-7d03-b9a0-1ee1e0d9b379",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a04115-4425-7671-aeee-ac88e18292d4",
+          "turn_id": "01a042d4-e942-74f2-95f5-30320cebbd38",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://developer.galbot.com/docs/SDK/1.9.1/s1/zh/api_python_reference/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.9.1/s1/zh/api_python_reference/#galbotnavigation-navigate_to_goal_v2-function",
+      "references": [
+        {
+          "thread_id": "01a04115-4425-7671-aeee-ac88e18292d4",
+          "turn_id": "01a042d9-ee97-7ee0-a36c-c02b368f405f",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://developer.galbot.com/docs/SDK/1.9.1/s1/zh/api_python_reference/#galbotnavigation-navigate_to_goal_v2-function",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.9.1/s1/zh/api_python_reference/#galbotrobot-set_base_pose-function",
+      "references": [
+        {
+          "thread_id": "01a04115-4425-7671-aeee-ac88e18292d4",
+          "turn_id": "01a042d4-e942-74f2-95f5-30320cebbd38",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://developer.galbot.com/docs/SDK/1.9.1/s1/zh/api_python_reference/#galbotrobot-set_base_pose-function",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.9.1/s1/zh/examples_python/",
+      "references": [
+        {
+          "thread_id": "01a04115-4425-7671-aeee-ac88e18292d4",
+          "turn_id": "01a041df-1e49-7d03-b9a0-1ee1e0d9b379",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://developer.galbot.com/docs/SDK/1.9.1/s1/zh/examples_python/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.9.1/s1/zh/routine_operations/",
+      "references": [
+        {
+          "thread_id": "01a04115-4425-7671-aeee-ac88e18292d4",
+          "turn_id": "01a041df-1e49-7d03-b9a0-1ee1e0d9b379",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a04115-4425-7671-aeee-ac88e18292d4",
+          "turn_id": "01a041df-1e49-7d03-b9a0-1ee1e0d9b379",
+          "role": "user"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://developer.galbot.com/docs/SDK/1.9.1/s1/zh/routine_operations/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.9.1/s1/zh/troubleshooting/",
+      "references": [
+        {
+          "thread_id": "01a01e3e-cdfe-78f3-a3e1-15e3a83e6eb6",
+          "turn_id": "01a01f32-31f1-7ba1-b415-4602ccdf4b04",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://developer.galbot.com/docs/SDK/1.9.1/s1/zh/troubleshooting/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.9.1/s1/zh/tutorials#example3-%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%AF%BC%E8%88%AA",
+      "references": [
+        {
+          "thread_id": "01a04115-4425-7671-aeee-ac88e18292d4",
+          "turn_id": "01a041df-1e49-7d03-b9a0-1ee1e0d9b379",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a04115-4425-7671-aeee-ac88e18292d4",
+          "turn_id": "01a041df-1e49-7d03-b9a0-1ee1e0d9b379",
+          "role": "user"
+        }
+      ],
+      "status": "redirected",
+      "http_status": 200,
+      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/s1/zh/tutorials/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/g1/2.2.4/en/g1/",
+      "references": [
+        {
+          "thread_id": "01a08e41-15ac-76d3-8dcf-53662ef71607",
+          "turn_id": "01a08e41-cb34-71d2-a204-ca6e0d453684",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://developer.galbot.com/docs/g1/2.2.4/en/g1/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/g1/2.2.4/zh/g1",
+      "references": [
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07ed2-d420-7f93-bf87-1e71cc3e7716",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07fd2-5ca2-79e1-8b0b-ff611b1522af",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
+          "turn_id": "asset:6cbd365afb6a1066",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a080cb-5824-7282-89bc-2dd1013446a2",
+          "turn_id": "01a080d2-19aa-7463-8e62-dcb8beba71b2",
+          "role": "user"
+        }
+      ],
+      "status": "redirected",
+      "http_status": 200,
+      "final_url": "http://developer.galbot.com/docs/g1/2.2.4/zh/g1/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/s1/2.0.0/en/s1/",
+      "references": [
+        {
+          "thread_id": "01a060cb-ba03-7842-b505-80c0c7b8ff53",
+          "turn_id": "01a060d4-f322-7e30-89a5-9959e3a7d8c1",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a0667b-ce68-75f0-b8e7-bbfb74cfbf87",
+          "turn_id": "01a06680-5e1d-7080-af61-fa13826dc377",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a0667b-ce68-75f0-b8e7-bbfb74cfbf87",
+          "turn_id": "asset:8f7267aa4bcdb93e",
+          "role": "asset"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://developer.galbot.com/docs/s1/2.0.0/en/s1/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/s1/2.0.0/zh/s1",
+      "references": [
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07ed2-d420-7f93-bf87-1e71cc3e7716",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07fd2-5ca2-79e1-8b0b-ff611b1522af",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
+          "turn_id": "asset:6cbd365afb6a1066",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a080cb-5824-7282-89bc-2dd1013446a2",
+          "turn_id": "01a080d2-19aa-7463-8e62-dcb8beba71b2",
+          "role": "user"
+        }
+      ],
+      "status": "redirected",
+      "http_status": 200,
+      "final_url": "http://developer.galbot.com/docs/s1/2.0.0/zh/s1/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/s1/2.0.0/zh/s1/",
+      "references": [
+        {
+          "thread_id": "01a01e3e-cdfe-78f3-a3e1-15e3a83e6eb6",
+          "turn_id": "01a01f1c-d53b-7fb2-b0f5-79c12ef37ac7",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a0667b-ce68-75f0-b8e7-bbfb74cfbf87",
+          "turn_id": "01a06689-1b14-7fe0-b7a3-82714c5d0735",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://developer.galbot.com/docs/s1/2.0.0/zh/s1/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/tm01/1.4.0/zh/tm01",
+      "references": [
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07ed2-d420-7f93-bf87-1e71cc3e7716",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07fd2-5ca2-79e1-8b0b-ff611b1522af",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
+          "turn_id": "asset:6cbd365afb6a1066",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a080cb-5824-7282-89bc-2dd1013446a2",
+          "turn_id": "01a080d2-19aa-7463-8e62-dcb8beba71b2",
+          "role": "user"
+        }
+      ],
+      "status": "redirected",
+      "http_status": 200,
+      "final_url": "http://developer.galbot.com/docs/tm01/1.4.0/zh/tm01/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/tm01/1.4.0/zh/tm01/",
+      "references": [
+        {
+          "thread_id": "01a089f0-b6ba-7730-a34b-441fe7e76663",
+          "turn_id": "01a08a18-9839-7622-a7fd-a26b960ffc09",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a089f0-b6ba-7730-a34b-441fe7e76663",
+          "turn_id": "01a08a18-9839-7622-a7fd-a26b960ffc09",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a089f0-b6ba-7730-a34b-441fe7e76663",
+          "turn_id": "01a08a1d-8de4-76d1-85da-e093b96991b7",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a089f0-b6ba-7730-a34b-441fe7e76663",
+          "turn_id": "01a08a1d-8de4-76d1-85da-e093b96991b7",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a089f0-b6ba-7730-a34b-441fe7e76663",
+          "turn_id": "01a08a1e-e849-7610-a662-5dc92188418a",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a089f0-b6ba-7730-a34b-441fe7e76663",
+          "turn_id": "01a08a20-83a1-78d2-ae14-8885d301424c",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a089f0-b6ba-7730-a34b-441fe7e76663",
+          "turn_id": "01a08a30-3d28-7691-a44f-09718905212f",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a089f0-b6ba-7730-a34b-441fe7e76663",
+          "turn_id": "01a08a30-3d28-7691-a44f-09718905212f",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a089f0-b6ba-7730-a34b-441fe7e76663",
+          "turn_id": "01a08a3a-3f47-7200-a4c6-e84e5a78d9a1",
+          "role": "user"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://developer.galbot.com/docs/tm01/1.4.0/zh/tm01/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/platform",
+      "references": [
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07ed2-d420-7f93-bf87-1e71cc3e7716",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07fd2-5ca2-79e1-8b0b-ff611b1522af",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
+          "turn_id": "asset:6cbd365afb6a1066",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a080cb-5824-7282-89bc-2dd1013446a2",
+          "turn_id": "01a080d2-19aa-7463-8e62-dcb8beba71b2",
+          "role": "user"
+        }
+      ],
+      "status": "redirected",
+      "http_status": 200,
+      "final_url": "http://developer.galbot.com/platform/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/privacy",
+      "references": [
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07ed2-d420-7f93-bf87-1e71cc3e7716",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07fd2-5ca2-79e1-8b0b-ff611b1522af",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
+          "turn_id": "asset:6cbd365afb6a1066",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a080cb-5824-7282-89bc-2dd1013446a2",
+          "turn_id": "01a080d2-19aa-7463-8e62-dcb8beba71b2",
+          "role": "user"
+        }
+      ],
+      "status": "redirected",
+      "http_status": 200,
+      "final_url": "http://developer.galbot.com/privacy/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/products",
+      "references": [
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07ed2-d420-7f93-bf87-1e71cc3e7716",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07fd2-5ca2-79e1-8b0b-ff611b1522af",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
+          "turn_id": "asset:6cbd365afb6a1066",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a080cb-5824-7282-89bc-2dd1013446a2",
+          "turn_id": "01a080d2-19aa-7463-8e62-dcb8beba71b2",
+          "role": "user"
+        }
+      ],
+      "status": "redirected",
+      "http_status": 200,
+      "final_url": "http://developer.galbot.com/products/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/terms",
+      "references": [
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07ed2-d420-7f93-bf87-1e71cc3e7716",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07fd2-5ca2-79e1-8b0b-ff611b1522af",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
+          "turn_id": "asset:6cbd365afb6a1066",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a080cb-5824-7282-89bc-2dd1013446a2",
+          "turn_id": "01a080d2-19aa-7463-8e62-dcb8beba71b2",
+          "role": "user"
+        }
+      ],
+      "status": "redirected",
+      "http_status": 200,
+      "final_url": "http://developer.galbot.com/terms/",
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/training",
+      "references": [
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07ed2-d420-7f93-bf87-1e71cc3e7716",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07fd2-5ca2-79e1-8b0b-ff611b1522af",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
+          "turn_id": "asset:6cbd365afb6a1066",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a080cb-5824-7282-89bc-2dd1013446a2",
+          "turn_id": "01a080d2-19aa-7463-8e62-dcb8beba71b2",
+          "role": "user"
+        }
+      ],
+      "status": "redirected",
+      "http_status": 200,
+      "final_url": "http://developer.galbot.com/training/",
+      "detail": ""
+    },
+    {
+      "url": "https://developers.openai.com/",
+      "references": [
+        {
+          "thread_id": "01a01d9c-2aac-75e1-8001-86f4cdea4906",
+          "turn_id": "01a01d9d-1328-7e12-89d6-7dc20dc14d08",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://developers.openai.com/",
+      "detail": ""
+    },
+    {
+      "url": "https://developers.openai.com/api/docs/guides/latest-model?model=gpt-5.2",
+      "references": [
+        {
+          "thread_id": "01a01e27-a3b7-7591-aac0-e82946e85504",
+          "turn_id": "01a01e30-a3b0-7700-ac06-540ac9137018",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a01e3e-cdfe-78f3-a3e1-15e3a83e6eb6",
+          "turn_id": "01a01e30-a3b0-7700-ac06-540ac9137018",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://developers.openai.com/api/docs/guides/latest-model?model=gpt-5.2",
+      "detail": ""
+    },
+    {
+      "url": "https://developers.openai.com/api/docs/models/gpt-5-codex",
+      "references": [
+        {
+          "thread_id": "01a01df3-9890-77e3-8973-d284818c5a4a",
+          "turn_id": "01a01e11-a603-7532-848e-fc0bf6c64e1f",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://developers.openai.com/api/docs/models/gpt-5-codex",
+      "detail": ""
+    },
+    {
+      "url": "https://developers.openai.com/api/docs/models/gpt-5.6-luna",
+      "references": [
+        {
+          "thread_id": "01a083c3-781e-72d0-9df3-caa0ef59c0fc",
+          "turn_id": "01a08934-2077-7c91-8fa9-d40d2fa8289b",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://developers.openai.com/api/docs/models/gpt-5.6-luna",
+      "detail": ""
+    },
+    {
+      "url": "https://developers.openai.com/api/docs/models/gpt-5.6-sol",
+      "references": [
+        {
+          "thread_id": "01a01e07-ec64-7791-a9d2-1cc393bd1687",
+          "turn_id": "01a01e08-9144-7330-b827-48d5f1c4cc89",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a05fa2-ec9a-7173-9152-709cf6d3ac8f",
+          "turn_id": "01a05fa3-1a8d-72b0-aafd-ee496f18ff70",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://developers.openai.com/api/docs/models/gpt-5.6-sol",
+      "detail": ""
+    },
+    {
+      "url": "https://developers.openai.com/api/reference/typescript/resources/admin/subresources/organization/subresources/projects",
+      "references": [
+        {
+          "thread_id": "01a01d9c-2aac-75e1-8001-86f4cdea4906",
+          "turn_id": "01a01ddb-d8a7-7a21-bd9d-baac6adeedb8",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://developers.openai.com/api/reference/typescript/resources/admin/subresources/organization/subresources/projects",
+      "detail": ""
+    },
+    {
+      "url": "https://dl.flathub.org/repo",
+      "references": [
+        {
+          "thread_id": "01a041e0-a6bc-7fc3-9f55-075e9a1ad893",
+          "turn_id": "01a04216-41a5-7ae1-825e-b5a2ab508ef9",
+          "role": "assistant"
+        }
+      ],
+      "status": "http_error",
+      "http_status": 502,
+      "final_url": null,
+      "detail": "Bad Gateway"
+    },
+    {
+      "url": "https://docs.docker.com",
+      "references": [
+        {
+          "thread_id": "01a06710-9ce5-75d1-95c5-6beb503bf8ae",
+          "turn_id": "asset:48ad1afb5a2fe0f7",
+          "role": "asset"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://docs.docker.com",
+      "detail": ""
+    },
+    {
+      "url": "https://docs.docker.com/engine/containers/resource_constraints/",
+      "references": [
+        {
+          "thread_id": "01a08f2f-fa2d-7240-b59e-2afecc1a7542",
+          "turn_id": "asset:80c20a16f9b5a36c",
+          "role": "asset"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://docs.docker.com/engine/containers/resource_constraints/",
+      "detail": ""
+    },
+    {
+      "url": "https://docs.docker.com/engine/containers/run/",
+      "references": [
+        {
+          "thread_id": "01a08f2f-fa2d-7240-b59e-2afecc1a7542",
+          "turn_id": "asset:80c20a16f9b5a36c",
+          "role": "asset"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://docs.docker.com/engine/containers/run/",
+      "detail": ""
+    },
+    {
+      "url": "https://docs.docker.com/engine/install/linux-postinstall/",
+      "references": [
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07efe-4ebe-79f3-8901-a7391e0a62e2",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://docs.docker.com/engine/install/linux-postinstall/",
+      "detail": ""
+    },
+    {
+      "url": "https://docs.docker.com/engine/install/ubuntu/",
+      "references": [
+        {
+          "thread_id": "01a06710-9ce5-75d1-95c5-6beb503bf8ae",
+          "turn_id": "01a06744-0ab8-78e3-9498-b6a8f1c5a0aa",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a06710-9ce5-75d1-95c5-6beb503bf8ae",
+          "turn_id": "01a06a70-0aa9-7ca0-9de2-d87c7eb0dbd5",
+          "role": "user"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://docs.docker.com/engine/install/ubuntu/",
+      "detail": ""
+    },
+    {
+      "url": "https://docs.galbot.com/s1/",
+      "references": [
+        {
+          "thread_id": "01a01df3-9890-77e3-8973-d284818c5a4a",
+          "turn_id": "asset:74013d42f0ca0511",
+          "role": "asset"
+        }
+      ],
+      "status": "network_error",
+      "http_status": null,
+      "final_url": null,
+      "detail": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1007)>"
+    },
+    {
+      "url": "https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens",
+      "references": [
+        {
+          "thread_id": "01a06fc0-a86b-7612-8db0-a4af84419644",
+          "turn_id": "01a06fdf-1ae9-7da2-ad68-ef7e4e79980b",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens",
+      "detail": ""
+    },
+    {
+      "url": "https://docs.isaacsim.omniverse.nvidia.com/6.0.1/installation/requirements.html",
+      "references": [
+        {
+          "thread_id": "01a02731-e698-7092-ae82-d3144a0993e8",
+          "turn_id": "01a0276f-09d4-77a0-bdeb-08ff52f2cd6f",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://docs.isaacsim.omniverse.nvidia.com/6.0.1/installation/requirements.html",
+      "detail": ""
+    },
+    {
+      "url": "https://docs.isaacsim.omniverse.nvidia.com/latest/replicator_tutorials/tutorial_replicator_ur10_palletizing.html",
+      "references": [
+        {
+          "thread_id": "01a06108-ec88-7d61-82ea-9aa519ec0744",
+          "turn_id": "01a06149-2272-7a91-860d-d44433f74e04",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://docs.isaacsim.omniverse.nvidia.com/latest/replicator_tutorials/tutorial_replicator_ur10_palletizing.html",
+      "detail": ""
+    },
+    {
+      "url": "https://docs.isaacsim.omniverse.nvidia.com/latest/sensors/isaacsim_sensors_camera.html",
+      "references": [
+        {
+          "thread_id": "01a06108-ec88-7d61-82ea-9aa519ec0744",
+          "turn_id": "01a06149-2272-7a91-860d-d44433f74e04",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://docs.isaacsim.omniverse.nvidia.com/latest/sensors/isaacsim_sensors_camera.html",
+      "detail": ""
+    },
+    {
+      "url": "https://docs.isaacsim.omniverse.nvidia.com/latest/sensors/isaacsim_sensors_camera_depth.html",
+      "references": [
+        {
+          "thread_id": "01a06108-ec88-7d61-82ea-9aa519ec0744",
+          "turn_id": "01a06149-2272-7a91-860d-d44433f74e04",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://docs.isaacsim.omniverse.nvidia.com/latest/sensors/isaacsim_sensors_camera_depth.html",
+      "detail": ""
+    },
+    {
+      "url": "https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html",
+      "references": [
+        {
+          "thread_id": "01a06710-9ce5-75d1-95c5-6beb503bf8ae",
+          "turn_id": "01a06744-0ab8-78e3-9498-b6a8f1c5a0aa",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a06710-9ce5-75d1-95c5-6beb503bf8ae",
+          "turn_id": "01a06a12-99b0-7632-aefe-e547cf4d4d0a",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a06710-9ce5-75d1-95c5-6beb503bf8ae",
+          "turn_id": "01a06a70-0aa9-7ca0-9de2-d87c7eb0dbd5",
+          "role": "user"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html",
+      "detail": ""
+    },
+    {
+      "url": "https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/sample-workload.html",
+      "references": [
+        {
+          "thread_id": "01a06710-9ce5-75d1-95c5-6beb503bf8ae",
+          "turn_id": "01a06a12-99b0-7632-aefe-e547cf4d4d0a",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/sample-workload.html",
+      "detail": ""
+    },
+    {
+      "url": "https://docs.nvidia.com/jetson/jetpack/5.1.4/introduction/index.html",
+      "references": [
+        {
+          "thread_id": "01a08f2f-fa2d-7240-b59e-2afecc1a7542",
+          "turn_id": "asset:0077a0bcc90ae74c",
+          "role": "asset"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://docs.nvidia.com/jetson/jetpack/5.1.4/introduction/index.html",
+      "detail": ""
+    },
+    {
+      "url": "https://docs.opencv.org/3.4.6/dd/d53/tutorial_py_depthmap.html",
+      "references": [
+        {
+          "thread_id": "01a0667b-ce68-75f0-b8e7-bbfb74cfbf87",
+          "turn_id": "01a06680-5e1d-7080-af61-fa13826dc377",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a0667b-ce68-75f0-b8e7-bbfb74cfbf87",
+          "turn_id": "asset:8f7267aa4bcdb93e",
+          "role": "asset"
+        }
+      ],
+      "status": "http_error",
+      "http_status": 403,
+      "final_url": null,
+      "detail": "Forbidden"
+    },
+    {
+      "url": "https://docs.opencv.org/4.13.0/d3/dc0/group__imgproc__shape.html",
+      "references": [
+        {
+          "thread_id": "01a07a67-a824-78c3-ac14-2ac2c473a3a8",
+          "turn_id": "01a07a74-3bd3-7ad3-b697-6ef5bdf04964",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a07a67-a824-78c3-ac14-2ac2c473a3a8",
+          "turn_id": "asset:74f773e518de7e8f",
+          "role": "asset"
+        }
+      ],
+      "status": "http_error",
+      "http_status": 403,
+      "final_url": null,
+      "detail": "Forbidden"
+    },
+    {
+      "url": "https://docs.opencv.org/4.13.0/d5/d1f/calib3d_solvePnP.html",
+      "references": [
+        {
+          "thread_id": "01a07a67-a824-78c3-ac14-2ac2c473a3a8",
+          "turn_id": "01a07a74-3bd3-7ad3-b697-6ef5bdf04964",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a07a67-a824-78c3-ac14-2ac2c473a3a8",
+          "turn_id": "asset:74f773e518de7e8f",
+          "role": "asset"
+        }
+      ],
+      "status": "http_error",
+      "http_status": 403,
+      "final_url": null,
+      "detail": "Forbidden"
+    },
+    {
+      "url": "https://docs.ros.org/en/humble/Tutorials/URDF/Building-a-Movable-Robot-Model-with-URDF.html",
+      "references": [
+        {
+          "thread_id": "01a089f0-b6ba-7730-a34b-441fe7e76663",
+          "turn_id": "01a089f4-1eec-7ed1-ad96-f339e26ed34f",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://docs.ros.org/en/humble/Tutorials/URDF/Building-a-Movable-Robot-Model-with-URDF.html",
+      "detail": ""
+    },
+    {
+      "url": "https://docs.ros.org/en/humble/p/ros1_bridge/index.html",
+      "references": [
+        {
+          "thread_id": "01a02731-e698-7092-ae82-d3144a0993e8",
+          "turn_id": "01a0274c-24e0-7b73-b8b4-0d62c0f45ac5",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://docs.ros.org/en/humble/p/ros1_bridge/index.html",
+      "detail": ""
+    },
+    {
+      "url": "https://docs.ros.org/en/rolling/p/pinocchio/doc/a-features/d-model.html",
+      "references": [
+        {
+          "thread_id": "01a08df8-1d88-7410-a613-fd529d9a3bdb",
+          "turn_id": "01a08e40-ccc2-7422-89d8-684ec3c7a4f1",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a08e0c-eda8-79d3-8b02-b11244304c95",
+          "turn_id": "01a08e1f-6d62-7ab1-800b-783655272f16",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://docs.ros.org/en/rolling/p/pinocchio/doc/a-features/d-model.html",
+      "detail": ""
+    },
+    {
+      "url": "https://docs.ros.org/en/ros2_packages/humble/api/joint_state_publisher_gui/",
+      "references": [
+        {
+          "thread_id": "01a02731-e698-7092-ae82-d3144a0993e8",
+          "turn_id": "01a02745-a2b1-7932-9941-6826319a7b4e",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://docs.ros.org/en/ros2_packages/humble/api/joint_state_publisher_gui/",
+      "detail": ""
+    },
+    {
+      "url": "https://download.docker.com/linux/ubuntu",
+      "references": [
+        {
+          "thread_id": "01a06710-9ce5-75d1-95c5-6beb503bf8ae",
+          "turn_id": "01a06744-0ab8-78e3-9498-b6a8f1c5a0aa",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a06710-9ce5-75d1-95c5-6beb503bf8ae",
+          "turn_id": "01a06a12-99b0-7632-aefe-e547cf4d4d0a",
+          "role": "user"
+        }
+      ],
+      "status": "redirected",
+      "http_status": 200,
+      "final_url": "https://download.docker.com/linux/ubuntu/",
+      "detail": ""
+    },
+    {
+      "url": "https://download.docker.com/linux/ubuntu/gpg",
+      "references": [
+        {
+          "thread_id": "01a06710-9ce5-75d1-95c5-6beb503bf8ae",
+          "turn_id": "01a06744-0ab8-78e3-9498-b6a8f1c5a0aa",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a06710-9ce5-75d1-95c5-6beb503bf8ae",
+          "turn_id": "01a06a12-99b0-7632-aefe-e547cf4d4d0a",
+          "role": "user"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://download.docker.com/linux/ubuntu/gpg",
+      "detail": ""
+    },
+    {
+      "url": "https://esm.sh/three@0.169.0",
+      "references": [
+        {
+          "thread_id": "01a02731-e698-7092-ae82-d3144a0993e8",
+          "turn_id": "asset:db7aad7699cd55e0",
+          "role": "asset"
+        },
+        {
+          "thread_id": "visualizations",
+          "turn_id": "asset:db7aad7699cd55e0",
+          "role": "asset"
+        },
+        {
+          "thread_id": "visualizations",
+          "turn_id": "visualization:s1-urdf-joints.html",
+          "role": "visualization"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://esm.sh/three@0.169.0",
+      "detail": ""
+    },
+    {
+      "url": "https://esm.sh/three@0.169.0/examples/jsm/controls/OrbitControls.js",
+      "references": [
+        {
+          "thread_id": "01a02731-e698-7092-ae82-d3144a0993e8",
+          "turn_id": "asset:db7aad7699cd55e0",
+          "role": "asset"
+        },
+        {
+          "thread_id": "visualizations",
+          "turn_id": "asset:db7aad7699cd55e0",
+          "role": "asset"
+        },
+        {
+          "thread_id": "visualizations",
+          "turn_id": "visualization:s1-urdf-joints.html",
+          "role": "visualization"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://esm.sh/three@0.169.0/examples/jsm/controls/OrbitControls.js",
+      "detail": ""
+    },
+    {
+      "url": "https://fishros.com/page/",
+      "references": [
+        {
+          "thread_id": "01a02731-e698-7092-ae82-d3144a0993e8",
+          "turn_id": "01a02749-f9fa-71e0-9b1b-d732a87f6c01",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://fishros.com/page/",
+      "detail": ""
+    },
+    {
+      "url": "https://fishros.org.cn/forum",
+      "references": [
+        {
+          "thread_id": "01a02731-e698-7092-ae82-d3144a0993e8",
+          "turn_id": "01a0276e-2c08-7b43-bdf6-fdd72e2e5648",
+          "role": "user"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://fishros.org.cn/forum",
+      "detail": ""
+    },
+    {
+      "url": "https://flathub.org/apps/org.cloudcompare.CloudCompare",
+      "references": [
+        {
+          "thread_id": "01a041e0-a6bc-7fc3-9f55-075e9a1ad893",
+          "turn_id": "01a041e1-0f74-77b2-a8dc-46107fbbb723",
+          "role": "assistant"
+        }
+      ],
+      "status": "http_error",
+      "http_status": 308,
+      "final_url": null,
+      "detail": "Permanent Redirect"
+    },
+    {
+      "url": "https://flathub.org/repo/flathub.flatpakrepo",
+      "references": [
+        {
+          "thread_id": "01a041e0-a6bc-7fc3-9f55-075e9a1ad893",
+          "turn_id": "01a041e1-0f74-77b2-a8dc-46107fbbb723",
+          "role": "assistant"
+        }
+      ],
+      "status": "redirected",
+      "http_status": 200,
+      "final_url": "https://dl.flathub.org/repo/flathub.flatpakrepo",
+      "detail": ""
+    },
+    {
+      "url": "https://fontawesome.com",
+      "references": [
+        {
+          "thread_id": "01a01df3-9890-77e3-8973-d284818c5a4a",
+          "turn_id": "asset:74013d42f0ca0511",
+          "role": "asset"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://fontawesome.com",
+      "detail": ""
+    },
+    {
+      "url": "https://fontawesome.com/license/free",
+      "references": [
+        {
+          "thread_id": "01a01df3-9890-77e3-8973-d284818c5a4a",
+          "turn_id": "asset:74013d42f0ca0511",
+          "role": "asset"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://fontawesome.com/license/free",
+      "detail": ""
+    },
+    {
+      "url": "https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i,700,700i%7CFira+Code:400,400i,700,700i&display=fallback",
+      "references": [
+        {
+          "thread_id": "01a01df3-9890-77e3-8973-d284818c5a4a",
+          "turn_id": "asset:74013d42f0ca0511",
+          "role": "asset"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i,700,700i%7CFira+Code:400,400i,700,700i&display=fallback",
+      "detail": ""
+    },
+    {
+      "url": "https://fonts.googleapis.com/css?family=Noto+Sans+SC:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback",
+      "references": [
+        {
+          "thread_id": "01a089f0-b6ba-7730-a34b-441fe7e76663",
+          "turn_id": "asset:6d6e6d275b67e627",
+          "role": "asset"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://fonts.googleapis.com/css?family=Noto+Sans+SC:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback",
+      "detail": ""
+    },
+    {
+      "url": "https://fonts.gstatic.com",
+      "references": [
+        {
+          "thread_id": "01a01df3-9890-77e3-8973-d284818c5a4a",
+          "turn_id": "asset:74013d42f0ca0511",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a089f0-b6ba-7730-a34b-441fe7e76663",
+          "turn_id": "asset:6d6e6d275b67e627",
+          "role": "asset"
+        }
+      ],
+      "status": "http_error",
+      "http_status": 404,
+      "final_url": null,
+      "detail": "Not Found"
+    },
+    {
+      "url": "https://galbot.com/about/",
+      "references": [
+        {
+          "thread_id": "01a066da-16e2-7e71-ac06-566fe700cc5c",
+          "turn_id": "01a066dd-054f-70e2-9c42-109ea62c37f4",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a06f17-863a-7300-bb82-78e5ac992f1b",
+          "turn_id": "01a06f18-a432-7490-a852-51834bc3c5f9",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://galbot.com/about/",
+      "detail": ""
+    },
+    {
+      "url": "https://github.com",
+      "references": [
+        {
+          "thread_id": "01a06fc0-a86b-7612-8db0-a4af84419644",
+          "turn_id": "01a06fe2-d1b8-74b2-b034-2c01f488a9cf",
+          "role": "user"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://github.com",
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/AprilRobotics/apriltag",
+      "references": [
+        {
+          "thread_id": "01a07a67-a824-78c3-ac14-2ac2c473a3a8",
+          "turn_id": "01a07a74-3bd3-7ad3-b697-6ef5bdf04964",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a07a67-a824-78c3-ac14-2ac2c473a3a8",
+          "turn_id": "asset:74f773e518de7e8f",
+          "role": "asset"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://github.com/AprilRobotics/apriltag",
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/CloudCompare/CloudCompare",
+      "references": [
+        {
+          "thread_id": "01a041e0-a6bc-7fc3-9f55-075e9a1ad893",
+          "turn_id": "01a041e1-0f74-77b2-a8dc-46107fbbb723",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://github.com/CloudCompare/CloudCompare",
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/GalaxyGeneralRobotics/GalbotSDK",
+      "references": [
+        {
+          "thread_id": "01a01df3-9890-77e3-8973-d284818c5a4a",
+          "turn_id": "01a01df9-9e3d-7a43-8e7f-6596536e36ac",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a01df3-9890-77e3-8973-d284818c5a4a",
+          "turn_id": "asset:74013d42f0ca0511",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a01e3e-cdfe-78f3-a3e1-15e3a83e6eb6",
+          "turn_id": "01a01e46-07b9-7111-8510-a1d9ae8d26c1",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a0667b-ce68-75f0-b8e7-bbfb74cfbf87",
+          "turn_id": "asset:8f7267aa4bcdb93e",
+          "role": "asset"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://github.com/GalaxyGeneralRobotics/GalbotSDK",
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/GalaxyGeneralRobotics/GalbotSDK.git",
+      "references": [
+        {
+          "thread_id": "01a01df3-9890-77e3-8973-d284818c5a4a",
+          "turn_id": "01a01dfb-2f0d-75b3-b2f5-c2644a4bd9e4",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a01df3-9890-77e3-8973-d284818c5a4a",
+          "turn_id": "01a01e04-2573-7a72-8195-06994d6d4464",
+          "role": "user"
+        }
+      ],
+      "status": "redirected",
+      "http_status": 200,
+      "final_url": "https://github.com/GalaxyGeneralRobotics/GalbotSDK",
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/GalaxyGeneralRobotics/GalbotSDK/releases",
+      "references": [
+        {
+          "thread_id": "01a01e3e-cdfe-78f3-a3e1-15e3a83e6eb6",
+          "turn_id": "01a01e46-07b9-7111-8510-a1d9ae8d26c1",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a026d5-2ac1-7690-9869-f652b33ee55a",
+          "turn_id": "01a0272c-142b-7d90-890f-cc59b2548a4e",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a026d5-2ac1-7690-9869-f652b33ee55a",
+          "turn_id": "01a0272d-74d6-7a62-a98a-f0cfcea6589f",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a04627-06e4-70a1-bb16-558f610aedc5",
+          "turn_id": "01a04632-33b0-76a0-bee0-14562d298f68",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a04627-06e4-70a1-bb16-558f610aedc5",
+          "turn_id": "01a0463c-736f-7bc1-86ef-6f748afd4760",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a04627-06e4-70a1-bb16-558f610aedc5",
+          "turn_id": "01a046e5-a5b2-7730-ac68-99e3fe35f81b",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a04627-06e4-70a1-bb16-558f610aedc5",
+          "turn_id": "01a0472f-351b-7da0-8c52-71ea1cfdd7fc",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a04627-06e4-70a1-bb16-558f610aedc5",
+          "turn_id": "asset:e60076a0a9161e14",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a04627-06e4-70a1-bb16-558f610aedc5",
+          "turn_id": "asset:f5e04b3c5b6fd173",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a0558a-b033-75f3-adc7-3ddf7aca5a23",
+          "turn_id": "01a0566a-25b6-79d0-a075-ccc7d5a679a7",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a056b0-c1e7-7661-95b3-dce8efa2c96f",
+          "turn_id": "01a05701-4e14-75d1-a15b-a13925ef5b72",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a05a9b-9ffc-73b1-a5a3-2c80addc8225",
+          "turn_id": "01a05af6-deea-7ee2-a514-b818ccba8a19",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a05a9b-9ffc-73b1-a5a3-2c80addc8225",
+          "turn_id": "01a05af8-1f3b-7460-9043-261eeb48ed31",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a05a9b-9ffc-73b1-a5a3-2c80addc8225",
+          "turn_id": "01a05c12-ee2f-7bd1-a1ae-fb23e16553e3",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a05a9b-9ffc-73b1-a5a3-2c80addc8225",
+          "turn_id": "01a05cd5-b3a8-7a80-816b-b698cb7a56a0",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a05a9b-9ffc-73b1-a5a3-2c80addc8225",
+          "turn_id": "01a05ce8-bd17-7032-955f-fb64eef63408",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a05a9b-9ffc-73b1-a5a3-2c80addc8225",
+          "turn_id": "01a05ceb-29fe-7642-a8ca-a272c9733cdb",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a05a9b-9ffc-73b1-a5a3-2c80addc8225",
+          "turn_id": "asset:b4a90fcd291546d5",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a05fa4-a5a6-7411-8dff-ff74957d3237",
+          "turn_id": "01a05fef-6842-7d23-a785-b84ceb9db8af",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a05fa4-a5a6-7411-8dff-ff74957d3237",
+          "turn_id": "asset:2c4cdf140fcc0823",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a05fa4-a5a6-7411-8dff-ff74957d3237",
+          "turn_id": "asset:690586905c466b38",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a060c2-c736-7b90-bcc3-d3ce8d82d3cc",
+          "turn_id": "01a060c2-c844-79c0-8ecf-0e3612e14cba",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a060c2-c736-7b90-bcc3-d3ce8d82d3cc",
+          "turn_id": "01a060f2-1765-7532-8741-3c40a3f94d0d",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a060c2-c736-7b90-bcc3-d3ce8d82d3cc",
+          "turn_id": "asset:19ed78d10c9a97a7",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a060c2-c736-7b90-bcc3-d3ce8d82d3cc",
+          "turn_id": "asset:2547a0f7d70e27ff",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a060c2-c736-7b90-bcc3-d3ce8d82d3cc",
+          "turn_id": "asset:a7e65c206f7f8112",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a08e4c-af33-7161-a0f1-9eb89c9b04b6",
+          "turn_id": "01a08e72-4fe0-7c10-bdb0-d839e273ed7c",
+          "role": "user"
+        },
+        {
+          "thread_id": "unknown-attachment",
+          "turn_id": "asset:0fc04430abbd3875",
+          "role": "asset"
+        },
+        {
+          "thread_id": "unknown-attachment",
+          "turn_id": "asset:1947f1cc42234137",
+          "role": "asset"
+        },
+        {
+          "thread_id": "unknown-attachment",
+          "turn_id": "asset:22b2c626961694c5",
+          "role": "asset"
+        },
+        {
+          "thread_id": "unknown-attachment",
+          "turn_id": "asset:23bc8d350a8f0afe",
+          "role": "asset"
+        },
+        {
+          "thread_id": "unknown-attachment",
+          "turn_id": "asset:4b0177cd6c6950aa",
+          "role": "asset"
+        },
+        {
+          "thread_id": "unknown-attachment",
+          "turn_id": "asset:b9abaac0538549cf",
+          "role": "asset"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://github.com/GalaxyGeneralRobotics/GalbotSDK/releases",
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/GalaxyGeneralRobotics/galbot-mcap2lerobot",
+      "references": [
+        {
+          "thread_id": "01a066da-16e2-7e71-ac06-566fe700cc5c",
+          "turn_id": "01a066dd-054f-70e2-9c42-109ea62c37f4",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a06f17-863a-7300-bb82-78e5ac992f1b",
+          "turn_id": "01a06f18-a432-7490-a852-51834bc3c5f9",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a08e41-15ac-76d3-8dcf-53662ef71607",
+          "turn_id": "01a08e41-cb34-71d2-a204-ca6e0d453684",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://github.com/GalaxyGeneralRobotics/galbot-mcap2lerobot",
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/GalaxyGeneralRobotics/galbot_one_golf_description",
+      "references": [
+        {
+          "thread_id": "01a08df8-1d88-7410-a613-fd529d9a3bdb",
+          "turn_id": "01a08e40-ccc2-7422-89d8-684ec3c7a4f1",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a08e0c-eda8-79d3-8b02-b11244304c95",
+          "turn_id": "01a08e1f-6d62-7ab1-800b-783655272f16",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://github.com/GalaxyGeneralRobotics/galbot_one_golf_description",
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/GalaxyGeneralRobotics/galbot_s1_description",
+      "references": [
+        {
+          "thread_id": "01a01df3-9890-77e3-8973-d284818c5a4a",
+          "turn_id": "01a01df9-9e3d-7a43-8e7f-6596536e36ac",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a02731-e698-7092-ae82-d3144a0993e8",
+          "turn_id": "01a02734-88eb-7f53-8d1a-b6e1bcd6418a",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://github.com/GalaxyGeneralRobotics/galbot_s1_description",
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/GalaxyGeneralRobotics/galbot_s1_description.git",
+      "references": [
+        {
+          "thread_id": "01a01df3-9890-77e3-8973-d284818c5a4a",
+          "turn_id": "01a01dfb-2f0d-75b3-b2f5-c2644a4bd9e4",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a01df3-9890-77e3-8973-d284818c5a4a",
+          "turn_id": "01a01e04-2573-7a72-8195-06994d6d4464",
+          "role": "user"
+        }
+      ],
+      "status": "redirected",
+      "http_status": 200,
+      "final_url": "https://github.com/GalaxyGeneralRobotics/galbot_s1_description",
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/Michael686-bit/Codex_IE_Lab",
+      "references": [
+        {
+          "thread_id": "01a06fc0-a86b-7612-8db0-a4af84419644",
+          "turn_id": "01a06fe2-d1b8-74b2-b034-2c01f488a9cf",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a09332-12d3-7b91-970d-c2e04a7232fc",
+          "turn_id": "01a09336-cea4-7783-966a-209b417b987e",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://github.com/Michael686-bit/Codex_IE_Lab",
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/Michael686-bit/Codex_IE_Lab.git",
+      "references": [
+        {
+          "thread_id": "01a06fc0-a86b-7612-8db0-a4af84419644",
+          "turn_id": "01a06fd1-3c83-7aa1-9ace-ef5abe10e8e2",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a06fc0-a86b-7612-8db0-a4af84419644",
+          "turn_id": "01a06fe2-d1b8-74b2-b034-2c01f488a9cf",
+          "role": "user"
+        }
+      ],
+      "status": "redirected",
+      "http_status": 200,
+      "final_url": "https://github.com/Michael686-bit/Codex_IE_Lab",
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/Michael686-bit/Codex_IE_Lab.git/",
+      "references": [
+        {
+          "thread_id": "01a06fc0-a86b-7612-8db0-a4af84419644",
+          "turn_id": "01a06fe2-d1b8-74b2-b034-2c01f488a9cf",
+          "role": "user"
+        }
+      ],
+      "status": "redirected",
+      "http_status": 200,
+      "final_url": "https://github.com/Michael686-bit/Codex_IE_Lab/",
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/NVlabs/CenterPose",
+      "references": [
+        {
+          "thread_id": "01a07a67-a824-78c3-ac14-2ac2c473a3a8",
+          "turn_id": "01a07a74-3bd3-7ad3-b697-6ef5bdf04964",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a07a67-a824-78c3-ac14-2ac2c473a3a8",
+          "turn_id": "asset:74f773e518de7e8f",
+          "role": "asset"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://github.com/NVlabs/CenterPose",
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/Physical-Intelligence/openpi",
+      "references": [
+        {
+          "thread_id": "01a060cb-ba03-7842-b505-80c0c7b8ff53",
+          "turn_id": "01a060d4-f322-7e30-89a5-9959e3a7d8c1",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a060d9-f2a4-7431-8525-0f2e40df6dbb",
+          "turn_id": "01a060da-8b5e-7c93-9db4-2bd5fdec4379",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a06108-ec88-7d61-82ea-9aa519ec0744",
+          "turn_id": "01a0610a-8430-7db3-8679-8b672a3a03aa",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a066da-16e2-7e71-ac06-566fe700cc5c",
+          "turn_id": "01a066dd-054f-70e2-9c42-109ea62c37f4",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a06f17-863a-7300-bb82-78e5ac992f1b",
+          "turn_id": "01a06f18-a432-7490-a852-51834bc3c5f9",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://github.com/Physical-Intelligence/openpi",
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/Physical-Intelligence/openpi/blob/main/docs/remote_inference.md",
+      "references": [
+        {
+          "thread_id": "01a060cb-ba03-7842-b505-80c0c7b8ff53",
+          "turn_id": "01a060d4-f322-7e30-89a5-9959e3a7d8c1",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://github.com/Physical-Intelligence/openpi/blob/main/docs/remote_inference.md",
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/Physical-Intelligence/openpi/blob/main/examples/droid/README_train.md",
+      "references": [
+        {
+          "thread_id": "01a060d9-f2a4-7431-8525-0f2e40df6dbb",
+          "turn_id": "01a060da-8b5e-7c93-9db4-2bd5fdec4379",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a06108-ec88-7d61-82ea-9aa519ec0744",
+          "turn_id": "01a0610a-8430-7db3-8679-8b672a3a03aa",
+          "role": "user"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://github.com/Physical-Intelligence/openpi/blob/main/examples/droid/README_train.md",
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/Robbyant/lingbot-vla-v2",
+      "references": [
+        {
+          "thread_id": "01a060cb-ba03-7842-b505-80c0c7b8ff53",
+          "turn_id": "01a060d4-f322-7e30-89a5-9959e3a7d8c1",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a060d9-f2a4-7431-8525-0f2e40df6dbb",
+          "turn_id": "01a060da-8b5e-7c93-9db4-2bd5fdec4379",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a06108-ec88-7d61-82ea-9aa519ec0744",
+          "turn_id": "01a0610a-8430-7db3-8679-8b672a3a03aa",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a06f17-863a-7300-bb82-78e5ac992f1b",
+          "turn_id": "01a06f18-a432-7490-a852-51834bc3c5f9",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://github.com/Robbyant/lingbot-vla-v2",
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/coal-library/coal",
+      "references": [
+        {
+          "thread_id": "01a08df8-1d88-7410-a613-fd529d9a3bdb",
+          "turn_id": "01a08e40-ccc2-7422-89d8-684ec3c7a4f1",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a08e0c-eda8-79d3-8b02-b11244304c95",
+          "turn_id": "01a08e1f-6d62-7ab1-800b-783655272f16",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://github.com/coal-library/coal",
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/facebookresearch/sam3",
+      "references": [
+        {
+          "thread_id": "01a06123-a835-7ff0-8331-c96af77a78b6",
+          "turn_id": "01a06126-5b41-7b02-b30b-5eb438f6bab2",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a06123-a835-7ff0-8331-c96af77a78b6",
+          "turn_id": "01a06129-209f-78c2-b784-37d8cbda293c",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://github.com/facebookresearch/sam3",
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/fishros/install",
+      "references": [
+        {
+          "thread_id": "01a02731-e698-7092-ae82-d3144a0993e8",
+          "turn_id": "01a02749-f9fa-71e0-9b1b-d732a87f6c01",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://github.com/fishros/install",
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/huggingface/lerobot/blob/main/src/lerobot/scripts/lerobot_calibrate.py",
+      "references": [
+        {
+          "thread_id": "01a08a39-0e0e-72a2-8c11-0f26ea893183",
+          "turn_id": "01a08a3d-3fda-73c3-9de4-be2c863ebfb2",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://github.com/huggingface/lerobot/blob/main/src/lerobot/scripts/lerobot_calibrate.py",
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/isaac-sim/IsaacLab/issues/6822",
+      "references": [
+        {
+          "thread_id": "01a06108-ec88-7d61-82ea-9aa519ec0744",
+          "turn_id": "01a06149-2272-7a91-860d-d44433f74e04",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://github.com/isaac-sim/IsaacLab/issues/6822",
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/isaac-sim/IsaacLab/releases",
+      "references": [
+        {
+          "thread_id": "01a06108-ec88-7d61-82ea-9aa519ec0744",
+          "turn_id": "01a06172-cfb7-7d61-8e52-d3d5753ea30b",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://github.com/isaac-sim/IsaacLab/releases",
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/ros-infrastructure/ros-apt-source/releases/download/$",
+      "references": [
+        {
+          "thread_id": "01a02731-e698-7092-ae82-d3144a0993e8",
+          "turn_id": "01a02745-a2b1-7932-9941-6826319a7b4e",
+          "role": "assistant"
+        }
+      ],
+      "status": "http_error",
+      "http_status": 404,
+      "final_url": null,
+      "detail": "Not Found"
+    },
+    {
+      "url": "https://github.com/ros2/ros2_documentation/blob/rolling/source/Get-Started/Installation/Ubuntu-Install-Debs.rst",
+      "references": [
+        {
+          "thread_id": "01a02731-e698-7092-ae82-d3144a0993e8",
+          "turn_id": "01a02745-a2b1-7932-9941-6826319a7b4e",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://github.com/ros2/ros2_documentation/blob/rolling/source/Get-Started/Installation/Ubuntu-Install-Debs.rst",
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/settings/personal-access-tokens/new?contents=write&description=Codex+IE+Lab+push&name=Codex+IE+Lab",
+      "references": [
+        {
+          "thread_id": "01a06fc0-a86b-7612-8db0-a4af84419644",
+          "turn_id": "01a06fdf-1ae9-7da2-ad68-ef7e4e79980b",
+          "role": "assistant"
+        }
+      ],
+      "status": "redirected",
+      "http_status": 200,
+      "final_url": "https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Fsettings%2Fpersonal-access-tokens%2Fnew%3Fcontents%3Dwrite%26description%3DCodex%2BIE%2BLab%2Bpush%26name%3DCodex%2BIE%2BLab",
+      "detail": ""
+    },
+    {
+      "url": "https://help.openai.com/en/articles/10169521-using-projects-in-chatgpt",
+      "references": [
+        {
+          "thread_id": "01a01dc8-3a51-72c0-a96b-3494051c29b8",
+          "turn_id": "01a01dc9-7e98-77b1-bc27-db38a77782d1",
+          "role": "assistant"
+        }
+      ],
+      "status": "http_error",
+      "http_status": 403,
+      "final_url": null,
+      "detail": "Forbidden"
+    },
+    {
+      "url": "https://help.openai.com/en/articles/11096431",
+      "references": [
+        {
+          "thread_id": "01a0796b-05cb-7573-acea-fb4f6596797e",
+          "turn_id": "01a0796b-06ae-7490-9bfe-ff8eee0509e3",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a0796b-05cb-7573-acea-fb4f6596797e",
+          "turn_id": "01a0796d-890d-7f92-b2f0-2b854910626d",
+          "role": "assistant"
+        }
+      ],
+      "status": "http_error",
+      "http_status": 403,
+      "final_url": null,
+      "detail": "Forbidden"
+    },
+    {
+      "url": "https://help.openai.com/en/articles/20001275/",
+      "references": [
+        {
+          "thread_id": "01a0796b-05cb-7573-acea-fb4f6596797e",
+          "turn_id": "01a0796b-06ae-7490-9bfe-ff8eee0509e3",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a0796b-05cb-7573-acea-fb4f6596797e",
+          "turn_id": "01a0796d-890d-7f92-b2f0-2b854910626d",
+          "role": "assistant"
+        }
+      ],
+      "status": "http_error",
+      "http_status": 403,
+      "final_url": null,
+      "detail": "Forbidden"
+    },
+    {
+      "url": "https://help.ubuntu.com",
+      "references": [
+        {
+          "thread_id": "01a045dd-990e-7311-838b-5b18f045efb6",
+          "turn_id": "01a04600-f23f-7d61-9ada-0fc8b534d3c7",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a04627-06e4-70a1-bb16-558f610aedc5",
+          "turn_id": "01a0464f-0c4d-77c3-a0b5-038db6ce55d1",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a04627-06e4-70a1-bb16-558f610aedc5",
+          "turn_id": "01a046ec-2aaf-7d13-8d98-9d9fe4aa5f3d",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a04764-c67a-7b31-9649-2ce50e93e2e2",
+          "turn_id": "01a04768-6722-70c0-91ab-449535f4779b",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a0558a-b033-75f3-adc7-3ddf7aca5a23",
+          "turn_id": "01a0558b-dc8c-7663-9c30-0b5fdc3b6595",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a065fa-b05d-78c3-ba64-416652f60649",
+          "turn_id": "01a06600-b42e-7922-b03e-d1428709aaa7",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a080cb-5824-7282-89bc-2dd1013446a2",
+          "turn_id": "asset:25b218dc6f7bc7b5",
+          "role": "asset"
+        },
+        {
+          "thread_id": "unknown-attachment",
+          "turn_id": "asset:02850b3288b8f24d",
+          "role": "asset"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://help.ubuntu.com",
+      "detail": ""
+    },
+    {
+      "url": "https://help.ubuntu.com/community/Grub2/CustomMenus",
+      "references": [
+        {
+          "thread_id": "01a06a65-b80d-7ee2-9d02-37b6e1d2177e",
+          "turn_id": "01a06a74-7351-75a2-b702-c11d54053d96",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://help.ubuntu.com/community/Grub2/CustomMenus",
+      "detail": ""
+    },
+    {
+      "url": "https://hub.docker.com/_/ros",
+      "references": [
+        {
+          "thread_id": "01a02731-e698-7092-ae82-d3144a0993e8",
+          "turn_id": "01a0274c-24e0-7b73-b8b4-0d62c0f45ac5",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://hub.docker.com/_/ros",
+      "detail": ""
+    },
+    {
+      "url": "https://huggingface.co/blog/smolvla",
+      "references": [
+        {
+          "thread_id": "01a060cb-ba03-7842-b505-80c0c7b8ff53",
+          "turn_id": "01a060d4-f322-7e30-89a5-9959e3a7d8c1",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://huggingface.co/blog/smolvla",
+      "detail": ""
+    },
+    {
+      "url": "https://huggingface.co/docs/lerobot/act",
+      "references": [
+        {
+          "thread_id": "01a060cb-ba03-7842-b505-80c0c7b8ff53",
+          "turn_id": "01a060d4-f322-7e30-89a5-9959e3a7d8c1",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a060d9-f2a4-7431-8525-0f2e40df6dbb",
+          "turn_id": "01a060da-8b5e-7c93-9db4-2bd5fdec4379",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a06108-ec88-7d61-82ea-9aa519ec0744",
+          "turn_id": "01a0610a-8430-7db3-8679-8b672a3a03aa",
+          "role": "user"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://huggingface.co/docs/lerobot/act",
+      "detail": ""
+    },
+    {
+      "url": "https://huggingface.co/docs/lerobot/en/async",
+      "references": [
+        {
+          "thread_id": "01a08557-cea5-7d83-a980-12ff835028e5",
+          "turn_id": "01a08557-d0bf-7ff3-aabe-722d23bdf725",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://huggingface.co/docs/lerobot/en/async",
+      "detail": ""
+    },
+    {
+      "url": "https://huggingface.co/docs/lerobot/en/integrate_hardware",
+      "references": [
+        {
+          "thread_id": "01a07b13-a8a5-7cf2-b564-90d9f5ef599c",
+          "turn_id": "01a07e99-6bca-7990-8123-e9704b7eb36f",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://huggingface.co/docs/lerobot/en/integrate_hardware",
+      "detail": ""
+    },
+    {
+      "url": "https://huggingface.co/docs/lerobot/hardware_guide",
+      "references": [
+        {
+          "thread_id": "01a06f17-863a-7300-bb82-78e5ac992f1b",
+          "turn_id": "01a06f18-a432-7490-a852-51834bc3c5f9",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://huggingface.co/docs/lerobot/hardware_guide",
+      "detail": ""
+    },
+    {
+      "url": "https://huggingface.co/docs/lerobot/il_robots",
+      "references": [
+        {
+          "thread_id": "01a07b13-a8a5-7cf2-b564-90d9f5ef599c",
+          "turn_id": "01a07e99-6bca-7990-8123-e9704b7eb36f",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://huggingface.co/docs/lerobot/il_robots",
+      "detail": ""
+    },
+    {
+      "url": "https://huggingface.co/docs/lerobot/main/en/api/teleoperators",
+      "references": [
+        {
+          "thread_id": "01a08a39-0e0e-72a2-8c11-0f26ea893183",
+          "turn_id": "01a08a3b-9e98-78a0-b9c1-044e65acf820",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://huggingface.co/docs/lerobot/main/en/api/teleoperators",
+      "detail": ""
+    },
+    {
+      "url": "https://huggingface.co/docs/lerobot/main/hardware_guide",
+      "references": [
+        {
+          "thread_id": "01a060cb-ba03-7842-b505-80c0c7b8ff53",
+          "turn_id": "01a060d4-f322-7e30-89a5-9959e3a7d8c1",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a066da-16e2-7e71-ac06-566fe700cc5c",
+          "turn_id": "01a066dd-054f-70e2-9c42-109ea62c37f4",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://huggingface.co/docs/lerobot/main/hardware_guide",
+      "detail": ""
+    },
+    {
+      "url": "https://huggingface.co/docs/lerobot/main/index",
+      "references": [
+        {
+          "thread_id": "01a066da-16e2-7e71-ac06-566fe700cc5c",
+          "turn_id": "01a066dd-054f-70e2-9c42-109ea62c37f4",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a06f17-863a-7300-bb82-78e5ac992f1b",
+          "turn_id": "01a06f18-a432-7490-a852-51834bc3c5f9",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://huggingface.co/docs/lerobot/main/index",
+      "detail": ""
+    },
+    {
+      "url": "https://huggingface.co/docs/lerobot/main/porting_datasets_v3",
+      "references": [
+        {
+          "thread_id": "01a066da-16e2-7e71-ac06-566fe700cc5c",
+          "turn_id": "01a066dd-054f-70e2-9c42-109ea62c37f4",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://huggingface.co/docs/lerobot/main/porting_datasets_v3",
+      "detail": ""
+    },
+    {
+      "url": "https://huggingface.co/docs/lerobot/main/smolvla",
+      "references": [
+        {
+          "thread_id": "01a066da-16e2-7e71-ac06-566fe700cc5c",
+          "turn_id": "01a066dd-054f-70e2-9c42-109ea62c37f4",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://huggingface.co/docs/lerobot/main/smolvla",
+      "detail": ""
+    },
+    {
+      "url": "https://huggingface.co/docs/lerobot/smolvla",
+      "references": [
+        {
+          "thread_id": "01a060d9-f2a4-7431-8525-0f2e40df6dbb",
+          "turn_id": "01a060da-8b5e-7c93-9db4-2bd5fdec4379",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a06108-ec88-7d61-82ea-9aa519ec0744",
+          "turn_id": "01a0610a-8430-7db3-8679-8b672a3a03aa",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a06108-ec88-7d61-82ea-9aa519ec0744",
+          "turn_id": "01a0616c-4c9e-7193-8512-4a00d88decaf",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a06f17-863a-7300-bb82-78e5ac992f1b",
+          "turn_id": "01a06f18-a432-7490-a852-51834bc3c5f9",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://huggingface.co/docs/lerobot/smolvla",
+      "detail": ""
+    },
+    {
+      "url": "https://huggingface.co/docs/lerobot/so101#calibrate",
+      "references": [
+        {
+          "thread_id": "01a07b13-a8a5-7cf2-b564-90d9f5ef599c",
+          "turn_id": "01a07e99-6bca-7990-8123-e9704b7eb36f",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://huggingface.co/docs/lerobot/so101#calibrate",
+      "detail": ""
+    },
+    {
+      "url": "https://huggingface.co/docs/transformers/model_doc/sam3",
+      "references": [
+        {
+          "thread_id": "01a06123-a835-7ff0-8331-c96af77a78b6",
+          "turn_id": "01a06126-5b41-7b02-b30b-5eb438f6bab2",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://huggingface.co/docs/transformers/model_doc/sam3",
+      "detail": ""
+    },
+    {
+      "url": "https://isaac-sim.github.io/IsaacLab/develop/source/features/isaac_teleop.html",
+      "references": [
+        {
+          "thread_id": "01a06108-ec88-7d61-82ea-9aa519ec0744",
+          "turn_id": "01a06149-2272-7a91-860d-d44433f74e04",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a06108-ec88-7d61-82ea-9aa519ec0744",
+          "turn_id": "01a0616c-4c9e-7193-8512-4a00d88decaf",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a06108-ec88-7d61-82ea-9aa519ec0744",
+          "turn_id": "01a06172-cfb7-7d61-8e52-d3d5753ea30b",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://isaac-sim.github.io/IsaacLab/develop/source/features/isaac_teleop.html",
+      "detail": ""
+    },
+    {
+      "url": "https://isaac-sim.github.io/IsaacLab/develop/source/overview/imitation-learning/teleop_imitation.html",
+      "references": [
+        {
+          "thread_id": "01a06108-ec88-7d61-82ea-9aa519ec0744",
+          "turn_id": "01a06149-2272-7a91-860d-d44433f74e04",
+          "role": "assistant"
+        }
+      ],
+      "status": "network_error",
+      "http_status": null,
+      "final_url": null,
+      "detail": "Remote end closed connection without response"
+    },
+    {
+      "url": "https://isaac-sim.github.io/IsaacLab/main/source/setup/installation/index",
+      "references": [
+        {
+          "thread_id": "01a06108-ec88-7d61-82ea-9aa519ec0744",
+          "turn_id": "01a06172-cfb7-7d61-8e52-d3d5753ea30b",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://isaac-sim.github.io/IsaacLab/main/source/setup/installation/index",
+      "detail": ""
+    },
+    {
+      "url": "https://item.taobao.com/item.htm?id=696573635888",
+      "references": [
+        {
+          "thread_id": "01a02731-e698-7092-ae82-d3144a0993e8",
+          "turn_id": "01a0276e-2c08-7b43-bdf6-fdd72e2e5648",
+          "role": "user"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://item.taobao.com/item.htm?id=696573635888",
+      "detail": ""
+    },
+    {
+      "url": "https://landscape.canonical.com",
+      "references": [
+        {
+          "thread_id": "01a045dd-990e-7311-838b-5b18f045efb6",
+          "turn_id": "01a04600-f23f-7d61-9ada-0fc8b534d3c7",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a04627-06e4-70a1-bb16-558f610aedc5",
+          "turn_id": "01a0464f-0c4d-77c3-a0b5-038db6ce55d1",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a04627-06e4-70a1-bb16-558f610aedc5",
+          "turn_id": "01a046ec-2aaf-7d13-8d98-9d9fe4aa5f3d",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a04764-c67a-7b31-9649-2ce50e93e2e2",
+          "turn_id": "01a04768-6722-70c0-91ab-449535f4779b",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a0558a-b033-75f3-adc7-3ddf7aca5a23",
+          "turn_id": "01a0558b-dc8c-7663-9c30-0b5fdc3b6595",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a065fa-b05d-78c3-ba64-416652f60649",
+          "turn_id": "01a06600-b42e-7922-b03e-d1428709aaa7",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a080cb-5824-7282-89bc-2dd1013446a2",
+          "turn_id": "asset:25b218dc6f7bc7b5",
+          "role": "asset"
+        },
+        {
+          "thread_id": "unknown-attachment",
+          "turn_id": "asset:02850b3288b8f24d",
+          "role": "asset"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://landscape.canonical.com",
+      "detail": ""
+    },
+    {
+      "url": "https://learn.chatgpt.com/codex/projects",
+      "references": [
+        {
+          "thread_id": "01a06b79-cd5d-7ec3-946a-fc6e215245b3",
+          "turn_id": "01a06b79-cea2-7081-99dd-4dbd99af8f6a",
+          "role": "assistant"
+        }
+      ],
+      "status": "skipped",
+      "http_status": null,
+      "final_url": null,
+      "detail": "域名解析到私有、回环或保留地址"
+    },
+    {
+      "url": "https://learn.chatgpt.com/docs/agent-configuration/agents-md",
+      "references": [
+        {
+          "thread_id": "01a05769-2fc5-7201-ba8a-22ffd597ad37",
+          "turn_id": "01a05769-51d4-7390-a777-6bdc6a4bfaee",
+          "role": "assistant"
+        }
+      ],
+      "status": "skipped",
+      "http_status": null,
+      "final_url": null,
+      "detail": "域名解析到私有、回环或保留地址"
+    },
+    {
+      "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+      "references": [
+        {
+          "thread_id": "01a01e07-ec64-7791-a9d2-1cc393bd1687",
+          "turn_id": "01a01e08-9144-7330-b827-48d5f1c4cc89",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a01e07-ec64-7791-a9d2-1cc393bd1687",
+          "turn_id": "01a01e0e-149b-7693-8da8-62a0d71c47c7",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a05fa2-ec9a-7173-9152-709cf6d3ac8f",
+          "turn_id": "01a05fa4-47b7-7ab3-b590-64100b85d5e4",
+          "role": "assistant"
+        }
+      ],
+      "status": "skipped",
+      "http_status": null,
+      "final_url": null,
+      "detail": "域名解析到私有、回环或保留地址"
+    },
+    {
+      "url": "https://learn.chatgpt.com/docs/projects",
+      "references": [
+        {
+          "thread_id": "01a05769-2fc5-7201-ba8a-22ffd597ad37",
+          "turn_id": "01a05769-51d4-7390-a777-6bdc6a4bfaee",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a06a65-b80d-7ee2-9d02-37b6e1d2177e",
+          "turn_id": "01a06a65-b8ca-7893-8cd4-daa8b764e6d6",
+          "role": "assistant"
+        }
+      ],
+      "status": "skipped",
+      "http_status": null,
+      "final_url": null,
+      "detail": "域名解析到私有、回环或保留地址"
+    },
+    {
+      "url": "https://learn.chatgpt.com/docs/remote-connections",
+      "references": [
+        {
+          "thread_id": "01a06fc0-a86b-7612-8db0-a4af84419644",
+          "turn_id": "01a06fc2-69ea-7320-9d36-ec446971a446",
+          "role": "assistant"
+        }
+      ],
+      "status": "skipped",
+      "http_status": null,
+      "final_url": null,
+      "detail": "域名解析到私有、回环或保留地址"
+    },
+    {
+      "url": "https://learn.chatgpt.com/docs/whats-new",
+      "references": [
+        {
+          "thread_id": "01a06fc0-a86b-7612-8db0-a4af84419644",
+          "turn_id": "01a06fc2-69ea-7320-9d36-ec446971a446",
+          "role": "assistant"
+        }
+      ],
+      "status": "skipped",
+      "http_status": null,
+      "final_url": null,
+      "detail": "域名解析到私有、回环或保留地址"
+    },
+    {
+      "url": "https://learn.chatgpt.com/zh-Hans/docs/cloud",
+      "references": [
+        {
+          "thread_id": "01a06fc0-a86b-7612-8db0-a4af84419644",
+          "turn_id": "01a06fc2-69ea-7320-9d36-ec446971a446",
+          "role": "assistant"
+        }
+      ],
+      "status": "skipped",
+      "http_status": null,
+      "final_url": null,
+      "detail": "域名解析到私有、回环或保留地址"
+    },
+    {
+      "url": "https://learn.chatgpt.com/zh-Hans/docs/projects",
+      "references": [
+        {
+          "thread_id": "01a060cb-ba03-7842-b505-80c0c7b8ff53",
+          "turn_id": "01a060d0-8ee8-7aa0-91be-2240fcf65c34",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a06684-e620-7263-8e13-549ec3f71b39",
+          "turn_id": "01a06686-d29a-7ea2-8bed-f586768d8042",
+          "role": "assistant"
+        }
+      ],
+      "status": "skipped",
+      "http_status": null,
+      "final_url": null,
+      "detail": "域名解析到私有、回环或保留地址"
+    },
+    {
+      "url": "https://mcap.dev/",
+      "references": [
+        {
+          "thread_id": "01a06f17-863a-7300-bb82-78e5ac992f1b",
+          "turn_id": "01a079e3-bb03-71e0-af8e-bb2469ec0e64",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://mcap.dev/",
+      "detail": ""
+    },
+    {
+      "url": "https://mirror.sjtu.edu.cn/flathub",
+      "references": [
+        {
+          "thread_id": "01a041e0-a6bc-7fc3-9f55-075e9a1ad893",
+          "turn_id": "01a04216-41a5-7ae1-825e-b5a2ab508ef9",
+          "role": "assistant"
+        }
+      ],
+      "status": "redirected",
+      "http_status": 200,
+      "final_url": "https://mirror.sjtu.edu.cn/flathub/",
+      "detail": ""
+    },
+    {
+      "url": "https://mirrors.sjtug.sjtu.edu.cn/flathub/",
+      "references": [
+        {
+          "thread_id": "01a041e0-a6bc-7fc3-9f55-075e9a1ad893",
+          "turn_id": "01a04216-41a5-7ae1-825e-b5a2ab508ef9",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://mirrors.sjtug.sjtu.edu.cn/flathub/",
+      "detail": ""
+    },
+    {
+      "url": "https://moveit.picknik.ai/main/doc/examples/realtime_servo/realtime_servo_tutorial.html",
+      "references": [
+        {
+          "thread_id": "01a08df8-1d88-7410-a613-fd529d9a3bdb",
+          "turn_id": "01a08e40-ccc2-7422-89d8-684ec3c7a4f1",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a08e0c-eda8-79d3-8b02-b11244304c95",
+          "turn_id": "01a08e0e-0742-7bb1-9bb6-ecb623f711f6",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a08e0c-eda8-79d3-8b02-b11244304c95",
+          "turn_id": "01a08e1f-6d62-7ab1-800b-783655272f16",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://moveit.picknik.ai/main/doc/examples/realtime_servo/realtime_servo_tutorial.html",
+      "detail": ""
+    },
+    {
+      "url": "https://nvidia-isaac-ros.github.io/v/release-3.2/performance/index.html",
+      "references": [
+        {
+          "thread_id": "01a07a67-a824-78c3-ac14-2ac2c473a3a8",
+          "turn_id": "asset:74f773e518de7e8f",
+          "role": "asset"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://nvidia-isaac-ros.github.io/v/release-3.2/performance/index.html",
+      "detail": ""
+    },
+    {
+      "url": "https://nvidia.github.io/container-wiki/toolkit/jetson.html",
+      "references": [
+        {
+          "thread_id": "01a08f2f-fa2d-7240-b59e-2afecc1a7542",
+          "turn_id": "asset:80c20a16f9b5a36c",
+          "role": "asset"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://nvidia.github.io/container-wiki/toolkit/jetson.html",
+      "detail": ""
+    },
+    {
+      "url": "https://nvidia.github.io/libnvidia-container/gpgkey",
+      "references": [
+        {
+          "thread_id": "01a06710-9ce5-75d1-95c5-6beb503bf8ae",
+          "turn_id": "01a06744-0ab8-78e3-9498-b6a8f1c5a0aa",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a06710-9ce5-75d1-95c5-6beb503bf8ae",
+          "turn_id": "01a06a12-99b0-7632-aefe-e547cf4d4d0a",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a06710-9ce5-75d1-95c5-6beb503bf8ae",
+          "turn_id": "asset:48ad1afb5a2fe0f7",
+          "role": "asset"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://nvidia.github.io/libnvidia-container/gpgkey",
+      "detail": ""
+    },
+    {
+      "url": "https://nvidia.github.io/libnvidia-container/stable/deb/nvidia-container-toolkit.list",
+      "references": [
+        {
+          "thread_id": "01a06710-9ce5-75d1-95c5-6beb503bf8ae",
+          "turn_id": "01a06744-0ab8-78e3-9498-b6a8f1c5a0aa",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a06710-9ce5-75d1-95c5-6beb503bf8ae",
+          "turn_id": "01a06a12-99b0-7632-aefe-e547cf4d4d0a",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a06710-9ce5-75d1-95c5-6beb503bf8ae",
+          "turn_id": "asset:48ad1afb5a2fe0f7",
+          "role": "asset"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://nvidia.github.io/libnvidia-container/stable/deb/nvidia-container-toolkit.list",
+      "detail": ""
+    },
+    {
+      "url": "https://open3d.org/docs/latest/tutorial/pipelines/robust_kernels.html",
+      "references": [
+        {
+          "thread_id": "01a07a67-a824-78c3-ac14-2ac2c473a3a8",
+          "turn_id": "asset:74f773e518de7e8f",
+          "role": "asset"
+        }
+      ],
+      "status": "network_error",
+      "http_status": null,
+      "final_url": null,
+      "detail": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'open3d.org'. (_ssl.c:1007)>"
+    },
+    {
+      "url": "https://open3d.org/html/tutorial/t_pipelines/t_icp_registration.html",
+      "references": [
+        {
+          "thread_id": "01a07a67-a824-78c3-ac14-2ac2c473a3a8",
+          "turn_id": "01a07a74-3bd3-7ad3-b697-6ef5bdf04964",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a07a67-a824-78c3-ac14-2ac2c473a3a8",
+          "turn_id": "01a07bae-b79b-7d10-b50d-53954f9dbbec",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a07a67-a824-78c3-ac14-2ac2c473a3a8",
+          "turn_id": "asset:74f773e518de7e8f",
+          "role": "asset"
+        }
+      ],
+      "status": "network_error",
+      "http_status": null,
+      "final_url": null,
+      "detail": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'open3d.org'. (_ssl.c:1007)>"
+    },
+    {
+      "url": "https://packages.ubuntu.com/jammy/graphics/cloudcompare",
+      "references": [
+        {
+          "thread_id": "01a041e0-a6bc-7fc3-9f55-075e9a1ad893",
+          "turn_id": "01a041e1-0f74-77b2-a8dc-46107fbbb723",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://packages.ubuntu.com/jammy/graphics/cloudcompare",
+      "detail": ""
+    },
+    {
+      "url": "https://platform.openai.com/docs/api-reference/usage/moderations_object",
+      "references": [
+        {
+          "thread_id": "01a01e04-499d-7df1-a04f-4ddf81e9a3e5",
+          "turn_id": "01a01e04-8d74-7841-985b-0e15d80d5cf4",
+          "role": "assistant"
+        }
+      ],
+      "status": "http_error",
+      "http_status": 403,
+      "final_url": null,
+      "detail": "Forbidden"
+    },
+    {
+      "url": "https://platform.openai.com/usage",
+      "references": [
+        {
+          "thread_id": "01a01e04-499d-7df1-a04f-4ddf81e9a3e5",
+          "turn_id": "01a01e04-8d74-7841-985b-0e15d80d5cf4",
+          "role": "assistant"
+        }
+      ],
+      "status": "http_error",
+      "http_status": 403,
+      "final_url": null,
+      "detail": "Forbidden"
+    },
+    {
+      "url": "https://pointclouds.org/documentation/tutorials/planar_segmentation.html",
+      "references": [
+        {
+          "thread_id": "01a07a67-a824-78c3-ac14-2ac2c473a3a8",
+          "turn_id": "01a07a74-3bd3-7ad3-b697-6ef5bdf04964",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a07a67-a824-78c3-ac14-2ac2c473a3a8",
+          "turn_id": "01a07bae-b79b-7d10-b50d-53954f9dbbec",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a07a67-a824-78c3-ac14-2ac2c473a3a8",
+          "turn_id": "asset:74f773e518de7e8f",
+          "role": "asset"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://pointclouds.org/documentation/tutorials/planar_segmentation.html",
+      "detail": ""
+    },
+    {
+      "url": "https://raw.githubusercontent.com/GalaxyGeneralRobotics/galbot_one_golf_description/main/CMakeLists.txt",
+      "references": [
+        {
+          "thread_id": "01a08df8-1d88-7410-a613-fd529d9a3bdb",
+          "turn_id": "01a08e40-ccc2-7422-89d8-684ec3c7a4f1",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a08e0c-eda8-79d3-8b02-b11244304c95",
+          "turn_id": "01a08e1f-6d62-7ab1-800b-783655272f16",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://raw.githubusercontent.com/GalaxyGeneralRobotics/galbot_one_golf_description/main/CMakeLists.txt",
+      "detail": ""
+    },
+    {
+      "url": "https://raw.githubusercontent.com/huggingface/lerobot/main/src/lerobot/robots/so_follower/so_follower.py",
+      "references": [
+        {
+          "thread_id": "01a07b13-a8a5-7cf2-b564-90d9f5ef599c",
+          "turn_id": "01a07e99-6bca-7990-8123-e9704b7eb36f",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://raw.githubusercontent.com/huggingface/lerobot/main/src/lerobot/robots/so_follower/so_follower.py",
+      "detail": ""
+    },
+    {
+      "url": "https://raw.githubusercontent.com/huggingface/lerobot/v0.4.4/pyproject.toml",
+      "references": [
+        {
+          "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
+          "turn_id": "01a07fbb-f747-7f03-a694-df10f6242d11",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://raw.githubusercontent.com/huggingface/lerobot/v0.4.4/pyproject.toml",
+      "detail": ""
+    },
+    {
+      "url": "https://ubuntu.com/20-04",
+      "references": [
+        {
+          "thread_id": "01a045dd-990e-7311-838b-5b18f045efb6",
+          "turn_id": "01a04600-f23f-7d61-9ada-0fc8b534d3c7",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a04627-06e4-70a1-bb16-558f610aedc5",
+          "turn_id": "01a0464f-0c4d-77c3-a0b5-038db6ce55d1",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a04627-06e4-70a1-bb16-558f610aedc5",
+          "turn_id": "01a046ec-2aaf-7d13-8d98-9d9fe4aa5f3d",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a04764-c67a-7b31-9649-2ce50e93e2e2",
+          "turn_id": "01a04768-6722-70c0-91ab-449535f4779b",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a0558a-b033-75f3-adc7-3ddf7aca5a23",
+          "turn_id": "01a0558b-dc8c-7663-9c30-0b5fdc3b6595",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a065fa-b05d-78c3-ba64-416652f60649",
+          "turn_id": "01a06600-b42e-7922-b03e-d1428709aaa7",
+          "role": "user"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://ubuntu.com/20-04",
+      "detail": ""
+    },
+    {
+      "url": "https://ubuntu.com/advantage",
+      "references": [
+        {
+          "thread_id": "01a080cb-5824-7282-89bc-2dd1013446a2",
+          "turn_id": "asset:25b218dc6f7bc7b5",
+          "role": "asset"
+        }
+      ],
+      "status": "redirected",
+      "http_status": 200,
+      "final_url": "https://ubuntu.com/pro",
+      "detail": ""
+    },
+    {
+      "url": "https://ubuntu.com/pro",
+      "references": [
+        {
+          "thread_id": "01a045dd-990e-7311-838b-5b18f045efb6",
+          "turn_id": "01a04600-f23f-7d61-9ada-0fc8b534d3c7",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a04627-06e4-70a1-bb16-558f610aedc5",
+          "turn_id": "01a0464f-0c4d-77c3-a0b5-038db6ce55d1",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a04627-06e4-70a1-bb16-558f610aedc5",
+          "turn_id": "01a046ec-2aaf-7d13-8d98-9d9fe4aa5f3d",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a04764-c67a-7b31-9649-2ce50e93e2e2",
+          "turn_id": "01a04768-6722-70c0-91ab-449535f4779b",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a0558a-b033-75f3-adc7-3ddf7aca5a23",
+          "turn_id": "01a0558b-dc8c-7663-9c30-0b5fdc3b6595",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a065fa-b05d-78c3-ba64-416652f60649",
+          "turn_id": "01a06600-b42e-7922-b03e-d1428709aaa7",
+          "role": "user"
+        },
+        {
+          "thread_id": "unknown-attachment",
+          "turn_id": "asset:02850b3288b8f24d",
+          "role": "asset"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://ubuntu.com/pro",
+      "detail": ""
+    },
+    {
+      "url": "https://www.galbot.com/s1/",
+      "references": [
+        {
+          "thread_id": "01a0667b-ce68-75f0-b8e7-bbfb74cfbf87",
+          "turn_id": "01a06680-5e1d-7080-af61-fa13826dc377",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a0667b-ce68-75f0-b8e7-bbfb74cfbf87",
+          "turn_id": "asset:8f7267aa4bcdb93e",
+          "role": "asset"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://www.galbot.com/s1/",
+      "detail": ""
+    },
+    {
+      "url": "https://www.gnu.org/software/grub/manual/grub/html_node/search.html",
+      "references": [
+        {
+          "thread_id": "01a06a65-b80d-7ee2-9d02-37b6e1d2177e",
+          "turn_id": "01a06a74-7351-75a2-b702-c11d54053d96",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://www.gnu.org/software/grub/manual/grub/html_node/search.html",
+      "detail": ""
+    },
+    {
+      "url": "https://www.livoxtech.com/cn/mid-360/specs",
+      "references": [
+        {
+          "thread_id": "01a0667b-ce68-75f0-b8e7-bbfb74cfbf87",
+          "turn_id": "asset:8f7267aa4bcdb93e",
+          "role": "asset"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://www.livoxtech.com/cn/mid-360/specs",
+      "detail": ""
+    },
+    {
+      "url": "https://www.orbbec.com/products/structured-light-camera/gemini-2/",
+      "references": [
+        {
+          "thread_id": "01a0667b-ce68-75f0-b8e7-bbfb74cfbf87",
+          "turn_id": "01a06680-5e1d-7080-af61-fa13826dc377",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a0667b-ce68-75f0-b8e7-bbfb74cfbf87",
+          "turn_id": "asset:8f7267aa4bcdb93e",
+          "role": "asset"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://www.orbbec.com/products/structured-light-camera/gemini-2/",
+      "detail": ""
+    },
+    {
+      "url": "https://www.pi.website/blog/pi07",
+      "references": [
+        {
+          "thread_id": "01a060d9-f2a4-7431-8525-0f2e40df6dbb",
+          "turn_id": "01a060da-8b5e-7c93-9db4-2bd5fdec4379",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a06108-ec88-7d61-82ea-9aa519ec0744",
+          "turn_id": "01a0610a-8430-7db3-8679-8b672a3a03aa",
+          "role": "user"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://www.pi.website/blog/pi07",
+      "detail": ""
+    },
+    {
+      "url": "https://www.ros.org/blog/noetic-eol/",
+      "references": [
+        {
+          "thread_id": "01a02731-e698-7092-ae82-d3144a0993e8",
+          "turn_id": "01a0274c-24e0-7b73-b8b4-0d62c0f45ac5",
+          "role": "assistant"
+        }
+      ],
+      "status": "ok",
+      "http_status": 200,
+      "final_url": "https://www.ros.org/blog/noetic-eol/",
+      "detail": ""
+    }
+  ],
+  "summary": {
+    "total": 237,
+    "checked": 214,
+    "status_counts": {
+      "http_error": 13,
+      "network_error": 4,
+      "ok": 131,
+      "redirected": 66,
+      "skipped": 23
+    }
+  }
+}

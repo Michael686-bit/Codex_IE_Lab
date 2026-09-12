@@ -1,0 +1,355 @@
+root@galbot-xcu:~# tail -n 200 /userdata/log/SingoriX/info/singorix_wbcs_main.INFO
+
+E20260908 20:45:24.832806 3692 wbcs_interface.cpp:315] Error component: WBCSManager, error code: 20, description: Sync left_arm ...
+
+I20260908 20:45:24.832920 3692 wbcs_interface.cpp:380] wbcs_error_writer_ SENT 1 datas, time: 6796.52
+E20260908 20:45:24.832949 3692 wbcs_interface.cpp:383] Errors Timestamp : 1788871524.832837473
+
+E20260908 20:45:24.832976 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint1_error, error code: 200, description: Not yet identified
+
+E20260908 20:45:24.833004 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint4_custom_error, error code: 1, description: Not yet identified
+
+E20260908 20:45:24.833030 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint2_custom_error, error code: 1, description: Not yet identified
+
+E20260908 20:45:24.833056 3692 wbcs_interface.cpp:386] Errors component: left_arm_max_error_level, error code: 30000, description: ErrorSafetyMedium
+
+E20260908 20:45:24.833082 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint1_custom_error, error code: 59, description: Not yet identified
+
+E20260908 20:45:24.833138 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint6_custom_error, error code: 1, description: Not yet identified
+
+E20260908 20:45:24.833166 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint5_custom_error, error code: 1, description: Not yet identified
+
+E20260908 20:45:24.833194 3692 wbcs_interface.cpp:386] Errors component: left_arm_driver_state, error code: 45, description: DriverError
+
+E20260908 20:45:24.833221 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint7_custom_error, error code: 1, description: Not yet identified
+
+E20260908 20:45:24.833246 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint3_custom_error, error code: 1, description: Not yet identified
+
+W20260908 20:45:24.833351 3692 wbcs_manager.cpp:258] WBCSManager sync initialization retry 6743/31536000
+I20260908 20:45:25.410714 3909 wbcs_interface.cpp:437] service state: INITIALIZING
+E20260908 20:45:25.833736 3692 wbcs_interface.cpp:313] Errors Timestamp: 1788871525.833633806
+
+E20260908 20:45:25.834855 3692 wbcs_interface.cpp:315] Error component: WBCSManager, error code: 20, description: Sync left_arm ...
+
+I20260908 20:45:25.835005 3692 wbcs_interface.cpp:380] wbcs_error_writer_ SENT 1 datas, time: 6797.53
+E20260908 20:45:25.835045 3692 wbcs_interface.cpp:383] Errors Timestamp : 1788871525.834906806
+
+E20260908 20:45:25.835123 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint1_error, error code: 200, description: Not yet identified
+
+E20260908 20:45:25.835153 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint4_custom_error, error code: 1, description: Not yet identified
+
+E20260908 20:45:25.835179 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint2_custom_error, error code: 1, description: Not yet identified
+
+E20260908 20:45:25.835204 3692 wbcs_interface.cpp:386] Errors component: left_arm_max_error_level, error code: 30000, description: ErrorSafetyMedium
+
+E20260908 20:45:25.835232 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint1_custom_error, error code: 59, description: Not yet identified
+
+E20260908 20:45:25.835260 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint6_custom_error, error code: 1, description: Not yet identified
+
+E20260908 20:45:25.835289 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint5_custom_error, error code: 1, description: Not yet identified
+
+E20260908 20:45:25.835315 3692 wbcs_interface.cpp:386] Errors component: left_arm_driver_state, error code: 45, description: DriverError
+
+E20260908 20:45:25.835341 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint7_custom_error, error code: 1, description: Not yet identified
+
+E20260908 20:45:25.835366 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint3_custom_error, error code: 1, description: Not yet identified
+
+W20260908 20:45:25.835474 3692 wbcs_manager.cpp:258] WBCSManager sync initialization retry 6744/31536000
+I20260908 20:45:26.410961 3909 wbcs_interface.cpp:437] service state: INITIALIZING
+E20260908 20:45:26.837058 3692 wbcs_interface.cpp:313] Errors Timestamp: 1788871526.836887807
+
+E20260908 20:45:26.837142 3692 wbcs_interface.cpp:315] Error component: WBCSManager, error code: 20, description: Sync left_arm ...
+
+I20260908 20:45:26.837305 3692 wbcs_interface.cpp:380] wbcs_error_writer_ SENT 1 datas, time: 6798.53
+E20260908 20:45:26.837337 3692 wbcs_interface.cpp:383] Errors Timestamp : 1788871526.837173807
+
+E20260908 20:45:26.837365 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint1_error, error code: 200, description: Not yet identified
+
+E20260908 20:45:26.837393 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint4_custom_error, error code: 1, description: Not yet identified
+
+E20260908 20:45:26.837419 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint2_custom_error, error code: 1, description: Not yet identified
+
+E20260908 20:45:26.837446 3692 wbcs_interface.cpp:386] Errors component: left_arm_max_error_level, error code: 30000, description: ErrorSafetyMedium
+
+E20260908 20:45:26.837499 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint1_custom_error, error code: 59, description: Not yet identified
+
+E20260908 20:45:26.837528 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint6_custom_error, error code: 1, description: Not yet identified
+
+E20260908 20:45:26.837554 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint5_custom_error, error code: 1, description: Not yet identified
+
+E20260908 20:45:26.837580 3692 wbcs_interface.cpp:386] Errors component: left_arm_driver_state, error code: 45, description: DriverError
+
+E20260908 20:45:26.837605 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint7_custom_error, error code: 1, description: Not yet identified
+
+E20260908 20:45:26.837632 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint3_custom_error, error code: 1, description: Not yet identified
+
+W20260908 20:45:26.837745 3692 wbcs_manager.cpp:258] WBCSManager sync initialization retry 6745/31536000
+I20260908 20:45:27.411134 3909 wbcs_interface.cpp:437] service state: INITIALIZING
+E20260908 20:45:27.838228 3692 wbcs_interface.cpp:313] Errors Timestamp: 1788871527.838116473
+
+E20260908 20:45:27.838329 3692 wbcs_interface.cpp:315] Error component: WBCSManager, error code: 20, description: Sync left_arm ...
+
+I20260908 20:45:27.838442 3692 wbcs_interface.cpp:380] wbcs_error_writer_ SENT 1 datas, time: 6799.53
+E20260908 20:45:27.838469 3692 wbcs_interface.cpp:383] Errors Timestamp : 1788871527.838362140
+
+E20260908 20:45:27.838527 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint1_error, error code: 200, description: Not yet identified
+
+E20260908 20:45:27.838565 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint4_custom_error, error code: 1, description: Not yet identified
+
+E20260908 20:45:27.838594 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint2_custom_error, error code: 1, description: Not yet identified
+
+E20260908 20:45:27.838621 3692 wbcs_interface.cpp:386] Errors component: left_arm_max_error_level, error code: 30000, description: ErrorSafetyMedium
+
+E20260908 20:45:27.838650 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint1_custom_error, error code: 59, description: Not yet identified
+
+E20260908 20:45:27.838676 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint6_custom_error, error code: 1, description: Not yet identified
+
+E20260908 20:45:27.838705 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint5_custom_error, error code: 1, description: Not yet identified
+
+E20260908 20:45:27.838731 3692 wbcs_interface.cpp:386] Errors component: left_arm_driver_state, error code: 45, description: DriverError
+
+E20260908 20:45:27.838760 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint7_custom_error, error code: 1, description: Not yet identified
+
+E20260908 20:45:27.838786 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint3_custom_error, error code: 1, description: Not yet identified
+
+W20260908 20:45:27.838893 3692 wbcs_manager.cpp:258] WBCSManager sync initialization retry 6746/31536000
+I20260908 20:45:28.411418 3909 wbcs_interface.cpp:437] service state: INITIALIZING
+E20260908 20:45:28.839304 3692 wbcs_interface.cpp:313] Errors Timestamp: 1788871528.839203473
+
+E20260908 20:45:28.839375 3692 wbcs_interface.cpp:315] Error component: WBCSManager, error code: 20, description: Sync left_arm ...
+
+I20260908 20:45:28.841218 3692 wbcs_interface.cpp:380] wbcs_error_writer_ SENT 1 datas, time: 6800.53
+E20260908 20:45:28.841315 3692 wbcs_interface.cpp:383] Errors Timestamp : 1788871528.839404140
+
+E20260908 20:45:28.841346 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint1_error, error code: 200, description: Not yet identified
+
+E20260908 20:45:28.841374 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint4_custom_error, error code: 1, description: Not yet identified
+
+E20260908 20:45:28.841401 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint2_custom_error, error code: 1, description: Not yet identified
+
+E20260908 20:45:28.841429 3692 wbcs_interface.cpp:386] Errors component: left_arm_max_error_level, error code: 30000, description: ErrorSafetyMedium
+
+E20260908 20:45:28.841455 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint1_custom_error, error code: 59, description: Not yet identified
+
+E20260908 20:45:28.841482 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint6_custom_error, error code: 1, description: Not yet identified
+
+E20260908 20:45:28.841509 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint5_custom_error, error code: 1, description: Not yet identified
+
+E20260908 20:45:28.841535 3692 wbcs_interface.cpp:386] Errors component: left_arm_driver_state, error code: 45, description: DriverError
+
+E20260908 20:45:28.841561 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint7_custom_error, error code: 1, description: Not yet identified
+
+E20260908 20:45:28.841588 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint3_custom_error, error code: 1, description: Not yet identified
+
+W20260908 20:45:28.841702 3692 wbcs_manager.cpp:258] WBCSManager sync initialization retry 6747/31536000
+I20260908 20:45:29.411610 3909 wbcs_interface.cpp:437] service state: INITIALIZING
+E20260908 20:45:29.842207 3692 wbcs_interface.cpp:313] Errors Timestamp: 1788871529.842075474
+
+E20260908 20:45:29.843157 3692 wbcs_interface.cpp:315] Error component: WBCSManager, error code: 20, description: Sync left_arm ...
+
+I20260908 20:45:29.843353 3692 wbcs_interface.cpp:380] wbcs_error_writer_ SENT 1 datas, time: 6801.53
+E20260908 20:45:29.843393 3692 wbcs_interface.cpp:383] Errors Timestamp : 1788871529.843245140
+
+E20260908 20:45:29.843432 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint1_error, error code: 200, description: Not yet identified
+
+E20260908 20:45:29.843460 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint4_custom_error, error code: 1, description: Not yet identified
+
+E20260908 20:45:29.843488 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint2_custom_error, error code: 1, description: Not yet identified
+
+E20260908 20:45:29.843515 3692 wbcs_interface.cpp:386] Errors component: left_arm_max_error_level, error code: 30000, description: ErrorSafetyMedium
+
+E20260908 20:45:29.843540 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint1_custom_error, error code: 59, description: Not yet identified
+
+E20260908 20:45:29.843566 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint6_custom_error, error code: 1, description: Not yet identified
+
+E20260908 20:45:29.843593 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint5_custom_error, error code: 1, description: Not yet identified
+
+E20260908 20:45:29.843618 3692 wbcs_interface.cpp:386] Errors component: left_arm_driver_state, error code: 45, description: DriverError
+
+E20260908 20:45:29.843647 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint7_custom_error, error code: 1, description: Not yet identified
+
+E20260908 20:45:29.843674 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint3_custom_error, error code: 1, description: Not yet identified
+
+W20260908 20:45:29.843782 3692 wbcs_manager.cpp:258] WBCSManager sync initialization retry 6748/31536000
+I20260908 20:45:30.411740 3909 wbcs_interface.cpp:437] service state: INITIALIZING
+E20260908 20:45:30.844205 3692 wbcs_interface.cpp:313] Errors Timestamp: 1788871530.844069140
+
+E20260908 20:45:30.845216 3692 wbcs_interface.cpp:315] Error component: WBCSManager, error code: 20, description: Sync left_arm ...
+
+I20260908 20:45:30.845386 3692 wbcs_interface.cpp:380] wbcs_error_writer_ SENT 1 datas, time: 6802.54
+E20260908 20:45:30.845424 3692 wbcs_interface.cpp:383] Errors Timestamp : 1788871530.845272807
+
+E20260908 20:45:30.845454 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint1_error, error code: 200, description: Not yet identified
+
+E20260908 20:45:30.845935 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint4_custom_error, error code: 1, description: Not yet identified
+
+E20260908 20:45:30.845982 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint2_custom_error, error code: 1, description: Not yet identified
+
+E20260908 20:45:30.846351 3692 wbcs_interface.cpp:386] Errors component: left_arm_max_error_level, error code: 30000, description: ErrorSafetyMedium
+
+E20260908 20:45:30.846507 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint1_custom_error, error code: 59, description: Not yet identified
+
+E20260908 20:45:30.846554 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint6_custom_error, error code: 1, description: Not yet identified
+
+E20260908 20:45:30.846582 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint5_custom_error, error code: 1, description: Not yet identified
+
+E20260908 20:45:30.846609 3692 wbcs_interface.cpp:386] Errors component: left_arm_driver_state, error code: 45, description: DriverError
+
+E20260908 20:45:30.846636 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint7_custom_error, error code: 1, description: Not yet identified
+
+E20260908 20:45:30.846663 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint3_custom_error, error code: 1, description: Not yet identified
+
+root@galbot-xcu:~#
+root@galbot-xcu:~# grep -iE 'error|fail|fault|estop|brake|joint|wbc|sensor|state|controller|target|init' \
+>   /userdata/log/SingoriX/info/singorix_wbcs_main.INFO | tail -n 150
+E20260908 20:45:22.830369 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint1_custom_error, error code: 59, description: Not yet identified
+E20260908 20:45:22.830397 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint6_custom_error, error code: 1, description: Not yet identified
+E20260908 20:45:22.830429 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint5_custom_error, error code: 1, description: Not yet identified
+E20260908 20:45:22.830478 3692 wbcs_interface.cpp:386] Errors component: left_arm_driver_state, error code: 45, description: DriverError
+E20260908 20:45:22.830510 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint7_custom_error, error code: 1, description: Not yet identified
+E20260908 20:45:22.830537 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint3_custom_error, error code: 1, description: Not yet identified
+W20260908 20:45:22.830656 3692 wbcs_manager.cpp:258] WBCSManager sync initialization retry 6741/31536000
+I20260908 20:45:23.410595 3909 wbcs_interface.cpp:437] service state: INITIALIZING
+E20260908 20:45:23.831009 3692 wbcs_interface.cpp:313] Errors Timestamp: 1788871523.830909806
+E20260908 20:45:23.831085 3692 wbcs_interface.cpp:315] Error component: WBCSManager, error code: 20, description: Sync left_arm ...
+I20260908 20:45:23.831218 3692 wbcs_interface.cpp:380] wbcs_error_writer_ SENT 1 datas, time: 6795.52
+E20260908 20:45:23.831248 3692 wbcs_interface.cpp:383] Errors Timestamp : 1788871523.831145806
+E20260908 20:45:23.831275 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint1_error, error code: 200, description: Not yet identified
+E20260908 20:45:23.831303 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint4_custom_error, error code: 1, description: Not yet identified
+E20260908 20:45:23.831330 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint2_custom_error, error code: 1, description: Not yet identified
+E20260908 20:45:23.831356 3692 wbcs_interface.cpp:386] Errors component: left_arm_max_error_level, error code: 30000, description: ErrorSafetyMedium
+E20260908 20:45:23.831383 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint1_custom_error, error code: 59, description: Not yet identified
+E20260908 20:45:23.831434 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint6_custom_error, error code: 1, description: Not yet identified
+E20260908 20:45:23.831463 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint5_custom_error, error code: 1, description: Not yet identified
+E20260908 20:45:23.831490 3692 wbcs_interface.cpp:386] Errors component: left_arm_driver_state, error code: 45, description: DriverError
+E20260908 20:45:23.832048 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint7_custom_error, error code: 1, description: Not yet identified
+E20260908 20:45:23.832078 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint3_custom_error, error code: 1, description: Not yet identified
+W20260908 20:45:23.832242 3692 wbcs_manager.cpp:258] WBCSManager sync initialization retry 6742/31536000
+I20260908 20:45:24.410667 3909 wbcs_interface.cpp:437] service state: INITIALIZING
+E20260908 20:45:24.832732 3692 wbcs_interface.cpp:313] Errors Timestamp: 1788871524.832571473
+E20260908 20:45:24.832806 3692 wbcs_interface.cpp:315] Error component: WBCSManager, error code: 20, description: Sync left_arm ...
+I20260908 20:45:24.832920 3692 wbcs_interface.cpp:380] wbcs_error_writer_ SENT 1 datas, time: 6796.52
+E20260908 20:45:24.832949 3692 wbcs_interface.cpp:383] Errors Timestamp : 1788871524.832837473
+E20260908 20:45:24.832976 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint1_error, error code: 200, description: Not yet identified
+E20260908 20:45:24.833004 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint4_custom_error, error code: 1, description: Not yet identified
+E20260908 20:45:24.833030 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint2_custom_error, error code: 1, description: Not yet identified
+E20260908 20:45:24.833056 3692 wbcs_interface.cpp:386] Errors component: left_arm_max_error_level, error code: 30000, description: ErrorSafetyMedium
+E20260908 20:45:24.833082 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint1_custom_error, error code: 59, description: Not yet identified
+E20260908 20:45:24.833138 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint6_custom_error, error code: 1, description: Not yet identified
+E20260908 20:45:24.833166 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint5_custom_error, error code: 1, description: Not yet identified
+E20260908 20:45:24.833194 3692 wbcs_interface.cpp:386] Errors component: left_arm_driver_state, error code: 45, description: DriverError
+E20260908 20:45:24.833221 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint7_custom_error, error code: 1, description: Not yet identified
+E20260908 20:45:24.833246 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint3_custom_error, error code: 1, description: Not yet identified
+W20260908 20:45:24.833351 3692 wbcs_manager.cpp:258] WBCSManager sync initialization retry 6743/31536000
+I20260908 20:45:25.410714 3909 wbcs_interface.cpp:437] service state: INITIALIZING
+E20260908 20:45:25.833736 3692 wbcs_interface.cpp:313] Errors Timestamp: 1788871525.833633806
+E20260908 20:45:25.834855 3692 wbcs_interface.cpp:315] Error component: WBCSManager, error code: 20, description: Sync left_arm ...
+I20260908 20:45:25.835005 3692 wbcs_interface.cpp:380] wbcs_error_writer_ SENT 1 datas, time: 6797.53
+E20260908 20:45:25.835045 3692 wbcs_interface.cpp:383] Errors Timestamp : 1788871525.834906806
+E20260908 20:45:25.835123 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint1_error, error code: 200, description: Not yet identified
+E20260908 20:45:25.835153 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint4_custom_error, error code: 1, description: Not yet identified
+E20260908 20:45:25.835179 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint2_custom_error, error code: 1, description: Not yet identified
+E20260908 20:45:25.835204 3692 wbcs_interface.cpp:386] Errors component: left_arm_max_error_level, error code: 30000, description: ErrorSafetyMedium
+E20260908 20:45:25.835232 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint1_custom_error, error code: 59, description: Not yet identified
+E20260908 20:45:25.835260 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint6_custom_error, error code: 1, description: Not yet identified
+E20260908 20:45:25.835289 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint5_custom_error, error code: 1, description: Not yet identified
+E20260908 20:45:25.835315 3692 wbcs_interface.cpp:386] Errors component: left_arm_driver_state, error code: 45, description: DriverError
+E20260908 20:45:25.835341 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint7_custom_error, error code: 1, description: Not yet identified
+E20260908 20:45:25.835366 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint3_custom_error, error code: 1, description: Not yet identified
+W20260908 20:45:25.835474 3692 wbcs_manager.cpp:258] WBCSManager sync initialization retry 6744/31536000
+I20260908 20:45:26.410961 3909 wbcs_interface.cpp:437] service state: INITIALIZING
+E20260908 20:45:26.837058 3692 wbcs_interface.cpp:313] Errors Timestamp: 1788871526.836887807
+E20260908 20:45:26.837142 3692 wbcs_interface.cpp:315] Error component: WBCSManager, error code: 20, description: Sync left_arm ...
+I20260908 20:45:26.837305 3692 wbcs_interface.cpp:380] wbcs_error_writer_ SENT 1 datas, time: 6798.53
+E20260908 20:45:26.837337 3692 wbcs_interface.cpp:383] Errors Timestamp : 1788871526.837173807
+E20260908 20:45:26.837365 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint1_error, error code: 200, description: Not yet identified
+E20260908 20:45:26.837393 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint4_custom_error, error code: 1, description: Not yet identified
+E20260908 20:45:26.837419 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint2_custom_error, error code: 1, description: Not yet identified
+E20260908 20:45:26.837446 3692 wbcs_interface.cpp:386] Errors component: left_arm_max_error_level, error code: 30000, description: ErrorSafetyMedium
+E20260908 20:45:26.837499 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint1_custom_error, error code: 59, description: Not yet identified
+E20260908 20:45:26.837528 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint6_custom_error, error code: 1, description: Not yet identified
+E20260908 20:45:26.837554 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint5_custom_error, error code: 1, description: Not yet identified
+E20260908 20:45:26.837580 3692 wbcs_interface.cpp:386] Errors component: left_arm_driver_state, error code: 45, description: DriverError
+E20260908 20:45:26.837605 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint7_custom_error, error code: 1, description: Not yet identified
+E20260908 20:45:26.837632 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint3_custom_error, error code: 1, description: Not yet identified
+W20260908 20:45:26.837745 3692 wbcs_manager.cpp:258] WBCSManager sync initialization retry 6745/31536000
+I20260908 20:45:27.411134 3909 wbcs_interface.cpp:437] service state: INITIALIZING
+E20260908 20:45:27.838228 3692 wbcs_interface.cpp:313] Errors Timestamp: 1788871527.838116473
+E20260908 20:45:27.838329 3692 wbcs_interface.cpp:315] Error component: WBCSManager, error code: 20, description: Sync left_arm ...
+I20260908 20:45:27.838442 3692 wbcs_interface.cpp:380] wbcs_error_writer_ SENT 1 datas, time: 6799.53
+E20260908 20:45:27.838469 3692 wbcs_interface.cpp:383] Errors Timestamp : 1788871527.838362140
+E20260908 20:45:27.838527 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint1_error, error code: 200, description: Not yet identified
+E20260908 20:45:27.838565 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint4_custom_error, error code: 1, description: Not yet identified
+E20260908 20:45:27.838594 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint2_custom_error, error code: 1, description: Not yet identified
+E20260908 20:45:27.838621 3692 wbcs_interface.cpp:386] Errors component: left_arm_max_error_level, error code: 30000, description: ErrorSafetyMedium
+E20260908 20:45:27.838650 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint1_custom_error, error code: 59, description: Not yet identified
+E20260908 20:45:27.838676 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint6_custom_error, error code: 1, description: Not yet identified
+E20260908 20:45:27.838705 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint5_custom_error, error code: 1, description: Not yet identified
+E20260908 20:45:27.838731 3692 wbcs_interface.cpp:386] Errors component: left_arm_driver_state, error code: 45, description: DriverError
+E20260908 20:45:27.838760 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint7_custom_error, error code: 1, description: Not yet identified
+E20260908 20:45:27.838786 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint3_custom_error, error code: 1, description: Not yet identified
+W20260908 20:45:27.838893 3692 wbcs_manager.cpp:258] WBCSManager sync initialization retry 6746/31536000
+I20260908 20:45:28.411418 3909 wbcs_interface.cpp:437] service state: INITIALIZING
+E20260908 20:45:28.839304 3692 wbcs_interface.cpp:313] Errors Timestamp: 1788871528.839203473
+E20260908 20:45:28.839375 3692 wbcs_interface.cpp:315] Error component: WBCSManager, error code: 20, description: Sync left_arm ...
+I20260908 20:45:28.841218 3692 wbcs_interface.cpp:380] wbcs_error_writer_ SENT 1 datas, time: 6800.53
+E20260908 20:45:28.841315 3692 wbcs_interface.cpp:383] Errors Timestamp : 1788871528.839404140
+E20260908 20:45:28.841346 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint1_error, error code: 200, description: Not yet identified
+E20260908 20:45:28.841374 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint4_custom_error, error code: 1, description: Not yet identified
+E20260908 20:45:28.841401 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint2_custom_error, error code: 1, description: Not yet identified
+E20260908 20:45:28.841429 3692 wbcs_interface.cpp:386] Errors component: left_arm_max_error_level, error code: 30000, description: ErrorSafetyMedium
+E20260908 20:45:28.841455 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint1_custom_error, error code: 59, description: Not yet identified
+E20260908 20:45:28.841482 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint6_custom_error, error code: 1, description: Not yet identified
+E20260908 20:45:28.841509 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint5_custom_error, error code: 1, description: Not yet identified
+E20260908 20:45:28.841535 3692 wbcs_interface.cpp:386] Errors component: left_arm_driver_state, error code: 45, description: DriverError
+E20260908 20:45:28.841561 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint7_custom_error, error code: 1, description: Not yet identified
+E20260908 20:45:28.841588 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint3_custom_error, error code: 1, description: Not yet identified
+W20260908 20:45:28.841702 3692 wbcs_manager.cpp:258] WBCSManager sync initialization retry 6747/31536000
+I20260908 20:45:29.411610 3909 wbcs_interface.cpp:437] service state: INITIALIZING
+E20260908 20:45:29.842207 3692 wbcs_interface.cpp:313] Errors Timestamp: 1788871529.842075474
+E20260908 20:45:29.843157 3692 wbcs_interface.cpp:315] Error component: WBCSManager, error code: 20, description: Sync left_arm ...
+I20260908 20:45:29.843353 3692 wbcs_interface.cpp:380] wbcs_error_writer_ SENT 1 datas, time: 6801.53
+E20260908 20:45:29.843393 3692 wbcs_interface.cpp:383] Errors Timestamp : 1788871529.843245140
+E20260908 20:45:29.843432 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint1_error, error code: 200, description: Not yet identified
+E20260908 20:45:29.843460 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint4_custom_error, error code: 1, description: Not yet identified
+E20260908 20:45:29.843488 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint2_custom_error, error code: 1, description: Not yet identified
+E20260908 20:45:29.843515 3692 wbcs_interface.cpp:386] Errors component: left_arm_max_error_level, error code: 30000, description: ErrorSafetyMedium
+E20260908 20:45:29.843540 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint1_custom_error, error code: 59, description: Not yet identified
+E20260908 20:45:29.843566 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint6_custom_error, error code: 1, description: Not yet identified
+E20260908 20:45:29.843593 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint5_custom_error, error code: 1, description: Not yet identified
+E20260908 20:45:29.843618 3692 wbcs_interface.cpp:386] Errors component: left_arm_driver_state, error code: 45, description: DriverError
+E20260908 20:45:29.843647 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint7_custom_error, error code: 1, description: Not yet identified
+E20260908 20:45:29.843674 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint3_custom_error, error code: 1, description: Not yet identified
+W20260908 20:45:29.843782 3692 wbcs_manager.cpp:258] WBCSManager sync initialization retry 6748/31536000
+I20260908 20:45:30.411740 3909 wbcs_interface.cpp:437] service state: INITIALIZING
+E20260908 20:45:30.844205 3692 wbcs_interface.cpp:313] Errors Timestamp: 1788871530.844069140
+E20260908 20:45:30.845216 3692 wbcs_interface.cpp:315] Error component: WBCSManager, error code: 20, description: Sync left_arm ...
+I20260908 20:45:30.845386 3692 wbcs_interface.cpp:380] wbcs_error_writer_ SENT 1 datas, time: 6802.54
+E20260908 20:45:30.845424 3692 wbcs_interface.cpp:383] Errors Timestamp : 1788871530.845272807
+E20260908 20:45:30.845454 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint1_error, error code: 200, description: Not yet identified
+E20260908 20:45:30.845935 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint4_custom_error, error code: 1, description: Not yet identified
+E20260908 20:45:30.845982 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint2_custom_error, error code: 1, description: Not yet identified
+E20260908 20:45:30.846351 3692 wbcs_interface.cpp:386] Errors component: left_arm_max_error_level, error code: 30000, description: ErrorSafetyMedium
+E20260908 20:45:30.846507 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint1_custom_error, error code: 59, description: Not yet identified
+E20260908 20:45:30.846554 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint6_custom_error, error code: 1, description: Not yet identified
+E20260908 20:45:30.846582 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint5_custom_error, error code: 1, description: Not yet identified
+E20260908 20:45:30.846609 3692 wbcs_interface.cpp:386] Errors component: left_arm_driver_state, error code: 45, description: DriverError
+E20260908 20:45:30.846636 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint7_custom_error, error code: 1, description: Not yet identified
+E20260908 20:45:30.846663 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint3_custom_error, error code: 1, description: Not yet identified
+W20260908 20:45:30.847681 3692 wbcs_manager.cpp:258] WBCSManager sync initialization retry 6749/31536000
+I20260908 20:45:31.411798 3909 wbcs_interface.cpp:437] service state: INITIALIZING
+E20260908 20:45:31.848122 3692 wbcs_interface.cpp:313] Errors Timestamp: 1788871531.848013807
+E20260908 20:45:31.848234 3692 wbcs_interface.cpp:315] Error component: WBCSManager, error code: 20, description: Sync left_arm ...
+I20260908 20:45:31.848419 3692 wbcs_interface.cpp:380] wbcs_error_writer_ SENT 1 datas, time: 6803.54
+E20260908 20:45:31.848450 3692 wbcs_interface.cpp:383] Errors Timestamp : 1788871531.848267807
+E20260908 20:45:31.848480 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint1_error, error code: 200, description: Not yet identified
+E20260908 20:45:31.848505 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint4_custom_error, error code: 1, description: Not yet identified
+E20260908 20:45:31.848534 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint2_custom_error, error code: 1, description: Not yet identified
+E20260908 20:45:31.848559 3692 wbcs_interface.cpp:386] Errors component: left_arm_max_error_level, error code: 30000, description: ErrorSafetyMedium
+E20260908 20:45:31.848617 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint1_custom_error, error code: 59, description: Not yet identified
+E20260908 20:45:31.848645 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint6_custom_error, error code: 1, description: Not yet identified
+E20260908 20:45:31.848673 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint5_custom_error, error code: 1, description: Not yet identified
+E20260908 20:45:31.848698 3692 wbcs_interface.cpp:386] Errors component: left_arm_driver_state, error code: 45, description: DriverError
+E20260908 20:45:31.848725 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint7_custom_error, error code: 1, description: Not yet identified
+E20260908 20:45:31.848750 3692 wbcs_interface.cpp:386] Errors component: left_arm_joint3_custom_error, error code: 1, description: Not yet identified
+root@galbot-xcu:~#

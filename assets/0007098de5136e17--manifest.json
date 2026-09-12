@@ -1,0 +1,129 @@
+{
+  "capture": {
+    "capture_transform_timestamp_ns": 1788746863462351360,
+    "depth_timestamp_ns": 1788746863462351360,
+    "frame_sync_skew_ns": 0,
+    "rgb_timestamp_ns": 1788746863462351360
+  },
+  "case_id": "right_wrist_20260907_01_lingbot_operator1",
+  "created_at_utc": "2026-09-07T02:12:51.751148+00:00",
+  "fdp_request": {
+    "depth_scale": 1000.0,
+    "historical_fdp_request_exact": false,
+    "input_bundle_exact_for_fdp": true,
+    "input_origin": "fresh right-wrist capture with lingbot depth branch",
+    "mesh_path_for_service": "/opt/s1-sjtu/assets/mesh/EU4322_midcut_target175mm.obj",
+    "path": "/first_frame_track",
+    "return_vis": true,
+    "service_url": "http://10.34.216.13:7876"
+  },
+  "files": {
+    "base_from_camera": {
+      "path": "input/base_from_camera.npy",
+      "role": "capture-time T_base_link_from_camera",
+      "sha256": "e8b6f7c45d07aa1bbc58ae320fa1be92d8480b522fd663ebdf13028402c6b068"
+    },
+    "capture_meta_reference": {
+      "path": "reference/capture_meta.json",
+      "role": "live no-motion capture provenance",
+      "sha256": "ae516ca2a671bdfc5046b738e0b6631affc846d75743a2f6b69a6ada5a2767e1"
+    },
+    "depth": {
+      "path": "input/depth_m.npy",
+      "role": "exact frozen lingbot depth supplied to FDP",
+      "sha256": "fa3d09ff5a102385dc5c8730cc696dc18182e64a31f4aac816e297a0f3cd3ee0"
+    },
+    "intrinsics": {
+      "path": "input/intrinsics.npy",
+      "role": "exact capture intrinsics supplied to FDP",
+      "sha256": "0d7554b837d90016c02ac7959b0d48be3524f44a4fd0aa074305906032d283ff"
+    },
+    "lingbot_response": {
+      "path": "reference/lingbot_response.json",
+      "role": "raw LingBot response used by this case",
+      "sha256": "d1e7f690174133c26c405ca3433075c03394180cb12491fbd27185f6e2d31c77"
+    },
+    "mask": {
+      "path": "input/mask.png",
+      "role": "exact final production-compatible ROI mask supplied to FDP",
+      "sha256": "4f624276282eb32407018855c6fc1b2a8baf77abf23d81fb5b42d9fe238cdc07"
+    },
+    "mesh": {
+      "path": "input/model.obj",
+      "role": "immutable local 4317 mesh identity copy",
+      "sha256": "adb0d1cf4ee3cc885641ce5e473efb31de4d80323e7665ec50fa5aaabbcc991b"
+    },
+    "operator_confirmation": {
+      "path": "reference/operator_confirmation.json",
+      "sha256": "f7fb05ca93dcaaecfb88c697d91a9ef4706006d570a0070e9d775f6b85b7fb3c"
+    },
+    "parent_manifest": {
+      "path": "reference/parent_manifest.json",
+      "sha256": "ee57b22e28208dce041ec5612ac75f13dfcce2af75a33dd5c15f0cfe04543819"
+    },
+    "rgb": {
+      "path": "input/rgb.png",
+      "role": "exact frozen right-wrist RGB supplied to FDP",
+      "sha256": "eb045825a3ec3a497d0695a3f21722bfd67bdf07cf8f9d2dde0bb0b1f007d794"
+    },
+    "roi_result": {
+      "path": "reference/roi_result.json",
+      "role": "ROI candidates, selection and gates",
+      "sha256": "a14cbe91a2c3d0377407f3e02a516f7e6f825081cdb2d3f1aca6f1ad7acced6a"
+    },
+    "sam3_response": {
+      "path": "reference/sam3_response.json",
+      "role": "raw SAM3 response used by this case",
+      "sha256": "7c0e01cf3bbbab2fd1757acf2fecf02e7747009619dbfb2f9dc7e500839af4fd"
+    }
+  },
+  "frames": {
+    "base": "base_link",
+    "camera": "right_arm_camera_color_optical_frame",
+    "raw_object": "fdp_mesh_center",
+    "semantic_object": "4317_length_width_height_center",
+    "transform_convention": "T_A_from_B maps B-frame coordinates into A-frame coordinates"
+  },
+  "gates": {
+    "human_review_required": false,
+    "operator_confirmed_target": true,
+    "production_target_is_4317_h4": true,
+    "ready_for_fdp": true,
+    "strict_unique_4317_h4": false
+  },
+  "object": {
+    "dimensions_m": [
+      0.4000000059604645,
+      0.30000001192092896,
+      0.175
+    ],
+    "height_level": 4,
+    "model": "4317"
+  },
+  "provenance": {
+    "capture_dir": "/home/galbot/Lsy03/fdp_baseline/captures/right_wrist_20260907_01",
+    "depth_mode": "lingbot",
+    "parent_case_id": "right_wrist_20260907_01_lingbot",
+    "production_source_sha256": {
+      "ai_services.py": "e26e8b78e243e4cb9dd604dad407ad1c0113ec3f102a71e06fa3ffd217799545",
+      "geometry.py": "681956dd9f306a3a6426a20dd51fbe7e253e96b94aa7cd8201076fdd5af89075",
+      "roi_estimator.py": "5343f49987c3eaa6d7b9c9ad90201e8ba5a2018f13fe1a68c9c6ab3f7a2a3014",
+      "target_selector.py": "0fd4ec2495f76b41e77a92cb74b2ddeca26f04ec6e638bf5ac2d0da8f846b137"
+    },
+    "selected_roi_index": 1,
+    "selection_policy": "operator_confirmed_frozen_target",
+    "source_kind": "fresh_right_wrist_sam3_roi"
+  },
+  "safety": {
+    "fdp_service_called": false,
+    "live_capture": true,
+    "motion_commands_sent": false,
+    "network_inference_services_called": [
+      "sam3",
+      "lingbot_depth"
+    ],
+    "planner_or_executor_imported": false,
+    "robot_sdk_read_only": true
+  },
+  "schema": "s1.fdp_baseline.case.v1"
+}

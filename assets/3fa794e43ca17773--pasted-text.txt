@@ -1,0 +1,101 @@
+galbot@galbot-echo:/data/galbot/bin$ ll
+total 422556
+drwxrwxrwx  3 galbot galbot      4096 6月   6 01:58 ./
+drwxrwxrwx 12 galbot galbot      4096 7月  22 15:15 ../
+-rwxrwxrwx  1 galbot galbot   1114184 6月   6 01:57 audio_manager*
+-rwxrwxrwx  1 galbot galbot    988568 6月   6 01:58 business_manager_app*
+-rwxrwxrwx  1 galbot galbot   2811272 6月   6 01:58 data_backflow_service*
+-rwxrwxrwx  1 galbot galbot    799360 6月   6 01:57 disk_manager*
+-rwxrwxrwx  1 galbot galbot    503680 6月   6 01:57 embosa_echo*
+-rwxrwxrwx  1 galbot galbot    932392 6月   6 01:57 embosa_test*
+-rwxrwxrwx  1 galbot galbot    645408 6月   6 01:57 embosa_topic_tool*
+-rwxrwxrwx  1 galbot galbot   4986928 6月   6 01:57 embosa_topo*
+-rwxrwxrwx  1 galbot galbot   1985360 6月   6 01:58 engine_tools*
+-rwxrwxrwx  1 galbot galbot   1856424 6月   6 01:58 engine_viewer*
+-rwxrwxrwx  1 galbot galbot  20791200 6月   6 01:57 eyehand_calib_publish*
+-rwxrwxrwx  1 galbot galbot   1387432 6月   6 01:58 friction_calib_tool_test*
+-rwxrwxrwx  1 galbot galbot    544592 6月   6 01:58 front_head_camera_capture*
+-rwxrwxrwx  1 galbot galbot   1532896 6月   6 01:58 FT_sensor_calib*
+-rwxrwxrwx  1 galbot galbot  37194568 6月   6 01:58 galbot_fusion_main*
+-rwxrwxrwx  1 galbot galbot  19612936 6月   6 01:58 galbot_porter_pipeline*
+-rwxrwxrwx  1 galbot galbot  19681256 6月   6 01:58 galbot_porter_tools*
+-rwxrwxrwx  1 galbot galbot   1543168 6月   6 01:58 generate_friction_params*
+-rwxrwxrwx  1 galbot galbot  46217352 6月   6 01:57 hpu_launcher*
+-rwxrwxrwx  1 galbot galbot   1370072 6月   6 01:58 joint_sensor_calib*
+-rwxrwxrwx  1 galbot galbot    544592 6月   6 01:58 left_arm_camera_capture*
+-rwxrwxrwx  1 galbot galbot   2286984 6月   6 01:58 localization_server*
+-rwxrwxrwx  1 galbot galbot    889536 6月   6 01:58 map_manager_node*
+-rwxrwxrwx  1 galbot galbot   1860344 6月   6 01:58 mapping_server*
+-rwxrwxrwx  1 galbot galbot   2082288 6月   6 01:58 mps_terminal_helper*
+-rwxrwxrwx  1 galbot galbot   1282736 6月   6 01:58 payload_calib_tool_test*
+-rwxrwxrwx  1 galbot galbot   3006440 6月   6 01:58 Perception_Algorithm_Service*
+-rwxrwxrwx  1 galbot galbot   2117144 6月   6 01:58 Perception_client*
+-rwxrwxrwx  1 galbot galbot   3155768 6月   6 01:58 pns_aging_test_demo*
+-rwxrwxrwx  1 galbot galbot   3236256 6月   6 01:58 pns_terminal_helper*
+-rwxrwxrwx  1 galbot galbot 156827112 6月   6 01:58 relocalization_server*
+-rwxrwxrwx  1 galbot galbot    544592 6月   6 01:58 right_arm_camera_capture*
+-rwxrwxrwx  1 galbot galbot  12144128 6月   6 01:57 robot_state_publish*
+-rwxrwxrwx  1 galbot galbot   8568704 6月   6 01:58 security_manager_tools*
+-rwxrwxrwx  1 galbot galbot   3910320 6月   6 01:58 service_display_hpu*
+-rwxrwxrwx  1 galbot galbot   1536280 6月   6 01:58 service_hpu_comm*
+-rwxrwxrwx  1 galbot galbot   2068768 6月   6 01:58 service_lidar_back_capture*
+-rwxrwxrwx  1 galbot galbot   2068768 6月   6 01:58 service_lidar_capture*
+-rwxrwxrwx  1 galbot galbot   2068768 6月   6 01:58 service_lidar_chassis_capture*
+-rwxrwxrwx  1 galbot galbot   2068768 6月   6 01:58 service_lidar_head_capture*
+-rwxrwxrwx  1 galbot galbot   5198560 6月   6 01:58 service_motion_plan*
+-rwxrwxrwx  1 galbot galbot   5146184 6月   6 01:58 service_navigation_plan*
+-rwxrwxrwx  1 galbot galbot   8614560 6月   6 01:58 service_security_manager*
+-rwxrwxrwx  1 galbot galbot    306720 6月   6 01:58 singorix_wbcs_main*
+-rwxrwxrwx  1 galbot galbot    544592 6月   6 01:58 surround_cameras_capture*
+-rwxrwxrwx  1 galbot galbot    905408 6月   6 01:58 swallows*
+-rwxrwxrwx  1 galbot galbot    555136 6月   6 01:58 swallows_cmd_tool*
+drwxrwxrwx  2 galbot galbot      4096 6月   6 01:58 sys_monitor/
+-rwxrwxrwx  1 galbot galbot    140088 6月   6 01:57 tcp_server*
+-rwxrwxrwx  1 galbot galbot  19756752 6月   6 01:58 test_motion*
+-rwxrwxrwx  1 galbot galbot    581064 6月   6 01:57 test_transform_broadcaster_tool*
+-rwxrwxrwx  1 galbot galbot    614104 6月   6 01:57 test_transform_listener_tool*
+-rwxrwxrwx  1 galbot galbot    625040 6月   6 01:58 urdf_concat_parser*
+-rwxrwxrwx  1 galbot galbot   2607488 6月   6 01:58 wbc_controller_test*
+-rwxrwxrwx  1 galbot galbot   1818648 6月   6 01:58 wbcs_benchmark_recorder*
+-rwxrwxrwx  1 galbot galbot   1766752 6月   6 01:58 wbcs_demo*
+-rwxrwxrwx  1 galbot galbot   1777856 6月   6 01:58 wbcs_replay_player*
+-rwxrwxrwx  1 galbot galbot   2838696 6月   6 01:58 wbcs_test*
+galbot@galbot-echo:/data/galbot/bin$ ./map
+map_manager_node  mapping_server
+galbot@galbot-echo:/data/galbot/bin$ ./map
+map_manager_node  mapping_server
+galbot@galbot-echo:/data/galbot/bin$ ./mapping_server
+./mapping_server: error while loading shared libraries: libmap_engine_shared.so.2.1: cannot open shared object file: No such file or directory
+galbot@galbot-echo:/data/galbot/bin$ mapping_server
+-bash: mapping_server: command not found
+galbot@galbot-echo:/data/galbot/bin$ env
+audio_manager                    pns_terminal_helper
+business_manager_app             relocalization_server
+data_backflow_service            right_arm_camera_capture
+disk_manager                     robot_state_publish
+embosa_echo                      security_manager_tools
+embosa_test                      service_display_hpu
+embosa_topic_tool                service_hpu_comm
+embosa_topo                      service_lidar_back_capture
+engine_tools                     service_lidar_capture
+engine_viewer                    service_lidar_chassis_capture
+eyehand_calib_publish            service_lidar_head_capture
+friction_calib_tool_test         service_motion_plan
+front_head_camera_capture        service_navigation_plan
+FT_sensor_calib                  service_security_manager
+galbot_fusion_main               singorix_wbcs_main
+galbot_porter_pipeline           surround_cameras_capture
+galbot_porter_tools              swallows
+generate_friction_params         swallows_cmd_tool
+hpu_launcher                     sys_monitor/
+joint_sensor_calib               tcp_server
+left_arm_camera_capture          test_motion
+localization_server              test_transform_broadcaster_tool
+map_manager_node                 test_transform_listener_tool
+mapping_server                   urdf_concat_parser
+mps_terminal_helper              wbc_controller_test
+payload_calib_tool_test          wbcs_benchmark_recorder
+Perception_Algorithm_Service     wbcs_demo
+Perception_client                wbcs_replay_player
+pns_aging_test_demo              wbcs_test
+galbot@galbot-echo:/data/galbot/bin$ env

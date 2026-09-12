@@ -1,0 +1,92 @@
+{
+  "frame": "base_link",
+  "units": "metres",
+  "camera": "right",
+  "fdp_source": "/home/lsy03/文档/ChatGPT/S1/experiments/20260910_orin_pose_pipeline/outputs/bilateral_20260911_01/bilateral_20260911_01_right/fdp_compare_01/normalized_pose.json",
+  "xyz_calibration_applied": false,
+  "formula": "center + signed_distance * normalized_horizontal_semantic_X + [0,0,0.0625]; distances pregrasp left/right=0.33/-0.34, grasp=0.21/-0.22 m; historical mode00 planar convention",
+  "executable": false,
+  "motion_commands_sent": false,
+  "rows": [
+    {
+      "stage": "dual_pre_grasp",
+      "arm": "left",
+      "v5_xyz_m": [
+        0.9810832486578968,
+        0.30249480986551824,
+        0.5946621876662039
+      ],
+      "fdp_xyz_m": [
+        0.980313595305648,
+        0.3083948003348301,
+        0.5964396186691888
+      ],
+      "fdp_minus_v5_mm": [
+        -0.769653352248767,
+        5.899990469311833,
+        1.777431002984886
+      ],
+      "distance_mm": 6.2097918476362866
+    },
+    {
+      "stage": "dual_pre_grasp",
+      "arm": "right",
+      "v5_xyz_m": [
+        0.9508338892406796,
+        -0.36682198826138374,
+        0.5946621876662039
+      ],
+      "fdp_xyz_m": [
+        0.958168468432361,
+        -0.3612391245493309,
+        0.5964396186691888
+      ],
+      "fdp_minus_v5_mm": [
+        7.334579191681456,
+        5.582863712052855,
+        1.777431002984886
+      ],
+      "distance_mm": 9.387421377395126
+    },
+    {
+      "stage": "dual_grasp",
+      "arm": "left",
+      "v5_xyz_m": [
+        0.9756654529413803,
+        0.182617174380103,
+        0.5946621876662039
+      ],
+      "fdp_xyz_m": [
+        0.9763473039253577,
+        0.18846036602721916,
+        0.5964396186691888
+      ],
+      "fdp_minus_v5_mm": [
+        0.6818509839774389,
+        5.843191647116164,
+        1.777431002984886
+      ],
+      "distance_mm": 6.14549187288137
+    },
+    {
+      "stage": "dual_grasp",
+      "arm": "right",
+      "v5_xyz_m": [
+        0.956251684957196,
+        -0.24694435277596843,
+        0.5946621876662039
+      ],
+      "fdp_xyz_m": [
+        0.9621347598126512,
+        -0.24130469024171994,
+        0.5964396186691888
+      ],
+      "fdp_minus_v5_mm": [
+        5.883074855455139,
+        5.6396625342484965,
+        1.777431002984886
+      ],
+      "distance_mm": 8.341200406744015
+    }
+  ]
+}

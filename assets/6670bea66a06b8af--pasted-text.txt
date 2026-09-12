@@ -1,0 +1,308 @@
+#!/home/galbot/ie_lab/bin/s1-python
+"""Galbot S1 双臂和夹爪的简易控制脚本（SDK 1.9.0）。
+
+示例：
+  # 查看当前状态
+  ./test_move_wrist.py state
+
+  # 控制左臂；双臂时再加 --right
+  ./test_move_wrist.py arms --left '[2.0,-1.5,-0.6,-1.7,0.0,-0.7,0.0]'
+
+  # 打开或闭合夹爪
+  ./test_move_wrist.py gripper both open
+  ./test_move_wrist.py gripper left close --close-width 0.015
+
+角度单位为弧度，夹爪宽度单位为米。本脚本不包含任何底盘控制。
+"""
+
+from __future__ import annotations
+
+import argparse
+import ast
+import fcntl
+import time
+from typing import IO, List, Optional
+
+from galbot_sdk.s1 import (
+    ControlStatus,
+    GalbotRobot,
+    S1ControllerName,
+    S1JointGroup,
+)
+
+
+# S1 每条机械臂有 7 个关节。
+ARM_GROUPS = {
+    "left": S1JointGroup.left_arm,
+    "right": S1JointGroup.right_arm,
+}
+
+# 机械臂关节限位（单位：弧度）。
+# 下面数值来自当前 S1 SDK 的运动规划配置；实际下发前请仍注意机械干涉。
+# 左臂：left_arm_joint1 ～ left_arm_joint7
+#   joint1: [-2.940920,  2.940920]
+#   joint2: [-1.980820,  1.719120]
+#   joint3: [-2.923420,  2.923420]
+#   joint4: [-2.591800,  1.893800]
+#   joint5: [-2.923420,  2.923420]
+#   joint6: [-0.759220,  0.759220]
+#   joint7: [-1.562020,  1.562020]
+# 夹爪命令的 position 不是弧度，而是夹爪开口宽度：当前 SDK 配置范围为 [0, 0.11] m；
+# 若安装的是短行程夹爪，机械最大开口约为 0.076 m。
+# 右臂：right_arm_joint1 ～ right_arm_joint7
+#   joint1: [-2.940920,  2.940920]
+#   joint2: [-1.719120,  1.980820]
+#   joint3: [-2.923420,  2.923420]
+#   joint4: [-1.893800,  2.591800]
+#   joint5: [-2.923420,  2.923420]
+#   joint6: [-0.759220,  0.759220]
+#   joint7: [-1.562020,  1.562020]
+
+GRIPPER_GROUPS = {
+    "left": S1JointGroup.left_gripper,
+    "right": S1JointGroup.right_gripper,
+}
+
+ARM_CONTROLLERS = {
+    "left": S1ControllerName.LEFT_ARM_PVT_CTRL,
+    "right": S1ControllerName.RIGHT_ARM_PVT_CTRL,
+}
+
+GRIPPER_CONTROLLERS = {
+    "left": S1ControllerName.LEFT_GRIPPER_CTRL,
+    "right": S1ControllerName.RIGHT_GRIPPER_CTRL,
+}
+
+# 0.07 m 同时兼容 S1 短行程夹爪（最大 0.076 m）。
+DEFAULT_OPEN_WIDTH_M = 0.07
+DEFAULT_CLOSE_WIDTH_M = 0.02
+CONTROL_LOCK_PATH = "/home/galbot/ie_lab/control.lock"
+
+
+def parse_arm_joints(text: str) -> List[float]:
+    """把命令行中的 '[q1, ..., q7]' 转成 7 个浮点数。"""
+    try:
+        values = ast.literal_eval(text)
+    except (SyntaxError, ValueError) as exc:
+        raise argparse.ArgumentTypeError("关节角格式错误，例如 '[0,0,0,0,0,0,0]'") from exc
+
+    if not isinstance(values, (list, tuple)) or len(values) != 7:
+        raise argparse.ArgumentTypeError("每条机械臂必须提供 7 个关节角")
+
+    try:
+        return [float(value) for value in values]
+    except (TypeError, ValueError) as exc:
+        raise argparse.ArgumentTypeError("关节角必须都是数字") from exc
+
+
+def status_text(status: ControlStatus) -> str:
+    """把 SDK 状态转成便于阅读的文字。"""
+    return getattr(status, "name", str(status))
+
+
+def format_values(values: List[float]) -> str:
+    return "[" + ", ".join(f"{value:.6f}" for value in values) + "]"
+
+
+def gripper_state_text(state: object) -> str:
+    if state is None:
+        return "读取失败"
+    return (
+        f"宽度={state.width:.4f} m, 速度={state.velocity:.4f} m/s, "
+        f"力矩={state.effort:.3f}, 运动中={state.is_moving}"
+    )
+
+
+def acquire_control_lock() -> IO[str]:
+    """保证同一时刻只有一个实验程序控制机器人。"""
+    lock_file = open(CONTROL_LOCK_PATH, "a+", encoding="utf-8")
+    try:
+        fcntl.flock(lock_file.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+    except BlockingIOError:
+        lock_file.close()
+        raise RuntimeError("机器人控制锁正被其他程序占用，请先确认当前操作者")
+    return lock_file
+
+
+def acquire_controller(robot: GalbotRobot, controller_name: str) -> None:
+    status = robot.acquire_controller(controller_name)
+    print(f"获取控制器 {controller_name}: {status_text(status)}")
+    if status != ControlStatus.SUCCESS:
+        raise RuntimeError(f"无法获取控制器 {controller_name}")
+
+
+def show_state(robot: GalbotRobot) -> int:
+    """读取双臂关节角和左右夹爪状态，不发送运动命令。"""
+    for side in ("left", "right"):
+        group = ARM_GROUPS[side]
+        positions = [float(value) for value in robot.get_joint_positions([group], [])]
+        print(f"{side}_arm ({len(positions)} 关节): {format_values(positions)}")
+
+    for side in ("left", "right"):
+        state = robot.get_gripper_state(GRIPPER_GROUPS[side])
+        print(f"{side}_gripper: {gripper_state_text(state)}")
+    return 0
+
+
+def move_arms(robot: GalbotRobot, args: argparse.Namespace) -> int:
+    """一次调用 set_joint_positions 控制一条或两条机械臂。"""
+    sides: List[str] = []
+    targets: List[float] = []
+
+    if args.left is not None:
+        sides.append("left")
+        targets.extend(args.left)
+    if args.right is not None:
+        sides.append("right")
+        targets.extend(args.right)
+    if not sides:
+        print("错误：arms 命令至少需要 --left 或 --right")
+        return 2
+
+    groups = [ARM_GROUPS[side] for side in sides]
+    current = [float(value) for value in robot.get_joint_positions(groups, [])]
+    print(f"控制组: {groups}")
+    print(f"当前角: {format_values(current)}")
+    print(f"目标角: {format_values(targets)}")
+
+    if args.dry_run:
+        print("dry-run：只显示目标，不发送运动命令")
+        return 0
+
+    for side in sides:
+        acquire_controller(robot, ARM_CONTROLLERS[side])
+
+    status = robot.set_joint_positions(
+        targets,
+        groups,
+        [],
+        True,          # 阻塞等待机械臂到位
+        args.speed,
+        args.timeout,
+    )
+    print(f"执行结果: {status_text(status)}")
+
+    after = [float(value) for value in robot.get_joint_positions(groups, [])]
+    print(f"执行后: {format_values(after)}")
+    return 0 if status == ControlStatus.SUCCESS else 1
+
+
+def wait_grippers(robot: GalbotRobot, sides: List[str], timeout_s: float) -> bool:
+    """双夹爪同时发送命令后，等待两侧都停止。"""
+    deadline = time.monotonic() + timeout_s
+    while time.monotonic() < deadline:
+        states = [robot.get_gripper_state(GRIPPER_GROUPS[side]) for side in sides]
+        if all(state is not None and not state.is_moving for state in states):
+            return True
+        time.sleep(0.05)
+    return False
+
+
+def move_grippers(robot: GalbotRobot, args: argparse.Namespace) -> int:
+    """控制左、右或双夹爪的开合。"""
+    sides = ["left", "right"] if args.side == "both" else [args.side]
+    width_m = args.open_width if args.action == "open" else args.close_width
+
+    if not 0.0 <= width_m <= 0.11:
+        print("错误：S1 夹爪宽度必须在 0～0.11 m 之间")
+        return 2
+
+    print(
+        f"夹爪={args.side}, 动作={args.action}, 宽度={width_m:.4f} m, "
+        f"速度={args.velocity:.4f} m/s, 力矩={args.effort:.2f}"
+    )
+    for side in sides:
+        state = robot.get_gripper_state(GRIPPER_GROUPS[side])
+        print(f"{side} 执行前: {gripper_state_text(state)}")
+
+    if args.dry_run:
+        print("dry-run：只显示目标，不发送运动命令")
+        return 0
+
+    for side in sides:
+        acquire_controller(robot, GRIPPER_CONTROLLERS[side])
+
+    # 双夹爪使用非阻塞发送，避免左侧完成后才开始右侧。
+    statuses = []
+    for side in sides:
+        status = robot.set_gripper_command(
+            GRIPPER_GROUPS[side],
+            width_m,
+            args.velocity,
+            args.effort,
+            len(sides) == 1,
+        )
+        statuses.append(status)
+        print(f"{side} 发送结果: {status_text(status)}")
+
+    if len(sides) == 2 and not wait_grippers(robot, sides, args.timeout):
+        print("错误：等待双夹爪停止超时")
+        return 1
+
+    for side in sides:
+        state = robot.get_gripper_state(GRIPPER_GROUPS[side])
+        print(f"{side} 执行后: {gripper_state_text(state)}")
+    return 0 if all(status == ControlStatus.SUCCESS for status in statuses) else 1
+
+
+def build_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(description="Galbot S1 双臂与夹爪简易控制（无底盘功能）")
+    subparsers = parser.add_subparsers(dest="command", required=True)
+
+    subparsers.add_parser("state", help="查看双臂关节角和夹爪状态")
+
+    arms = subparsers.add_parser("arms", help="设置左臂、右臂或双臂的关节角")
+    arms.add_argument("--left", type=parse_arm_joints, metavar="'[Q1,...,Q7]'", help="左臂 7 个关节角")
+    arms.add_argument("--right", type=parse_arm_joints, metavar="'[Q1,...,Q7]'", help="右臂 7 个关节角")
+    arms.add_argument("--speed", type=float, default=0.15, help="最大关节速度，默认 0.15 rad/s")
+    arms.add_argument("--timeout", type=float, default=30.0, help="到位超时，默认 30 s")
+    arms.add_argument("--dry-run", action="store_true", help="只显示目标，不运动")
+
+    gripper = subparsers.add_parser("gripper", help="打开或闭合夹爪")
+    gripper.add_argument("side", choices=["left", "right", "both"], help="左、右或双夹爪")
+    gripper.add_argument("action", choices=["open", "close"], help="打开或闭合")
+    gripper.add_argument("--open-width", type=float, default=DEFAULT_OPEN_WIDTH_M, help="打开宽度，默认 0.07 m")
+    gripper.add_argument("--close-width", type=float, default=DEFAULT_CLOSE_WIDTH_M, help="闭合宽度，默认 0.02 m")
+    gripper.add_argument("--velocity", type=float, default=0.05, help="夹爪速度，默认 0.05 m/s")
+    gripper.add_argument("--effort", type=float, default=10.0, help="夹爪力矩，默认 10")
+    gripper.add_argument("--timeout", type=float, default=8.0, help="双夹爪等待超时，默认 8 s")
+    gripper.add_argument("--dry-run", action="store_true", help="只显示目标，不运动")
+    return parser
+
+
+def main() -> int:
+    args = build_parser().parse_args()
+    lock_file: Optional[IO[str]] = None
+
+    # state 和 dry-run 不发送命令，因此不占用控制锁。
+    if args.command != "state" and not args.dry_run:
+        lock_file = acquire_control_lock()
+
+    robot = GalbotRobot()
+    if not robot.init():
+        print("SDK 初始化失败")
+        if lock_file is not None:
+            lock_file.close()
+        return 2
+
+    print("SDK 初始化成功")
+    time.sleep(1.0)  # 等待关节和夹爪状态准备好
+
+    try:
+        if args.command == "state":
+            return show_state(robot)
+        if args.command == "arms":
+            return move_arms(robot, args)
+        return move_grippers(robot, args)
+    finally:
+        # SDK 要求严格按此顺序释放资源。
+        robot.request_shutdown()
+        robot.wait_for_shutdown()
+        robot.destroy()
+        if lock_file is not None:
+            lock_file.close()
+        print("SDK 资源已释放")
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

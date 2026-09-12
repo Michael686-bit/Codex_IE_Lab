@@ -1,0 +1,20 @@
+{
+  "date": "2026-08-27",
+  "mode": "relative_forward_1m_precheck",
+  "motion_command_sent": false,
+  "controller_switch_sent": false,
+  "start_map_xy": [1.00756, -0.0764444],
+  "goal_map_xy": [1.99485, -0.235337],
+  "pns_evaluate_at_dynamic_map": false,
+  "start_available": true,
+  "goal_available": false,
+  "path_collision": false,
+  "has_solution": false,
+  "collision_link": "omni_chassis_base_link",
+  "collision_sphere_id": 9,
+  "collision_sphere_position_xyz": [1.78088, -0.0934296, 0.373384],
+  "collision_distance_range_m": [0.144756, 0.16257],
+  "collision_sphere_radius_m": 0.17,
+  "outcome": "failed_closed_before_motion",
+  "interpretation": "The requested one-meter forward target is in collision in the static ESDF map. The planner correctly refused all three checks before controller switching or navigation submission."
+}

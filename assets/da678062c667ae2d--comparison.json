@@ -1,0 +1,856 @@
+{
+  "accuracy_validated": false,
+  "counts": {
+    "comparisons": 11,
+    "fdp_http_success": 12,
+    "frames": 12,
+    "shell_candidates": 11,
+    "shell_gate_ok": 10
+  },
+  "created_at_utc": "2026-09-08T00:00:00+08:00",
+  "fdp_runtime_seconds": {
+    "count": 12,
+    "max": 1.4395806769998671,
+    "mean": 1.2310811019979913,
+    "min": 1.1229328760000499,
+    "p50": 1.2128829554999356,
+    "p95": 1.3951246417497714
+  },
+  "motion_commands_sent": false,
+  "network_services_called": true,
+  "references_are_ground_truth": false,
+  "robot_accessed": false,
+  "rows": [
+    {
+      "center_delta_m": [
+        -0.004693855419576787,
+        -0.002565211739157469,
+        -0.00368746286469146
+      ],
+      "center_delta_norm_mm": 6.496920220002721,
+      "comparison_available": true,
+      "fdp_center_base_m": [
+        1.3924520179032205,
+        0.25532801272544026,
+        0.5059034262309072
+      ],
+      "fdp_is_truth": false,
+      "fdp_ok": true,
+      "fdp_runtime_seconds": 1.1445315329765435,
+      "fdp_top_center_base_m": [
+        1.3975012822876827,
+        0.25341680948643797,
+        0.5932367153857737
+      ],
+      "fdp_yaw_deg": 91.28851158941187,
+      "logical_id": "D01",
+      "rotation_geodesic_deg": 4.026267171971487,
+      "shell_candidate_available": true,
+      "shell_center_base_m": [
+        1.3877581624836437,
+        0.2527628009862828,
+        0.5022159633662158
+      ],
+      "shell_fit_residuals": {
+        "facing_cosine_p10": 0.15122941780477964,
+        "inlier_fraction_model": 0.7279202279202279,
+        "inlier_fraction_observed": 0.5008989572096368,
+        "observed_points": 2781,
+        "p50_m": 0.008595738616891769,
+        "p90_m": 0.03355782072768167,
+        "p95_m": 0.05735556269723481,
+        "rmse_m": 0.02549508229712648,
+        "surface_role_counts": {
+          "inner_shell": 218,
+          "outer_shell": 344,
+          "rim_flange": 140
+        },
+        "visible_model_points": 702
+      },
+      "shell_gate_ok": true,
+      "shell_grasp_ready": false,
+      "shell_outer_surface_identity_verified": false,
+      "shell_rejection_reasons": [],
+      "shell_surface_role_counts": {
+        "inner_shell": 218,
+        "outer_shell": 344,
+        "rim_flange": 140
+      },
+      "shell_top_center_base_m": [
+        1.3877581624836437,
+        0.2527628009862828,
+        0.5897159633662158
+      ],
+      "shell_yaw_deg": 93.24968775453304,
+      "short_edge_delta_norms_mm": [
+        18.53592916939769,
+        3.3983397491435645
+      ],
+      "top_delta_norm_mm": 10.380356709542925,
+      "yaw_180_symmetric_delta_deg": 1.9611761651211796
+    },
+    {
+      "center_delta_m": [
+        -0.008691300185568851,
+        -0.0060732009943118,
+        -0.006410612039611796
+      ],
+      "center_delta_norm_mm": 12.390254878548493,
+      "comparison_available": true,
+      "fdp_center_base_m": [
+        0.9626982422251817,
+        -0.39934676823257176,
+        0.5244077618546266
+      ],
+      "fdp_is_truth": false,
+      "fdp_ok": true,
+      "fdp_runtime_seconds": 1.4395806769998671,
+      "fdp_top_center_base_m": [
+        0.9651229758185175,
+        -0.40329918880514803,
+        0.6117848212135176
+      ],
+      "fdp_yaw_deg": 88.2390927081206,
+      "logical_id": "D02",
+      "rotation_geodesic_deg": 3.0543754141470982,
+      "shell_candidate_available": true,
+      "shell_center_base_m": [
+        0.9540069420396129,
+        -0.40541996922688356,
+        0.5179971498150148
+      ],
+      "shell_fit_residuals": {
+        "facing_cosine_p10": 0.17683388482472417,
+        "inlier_fraction_model": 0.8480565371024735,
+        "inlier_fraction_observed": 0.5339779005524862,
+        "observed_points": 3620,
+        "p50_m": 0.006986062298132492,
+        "p90_m": 0.016789562296234087,
+        "p95_m": 0.020688554238584442,
+        "rmse_m": 0.010921262174614555,
+        "surface_role_counts": {
+          "inner_shell": 163,
+          "outer_shell": 281,
+          "rim_flange": 122
+        },
+        "visible_model_points": 566
+      },
+      "shell_gate_ok": true,
+      "shell_grasp_ready": false,
+      "shell_outer_surface_identity_verified": false,
+      "shell_rejection_reasons": [],
+      "shell_surface_role_counts": {
+        "inner_shell": 163,
+        "outer_shell": 281,
+        "rim_flange": 122
+      },
+      "shell_top_center_base_m": [
+        0.9540069420396129,
+        -0.40541996922688356,
+        0.6054971498150148
+      ],
+      "shell_yaw_deg": 87.95687519719257,
+      "short_edge_delta_norms_mm": [
+        18.224141139169454,
+        12.856773224040452
+      ],
+      "top_delta_norm_mm": 12.945992746271523,
+      "yaw_180_symmetric_delta_deg": 0.2822175109280274
+    },
+    {
+      "center_delta_m": [
+        -0.00819139828705262,
+        0.0005901748228692716,
+        -0.0002286249872158752
+      ],
+      "center_delta_norm_mm": 8.215812899735292,
+      "comparison_available": true,
+      "fdp_center_base_m": [
+        0.9913356957054317,
+        -0.4378109963280879,
+        0.528028768728287
+      ],
+      "fdp_is_truth": false,
+      "fdp_ok": true,
+      "fdp_runtime_seconds": 1.358751521999693,
+      "fdp_top_center_base_m": [
+        0.9915599340695765,
+        -0.43565389562500806,
+        0.615501893716434
+      ],
+      "fdp_yaw_deg": 87.74286405063553,
+      "logical_id": "D03",
+      "rotation_geodesic_deg": 1.4254539355826348,
+      "shell_candidate_available": true,
+      "shell_center_base_m": [
+        0.983144297418379,
+        -0.4372208215052186,
+        0.5278001437410711
+      ],
+      "shell_fit_residuals": {
+        "facing_cosine_p10": 0.16551551263873102,
+        "inlier_fraction_model": 0.8442477876106195,
+        "inlier_fraction_observed": 0.4940365756692287,
+        "observed_points": 3773,
+        "p50_m": 0.007270199979015576,
+        "p90_m": 0.0178964208738856,
+        "p95_m": 0.022237684915549765,
+        "rmse_m": 0.010990731957242927,
+        "surface_role_counts": {
+          "inner_shell": 164,
+          "outer_shell": 281,
+          "rim_flange": 120
+        },
+        "visible_model_points": 565
+      },
+      "shell_gate_ok": true,
+      "shell_grasp_ready": false,
+      "shell_outer_surface_identity_verified": false,
+      "shell_rejection_reasons": [],
+      "shell_surface_role_counts": {
+        "inner_shell": 164,
+        "outer_shell": 281,
+        "rim_flange": 120
+      },
+      "shell_top_center_base_m": [
+        0.983144297418379,
+        -0.4372208215052186,
+        0.6153001437410711
+      ],
+      "shell_yaw_deg": 87.86427266255643,
+      "short_edge_delta_norms_mm": [
+        10.00467125389894,
+        9.917629364535784
+      ],
+      "top_delta_norm_mm": 8.562645619877719,
+      "yaw_180_symmetric_delta_deg": 0.12140861192089705
+    },
+    {
+      "center_delta_m": [
+        -0.003760435958701569,
+        -0.004191785328405657,
+        0.0010698039608495469
+      ],
+      "center_delta_norm_mm": 5.732052281127772,
+      "comparison_available": true,
+      "fdp_center_base_m": [
+        0.9326046275990504,
+        0.006310079220436027,
+        0.5394808356320883
+      ],
+      "fdp_is_truth": false,
+      "fdp_ok": true,
+      "fdp_runtime_seconds": 1.263224194999566,
+      "fdp_top_center_base_m": [
+        0.9346971248389362,
+        0.0029459787664735046,
+        0.6268910961808454
+      ],
+      "fdp_yaw_deg": 87.24478604099065,
+      "logical_id": "D04",
+      "rotation_geodesic_deg": 2.7141904425977676,
+      "shell_candidate_available": true,
+      "shell_center_base_m": [
+        0.9288441916403488,
+        0.0021182938920303695,
+        0.5405506395929378
+      ],
+      "shell_fit_residuals": {
+        "facing_cosine_p10": 0.28186616373406054,
+        "inlier_fraction_model": 0.9029535864978903,
+        "inlier_fraction_observed": 0.49981758482305727,
+        "observed_points": 5482,
+        "p50_m": 0.005825498449017219,
+        "p90_m": 0.014392179288185222,
+        "p95_m": 0.019822913412881248,
+        "rmse_m": 0.009420521281782042,
+        "surface_role_counts": {
+          "inner_shell": 222,
+          "outer_shell": 345,
+          "rim_flange": 144
+        },
+        "visible_model_points": 711
+      },
+      "shell_gate_ok": true,
+      "shell_grasp_ready": false,
+      "shell_outer_surface_identity_verified": false,
+      "shell_rejection_reasons": [],
+      "shell_surface_role_counts": {
+        "inner_shell": 222,
+        "outer_shell": 345,
+        "rim_flange": 144
+      },
+      "shell_top_center_base_m": [
+        0.9288441916403488,
+        0.0021182938920303695,
+        0.6280506395929378
+      ],
+      "shell_yaw_deg": 88.06717170137789,
+      "short_edge_delta_norms_mm": [
+        10.731559940623857,
+        9.37710698327348
+      ],
+      "top_delta_norm_mm": 6.023821893369291,
+      "yaw_180_symmetric_delta_deg": 0.822385660387248
+    },
+    {
+      "center_delta_m": [
+        -0.00585177254138225,
+        -0.007947165023510186,
+        0.002000157649266754
+      ],
+      "center_delta_norm_mm": 10.06982146857129,
+      "comparison_available": true,
+      "fdp_center_base_m": [
+        1.0048533916071158,
+        0.09850782845701,
+        0.5346151987791468
+      ],
+      "fdp_is_truth": false,
+      "fdp_ok": true,
+      "fdp_runtime_seconds": 1.2258312089998071,
+      "fdp_top_center_base_m": [
+        1.0066022946703412,
+        0.09658866271908158,
+        0.6220766634585151
+      ],
+      "fdp_yaw_deg": 86.97726494827859,
+      "logical_id": "D05",
+      "rotation_geodesic_deg": 2.337442806930708,
+      "shell_candidate_available": true,
+      "shell_center_base_m": [
+        0.9990016190657336,
+        0.09056066343349982,
+        0.5366153564284135
+      ],
+      "shell_fit_residuals": {
+        "facing_cosine_p10": 0.31788215955593807,
+        "inlier_fraction_model": 0.9122562674094707,
+        "inlier_fraction_observed": 0.521342512908778,
+        "observed_points": 5810,
+        "p50_m": 0.005653583613192225,
+        "p90_m": 0.014121282346302907,
+        "p95_m": 0.019665574729442775,
+        "rmse_m": 0.009392459619550526,
+        "surface_role_counts": {
+          "inner_shell": 222,
+          "outer_shell": 350,
+          "rim_flange": 146
+        },
+        "visible_model_points": 718
+      },
+      "shell_gate_ok": true,
+      "shell_grasp_ready": false,
+      "shell_outer_surface_identity_verified": false,
+      "shell_rejection_reasons": [],
+      "shell_surface_role_counts": {
+        "inner_shell": 222,
+        "outer_shell": 350,
+        "rim_flange": 146
+      },
+      "shell_top_center_base_m": [
+        0.9990016190657336,
+        0.09056066343349982,
+        0.6241153564284135
+      ],
+      "shell_yaw_deg": 88.59361695036648,
+      "short_edge_delta_norms_mm": [
+        14.184994836375813,
+        9.824469543950654
+      ],
+      "top_delta_norm_mm": 9.912785383481541,
+      "yaw_180_symmetric_delta_deg": 1.6163520020878852
+    },
+    {
+      "center_delta_m": [
+        -0.005483626284909837,
+        -0.0007204150562794172,
+        0.0011548185852825466
+      ],
+      "center_delta_norm_mm": 5.650023101791897,
+      "comparison_available": true,
+      "fdp_center_base_m": [
+        0.9027008810487027,
+        -0.024846307937827494,
+        0.5440593236089609
+      ],
+      "fdp_is_truth": false,
+      "fdp_ok": true,
+      "fdp_runtime_seconds": 1.2362294340000517,
+      "fdp_top_center_base_m": [
+        0.9046688616505086,
+        -0.02689525095954816,
+        0.6315131972473352
+      ],
+      "fdp_yaw_deg": 86.85099306337567,
+      "logical_id": "D06",
+      "rotation_geodesic_deg": 1.8656635772548622,
+      "shell_candidate_available": true,
+      "shell_center_base_m": [
+        0.8972172547637929,
+        -0.02556672299410691,
+        0.5452141421942435
+      ],
+      "shell_fit_residuals": {
+        "facing_cosine_p10": 0.2445115396219392,
+        "inlier_fraction_model": 0.8993006993006993,
+        "inlier_fraction_observed": 0.48288159771754635,
+        "observed_points": 5608,
+        "p50_m": 0.006032135678585659,
+        "p90_m": 0.015008281921184004,
+        "p95_m": 0.022019207846680176,
+        "rmse_m": 0.010031100677819127,
+        "surface_role_counts": {
+          "inner_shell": 222,
+          "outer_shell": 348,
+          "rim_flange": 145
+        },
+        "visible_model_points": 715
+      },
+      "shell_gate_ok": true,
+      "shell_grasp_ready": false,
+      "shell_outer_surface_identity_verified": false,
+      "shell_rejection_reasons": [],
+      "shell_surface_role_counts": {
+        "inner_shell": 222,
+        "outer_shell": 348,
+        "rim_flange": 145
+      },
+      "shell_top_center_base_m": [
+        0.8972172547637929,
+        -0.02556672299410691,
+        0.6327141421942435
+      ],
+      "shell_yaw_deg": 87.00352650110753,
+      "short_edge_delta_norms_mm": [
+        8.90555153392409,
+        8.968912331891266
+      ],
+      "top_delta_norm_mm": 7.66379152343105,
+      "yaw_180_symmetric_delta_deg": 0.15253343773185954
+    },
+    {
+      "center_delta_m": [
+        -0.006274889786962445,
+        -0.004624040963074019,
+        -0.003612368455076398
+      ],
+      "center_delta_norm_mm": 8.590995432541165,
+      "comparison_available": true,
+      "fdp_center_base_m": [
+        0.9573717768305728,
+        0.030154005328617117,
+        0.5386931611463117
+      ],
+      "fdp_is_truth": false,
+      "fdp_ok": true,
+      "fdp_runtime_seconds": 1.2306851770008507,
+      "fdp_top_center_base_m": [
+        0.9590683230707717,
+        0.02757775170142326,
+        0.6261387711248623
+      ],
+      "fdp_yaw_deg": 86.34122971442906,
+      "logical_id": "D07",
+      "rotation_geodesic_deg": 2.4721230190289005,
+      "shell_candidate_available": true,
+      "shell_center_base_m": [
+        0.9510968870436104,
+        0.025529964365543098,
+        0.5350807926912353
+      ],
+      "shell_fit_residuals": {
+        "facing_cosine_p10": 0.2746875418948127,
+        "inlier_fraction_model": 0.8828451882845189,
+        "inlier_fraction_observed": 0.4982614742698192,
+        "observed_points": 5752,
+        "p50_m": 0.0057222953385781955,
+        "p90_m": 0.015686086772654553,
+        "p95_m": 0.019465567007753964,
+        "rmse_m": 0.009851892951690377,
+        "surface_role_counts": {
+          "inner_shell": 222,
+          "outer_shell": 350,
+          "rim_flange": 145
+        },
+        "visible_model_points": 717
+      },
+      "shell_gate_ok": true,
+      "shell_grasp_ready": false,
+      "shell_outer_surface_identity_verified": false,
+      "shell_rejection_reasons": [],
+      "shell_surface_role_counts": {
+        "inner_shell": 222,
+        "outer_shell": 350,
+        "rim_flange": 145
+      },
+      "shell_top_center_base_m": [
+        0.9510968870436104,
+        0.025529964365543098,
+        0.6225807926912353
+      ],
+      "shell_yaw_deg": 87.78319844785788,
+      "short_edge_delta_norms_mm": [
+        15.893637459293473,
+        5.009597178712567
+      ],
+      "top_delta_norm_mm": 8.966405960153214,
+      "yaw_180_symmetric_delta_deg": 1.4419687334288183
+    },
+    {
+      "comparison_available": false,
+      "fdp_ok": true,
+      "fdp_runtime_seconds": 1.188945490000151,
+      "logical_id": "D08",
+      "shell_candidate_available": false,
+      "shell_gate_ok": false,
+      "shell_rejection_reasons": [
+        "no_shell_fit_initial_pose"
+      ]
+    },
+    {
+      "center_delta_m": [
+        -0.005141120674308053,
+        0.006783923680016405,
+        0.008449713702583184
+      ],
+      "center_delta_norm_mm": 11.993765211129782,
+      "comparison_available": true,
+      "fdp_center_base_m": [
+        0.8682527498798103,
+        -0.01688945614946663,
+        0.552501466918907
+      ],
+      "fdp_is_truth": false,
+      "fdp_ok": true,
+      "fdp_runtime_seconds": 1.1229328760000499,
+      "fdp_top_center_base_m": [
+        0.8704986033993303,
+        -0.017957648477762166,
+        0.6399661139287313
+      ],
+      "fdp_yaw_deg": 89.14615888687769,
+      "logical_id": "D09",
+      "rotation_geodesic_deg": 1.694769526288543,
+      "shell_candidate_available": true,
+      "shell_center_base_m": [
+        0.8631116292055022,
+        -0.010105532469450226,
+        0.5609511806214902
+      ],
+      "shell_fit_residuals": {
+        "facing_cosine_p10": 0.24682289452141143,
+        "inlier_fraction_model": 0.7868162692847125,
+        "inlier_fraction_observed": 0.4423492437635042,
+        "observed_points": 5091,
+        "p50_m": 0.0074220462986992084,
+        "p90_m": 0.021220421004715974,
+        "p95_m": 0.03406356236343075,
+        "rmse_m": 0.01668020854222366,
+        "surface_role_counts": {
+          "inner_shell": 222,
+          "outer_shell": 348,
+          "rim_flange": 143
+        },
+        "visible_model_points": 713
+      },
+      "shell_gate_ok": true,
+      "shell_grasp_ready": false,
+      "shell_outer_surface_identity_verified": false,
+      "shell_rejection_reasons": [],
+      "shell_surface_role_counts": {
+        "inner_shell": 222,
+        "outer_shell": 348,
+        "rim_flange": 143
+      },
+      "shell_top_center_base_m": [
+        0.8631116292055022,
+        -0.010105532469450226,
+        0.6484511806214902
+      ],
+      "shell_yaw_deg": 89.62303290054092,
+      "short_edge_delta_norms_mm": [
+        14.114831414108682,
+        14.009893281044443
+      ],
+      "top_delta_norm_mm": 13.719310125834955,
+      "yaw_180_symmetric_delta_deg": 0.47687401366323173
+    },
+    {
+      "center_delta_m": [
+        -0.005783715484877661,
+        -0.0037499507184651348,
+        0.004289058887463892
+      ],
+      "center_delta_norm_mm": 8.118467918336798,
+      "comparison_available": true,
+      "fdp_center_base_m": [
+        0.8690194114482044,
+        -0.011849705643417974,
+        0.5461872317105582
+      ],
+      "fdp_is_truth": false,
+      "fdp_ok": true,
+      "fdp_runtime_seconds": 1.173009851999268,
+      "fdp_top_center_base_m": [
+        0.8697106059376263,
+        -0.01266054052315134,
+        0.6336807464379257
+      ],
+      "fdp_yaw_deg": 89.09227658926763,
+      "logical_id": "D10",
+      "rotation_geodesic_deg": 0.861899885377206,
+      "shell_candidate_available": true,
+      "shell_center_base_m": [
+        0.8632356959633267,
+        -0.015599656361883108,
+        0.5504762905980221
+      ],
+      "shell_fit_residuals": {
+        "facing_cosine_p10": 0.2317067003149541,
+        "inlier_fraction_model": 0.8937062937062937,
+        "inlier_fraction_observed": 0.4737020125147979,
+        "observed_points": 5913,
+        "p50_m": 0.00616422983032349,
+        "p90_m": 0.01508149020468902,
+        "p95_m": 0.018270032025768147,
+        "rmse_m": 0.009563494801595119,
+        "surface_role_counts": {
+          "inner_shell": 222,
+          "outer_shell": 348,
+          "rim_flange": 145
+        },
+        "visible_model_points": 715
+      },
+      "shell_gate_ok": true,
+      "shell_grasp_ready": false,
+      "shell_outer_surface_identity_verified": false,
+      "shell_rejection_reasons": [],
+      "shell_surface_role_counts": {
+        "inner_shell": 222,
+        "outer_shell": 348,
+        "rim_flange": 145
+      },
+      "shell_top_center_base_m": [
+        0.8632356959633267,
+        -0.015599656361883108,
+        0.6379762905980221
+      ],
+      "shell_yaw_deg": 89.60073407056966,
+      "short_edge_delta_norms_mm": [
+        8.80045640986106,
+        8.71080347960931
+      ],
+      "top_delta_norm_mm": 8.307500269040371,
+      "yaw_180_symmetric_delta_deg": 0.5084574813020293
+    },
+    {
+      "center_delta_m": [
+        -0.005379170642570208,
+        -9.326946279256121e-05,
+        0.0034984073590105247
+      ],
+      "center_delta_norm_mm": 6.417400567531825,
+      "comparison_available": true,
+      "fdp_center_base_m": [
+        0.8677942732837162,
+        -0.018010462668683835,
+        0.5424054694128838
+      ],
+      "fdp_is_truth": false,
+      "fdp_ok": true,
+      "fdp_runtime_seconds": 1.1893165569999837,
+      "fdp_top_center_base_m": [
+        0.8682354116139859,
+        -0.019473526355108038,
+        0.6298921272342856
+      ],
+      "fdp_yaw_deg": 88.20980676152344,
+      "logical_id": "D11",
+      "rotation_geodesic_deg": 1.3601644009416,
+      "shell_candidate_available": true,
+      "shell_center_base_m": [
+        0.862415102641146,
+        -0.018103732131476397,
+        0.5459038767718943
+      ],
+      "shell_fit_residuals": {
+        "facing_cosine_p10": 0.2481271925232516,
+        "inlier_fraction_model": 0.8931082981715893,
+        "inlier_fraction_observed": 0.46203525920754057,
+        "observed_points": 5729,
+        "p50_m": 0.006194498643668005,
+        "p90_m": 0.015294022150697,
+        "p95_m": 0.020240278564891526,
+        "rmse_m": 0.010222216633701148,
+        "surface_role_counts": {
+          "inner_shell": 222,
+          "outer_shell": 346,
+          "rim_flange": 143
+        },
+        "visible_model_points": 711
+      },
+      "shell_gate_ok": true,
+      "shell_grasp_ready": false,
+      "shell_outer_surface_identity_verified": false,
+      "shell_rejection_reasons": [],
+      "shell_surface_role_counts": {
+        "inner_shell": 222,
+        "outer_shell": 346,
+        "rim_flange": 143
+      },
+      "shell_top_center_base_m": [
+        0.862415102641146,
+        -0.018103732131476397,
+        0.6334038767718944
+      ],
+      "shell_yaw_deg": 89.133737986865,
+      "short_edge_delta_norms_mm": [
+        9.377918535122838,
+        7.309004850699065
+      ],
+      "top_delta_norm_mm": 6.934314498875218,
+      "yaw_180_symmetric_delta_deg": 0.9239312253415516
+    },
+    {
+      "center_delta_m": [
+        -0.01075454055096925,
+        0.0026196131534179656,
+        0.01445765376171404
+      ],
+      "center_delta_norm_mm": 18.20841200735546,
+      "comparison_available": true,
+      "fdp_center_base_m": [
+        0.8946345556295433,
+        0.40230504787962845,
+        0.5602371556353596
+      ],
+      "fdp_is_truth": false,
+      "fdp_ok": true,
+      "fdp_runtime_seconds": 1.1999347020000641,
+      "fdp_top_center_base_m": [
+        0.9011728934165173,
+        0.40178095272911446,
+        0.6474909551061432
+      ],
+      "fdp_yaw_deg": 93.26271566971685,
+      "logical_id": "D12",
+      "rotation_geodesic_deg": 5.206191161539564,
+      "shell_candidate_available": true,
+      "shell_center_base_m": [
+        0.883880015078574,
+        0.4049246610330464,
+        0.5746948093970736
+      ],
+      "shell_fit_residuals": {
+        "facing_cosine_p10": 0.2937697977735518,
+        "inlier_fraction_model": 0.5617021276595745,
+        "inlier_fraction_observed": 0.3618374558303887,
+        "observed_points": 4245,
+        "p50_m": 0.012532477936487632,
+        "p90_m": 0.04469316927324847,
+        "p95_m": 0.06036559256580142,
+        "rmse_m": 0.02597382863512437,
+        "surface_role_counts": {
+          "inner_shell": 222,
+          "outer_shell": 343,
+          "rim_flange": 140
+        },
+        "visible_model_points": 705
+      },
+      "shell_gate_ok": false,
+      "shell_grasp_ready": false,
+      "shell_outer_surface_identity_verified": false,
+      "shell_rejection_reasons": [
+        "shell_fit_residual_or_coverage_too_low"
+      ],
+      "shell_surface_role_counts": {
+        "inner_shell": 222,
+        "outer_shell": 343,
+        "rim_flange": 140
+      },
+      "shell_top_center_base_m": [
+        0.883880015078574,
+        0.4049246610330464,
+        0.6621948093970736
+      ],
+      "shell_yaw_deg": 90.3475939611705,
+      "short_edge_delta_norms_mm": [
+        15.21388284658437,
+        32.21242253006352
+      ],
+      "top_delta_norm_mm": 22.915712385174313,
+      "yaw_180_symmetric_delta_deg": 2.9151217085463563
+    }
+  ],
+  "schema": "s1.v5_shell_fit_fdp_batch_comparison.v1",
+  "scope": {
+    "D01_fdp_source": "saved 2026-09-07 result",
+    "D02_D12_fdp_source": "new_result_from_frozen_exact_input",
+    "fdp_is_truth": false,
+    "ids": [
+      "D01",
+      "D02",
+      "D03",
+      "D04",
+      "D05",
+      "D06",
+      "D07",
+      "D08",
+      "D09",
+      "D10",
+      "D11",
+      "D12"
+    ]
+  },
+  "statistics_comparable_frames": {
+    "center_delta_norm_mm": {
+      "count": 11,
+      "max": 18.20841200735546,
+      "mean": 9.2621750896975,
+      "min": 5.650023101791897,
+      "p50": 8.215812899735292,
+      "p95": 15.299333442951976
+    },
+    "rotation_geodesic_deg": {
+      "count": 11,
+      "max": 5.206191161539564,
+      "mean": 2.4562310310600335,
+      "min": 0.861899885377206,
+      "p50": 2.337442806930708,
+      "p95": 4.6162291667555255
+    },
+    "short_edge_minus_delta_norm_mm": {
+      "count": 11,
+      "max": 32.21242253006352,
+      "mean": 11.054086592451283,
+      "min": 3.3983397491435645,
+      "p50": 9.37710698327348,
+      "p95": 23.11115790555398
+    },
+    "short_edge_plus_delta_norm_mm": {
+      "count": 11,
+      "max": 18.53592916939769,
+      "mean": 13.089779503487296,
+      "min": 8.80045640986106,
+      "p50": 14.114831414108682,
+      "p95": 18.380035154283572
+    },
+    "top_delta_norm_mm": {
+      "count": 11,
+      "max": 22.915712385174313,
+      "mean": 10.575694283186557,
+      "min": 6.023821893369291,
+      "p50": 8.966405960153214,
+      "p95": 18.317511255504634
+    },
+    "yaw_180_symmetric_delta_deg": {
+      "count": 11,
+      "max": 2.9151217085463563,
+      "mean": 1.0202205954962802,
+      "min": 0.12140861192089705,
+      "p50": 0.822385660387248,
+      "p95": 2.438148936833768
+    }
+  }
+}

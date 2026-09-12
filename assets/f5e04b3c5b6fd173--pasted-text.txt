@@ -1,0 +1,512 @@
+galbot@galbot-echo:~$ /home/galbot/ie_lab/bin/s1-python \
+>   /home/galbot/Lsy03/navigation_tests/s1_navigation_cli.py \
+>   probe-relative \
+>   --direction all \
+>   --distances 0.60 0.70 0.80 \
+>   --checks 3 \
+>   --interval 0.15 \
+>   --max-distance 0.80
+A new version 1.9.1 is available. Visit https://github.com/GalaxyGeneralRobotics/GalbotSDK/releases for upgrade instructions
+{
+  "mode": "probe_relative_reachability_readonly",
+  "query_only": true,
+  "motion_commands_sent": false,
+  "controller_switch_sent": false,
+  "navigation_command_attempted": false,
+  "relocalization_sent": false,
+  "stop_navigation_sent": false,
+  "bounding_box_changes_sent": false,
+  "attachment_changes_sent": false,
+  "directions": [
+    "forward",
+    "backward",
+    "left",
+    "right"
+  ],
+  "distances_m": [
+    0.6,
+    0.7,
+    0.8
+  ],
+  "checks_per_target": 3,
+  "queries": [
+    {
+      "direction": "forward",
+      "distance_m": 0.6,
+      "displacement_base_link_m": [
+        0.6,
+        0.0,
+        0.0
+      ],
+      "goal_pose_map": [
+        0.4084865884638159,
+        -0.7018834576659881,
+        -0.026673152974150047,
+        0.003723247699311463,
+        -0.0009059018185099676,
+        -0.7102481640648526,
+        0.7039409507984112
+      ],
+      "checks": [
+        {
+          "index": 0,
+          "reachable": true,
+          "duration_s": 0.10120545900008437
+        },
+        {
+          "index": 1,
+          "reachable": true,
+          "duration_s": 0.10075754599984066
+        },
+        {
+          "index": 2,
+          "reachable": true,
+          "duration_s": 0.10164819100009481
+        }
+      ],
+      "reachable_count": 3,
+      "classification": "stably_reachable"
+    },
+    {
+      "direction": "forward",
+      "distance_m": 0.7,
+      "displacement_base_link_m": [
+        0.7,
+        0.0,
+        0.0
+      ],
+      "goal_pose_map": [
+        0.40759593342069617,
+        -0.801878685828288,
+        -0.027074498665218594,
+        0.003723247699311463,
+        -0.0009059018185099676,
+        -0.7102481640648526,
+        0.7039409507984112
+      ],
+      "checks": [
+        {
+          "index": 0,
+          "reachable": true,
+          "duration_s": 0.10082878199955303
+        },
+        {
+          "index": 1,
+          "reachable": true,
+          "duration_s": 0.10087032000046747
+        },
+        {
+          "index": 2,
+          "reachable": true,
+          "duration_s": 0.10076673300045513
+        }
+      ],
+      "reachable_count": 3,
+      "classification": "stably_reachable"
+    },
+    {
+      "direction": "forward",
+      "distance_m": 0.8,
+      "displacement_base_link_m": [
+        0.8,
+        0.0,
+        0.0
+      ],
+      "goal_pose_map": [
+        0.4067052783775765,
+        -0.9018739139905881,
+        -0.02747584435628714,
+        0.003723247699311463,
+        -0.0009059018185099676,
+        -0.7102481640648526,
+        0.7039409507984112
+      ],
+      "checks": [
+        {
+          "index": 0,
+          "reachable": false,
+          "duration_s": 0.1008988319999844
+        },
+        {
+          "index": 1,
+          "reachable": false,
+          "duration_s": 0.10081368000010116
+        },
+        {
+          "index": 2,
+          "reachable": false,
+          "duration_s": 0.10071393399994122
+        }
+      ],
+      "reachable_count": 0,
+      "classification": "stably_unreachable"
+    },
+    {
+      "direction": "backward",
+      "distance_m": 0.6,
+      "displacement_base_link_m": [
+        -0.6,
+        0.0,
+        0.0
+      ],
+      "goal_pose_map": [
+        0.41917444898125245,
+        0.4980592802816116,
+        -0.021857004681327476,
+        0.003723247699311463,
+        -0.0009059018185099676,
+        -0.7102481640648526,
+        0.7039409507984112
+      ],
+      "checks": [
+        {
+          "index": 0,
+          "reachable": true,
+          "duration_s": 0.10064273300031346
+        },
+        {
+          "index": 1,
+          "reachable": true,
+          "duration_s": 0.1006540930002302
+        },
+        {
+          "index": 2,
+          "reachable": true,
+          "duration_s": 0.10069611000017176
+        }
+      ],
+      "reachable_count": 3,
+      "classification": "stably_reachable"
+    },
+    {
+      "direction": "backward",
+      "distance_m": 0.7,
+      "displacement_base_link_m": [
+        -0.7,
+        0.0,
+        0.0
+      ],
+      "goal_pose_map": [
+        0.4200651040243722,
+        0.5980545084439115,
+        -0.02145565899025893,
+        0.003723247699311463,
+        -0.0009059018185099676,
+        -0.7102481640648526,
+        0.7039409507984112
+      ],
+      "checks": [
+        {
+          "index": 0,
+          "reachable": true,
+          "duration_s": 0.10062266600016301
+        },
+        {
+          "index": 1,
+          "reachable": true,
+          "duration_s": 0.10069693599962193
+        },
+        {
+          "index": 2,
+          "reachable": true,
+          "duration_s": 0.10071188100027939
+        }
+      ],
+      "reachable_count": 3,
+      "classification": "stably_reachable"
+    },
+    {
+      "direction": "backward",
+      "distance_m": 0.8,
+      "displacement_base_link_m": [
+        -0.8,
+        0.0,
+        0.0
+      ],
+      "goal_pose_map": [
+        0.4209557590674919,
+        0.6980497366062116,
+        -0.021054313299190382,
+        0.003723247699311463,
+        -0.0009059018185099676,
+        -0.7102481640648526,
+        0.7039409507984112
+      ],
+      "checks": [
+        {
+          "index": 0,
+          "reachable": true,
+          "duration_s": 0.1006209030001628
+        },
+        {
+          "index": 1,
+          "reachable": true,
+          "duration_s": 0.10069680899960076
+        },
+        {
+          "index": 2,
+          "reachable": true,
+          "duration_s": 0.10071720299947629
+        }
+      ],
+      "reachable_count": 3,
+      "classification": "stably_reachable"
+    },
+    {
+      "direction": "left",
+      "distance_m": 0.6,
+      "displacement_base_link_m": [
+        0.0,
+        0.6,
+        0.0
+      ],
+      "goal_pose_map": [
+        1.0137937927438663,
+        -0.10727166924929725,
+        -0.020347844873021534,
+        0.003723247699311463,
+        -0.0009059018185099676,
+        -0.7102481640648526,
+        0.7039409507984112
+      ],
+      "checks": [
+        {
+          "index": 0,
+          "reachable": true,
+          "duration_s": 0.10069128200029809
+        },
+        {
+          "index": 1,
+          "reachable": true,
+          "duration_s": 0.10070056299991847
+        },
+        {
+          "index": 2,
+          "reachable": true,
+          "duration_s": 0.10083634200054803
+        }
+      ],
+      "reachable_count": 3,
+      "classification": "stably_reachable"
+    },
+    {
+      "direction": "left",
+      "distance_m": 0.7,
+      "displacement_base_link_m": [
+        0.0,
+        0.7,
+        0.0
+      ],
+      "goal_pose_map": [
+        1.1137876717474215,
+        -0.10816493267548208,
+        -0.019694972547235328,
+        0.003723247699311463,
+        -0.0009059018185099676,
+        -0.7102481640648526,
+        0.7039409507984112
+      ],
+      "checks": [
+        {
+          "index": 0,
+          "reachable": true,
+          "duration_s": 0.10078469200016116
+        },
+        {
+          "index": 1,
+          "reachable": true,
+          "duration_s": 0.1010194219998084
+        },
+        {
+          "index": 2,
+          "reachable": true,
+          "duration_s": 0.10072702999968897
+        }
+      ],
+      "reachable_count": 3,
+      "classification": "stably_reachable"
+    },
+    {
+      "direction": "left",
+      "distance_m": 0.8,
+      "displacement_base_link_m": [
+        0.0,
+        0.8,
+        0.0
+      ],
+      "goal_pose_map": [
+        1.2137815507509768,
+        -0.10905819610166692,
+        -0.019042100221449122,
+        0.003723247699311463,
+        -0.0009059018185099676,
+        -0.7102481640648526,
+        0.7039409507984112
+      ],
+      "checks": [
+        {
+          "index": 0,
+          "reachable": true,
+          "duration_s": 0.10080027999993035
+        },
+        {
+          "index": 1,
+          "reachable": true,
+          "duration_s": 0.10075771900028485
+        },
+        {
+          "index": 2,
+          "reachable": true,
+          "duration_s": 0.10074984600032622
+        }
+      ],
+      "reachable_count": 3,
+      "classification": "stably_reachable"
+    },
+    {
+      "direction": "right",
+      "distance_m": 0.6,
+      "displacement_base_link_m": [
+        0.0,
+        -0.6,
+        0.0
+      ],
+      "goal_pose_map": [
+        -0.1861327552987978,
+        -0.09655250813507928,
+        -0.02818231278245599,
+        0.003723247699311463,
+        -0.0009059018185099676,
+        -0.7102481640648526,
+        0.7039409507984112
+      ],
+      "checks": [
+        {
+          "index": 0,
+          "reachable": false,
+          "duration_s": 0.1009088229993722
+        },
+        {
+          "index": 1,
+          "reachable": false,
+          "duration_s": 0.10070971200002532
+        },
+        {
+          "index": 2,
+          "reachable": false,
+          "duration_s": 0.1008906119996027
+        }
+      ],
+      "reachable_count": 0,
+      "classification": "stably_unreachable"
+    },
+    {
+      "direction": "right",
+      "distance_m": 0.7,
+      "displacement_base_link_m": [
+        0.0,
+        -0.7,
+        0.0
+      ],
+      "goal_pose_map": [
+        -0.2861266343023532,
+        -0.09565924470889445,
+        -0.028835185108242196,
+        0.003723247699311463,
+        -0.0009059018185099676,
+        -0.7102481640648526,
+        0.7039409507984112
+      ],
+      "checks": [
+        {
+          "index": 0,
+          "reachable": false,
+          "duration_s": 0.10069441599989659
+        },
+        {
+          "index": 1,
+          "reachable": false,
+          "duration_s": 0.10083192199999758
+        },
+        {
+          "index": 2,
+          "reachable": false,
+          "duration_s": 0.10078278000037244
+        }
+      ],
+      "reachable_count": 0,
+      "classification": "stably_unreachable"
+    },
+    {
+      "direction": "right",
+      "distance_m": 0.8,
+      "displacement_base_link_m": [
+        0.0,
+        -0.8,
+        0.0
+      ],
+      "goal_pose_map": [
+        -0.3861205133059086,
+        -0.0947659812827096,
+        -0.0294880574340284,
+        0.003723247699311463,
+        -0.0009059018185099676,
+        -0.7102481640648526,
+        0.7039409507984112
+      ],
+      "checks": [
+        {
+          "index": 0,
+          "reachable": false,
+          "duration_s": 0.1007664279995879
+        },
+        {
+          "index": 1,
+          "reachable": false,
+          "duration_s": 0.10074489099952189
+        },
+        {
+          "index": 2,
+          "reachable": false,
+          "duration_s": 0.10081129299942404
+        }
+      ],
+      "reachable_count": 0,
+      "classification": "stably_unreachable"
+    }
+  ],
+  "start_pose_map": [
+    0.4138305187225342,
+    -0.10191208869218826,
+    -0.024265078827738762,
+    0.003723247699311463,
+    -0.0009059018185099676,
+    -0.7102481640648526,
+    0.7039409507984112
+  ],
+  "bounding_boxes": [],
+  "summary": {
+    "forward": {
+      "last_stably_reachable_m": 0.7,
+      "first_stably_unreachable_m": 0.8,
+      "mixed_distances_m": []
+    },
+    "backward": {
+      "last_stably_reachable_m": 0.8,
+      "first_stably_unreachable_m": null,
+      "mixed_distances_m": []
+    },
+    "left": {
+      "last_stably_reachable_m": 0.8,
+      "first_stably_unreachable_m": null,
+      "mixed_distances_m": []
+    },
+    "right": {
+      "last_stably_reachable_m": null,
+      "first_stably_unreachable_m": 0.6,
+      "mixed_distances_m": []
+    }
+  },
+  "ok": true
+}
+galbot@galbot-echo:~$

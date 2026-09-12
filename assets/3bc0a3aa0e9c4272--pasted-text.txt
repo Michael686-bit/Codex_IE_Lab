@@ -1,0 +1,280 @@
+# Galbot S1 当前开发进度与工程交接
+
+> 盘点时间：2026-08-14 16:46（Asia/Shanghai）
+> 目标：让新同事可以快速理解 S1 上已经真正跑通的能力、尚未完成的能力，以及每一部分代码、镜像、数据和日志在哪里。
+> 结论中的“已验证”只表示有日志或实验记录支撑，不表示可以脱离现场监督直接运行。
+
+## 1. 先看结论
+
+当前 S1 已经不是“只有环境搭建”的阶段。最重要的实机进展是：
+
+- 供应商 GBS/Embosa、相机、激光雷达、定位、融合和运动服务正常由宿主机启动；官方 Galbot SDK 1.9.0 与 GBS 1.17.x 已部署。
+- 底盘绝对导航已有两次成功实验；取箱观察位、卸货位导航和释放后返回取箱区域也已有成功记录。
+- S1 RGB-D → Thor SAM3 → LingBot-Depth → 箱体 ROI/H4 选择 → FoundationPose++ → 双臂目标生成 → IMC 轨迹执行链已经有真实运行证据。
+- 双臂预抓、向内 100 mm、抬升 100 mm、夹爪闭合和“携箱移动”已经在 S1 上真实执行过；随后一次实验还完成了卸货处释放和返回取箱位置。
+- 2026-08-14 16:40 的底盘采集批次已完成：审查 25 个点，实际执行 23 个点，跳过规划器拒绝的 `base_06/base_07`；每个点保存左右腕 RGB、深度和关节状态。
+- 完整“抓取→搬运→放置→返回”还没有闭环。最近一次主流程的明确结果是 `put_executed=false`，箱子停留在卸货位置，放置阶段仍是下一步重点。
+
+当前状态标记：
+
+- `[已验证]`：有 S1 实机结果或可复核的运行产物。
+- `[已部署待复验]`：代码和启动方式已在 S1，但最新版本还没有成功运行记录。
+- `[未完成/阻塞]`：不能在交接时写成已完成。
+- `[参考/历史]`：用于复现、回滚或查资料，不是当前主入口。
+
+## 2. 当前功能进度
+
+| 功能 | 实际进度 | 证据与剩余工作 |
+|---|---|---|
+| GBS/Embosa 宿主机服务 | `[已验证]` | `launcher.service`、`galbot_svc_hpu_comm.service`、`galbot_daemon.service`、`docker.service` 当前 active；宿主机运行相机、LiDAR、融合、定位和运动规划进程。 |
+| SDK 与 Python 环境 | `[已验证]` | `/home/galbot/ie_lab/bin/s1-python` 使用 SDK 1.9.0、Python 3.8.20、NumPy 1.24.4、SciPy 1.10.1、OpenCV 4.10.0、Open3D 0.18.0；`s1-env-check` 为被动检查。 |
+| 底盘定位/绝对导航 | `[已验证]` | `experiments.csv` 中 2026-07-31 有两次绝对导航成功记录，包含障碍物绕行；`chassis_env` 还提供 `pose`、`relocalize`、`navigate-relative` 入口，但相对导航还需要更多系统化实验。 |
+| S1 位姿与地图 RViz 监视 | `[已部署待复验]` | `s1_pose_monitor` 最新代码已改为调用只读 `embosa_topic_tool`；上一次 10:39 的旧部署日志曾因 `embosa_extend_node` 缺失失败。新提交 `95d6ade` 后没有新的成功启动记录。 |
+| RGB-D 采集 | `[已验证]` | `s1_box_capture` 已完成多轮左右腕 RGB/Depth 采集；最新批次 23 个执行点均有左右 RGB、左右无损深度和关节快照。 |
+| SAM3 分割 | `[已验证]` | 最新 2026-08-14 运行中，Thor SAM3 返回 8 个 mask，目标选择通过。粗选阶段不会调用 FDP，这是设计行为。 |
+| LingBot-Depth | `[已验证]` | 最新运行 `valid_points=921600`；服务由 Thor 提供。 |
+| 箱体模型/ROI/H4 | `[已验证]` | 目标为箱体模型 `4317`、堆叠层 `H4`，最新选择结果和目标中心已写入运行目录。 |
+| FoundationPose++ | `[已验证]` | S1 通过远程 HTTP 调用工作站 `10.34.216.13:7876` 的 FDP 服务；最新 preflight 和完整感知日志均通过，使用真实 FDP，不使用 mock。S1 镜像内不挂载 FDP 本地源码。 |
+| 双臂 IMC 规划与执行 | `[已验证]` | 2026-08-12 的 ratio 0.10/0.05 轨迹实验通过；实机双臂预抓、向内、抬升均有 `frozen_native_imc_dual_plan_complete` 结果。历史最大跟踪误差约 `1.4e-4 rad`。 |
+| 腰部/躯干 | `[已验证]` | 已实机使用 H4 约 `0.42 m`，携箱卸货时抬升到约 `0.52 m`；最新运行的腰高稳定性和导航阶段通过。 |
+| 夹爪闭合/持箱 | `[已验证]` | 主流程曾成功闭合并保持箱子，后续实验完成卸货处释放。夹爪反馈 `effort=1000` 的单位和饱和语义尚未标定，不能把它直接当成 1000 N。 |
+| 取箱→携箱导航→卸货 | `[已验证]` | `rerun_shifted_unload_20260814_1458_retry2` 通过取箱导航、抓取、抬升和卸货导航；卸货最终位置误差约 `0.0326 m / -0.0188 rad`。 |
+| 放置（put） | `[未完成/阻塞]` | 最近一次 `RESULT.txt` 明确为 `put_executed=false`、`grippers_opened_at_unload=false`；放置高度配置仍未正式闭合，需要重新设计和现场验证。 |
+| 释放后返回 | `[已验证]` | 2026-08-14 15:33 的实验记录 `record_unload_release_arms_sam_nav_sam` 成功，包含记录卸货位、释放双臂和返回 SAM 位。 |
+| 完整单箱闭环 | `[未完成/阻塞]` | 抓取、携箱、释放、返回已经分阶段成功，但放置阶段没有完成，因此不能称为完整 cycle。 |
+| 完整多姿态数据集 | `[未完成]` | 当前已验证的是固定/镜像双臂姿态下的底盘采集批次，不等于 README 中规划的“多底盘点×多双臂姿态”完整训练集。 |
+
+## 3. 最近几次关键实机结果
+
+所有记录都在 `/home/galbot/ie_lab/experiments.csv`，详细 JSON、日志和图片在对应 `data` 目录。
+
+| 时间 | 实验 | 结果 |
+|---|---|---|
+| 2026-08-14 14:11 | `h4_fdp_low_perception` | 真实感知链通过：H4、4317、SAM mask、LingBot-Depth、远程 FDP；当次在预抓前停止。 |
+| 2026-08-14 15:18 | `4317_h4_mode00_full_cycle_hold_no_put` | 预抓、抓取、抬升、携箱到卸货位成功；箱子保持在夹爪中，明确跳过 put。 |
+| 2026-08-14 15:25 | `held_crate_map_minus_x_120mm` | 持箱状态下底盘移动约 120 mm，结果成功。 |
+| 2026-08-14 15:33 | `record_unload_release_arms_sam_nav_sam` | 记录卸货位、释放双臂、返回 SAM 位成功。 |
+| 2026-08-14 16:40 | `box_capture_lap_20260814_1640` | `DONE` 已生成；25 个审查点中执行 23 个，跳过 `base_06/base_07`；左右腕 RGB/Depth 各 23 份，静态 GE103 碰撞检查通过。 |
+
+最近一次完整主流程的结果文件：
+
+```text
+/home/galbot/ie_lab/data/s1_sjtu_0806_slim/runs/rerun_shifted_unload_20260814_1458_retry2/RESULT.txt
+```
+
+最新底盘采集结果：
+
+```text
+/home/galbot/ie_lab/data/s1_box_capture/box_capture_lap_20260814_1640/
+├── run.json
+├── plan.json
+├── rgb/left/       # 23 张
+├── rgb/right/      # 23 张
+├── depth/left/     # 23 张，uint16 PNG
+├── depth/right/    # 23 张，uint16 PNG
+└── DONE
+```
+
+注意：`experiments.csv` 当前最后记录到 2026-08-14 16:09；16:40 这一批已经完成，但还没有补写实验台账。
+
+## 4. 系统结构和数据流
+
+```text
+S1 宿主机
+├── GBS/Embosa、硬件服务、标定、地图、相机/LiDAR驱动
+├── SDK 1.9.0 宿主环境：s1-python
+└── Docker
+    └── s1-sjtu-0806-slim
+        ├── ROS Noetic
+        ├── S1 SDK 运行时
+        ├── S1 SJTU 感知/几何/IMC 适配库
+        └── /data：运行数据、逐次源码快照、缓存
+
+外部 GPU 服务
+├── Thor 10.34.216.11:7861  SAM3
+├── Thor 10.34.216.11:7865  LingBot-Depth
+└── 工作站 10.34.216.13:7876  FoundationPose++ HTTP
+```
+
+S1 宿主机没有安装 ROS；ROS Noetic 放在镜像内。GBS 服务留在宿主机，容器通过 host network/host IPC 与 DDS/ROS 交互。容器不能解决两个程序同时控制同一台实体机器人的问题，运动命令仍必须遵守共享锁和现场协调。
+
+## 5. 宿主机工程位置
+
+根目录是：
+
+```text
+/home/galbot/ie_lab/
+```
+
+主要目录如下：
+
+```text
+/home/galbot/ie_lab/
+├── projects/
+│   ├── chassis_env/                 # S1 SDK/ROS Noetic 底盘环境和导航工具
+│   ├── dual_arm_v5/                 # 双臂开发容器、长期 workspace、IMC 和 SJTU 源码
+│   ├── s1_box_capture/              # 底盘点/双臂姿态/RGB-D 数据采集工程
+│   ├── s1_pose_monitor/             # 只读位姿/地图→ROS/RViz 监视工程
+│   └── s1_terminal_slowdown_candidates/  # 终端变慢问题的临时镜像候选，不是主工程
+├── data/                            # 持久运行结果和数据
+├── logs/                            # 容器、实验、采集日志
+├── maps/                            # 地图中转/暂存；当前运行地图在 /var/maps/cur
+├── bin/                             # s1-python、s1-env、s1-env-check
+├── envs/s1-sdk-1.9.0-py38/         # 宿主机受管 Python 环境
+├── tools/miniforge3/                # Miniforge/Mamba
+├── cache/                           # 环境包、镜像归档、临时调试包
+├── HOST_ENVIRONMENT.md              # 宿主 SDK 环境说明
+├── experiments.csv                  # 最小实验台账
+└── control.lock                     # 当前唯一推荐的机器人共享控制锁
+```
+
+### 5.1 SJTU 主流程源码
+
+当前 slim 镜像的构建上下文和主要可编辑源码是：
+
+```text
+/home/galbot/ie_lab/projects/dual_arm_v5/workspace/s1_sjtu_0806/
+├── src/s1_sjtu/                     # S1 SDK、感知、几何、preflight、阶段逻辑
+├── vendor/g1_workbin_perception/    # 受控迁移的 SAM/ROI/FDP 适配代码
+├── tools/                           # 目标生成、导航、双臂/腰/夹爪运行辅助脚本
+├── config/                          # site、4317/H4、IMC 和生产配置
+├── assets/mesh/                     # 箱体 mesh
+├── deploy/                          # healthcheck、IMC 适配入口
+├── imc/                             # IMC 适配说明和离线入口
+├── Dockerfile.slim                  # 当前小体积生产镜像构建文件
+├── Dockerfile.production            # 原生产镜像构建文件
+├── run-slim.sh                      # 当前 slim 入口
+├── run-production.sh                # build/start/check/exec/imc/status/stop
+└── scripts/main_pipeline_s1_mode00.py  # 主流程编排器，当前不直接烘焙进 slim 镜像
+```
+
+`s1_sjtu_0806` 目前没有独立的 `.git`，不应把它当作已经版本化的独立发布仓库。另有一个 Git 管理的参考/历史工程：
+
+```text
+/home/galbot/ie_lab/projects/dual_arm_v5/workspace/s1_sjtu_full_cycle/
+```
+
+该参考工程当前 HEAD 为 `2c97d9b`，工作树有未提交修改，旧的 `s1_sjtu_full_cycle:*` 容器均已停止。新同事修改主流程前，先明确是维护 `s1_sjtu_0806` 生产上下文，还是维护 `s1_sjtu_full_cycle` 参考仓库，不要两处同时改。
+
+当前运行的主流程会把入口和辅助脚本复制到每次运行目录，例如：
+
+```text
+/home/galbot/ie_lab/data/s1_sjtu_0806_slim/runs/<run_id>/main_pipeline_s1_mode00.py
+/home/galbot/ie_lab/data/s1_sjtu_0806_slim/runs/<run_id>/tools/
+/home/galbot/ie_lab/data/s1_sjtu_0806_slim/runs/<run_id>/source_manifest.sha256
+```
+
+因此每个运行目录是当次真实执行的源码快照。最新运行快照的主流程 SHA-256 为 `e3156ecb...`，当前 host 源文件 SHA-256 为 `134bcb8a...`，两者不同；交接后应先建立清晰的 Git 提交和镜像/源码对应关系。
+
+### 5.2 其他宿主机工程
+
+`/home/galbot/ie_lab/projects/chassis_env/`
+
+- Git HEAD：`5585f08`。
+- `README.md`、`run.sh`、`tools/check_env.py`、`tools/relocalize_report.py`、`tools/navigate_relative_v2.py`。
+- 宿主机的 `workspace/` 是容器内 `/workspace` 的挂载点。
+- 日志在 `/home/galbot/ie_lab/logs/chassis_env/`。
+- 镜像内没有常驻运动脚本；导航/重定位由明确的工具命令触发。
+
+`/home/galbot/ie_lab/projects/s1_box_capture/`
+
+- 当前工作树 HEAD：`5aad8f7`，工作树有修改和未跟踪文件。
+- `configs/positions.json`：底盘相对点和姿态配置。
+- `plans/`：审查后的路线；当前路线使用 `box_capture_lap_20260813.json` 和 detour 顺序文件。
+- `scripts/capture_round_now.sh`、`scripts/execute_base_lap.py`：当前实际采集入口。
+- `tests/`：离线配置、几何、规划和 CLI 测试。
+- `DEPLOYED_GIT_SHA` 当前写的是 `182c277`，但该 revision 在机器人上的这个 Git 仓库中无法解析；这属于版本追踪问题，下一轮部署前需要修正。
+
+`/home/galbot/ie_lab/projects/s1_pose_monitor/`
+
+- Git HEAD：`95d6ade`。
+- `scripts/bridge_node.py`：只读 DDS topic 读取和 ROS Noetic 发布。
+- `workstation/start_s1_pose_monitor_rviz.sh`：工作站侧启动 RViz。
+- `config/s1_pose_monitor.rviz`：RViz 配置。
+- `projects/s1_pose_monitor_*.bundle`：多个可回滚源码包。
+- 当前没有运行中的 `s1-pose-monitor` 容器；最新代码需重新做一次只读启动验证。
+
+## 6. 镜像内工程与挂载关系
+
+| 镜像/容器 | 当前状态 | 镜像内工程位置 | 宿主机对应位置和说明 |
+|---|---|---|---|
+| `s1-sjtu-0806-slim:latest` / `s1_sjtu_0806_slim` | running、healthy；arm64；ID `sha256:6359272d...` | `/opt/s1-sjtu/src`、`/opt/s1-sjtu/vendor`、`/opt/s1-sjtu/config`、`/opt/s1-sjtu/assets`、`/opt/s1-sjtu/deploy`、`/opt/s1-sjtu/imc`、`/opt/s1-sjtu/tools`；IMC 编译产物在 `/root/workspace/imc` | 数据挂载为 `/home/galbot/ie_lab/data/s1_sjtu_0806_slim:/data`，日志为 `/home/galbot/ie_lab/logs/s1_sjtu_0806_slim:/logs`；地图 `/var/maps/cur`、厂商模型和 SDK 配置只读挂载。镜像 label revision 是 `1735aac`，不能单独代表每次主流程源码。 |
+| `s1-chassis-env:sdk-1.9.0-gbs-1.17` / `s1-chassis-env` | 当前没有后台容器；按需启动 | `/opt/s1_chassis`、`/opt/galbot/sdk`、ROS Noetic | `/home/galbot/ie_lab/projects/chassis_env/workspace:/workspace`；工具、地图、SDK 配置和日志按 `run.sh` 挂载。镜像 ID `sha256:b355d64a...`，约 4.82 GB。 |
+| `dual_arm_robot:v5.0`、`dual_arm_robot:dev` / `dual_arm_v5_dev` | 镜像保留；容器 exited，退出码 137 | 原始镜像工作区为 `/root/workspace` | 当前 `/home/galbot/ie_lab/projects/dual_arm_v5/workspace:/root/workspace`，数据和日志分别挂载到 `/root/ie_lab_data`、`/root/ie_lab_logs`。镜像 ID `sha256:24ab63af...`，约 60.5 GB。 |
+| `s1-pose-monitor` | 当前不存在运行容器 | `/opt/s1_pose_monitor`（源码只读挂载）；`/opt/galbot/host/bin/embosa_topic_tool`、`/opt/galbot/host/lib` | 由 `/home/galbot/ie_lab/projects/s1_pose_monitor/run.sh` 临时创建，日志在 `/home/galbot/ie_lab/logs/s1_pose_monitor`。 |
+| `s1-sjtu-full-cycle:*` | 历史/回滚镜像；相关容器均 stopped | 旧版本同样以 `/opt/s1-sjtu` 为主 | 旧容器曾挂载 `/home/galbot/ie_lab/projects/dual_arm_v5/workspace/s1_sjtu_full_cycle` 到 `/ie_workspace/s1_sjtu_full_cycle`；不要误连旧容器。 |
+| `s1-sjtu-terminal-slowdown:*` | 临时性能排查候选 | 仅用于终端变慢问题定位 | 候选目录和约 128 MB context tar 在 `/home/galbot/ie_lab/projects/s1_terminal_slowdown_candidates/`，不是功能主线。 |
+
+当前 slim 镜像是只读根文件系统、host network、host IPC、非 privileged；`/data` 和 `/logs` 是持久可写目录。镜像本身没有 `main_pipeline_s1_mode00.py` 顶层文件，主流程脚本通过每次运行快照放进 `/data/runs/<run_id>/` 后执行，这一点是当前工程可复现性的主要风险。
+
+双臂原始镜像归档：
+
+```text
+/home/galbot/ie_lab/cache/sjtu_images/dual_arm_robot_v5_validated.tar  # 已校验、arm64、可加载
+/home/galbot/ie_lab/cache/sjtu_images/dual_arm_robot_v5.tar            # 原始归档有缺陷，不要重新加载
+```
+
+## 7. 外部依赖位置
+
+这些服务不在 S1 镜像内，但最新 preflight 已确认可访问：
+
+| 服务 | 地址/位置 | 说明 |
+|---|---|---|
+| SAM3 | Thor `10.34.216.11:7861`；服务代码/权重报告为 `/workspace/SAM3-Runtime`、`/workspace/SAM3-Runtime/sam3.pt` | 负责箱体分割。 |
+| LingBot-Depth | Thor `10.34.216.11:7865`；代码/权重报告为 `/workspace/LingBot-Depth`、`/workspace/LingBot-Depth-Weights/model.pt` | 负责深度补全/有效深度。 |
+| FoundationPose++ | 工作站 `10.34.216.13:7876`，remote HTTP | S1 只调用服务，不挂载本地 FDP 源码；本地源码和 GPU 服务在工作站。 |
+| S1 当前地图 | `/var/maps/cur -> room0804` | 包含 `map.yaml`、`map.pgm`、点云、ESDF 和导航辅助文件；容器以只读方式使用。 |
+| S1 厂商模型 | `/data/galbot/config/galbot_description`、`/data/galbot/config/default/service_motion_plan/tools` | 生产容器只读挂载；GE103 和 S1 URDF 不要复制后随意改写。 |
+| 箱体 mesh | 镜像内 `/opt/s1-sjtu/assets/mesh/EU4322_midcut_target175mm.obj` | 当前 4317/H4 几何链使用的主要 mesh。 |
+
+## 8. 新同事建议从哪里开始
+
+先连接机器人并只读查看本文件、工程 README 和最近运行结果：
+
+```bash
+ssh s1
+cd /home/galbot/ie_lab
+less S1_DEVELOPMENT_HANDOFF.md
+less data/s1_sjtu_0806_slim/runs/rerun_shifted_unload_20260814_1458_retry2/RESULT.txt
+```
+
+环境级检查：
+
+```bash
+/home/galbot/ie_lab/bin/s1-env-check
+cd /home/galbot/ie_lab/projects/dual_arm_v5/workspace/s1_sjtu_0806
+./run-slim.sh status
+./run-slim.sh check
+cd /home/galbot/ie_lab/projects/chassis_env
+./run.sh check
+```
+
+离线工程测试：
+
+```bash
+cd /home/galbot/ie_lab/projects/s1_box_capture
+python3 -m pytest -q
+
+cd /home/galbot/ie_lab/projects/s1_pose_monitor
+python3 -m pytest -q
+```
+
+修改代码时，优先在宿主机工程目录修改并提交 Git；不要在运行中的容器里直接改 `/opt/s1-sjtu`。镜像 tag 一旦用于真实实验就不要覆盖，新的版本使用新的短 SHA tag，并把镜像 ID、源码 SHA、操作者和结果写进 `experiments.csv`。
+
+## 9. 运动和共享控制规则
+
+- 不要手工修改 `/data/galbot`、`/userdata/update`、`/userdata/pak`、`/userdata/user_config` 等厂商路径。
+- 任何会控制底盘、双臂、腰、夹爪或模式的命令，运行前必须确认现场、急停、当前操作者和其他 SDK/DDS 进程。
+- 当前推荐的唯一机器人级锁是：`/home/galbot/ie_lab/control.lock`。`.control.lock` 是旧文件，不要使用。
+- `s1_sjtu` 的 `run-production.sh exec/imc` 和采集入口应放在共享锁内；观察者可以不持锁，但不得拥有命令权限。
+- 运行中的容器 healthy 不等于机器人可安全运动；必须重新做定位、控制权、障碍物和急停检查。
+- 当前 S1 使用共享账号 `galbot`，Linux 进程归属不能区分具体同事。开始实机实验前要在群里/终端明确操作者。
+
+## 10. 近期优先级
+
+1. 把 `s1_sjtu_0806` 主流程和每次运行快照统一到可解析的 Git SHA，并为生产镜像使用不可变 tag。
+2. 补齐 4317/H4 的放置目标、平台表面高度、放置下降、开爪、收臂和返回门，完成一次真正的单箱完整 cycle。
+3. 做 GE103 夹持力/反馈字段标定；在标定完成前不要解释 `effort=1000` 的物理单位。
+4. 用最新 `s1_pose_monitor` 提交重新验证只读桥接和 RViz；确认旧日志中的 `embosa_extend_node` 问题已经不再出现。
+5. 继续完善箱体数据采集：当前 23 点固定镜像姿态批次已完成，但完整多手臂姿态训练集和被跳过点位仍需计划。
+6. 完成 16:40 采集批次的 `experiments.csv` 台账记录，并为数据集增加统一的质量检查/标注入口。

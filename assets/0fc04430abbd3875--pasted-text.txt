@@ -1,0 +1,323 @@
+galbot@galbot-echo:~/ie_lab/projects/chassis_env/workspace$ /home/galbot/ie_lab/bin/s1-python \
+
+  /home/galbot/Lsy03/navigation_tests/s1_navigation_cli.py
+  payload-status-4317
+A new version 1.9.1 is available. Visit https://github.com/GalaxyGeneralRobotics/GalbotSDK/releases for upgrade instructions
+{
+  "mode": "payload_4317_status_readonly",
+  "query_ok": true,
+  "motion_commands_sent": false,
+  "controller_switch_sent": false,
+  "bounding_box_changes_sent": false,
+  "attachment_changes_sent": false,
+  "box_tag": 4317,
+  "profile": "4317_left_mount_20260831_193312_191",
+  "expected_filter_box": {
+    "box_size": [
+      0.6,
+      0.5,
+      0.375
+    ],
+    "box_pose": [
+      0.08846454589905783,
+      -0.20926272696685333,
+      -0.15890000000000004,
+      0.011116385394816377,
+      -0.0003861212335707756,
+      0.6973011501467578,
+      0.7166919721122567
+    ],
+    "box_tag": 4317,
+    "parent_link_name": "left_arm_end_effector_mount_link"
+  },
+  "filter_registered": false,
+  "filter_profile_matches": false,
+  "bounding_boxes": [],
+  "attachment_status": "not_queryable_via_current_public_sdk_api"
+}
+galbot@galbot-echo:~/ie_lab/projects/chassis_env/workspace$ /home/galbot/ie_lab/bin/s1-python
+  /home/galbot/Lsy03/navigation_tests/s1_navigation_cli.py
+  relative
+  --x 1.0
+  --y 0.0
+  --yaw 0.0
+  --max-vx 0.10
+  --max-vy 0.10
+  --max-vyaw 0.15
+  --timeout 300
+  --max-distance 12
+  --omni-plan false
+  --execute
+
+{
+  "ok": false,
+  "outcome": "failed_closed",
+  "error": {
+    "type": "NavigationCliError",
+    "message": "static path was not reachable in all three checks"
+  }
+}
+galbot@galbot-echo:~/ie_lab/projects/chassis_env/workspace$
+galbot@galbot-echo:~/ie_lab/projects/chassis_env/workspace$ /home/galbot/ie_lab/bin/s1-python \
+
+  /home/galbot/Lsy03/navigation_tests/s1_navigation_cli.py
+  payload-register-4317
+  --execute
+A new version 1.9.1 is available. Visit  for upgrade instructions
+
+REAL-ROBOT NAVIGATION PAYLOAD REGISTRATION (payload-register-4317 --execute)
+  expected physical motion: none
+  mobile base/arms/grippers/lift: no motion commands
+  fusion filter: {'box_size': [0.6, 0.5, 0.375], 'box_pose': [0.08846454589905783, -0.20926272696685333, -0.15890000000000004, 0.011116385394816377, -0.0003861212335707756, 0.6973011501467578, 0.7166919721122567], 'box_tag': 4317, 'parent_link_name': 'left_arm_end_effector_mount_link'}
+  PNS collision box: {'box_size': [0.4, 0.3, 0.175], 'box_pose': [0.08846454589905783, -0.20926272696685333, -0.15890000000000004, 0.011116385394816377, -0.0003861212335707756, 0.6973011501467578, 0.7166919721122567], 'box_tag': 4317, 'parent_link_name': 'left_arm_end_effector_mount_link'}
+  ignored robot links: ['left_arm_end_effector_mount_link', 'right_arm_end_effector_mount_link', 'left_fingertip_end_effector_mount_link', 'right_fingertip_end_effector_mount_link']
+  tracking frame: left_arm_end_effector_mount_link; the box follows base/torso/arm TF while the recorded rigid grasp remains valid
+  invalid after crate slip, release, regrasp, or grasp-geometry change
+  state persists until payload-remove-4317 --execute succeeds
+
+{
+  "ok": false,
+  "outcome": "failed_closed",
+  "error": {
+    "type": "NavigationCliError",
+    "message": "attach_box_to_link failed: (False, 'WAIT_INITIALIZED'); filter-removal rollback attempted"
+  }
+}
+galbot@galbot-echo:~/ie_lab/projects/chassis_env/workspace$ /home/galbot/ie_lab/bin/s1-python   /home/galbot/Lsy03/navigation_tests/s1_navigation_cli.py   payload-status-4317
+{
+  "mode": "payload_4317_status_readonly",
+  "query_ok": true,
+  "motion_commands_sent": false,
+  "controller_switch_sent": false,
+  "bounding_box_changes_sent": false,
+  "attachment_changes_sent": false,
+  "box_tag": 4317,
+  "profile": "4317_left_mount_20260831_193312_191",
+  "expected_filter_box": {
+    "box_size": [
+      0.6,
+      0.5,
+      0.375
+    ],
+    "box_pose": [
+      0.08846454589905783,
+      -0.20926272696685333,
+      -0.15890000000000004,
+      0.011116385394816377,
+      -0.0003861212335707756,
+      0.6973011501467578,
+      0.7166919721122567
+    ],
+    "box_tag": 4317,
+    "parent_link_name": "left_arm_end_effector_mount_link"
+  },
+  "filter_registered": false,
+  "filter_profile_matches": false,
+  "bounding_boxes": [],
+  "attachment_status": "not_queryable_via_current_public_sdk_api"
+}
+galbot@galbot-echo:~/ie_lab/projects/chassis_env/workspace$
+
+给我看一下，现在箱子注册是否成功？
+
+…
+
+显示更多
+14:16
+没有注册成功。
+
+证据如下：
+
+注册命令返回 "ok": false、"outcome": "failed_closed"
+失败原因：attach_box_to_link failed: (False, 'WAIT_INITIALIZED')
+随后的只读检查显示：
+"filter_registered": false
+"filter_profile_matches": false
+"bounding_boxes": []
+程序还执行了 filter 移除回滚，因此没有留下已注册的融合过滤框。
+结论：当前箱子 4317 的融合过滤框和 PNS 碰撞附着均不能视为已注册。attachment_status 虽无法通过当前公开 SDK 查询，但注册命令已明确失败。不要按“箱子已注册”状态继续导航。
+
+14:16
+
+galbot@galbot-echo:~/ie_lab/projects/chassis_env/workspace$ /home/galbot/ie_lab…
+给我好好仔细排查一下 为什么上一个版本的代码就可以注册，但是这一个版本的就不行？ 先给我分析，不要改代码
+
+14:20
+
+耗时 8分钟 26秒
+结论：当前版本并不是箱体参数写坏了，而是引入了一个 PNS 初始化时序竞态。旧版的人工确认过程无意中提供了等待时间，所以能成功；新版取消交互确认后，attach_box_to_link() 调用得太早。
+
+两版关键差异
+项目	旧版 13ee8f13…	当前版 7bc3cc56…
+授权方式	SDK 初始化后等待人工输入确认口令	启动前通过 --execute 授权
+初始化后等待	有，等待用户输入数秒	基本没有
+add_bounding_box	成功	成功
+attach_box_to_link	PNS 已就绪，成功	有时 PNS 尚未就绪，返回 WAIT_INITIALIZED
+失败处理	—	删除刚添加的过滤框并失败关闭
+当前调用顺序是：
+
+GalbotRobot.init()
+→ GalbotNavigation.init()
+→ 查询导航状态/过滤框
+→ 验证左末端 TF
+→ add_bounding_box()
+→ get_bounding_box() 完整回读
+→ 立即 attach_box_to_link()
+源码中 navigation.init() 后没有 PNS attachment 就绪等待；attach_box_to_link() 也只调用一次：s1_navigation_cli.py (line 310)、注册流程 (line 575)。
+
+为什么可以确定是时序问题
+官方 SDK 对 WAIT_INITIALIZED 的定义非常明确：PNS 服务尚未准备好。参数错误对应 INVALID_INPUT，通信错误对应 COMM_ERR。官方头文件 (line 473)
+
+两版使用的箱体参数完全相同：
+
+tag：4317
+父坐标系：left_arm_end_effector_mount_link
+过滤框：0.6 × 0.5 × 0.375
+碰撞框：0.4 × 0.3 × 0.175
+位姿和 ignored links 也相同
+当前版本确实成功执行了 add_bounding_box() 和完整回读。否则程序到不了 attach_box_to_link failed 这一分支。最终 bounding_boxes=[] 是因为 attach 失败后主动回滚，并不是 add 从未生效。
+
+同一个当前版本此前曾在重试时成功走完 add+attach，之后才被 max-distance 保护拦截。这证明它不是永久逻辑错误，而是偶发就绪竞态。
+
+旧版在打印参数后会停在：
+
+Type REGISTER_NAV_PAYLOAD_4317_LEFT_MOUNT ...
+用户输入口令期间，PNS attachment 接口有时间完成初始化。新版删除交互确认时，也把这段“隐含等待”删掉了。
+
+两次都出现相同的“1.9.1 可升级”提示，没有证据表明中间升级过 SDK。该提示本身也不表示当前已安装 1.9.1。
+可以排除的方向
+不是箱体尺寸、位姿、四元数或父 link 错误，否则更应返回 INVALID_INPUT。
+不是 add_bounding_box() 失效；它成功后被回滚了。
+不是 --omni-plan false 导致；独立的 payload-register-4317 不使用该参数。
+不是前一次“静态路径不可达”直接导致；那次没有提交导航或切换控制器。
+不像重复 tag，因为注册前后都查到 bounding_boxes=[]，且重复对象也不符合 WAIT_INITIALIZED 的官方语义。
+当前代码还缺少的处理
+当前逻辑没有识别或重试 WAIT_INITIALIZED，任何 attach 失败都会立即回滚。现有伪 SDK 测试也只模拟了成功和 INVALID_INPUT，没有模拟“前几次返回 WAIT_INITIALIZED、稍后成功”，因此测试通过也发现不了这个问题：测试替身 (line 165)。
+
+合理修复方向是只对 WAIT_INITIALIZED 做有界重试，例如每 0.25 s 一次、最多等待 5 s；其他错误立即失败。超时后仍回滚，并记录每次 attach 返回值和回滚结果。单纯固定睡眠一秒能缓解，但不如按状态重试可靠。
+
+因此，最终判断是：
+
+当前版本取消交互确认后暴露了 GalbotNavigation.init() 返回与 PNS attachment 服务真正就绪之间的时间窗口；旧版依靠人工输入产生的等待时间避开了这个窗口。
+
+本次只进行了只读分析，没有连接机器人，也没有修改任何代码或文档。
+
+14:29
+现在给我更新 一版 新的 s1_navigation_cli.py,  先给我确定思路
+
+14:33
+耗时 40秒
+可以。新版本建议只做一次小范围、可验证的修复，不重构其他导航逻辑。
+
+核心修改
+为 attach_box_to_link() 增加有界重试：
+首次调用
+├─ SUCCESS：登记成功
+├─ WAIT_INITIALIZED：等待 0.25 秒后重试
+└─ 其他错误：立即停止并回滚
+建议参数：
+
+重试间隔：0.25 秒
+最长等待：5 秒
+最多约 21 次调用（含首次）
+只重试 WAIT_INITIALIZED，不重试：
+
+INVALID_INPUT
+COMM_ERR
+其他未知错误
+这样不会掩盖真正的配置或通信故障。
+
+保持事务式注册：
+add_bounding_box
+→ get_bounding_box 精确校验
+→ attach_box_to_link 有界重试
+→ 成功后保留登记
+如果最终失败：
+
+remove_bounding_box
+→ 再次 get_bounding_box
+→ 确认 tag 4317 已消失
+→ fail closed
+不会发送底盘、机械臂、夹爪或升降运动。
+
+完善失败输出。
+现在异常被顶层捕获后，只剩一条错误信息，前面的详细结果丢失。新版应保留：
+
+{
+  "attach_box_to_link_attempts": [
+    {
+      "index": 1,
+      "elapsed_s": 0.0,
+      "return": [false, "WAIT_INITIALIZED"]
+    },
+    {
+      "index": 2,
+      "elapsed_s": 0.25,
+      "return": [true, "SUCCESS"]
+    }
+  ],
+  "rollback_attempted": false
+}
+若失败，还应输出：
+
+add_bounding_box_return
+bounding_boxes_after_add
+每次 attach 结果
+rollback_remove_bounding_box_return
+bounding_boxes_after_rollback
+filter_rollback_verified
+这样下一次无需先猜调用停在哪一步。
+
+顺便修正一个状态顺序问题
+当前自动注册发生在 max-distance 检查之前。此前已经出现过：
+
+add+attach 成功
+→ 发现目标距离超过 max-distance
+→ 导航拒绝
+→ payload 登记仍然保留
+新版应把不依赖 payload 的检查提前：
+
+参数合法性
+→ 定位和当前位姿
+→ max-distance 检查
+→ 确认导航空闲
+→ payload add+attach
+→ 携带物状态下的三次可达性检查
+→ 控制器切换和导航提交
+静态可达性检查仍必须放在注册之后，否则规划器看不到携带箱体的碰撞外形。
+
+如果 payload 已成功登记，但后续路径不可达，仍保留登记，不自动 detach；因为机器人还在抱箱，携带物模型继续存在才是更安全的状态。
+
+测试范围
+先使用伪 SDK 做本地测试，不连接机器人：
+
+第一次 attach 即成功
+两次 WAIT_INITIALIZED 后成功
+持续 WAIT_INITIALIZED，5 秒后回滚
+INVALID_INPUT 立即回滚、不重试
+COMM_ERR 立即回滚
+add 失败时绝不调用 attach
+attach 失败后确认过滤框确实消失
+回滚调用失败时明确报告“状态不确定”
+max-distance 拒绝发生在 add/attach 之前
+成功登记后的路径不可达不自动删除 payload
+payload-register-4317 全程不发送运动或控制器切换
+版本和执行边界
+我建议：
+
+修改本地 s1_navigation_cli.py
+同步更新测试和使用文档
+保留现有版本，不覆盖备份
+本地测试通过后再生成新哈希
+暂不部署 S1、不连接机器人、不运行真实注册或导航
+这版的核心目标是：消除 WAIT_INITIALIZED 竞态，同时保持失败关闭、可回滚、可诊断。
+
+14:33
+更新的时候，旧版记得备份一下
+
+14:34
+已处理 2分钟 52秒
+会先做字节级备份，再改当前文件。备份文件会带明确的 before_pns_attach_ready_retry_20260902 后缀，同时记录修改前 SHA-256；之后只在本地修改和跑伪 SDK 测试，不连接或部署到 S1，也不调用真实注册/导航。
+
+已运行命令
+旧版已经备份完成，备份与修改前当前文件哈希完全一致：7bc3cc5631955c2977a747eb219baceb495d7504e22bdce879917d977d07e4fa。现在开始修改注册事务和测试；备份文件不会再动。

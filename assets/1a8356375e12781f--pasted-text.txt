@@ -1,0 +1,567 @@
+我们现在在干啥，是否偏离？
+
+
+
+
+
+
+14:07
+
+
+
+
+
+
+耗时 15秒
+
+
+
+
+
+
+
+没有明显偏离，但目前还没有真正导航。
+当前状态是：
+原先的 relative --x 1.0 失败原因是 control.lock 被占用，当时还没进入可达性检查，不能证明是箱子导致。
+已在 [s1_navigation_cli.py (line 431)](/home/lsy03/文档/ChatGPT/S1/experiments/20260827_s1_navigation/s1_navigation_cli.py:431) 增加：payload-status-4317
+payload-register-4317
+payload-remove-4317
+
+你已经成功执行登记：add_bounding_box() 返回 SUCCESS
+attach_box_to_link() 返回 SUCCESS
+没有底盘或机械臂运动
+
+现在箱体模型已登记，但还需要再次运行 payload-status-4317，确认过滤框跨 SDK 会话仍存在，然后才进行导航。
+需要注意：这不是“完全忽略箱子”。过滤框用于消除箱子自观测点造成的假障碍；附着碰撞箱仍保留箱子的真实环境碰撞检查。这正是我们想要的行为。
+
+
+14:07
+
+
+
+
+
+
+
+
+add_bounding_box() 返回 SUCCESS
+attach_box_to_link() 返回 SUCCESS 这两个意味着什么来着？
+
+
+
+
+
+
+14:10
+
+
+
+
+
+
+耗时 5秒
+
+
+
+
+
+
+
+简单说，这两个 SUCCESS 分别表示两件互补的事情：
+add_bounding_box() = SUCCESS
+融合服务接受了一个“箱子自观测过滤区域”。箱子自身反射回来的点在这个区域内会被过滤，避免导航把自己手上的箱子误认为外部障碍。它不会关闭全部碰撞检查，也不会扩大机器人碰撞外形。
+
+attach_box_to_link() = SUCCESS
+PNS 接受了一个“附着碰撞箱”。规划器会把箱子的真实尺寸当作机器人外形的一部分，随 base_link 一起计算环境碰撞。它只是软件碰撞模型，不会实际移动机械臂或箱子，也不会过滤点云。
+
+两者合起来就是：
+过滤箱子自身的感知点
++
+保留箱子与外部障碍物的真实碰撞检查
+SUCCESS 只代表服务接受了请求，不代表目标路线一定可达或导航一定会成功；后续仍要通过静态可达性检查和最终位置验证。
+
+
+14:10
+
+
+
+
+
+
+
+
+galbot@galbot-echo:~$ /home/galbot/ie_lab/bin/s1-python
+  /home/galbot/Lsy03/navigation_tests/s1_navigation_cli.py
+  payload-status-4317
+{
+  "mode": "payload_4317_status_readonly",
+  "query_ok": true,
+  "motion_commands_sent": false,
+  "controller_switch_sent": false,
+  "bounding_box_changes_sent": false,
+  "attachment_changes_sent": false,
+  "box_tag": 4317,
+  "filter_registered": true,
+  "bounding_boxes": [
+    {
+      "box_size": [
+        0.6000000238418579,
+        0.5,
+        0.375
+      ],
+      "box_pose": [
+        0.7279888391494751,
+        0.010631592944264412,
+        0.6475703716278076,
+        0.007822533138096333,
+        0.002328962553292513,
+        0.7022815942764282,
+        0.7118523716926575
+      ],
+      "box_tag": 4317,
+      "parent_link_name": "base_link"
+    }
+  ],
+  "attachment_status": "not_queryable_via_current_public_sdk_api"
+}
+galbot@galbot-echo:~$
+是否正常？
+显示更多
+14:07
+耗时 36秒
+正常。
+已确认：
+Fusion 过滤框跨 SDK 会话保持。
+tag、尺寸、位姿和 base_link 均与登记配置一致。
+本次查询没有改变状态或产生运动。
+attachment_status 无法查询是 SDK 接口限制，不是错误；上一步 attach_box_to_link() 已返回 SUCCESS。
+箱体配置现在处于生效状态。请继续保持机械臂、夹爪和升降姿态不变。下一步若要导航到放置位，需要重新进行一次明确的底盘运动安全确认。
+已编辑 knowledge_base.md+6-0查看更改撤销审核
+14:08
+先不导航到放置位，先往前移动1M，我确定前方一米内没有任何障碍物，如果有那可能就是把本体或者箱体识别为障碍物了，往前移动1M是否可行？
+14:09
+耗时 21秒
+可以作为受控诊断，但现在还不能直接判定可行。此前同方向 0.8–1.0 m 曾稳定不可达；登记箱体后应先重新做只读检查。
+执行以下命令，它只对前方 1 m 目标做三次静态可达性查询，不切换控制器、不运动机器人：
+/home/galbot/ie_lab/bin/s1-python
+  /home/galbot/Lsy03/navigation_tests/s1_navigation_cli.py
+  probe-relative
+  --direction forward
+  --distances 1.0
+  --checks 3
+  --interval 0.25
+  --max-distance 1.2
+先不要运行 relative。请把完整输出发给我：
+三次均为 true：再进行实际底盘前进 1 m 的步骤级确认。
+任一次为 false：机器人不会运动，需要检查 PNS/ESDF；不能仅凭结果认定一定是本体或箱体自识别。
+实际运动时只有底盘控制器接收命令，机械臂关节、夹爪和升降不动，但整台机器人及箱体会随底盘前进，因此“前方无障碍”需要覆盖箱体的完整扫掠体积。
+14:10
+galbot@galbot-echo:~$ /home/galbot/ie_lab/bin/s1-python
+  /home/galbot/Lsy03/navigation_tests/s1_navigation_cli.py
+  probe-relative
+  --direction forward
+  --distances 1.0
+  --checks 3
+  --interval 0.25
+  --max-distance 1.2
+{
+  "mode": "probe_relative_reachability_readonly",
+  "query_only": true,
+  "motion_commands_sent": false,
+  "controller_switch_sent": false,
+  "navigation_command_attempted": false,
+  "relocalization_sent": false,
+  "stop_navigation_sent": false,
+  "bounding_box_changes_sent": false,
+  "attachment_changes_sent": false,
+  "directions": [
+    "forward"
+  ],
+  "distances_m": [
+    1.0
+  ],
+  "checks_per_target": 3,
+  "queries": [
+    {
+      "direction": "forward",
+      "distance_m": 1.0,
+      "displacement_base_link_m": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "goal_pose_map": [
+        1.5726251821512465,
+        0.3481345916400085,
+        -0.007066300961366837,
+        0.0022692698732083697,
+        0.000993044198370699,
+        -0.02233756156377599,
+        0.9997474169113152
+      ],
+      "checks": [
+        {
+          "index": 0,
+          "reachable": false,
+          "duration_s": 0.10129599799984135
+        },
+        {
+          "index": 1,
+          "reachable": false,
+          "duration_s": 0.10082904400042025
+        },
+        {
+          "index": 2,
+          "reachable": false,
+          "duration_s": 0.10072753699932946
+        }
+      ],
+      "reachable_count": 0,
+      "classification": "stably_unreachable"
+    }
+  ],
+  "start_pose_map": [
+    0.5736250877380371,
+    0.3927939236164093,
+    -0.004979334305971861,
+    0.0022692698732083697,
+    0.000993044198370699,
+    -0.02233756156377599,
+    0.9997474169113152
+  ],
+  "bounding_boxes": [
+    {
+      "box_size": [
+        0.6000000238418579,
+        0.5,
+        0.375
+      ],
+      "box_pose": [
+        0.7279888391494751,
+        0.010631592944264412,
+        0.6475703716278076,
+        0.007822533138096333,
+        0.002328962553292513,
+        0.7022815942764282,
+        0.7118523716926575
+      ],
+      "box_tag": 4317,
+      "parent_link_name": "base_link"
+    }
+  ],
+  "summary": {
+    "forward": {
+      "last_stably_reachable_m": null,
+      "first_stably_unreachable_m": 1.0,
+      "mixed_distances_m": []
+    }
+  },
+  "ok": true
+}
+galbot@galbot-echo:~$
+是否正常？
+显示更多
+14:11
+耗时 33秒
+命令执行正常，但前进 1 m 当前不可行。
+关键区别：
+"ok": true：表示只读查询正常完成。
+"classification": "stably_unreachable"：表示目标不可达。
+三次均为 false，不是偶发通信波动。
+过滤框 tag 4317 已存在，但这不能证明 PNS 附着碰撞体是否导致拒绝。
+不要运行 relative --x 1.0；守护脚本也会在运动前拒绝。
+下一步应只读检查这三次查询对应的 PNS 日志，确认碰撞对象究竟是：
+底盘原生碰撞球；
+附着的 4317 箱体；
+静态或运行时 ESDF；
+地图/TF 或目标有效性条件。
+在查清前不要关闭碰撞检测或绕过预检查。
+已编辑 knowledge_base.md+10-0查看更改撤销审核
+14:11
+给我只读检查这三次查询对应的 PNS 日志，确认碰撞对象究竟是：
+底盘原生碰撞球；
+附着的 4317 箱体；
+静态或运行时 ESDF；
+地图/TF 或目标有效性条件。
+14:12
+已处理 1分钟 24秒
+我会只读检查 PNS 进程信息和现有日志，不启动 SDK、不创建订阅者、不修改配置，也不发送导航、停止、重定位或任何运动命令。机械臂、夹爪、升降和底盘都不会动作；目标是把这三次 false 对应到具体的碰撞 link/box、地图类型和目标有效性字段。
+已读取文件运行了命令
+你应该能ssh进入s1吧
+14:12
+能，SSH 当前正常。我刚刚已经通过现有连接只读查到 PNS 进程是：
+4599 /data/galbot/bin/service_navigation_plan
+最近日志文件名搜索没有直接命中；我继续检查该进程的工作目录和已打开的日志文件描述符，不修改文件、不发送信号。
+这两个success 是否正确？是否经过验证？
+
+
+
+
+显示更多
+
+14:14
+
+
+
+
+
+
+耗时 14秒
+
+
+
+
+
+
+
+结论是：两个返回值本身都正确，但验证程度不同。
+add_bounding_box()：
+[true, "SUCCESS"]
+已经得到较充分验证：
+SDK 返回成功；
+同一会话中 get_bounding_box() 回读到 tag 4317；
+新 SDK 会话再次查询时，filter_registered: true。
+因此可以确认 fusion 过滤框已被接受并跨会话保留。
+attach_box_to_link()：
+[true, "SUCCESS"]
+目前只完成了“PNS 接受请求”的验证。当前公开 SDK 没有查询已附着箱体列表的接口，所以还不能独立证明：
+附着碰撞体确实已在 PNS 内生效；
+它是否正是前向 1 m 检查失败的原因；
+它是否跨 SDK 会话保持。
+后面的三次 reachable: false 只能说明目标仍不可达，不能单独归因于附着箱体；也可能是底盘原生碰撞球、ESDF、地图/TF 或其他目标条件。
+所以准确表述是：
+add_bounding_box 已验证登记和持久存在；attach_box_to_link 已验证 RPC 接受，但实际碰撞生效原因尚未验证。
+
+
+
+14:14
+
+
+
+
+
+
+
+
+add_bounding_box(）是否成功 是否可以通过点云的实时演示进行确认？还是说需要验证 ESDF 才能验证？ 因为我看 现在
+“
+先不导航到放置位，先往前移动1M，我确定前方一米内没有任何障碍物，如果有那可能就是把本体或者箱体识别为障碍物了，往前移动1M是否可行？
+14:09
+耗时 21秒
+可以作为受控诊断，但现在还不能直接判定可行。此前同方向 0.8–1.0 m 曾稳定不可达；登记箱体后应先重新做只读检查。
+执行以下命令，它只对前方 1 m 目标做三次静态可达性查询，不切换控制器、不运动机器人：
+/home/galbot/ie_lab/bin/s1-python
+  /home/galbot/Lsy03/navigation_tests/s1_navigation_cli.py
+  probe-relative
+  --direction forward
+  --distances 1.0
+  --checks 3
+  --interval 0.25
+  --max-distance 1.2
+先不要运行 relative。请把完整输出发给我：
+三次均为 true：再进行实际底盘前进 1 m 的步骤级确认。
+任一次为 false：机器人不会运动，需要检查 PNS/ESDF；不能仅凭结果认定一定是本体或箱体自识别。
+实际运动时只有底盘控制器接收命令，机械臂关节、夹爪和升降不动，但整台机器人及箱体会随底盘前进，因此“前方无障碍”需要覆盖箱体的完整扫掠体积。
+14:10
+galbot@galbot-echo:~$ /home/galbot/ie_lab/bin/s1-python
+  /home/galbot/Lsy03/navigation_tests/s1_navigation_cli.py
+  probe-relative
+  --direction forward
+  --distances 1.0
+  --checks 3
+  --interval 0.25
+  --max-distance 1.2
+{
+  "mode": "probe_relative_reachability_readonly",
+  "query_only": true,
+  "motion_commands_sent": false,
+  "controller_switch_sent": false,
+  "navigation_command_attempted": false,
+  "relocalization_sent": false,
+  "stop_navigation_sent": false,
+  "bounding_box_changes_sent": false,
+  "attachment_changes_sent": false,
+  "directions": [
+    "forward"
+  ],
+  "distances_m": [
+    1.0
+  ],
+  "checks_per_target": 3,
+  "queries": [
+    {
+      "direction": "forward",
+      "distance_m": 1.0,
+      "displacement_base_link_m": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "goal_pose_map": [
+        1.5726251821512465,
+        0.3481345916400085,
+        -0.007066300961366837,
+        0.0022692698732083697,
+        0.000993044198370699,
+        -0.02233756156377599,
+        0.9997474169113152
+      ],
+      "checks": [
+        {
+          "index": 0,
+          "reachable": false,
+          "duration_s": 0.10129599799984135
+        },
+        {
+          "index": 1,
+          "reachable": false,
+          "duration_s": 0.10082904400042025
+        },
+        {
+          "index": 2,
+          "reachable": false,
+          "duration_s": 0.10072753699932946
+        }
+      ],
+      "reachable_count": 0,
+      "classification": "stably_unreachable"
+    }
+  ],
+  "start_pose_map": [
+    0.5736250877380371,
+    0.3927939236164093,
+    -0.004979334305971861,
+    0.0022692698732083697,
+    0.000993044198370699,
+    -0.02233756156377599,
+    0.9997474169113152
+  ],
+  "bounding_boxes": [
+    {
+      "box_size": [
+        0.6000000238418579,
+        0.5,
+        0.375
+      ],
+      "box_pose": [
+        0.7279888391494751,
+        0.010631592944264412,
+        0.6475703716278076,
+        0.007822533138096333,
+        0.002328962553292513,
+        0.7022815942764282,
+        0.7118523716926575
+      ],
+      "box_tag": 4317,
+      "parent_link_name": "base_link"
+    }
+  ],
+  "summary": {
+    "forward": {
+      "last_stably_reachable_m": null,
+      "first_stably_unreachable_m": 1.0,
+      "mixed_distances_m": []
+    }
+  },
+  "ok": true
+}
+galbot@galbot-echo:~$
+是否正常？
+显示更多
+14:11
+耗时 33秒
+命令执行正常，但前进 1 m 当前不可行。
+关键区别：
+"ok": true：表示只读查询正常完成。
+"classification": "stably_unreachable"：表示目标不可达。
+三次均为 false，不是偶发通信波动。
+过滤框 tag 4317 已存在，但这不能证明 PNS 附着碰撞体是否导致拒绝。
+不要运行 relative --x 1.0；守护脚本也会在运动前拒绝。
+下一步应只读检查这三次查询对应的 PNS 日志，确认碰撞对象究竟是：
+底盘原生碰撞球；
+附着的 4317 箱体；
+静态或运行时 ESDF；
+地图/TF 或目标有效性条件。
+在查清前不要关闭碰撞检测或绕过预检查。
+已编辑 knowledge_base.md+10-0查看更改撤销审核
+14:11
+给我只读检查这三次查询对应的 PNS 日志，确认碰撞对象究竟是：
+底盘原生碰撞球；
+附着的 4317 箱体；
+静态或运行时 ESDF；
+地图/TF 或目标有效性条件。
+14:12
+已处理 5分钟 9秒
+我会只读检查 PNS 进程信息和现有日志，不启动 SDK、不创建订阅者、不修改配置，也不发送导航、停止、重定位或任何运动命令。机械臂、夹爪、升降和底盘都不会动作；目标是把这三次 false 对应到具体的碰撞 link/box、地图类型和目标有效性字段。
+已读取文件运行了命令
+你应该能ssh进入s1吧
+14:12
+能，SSH 当前正常。我刚刚已经通过现有连接只读查到 PNS 进程是：
+4599 /data/galbot/bin/service_navigation_plan
+最近日志文件名搜索没有直接命中；我继续检查该进程的工作目录和已打开的日志文件描述符，不修改文件、不发送信号。
+运行了命令
+已定位到刚才查询的关键日志：至少一轮在 14:10:49 明确报告 omni_chassis_base_link 的 sphere 11 碰撞，球半径 0.20 m、ESDF 距离约 0.163081 m。我正在提取三轮完整片段，并核对是否有 tag 4317/附着箱体参与记录，以及使用的是哪类 ESDF。
+运行了命令
+ESDF我看并非静态 ESDF 而是动态的 NVIDIA nvblox 的那一块，我觉得是
+14:15
+你的判断基本正确，但更准确应称为“galbot_fusion_main/NVIDIA nvblox 持续发布的运行时局部 ESDF”，不要把它和日志里的内部开关 dyn map 混为同一概念。
+证据很强：
+三次查询分别使用了约 120 ms 前的新 ESDF 帧；
+日志连续记录 cache esdf；
+同时反复报 global esdf map is nullptr；
+三次碰撞距离随新帧变化：0.164164 / 0.163081 / 0.191371 m；
+真正报碰撞的是 omni_chassis_base_link sphere 11（半径 0.20 m），不是 sdk_box_4317；
+sdk_box_4317 确实已附着并参与规划，三轮均记录 has object 1: sdk_box_4317。
+更关键的是：目标处 sphere 11 的位置约 (1.348, 0.347, 0.687)，与当前箱体中心换算到 map 后约 (1.301, 0.371, 0.643) 非常接近。这高度支持“nvblox 中仍残留登记前的箱体体素，过滤框阻止新点但没有追溯清掉旧体素”的假设。我继续只读检查 fusion 的加框日志和是否有清除旧体素记录。
+”
+
+
+
+
+显示更多
+
+14:17
+
+
+
+
+
+
+耗时 35秒
+
+
+
+
+
+
+
+结论分两层：
+add_bounding_box() 本身已经验证成功：
+返回 [true, "SUCCESS"]；
+同一会话能通过 get_bounding_box() 回读；
+新 SDK 会话中仍显示 filter_registered: true。
+这证明 fusion 服务接受并保留了过滤框。
+但实时点云和 ESDF验证的是不同层面：
+观察对象	能证明什么
+原始 LiDAR 点云	不能证明 add_bounding_box() 生效，因为过滤发生在后面
+fusion 过滤后的点云	可以验证箱体点是否被过滤
+ESDF/nvblox 局部距离场	可以验证过滤后的结果是否已经影响规划器使用的障碍场
+PNS 日志	可以确认最终是哪一个碰撞体触发拒绝
+
+
+你现在的情况尤其需要看 ESDF。因为 add_bounding_box() 主要过滤后续融合点，不一定会立即清除已经写入 nvblox 的 TSDF/occupancy/ESDF 体素。可能出现：
+新箱体点已被过滤
+但旧 ESDF 体素仍暂时存在
+所以 PNS 仍然拒绝目标
+因此：
+只看原始点云：不够；
+只看一帧点云：不够；
+只看登记 API 返回：只能证明“服务接受”；
+要证明它是否解决导航问题，需要时间同步的 fusion 点云 + ESDF + PNS 日志。
+按你贴出的 PNS 片段，当前报告的是 omni_chassis_base_link sphere 11，而不是 sdk_box_4317。这说明当前不能直接说“附着箱体就是碰撞原因”。has object 1: sdk_box_4317 只能证明 PNS 认识这个附着物，不能证明它触发了本次拒绝。
+最有区分力的判断是：
+过滤后点云仍有箱体点：过滤框位姿、尺寸、父坐标系或服务生效有问题；
+过滤后点云没有箱体点，但 ESDF 仍有近障碍体素：旧 ESDF 残留或清理延迟；
+ESDF 已清除，但仍报告原生 sphere 11：更像底盘本体碰撞球、地图/TF 或目标条件问题；
+PNS 明确报告 sdk_box_4317 碰撞：才可确认附着箱体本身造成拒绝。
+所以目前最准确的结论是：add_bounding_box() 已在 API 和跨会话状态层面成功，但它是否已经从 ESDF 中消除了箱体影响，仍需要同步 ESDF/PNS 证据确认。

@@ -1,0 +1,299 @@
+galbot@galbot-echo:~$ /home/galbot/ie_lab/bin/s1-python \
+>   /home/galbot/Lsy03/navigation_tests/s1_navigation_cli.py \
+>   relocalize \
+>   --x 1.0 \
+>   --y -2.0 \
+>   --yaw -1.5 \
+>   --observe 10 \
+>   --interval 1
+
+REAL-ROBOT RELOCALIZATION PREVIEW
+  state change: reset the S1 map-frame initial pose estimate
+  estimated map pose [x, y, yaw]: [1.0, -2.0, -1.5]
+  SDK pose [x,y,z,qx,qy,qz,qw]: [1.0, -2.0, 0.0, 0.0, 0.0, -0.6816387600233341, 0.7316888688738209]
+  expected physical motion: none
+  mobile base/arms/grippers/lift: no motion commands
+  risk: an inaccurate estimate can make later navigation unsafe
+  keep all later navigation disabled until localization is verified
+
+Type RELOCALIZE_MAP_1.000_-2.000_YAW_-1.500 to authorize this exact relocalization: RELOCALIZE_MAP_1.000_-2.000_YAW_-1.500
+{
+  "mode": "guarded_relocalization",
+  "initial_pose_map": [
+    1.0,
+    -2.0,
+    0.0,
+    0.0,
+    0.0,
+    -0.6816387600233341,
+    0.7316888688738209
+  ],
+  "motion_commands_sent": false,
+  "controller_switch_sent": false,
+  "navigation_command_attempted": false,
+  "relocalization_sent": true,
+  "stop_navigation_sent": false,
+  "before": {
+    "localized": true,
+    "current_pose_map": [
+      0.9349871277809143,
+      2.518929958343506,
+      -0.01657983660697937,
+      0.004559796628786895,
+      -0.0006760155040085113,
+      -0.727302501052122,
+      0.6863015541444378
+    ],
+    "navigation_status": {
+      "name": "UNKNOWN",
+      "value": 0,
+      "repr": "<NavigationTaskStatus.UNKNOWN: 0>"
+    },
+    "bounding_boxes": [
+      {
+        "box_size": [
+          0.6000000238418579,
+          0.5,
+          0.375
+        ],
+        "box_pose": [
+          0.08846454322338104,
+          -0.20926272869110107,
+          -0.15889999270439148,
+          0.011116385459899902,
+          -0.0003861214790958911,
+          0.6973011493682861,
+          0.7166919708251953
+        ],
+        "box_tag": 4317,
+        "parent_link_name": "left_arm_end_effector_mount_link"
+      }
+    ]
+  },
+  "relocalize_return": [
+    true,
+    "SUCCESS"
+  ],
+  "after": {
+    "observation_duration_s": 10.0,
+    "sample_interval_s": 1.0,
+    "samples": [
+      {
+        "elapsed_s": 1.824000037231599e-06,
+        "localized": true,
+        "current_pose_map": [
+          0.925808846950531,
+          2.5218677520751953,
+          -0.015982752665877342,
+          0.005240894684561116,
+          0.00031529626791985434,
+          -0.7270648431693278,
+          0.6865487218241175
+        ],
+        "navigation_status": {
+          "name": "UNKNOWN",
+          "value": 0,
+          "repr": "<NavigationTaskStatus.UNKNOWN: 0>"
+        }
+      },
+      {
+        "elapsed_s": 1.0013457350000863,
+        "localized": true,
+        "current_pose_map": [
+          0.9268803000450134,
+          2.5220787525177,
+          -0.018018383532762527,
+          0.004676675101275046,
+          -9.111626020787044e-05,
+          -0.7269981232443956,
+          0.6866235134387337
+        ],
+        "navigation_status": {
+          "name": "UNKNOWN",
+          "value": 0,
+          "repr": "<NavigationTaskStatus.UNKNOWN: 0>"
+        }
+      },
+      {
+        "elapsed_s": 2.0022934920000353,
+        "localized": true,
+        "current_pose_map": [
+          0.9252926707267761,
+          2.5185935497283936,
+          -0.020613089203834534,
+          0.005325442153127573,
+          -0.0009397685752494567,
+          -0.7267310183141462,
+          0.6869008542147715
+        ],
+        "navigation_status": {
+          "name": "UNKNOWN",
+          "value": 0,
+          "repr": "<NavigationTaskStatus.UNKNOWN: 0>"
+        }
+      },
+      {
+        "elapsed_s": 3.003347584000039,
+        "localized": true,
+        "current_pose_map": [
+          0.9295066595077515,
+          2.5174825191497803,
+          -0.020788978785276413,
+          0.0054744184988654515,
+          -0.0008582220019316642,
+          -0.7265672090638798,
+          0.6870730564577677
+        ],
+        "navigation_status": {
+          "name": "UNKNOWN",
+          "value": 0,
+          "repr": "<NavigationTaskStatus.UNKNOWN: 0>"
+        }
+      },
+      {
+        "elapsed_s": 4.004722097000013,
+        "localized": true,
+        "current_pose_map": [
+          0.9280061721801758,
+          2.5162415504455566,
+          -0.022037005051970482,
+          0.005133129538667619,
+          -0.0007722787403196359,
+          -0.7262824191804796,
+          0.6873768268977626
+        ],
+        "navigation_status": {
+          "name": "UNKNOWN",
+          "value": 0,
+          "repr": "<NavigationTaskStatus.UNKNOWN: 0>"
+        }
+      },
+      {
+        "elapsed_s": 5.006097270000055,
+        "localized": true,
+        "current_pose_map": [
+          0.929010272026062,
+          2.513817071914673,
+          -0.025895223021507263,
+          0.0047482927221594315,
+          -0.0011011725206881793,
+          -0.7272442883404309,
+          0.6863614107826318
+        ],
+        "navigation_status": {
+          "name": "UNKNOWN",
+          "value": 0,
+          "repr": "<NavigationTaskStatus.UNKNOWN: 0>"
+        }
+      },
+      {
+        "elapsed_s": 6.006857713000045,
+        "localized": true,
+        "current_pose_map": [
+          0.9288169145584106,
+          2.5180015563964844,
+          -0.019691618159413338,
+          0.005112886613467937,
+          -0.0002936206892301647,
+          -0.7269782233654792,
+          0.6866414165557887
+        ],
+        "navigation_status": {
+          "name": "UNKNOWN",
+          "value": 0,
+          "repr": "<NavigationTaskStatus.UNKNOWN: 0>"
+        }
+      },
+      {
+        "elapsed_s": 7.008048268000039,
+        "localized": true,
+        "current_pose_map": [
+          0.9238035678863525,
+          2.519693374633789,
+          -0.014129608869552612,
+          0.004506110049230449,
+          0.000342208754087701,
+          -0.7269322524395305,
+          0.6866943120694853
+        ],
+        "navigation_status": {
+          "name": "UNKNOWN",
+          "value": 0,
+          "repr": "<NavigationTaskStatus.UNKNOWN: 0>"
+        }
+      },
+      {
+        "elapsed_s": 8.009280773,
+        "localized": true,
+        "current_pose_map": [
+          0.92702716588974,
+          2.5195579528808594,
+          -0.01704455353319645,
+          0.004873774424203607,
+          -0.0002471459568489771,
+          -0.7267848331867424,
+          0.686847866336831
+        ],
+        "navigation_status": {
+          "name": "UNKNOWN",
+          "value": 0,
+          "repr": "<NavigationTaskStatus.UNKNOWN: 0>"
+        }
+      },
+      {
+        "elapsed_s": 9.010682266999993,
+        "localized": true,
+        "current_pose_map": [
+          0.9274729490280151,
+          2.5214474201202393,
+          -0.014919564127922058,
+          0.004699402218401545,
+          0.0003525849658183475,
+          -0.7270535697793805,
+          0.6865645621306792
+        ],
+        "navigation_status": {
+          "name": "UNKNOWN",
+          "value": 0,
+          "repr": "<NavigationTaskStatus.UNKNOWN: 0>"
+        }
+      },
+      {
+        "elapsed_s": 10.001022375000048,
+        "localized": true,
+        "current_pose_map": [
+          0.9286940097808838,
+          2.5197079181671143,
+          -0.01963656023144722,
+          0.004428543112102091,
+          -0.0008364339548302466,
+          -0.7272761594733456,
+          0.6863301510540276
+        ],
+        "navigation_status": {
+          "name": "UNKNOWN",
+          "value": 0,
+          "repr": "<NavigationTaskStatus.UNKNOWN: 0>"
+        }
+      }
+    ],
+    "localized_ever": true,
+    "first_localized_elapsed_s": 1.824000037231599e-06,
+    "navigation_ready": true,
+    "final_localized": true,
+    "final_pose_map": [
+      0.9286940097808838,
+      2.5197079181671143,
+      -0.01963656023144722,
+      0.004428543112102091,
+      -0.0008364339548302466,
+      -0.7272761594733456,
+      0.6863301510540276
+    ]
+  },
+  "position_delta_from_initial_m": 4.520313020608347,
+  "orientation_delta_from_initial_rad": 0.12902620517439004,
+  "ok": true,
+  "outcome": "localized_after_relocalization"
+}
+galbot@galbot-echo:~$

@@ -1,0 +1,342 @@
+galbot@galbot-echo:~$ /home/galbot/ie_lab/bin/s1-python \
+>   /home/galbot/Lsy03/navigation_tests/s1_navigation_cli.py \
+>   relocalize --x 1.0 --y 0.0 --yaw -1.570796 \
+>   --observe 15 --interval 1
+
+REAL-ROBOT RELOCALIZATION PREVIEW
+  state change: reset the S1 map-frame initial pose estimate
+  estimated map pose [x, y, yaw]: [1.0, 0.0, -1.570796]
+  SDK pose [x,y,z,qx,qy,qz,qw]: [1.0, 0.0, 0.0, 0.0, 0.0, -0.7071066656470943, 0.7071068967259818]
+  expected physical motion: none
+  mobile base/arms/grippers/lift: no motion commands
+  risk: an inaccurate estimate can make later navigation unsafe
+  keep all later navigation disabled until localization is verified
+
+Type RELOCALIZE_MAP_1.000_0.000_YAW_-1.571 to authorize this exact relocalization: RELOCALIZE_MAP_1.000_0.000_YAW_-1.571
+{
+  "mode": "guarded_relocalization",
+  "initial_pose_map": [
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -0.7071066656470943,
+    0.7071068967259818
+  ],
+  "motion_commands_sent": false,
+  "controller_switch_sent": false,
+  "navigation_command_attempted": false,
+  "relocalization_sent": true,
+  "stop_navigation_sent": false,
+  "before": {
+    "localized": false,
+    "current_pose_map": null,
+    "navigation_status": {
+      "name": "UNKNOWN",
+      "value": 0,
+      "repr": "<NavigationTaskStatus.UNKNOWN: 0>"
+    },
+    "bounding_boxes": []
+  },
+  "relocalize_return": [
+    true,
+    "SUCCESS"
+  ],
+  "after": {
+    "observation_duration_s": 15.0,
+    "sample_interval_s": 1.0,
+    "samples": [
+      {
+        "elapsed_s": 2.1120013116160408e-06,
+        "localized": false,
+        "current_pose_map": null,
+        "navigation_status": {
+          "name": "UNKNOWN",
+          "value": 0,
+          "repr": "<NavigationTaskStatus.UNKNOWN: 0>"
+        }
+      },
+      {
+        "elapsed_s": 1.0001727560011204,
+        "localized": false,
+        "current_pose_map": null,
+        "navigation_status": {
+          "name": "UNKNOWN",
+          "value": 0,
+          "repr": "<NavigationTaskStatus.UNKNOWN: 0>"
+        }
+      },
+      {
+        "elapsed_s": 2.0013650560013048,
+        "localized": true,
+        "current_pose_map": [
+          0.414582222700119,
+          -0.10683131217956543,
+          -0.021007489413022995,
+          0.0030608601702935474,
+          -0.0009195493772250985,
+          -0.710300166578608,
+          0.703891652829015
+        ],
+        "navigation_status": {
+          "name": "UNKNOWN",
+          "value": 0,
+          "repr": "<NavigationTaskStatus.UNKNOWN: 0>"
+        }
+      },
+      {
+        "elapsed_s": 3.0020634020002035,
+        "localized": true,
+        "current_pose_map": [
+          0.41519585251808167,
+          -0.10444145649671555,
+          -0.027599500492215157,
+          0.0036012256687610908,
+          -0.0018261440832224758,
+          -0.7100587889305676,
+          0.7041308206817293
+        ],
+        "navigation_status": {
+          "name": "UNKNOWN",
+          "value": 0,
+          "repr": "<NavigationTaskStatus.UNKNOWN: 0>"
+        }
+      },
+      {
+        "elapsed_s": 4.003529213001457,
+        "localized": true,
+        "current_pose_map": [
+          0.412558376789093,
+          -0.10288466513156891,
+          -0.026419084519147873,
+          0.0034139682224632577,
+          -0.001178271102922688,
+          -0.7101792432123495,
+          0.7040116469267528
+        ],
+        "navigation_status": {
+          "name": "UNKNOWN",
+          "value": 0,
+          "repr": "<NavigationTaskStatus.UNKNOWN: 0>"
+        }
+      },
+      {
+        "elapsed_s": 5.004126421001274,
+        "localized": true,
+        "current_pose_map": [
+          0.4143732786178589,
+          -0.09604663401842117,
+          -0.018347539007663727,
+          0.004210904137762147,
+          0.000446963218519485,
+          -0.7105476166305544,
+          0.7036363784021281
+        ],
+        "navigation_status": {
+          "name": "UNKNOWN",
+          "value": 0,
+          "repr": "<NavigationTaskStatus.UNKNOWN: 0>"
+        }
+      },
+      {
+        "elapsed_s": 6.005559043000176,
+        "localized": true,
+        "current_pose_map": [
+          0.4135383367538452,
+          -0.09763781726360321,
+          -0.023435667157173157,
+          0.0037988802163324,
+          -0.0006157577274515355,
+          -0.7106071751732699,
+          0.7035784476117706
+        ],
+        "navigation_status": {
+          "name": "UNKNOWN",
+          "value": 0,
+          "repr": "<NavigationTaskStatus.UNKNOWN: 0>"
+        }
+      },
+      {
+        "elapsed_s": 7.006616747001317,
+        "localized": true,
+        "current_pose_map": [
+          0.4152641296386719,
+          -0.09689101576805115,
+          -0.02243816666305065,
+          0.0040545085888590605,
+          -0.0005580530538767005,
+          -0.7104786664723773,
+          0.7037068381254544
+        ],
+        "navigation_status": {
+          "name": "UNKNOWN",
+          "value": 0,
+          "repr": "<NavigationTaskStatus.UNKNOWN: 0>"
+        }
+      },
+      {
+        "elapsed_s": 8.008125760001349,
+        "localized": true,
+        "current_pose_map": [
+          0.4156719744205475,
+          -0.09959779679775238,
+          -0.027867641299962997,
+          0.002974670994816371,
+          -0.001262008000662839,
+          -0.7105134915428408,
+          0.7036761591839533
+        ],
+        "navigation_status": {
+          "name": "UNKNOWN",
+          "value": 0,
+          "repr": "<NavigationTaskStatus.UNKNOWN: 0>"
+        }
+      },
+      {
+        "elapsed_s": 9.009533593000015,
+        "localized": true,
+        "current_pose_map": [
+          0.41204142570495605,
+          -0.09997925907373428,
+          -0.024223312735557556,
+          0.0037735419967212876,
+          -0.0007542828441388449,
+          -0.7103975222428426,
+          0.7037901333703251
+        ],
+        "navigation_status": {
+          "name": "UNKNOWN",
+          "value": 0,
+          "repr": "<NavigationTaskStatus.UNKNOWN: 0>"
+        }
+      },
+      {
+        "elapsed_s": 10.011002535000443,
+        "localized": true,
+        "current_pose_map": [
+          0.41542884707450867,
+          -0.10080451518297195,
+          -0.02042531408369541,
+          0.0034015600968946274,
+          -0.0005858890559811026,
+          -0.7105453587292657,
+          0.7036429345280321
+        ],
+        "navigation_status": {
+          "name": "UNKNOWN",
+          "value": 0,
+          "repr": "<NavigationTaskStatus.UNKNOWN: 0>"
+        }
+      },
+      {
+        "elapsed_s": 11.012122539001211,
+        "localized": true,
+        "current_pose_map": [
+          0.41570141911506653,
+          -0.1010311096906662,
+          -0.02410193905234337,
+          0.0033436574225159054,
+          -0.0010864293378443058,
+          -0.7104650736205097,
+          0.703723680709793
+        ],
+        "navigation_status": {
+          "name": "UNKNOWN",
+          "value": 0,
+          "repr": "<NavigationTaskStatus.UNKNOWN: 0>"
+        }
+      },
+      {
+        "elapsed_s": 12.012545716001114,
+        "localized": true,
+        "current_pose_map": [
+          0.4145611822605133,
+          -0.10298772156238556,
+          -0.021861502900719643,
+          0.003164388215407002,
+          -0.0006161290965209983,
+          -0.7104362909454863,
+          0.7037541357177085
+        ],
+        "navigation_status": {
+          "name": "UNKNOWN",
+          "value": 0,
+          "repr": "<NavigationTaskStatus.UNKNOWN: 0>"
+        }
+      },
+      {
+        "elapsed_s": 13.014004046000991,
+        "localized": true,
+        "current_pose_map": [
+          0.414103627204895,
+          -0.10115408152341843,
+          -0.017345521599054337,
+          0.003715844501411352,
+          -0.0004730749054792083,
+          -0.7105326233976116,
+          0.7036542899659485
+        ],
+        "navigation_status": {
+          "name": "UNKNOWN",
+          "value": 0,
+          "repr": "<NavigationTaskStatus.UNKNOWN: 0>"
+        }
+      },
+      {
+        "elapsed_s": 14.01450853300048,
+        "localized": true,
+        "current_pose_map": [
+          0.4142311215400696,
+          -0.09942523390054703,
+          -0.01621512696146965,
+          0.003950956929345841,
+          -0.00022998950293943405,
+          -0.7105293621221563,
+          0.7036564236944426
+        ],
+        "navigation_status": {
+          "name": "UNKNOWN",
+          "value": 0,
+          "repr": "<NavigationTaskStatus.UNKNOWN: 0>"
+        }
+      },
+      {
+        "elapsed_s": 15.000134707001052,
+        "localized": true,
+        "current_pose_map": [
+          0.4149654805660248,
+          -0.09932192414999008,
+          -0.020229918882250786,
+          0.004013858910908636,
+          -0.00035471395049826396,
+          -0.7104740817455661,
+          0.703711831847704
+        ],
+        "navigation_status": {
+          "name": "UNKNOWN",
+          "value": 0,
+          "repr": "<NavigationTaskStatus.UNKNOWN: 0>"
+        }
+      }
+    ],
+    "localized_ever": true,
+    "first_localized_elapsed_s": 2.0013650560013048,
+    "navigation_ready": true,
+    "final_localized": true,
+    "final_pose_map": [
+      0.4149654805660248,
+      -0.09932192414999008,
+      -0.020229918882250786,
+      0.004013858910908636,
+      -0.00035471395049826396,
+      -0.7104740817455661,
+      0.703711831847704
+    ]
+  },
+  "position_delta_from_initial_m": 0.5937503542434153,
+  "orientation_delta_from_initial_rad": 0.012506473439217099,
+  "ok": true,
+  "outcome": "localized_after_relocalization"
+}
+galbot@galbot-echo:~$

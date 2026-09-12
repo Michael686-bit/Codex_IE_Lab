@@ -1,0 +1,294 @@
+<div id="vlaTotalGpuMemoryModes" class="vla-total-gpu-memory-modes" role="group" aria-label="VLA 模型按使用方式比较总 GPU 显存">
+  <h2>VLA 模型部署总 GPU 显存：按使用方式对比</h2>
+  <p class="text-small text-muted">横轴为一套部署的总 GPU 显存，多卡按“卡数 × 单卡显存”表示。对数刻度同时覆盖单卡方案和 TB 级训练集群；带 * 的数字是估算或特定验证配置，空白表示当前没有可靠的公开配置。</p>
+
+  <div class="viz-controls" aria-label="显示的使用方式">
+    <button type="button" aria-pressed="true" data-mode="infer"><span class="legend-swatch" data-color="infer" aria-hidden="true"></span>推理 / 使用</button>
+    <button type="button" aria-pressed="true" data-mode="lora"><span class="legend-swatch" data-color="lora" aria-hidden="true"></span>LoRA / PEFT</button>
+    <button type="button" aria-pressed="true" data-mode="official"><span class="legend-swatch" data-color="official" aria-hidden="true"></span>常规 / 官方微调</button>
+    <button type="button" aria-pressed="true" data-mode="full"><span class="legend-swatch" data-color="full" aria-hidden="true"></span>全参微调</button>
+  </div>
+
+  <div class="chart-wrap">
+    <svg id="vlaTotalGpuModesChart" class="vla-memory-chart" role="img" aria-label="各 VLA 模型按推理、LoRA、常规微调和全参微调比较总 GPU 显存，横轴为 GB 对数刻度"></svg>
+  </div>
+
+  <div class="recommendations" aria-label="部署建议">
+    <div><span>ACT</span><strong>1×4090（24GB）</strong></div>
+    <div><span>SmolVLA</span><strong>1×4090（24GB）</strong></div>
+    <div><span>π0.5</span><strong>1×80GB+</strong></div>
+    <div><span>LingBot-VLA 2.0</span><strong>推理 1×48GB；训练 4×48GB 起</strong></div>
+    <div><span>π0.7</span><strong>暂不采购</strong></div>
+    <div><span>UniFoLM-VLA-0</span><strong>推理 1×48GB；全参 4×80GB</strong></div>
+    <div><span>DeepSeek-V4-Flash</span><strong>4×H200 / 4×B200；高吞吐需更多卡</strong></div>
+    <div><span>DeepSeek-V4.1-Flash</span><strong>8-way TP；8×80GB 起*</strong></div>
+    <div><span>GLM-5.3-Flash</span><strong>4×80/96GB 起*</strong></div>
+  </div>
+
+  <style>
+    #vlaTotalGpuMemoryModes {
+      color: var(--foreground);
+      font-size: var(--font-size-base);
+      width: 100%;
+    }
+    #vlaTotalGpuMemoryModes h2 {
+      margin: 0 0 4px;
+      font-weight: 500;
+    }
+    #vlaTotalGpuMemoryModes p {
+      margin: 0 0 12px;
+    }
+    #vlaTotalGpuMemoryModes .viz-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px 16px;
+      align-items: center;
+      margin: 0 0 8px;
+    }
+    #vlaTotalGpuMemoryModes .viz-controls button {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 0;
+      margin: 0;
+      border: 0;
+      background: transparent;
+      color: var(--foreground);
+      font: inherit;
+      cursor: pointer;
+    }
+    #vlaTotalGpuMemoryModes .viz-controls button[aria-pressed="false"] {
+      color: var(--muted-foreground);
+      text-decoration: line-through;
+    }
+    #vlaTotalGpuMemoryModes .legend-swatch {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      background: var(--viz-series-1);
+    }
+    #vlaTotalGpuMemoryModes .legend-swatch[data-color="lora"] { background: var(--viz-series-2); }
+    #vlaTotalGpuMemoryModes .legend-swatch[data-color="official"] { background: var(--viz-series-3); }
+    #vlaTotalGpuMemoryModes .legend-swatch[data-color="full"] { background: var(--viz-series-4); }
+    #vlaTotalGpuMemoryModes .chart-wrap {
+      width: 100%;
+    }
+    #vlaTotalGpuMemoryModes svg {
+      display: block;
+      width: 100%;
+      height: auto;
+      overflow: visible;
+    }
+    #vlaTotalGpuMemoryModes svg text {
+      fill: var(--foreground);
+      font-size: 12px;
+    }
+    #vlaTotalGpuMemoryModes svg .grid line {
+      stroke: var(--border);
+      stroke-width: 1;
+      opacity: 0.55;
+    }
+    #vlaTotalGpuMemoryModes svg .axis path,
+    #vlaTotalGpuMemoryModes svg .axis line,
+    #vlaTotalGpuMemoryModes svg rect[data-chart-frame] {
+      stroke: var(--border);
+      stroke-width: 1;
+      fill: none;
+    }
+    #vlaTotalGpuMemoryModes svg .axis text,
+    #vlaTotalGpuMemoryModes svg .axis-title,
+    #vlaTotalGpuMemoryModes svg .chart-label {
+      fill: var(--muted-foreground);
+      font-size: 11px;
+    }
+    #vlaTotalGpuMemoryModes svg .model-label,
+    #vlaTotalGpuMemoryModes svg .recommendation,
+    #vlaTotalGpuMemoryModes svg .value-label {
+      fill: var(--foreground);
+    }
+    #vlaTotalGpuMemoryModes svg .model-label,
+    #vlaTotalGpuMemoryModes svg .recommendation {
+      font-size: 12px;
+    }
+    #vlaTotalGpuMemoryModes svg .value-label {
+      font-size: 11px;
+    }
+    #vlaTotalGpuMemoryModes svg .mode-bar {
+      stroke: none;
+      opacity: 0.74;
+    }
+    #vlaTotalGpuMemoryModes svg .mode-bar[data-mode="infer"] { fill: var(--viz-series-1); }
+    #vlaTotalGpuMemoryModes svg .mode-bar[data-mode="lora"] { fill: var(--viz-series-2); }
+    #vlaTotalGpuMemoryModes svg .mode-bar[data-mode="official"] { fill: var(--viz-series-3); }
+    #vlaTotalGpuMemoryModes svg .mode-bar[data-mode="full"] { fill: var(--viz-series-4); }
+    #vlaTotalGpuMemoryModes svg .mode-point[data-mode="infer"] { fill: var(--viz-series-1); }
+    #vlaTotalGpuMemoryModes svg .mode-point[data-mode="lora"] { fill: var(--viz-series-2); }
+    #vlaTotalGpuMemoryModes svg .mode-point[data-mode="official"] { fill: var(--viz-series-3); }
+    #vlaTotalGpuMemoryModes svg .mode-point[data-mode="full"] { fill: var(--viz-series-4); }
+    #vlaTotalGpuMemoryModes svg .mode-point {
+      stroke: var(--background);
+      stroke-width: 1.5;
+    }
+    #vlaTotalGpuMemoryModes .recommendations {
+      display: none;
+    }
+    @media (max-width: 599px) {
+      #vlaTotalGpuMemoryModes .recommendations {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 3px 12px;
+        margin-top: 4px;
+      }
+      #vlaTotalGpuMemoryModes .recommendations div {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        border-top: 1px solid var(--border);
+        padding-top: 4px;
+      }
+      #vlaTotalGpuMemoryModes .recommendations strong {
+        font-weight: 500;
+        text-align: right;
+      }
+    }
+  </style>
+
+  <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+  <script>
+    (() => {
+      const root = document.getElementById("vlaTotalGpuMemoryModes");
+      const svg = d3.select(root.querySelector("#vlaTotalGpuModesChart"));
+      const active = { infer: true, lora: true, official: true, full: true };
+      const modes = [
+        { key: "infer", label: "推理 / 使用" },
+        { key: "lora", label: "LoRA / PEFT" },
+        { key: "official", label: "常规 / 官方微调" },
+        { key: "full", label: "全参微调" }
+      ];
+      const models = [
+        {
+          name: "ACT", lines: ["ACT"], recommendation: "1×4090（24GB）",
+          infer: { lo: 1, hi: 2, label: "≈1–2" }, lora: null,
+          official: { lo: 2, hi: 6, label: "2–6" }, full: { lo: 2, hi: 6, label: "2–6" }
+        },
+        {
+          name: "SmolVLA", lines: ["SmolVLA"], recommendation: "1×4090（24GB）",
+          infer: { lo: 4, hi: 8, label: "≈4–8" }, lora: { lo: 6, hi: 12, label: "≈6–12" },
+          official: { lo: 10, hi: 16, label: "10–16" }, full: { lo: 12, hi: 20, label: "≈12–20" }
+        },
+        {
+          name: "π0.5", lines: ["π0.5"], recommendation: "1×80GB+",
+          infer: { lo: 16, hi: 24, label: "建议16–24" }, lora: { lo: 22.5, hi: 80, label: ">22.5*" },
+          official: { lo: 24, hi: 40, label: "24–40" }, full: { lo: 70, hi: 80, label: ">70*" }
+        },
+        {
+          name: "LingBot-VLA 2.0", lines: ["LingBot-VLA", "2.0"], recommendation: "推理 1×48GB；训练 4×48GB 起",
+          infer: { lo: 20, hi: 30, label: "≈20–30" }, lora: { lo: 32, hi: 48, label: "≈32–48*" },
+          official: { lo: 196, hi: 196, label: "4×49≈196", point: true },
+          full: { lo: 192, hi: 384, label: "4×48起→4×96" }
+        },
+        {
+          name: "π0.7", lines: ["π0.7"], recommendation: "暂不采购",
+          infer: null, lora: null, official: null, full: null
+        },
+        {
+          name: "宇树 UniFoLM-VLA-0", lines: ["UniFoLM", "VLA-0"], recommendation: "推理 1×48GB；全参 4×80GB",
+          infer: { lo: 24, hi: 48, label: "24→48" }, lora: { lo: 32, hi: 48, label: "≈32–48*" },
+          official: { lo: 48, hi: 80, label: "≈48–80*" }, full: { lo: 320, hi: 320, label: "4×80=320*", point: true }
+        },
+        {
+          name: "DeepSeek-V4-Flash", lines: ["DeepSeek-V4", "Flash"], recommendation: "4×H200 / 4×B200",
+          infer: { lo: 564, hi: 720, label: "4×H200→4×B200", tooltip: "官方部署基线；高吞吐拓扑需更多卡" },
+          lora: null, official: null, full: null
+        },
+        {
+          name: "DeepSeek-V4.1-Flash", lines: ["DeepSeek-V4.1", "Flash"], recommendation: "8-way TP；8×80GB 起*",
+          infer: { lo: 640, hi: 1128, label: "8×80起→8×141*", tooltip: "官方参考脚本MP=8；卡型和量化未固定" },
+          lora: null, official: null, full: null
+        },
+        {
+          name: "GLM-5.3-Flash", lines: ["GLM-5.3", "Flash"], recommendation: "4×80/96GB 起*",
+          infer: { lo: 320, hi: 384, label: "4×80/96*" }, lora: null,
+          official: { lo: 5760, hi: 5760, label: "72×H100≈5.76TB*", point: true, tooltip: "特定官方NeMo SFT验证配置，不是通用最低要求" },
+          full: null
+        }
+      ];
+      const refs = [1, 2, 4, 6, 8, 12, 16, 20, 24, 48, 80, 192, 196, 320, 384, 564, 640, 720, 1128, 5760, 6500];
+      const xMin = d3.min(refs);
+      const xMax = Math.ceil((d3.max(refs) * 1.08) / 500) * 500;
+
+      function addModelLabel(g, model, left, yCenter) {
+        const label = g.append("text").attr("class", "model-label").attr("x", left - 10).attr("text-anchor", "end");
+        const startY = yCenter - (model.lines.length - 1) * 7;
+        model.lines.forEach((line, i) => label.append("tspan").attr("x", left - 10).attr("y", startY + i * 14).text(line));
+      }
+
+      function render() {
+        const width = Math.max(root.querySelector(".chart-wrap").clientWidth || 736, 320);
+        const narrow = width < 600;
+        const left = narrow ? 88 : 132;
+        const right = narrow ? 12 : 270;
+        const top = 30;
+        const rowHeight = 70;
+        const plotBottom = top + models.length * rowHeight - 10;
+        const bottom = 44;
+        const height = plotBottom + bottom;
+        const plotRight = width - right;
+        const x = d3.scaleLog().domain([xMin, xMax]).range([left, plotRight]);
+        const ticks = narrow ? [1, 16, 256, 4096] : [1, 4, 16, 64, 256, 1024, 4096];
+
+        svg.attr("viewBox", `0 0 ${width} ${height}`).selectAll("*").remove();
+        svg.append("title").text("VLA 模型按使用方式比较总 GPU 显存");
+        svg.append("desc").text("每个模型显示推理、LoRA、常规微调和全参微调对应的一套部署总 GPU 显存；横轴采用对数刻度。");
+        const frame = svg.append("g");
+        frame.append("rect").attr("data-chart-frame", "true").attr("x", left).attr("y", top - 10).attr("width", Math.max(0, plotRight - left)).attr("height", plotBottom - top + 10);
+        frame.append("g").attr("class", "grid").selectAll("line").data(ticks.filter(v => v <= xMax)).join("line").attr("x1", d => x(d)).attr("x2", d => x(d)).attr("y1", top - 10).attr("y2", plotBottom);
+        const axis = frame.append("g").attr("class", "axis").attr("transform", `translate(0,${plotBottom})`).call(d3.axisBottom(x).tickValues(ticks.filter(v => v <= xMax)).tickFormat(d => d >= 1024 ? `${d / 1024}k` : `${d}`));
+        axis.selectAll("text").attr("fill", "var(--muted-foreground)");
+        axis.selectAll("path,line").attr("stroke", "var(--border)");
+        frame.append("text").attr("class", "axis-title").attr("data-axis", "x").attr("x", (left + plotRight) / 2).attr("y", height - 7).attr("text-anchor", "middle").text("总 GPU 显存 / GB（对数刻度）");
+        frame.append("text").attr("class", "axis-title").attr("data-axis", "y").attr("transform", `translate(14 ${(top + plotBottom) / 2}) rotate(-90)`).attr("text-anchor", "middle").text("模型");
+        if (!narrow) frame.append("text").attr("class", "chart-label").attr("x", plotRight + 14).attr("y", top - 16).text("部署建议");
+
+        const rows = frame.append("g").selectAll("g.model-row").data(models).join("g").attr("class", "model-row").attr("transform", (_, i) => `translate(0,${top + i * rowHeight})`);
+        rows.each(function(model) {
+          const g = d3.select(this);
+          addModelLabel(g, model, left, 35);
+          modes.forEach((mode, modeIndex) => {
+            if (!active[mode.key]) return;
+            const item = model[mode.key];
+            const y = 7 + modeIndex * 15;
+            if (!item) {
+              g.append("text").attr("class", "chart-label").attr("x", left + 4).attr("y", y + 9).text("—");
+              return;
+            }
+            const x0 = x(Math.max(xMin, item.lo));
+            const x1 = x(Math.min(xMax, item.hi));
+            const tooltip = `${model.name}｜${mode.label}：${item.label} GB 总显存` + (item.tooltip ? `；${item.tooltip}` : "");
+            if (item.point || item.lo === item.hi) {
+              g.append("circle").attr("class", "mode-point").attr("data-mode", mode.key).attr("cx", x0).attr("cy", y + 5).attr("r", 5).attr("data-tooltip", tooltip);
+            } else {
+              g.append("rect").attr("class", "mode-bar").attr("data-mode", mode.key).attr("x", x0).attr("y", y).attr("width", Math.max(1, x1 - x0)).attr("height", 10).attr("data-tooltip", tooltip);
+            }
+            const nearRight = x1 > plotRight - 132;
+            g.append("text").attr("class", "value-label").attr("x", nearRight ? plotRight - 4 : x1 + 6).attr("y", y + 9).attr("text-anchor", nearRight ? "end" : "start").text(item.label);
+          });
+          if (!narrow) g.append("text").attr("class", "recommendation").attr("x", plotRight + 14).attr("y", 35).text(model.recommendation);
+        });
+        frame.append("text").attr("class", "chart-label").attr("x", left).attr("y", top - 16).text("总显存 / 一套部署");
+      }
+
+      root.querySelectorAll(".viz-controls button").forEach(button => {
+        button.addEventListener("click", () => {
+          const mode = button.dataset.mode;
+          active[mode] = !active[mode];
+          button.setAttribute("aria-pressed", String(active[mode]));
+          render();
+        });
+      });
+      const observer = new ResizeObserver(render);
+      observer.observe(root.querySelector(".chart-wrap"));
+      render();
+    })();
+  </script>
+</div>

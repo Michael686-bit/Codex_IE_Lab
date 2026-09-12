@@ -1,0 +1,88 @@
+<div id="v5-fdp-scatter" class="v5-fdp-scatter" role="figure" aria-label="V5-3 与 FDP 的 11 帧散点对比">
+  <style>
+    #v5-fdp-scatter { color: var(--foreground); font-family: inherit; width: 100%; }
+    #v5-fdp-scatter .v5-title { font-size: 16px; font-weight: 500; margin: 0 0 4px; }
+    #v5-fdp-scatter .v5-note { color: var(--muted-foreground); font-size: 12px; margin: 0 0 12px; }
+    #v5-fdp-scatter .v5-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 22px; }
+    #v5-fdp-scatter .v5-panel { min-width: 0; }
+    #v5-fdp-scatter .v5-panel-title { color: var(--foreground); font-size: 13px; font-weight: 500; margin: 0 0 2px; }
+    #v5-fdp-scatter svg { display: block; width: 100%; height: 250px; overflow: visible; }
+    #v5-fdp-scatter .v5-frame { fill: none; stroke: var(--border); stroke-width: 1; }
+    #v5-fdp-scatter .v5-gridline { stroke: var(--border); stroke-width: 1; opacity: .55; }
+    #v5-fdp-scatter .v5-diagonal { stroke: var(--muted-foreground); stroke-width: 1.2; stroke-dasharray: 4 4; opacity: .7; }
+    #v5-fdp-scatter .v5-point { fill: var(--viz-series-1); stroke: var(--background); stroke-width: 1.5; }
+    #v5-fdp-scatter text { fill: var(--foreground); font-size: 12px; }
+    #v5-fdp-scatter .v5-tick { fill: var(--muted-foreground); font-size: 11px; }
+    #v5-fdp-scatter .v5-axis-title { fill: var(--foreground); font-size: 12px; }
+    @media (max-width: 600px) {
+      #v5-fdp-scatter .v5-grid { grid-template-columns: 1fr; gap: 18px; }
+      #v5-fdp-scatter svg { height: 230px; }
+    }
+  </style>
+  <div class="v5-title">V5-3 与 FDP：逐帧输出散点对比</div>
+  <div class="v5-note">横轴：FDP；纵轴：V5-3。虚线表示两者完全一致；D08 无 V5-3 候选，因此未进入散点。</div>
+  <div class="v5-grid"></div>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+  <script>
+    (() => {
+      const root = document.getElementById('v5-fdp-scatter');
+      const data = [
+        {id:'D01', fdp_x:1.3924520179,v5_x:1.3877581625,fdp_y:0.2553280127,v5_y:0.2527628010,fdp_z:0.5059034262,v5_z:0.5022159634,fdp_yaw:91.2885115894,v5_yaw:93.2496877545},
+        {id:'D02', fdp_x:0.9626982422,v5_x:0.9540069420,fdp_y:-0.3993467682,v5_y:-0.4054199692,fdp_z:0.5244077619,v5_z:0.5179971498,fdp_yaw:88.2390927081,v5_yaw:87.9568751972},
+        {id:'D03', fdp_x:0.9913356957,v5_x:0.9831442974,fdp_y:-0.4378109963,v5_y:-0.4372208215,fdp_z:0.5280287687,v5_z:0.5278001437,fdp_yaw:87.7428640506,v5_yaw:87.8642726626},
+        {id:'D04', fdp_x:0.9326046276,v5_x:0.9288441916,fdp_y:0.0063100792,v5_y:0.0021182939,fdp_z:0.5394808356,v5_z:0.5405506396,fdp_yaw:87.2447860410,v5_yaw:88.0671717014},
+        {id:'D05', fdp_x:1.0048533916,v5_x:0.9990016191,fdp_y:0.0985078285,v5_y:0.0905606634,fdp_z:0.5346151988,v5_z:0.5366153564,fdp_yaw:86.9772649483,v5_yaw:88.5936169504},
+        {id:'D06', fdp_x:0.9027008810,v5_x:0.8972172548,fdp_y:-0.0248463079,v5_y:-0.0255667230,fdp_z:0.5440593236,v5_z:0.5452141422,fdp_yaw:86.8509930634,v5_yaw:87.0035265011},
+        {id:'D07', fdp_x:0.9573717768,v5_x:0.9510968870,fdp_y:0.0301540053,v5_y:0.0255299644,fdp_z:0.5386931611,v5_z:0.5350807923,fdp_yaw:86.3412297144,v5_yaw:87.7831984479},
+        {id:'D09', fdp_x:0.8682527499,v5_x:0.8631116292,fdp_y:-0.0168894561,v5_y:-0.0101055325,fdp_z:0.5525014669,v5_z:0.5609511806,fdp_yaw:89.1461588869,v5_yaw:89.6230329005},
+        {id:'D10', fdp_x:0.8690194114,v5_x:0.8632356960,fdp_y:-0.0118497056,v5_y:-0.0155996564,fdp_z:0.5461872317,v5_z:0.5504762906,fdp_yaw:89.0922765893,v5_yaw:89.6007340706},
+        {id:'D11', fdp_x:0.8677942733,v5_x:0.8624151026,fdp_y:-0.0180104627,v5_y:-0.0181037321,fdp_z:0.5424054694,v5_z:0.5459038768,fdp_yaw:88.2098067615,v5_yaw:89.1337379869},
+        {id:'D12', fdp_x:0.8946345556,v5_x:0.8838800151,fdp_y:0.4023050479,v5_y:0.4049246610,fdp_z:0.5602371556,v5_z:0.5746948094,fdp_yaw:93.2627156697,v5_yaw:90.3475939612}
+      ];
+      const metrics = [
+        {title:'箱体中心 X', fdp:'fdp_x', v5:'v5_x', unit:'m'},
+        {title:'箱体中心 Y', fdp:'fdp_y', v5:'v5_y', unit:'m'},
+        {title:'箱体中心 Z', fdp:'fdp_z', v5:'v5_z', unit:'m'},
+        {title:'Yaw（度）', fdp:'fdp_yaw', v5:'v5_yaw', unit:'°'}
+      ];
+      const grid = root.querySelector('.v5-grid');
+      const fmt = (value, unit) => unit === '°' ? d3.format('.2f')(value) + '°' : d3.format('.4f')(value) + ' m';
+      function draw(panel, metric) {
+        const svg = d3.select(panel).select('svg');
+        const box = svg.node().getBoundingClientRect();
+        const width = Math.max(280, box.width || 360), height = Math.max(210, box.height || 250);
+        const margin = {top: 8, right: 14, bottom: 42, left: 54};
+        const innerW = width - margin.left - margin.right, innerH = height - margin.top - margin.bottom;
+        svg.attr('viewBox', `0 0 ${width} ${height}`);
+        svg.selectAll('*').remove();
+        const values = data.flatMap(d => [d[metric.fdp], d[metric.v5]]);
+        const extent = d3.extent(values);
+        const span = Math.max(extent[1] - extent[0], metric.unit === '°' ? .5 : .01);
+        const domain = [extent[0] - span*.08, extent[1] + span*.08];
+        const x = d3.scaleLinear(domain, [margin.left, margin.left + innerW]);
+        const y = d3.scaleLinear(domain, [margin.top + innerH, margin.top]);
+        const gx = d3.axisBottom(x).ticks(width < 380 ? 4 : 6).tickSize(-innerH).tickFormat(d3.format(metric.unit === '°' ? '.1f' : '.3f'));
+        const gy = d3.axisLeft(y).ticks(width < 380 ? 4 : 6).tickSize(-innerW).tickFormat(d3.format(metric.unit === '°' ? '.1f' : '.3f'));
+        const g = svg.append('g');
+        g.append('rect').attr('class','v5-frame').attr('x',margin.left).attr('y',margin.top).attr('width',innerW).attr('height',innerH);
+        g.append('g').attr('transform',`translate(0,${margin.top+innerH})`).call(gx).selectAll('.tick line').attr('class','v5-gridline');
+        g.append('g').attr('transform',`translate(${margin.left},0)`).call(gy).selectAll('.tick line').attr('class','v5-gridline');
+        g.selectAll('.domain').attr('stroke','var(--muted-foreground)').attr('stroke-width',1);
+        g.selectAll('.tick text').attr('class','v5-tick');
+        g.append('line').attr('class','v5-diagonal').attr('x1',x(domain[0])).attr('y1',y(domain[0])).attr('x2',x(domain[1])).attr('y2',y(domain[1]));
+        g.append('text').attr('class','v5-axis-title').attr('data-axis','x').attr('x',margin.left+innerW/2).attr('y',height-6).attr('text-anchor','middle').text(`FDP ${metric.title} (${metric.unit})`);
+        g.append('text').attr('class','v5-axis-title').attr('data-axis','y').attr('transform',`translate(14,${margin.top+innerH/2}) rotate(-90)`).attr('text-anchor','middle').text(`V5-3 ${metric.title} (${metric.unit})`);
+        g.selectAll('circle').data(data).join('circle').attr('class','v5-point').attr('cx',d=>x(d[metric.fdp])).attr('cy',d=>y(d[metric.v5])).attr('r',5)
+          .attr('data-tooltip',d=>`${d.id} · FDP ${fmt(d[metric.fdp],metric.unit)} · V5-3 ${fmt(d[metric.v5],metric.unit)}`);
+      }
+      metrics.forEach(metric => {
+        const panel = document.createElement('div'); panel.className='v5-panel';
+        const title = document.createElement('div'); title.className='v5-panel-title'; title.textContent=metric.title;
+        const svg = document.createElementNS('http://www.w3.org/2000/svg','svg'); svg.setAttribute('role','img'); svg.setAttribute('aria-label',metric.title+' 的 FDP 与 V5-3 散点图');
+        panel.append(title,svg); grid.appendChild(panel); draw(panel,metric);
+      });
+      const redraw = () => root.querySelectorAll('.v5-panel').forEach((panel, i) => draw(panel, metrics[i]));
+      new ResizeObserver(redraw).observe(root);
+    })();
+  </script>
+</div>

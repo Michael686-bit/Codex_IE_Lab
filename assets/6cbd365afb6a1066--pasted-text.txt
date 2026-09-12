@@ -1,0 +1,529 @@
+[Skip to main content](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_robot_deployment#__docusaurus_skipToContent_fallback)
+
+[产品体系](https://developer.galbot.com/products)[开发助手](https://developer.galbot.com/platform)[训练营](https://developer.galbot.com/training)
+
+**中文**English
+
+- **目录**
+- [**Galbot SDK**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_robot_deployment#)
+  - [**G1**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/)
+    - [**产品概述**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/overview)
+    - [**安装与配置**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_and_configuration)
+      - [**系统要求**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_system_requirements)
+      - [**环境部署**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_and_configuration)
+        - [**机器人端部署**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_robot_deployment)
+        - [**PC 端部署**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_deployment)
+        - [**Docker 部署**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_docker_deployment)
+      - [**版本兼容性检查**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_version_compatibility)
+      - [**术语说明**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_terminology)
+    - [**入门教程**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/tutorials)
+    - [**Python 示例**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/examples_python)
+    - [**C++ 示例**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/examples_cpp)
+    - [**Python API 参考 - G1 机器**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/api_python_reference)
+    - [**C++ API 参考 - G1 机器人**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/api_cpp_reference)
+    - [**常规操作**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/routine_operations)
+    - [**故障排除**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/troubleshooting)
+    - [**Galbot SDK 许可证**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/license)
+  - [**S1**](https://developer.galbot.com/docs/SDK/1.9.1/s1/zh/)
+- [**Galbot G1 通用人形机器人**](https://developer.galbot.com/docs/g1/2.2.4/zh/g1)
+- [**Galbot S1 工业重载机器人**](https://developer.galbot.com/docs/s1/2.0.0/zh/s1)
+- [**遥操作主从臂**](https://developer.galbot.com/docs/tm01/1.4.0/zh/tm01)
+
+*
+* Galbot SDK
+* [G1](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/)
+* [安装与配置](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_and_configuration)
+* [环境部署](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_and_configuration)
+* 机器人端部署
+
+**latest(1.9.1)**
+
+[**机器人端部署**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_robot_deployment)[程序运行在机器人 Orin 上，适合生产环境与实时性要求高的应用。](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_robot_deployment)[**PC端部署**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_deployment)[程序运行在 PC 上，支持 Ubuntu、WSL2、VMWare 开发调试环境。](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_deployment)[**Docker部署**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_docker_deployment)[SDK 与运行依赖放在容器内，适合需要隔离环境的场景。](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_docker_deployment)
+
+# 机器人端部署
+
+**适用场景：** 生产环境部署，实时性要求高的应用
+
+**特点：** 无网络延迟，通信开销最小
+
+## 1. 连接机器人网络
+
+1.1 开机后在网络选择界面连接WiFi
+
+
+
+
+
+1.2 在Network界面查看机器人IP地址
+
+
+
+**IP 用途说明**
+
+此 IP 为后续部署 SDK 到机器人时需要输入的 IP 地址，外部也可通过 `ssh` 登录此 IP 在机器人上运行程序。同时，在进行 SDK 与机器人系统版本兼容性检查时，也可以通过该 IP 指定目标机器人：
+```bash
+galbot_sdk check-version [--robot-ip <IP>]
+```
+
+## 2. 部署SDK到机器人
+
+2.1 在PC上执行部署脚本
+```bash
+cd GalbotSDK
+./deploy_to_robot.sh
+```
+
+2.2 根据提示输入连接信息
+
+- 用户名：`galbot`
+- Orin IP地址：例如 `192.168.120.180`
+- 密码：[REDACTED]
+
+**部署结果**
+
+动态库自动安装到：`/data/galbot/lib`
+
+2.3 验证安装
+```bash
+ssh galbot@<机器人IP>
+ls /data/galbot/lib | grep galbot_sdk
+```
+
+**预期输出**
+
+显示 libgalbot\_sdk.so 和 libgalbot\_sdk.so.1.7.0
+
+2.4 环境变量配置
+
+**环境变量已自动配置**
+
+使用 `deploy_to_robot.sh` 部署SDK时，安装脚本已自动配置环境变量并写入 `~/.bashrc`，重新登录或运行 `source ~/.bashrc` 即可生效。
+
+如果运行程序时找不到 `galbot_sdk` 库，请执行：
+```bash
+export LD_LIBRARY_PATH=/data/galbot/lib:$LD_LIBRARY_PATH
+export PYTHONPATH=/data/galbot/lib:$PYTHONPATH
+export PATH=/data/galbot/lib/galbot_sdk/bin:$PATH
+echo 'export LD_LIBRARY_PATH=/data/galbot/lib:$LD_LIBRARY_PATH' >> ~/.bashrc
+echo 'export PYTHONPATH=/data/galbot/lib:$PYTHONPATH' >> ~/.bashrc
+echo 'export PATH=/data/galbot/lib/galbot_sdk/bin:$PATH' >> ~/.bashrc
+```
+
+## 3. 运行程序
+
+### 3.1 Python程序
+
+3.1.1 传输python源码到机器人的Orin上
+```bash
+scp your_app.py galbot@<机器人IP>:/userdata
+```
+
+3.1.2 运行PYTHON程序
+```bash
+python your_app.py
+```
+
+### 3.2 C++程序
+
+3.2.1 在PC上安装SDK
+
+进入到SDK目录下执行安装脚本
+```bash
+cd GalbotSDK
+./install.sh
+```
+
+3.2.2 在PC上交叉编译（aarch64）
+```bash
+cd examples/cpp/
+mkdir -p build
+cd build
+cmake ../ -DCMAKE_TOOLCHAIN_FILE=../cmake/linux-aarch64-gcc940.cmake
+make
+```
+
+3.2.3 传输可执行文件到机器人的Orin上
+```bash
+scp your_app galbot@<机器人IP>:/userdata
+```
+
+3.2.4 运行程序
+```bash
+ssh galbot@<机器人IP>
+cd /userdata
+./your_app
+```
+
+---
+
+[**上一章**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_and_configuration)
+
+[**环境部署**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_and_configuration)
+
+[**下一章**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_deployment)
+
+[**PC端部署**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_deployment)
+
+- [1. 连接机器人网络](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_robot_deployment#1-%E8%BF%9E%E6%8E%A5%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%BD%91%E7%BB%9C)
+- [2. 部署SDK到机器人](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_robot_deployment#2-%E9%83%A8%E7%BD%B2sdk%E5%88%B0%E6%9C%BA%E5%99%A8%E4%BA%BA)
+- [3. 运行程序](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_robot_deployment#3-%E8%BF%90%E8%A1%8C%E7%A8%8B%E5%BA%8F)
+  - [3.1 Python程序](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_robot_deployment#31-python%E7%A8%8B%E5%BA%8F)
+  - [3.2 C++程序](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_robot_deployment#32-c%E7%A8%8B%E5%BA%8F)
+
+© 2026 Galbot · developer.galbot.com
+
+联系支持[隐私政策](https://developer.galbot.com/privacy)[服务条款](https://developer.galbot.com/terms)
+
+
+
+
+
+[Skip to main content](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_ubuntu#__docusaurus_skipToContent_fallback)
+
+[产品体系](https://developer.galbot.com/products)[开发助手](https://developer.galbot.com/platform)[训练营](https://developer.galbot.com/training)
+
+**中文**English
+
+- **目录**
+- [**Galbot SDK**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_ubuntu#)
+  - [**G1**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/)
+    - [**产品概述**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/overview)
+    - [**安装与配置**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_and_configuration)
+      - [**系统要求**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_system_requirements)
+      - [**环境部署**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_and_configuration)
+        - [**机器人端部署**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_robot_deployment)
+        - [**PC 端部署**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_deployment)
+          - [**Ubuntu**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_ubuntu)
+          - [**WSL2**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_wsl2)
+          - [**VMware**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_vmware)
+        - [**Docker 部署**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_docker_deployment)
+      - [**版本兼容性检查**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_version_compatibility)
+      - [**术语说明**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_terminology)
+    - [**入门教程**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/tutorials)
+    - [**Python 示例**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/examples_python)
+    - [**C++ 示例**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/examples_cpp)
+    - [**Python API 参考 - G1 机器**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/api_python_reference)
+    - [**C++ API 参考 - G1 机器人**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/api_cpp_reference)
+    - [**常规操作**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/routine_operations)
+    - [**故障排除**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/troubleshooting)
+    - [**Galbot SDK 许可证**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/license)
+  - [**S1**](https://developer.galbot.com/docs/SDK/1.9.1/s1/zh/)
+- [**Galbot G1 通用人形机器人**](https://developer.galbot.com/docs/g1/2.2.4/zh/g1)
+- [**Galbot S1 工业重载机器人**](https://developer.galbot.com/docs/s1/2.0.0/zh/s1)
+- [**遥操作主从臂**](https://developer.galbot.com/docs/tm01/1.4.0/zh/tm01)
+
+*
+* Galbot SDK
+* [G1](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/)
+* [安装与配置](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_and_configuration)
+* [环境部署](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_and_configuration)
+* [PC 端部署](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_deployment)
+* Ubuntu
+
+**latest(1.9.1)**
+
+[**机器人端部署**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_robot_deployment)[程序运行在机器人 Orin 上，适合生产环境与实时性要求高的应用。](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_robot_deployment)[**PC端部署**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_deployment)[程序运行在 PC 上，支持 Ubuntu、WSL2、VMWare 开发调试环境。](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_deployment)[**Docker部署**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_docker_deployment)[SDK 与运行依赖放在容器内，适合需要隔离环境的场景。](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_docker_deployment)
+
+# PC端部署 - Ubuntu
+
+**适用场景：** 开发调试，快速迭代
+
+**特点：** 开发便捷，支持局域网远程控制
+
+## 1. 物理连接
+
+PC 通过以太网转接板与机器人相连。转接板用于把标准 RJ45 网线接口转换为机器人专用的以太网接口，使用步骤如下：
+
+1.1 将网线一端插入转接板的 RJ45 接口，另一端连接到 PC 网口
+
+1.2 将转接板的另一端插入机器人背部对应的以太网接口
+
+
+
+连接完成后整体走线如下图所示：
+
+
+
+## 2. 配置网络
+
+### 2.1 配置PC网口IP
+
+- IP地址：`192.168.1.99`（或同网段其他地址）
+- 子网掩码：`255.255.255.0`
+
+设置路径：**设置 → 网络 → 有线设置 → IPv4 → 手动**
+
+
+
+验证配置：
+```bash
+ifconfig
+```
+
+**预期输出**
+
+显示 `inet 192.168.1.99`
+
+
+
+### 2.2 一键配置PC、XCU、HPU端IP
+
+**前提条件**
+
+PC、XCU、HPU 三者需能互相 ping 通
+
+在SDK目录下执行 `configure_embosa_ip.sh` 脚本，配置PC端的IP（以 PC: 192.168.1.99、XCU: 192.168.1.66、HPU: 192.168.1.88 为例）：
+```bash
+./configure_embosa_ip.sh
+```
+
+脚本启动后依次提示输入以下信息：
+```text
+请输入配置的 PC IP: 192.168.1.99          # 必填
+请输入配置的 XCU IP [默认 192.168.1.66]:  # 直接回车使用默认值
+请输入配置的 HPU IP [默认 192.168.1.88]:  # 直接回车使用默认值
+```
+
+脚本将自动完成 PC、XCU、HPU 三端的 embosa IP 配置并重启各端 launcher。
+
+## 3. 在PC上安装SDK
+
+进入到SDK目录下执行安装脚本
+```bash
+cd GalbotSDK
+./install.sh
+```
+
+**环境变量已自动配置**
+
+安装脚本已自动在PC端配置环境变量，将以下内容写入 `~/.bashrc`：
+```bash
+source /opt/galbot/galbot_sdk/linux-x86_64-gcc940/setup.sh
+```
+
+重新登录或运行 `source ~/.bashrc` 即可生效。如果找不到 `galbot_sdk` 库，请重新执行安装脚本或检查 `~/.bashrc` 中的配置。
+
+## 4. 编译程序
+
+在PC上编译（x86\_64）
+```bash
+cd examples/cpp/
+mkdir -p build
+cd build
+cmake ../ -DCMAKE_TOOLCHAIN_FILE=../cmake/linux-x86_64-gcc940.cmake
+make
+```
+
+## 5. 运行程序
+
+5.1 运行C++程序
+```bash
+cd /userdata  # 或程序所在目录
+./your_app
+```
+
+5.2 运行Python程序
+```bash
+python your_app.py
+```
+
+**python相关库安装**
+
+在运行python example时依赖一些库，所以请先运行下面的脚本保证相关库已安装：
+```bash
+cd GalbotSDK
+./install_python_deps.sh
+```
+
+---
+
+[**上一章**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_deployment)
+
+[**PC端部署**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_deployment)
+
+[**下一章**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_wsl2)
+
+[**WSL2**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_wsl2)
+
+- [1. 物理连接](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_ubuntu#1-%E7%89%A9%E7%90%86%E8%BF%9E%E6%8E%A5)
+- [2. 配置网络](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_ubuntu#2-%E9%85%8D%E7%BD%AE%E7%BD%91%E7%BB%9C)
+  - [2.1 配置PC网口IP](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_ubuntu#21-%E9%85%8D%E7%BD%AEpc%E7%BD%91%E5%8F%A3ip)
+  - [2.2 一键配置PC、XCU、HPU端IP](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_ubuntu#22-%E4%B8%80%E9%94%AE%E9%85%8D%E7%BD%AEpcxcuhpu%E7%AB%AFip)
+- [3. 在PC上安装SDK](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_ubuntu#3-%E5%9C%A8pc%E4%B8%8A%E5%AE%89%E8%A3%85sdk)
+- [4. 编译程序](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_ubuntu#4-%E7%BC%96%E8%AF%91%E7%A8%8B%E5%BA%8F)
+- [5. 运行程序](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_ubuntu#5-%E8%BF%90%E8%A1%8C%E7%A8%8B%E5%BA%8F)
+
+© 2026 Galbot · developer.galbot.com
+
+联系支持[隐私政策](https://developer.galbot.com/privacy)[服务条款](https://developer.galbot.com/terms)
+
+
+
+
+
+
+
+[Skip to main content](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_docker_deployment#__docusaurus_skipToContent_fallback)
+
+[产品体系](https://developer.galbot.com/products)[开发助手](https://developer.galbot.com/platform)[训练营](https://developer.galbot.com/training)
+
+**中文**English
+
+- **目录**
+- [**Galbot SDK**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_docker_deployment#)
+  - [**G1**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/)
+    - [**产品概述**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/overview)
+    - [**安装与配置**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_and_configuration)
+      - [**系统要求**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_system_requirements)
+      - [**环境部署**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_and_configuration)
+        - [**机器人端部署**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_robot_deployment)
+        - [**PC 端部署**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_deployment)
+        - [**Docker 部署**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_docker_deployment)
+      - [**版本兼容性检查**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_version_compatibility)
+      - [**术语说明**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_terminology)
+    - [**入门教程**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/tutorials)
+    - [**Python 示例**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/examples_python)
+    - [**C++ 示例**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/examples_cpp)
+    - [**Python API 参考 - G1 机器**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/api_python_reference)
+    - [**C++ API 参考 - G1 机器人**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/api_cpp_reference)
+    - [**常规操作**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/routine_operations)
+    - [**故障排除**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/troubleshooting)
+    - [**Galbot SDK 许可证**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/license)
+  - [**S1**](https://developer.galbot.com/docs/SDK/1.9.1/s1/zh/)
+- [**Galbot G1 通用人形机器人**](https://developer.galbot.com/docs/g1/2.2.4/zh/g1)
+- [**Galbot S1 工业重载机器人**](https://developer.galbot.com/docs/s1/2.0.0/zh/s1)
+- [**遥操作主从臂**](https://developer.galbot.com/docs/tm01/1.4.0/zh/tm01)
+
+*
+* Galbot SDK
+* [G1](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/)
+* [安装与配置](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_and_configuration)
+* [环境部署](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_and_configuration)
+* Docker 部署
+
+**latest(1.9.1)**
+
+[**机器人端部署**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_robot_deployment)[程序运行在机器人 Orin 上，适合生产环境与实时性要求高的应用。](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_robot_deployment)[**PC端部署**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_deployment)[程序运行在 PC 上，支持 Ubuntu、WSL2、VMWare 开发调试环境。](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_deployment)[**Docker部署**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_docker_deployment)[SDK 与运行依赖放在容器内，适合需要隔离环境的场景。](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_docker_deployment)
+
+# Docker部署
+
+**适用场景：** 需要与宿主机隔离的环境
+
+## 1. 环境配置
+
+- 需安装 **Docker** 与 **Docker Compose**
+- 可参考 **PC端部署** 中第一、第二章节，完成网线连接、修改机器人`embosa_ip_config.json` 等配置
+
+## 2. 获取镜像
+
+示例：
+```bash
+docker pull galbot/galbot_sdk:1.8.0
+```
+
+可根据实际需要版本，替换galbot\_sdk:1.8.0中版本号
+
+## 3. 启动容器
+
+进入SDK产出中docker路径，执行run脚本即可启动镜像
+```bash
+cd GalbotSDK/docker
+./run.sh
+```
+
+容器内已安装好SDK动态库与运行环境
+
+---
+
+[**上一章**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_vmware)
+
+[**VMware**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_vmware)
+
+[**下一章**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_version_compatibility)
+
+[**版本兼容性检查**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_version_compatibility)
+
+- [1. 环境配置](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_docker_deployment#1-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE)
+- [2. 获取镜像](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_docker_deployment#2-%E8%8E%B7%E5%8F%96%E9%95%9C%E5%83%8F)
+- [3. 启动容器](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_docker_deployment#3-%E5%90%AF%E5%8A%A8%E5%AE%B9%E5%99%A8)
+
+© 2026 Galbot · developer.galbot.com
+
+联系支持[隐私政策](https://developer.galbot.com/privacy)[服务条款](https://developer.galbot.com/terms)
+
+
+
+[Skip to main content](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_version_compatibility#__docusaurus_skipToContent_fallback)
+
+[产品体系](https://developer.galbot.com/products)[开发助手](https://developer.galbot.com/platform)[训练营](https://developer.galbot.com/training)
+
+**中文**English
+
+- **目录**
+- [**Galbot SDK**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_version_compatibility#)
+  - [**G1**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/)
+    - [**产品概述**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/overview)
+    - [**安装与配置**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_and_configuration)
+      - [**系统要求**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_system_requirements)
+      - [**环境部署**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_and_configuration)
+      - [**版本兼容性检查**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_version_compatibility)
+      - [**术语说明**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_terminology)
+    - [**入门教程**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/tutorials)
+    - [**Python 示例**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/examples_python)
+    - [**C++ 示例**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/examples_cpp)
+    - [**Python API 参考 - G1 机器**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/api_python_reference)
+    - [**C++ API 参考 - G1 机器人**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/api_cpp_reference)
+    - [**常规操作**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/routine_operations)
+    - [**故障排除**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/troubleshooting)
+    - [**Galbot SDK 许可证**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/license)
+  - [**S1**](https://developer.galbot.com/docs/SDK/1.9.1/s1/zh/)
+- [**Galbot G1 通用人形机器人**](https://developer.galbot.com/docs/g1/2.2.4/zh/g1)
+- [**Galbot S1 工业重载机器人**](https://developer.galbot.com/docs/s1/2.0.0/zh/s1)
+- [**遥操作主从臂**](https://developer.galbot.com/docs/tm01/1.4.0/zh/tm01)
+
+*
+* Galbot SDK
+* [G1](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/)
+* [安装与配置](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_and_configuration)
+* 版本兼容性检查
+
+**latest(1.9.1)**
+
+# 版本兼容性检查
+
+**SDK 版本**：安装在开发电脑或机器人上的 Galbot SDK 软件包版本。
+
+**机器人 GBS 版本**：运行在 Galbot 机器人硬件上的系统固件版本。这两个版本必须兼容才能确保正常运行。
+
+### 快速使用
+
+运行兼容性检查工具验证 SDK 版本与机器人 GBS 版本是否匹配：
+```bash
+galbot_sdk check-version
+```
+
+该工具会自动检测两个版本并指示是否兼容。如果发现不匹配，会提供升级或降级建议。
+
+更多选项请运行 `galbot_sdk check-version --help`。
+
+[**上一章**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_docker_deployment)
+
+[**Docker 部署**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_docker_deployment)
+
+[**下一章**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_terminology)
+
+[**术语说明**](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_terminology)
+
+- [快速使用](https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_version_compatibility#%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8)
+
+© 2026 Galbot · developer.galbot.com
+
+联系支持[隐私政策](https://developer.galbot.com/privacy)[服务条款](https://developer.galbot.com/terms)
+
+
+
+这里应该有三种方案，我们的目的就是需要遥操作数采数据，然后训练VLA
+
+给我进行方案选型
+
+你应该能看到“检查G1网线网络连接” 这个对话

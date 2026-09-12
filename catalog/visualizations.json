@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-09-12T09:59:21.942656+08:00",
+  "assets": [
+    {
+      "source": "2026/08/22/01a02731-e698-7092-ae82-d3144a0993e8/s1-urdf-joints.html",
+      "asset_id": "db7aad7699cd55e0",
+      "path": "assets/db7aad7699cd55e0--s1-urdf-joints.html",
+      "filename": "db7aad7699cd55e0--s1-urdf-joints.html"
+    },
+    {
+      "source": "2026/08/27/01a04115-4425-7671-aeee-ac88e18292d4/s1-code-structure.html",
+      "asset_id": "22366ca3b93857ef",
+      "path": "assets/22366ca3b93857ef--s1-code-structure.html",
+      "filename": "22366ca3b93857ef--s1-code-structure.html"
+    },
+    {
+      "source": "2026/08/28/01a04627-06e4-70a1-bb16-558f610aedc5/room0804-esdf-3d.html",
+      "asset_id": "bd6383467f05512f",
+      "path": "assets/bd6383467f05512f--room0804-esdf-3d.html",
+      "filename": "bd6383467f05512f--room0804-esdf-3d.html"
+    },
+    {
+      "source": "2026/08/28/01a04627-06e4-70a1-bb16-558f610aedc5/room0804-pose-picker.html",
+      "asset_id": "48acdea41f247a25",
+      "path": "assets/48acdea41f247a25--room0804-pose-picker.html",
+      "filename": "48acdea41f247a25--room0804-pose-picker.html"
+    },
+    {
+      "source": "2026/09/05/01a06f0c-3712-74e0-ba65-ef2dfe67393b/S1_IE_lab_周报_新版预览.png",
+      "asset_id": "ad4cf98df80efd8f",
+      "path": "assets/ad4cf98df80efd8f--S1_IE_lab_周报_新版预览.png",
+      "filename": "ad4cf98df80efd8f--S1_IE_lab_周报_新版预览.png"
+    },
+    {
+      "source": "2026/09/08/01a07eac-5b08-7021-9450-1fa1f5985648/box-pose-difference.html",
+      "asset_id": "0cefe51fd0a18b59",
+      "path": "assets/0cefe51fd0a18b59--box-pose-difference.html",
+      "filename": "0cefe51fd0a18b59--box-pose-difference.html"
+    },
+    {
+      "source": "2026/09/08/01a07ff3-313c-7030-aac2-4dfaa7287d7f/v5-fdp-scatter.html",
+      "asset_id": "9da21573323777cb",
+      "path": "assets/9da21573323777cb--v5-fdp-scatter.html",
+      "filename": "9da21573323777cb--v5-fdp-scatter.html"
+    },
+    {
+      "source": "2026/09/12/01a09320-e333-75b0-ba33-4e6c717fc1fb/vla-deployment-memory.html",
+      "asset_id": "c2cb6cc05b4a689f",
+      "path": "assets/c2cb6cc05b4a689f--vla-deployment-memory.html",
+      "filename": "c2cb6cc05b4a689f--vla-deployment-memory.html"
+    },
+    {
+      "source": "2026/09/12/01a09320-e333-75b0-ba33-4e6c717fc1fb/vla-gpu-memory.html",
+      "asset_id": "6e65ddb00d61b0c5",
+      "path": "assets/6e65ddb00d61b0c5--vla-gpu-memory.html",
+      "filename": "6e65ddb00d61b0c5--vla-gpu-memory.html"
+    },
+    {
+      "source": "2026/09/12/01a09320-e333-75b0-ba33-4e6c717fc1fb/vla-total-gpu-memory-modes.html",
+      "asset_id": "6553940296ae0ff6",
+      "path": "assets/6553940296ae0ff6--vla-total-gpu-memory-modes.html",
+      "filename": "6553940296ae0ff6--vla-total-gpu-memory-modes.html"
+    },
+    {
+      "source": "2026/09/12/01a09320-e333-75b0-ba33-4e6c717fc1fb/vla-total-gpu-memory.html",
+      "asset_id": "212e0f737956b2ff",
+      "path": "assets/212e0f737956b2ff--vla-total-gpu-memory.html",
+      "filename": "212e0f737956b2ff--vla-total-gpu-memory.html"
+    }
+  ],
+  "unassociated_pasted_attachment_count": 17
+}

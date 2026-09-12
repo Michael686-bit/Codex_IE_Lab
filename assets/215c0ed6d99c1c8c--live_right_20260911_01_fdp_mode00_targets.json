@@ -1,0 +1,2007 @@
+{
+  "schema": "s1_sjtu.mode00_offline_target_report.v1",
+  "executable": false,
+  "motion_commands_sent": false,
+  "sdk_called": false,
+  "blocking_reasons": [
+    "No S1 IK solution or joint-limit verification has been run for these endpoints.",
+    "No combined dual-arm/tool collision validation has been run for these endpoints.",
+    "No crate/scene obstacle has been added to a collision world for these endpoints.",
+    "Official GE103v1 tools are detached on the host after the prior rollback.",
+    "Multi-chain reachability, synchronization, gripper closure, and contact clearance remain unverified."
+  ],
+  "mode": "00",
+  "geometry_revision": "s1_ge103v1_tcp_native.v2",
+  "target_frame": "base_link",
+  "target_link": "left_TCP_link/right_TCP_link",
+  "input": {
+    "source_pose_path": "/tmp/live_right_20260911_01_fdp/fdp_normalized_pose.json",
+    "source_payload_pose_convention": null,
+    "input_representation": "semantic",
+    "input_rotation_projection_max_abs_delta": 0.0,
+    "input_rotation_projection_policy": "Nearest proper rotation is used only when the input is within 0.005 orthonormal max-abs error and has positive determinant; otherwise refuse.",
+    "input_matrix_4x4_before_rotation_projection": [
+      [
+        0.07289725348316625,
+        -0.9960670656964816,
+        0.050361848334990855,
+        0.9492073653910561
+      ],
+      [
+        0.9972672109145277,
+        0.07219162306021945,
+        -0.015693634885100755,
+        -0.011542406769382507
+      ],
+      [
+        0.011996108963938268,
+        0.051368318779096755,
+        0.9986076828423833,
+        0.5410641553453326
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "raw_T_base_link_from_fdp_mesh": [
+      [
+        -0.050361848334990855,
+        -0.9960670656964816,
+        0.07289725348316625,
+        0.9492073653910561
+      ],
+      [
+        0.015693634885100755,
+        0.07219162306021945,
+        0.9972672109145277,
+        -0.011542406769382507
+      ],
+      [
+        -0.9986076828423833,
+        0.051368318779096755,
+        0.011996108963938268,
+        0.5410641553453326
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "semantic_T_base_link_from_object": [
+      [
+        0.07289725348316625,
+        -0.9960670656964816,
+        0.050361848334990855,
+        0.9492073653910561
+      ],
+      [
+        0.9972672109145277,
+        0.07219162306021945,
+        -0.015693634885100755,
+        -0.011542406769382507
+      ],
+      [
+        0.011996108963938268,
+        0.051368318779096755,
+        0.9986076828423833,
+        0.5410641553453326
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "fdp_mesh_from_semantic_object": [
+      [
+        0.0,
+        0.0,
+        -1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "semantic_axes": {
+      "x": "crate length",
+      "y": "crate width",
+      "z": "crate height"
+    },
+    "crate_dimensions_m": {
+      "length": 0.4,
+      "width": 0.3,
+      "height": 0.175
+    },
+    "height_level_pitch_m": 0.165,
+    "height_is_not_layer_pitch": true
+  },
+  "object_axes_base_link": {
+    "center_m": [
+      0.9492073653910561,
+      -0.011542406769382507,
+      0.5410641553453326
+    ],
+    "length_x": [
+      0.0728972605483361,
+      0.9972673075692287,
+      0.01199611012659589
+    ],
+    "width_y": [
+      -0.9960670985769267,
+      0.07219162544328458,
+      0.05136832047477895
+    ],
+    "height_z": [
+      0.050361850596856,
+      -0.01569363558993759,
+      0.9986077276921255
+    ],
+    "height_alignment_to_base_up": 0.9986077276921255
+  },
+  "mode00_geometry": {
+    "translation_of_historical_formula": "S1-native GE103v1 TCP contact geometry expressed directly in base_link; the historical G1 mount-only -0.170 m local-X compensation is not reused.",
+    "approach_axis_base_link": [
+      0.07290250631509608,
+      0.9973390720176251,
+      0.0
+    ],
+    "left_side": "+semantic crate length axis",
+    "right_side": "-semantic crate length axis",
+    "left_tcp_axes_base_link": {
+      "x": [
+        0.9973390720176251,
+        -0.07290250631509608,
+        0.0
+      ],
+      "y": [
+        -0.0,
+        -0.0,
+        -1.0
+      ],
+      "z": [
+        0.07290250631509608,
+        0.9973390720176251,
+        0.0
+      ]
+    },
+    "right_tcp_axes_base_link": {
+      "x": [
+        0.9973390720176251,
+        -0.07290250631509608,
+        0.0
+      ],
+      "y": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "z": [
+        -0.07290250631509608,
+        -0.9973390720176251,
+        -0.0
+      ]
+    },
+    "legacy_g1_mount_offsets_m": {
+      "short_edge_half_length": 0.5,
+      "vertical_height_factor": 0.7,
+      "vertical_clearance_m": 0.01,
+      "left_tcp_x_offset_m": -0.17,
+      "left_tcp_y_offset_m": 0.07,
+      "left_tcp_z_offset_m": 0.01,
+      "right_tcp_extra_lateral_offset_m": 0.03,
+      "pregrasp_standoff_m": 0.12,
+      "lift_m": 0.11,
+      "near_retract_m": 0.05
+    },
+    "s1_ge103v1_tcp_offsets_m": {
+      "short_edge_half_length": 0.5,
+      "vertical_height_factor": 0.7,
+      "vertical_clearance_m": 0.01,
+      "tcp_tangent_offset_m": 0.0,
+      "tcp_vertical_adjustment_m": 0.07,
+      "left_contact_lateral_offset_m": 0.01,
+      "right_contact_extra_lateral_offset_m": 0.03,
+      "pregrasp_standoff_m": 0.12,
+      "lift_m": 0.11,
+      "near_retract_m": 0.05
+    },
+    "removed_legacy_mount_compensation": {
+      "axis": "shared local TCP X / crate tangent",
+      "legacy_value_m": -0.17,
+      "s1_tcp_value_m": 0.0,
+      "reason": "The old G1 pipeline solved IK for arm_end_effector_mount_link. The S1 artifact defines the desired physical point at GE103v1 TCP_link, so retaining the old flange/tool compensation displaced the live TCP by 0.17 m."
+    },
+    "orientation_contract": {
+      "legacy_g1_target_link": "left/right_arm_end_effector_mount_link",
+      "legacy_g1_mount_joint_rpy_rad": [
+        3.141592653589793,
+        0.0,
+        3.141592653589793
+      ],
+      "s1_mount_joint_rpy_rad": [
+        3.141592653589793,
+        0.0,
+        3.141592653589793
+      ],
+      "ge103v1_mount_to_tcp_rpy_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "fixed_rotation_correction_applied_rad": 0.0,
+      "note": "No evidence supports an additional 90-degree frame correction; the apparent angle is checked separately from the translation regression."
+    },
+    "s1_height_calibration_offset_m": 0.0,
+    "s1_height_calibration_note": "The later G1-only +0.015 m field correction is deliberately not applied on S1."
+  },
+  "tool": {
+    "physical_end_effector_marking": "GE10301",
+    "motion_plan_config_directory": "GE103v1",
+    "robot_body_toml_label": "GE103V1",
+    "sdk_tool_name": "GE103v1",
+    "mesh_directory": "tools_GE10301",
+    "vendor_paths": {
+      "left_urdf": "/data/galbot/config/default/service_motion_plan/tools/GE103v1/left_arm_GE103v1.urdf",
+      "right_urdf": "/data/galbot/config/default/service_motion_plan/tools/GE103v1/right_arm_GE103v1.urdf",
+      "left_toml": "/data/galbot/config/default/service_motion_plan/tools/GE103v1/left_arm_GE103v1.toml",
+      "right_toml": "/data/galbot/config/default/service_motion_plan/tools/GE103v1/right_arm_GE103v1.toml",
+      "mesh_root": "/data/galbot/config/galbot_description/galbot_S1_V1_description/meshes/tools_GE10301"
+    },
+    "vendor_sha256": {
+      "left_urdf": "324cbc2aa1760723fb5fe964abba5ba2c66e43cbd1365a9ad0371ecb28f85709",
+      "right_urdf": "296533c93c82352c8cd641003e339ea2ccbd0661b5dab427a879cc437b25ea96",
+      "left_toml": "35ca8307414970a9d824a855822dc7f9b354707226ca7a6efb8f6dd5a3905bdf",
+      "right_toml": "0ffe011e89561359c4ce227da7912a4aa9c7e59bb807c028a3befc8a63b495dc"
+    },
+    "toml_contract": {
+      "left": {
+        "base_link": "left_arm_end_effector_mount_link",
+        "tcp_link": "left_TCP_link"
+      },
+      "right": {
+        "base_link": "right_arm_end_effector_mount_link",
+        "tcp_link": "right_TCP_link"
+      }
+    },
+    "urdf_line_provenance": {
+      "mount_to_flange": "left/right URDF lines 8-12",
+      "flange_to_gripper_base": "left/right URDF lines 94-105",
+      "gripper_base_to_tcp": "left/right URDF lines 330-341",
+      "finger_geometry": "left/right URDF lines 147-253 and 294-342"
+    },
+    "finger_geometry": {
+      "active_joint_origin_xyz_m": [
+        0.0742,
+        0.0,
+        -0.026
+      ],
+      "passive_joint_origin_xyz_m": [
+        0.0742,
+        0.0,
+        -0.039
+      ],
+      "fingertip_active_joint_origin_xyz_m": [
+        0.05492,
+        0.0,
+        0.0
+      ],
+      "active_joint_axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "passive_mimic_multiplier": 1.0,
+      "fingertip_mimic_multiplier": -1.0
+    },
+    "mount_from_tcp": {
+      "left": {
+        "matrix_4x4": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0948
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            -0.02935
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            -0.0964
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "translation_m": [
+          0.0948,
+          -0.02935,
+          -0.0964
+        ],
+        "quaternion_xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "axes_base_link": {
+          "x": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "y": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "z": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "rotation_determinant": 1.0,
+        "rotation_orthonormal_max_abs_error": 0.0
+      },
+      "right": {
+        "matrix_4x4": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.0948
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.02935
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            -0.0964
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "translation_m": [
+          0.0948,
+          0.02935,
+          -0.0964
+        ],
+        "quaternion_xyzw": [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        "axes_base_link": {
+          "x": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "y": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "z": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "rotation_determinant": 1.0,
+        "rotation_orthonormal_max_abs_error": 0.0
+      }
+    }
+  },
+  "targets": {
+    "dual_pre_grasp": {
+      "left": {
+        "tcp": {
+          "matrix_4x4": [
+            [
+              0.9973390720176251,
+              -0.0,
+              0.07290250631509608,
+              0.9732651924750378
+            ],
+            [
+              -0.07290250631509608,
+              -0.0,
+              0.9973390720176251,
+              0.3175794869964338
+            ],
+            [
+              0.0,
+              -1.0,
+              0.0,
+              0.6035641553453326
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "translation_m": [
+            0.9732651924750378,
+            0.3175794869964338,
+            0.6035641553453326
+          ],
+          "quaternion_xyzw": [
+            -0.706636234567975,
+            0.02579209172583238,
+            -0.02579209172583238,
+            0.7066362345679751
+          ],
+          "axes_base_link": {
+            "x": [
+              0.9973390720176251,
+              -0.07290250631509608,
+              0.0
+            ],
+            "y": [
+              -0.0,
+              -0.0,
+              -1.0
+            ],
+            "z": [
+              0.07290250631509608,
+              0.9973390720176251,
+              0.0
+            ]
+          },
+          "rotation_determinant": 1.0000000000000002,
+          "rotation_orthonormal_max_abs_error": 0.0
+        },
+        "mount": {
+          "matrix_4x4": [
+            [
+              0.9973390720176251,
+              0.0,
+              0.07290250631509608,
+              0.8857452500565423
+            ],
+            [
+              -0.07290250631509608,
+              0.0,
+              0.9973390720176251,
+              0.42063413113760395
+            ],
+            [
+              0.0,
+              -1.0,
+              0.0,
+              0.5742141553453326
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "translation_m": [
+            0.8857452500565423,
+            0.42063413113760395,
+            0.5742141553453326
+          ],
+          "quaternion_xyzw": [
+            -0.706636234567975,
+            0.02579209172583238,
+            -0.02579209172583238,
+            0.7066362345679751
+          ],
+          "axes_base_link": {
+            "x": [
+              0.9973390720176251,
+              -0.07290250631509608,
+              0.0
+            ],
+            "y": [
+              0.0,
+              0.0,
+              -1.0
+            ],
+            "z": [
+              0.07290250631509608,
+              0.9973390720176251,
+              0.0
+            ]
+          },
+          "rotation_determinant": 1.0000000000000002,
+          "rotation_orthonormal_max_abs_error": 0.0
+        },
+        "mount_from_tcp": {
+          "matrix_4x4": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0948
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              -0.02935
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              -0.0964
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "translation_m": [
+            0.0948,
+            -0.02935,
+            -0.0964
+          ],
+          "quaternion_xyzw": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "axes_base_link": {
+            "x": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "y": [
+              0.0,
+              1.0,
+              0.0
+            ],
+            "z": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "rotation_determinant": 1.0,
+          "rotation_orthonormal_max_abs_error": 0.0
+        },
+        "mount_to_tcp_roundtrip_max_abs_error": 0.0
+      },
+      "right": {
+        "tcp": {
+          "matrix_4x4": [
+            [
+              0.9973390720176251,
+              0.0,
+              -0.07290250631509608,
+              0.9244205132439234
+            ],
+            [
+              -0.07290250631509608,
+              0.0,
+              -0.9973390720176251,
+              -0.35063769125537503
+            ],
+            [
+              0.0,
+              1.0,
+              -0.0,
+              0.6035641553453326
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "translation_m": [
+            0.9244205132439234,
+            -0.35063769125537503,
+            0.6035641553453326
+          ],
+          "quaternion_xyzw": [
+            0.706636234567975,
+            -0.02579209172583238,
+            -0.02579209172583238,
+            0.7066362345679751
+          ],
+          "axes_base_link": {
+            "x": [
+              0.9973390720176251,
+              -0.07290250631509608,
+              0.0
+            ],
+            "y": [
+              0.0,
+              0.0,
+              1.0
+            ],
+            "z": [
+              -0.07290250631509608,
+              -0.9973390720176251,
+              -0.0
+            ]
+          },
+          "rotation_determinant": 1.0000000000000002,
+          "rotation_orthonormal_max_abs_error": 0.0
+        },
+        "mount": {
+          "matrix_4x4": [
+            [
+              0.9973390720176251,
+              0.0,
+              -0.07290250631509608,
+              0.8228449676078773
+            ],
+            [
+              -0.07290250631509608,
+              0.0,
+              -0.9973390720176251,
+              -0.43987002019920296
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.5742141553453326
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "translation_m": [
+            0.8228449676078773,
+            -0.43987002019920296,
+            0.5742141553453326
+          ],
+          "quaternion_xyzw": [
+            0.706636234567975,
+            -0.02579209172583238,
+            -0.02579209172583238,
+            0.7066362345679751
+          ],
+          "axes_base_link": {
+            "x": [
+              0.9973390720176251,
+              -0.07290250631509608,
+              0.0
+            ],
+            "y": [
+              0.0,
+              0.0,
+              1.0
+            ],
+            "z": [
+              -0.07290250631509608,
+              -0.9973390720176251,
+              0.0
+            ]
+          },
+          "rotation_determinant": 1.0000000000000002,
+          "rotation_orthonormal_max_abs_error": 0.0
+        },
+        "mount_from_tcp": {
+          "matrix_4x4": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0948
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.02935
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              -0.0964
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "translation_m": [
+            0.0948,
+            0.02935,
+            -0.0964
+          ],
+          "quaternion_xyzw": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "axes_base_link": {
+            "x": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "y": [
+              0.0,
+              1.0,
+              0.0
+            ],
+            "z": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "rotation_determinant": 1.0,
+          "rotation_orthonormal_max_abs_error": 0.0
+        },
+        "mount_to_tcp_roundtrip_max_abs_error": 0.0
+      }
+    },
+    "dual_grasp": {
+      "left": {
+        "tcp": {
+          "matrix_4x4": [
+            [
+              0.9973390720176251,
+              -0.0,
+              0.07290250631509608,
+              0.9645168917172263
+            ],
+            [
+              -0.07290250631509608,
+              -0.0,
+              0.9973390720176251,
+              0.19789879835431876
+            ],
+            [
+              0.0,
+              -1.0,
+              0.0,
+              0.6035641553453326
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "translation_m": [
+            0.9645168917172263,
+            0.19789879835431876,
+            0.6035641553453326
+          ],
+          "quaternion_xyzw": [
+            -0.706636234567975,
+            0.02579209172583238,
+            -0.02579209172583238,
+            0.7066362345679751
+          ],
+          "axes_base_link": {
+            "x": [
+              0.9973390720176251,
+              -0.07290250631509608,
+              0.0
+            ],
+            "y": [
+              -0.0,
+              -0.0,
+              -1.0
+            ],
+            "z": [
+              0.07290250631509608,
+              0.9973390720176251,
+              0.0
+            ]
+          },
+          "rotation_determinant": 1.0000000000000002,
+          "rotation_orthonormal_max_abs_error": 0.0
+        },
+        "mount": {
+          "matrix_4x4": [
+            [
+              0.9973390720176251,
+              0.0,
+              0.07290250631509608,
+              0.8769969492987307
+            ],
+            [
+              -0.07290250631509608,
+              0.0,
+              0.9973390720176251,
+              0.30095344249548894
+            ],
+            [
+              0.0,
+              -1.0,
+              0.0,
+              0.5742141553453326
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "translation_m": [
+            0.8769969492987307,
+            0.30095344249548894,
+            0.5742141553453326
+          ],
+          "quaternion_xyzw": [
+            -0.706636234567975,
+            0.02579209172583238,
+            -0.02579209172583238,
+            0.7066362345679751
+          ],
+          "axes_base_link": {
+            "x": [
+              0.9973390720176251,
+              -0.07290250631509608,
+              0.0
+            ],
+            "y": [
+              0.0,
+              0.0,
+              -1.0
+            ],
+            "z": [
+              0.07290250631509608,
+              0.9973390720176251,
+              0.0
+            ]
+          },
+          "rotation_determinant": 1.0000000000000002,
+          "rotation_orthonormal_max_abs_error": 0.0
+        },
+        "mount_from_tcp": {
+          "matrix_4x4": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0948
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              -0.02935
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              -0.0964
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "translation_m": [
+            0.0948,
+            -0.02935,
+            -0.0964
+          ],
+          "quaternion_xyzw": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "axes_base_link": {
+            "x": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "y": [
+              0.0,
+              1.0,
+              0.0
+            ],
+            "z": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "rotation_determinant": 1.0,
+          "rotation_orthonormal_max_abs_error": 0.0
+        },
+        "mount_to_tcp_roundtrip_max_abs_error": 2.7755575615628914e-17
+      },
+      "right": {
+        "tcp": {
+          "matrix_4x4": [
+            [
+              0.9973390720176251,
+              0.0,
+              -0.07290250631509608,
+              0.9331688140017349
+            ],
+            [
+              -0.07290250631509608,
+              0.0,
+              -0.9973390720176251,
+              -0.23095700261326002
+            ],
+            [
+              0.0,
+              1.0,
+              -0.0,
+              0.6035641553453326
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "translation_m": [
+            0.9331688140017349,
+            -0.23095700261326002,
+            0.6035641553453326
+          ],
+          "quaternion_xyzw": [
+            0.706636234567975,
+            -0.02579209172583238,
+            -0.02579209172583238,
+            0.7066362345679751
+          ],
+          "axes_base_link": {
+            "x": [
+              0.9973390720176251,
+              -0.07290250631509608,
+              0.0
+            ],
+            "y": [
+              0.0,
+              0.0,
+              1.0
+            ],
+            "z": [
+              -0.07290250631509608,
+              -0.9973390720176251,
+              -0.0
+            ]
+          },
+          "rotation_determinant": 1.0000000000000002,
+          "rotation_orthonormal_max_abs_error": 0.0
+        },
+        "mount": {
+          "matrix_4x4": [
+            [
+              0.9973390720176251,
+              0.0,
+              -0.07290250631509608,
+              0.8315932683656888
+            ],
+            [
+              -0.07290250631509608,
+              0.0,
+              -0.9973390720176251,
+              -0.32018933155708795
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.5742141553453326
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "translation_m": [
+            0.8315932683656888,
+            -0.32018933155708795,
+            0.5742141553453326
+          ],
+          "quaternion_xyzw": [
+            0.706636234567975,
+            -0.02579209172583238,
+            -0.02579209172583238,
+            0.7066362345679751
+          ],
+          "axes_base_link": {
+            "x": [
+              0.9973390720176251,
+              -0.07290250631509608,
+              0.0
+            ],
+            "y": [
+              0.0,
+              0.0,
+              1.0
+            ],
+            "z": [
+              -0.07290250631509608,
+              -0.9973390720176251,
+              0.0
+            ]
+          },
+          "rotation_determinant": 1.0000000000000002,
+          "rotation_orthonormal_max_abs_error": 0.0
+        },
+        "mount_from_tcp": {
+          "matrix_4x4": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0948
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.02935
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              -0.0964
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "translation_m": [
+            0.0948,
+            0.02935,
+            -0.0964
+          ],
+          "quaternion_xyzw": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "axes_base_link": {
+            "x": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "y": [
+              0.0,
+              1.0,
+              0.0
+            ],
+            "z": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "rotation_determinant": 1.0,
+          "rotation_orthonormal_max_abs_error": 0.0
+        },
+        "mount_to_tcp_roundtrip_max_abs_error": 0.0
+      }
+    },
+    "dual_lift": {
+      "left": {
+        "tcp": {
+          "matrix_4x4": [
+            [
+              0.9973390720176251,
+              -0.0,
+              0.07290250631509608,
+              0.9645168917172263
+            ],
+            [
+              -0.07290250631509608,
+              -0.0,
+              0.9973390720176251,
+              0.19789879835431876
+            ],
+            [
+              0.0,
+              -1.0,
+              0.0,
+              0.7135641553453326
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "translation_m": [
+            0.9645168917172263,
+            0.19789879835431876,
+            0.7135641553453326
+          ],
+          "quaternion_xyzw": [
+            -0.706636234567975,
+            0.02579209172583238,
+            -0.02579209172583238,
+            0.7066362345679751
+          ],
+          "axes_base_link": {
+            "x": [
+              0.9973390720176251,
+              -0.07290250631509608,
+              0.0
+            ],
+            "y": [
+              -0.0,
+              -0.0,
+              -1.0
+            ],
+            "z": [
+              0.07290250631509608,
+              0.9973390720176251,
+              0.0
+            ]
+          },
+          "rotation_determinant": 1.0000000000000002,
+          "rotation_orthonormal_max_abs_error": 0.0
+        },
+        "mount": {
+          "matrix_4x4": [
+            [
+              0.9973390720176251,
+              0.0,
+              0.07290250631509608,
+              0.8769969492987307
+            ],
+            [
+              -0.07290250631509608,
+              0.0,
+              0.9973390720176251,
+              0.30095344249548894
+            ],
+            [
+              0.0,
+              -1.0,
+              0.0,
+              0.6842141553453326
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "translation_m": [
+            0.8769969492987307,
+            0.30095344249548894,
+            0.6842141553453326
+          ],
+          "quaternion_xyzw": [
+            -0.706636234567975,
+            0.02579209172583238,
+            -0.02579209172583238,
+            0.7066362345679751
+          ],
+          "axes_base_link": {
+            "x": [
+              0.9973390720176251,
+              -0.07290250631509608,
+              0.0
+            ],
+            "y": [
+              0.0,
+              0.0,
+              -1.0
+            ],
+            "z": [
+              0.07290250631509608,
+              0.9973390720176251,
+              0.0
+            ]
+          },
+          "rotation_determinant": 1.0000000000000002,
+          "rotation_orthonormal_max_abs_error": 0.0
+        },
+        "mount_from_tcp": {
+          "matrix_4x4": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0948
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              -0.02935
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              -0.0964
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "translation_m": [
+            0.0948,
+            -0.02935,
+            -0.0964
+          ],
+          "quaternion_xyzw": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "axes_base_link": {
+            "x": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "y": [
+              0.0,
+              1.0,
+              0.0
+            ],
+            "z": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "rotation_determinant": 1.0,
+          "rotation_orthonormal_max_abs_error": 0.0
+        },
+        "mount_to_tcp_roundtrip_max_abs_error": 2.7755575615628914e-17
+      },
+      "right": {
+        "tcp": {
+          "matrix_4x4": [
+            [
+              0.9973390720176251,
+              0.0,
+              -0.07290250631509608,
+              0.9331688140017349
+            ],
+            [
+              -0.07290250631509608,
+              0.0,
+              -0.9973390720176251,
+              -0.23095700261326002
+            ],
+            [
+              0.0,
+              1.0,
+              -0.0,
+              0.7135641553453326
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "translation_m": [
+            0.9331688140017349,
+            -0.23095700261326002,
+            0.7135641553453326
+          ],
+          "quaternion_xyzw": [
+            0.706636234567975,
+            -0.02579209172583238,
+            -0.02579209172583238,
+            0.7066362345679751
+          ],
+          "axes_base_link": {
+            "x": [
+              0.9973390720176251,
+              -0.07290250631509608,
+              0.0
+            ],
+            "y": [
+              0.0,
+              0.0,
+              1.0
+            ],
+            "z": [
+              -0.07290250631509608,
+              -0.9973390720176251,
+              -0.0
+            ]
+          },
+          "rotation_determinant": 1.0000000000000002,
+          "rotation_orthonormal_max_abs_error": 0.0
+        },
+        "mount": {
+          "matrix_4x4": [
+            [
+              0.9973390720176251,
+              0.0,
+              -0.07290250631509608,
+              0.8315932683656888
+            ],
+            [
+              -0.07290250631509608,
+              0.0,
+              -0.9973390720176251,
+              -0.32018933155708795
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.6842141553453326
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "translation_m": [
+            0.8315932683656888,
+            -0.32018933155708795,
+            0.6842141553453326
+          ],
+          "quaternion_xyzw": [
+            0.706636234567975,
+            -0.02579209172583238,
+            -0.02579209172583238,
+            0.7066362345679751
+          ],
+          "axes_base_link": {
+            "x": [
+              0.9973390720176251,
+              -0.07290250631509608,
+              0.0
+            ],
+            "y": [
+              0.0,
+              0.0,
+              1.0
+            ],
+            "z": [
+              -0.07290250631509608,
+              -0.9973390720176251,
+              0.0
+            ]
+          },
+          "rotation_determinant": 1.0000000000000002,
+          "rotation_orthonormal_max_abs_error": 0.0
+        },
+        "mount_from_tcp": {
+          "matrix_4x4": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0948
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.02935
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              -0.0964
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "translation_m": [
+            0.0948,
+            0.02935,
+            -0.0964
+          ],
+          "quaternion_xyzw": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "axes_base_link": {
+            "x": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "y": [
+              0.0,
+              1.0,
+              0.0
+            ],
+            "z": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "rotation_determinant": 1.0,
+          "rotation_orthonormal_max_abs_error": 0.0
+        },
+        "mount_to_tcp_roundtrip_max_abs_error": 0.0
+      }
+    },
+    "dual_near": {
+      "left": {
+        "tcp": {
+          "matrix_4x4": [
+            [
+              0.9973390720176251,
+              -0.0,
+              0.07290250631509608,
+              0.9146499381163451
+            ],
+            [
+              -0.07290250631509608,
+              -0.0,
+              0.9973390720176251,
+              0.20154392367007357
+            ],
+            [
+              0.0,
+              -1.0,
+              0.0,
+              0.7135641553453326
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "translation_m": [
+            0.9146499381163451,
+            0.20154392367007357,
+            0.7135641553453326
+          ],
+          "quaternion_xyzw": [
+            -0.706636234567975,
+            0.02579209172583238,
+            -0.02579209172583238,
+            0.7066362345679751
+          ],
+          "axes_base_link": {
+            "x": [
+              0.9973390720176251,
+              -0.07290250631509608,
+              0.0
+            ],
+            "y": [
+              -0.0,
+              -0.0,
+              -1.0
+            ],
+            "z": [
+              0.07290250631509608,
+              0.9973390720176251,
+              0.0
+            ]
+          },
+          "rotation_determinant": 1.0000000000000002,
+          "rotation_orthonormal_max_abs_error": 0.0
+        },
+        "mount": {
+          "matrix_4x4": [
+            [
+              0.9973390720176251,
+              0.0,
+              0.07290250631509608,
+              0.8271299956978495
+            ],
+            [
+              -0.07290250631509608,
+              0.0,
+              0.9973390720176251,
+              0.3045985678112437
+            ],
+            [
+              0.0,
+              -1.0,
+              0.0,
+              0.6842141553453326
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "translation_m": [
+            0.8271299956978495,
+            0.3045985678112437,
+            0.6842141553453326
+          ],
+          "quaternion_xyzw": [
+            -0.706636234567975,
+            0.02579209172583238,
+            -0.02579209172583238,
+            0.7066362345679751
+          ],
+          "axes_base_link": {
+            "x": [
+              0.9973390720176251,
+              -0.07290250631509608,
+              0.0
+            ],
+            "y": [
+              0.0,
+              0.0,
+              -1.0
+            ],
+            "z": [
+              0.07290250631509608,
+              0.9973390720176251,
+              0.0
+            ]
+          },
+          "rotation_determinant": 1.0000000000000002,
+          "rotation_orthonormal_max_abs_error": 0.0
+        },
+        "mount_from_tcp": {
+          "matrix_4x4": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0948
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              -0.02935
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              -0.0964
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "translation_m": [
+            0.0948,
+            -0.02935,
+            -0.0964
+          ],
+          "quaternion_xyzw": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "axes_base_link": {
+            "x": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "y": [
+              0.0,
+              1.0,
+              0.0
+            ],
+            "z": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "rotation_determinant": 1.0,
+          "rotation_orthonormal_max_abs_error": 0.0
+        },
+        "mount_to_tcp_roundtrip_max_abs_error": 0.0
+      },
+      "right": {
+        "tcp": {
+          "matrix_4x4": [
+            [
+              0.9973390720176251,
+              0.0,
+              -0.07290250631509608,
+              0.8833018604008537
+            ],
+            [
+              -0.07290250631509608,
+              0.0,
+              -0.9973390720176251,
+              -0.2273118772975052
+            ],
+            [
+              0.0,
+              1.0,
+              -0.0,
+              0.7135641553453326
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "translation_m": [
+            0.8833018604008537,
+            -0.2273118772975052,
+            0.7135641553453326
+          ],
+          "quaternion_xyzw": [
+            0.706636234567975,
+            -0.02579209172583238,
+            -0.02579209172583238,
+            0.7066362345679751
+          ],
+          "axes_base_link": {
+            "x": [
+              0.9973390720176251,
+              -0.07290250631509608,
+              0.0
+            ],
+            "y": [
+              0.0,
+              0.0,
+              1.0
+            ],
+            "z": [
+              -0.07290250631509608,
+              -0.9973390720176251,
+              -0.0
+            ]
+          },
+          "rotation_determinant": 1.0000000000000002,
+          "rotation_orthonormal_max_abs_error": 0.0
+        },
+        "mount": {
+          "matrix_4x4": [
+            [
+              0.9973390720176251,
+              0.0,
+              -0.07290250631509608,
+              0.7817263147648076
+            ],
+            [
+              -0.07290250631509608,
+              0.0,
+              -0.9973390720176251,
+              -0.31654420624133317
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.6842141553453326
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "translation_m": [
+            0.7817263147648076,
+            -0.31654420624133317,
+            0.6842141553453326
+          ],
+          "quaternion_xyzw": [
+            0.706636234567975,
+            -0.02579209172583238,
+            -0.02579209172583238,
+            0.7066362345679751
+          ],
+          "axes_base_link": {
+            "x": [
+              0.9973390720176251,
+              -0.07290250631509608,
+              0.0
+            ],
+            "y": [
+              0.0,
+              0.0,
+              1.0
+            ],
+            "z": [
+              -0.07290250631509608,
+              -0.9973390720176251,
+              0.0
+            ]
+          },
+          "rotation_determinant": 1.0000000000000002,
+          "rotation_orthonormal_max_abs_error": 0.0
+        },
+        "mount_from_tcp": {
+          "matrix_4x4": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0948
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.02935
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              -0.0964
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "translation_m": [
+            0.0948,
+            0.02935,
+            -0.0964
+          ],
+          "quaternion_xyzw": [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "axes_base_link": {
+            "x": [
+              1.0,
+              0.0,
+              0.0
+            ],
+            "y": [
+              0.0,
+              1.0,
+              0.0
+            ],
+            "z": [
+              0.0,
+              0.0,
+              1.0
+            ]
+          },
+          "rotation_determinant": 1.0,
+          "rotation_orthonormal_max_abs_error": 0.0
+        },
+        "mount_to_tcp_roundtrip_max_abs_error": 2.7755575615628914e-17
+      }
+    }
+  },
+  "checks": {
+    "input_semantic_rotation": {
+      "det": 0.9999998251579059,
+      "orthonormal_max_abs_error": 1.938390952194169e-07
+    },
+    "semantic_height_axis_alignment_to_base_up": 0.9986077276921255,
+    "height_m": 0.175,
+    "height_level_pitch_m": 0.165,
+    "height_is_not_layer_pitch": true,
+    "pregrasp_standoff_m": {
+      "left": 0.12000000000000004,
+      "right": 0.12000000000000001
+    },
+    "pregrasp_standoff_matches_0p12": true,
+    "left_right_mirror": {
+      "shared_tcp_x_equal": true,
+      "tcp_y_opposite": true,
+      "tcp_z_opposite": true
+    },
+    "approach_axis_matches_left_tcp_z": true,
+    "near_retract_axis_matches_tcp_x": true,
+    "left_right_pregrasp_distance_m": 0.6700000000000002,
+    "mount_to_tcp_roundtrip_max_abs_error": 2.7755575615628914e-17,
+    "all_targets_rigid": true,
+    "target_rotation_checks": {
+      "dual_pre_grasp.left": {
+        "det": 1.0000000000000002,
+        "orthonormal_max_abs_error": 0.0
+      },
+      "dual_pre_grasp.right": {
+        "det": 1.0000000000000002,
+        "orthonormal_max_abs_error": 0.0
+      },
+      "dual_grasp.left": {
+        "det": 1.0000000000000002,
+        "orthonormal_max_abs_error": 0.0
+      },
+      "dual_grasp.right": {
+        "det": 1.0000000000000002,
+        "orthonormal_max_abs_error": 0.0
+      },
+      "dual_lift.left": {
+        "det": 1.0000000000000002,
+        "orthonormal_max_abs_error": 0.0
+      },
+      "dual_lift.right": {
+        "det": 1.0000000000000002,
+        "orthonormal_max_abs_error": 0.0
+      },
+      "dual_near.left": {
+        "det": 1.0000000000000002,
+        "orthonormal_max_abs_error": 0.0
+      },
+      "dual_near.right": {
+        "det": 1.0000000000000002,
+        "orthonormal_max_abs_error": 0.0
+      }
+    },
+    "target_origin_obb_local_coordinates_m": {
+      "dual_pre_grasp.left": [
+        0.3307259793761845,
+        0.0030071543887259106,
+        0.058459457983068244
+      ],
+      "dual_pre_grasp.right": [
+        -0.33922574522738724,
+        0.003420048050629919,
+        0.06648630607509576
+      ],
+      "dual_grasp.left": [
+        0.21073462571584323,
+        0.003081105492350484,
+        0.05989710241746123
+      ],
+      "dual_grasp.right": [
+        -0.21923439156704605,
+        0.003346096947005342,
+        0.06504866164070276
+      ],
+      "dual_lift.left": [
+        0.21205419770187645,
+        0.008731620558051127,
+        0.1697439475301234
+      ],
+      "dual_lift.right": [
+        -0.21791481958101283,
+        0.008996612012705985,
+        0.17489550675336493
+      ],
+      "dual_near.left": [
+        0.21205419770187647,
+        0.05866559821930572,
+        0.1671753503101319
+      ],
+      "dual_near.right": [
+        -0.21791481958101283,
+        0.05893058967396057,
+        0.17232690953337343
+      ]
+    },
+    "all_tcp_origins_outside_crate_obb": true,
+    "tcp_origin_outside_crate_obb": {
+      "dual_pre_grasp.left": true,
+      "dual_pre_grasp.right": true,
+      "dual_grasp.left": true,
+      "dual_grasp.right": true,
+      "dual_lift.left": true,
+      "dual_lift.right": true,
+      "dual_near.left": true,
+      "dual_near.right": true
+    },
+    "tcp_origin_check_limit": "Only TCP origins are tested against the crate OBB; no tool-volume or collision-world claim is made."
+  },
+  "provenance": {
+    "old_mode00_geometry": {
+      "path": "/home/c/workspace/260611_sjtu_workbin_movement/original_code/DualMobManip/realman_grasp_lesstime_gb.py",
+      "lines": "145-281",
+      "notes": "Original dual pregrasp/grasp/lift/near construction in the G1 left-arm-base convention."
+    },
+    "g1_semantic_and_replayed_formula": {
+      "path": "/home/c/workspace/260611_sjtu_workbin_movement/migrate_back/g1_workbin_perception/scripts/robot_plan_execute_dual_pregrasp_ik_from_fdp.py",
+      "semantic_mapping_lines": "39-70",
+      "mode00_formula_lines": "143-242"
+    },
+    "mode00_semantics": "00 means both short-edge grasp sides are available; target identity, when present, is inherited only through the validated FDP provenance contract."
+  },
+  "source": "fdp",
+  "fdp_source": {
+    "gate": "PASS",
+    "gate_report": "/tmp/live_right_20260911_01_fdp/comparison.json",
+    "capture_time_transform_locked": true,
+    "non_fdp_geometry_not_used": true
+  },
+  "comparison_source": "fdp",
+  "input_contract": {
+    "base_frame": "base_link",
+    "object_frame": "4317_length_width_height_center",
+    "dimensions_m": [
+      0.4,
+      0.3,
+      0.175
+    ],
+    "executable": false
+  }
+}

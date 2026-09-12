@@ -1,0 +1,95 @@
+galbot@galbot-echo:~$ docker ps
+CONTAINER ID   IMAGE                      COMMAND                  CREATED       STATUS                 PORTS     NAMES
+4003964332fa   s1-sjtu-0806-slim:latest   "/ros_entrypoint.sh …"   3 weeks ago   Up 3 hours (healthy)             s1_sjtu_0806_slim
+galbot@galbot-echo:~$ docker images
+REPOSITORY                  TAG                     IMAGE ID       CREATED        SIZE
+s1-yoloseg-icp-control      ce954db                 4ad716084648   3 days ago     4.82GB
+s1-yoloseg-icp-control      4d7279c                 ee7dbf9afcc1   5 days ago     4.82GB
+<none>                      <none>                  2bcdef0755c8   5 days ago     4.82GB
+<none>                      <none>                  5965d637dc95   5 days ago     4.82GB
+<none>                      <none>                  3fe9aa4720d7   5 days ago     4.82GB
+s1-sjtu-terminal-slowdown   5099ede-imc91b6fb3      07048b5620d2   13 days ago    5.62GB
+s1-sjtu-terminal-slowdown   e7798cf-imc91b6fb3      779fb7e9dbc3   13 days ago    5.62GB
+<none>                      <none>                  7acabd55b2e4   13 days ago    60.9GB
+s1-sjtu-0806-slim           latest                  6359272ddc5c   3 weeks ago    5.41GB
+<none>                      <none>                  6795d98a0752   3 weeks ago    61GB
+<none>                      <none>                  f46e9c1c9af9   3 weeks ago    5.34GB
+<none>                      <none>                  85d892bdbd78   3 weeks ago    61GB
+s1-sjtu-0806                latest                  25ca83640f10   3 weeks ago    63.3GB
+s1-sjtu-0806                failed-rospy-20260806   2561656d6665   3 weeks ago    63.3GB
+s1-sjtu-full-cycle          2c97d9b                 4b8d174dd075   3 weeks ago    63.2GB
+s1-sjtu-full-cycle          ba47db6                 9a1d1e0d2d04   3 weeks ago    63.2GB
+s1-sjtu-full-cycle          374e67b                 f3631200a928   3 weeks ago    63.2GB
+s1-sjtu-full-cycle          4e9376f                 3c141a7ffa76   3 weeks ago    63.2GB
+s1-sjtu-full-cycle          3fb0cbb                 bf8ebc4a6bcb   3 weeks ago    63.2GB
+s1-sjtu-full-cycle          a9bf5db                 b66cbd4eaff5   3 weeks ago    63.2GB
+s1-sjtu-full-cycle          107403d                 154de13b960a   3 weeks ago    63.2GB
+s1-sjtu-full-cycle          bcc7a3a                 804c26d8a2d1   3 weeks ago    63GB
+s1-sjtu-full-cycle          a805dba                 8275a812ff35   3 weeks ago    63GB
+<none>                      <none>                  b9555543869d   3 weeks ago    63GB
+s1-sjtu-full-cycle          431beb1                 106c0f9141e9   3 weeks ago    63GB
+s1-sjtu-full-cycle          fa54639                 bf310c1b8b91   3 weeks ago    63GB
+s1-sjtu-full-cycle          55ae8d2                 6a104b026c73   3 weeks ago    63GB
+s1-sjtu-full-cycle          4b259c4                 92d50afe1013   3 weeks ago    63GB
+s1-chassis-env              3a76e3a                 b355d64a1da4   3 weeks ago    4.82GB
+s1-chassis-env              sdk-1.9.0-gbs-1.17      b355d64a1da4   3 weeks ago    4.82GB
+dual_arm_robot              dev                     24ab63afa082   3 months ago   60.5GB
+dual_arm_robot              v5.0                    24ab63afa082   3 months ago   60.5GB
+ros                         noetic-ros-base-focal   547fd10070fc   5 years ago    2.27GB
+galbot@galbot-echo:~$ ll
+total 304
+drwxr-xr-x 35 galbot galbot  4096 8月  27 09:16 ./
+drwxr-xr-x  3 root   root    4096 4月   9 21:38 ../
+-rw-------  1 galbot galbot 78409 8月  26 10:39 .bash_history
+-rw-r--r--  1 galbot galbot   220 4月   2  2025 .bash_logout
+-rw-r--r--  1 galbot galbot  4303 7月  31 14:58 .bashrc
+-rw-r--r--  1 galbot galbot  4433 7月  30 19:42 .bashrc.pre-s1-env-20260731
+drwxr-xr-x 18 galbot galbot  4096 4月   9 22:08 .cache/
+drwxrwxr-x  4 galbot galbot  4096 8月  27 09:16 .claude/
+-rw-------  1 galbot galbot   389 8月  27 09:16 .claude.json
+drwx------ 10 galbot galbot  4096 8月  27 11:39 .codex/
+drwxrwxr-x  2 galbot galbot  4096 7月  31 14:54 .conda/
+drwxr-xr-x 20 galbot galbot  4096 4月   9 21:38 .config/
+drwx------  4 galbot galbot  4096 8月  14 17:10 .copilot/
+drwxr-xr-x  2 galbot galbot  4096 4月   9 21:38 Desktop/
+-rwxr-xr-x  1 galbot galbot  2912 1月   6  2026 disk_check.sh*
+-rw-r--r--  1 root   root     448 4月   9 22:19 disk_health_report_2026-04-09_221937.txt
+-rw-r--r--  1 root   root     448 4月  23 22:35 disk_health_report_2026-04-23_223520.txt
+drwxr-xr-x  4 galbot galbot  4096 4月   9 21:39 Documents/
+drwxr-xr-x  3 galbot galbot  4096 4月   9 21:45 .dotnet/
+drwxr-xr-x  3 galbot galbot  4096 4月   9 21:39 Downloads/
+drwxr-xr-x  5 galbot galbot  4096 4月   9 21:45 etc/
+drwxr-xr-x  3 galbot galbot  4096 7月  31 14:12 galbot_sdk_log/
+drwxr-xr-x  3 galbot galbot  4096 4月   9 21:39 .gnupg/
+drwxrwxr-x 12 galbot galbot  4096 8月  14 16:56 ie_lab/
+drwxr-xr-x  5 galbot galbot  4096 4月   9 22:08 .local/
+drwxr-xr-x  3 galbot galbot  4096 5月  23 09:31 Logs/
+drwxrwxr-x  2 galbot galbot  4096 8月  20 20:42 Lsy03/
+drwxr-xr-x  4 galbot galbot  4096 4月   9 21:39 .mozilla/
+drwxr-xr-x  2 galbot galbot  4096 4月   9 21:39 Music/
+drwxr-xr-x  3 galbot galbot  4096 4月   9 21:45 .nv/
+drwxr-xr-x  2 galbot galbot  4096 4月   9 21:39 Pictures/
+drwxr-xr-x  3 galbot galbot  4096 4月   9 21:41 .pki/
+-rw-r--r--  1 galbot galbot   807 4月   2  2025 .profile
+drwxr-xr-x  6 galbot galbot  4096 4月  24 19:38 Project/
+drwxr-xr-x  2 galbot galbot  4096 4月   9 21:39 Public/
+-rw-------  1 galbot galbot     7 1月   2  1970 .python_history
+-rw-rw-r--  1 galbot galbot 10720 8月  22  2025 .realsense-config.json
+drwx------  3 galbot galbot  4096 4月   9 21:41 snap/
+drwx------  3 galbot galbot  4096 8月   3 09:42 .ssh/
+-rw-r--r--  1 galbot galbot     0 4月   2  2025 .sudo_as_admin_successful
+drwxr-xr-x  2 galbot galbot  4096 4月   9 21:39 Templates/
+drwxr-xr-x  5 galbot galbot  4096 4月   9 21:45 usr/
+drwxr-xr-x  2 galbot galbot  4096 4月   9 21:39 Videos/
+drwxr-xr-x  2 galbot galbot  4096 4月   9 21:45 .vim/
+-rw-------  1 galbot galbot 10131 7月  22 18:32 .viminfo
+drwxr-xr-x  4 galbot galbot  4096 7月  31 14:24 .vscode/
+drwxrwxr-x  3 galbot galbot  4096 8月   3 10:57 .vscode-remote-containers/
+drwxr-xr-x  6 galbot galbot  4096 8月  27 09:58 .vscode-server/
+-rw-rw-r--  1 galbot galbot   183 8月  14 17:10 .wget-hsts
+-rw-------  1 galbot galbot   171 4月  25 09:49 .Xauthority
+-rw-r--r--  1 galbot galbot  4097 4月   2  2025 .xsessionrc
+galbot@galbot-echo:~$ docker ps
+CONTAINER ID   IMAGE                      COMMAND                  CREATED       STATUS                 PORTS     NAMES
+4003964332fa   s1-sjtu-0806-slim:latest   "/ros_entrypoint.sh …"   3 weeks ago   Up 5 hours (healthy)             s1_sjtu_0806_slim
+galbot@galbot-echo:~$

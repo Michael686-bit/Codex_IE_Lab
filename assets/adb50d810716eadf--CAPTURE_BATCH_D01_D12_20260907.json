@@ -1,0 +1,323 @@
+{
+  "schema": "s1.fdp_baseline.capture_batch_index.v1",
+  "batch": "D01-D12",
+  "verified_at_utc": "2026-09-07T12:06:39.223412+00:00",
+  "verification": "copied read-only over user-authorized SSH; required files present; capture manifests and actual SHA-256 matched; no inference or robot command run",
+  "capture_count": 12,
+  "all_capture_ok": true,
+  "all_motion_commands_sent_false": true,
+  "entries": [
+    {
+      "logical_id": "D01",
+      "capture_dir": "right_wrist_20260907_01",
+      "source_remote_dir": "/home/galbot/Lsy03/fdp_baseline/captures/right_wrist_20260907_01",
+      "capture_ok": true,
+      "motion_commands_sent": false,
+      "frame_sync_skew_ns": 0,
+      "rgb_shape": [
+        720,
+        1280,
+        3
+      ],
+      "depth_shape": [
+        720,
+        1280
+      ],
+      "depth_valid_ratio": 0.8659635416666667,
+      "files_sha256": {
+        "base_from_camera.npy": "e8b6f7c45d07aa1bbc58ae320fa1be92d8480b522fd663ebdf13028402c6b068",
+        "capture_meta.json": "ae516ca2a671bdfc5046b738e0b6631affc846d75743a2f6b69a6ada5a2767e1",
+        "capture_result.json": "8fc8e9cdc306b539d38941923f13f9c3badad88ff30c8db1e30980575425931a",
+        "depth_raw_m.npy": "5eb28b8feb72e8480ce1f15f160434c6dcb7855cc9a2dc1db51cad597916c084",
+        "intrinsics.npy": "0d7554b837d90016c02ac7959b0d48be3524f44a4fd0aa074305906032d283ff",
+        "rgb.png": "eb045825a3ec3a497d0695a3f21722bfd67bdf07cf8f9d2dde0bb0b1f007d794"
+      }
+    },
+    {
+      "logical_id": "D02",
+      "capture_dir": "right_wrist_D02_20260907_165547_084851541",
+      "source_remote_dir": "/home/galbot/Lsy03/fdp_baseline/captures/right_wrist_D02_20260907_165547_084851541",
+      "capture_ok": true,
+      "motion_commands_sent": false,
+      "frame_sync_skew_ns": 0,
+      "rgb_shape": [
+        720,
+        1280,
+        3
+      ],
+      "depth_shape": [
+        720,
+        1280
+      ],
+      "depth_valid_ratio": 0.8601150173611111,
+      "files_sha256": {
+        "base_from_camera.npy": "272dc055984f159fe882e1c06d69f427faca5f108eddc4f780d6b61832055078",
+        "capture_meta.json": "fba26bfbf22c1e11f27982092ed4851b6a86b7dabe9db32863b91b5248479f54",
+        "capture_result.json": "47ca3d7b68f7a158fdaed9f48a5e573a81a332517c360c0d7a4ad35e56f73fc3",
+        "depth_raw_m.npy": "803194c534df4a646767f4b974c59b424d0e728763965f695053c49adb62736f",
+        "intrinsics.npy": "0d7554b837d90016c02ac7959b0d48be3524f44a4fd0aa074305906032d283ff",
+        "rgb.png": "e4a9395ff29c270fcede334cec42984bcd8c201ea7cc43382c90cd589abae700"
+      }
+    },
+    {
+      "logical_id": "D03",
+      "capture_dir": "right_wrist_D03_20260907_170359_732494930",
+      "source_remote_dir": "/home/galbot/Lsy03/fdp_baseline/captures/right_wrist_D03_20260907_170359_732494930",
+      "capture_ok": true,
+      "motion_commands_sent": false,
+      "frame_sync_skew_ns": 0,
+      "rgb_shape": [
+        720,
+        1280,
+        3
+      ],
+      "depth_shape": [
+        720,
+        1280
+      ],
+      "depth_valid_ratio": 0.8605533854166667,
+      "files_sha256": {
+        "base_from_camera.npy": "a0948ff898c896098c22aac19888835dec7a433fe5b1ef9f2de158eb5992b6d7",
+        "capture_meta.json": "3c5908a9c5ba1e419fdf47d0ead6a80c27cbd11ef632ac0d5a4936800060e6cb",
+        "capture_result.json": "ab2ebf71d130951dbb789dff66a70c2f032eb3b438da9a595da2c596c66123d5",
+        "depth_raw_m.npy": "087e03853ca0a5b1ef22e4c26ec86711f7d316a463aa3ea36a09dc623904ecca",
+        "intrinsics.npy": "0d7554b837d90016c02ac7959b0d48be3524f44a4fd0aa074305906032d283ff",
+        "rgb.png": "bebaa714648e3cc925f85700397a099a7fc734e58dff02ad6f1c004ec86de9ed"
+      }
+    },
+    {
+      "logical_id": "D04",
+      "capture_dir": "right_wrist_D04_20260907_182659_071599799",
+      "source_remote_dir": "/home/galbot/Lsy03/fdp_baseline/captures/right_wrist_D04_20260907_182659_071599799",
+      "capture_ok": true,
+      "motion_commands_sent": false,
+      "frame_sync_skew_ns": 0,
+      "rgb_shape": [
+        720,
+        1280,
+        3
+      ],
+      "depth_shape": [
+        720,
+        1280
+      ],
+      "depth_valid_ratio": 0.8509114583333334,
+      "files_sha256": {
+        "base_from_camera.npy": "47faccb220c25771c6692eb1417b1ec86d6a6f50d82b12fb4e6c888314f91352",
+        "capture_meta.json": "7dc09d0a1ef1131b31444a86d5bdd40248559ebccbc81b6bc58c2006106e4068",
+        "capture_result.json": "947491badf1356c679759925299f69654f68e16dbe2a624f8922e31090cedceb",
+        "depth_raw_m.npy": "c86a354cddd7333cfc4374c15e3a65bd21159aade9c0e462548d3d4146ebc004",
+        "intrinsics.npy": "0d7554b837d90016c02ac7959b0d48be3524f44a4fd0aa074305906032d283ff",
+        "rgb.png": "cc6de6242d8615de6b1af0451e1959dab7675e5be9552048e67d9f8a79fb3fd4"
+      }
+    },
+    {
+      "logical_id": "D05",
+      "capture_dir": "right_wrist_D05_20260907_183211_489378596",
+      "source_remote_dir": "/home/galbot/Lsy03/fdp_baseline/captures/right_wrist_D05_20260907_183211_489378596",
+      "capture_ok": true,
+      "motion_commands_sent": false,
+      "frame_sync_skew_ns": 0,
+      "rgb_shape": [
+        720,
+        1280,
+        3
+      ],
+      "depth_shape": [
+        720,
+        1280
+      ],
+      "depth_valid_ratio": 0.85455078125,
+      "files_sha256": {
+        "base_from_camera.npy": "a26cf9102b93ec79d6d31c3a730d3d592e9913095affc2ac85af35f8b9665d24",
+        "capture_meta.json": "15e65ae7493e841f9c880e5eee59fd0adca048e61023915a4976d93fcc5c6d91",
+        "capture_result.json": "ebdffb88b64637936be928bbdbe994be1469f4299271aa180c77a72ab90ffbf8",
+        "depth_raw_m.npy": "a839338d19c2ca25114ce6e342194daf9a45230e581139589965664876487e86",
+        "intrinsics.npy": "0d7554b837d90016c02ac7959b0d48be3524f44a4fd0aa074305906032d283ff",
+        "rgb.png": "100b911550420fd167fa7c7c3237167117d8b076e8dd796d4b157024f8055247"
+      }
+    },
+    {
+      "logical_id": "D06",
+      "capture_dir": "right_wrist_D06_20260907_183534_988072685",
+      "source_remote_dir": "/home/galbot/Lsy03/fdp_baseline/captures/right_wrist_D06_20260907_183534_988072685",
+      "capture_ok": true,
+      "motion_commands_sent": false,
+      "frame_sync_skew_ns": 0,
+      "rgb_shape": [
+        720,
+        1280,
+        3
+      ],
+      "depth_shape": [
+        720,
+        1280
+      ],
+      "depth_valid_ratio": 0.8661458333333333,
+      "files_sha256": {
+        "base_from_camera.npy": "c013f58235e158f81bf534440d7ca5d5845ad41ea7a8fa63107bb9d3839a108d",
+        "capture_meta.json": "85acf1aec65fcf0e61bb92938665c5557286664ad78aea4a930017f2e26127bc",
+        "capture_result.json": "bbba964bd392a90b4512458a159ce06c24f3780e15214d4a9a5ef26613a7dd67",
+        "depth_raw_m.npy": "c05d52be7b6d95fd9a85875a57848e1bc59d19f515b84be83d1fac9d2f910efb",
+        "intrinsics.npy": "0d7554b837d90016c02ac7959b0d48be3524f44a4fd0aa074305906032d283ff",
+        "rgb.png": "542208ff258d414c17c77a1fe9141b5549bbaf99b88a44c17ea5f3ced47b7bc0"
+      }
+    },
+    {
+      "logical_id": "D07",
+      "capture_dir": "right_wrist_D07_20260907_183622_577749279",
+      "source_remote_dir": "/home/galbot/Lsy03/fdp_baseline/captures/right_wrist_D07_20260907_183622_577749279",
+      "capture_ok": true,
+      "motion_commands_sent": false,
+      "frame_sync_skew_ns": 0,
+      "rgb_shape": [
+        720,
+        1280,
+        3
+      ],
+      "depth_shape": [
+        720,
+        1280
+      ],
+      "depth_valid_ratio": 0.8687999131944445,
+      "files_sha256": {
+        "base_from_camera.npy": "4fe8eb34f07cfadd4fbc35d4a7a3003ab01b95c44701aef19e6c1fa9885f8308",
+        "capture_meta.json": "96bc07f6e4cb887ab4b0e0776eae34bdb239b2d3e381a53700db0d38c3e6733c",
+        "capture_result.json": "9c611b879b077bef83a9df72594c172b5f7ec0e2941805d596beb1a9cee28999",
+        "depth_raw_m.npy": "de788355a565a38b378a55bb0d2be00adcd8ebad717a936cccd813cb3c2c1c8b",
+        "intrinsics.npy": "0d7554b837d90016c02ac7959b0d48be3524f44a4fd0aa074305906032d283ff",
+        "rgb.png": "891c5e4ce44ddb144e1be4fca932fdb07ac19a5deb0b00a2711fb1f340a300f1"
+      }
+    },
+    {
+      "logical_id": "D08",
+      "capture_dir": "right_wrist_D08_20260907_190617_386973688",
+      "source_remote_dir": "/home/galbot/Lsy03/fdp_baseline/captures/right_wrist_D08_20260907_190617_386973688",
+      "capture_ok": true,
+      "motion_commands_sent": false,
+      "frame_sync_skew_ns": 0,
+      "rgb_shape": [
+        720,
+        1280,
+        3
+      ],
+      "depth_shape": [
+        720,
+        1280
+      ],
+      "depth_valid_ratio": 0.8469509548611112,
+      "files_sha256": {
+        "base_from_camera.npy": "77cbcdbceac91e16754b22c97375f9fbdad86d86bb62a55526eacb0bf126584d",
+        "capture_meta.json": "b69b5f8f04fb20929da89bf6d5f513ef931f0b8a293d84625063c963589d0530",
+        "capture_result.json": "24aeab446a5ffd964e9d688007a3cca90f61974b728f880c7130d31a4d527da8",
+        "depth_raw_m.npy": "dee28a3ed8220faad07d713227be482707ecf1cbfe76bec0d1996e7e6287b845",
+        "intrinsics.npy": "0d7554b837d90016c02ac7959b0d48be3524f44a4fd0aa074305906032d283ff",
+        "rgb.png": "2f043c0274efbe33b575325c34de64959241e3d9850095a189966e58399a79da"
+      }
+    },
+    {
+      "logical_id": "D09",
+      "capture_dir": "right_wrist_D09_20260907_190653_193583878",
+      "source_remote_dir": "/home/galbot/Lsy03/fdp_baseline/captures/right_wrist_D09_20260907_190653_193583878",
+      "capture_ok": true,
+      "motion_commands_sent": false,
+      "frame_sync_skew_ns": 0,
+      "rgb_shape": [
+        720,
+        1280,
+        3
+      ],
+      "depth_shape": [
+        720,
+        1280
+      ],
+      "depth_valid_ratio": 0.84625,
+      "files_sha256": {
+        "base_from_camera.npy": "0cab86fb4db898dde63d917a2606e15a8086fe173fad0d14c080126571bce8f6",
+        "capture_meta.json": "2c33aea96a9bd7950535f087409b9d74d3c9b507496db5b565f6a2ae2e26c1ab",
+        "capture_result.json": "8acae0728fa0f39c9f363be5d9dff66919ecb8ac479ffdc2539e2445aab080c4",
+        "depth_raw_m.npy": "b84299f33c363df310a19d9a7983fa91830e37d9f55204df75e397f4f424bf02",
+        "intrinsics.npy": "0d7554b837d90016c02ac7959b0d48be3524f44a4fd0aa074305906032d283ff",
+        "rgb.png": "a9435a3e4a3163fb97a321145ce8a1903b3acf6680f046a55851794619d4fa8c"
+      }
+    },
+    {
+      "logical_id": "D10",
+      "capture_dir": "right_wrist_D10_20260907_190736_821693545",
+      "source_remote_dir": "/home/galbot/Lsy03/fdp_baseline/captures/right_wrist_D10_20260907_190736_821693545",
+      "capture_ok": true,
+      "motion_commands_sent": false,
+      "frame_sync_skew_ns": 0,
+      "rgb_shape": [
+        720,
+        1280,
+        3
+      ],
+      "depth_shape": [
+        720,
+        1280
+      ],
+      "depth_valid_ratio": 0.8511848958333333,
+      "files_sha256": {
+        "base_from_camera.npy": "c2b039d7514de686e41d41bdebddfcbf81080ce1903cff3c4f194514c3c30230",
+        "capture_meta.json": "ca010ace0149a1c6c5007263f12ce2c0bc9f876c4fd4eb49d5763ed77a6c12ad",
+        "capture_result.json": "8a3c34e4d64d3e1468510123c28ccdf7dca7b20ef4b2ab2b2fb58b4b77bae028",
+        "depth_raw_m.npy": "71048e95b010561acd57a0729d28ded9951a399da5e7760a73c24f5655a8b826",
+        "intrinsics.npy": "0d7554b837d90016c02ac7959b0d48be3524f44a4fd0aa074305906032d283ff",
+        "rgb.png": "a6bae50471f3a2deb4b3eefeae59dea835bf6e9db2528197be9d0538fd9717c9"
+      }
+    },
+    {
+      "logical_id": "D11",
+      "capture_dir": "right_wrist_D11_20260907_190826_818308342",
+      "source_remote_dir": "/home/galbot/Lsy03/fdp_baseline/captures/right_wrist_D11_20260907_190826_818308342",
+      "capture_ok": true,
+      "motion_commands_sent": false,
+      "frame_sync_skew_ns": 0,
+      "rgb_shape": [
+        720,
+        1280,
+        3
+      ],
+      "depth_shape": [
+        720,
+        1280
+      ],
+      "depth_valid_ratio": 0.8648893229166666,
+      "files_sha256": {
+        "base_from_camera.npy": "203c2e13d2f1b76717cb40d9f8c5c2a1b3e4b42d568b9184884d3e84d919d18c",
+        "capture_meta.json": "695f7ed188406c2ca2f0ea4836a275b7c3f31d23e7e842fa0cdd2f60244d63be",
+        "capture_result.json": "061e7fb3fa600a8d4c9c3e77a3d809a7af7f6fbc91f0ba3371f4cef7bc0d6113",
+        "depth_raw_m.npy": "8eeda3440de5ad4dde47155b63554b38b45e4861d4ad578ffe319db361875ae0",
+        "intrinsics.npy": "0d7554b837d90016c02ac7959b0d48be3524f44a4fd0aa074305906032d283ff",
+        "rgb.png": "5b54fb335af3826156e4cf70676dc509697fb898fd01de2ae6e7bcbae0056f2d"
+      }
+    },
+    {
+      "logical_id": "D12",
+      "capture_dir": "right_wrist_D12_20260907_190946_145566561",
+      "source_remote_dir": "/home/galbot/Lsy03/fdp_baseline/captures/right_wrist_D12_20260907_190946_145566561",
+      "capture_ok": true,
+      "motion_commands_sent": false,
+      "frame_sync_skew_ns": 0,
+      "rgb_shape": [
+        720,
+        1280,
+        3
+      ],
+      "depth_shape": [
+        720,
+        1280
+      ],
+      "depth_valid_ratio": 0.8650477430555555,
+      "files_sha256": {
+        "base_from_camera.npy": "8609ad86ddbee839d68b4e0addd45a8c22f0016e4700c36003b704a7a4be2149",
+        "capture_meta.json": "bc4a906e73990fd3800f0ecb9e3f556e5edd795745acd68e3d7730db747c4dd9",
+        "capture_result.json": "ee6f3e38f6a6f90627459f858a20e9b37bee9f769d9bd9fef6d13e552cbacb42",
+        "depth_raw_m.npy": "3be65329ec35ca026d4ef1f9cac88aec60602e6b58ec3668378fa90c5a539d7e",
+        "intrinsics.npy": "0d7554b837d90016c02ac7959b0d48be3524f44a4fd0aa074305906032d283ff",
+        "rgb.png": "0a2daacd4ae90a0b18f6f69338752333cd99e34393e66c93c98b56699b5f654a"
+      }
+    }
+  ]
+}

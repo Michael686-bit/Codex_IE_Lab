@@ -1,0 +1,350 @@
+# S1 连续拆垛：常用操作指令表
+
+本文面向当前调试阶段。除“开发机离线命令”外，S1 命令默认在：
+
+```bash
+cd /home/galbot/ie_lab/projects/s1_continuous_destack
+```
+
+执行。S1 地址为 `10.34.216.17`，工程控制入口统一为 `deploy/run.sh`。
+不要用裸 `docker run`、`docker exec` 或直接调用 SDK 脚本绕过启动器。
+
+## 1. 风险分级
+
+| 标记 | 含义 | 是否可能让机器人运动 |
+| --- | --- | --- |
+| 只读 | 查看文件、状态、哈希或被动健康状态 | 否 |
+| 离线 | 校验配置、规划、跑 Fake/单元测试 | 否 |
+| 真机 | 初始化控制会话并执行场景或连续任务 | 是 |
+| 恢复 | 根据中断检查点重新读取现场状态，部分动作可能运动 | 视 action 而定 |
+
+每个“真机/恢复”入口都会在整个进程生命周期持有
+`/home/galbot/ie_lab/control.lock`。不要自行创建、删除、改权限或长期持有该锁。
+
+## 2. 登录、目录和只读状态
+
+| 目的 | 命令 | 风险 |
+| --- | --- | --- |
+| 登录 S1 | `ssh -t galbot@10.34.216.17` | 只读（登录本身） |
+| 进入工程 | `cd /home/galbot/ie_lab/projects/s1_continuous_destack` | 只读 |
+| 查看运行状态 | `./deploy/run.sh status <RUN_ID>` | 只读 |
+| 被动镜像健康检查 | `./deploy/run.sh health` | 只读；不初始化 SDK |
+| 查看控制锁是否被占用 | `fuser /home/galbot/ie_lab/control.lock` | 只读 |
+| 查看控制容器 | `docker ps -a --filter name=s1-destack-controller` | 只读 |
+| 查看最近运行目录 | `ls -lt /home/galbot/ie_lab/state/s1_continuous_destack/runs` | 只读 |
+
+`fuser` 无输出通常表示没有进程持有锁，但真机启动器仍会自行重新核验锁和控制容器；
+不要仅凭这条命令判定机器人一定可以运动。
+
+### 2.1 开机后在已知 SAM 位附近重定位
+
+机器人硬重启后，如果机身确实仍在已验证的 SAM 位附近，但 SDK 报告未定位或地图
+位姿为空，执行：
+
+```bash
+./deploy/relocalize_known_sam.sh relocalize_YYYYMMDD_note01 --execute
+```
+
+这是常用 debug 指令。它使用 0806 已验证 SAM 位作为定位种子，持有统一控制锁，
+重定位后连续检查三次地图位姿及静止性。它**不会发送底盘、机械臂、躯干或夹爪运动
+命令**，但会改变导航模块的定位状态，所以运行前仍需确认机器人实际位于 SAM 位
+附近，且没有其他控制程序。报告写入：
+
+```text
+/home/galbot/ie_lab/data/s1_continuous_destack/debug/relocalization/<RUN_ID>.json
+```
+
+重定位只恢复地图坐标，不会把底盘、双臂、腰或夹爪移动到标准姿态；后者仍使用
+第 5.1 节的姿态恢复命令。
+
+## 3. 离线校验与测试
+
+| 目的 | 命令 | 风险 |
+| --- | --- | --- |
+| 连续任务配置解析和规划 | `./deploy/run.sh dry-run` | 离线 |
+| 原生 IMC FK/IK/PTP 冒烟 | `./deploy/run.sh native-imc-smoke` | 离线；不连接 SDK/网络 |
+| 镜像内完整离线测试 | `./deploy/run.sh test` | 离线；可能构建测试镜像 |
+| 开发机跑全部测试 | `PYTHONPATH=src python3 -m pytest -q` | 离线 |
+| 开发机跑感知客户端测试 | `PYTHONPATH=src python3 -m pytest -q tests/test_service_clients.py` | 离线 |
+| 单步只规划 | `./deploy/run.sh step-plan <STEP> <CONFIG> <CONTEXT_JSON>` | 离线 |
+| 查看常用姿态恢复计划 | `./deploy/restore_common_pose.sh plan <POSE>` | 离线；不初始化 SDK |
+
+`native-imc-smoke` 的 PTP 是 IMC 轨迹计算，不会向机器人发执行命令。
+
+## 4. 当前热调试路径（无需重建镜像）
+
+先从开发机同步实际改动的小文件，不要上传整个工作区：
+
+```bash
+scp src/s1_destack/adapters/services.py \
+  galbot@10.34.216.17:/home/galbot/ie_lab/projects/s1_continuous_destack/src/s1_destack/adapters/services.py
+```
+
+按需要把 `services.py` 换成实际修改的 `direct.py`、步骤脚本或 YAML 路径。然后在
+S1 上先做离线校验，再启动一个全新的 RUN_ID：
+
+```bash
+./deploy/run.sh dry-run
+./deploy/run.sh dev-scenario mode00 dev_mode00_YYYYMMDD_note01
+```
+
+| 调试场景 | 命令 | 风险 |
+| --- | --- | --- |
+| H4 mode00 | `./deploy/run.sh dev-scenario mode00 <NEW_RUN_ID>` | 真机 |
+| H4 mode10 | `./deploy/run.sh dev-scenario mode10 <NEW_RUN_ID>` | 真机 |
+| H4 mode01 首次左臂预抓取 | `./deploy/run.sh dev-scenario mode01 <NEW_RUN_ID> --stop-after-primary-pregrasp` | 真机；预抓取停住 |
+| H4 对面 mode00 | `./deploy/run.sh dev-scenario opposite <NEW_RUN_ID>` | 真机 |
+
+对向完整单循环仍然是一条指令，不运行旧工程脚本：
+
+```bash
+cd /home/galbot/ie_lab/projects/s1_continuous_destack
+./deploy/run.sh dev-scenario opposite opposite_h4_YYYYMMDD_note01
+```
+
+它会先在正面做一次实时 SAM，再执行正面几何门。只有目标不在顶层最前排，或箱体
+长轴没有朝向正面时，才经 `lower_side_observation` 绕到对面；对面必须重新采集并
+得到 H4 mode00，随后复用当前 mode00 抓取、卸货、复位和返回 SAM 链路。专项
+回归和连续 Mission 使用同一自主判定，不再强制绕行。两种入口都不会把
+10/01/11、H1-H3 或服务失败当作可抓的对面 00。
+
+mode10 标定时可使用两个精确停点；二者都会在目标步骤成功验收后进入
+`RECOVERY_REQUIRED`，不会自动继续：
+
+```bash
+# 停在左臂预抓位：不执行预抓到接触的 45 mm 位移，也不闭左爪
+./deploy/run.sh dev-scenario mode10 <NEW_RUN_ID> --stop-after-secondary-pregrasp
+
+# 停在左臂接触位：执行接触位移，但不闭左爪
+./deploy/run.sh dev-scenario mode10 <NEW_RUN_ID> --stop-after-secondary-contact
+```
+
+当前 mode10 从左预抓位到接触位的 `base_link` 位移为
+`[0, -0.045, 0] m`，即机器人视角向右 45 mm，来自当前 mode10 独立 YAML。
+
+01 专项场景只从本次 SAM 的真实候选中选取 01，不指定 ROI 或伪造箱体位姿。
+`--stop-after-primary-pregrasp` 从 SAM 开始，执行到左臂 FDP、左臂预抓取后停止；
+不执行夹持、抬升或右臂补抓。完整 01 仍处于待回归状态。预定停点的
+`RECOVERY_REQUIRED` / `COMMISSIONING_STOP_AFTER:mode01_primary_pregrasp` 表示本段
+按要求结束，不代表已经夹箱或整轮成功。
+
+热调试入口会冻结当次 `src/config/assets` 快照并记录哈希。运行中继续编辑宿主机文件
+不会改变已经启动的任务；下一次改动必须使用新的 RUN_ID 再启动。通常不需要重建镜像，
+小文件在 1 MB/s 网络下的同步加快照约为数秒到几十秒。
+
+## 5. 中断后的状态和恢复
+
+先查看状态：
+
+```bash
+./deploy/run.sh status <RUN_ID>
+```
+
+开发模式任务必须用原运行绑定的冻结快照恢复：
+
+```bash
+./deploy/run.sh dev-recover <RUN_ID> verify-live-state
+./deploy/run.sh dev-recover <RUN_ID> abort-safe
+```
+
+| action | 含义 | 风险/前提 |
+| --- | --- | --- |
+| `verify-live-state` | 重新读取并记录现场状态 | 恢复入口；原则上只读，但仍需独占控制权 |
+| `abort-safe` | 只在证明未持箱、双爪打开且状态满足限定合同后终止任务 | 恢复；不会重放中断动作 |
+| `reset-return` | 证明未持箱后执行复位并返回 | 会运动 |
+| `release-return` | 证明在卸货位持箱后释放、复位并返回 | 会运动且涉及持箱 |
+
+恢复入口只接受列明的有限检查点和新鲜实时状态；若没有足够现场证据，应保持
+`RECOVERY_REQUIRED`，不得换 RUN_ID 直接重跑来绕过。
+
+### 5.1 空载开爪和常用姿态恢复
+
+恢复工具不会假定机器人重启后的夹爪、双臂、躯干或底盘仍处于上次位置。真实执行
+顺序固定为：读取实时源并通过静止门 → 双爪近同时张开并等待静止 → 基于新的实时
+状态做 IMC/碰撞规划 → 恢复指定 H4 姿态。现场采用“操作者未叫停即为空载”的约定；
+程序不再根据夹爪开度猜测是否持箱。
+
+```bash
+# 只看目标与动作顺序：无网络、不持锁、不初始化 SDK
+./deploy/restore_common_pose.sh plan fdp-mode00-posture
+
+# 以下属于真机命令；必须在另行确认实机动作后才能执行
+./deploy/restore_common_pose.sh execute fdp-mode00-posture \
+  restore_fdp_YYYYMMDD_note01
+```
+
+如果该真实恢复动作在发令后中断，不要换 RUN_ID 重试；使用同一冻结快照读取现场并
+安全终止：
+
+```bash
+./deploy/run.sh dev-recover restore_fdp_YYYYMMDD_note01 abort-safe
+```
+
+该恢复只在新鲜遥测证明机器人静止、未持箱、双爪全开且碰撞策略开启时成功；它不
+会续跑或重发姿态轨迹。
+
+可选 `POSE`：
+
+| POSE | 行为 | 底盘是否运动 |
+| --- | --- | --- |
+| `open-grippers` | 只开双爪并校验 | 否 |
+| `sam-posture` | 先开爪，再到 H4 SAM 双臂/躯干姿态 | 否 |
+| `fdp-mode00-posture` | 先开爪，再到已验证 mode00 FDP 双臂/躯干姿态 | 否 |
+
+FDP 底盘点来自当轮 SAM 箱体中心和 0.8 m standoff，不是固定点。当前也没有开放
+“完整 SAM 底盘恢复”：已验证旧流程的返回 SAM 点与新工程当前观察点相差约 9.3 cm，
+需现场决定哪一个作为连续拆垛标准点后再开放。
+
+## 6. 稳定版本入口
+
+| 目的 | 命令 | 风险 |
+| --- | --- | --- |
+| 固化镜像的单场景回归 | `./deploy/run.sh scenario mode00` | 真机 |
+| 固化镜像的连续任务 | `./deploy/run.sh run <NEW_RUN_ID>` | 真机 |
+| 固化任务恢复 | `./deploy/run.sh recover <RUN_ID> <ACTION>` | 恢复 |
+| 构建运行时镜像 | `./deploy/run.sh build-runtime` | 不运动；耗时长 |
+| 构建应用镜像 | `./deploy/run.sh build` | 不运动；要求干净 Git HEAD |
+
+第一次稳定连续拆垛完成前优先使用 `dev-scenario`，避免每次调参都重建镜像。稳定后再
+把 S1 上确认过的变更同步回开发机、评审并提交 Git，然后构建不可变镜像。
+
+## 7. 导航容差的含义
+
+| 参数/门 | 当前值 | 作用 |
+| --- | ---: | --- |
+| `config/site/sjtu.yaml: navigation.arrival_translation_m` | `0.05 m` | SAM/FDP 等导航目标的平移到站容差 |
+| `navigation.arrival_yaw_deg` | `5°` | 导航目标的航向到站容差 |
+| 停稳窗口 | 连续 3 个静止样本，最多等待 3 s | 到站后确认底盘、双臂不再运动 |
+| 机械臂动作底盘锚定 | `0.02 m / 2°` | 以实际停稳位姿为锚，限制机械臂动作期间的底盘漂移 |
+
+因此 5 cm 不等于允许机械臂动作期间底盘漂移 5 cm。它只允许导航在目标附近结束；
+停稳后的实际位姿会成为新的短时锚点，后续机械臂动作仍按 2 cm / 2° 校验。
+
+## 8. 重启后的推荐顺序
+
+```text
+1. 确认急停和现场人员；如果并非空载，操作者必须在启动前叫停
+2. ./deploy/run.sh health
+3. 若导航定位丢失且机器人确在 SAM 位附近，执行：
+   ./deploy/relocalize_known_sam.sh relocalize_YYYYMMDD_note01 --execute
+4. ./deploy/run.sh dry-run
+5. ./deploy/run.sh status <上一次 RUN_ID>（如有中断）
+6. 必要时对原 RUN_ID 做显式恢复
+7. 经另行授权后，先用恢复工具开爪并恢复所需标准姿态
+8. 再使用新的 RUN_ID 启动 dev-scenario
+```
+
+重启机器人不会自动清除工程检查点，也不能证明中断动作没有发生；“未叫停即空载”
+只适用于新任务开机，旧 RUN_ID 若处于 `RECOVERY_REQUIRED`，仍应先按原快照处理。
+
+## 9. 历史感知制品可视化（只读）
+
+运行时已经自动落盘 RGB、深度、实时内参、采集时
+`base_link_from_camera`、Workbin ROI、FDP mask 和原始/语义位姿。无需重新采集，
+可直接在 S1 上生成 SAM/FDP 叠加图：
+
+```bash
+PYTHONPATH=src python3 tools/visualize_perception_run.py \
+  --run-dir /home/galbot/ie_lab/data/s1_continuous_destack/runs/<RUN_ID> \
+  --service-artifacts /home/galbot/ie_lab/data/s1_continuous_destack/runs/_service_artifacts \
+  --output-dir /home/galbot/ie_lab/data/s1_continuous_destack/runs/<RUN_ID>/debug/perception_visualization
+```
+
+该工具不初始化 SDK、不请求服务、不控制机器人。输出包括：
+
+- `sam_roi_overlay.png`：SAM 位全部 ROI 与选中顶面 ROI；
+- `sam_roi_raw_depth_refined.png`：单独显示 SAM 服务 ROI 与同帧原始深度恢复出的 4317 平面包络；
+- `sam_roi_fdp_crosscheck.png`：只显示 SAM 目标，并把后续 FDP 复测 ROI 通过地图位姿投回原 SAM 图；
+- `fdp_mask_roi_axes_overlay.png`：FDP 位选中 mask、顶面 ROI、mesh 包围盒、原始轴和语义轴；
+- `frame_ground_diagnostics.png`：90° 轴映射以及深度估计地面/顶面倾角；
+- `diagnostics.json`：上述诊断的机器可读数值。
+
+注意：Workbin 返回的 ROI 四角已被服务压平到同一个 `base_link` 高度，本身不能
+独立证明真实地面是否倾斜；判断倾角应查看由原始深度、实时内参和采集时外参拟合的
+平面法向。
+
+当前 4317 配置会在 Survey 内使用同帧原始深度复核 SAM 目标的 XY，并把审计信息写入
+`result.json -> outcome.raw_depth_xy_refinement`。若返回
+`SAM_RAW_DEPTH_XY_REFINEMENT_INVALID`，应先检查精确 mask、深度点数、语义轴和包络尺寸，不要
+手工加入固定 10 cm 偏置。调试门限位于
+`config/crates/4317_survey_raw_depth_xy.yaml`，修改后不需要重建镜像；修复原理和
+2026-09-02 回放数值见
+`docs/commissioning/sam-raw-depth-xy-refinement-20260902.md`。
+
+## 10. 保存帧感知耗时回放（不运动）
+
+开发机可以对一次运行保存的 RGB、深度、实时内参和采集外参重复调用 8040，验证
+SAM/LingBot、同帧缓存和压缩 mask 耗时：
+
+```bash
+cd /home/c/workspace/s1_continuous_destack
+AI_SERVICE_API_KEY=<key> PYTHONPATH=src /usr/bin/python3 \
+  tools/replay_workbin_latency.py \
+  --config config/missions/continuous.yaml \
+  --capture-dir output/diagnostics/mode00_h4_20260902_13_latency
+```
+
+该命令不初始化 SDK、不发运动指令。输出中第一次 `survey` 应为 cache miss；紧接着的
+`same_frame_selector` 应为 cache hit，并报告 `mask_wire_png_bytes`。S1 镜像解析器与
+热调试运动 YAML 暂时不一致时，可只传 `--service-profile config/services/lab.yaml`。
+本轮原因、协议兼容边界和基准数值见
+`docs/commissioning/perception-latency-optimization-20260903.md`。
+
+## 11. 外部感知服务的拉起（开发机/工作站）
+
+本工程的感知链依赖三个相对 S1 的外部服务，配置见
+`config/services/lab.yaml`：
+
+| 服务 | 地址 | 承载机器 | 本工程用途 |
+| --- | --- | --- | --- |
+| Workbin SAM3/LingBot bridge | `ws://10.34.216.13:8040` | 工作站 4090 | `survey` 步骤的 SAM3 分割 + LingBot-Depth 深度补全 + ROI/目标选择 |
+| FDP（FoundationPose++）HTTP | `http://10.34.216.13:7876` | 工作站 4090 | `*_lock_pose` 步骤的 6D 位姿精定位 |
+| SAM3 / LingBot-Depth 模型服务 | `http://10.34.216.11:7861` / `http://10.34.216.11:7865` | Thor | 由上面的 8040 bridge 转发调用，本工程只探测其 `/health` |
+
+这三个服务的启动脚本不在本工程内，而在同机的感知桥接工程：
+
+```text
+/home/c/workspace/260611_sjtu_workbin_movement/migrate_back/g1_workbin_perception
+```
+
+一次性拉起 8040 bridge 与 7876 FDP（推荐入口，会依次调用下面两个脚本并写出
+`output/g1_workbin_runtime_bridges/env.sh`）：
+
+```bash
+cd /home/c/workspace/260611_sjtu_workbin_movement/migrate_back/g1_workbin_perception
+bash scripts/start_g1_workbin_runtime_bridges.sh
+```
+
+单独拉起 Workbin SAM3/LingBot bridge（8040）：
+
+```bash
+cd /home/c/workspace/260611_sjtu_workbin_movement/migrate_back/g1_workbin_perception
+bash scripts/start_workbin_sam3_lingbot_bridge.sh
+```
+
+单独拉起本地 4090 FDP 服务（7876）：
+
+```bash
+cd /home/c/workspace/260611_sjtu_workbin_movement/migrate_back/g1_workbin_perception
+bash scripts/start_local_fdp_4090_service.sh
+```
+
+说明：
+
+- 三个脚本都是后台 `setsid` 启动，PID 与日志分别写入各自的
+  `output/<服务名>/server.pid` 与 `server.log`；重复执行会先检查端口是否已在监听，
+  并在配置或 `source_sha256` 不一致时重启自己拥有的进程。
+- FDP 服务使用仓库内 `.venv_fdp_local` 虚拟环境和 `third_party/FoundationPose-plus-plus`
+  源码（见 `scripts/local_fdp_env.sh`），需要工作站 4090 与 CUDA 可用。
+- 8040 bridge 会转发调用 Thor 上的 SAM3（7861）与 LingBot-Depth（7865）。这两个模型
+  服务不在上述脚本内启动，需确认 Thor 侧已在运行；可用工程配置里的健康地址核对：
+
+  ```bash
+  curl -fsS http://10.34.216.11:7861/health
+  curl -fsS http://10.34.216.11:7865/health
+  curl -fsS http://10.34.216.13:7876/health
+  ```
+
+- 这些命令只在开发机/工作站执行，不连接 S1、不初始化 SDK、不会让机器人运动。
+  S1 侧的 `./deploy/run.sh health` 会探测上述 `/health` 端点，感知服务未拉起时
+  `preflight` 会失败。

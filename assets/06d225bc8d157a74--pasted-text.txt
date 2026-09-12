@@ -1,0 +1,123 @@
+我们继续
+
+
+
+
+
+
+16:27
+
+
+
+
+
+
+已处理 7分钟 4秒
+
+
+
+
+继续刚才的一帧被动捕获。先确认中断后没有遗留捕获进程、远端脚本与本地修正版校验和一致；确认后才运行 10 秒订阅。仍然不初始化 Galbot SDK、不发布消息、不控制机器人。
+
+
+
+
+运行了命令
+
+
+第二次仍在创建 DDS participant 前失败：这次确认 S1 系统自带 protobuf 3.6.1 又过旧，而生成代码需要中间版本，因此不能直接复用。不会安装或替换 protobuf。更稳妥的路径是绕过 protobuf包装层，用厂家已有的低层 embosa reader 被动接收原始序列化字节，再在本地解析；我先只读验证该低层模块是否可直接导入。
+
+
+
+
+编辑了文件运行了命令
+
+
+低层版本已通过本地检查：它不加载 protobuf、不导入 Galbot SDK，只创建 reader 并保存收到的原始序列化字节。现在执行一次，外层仍有 20 秒硬超时。
+
+
+
+
+已在 11s 内运行 ssh -S /tmp/s1_codex_mux_20260828 galbot@10.34.216.17 'timeout 20s /home/galbot/ie_lab/bin/s1-python /tmp/s1_capture_one_esdf_frame.py --channel esdf_pointcloud_serialized --output /tmp/s1_esdf_frame_20260828_once.pb --timeout 10'
+
+
+
+
+低层 reader 成功启动并按时清理，但 10 秒内没有收到样本；没有生成帧文件，也没有发布或控制。当前更像是 DDS匹配/QoS或 channel角色问题，而不是数据源停止——PNS 日志仍显示持续收帧。下一步只读查看 embosa 的 writer/reader匹配日志和 topic QoS，不立即换 channel 或再次订阅。
+
+
+
+
+已在 1s 内运行 ssh -S /tmp/s1_codex_mux_20260828 galbot@10.34.216.17 'printf "PNS EMBOSA TOPIC LOG\n"
+grep -Ein "esdf_pointcloud_serialized|esdf_debug_pointcloud|subscription|matched|reader|topic|qos" /userdata/log/embosa/embosa_hpu_service_navigation_plan_2026-08-28-13-45-24_4126_4126.log | head -n 500
+printf "FUSION EMBOSA TOPIC LOG\n"
+grep -Ein "esdf_pointcloud_serialized|esdf_debug_pointcloud|publication|matched|writer|topic|qos" /userdata/log/embosa/embosa_hpu_galbot_fusion_main_2026-08-28-13-45-25_4490_4490.log | head -n 500
+printf "RECENT EMBOSA PYTHON OR CAPTURE LOGS\n"
+find /userdata/log -maxdepth 3 -type f -mmin -30 -printf "%p\n" | grep -Ei "embosa|capture|esdf" | sort
+printf "OUTPUT FILE CHECK\n"
+stat /tmp/s1_esdf_frame_20260828_once.pb 2>/dev/null || true
+pgrep -af s1_capture_one_esdf_frame.py || true'
+
+
+
+
+日志文件较大，筛选仍在运行；目前没有再次创建 reader。等这一轮只读搜索返回后，我会据此判断是 QoS、topic名称还是低层绑定用法不匹配。
+
+
+
+
+正在运行 ssh -S /tmp/s1_codex_mux_20260828 galbot@10.34.216.17 'env LD_LIBRARY_PATH=/data/galbot/lib:/usr/lib/aarch64-linux-gnu:/usr/local/cuda-11.4/lib64 /data/galbot/bin/embosa_topic_tool type esdf_pointcloud_serialized 1 1
+env LD_LIBRARY_PATH=/data/galbot/lib:/usr/lib/aarch64-linux-gnu:/usr/local/cuda-11.4/lib64 /data/galbot/bin/embosa_topic_tool info esdf_pointcloud_serialized 1 1
+env LD_LIBRARY_PATH=/data/galbot/lib:/usr/lib/aarch64-linux-gnu:/usr/local/cuda-11.4/lib64 /data/galbot/bin/embosa_topic_tool qos esdf_pointcloud_serialized 1 1'正在运行 ssh -S /tmp/s1_codex_mux_20260828 galbot@10.34.216.17 'env LD_LIBRARY_PATH=/data/galbot/lib:/usr/lib/aarch64-linux-gnu:/usr/local/cuda-11.4/lib64 /data/galbot/bin/embosa_topic_tool type esdf_pointcloud_serialized 1 1
+env LD_LIBRARY_PATH=/data/galbot/lib:/usr/lib/aarch64-linux-gnu:/usr/local/cuda-11.4/lib64 /data/galbot/bin/embosa_topic_tool info esdf_pointcloud_serialized 1 1
+env LD_LIBRARY_PATH=/data/galbot/lib:/usr/lib/aarch64-linux-gnu:/usr/local/cuda-11.4/lib64 /data/galbot/bin/embosa_topic_tool qos esdf_pointcloud_serialized 1 1'已运行命令
+Shell
+$ssh -S /tmp/s1_codex_mux_20260828 galbot@10.34.216.17 'printf "CAPTURE EMBOSA LOG\n"
+grep -Ein "esdf|reader|topic|match|type|qos|error|warning" /userdata/log/embosa/embosa_hpu_home_galbot_ie_lab_envs_s1_sdk_1_2026-08-28-16-30-21_136387_136387.log | head -n 400
+printf "TOPIC TOOL LOCATION\n"
+command -v embosa_topic_tool || true
+find /data/galbot/bin /userdata/update/manual_update/bin -maxdepth 1 -type f -iname "*topic*" -printf "%p\n" 2>/dev/null | sort -u
+printf "TOPIC TOOL HELP\n"
+/data/galbot/bin/embosa_topic_tool --help 2>&1 | head -n 300'
+
+
+[output truncated]
+c: embosa_node_change_broadcast, total match count: 31, current match count: 31
+318:[2026-08-28 16:30:22.932 thread:136407 info dds_sub_serialization_listener.h:573]:DDSSubSerializationListener matched. topic: embosa_channel_change_broadcast, total match count: 31, current match count: 31
+319:[2026-08-28 16:30:22.932 thread:136407 info dds_sub_serialization_listener.h:573]:DDSSubSerializationListener matched. topic: embosa_service_change_broadcast, total match count: 31, current match count: 31
+320:[2026-08-28 16:30:22.946 thread:136407 info dds_sub_serialization_listener.h:573]:DDSSubSerializationListener matched. topic: embosa_node_change_broadcast, total match count: 32, current match count: 32
+321:[2026-08-28 16:30:22.946 thread:136407 info dds_sub_serialization_listener.h:573]:DDSSubSerializationListener matched. topic: embosa_channel_change_broadcast, total match count: 32, current match count: 32
+322:[2026-08-28 16:30:22.946 thread:136407 info dds_sub_serialization_listener.h:573]:DDSSubSerializationListener matched. topic: embosa_service_change_broadcast, total match count: 32, current match count: 32
+323:[2026-08-28 16:30:22.947 thread:136407 info dds_pub_listener.cc:19]:DDSPubListener matched. topic: embosa_node_change_broadcast, total match count: 32, current match count: 32
+324:[2026-08-28 16:30:22.948 thread:136407 info dds_pub_listener.cc:19]:DDSPubListener matched. topic: embosa_channel_change_broadcast, total match count: 32, current match count: 32
+325:[2026-08-28 16:30:22.948 thread:136407 info dds_pub_listener.cc:19]:DDSPubListener matched. topic: embosa_service_change_broadcast, total match count: 32, current match count: 32
+328:[2026-08-28 16:30:23.027 thread:136415 error channel_manager.cc:394]:newly added reader(belongs to node[hpu_context_node|hpu_launcher|4053])'s message type[galbot.system_proto.mission_manager_proto.MissionManagerMessage] does not match the exsited reader(belongs to node[Sensor#0|swallows|4487])'s message type[N6galbot6embosa7MessageE].
+329:[2026-08-28 16:30:23.027 thread:136415 error channel_manager.cc:394]:newly added reader(belongs to node[manage_node|hpu_launcher|4053])'s message type[galbot.perception_proto.DetectionResult] does not match the exsited reader(belongs to node[Sensor#0|swallows|4487])'s message type[N6galbot6embosa7MessageE].
+330:[2026-08-28 16:30:23.068 thread:136407 info dds_sub_serialization_listener.h:573]:DDSSubSerializationListener matched. topic: embosa_node_change_broadcast, total match count: 33, current match count: 33
+331:[2026-08-28 16:30:23.068 thread:136407 info dds_sub_serialization_listener.h:573]:DDSSubSerializationListener matched. topic: embosa_channel_change_broadcast, total match count: 33, current match count: 33
+332:[2026-08-28 16:30:23.068 thread:136407 info dds_sub_serialization_listener.h:573]:DDSSubSerializationListener matched. topic: embosa_service_change_broadcast, total match count: 33, current match count: 33
+333:[2026-08-28 16:30:23.069 thread:136407 info dds_pub_listener.cc:19]:DDSPubListener matched. topic: embosa_node_change_broadcast, total match count: 33, current match count: 33
+334:[2026-08-28 16:30:23.069 thread:136407 info dds_pub_listener.cc:19]:DDSPubListener matched. topic: embosa_channel_change_broadcast, total match count: 33, current match count: 33
+335:[2026-08-28 16:30:23.069 thread:136407 info dds_pub_listener.cc:19]:DDSPubListener matched. topic: embosa_service_change_broadcast, total match count: 33, current match count: 33
+336:[2026-08-28 16:30:23.097 thread:136407 info dds_sub_serialization_listener.h:573]:DDSSubSerializationListener matched. topic: embosa_node_change_broadcast, total match count: 34, current match count: 34
+337:[2026-08-28 16:30:23.097 thread:136407 info dds_sub_serialization_listener.h:573]:DDSSubSerializationListener matched. topic: embosa_channel_change_broadcast, total match count: 34, current match count: 34
+338:[2026-08-28 16:30:23.097 thread:136407 info dds_sub_serialization_listener.h:573]:DDSSubSerializationListener matched. topic: embosa_service_change_broadcast, total match count: 34, current match count: 34
+339:[2026-08-28 16:30:23.098 thread:136407 info dds_pub_listener.cc:19]:DDSPubListener matched. topic: embosa_node_change_broadcast, total match count: 34, current match count: 34
+340:[2026-08-28 16:30:23.098 thread:136407 info dds_pub_listener.cc:19]:DDSPubListener matched. topic: embosa_channel_change_broadcast, total match count: 34, current match count: 34
+341:[2026-08-28 16:30:23.098 thread:136407 info dds_pub_listener.cc:19]:DDSPubListener matched. topic: embosa_service_change_broadcast, total match count: 34, current match count: 34
+342:[2026-08-28 16:30:23.149 thread:136420 error channel_manager.cc:394]:newly added reader(belongs to node[data_backflow|data_backflow_service|4127])'s message type[galbot.system_proto.mission_manager_proto.MissionManagerMessage] does not match the exsited reader(belongs to node[Sensor#0|swallows|4487])'s message type[N6galbot6embosa7MessageE].
+346:[2026-08-28 16:30:24.068 thread:136407 info dds_sub_serialization_listener.h:573]:DDSSubSerializationListener matched. topic: embosa_node_change_broadcast, total match count: 35, current match count: 35
+347:[2026-08-28 16:30:24.070 thread:136407 info dds_sub_serialization_listener.h:573]:DDSSubSerializationListener matched. topic: embosa_channel_change_broadcast, total match count: 35, current match count: 35
+348:[2026-08-28 16:30:24.071 thread:136407 info dds_sub_serialization_listener.h:573]:DDSSubSerializationListener matched. topic: embosa_service_change_broadcast, total match count: 35, current match count: 35
+349:[2026-08-28 16:30:24.078 thread:136407 info dds_pub_listener.cc:19]:DDSPubListener matched. topic: embosa_node_change_broadcast, total match count: 35, current match count: 35
+350:[2026-08-28 16:30:24.079 thread:136407 info dds_pub_listener.cc:19]:DDSPubListener matched. topic: embosa_channel_change_broadcast, total match count: 35, current match count: 35
+351:[2026-08-28 16:30:24.079 thread:136407 info dds_pub_listener.cc:19]:DDSPubListener matched. topic: embosa_service_change_broadcast, total match count: 35, current match count: 35
+352:[2026-08-28 16:30:24.081 thread:136407 info dds_pub_listener.cc:19]:DDSPubListener matched. topic: embosa_node_change_broadcast, total match count: 36, current match count: 36
+353:[2026-08-28 16:30:24.081 thread:136407 info dds_pub_listener.cc:19]:DDSPubListener matched. topic: embosa_channel_change_broadcast, total match count: 36, current match count: 36
+354:[2026-08-28 16:30:24.081 thread:136407 info dds_pub_listener.cc:19]:DDSPubListener matched. topic: embosa_service_change_broadcast, total match count: 36, current match count: 36
+355:[2026-08-28 16:30:24.081 thread:136407 info dds_sub_serialization_listener.h:573]:DDSSubSerializationListener matched. topic: embosa_node_change_broadcast, total match count: 36, current match count: 36
+356:[2026-08-28 16:30:24.081 thread:136407 info dds_sub_serialization_listener.h:573]:DDSSubSerializationListener matched. topic: embosa_channel_change_broadcast, total match count: 36, current match count: 36
+357:[2026-08-28 16:30:24.081 thread:136407 info dds_sub_serialization_listener.h:573]:DDSSubSerializationListener matched. topic: embosa_service_change_broadcast, total match count: 36, current match count: 36
+358:[2026-08-28 16:30:24.110 thread:136407 info dds_sub_serialization_listener.h:573]:DDSSubSerializationListener matched. topic: embosa_node_change_broadcast, total match count: 37, current match count: 37
+359:[2026-08-28 16:30:24.110 thread:136407 info dds_sub_serialization_listener.h:573]:DDSSubSerializationListener matched. topic: embosa_channel_change_broadcast, total match count: 37, current match count: 37
+360:[2026-08-28 16:30:24.110 thread:136407 info dds_sub_serialization_listen

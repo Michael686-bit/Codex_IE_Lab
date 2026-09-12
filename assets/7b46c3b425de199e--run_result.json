@@ -1,0 +1,56 @@
+{
+  "case_id": "right_wrist_20260907_01_lingbot_operator1",
+  "motion_commands_sent": false,
+  "normalized_pose_sha256": "556a6c138ed6dcc60b440a9da4c457f7a262744947c53e2e54de7d1ece7f7059",
+  "ok": true,
+  "raw": {
+    "T_camera_from_fdp_mesh": [
+      [
+        -0.006076928047310757,
+        0.011810942160128964,
+        0.9999117731382329,
+        0.45427984092557117
+      ],
+      [
+        -0.8271617475993546,
+        -0.5619617548926452,
+        0.0016108429683951762,
+        -0.14309788306845886
+      ],
+      [
+        0.5619311934649202,
+        -0.8270789105060593,
+        0.013184568540836794,
+        1.8910734369134035
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "http_status": 200,
+    "motion_commands_sent": false,
+    "ok": true,
+    "pose_quality": {
+      "bottom_row_error_l2": 0.0,
+      "finite": true,
+      "rotation_determinant": 1.0000000850893775,
+      "rotation_orthogonality_error_fro": 1.7537183535776038e-07,
+      "shape": [
+        4,
+        4
+      ],
+      "valid": true
+    },
+    "raw_response_path": "/home/lsy03/文档/ChatGPT/S1/experiments/20260903_fdp_baseline/outputs/fdp_20260907_01_lingbot_operator1/raw_response.json",
+    "raw_response_sha256": "1b205bcc9cde907c636e9713b49fabdccfbb6e3f4126914fa6d20cf83a1d958c",
+    "runtime_seconds": 1.1445315329765435,
+    "visualization_path": "/home/lsy03/文档/ChatGPT/S1/experiments/20260903_fdp_baseline/outputs/fdp_20260907_01_lingbot_operator1/foundationpose_vis.png"
+  },
+  "result_label": "new_result_from_frozen_exact_input",
+  "robot_sdk_imported": false,
+  "schema": "s1.fdp_baseline.run.v1",
+  "status": "fdp_response_normalized"
+}

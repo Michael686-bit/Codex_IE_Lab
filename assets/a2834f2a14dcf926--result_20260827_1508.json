@@ -1,0 +1,28 @@
+{
+  "timestamp": "2026-08-27T15:08:00+08:00",
+  "execution_location": "S1 host",
+  "python_entrypoint": "/home/galbot/ie_lab/bin/s1-python",
+  "control_lock": "/home/galbot/ie_lab/control.lock",
+  "mode": "navigation_state_readonly",
+  "motion_commands_sent": false,
+  "controller_switch_sent": false,
+  "relocalization_sent": false,
+  "stop_navigation_sent": false,
+  "localized": true,
+  "current_pose_map": [
+    2.7945902347564697,
+    0.2978658974170685,
+    -0.001943035633303225,
+    0.0022212311617048537,
+    -0.0014638834763492886,
+    -0.000654607831438303,
+    0.9999962473258992
+  ],
+  "navigation_status": {
+    "name": "UNKNOWN",
+    "value": 0,
+    "repr": "<NavigationTaskStatus.UNKNOWN: 0>"
+  },
+  "bounding_boxes": [],
+  "ok": true
+}

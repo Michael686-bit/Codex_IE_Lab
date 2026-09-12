@@ -1,0 +1,237 @@
+galbot@galbot-echo:~/ie_lab/projects/chassis_env/workspace$ /home/galbot/ie_lab/bin/s1-python   /home/galbot/Lsy03/navigation_tests/s1_navigation_cli.py   payload-register-4317   --execute
+A new version 1.9.1 is available. Visit https://github.com/GalaxyGeneralRobotics/GalbotSDK/releases for upgrade instructions
+
+REAL-ROBOT NAVIGATION PAYLOAD REGISTRATION (payload-register-4317 --execute)
+  expected physical motion: none
+  mobile base/arms/grippers/lift: no motion commands
+  fusion filter: {'box_size': [0.6, 0.5, 0.375], 'box_pose': [0.08846454589905783, -0.20926272696685333, -0.15890000000000004, 0.011116385394816377, -0.0003861212335707756, 0.6973011501467578, 0.7166919721122567], 'box_tag': 4317, 'parent_link_name': 'left_arm_end_effector_mount_link'}
+  PNS collision box: {'box_size': [0.4, 0.3, 0.175], 'box_pose': [0.08846454589905783, -0.20926272696685333, -0.15890000000000004, 0.011116385394816377, -0.0003861212335707756, 0.6973011501467578, 0.7166919721122567], 'box_tag': 4317, 'parent_link_name': 'left_arm_end_effector_mount_link'}
+  ignored robot links: ['left_arm_end_effector_mount_link', 'right_arm_end_effector_mount_link', 'left_fingertip_end_effector_mount_link', 'right_fingertip_end_effector_mount_link']
+  tracking frame: left_arm_end_effector_mount_link; the box follows base/torso/arm TF while the recorded rigid grasp remains valid
+  invalid after crate slip, release, regrasp, or grasp-geometry change
+  state persists until payload-remove-4317 --execute succeeds
+
+{
+  "ok": false,
+  "outcome": "failed_closed",
+  "error": {
+    "type": "NavigationCliError",
+    "message": "attach_box_to_link failed: (False, 'WAIT_INITIALIZED'); filter-removal rollback attempted"
+  }
+}
+galbot@galbot-echo:~/ie_lab/projects/chassis_env/workspace$ /home/galbot/ie_lab/bin/s1-python   /home/galbot/Lsy03/navigation_tests/s1_navigation_cli.py.before_external_omni_noninteractive_20260901   payload-register-4317
+A new version 1.9.1 is available. Visit https://github.com/GalaxyGeneralRobotics/GalbotSDK/releases for upgrade instructions
+
+REAL-ROBOT NAVIGATION PAYLOAD REGISTRATION PREVIEW
+  expected physical motion: none
+  mobile base/arms/grippers/lift: no motion commands
+  fusion filter: {'box_size': [0.6, 0.5, 0.375], 'box_pose': [0.08846454589905783, -0.20926272696685333, -0.15890000000000004, 0.011116385394816377, -0.0003861212335707756, 0.6973011501467578, 0.7166919721122567], 'box_tag': 4317, 'parent_link_name': 'left_arm_end_effector_mount_link'}
+  PNS collision box: {'box_size': [0.4, 0.3, 0.175], 'box_pose': [0.08846454589905783, -0.20926272696685333, -0.15890000000000004, 0.011116385394816377, -0.0003861212335707756, 0.6973011501467578, 0.7166919721122567], 'box_tag': 4317, 'parent_link_name': 'left_arm_end_effector_mount_link'}
+  ignored robot links: ['left_arm_end_effector_mount_link', 'right_arm_end_effector_mount_link', 'left_fingertip_end_effector_mount_link', 'right_fingertip_end_effector_mount_link']
+  tracking frame: left_arm_end_effector_mount_link; the box follows base/torso/arm TF while the recorded rigid grasp remains valid
+  invalid after crate slip, release, regrasp, or grasp-geometry change
+  state persists until payload-remove-4317 succeeds
+
+Type REGISTER_NAV_PAYLOAD_4317_LEFT_MOUNT to register this exact carried-crate profile: REGISTER_NAV_PAYLOAD_4317_LEFT_MOUNT
+{
+  "mode": "guarded_payload_4317_register",
+  "motion_commands_sent": false,
+  "controller_switch_sent": false,
+  "bounding_box_changes_sent": true,
+  "attachment_changes_sent": true,
+  "profile": "4317_left_mount_20260831_193312_191",
+  "filter_box": {
+    "box_size": [
+      0.6,
+      0.5,
+      0.375
+    ],
+    "box_pose": [
+      0.08846454589905783,
+      -0.20926272696685333,
+      -0.15890000000000004,
+      0.011116385394816377,
+      -0.0003861212335707756,
+      0.6973011501467578,
+      0.7166919721122567
+    ],
+    "box_tag": 4317,
+    "parent_link_name": "left_arm_end_effector_mount_link"
+  },
+  "collision_box": {
+    "box_size": [
+      0.4,
+      0.3,
+      0.175
+    ],
+    "box_pose": [
+      0.08846454589905783,
+      -0.20926272696685333,
+      -0.15890000000000004,
+      0.011116385394816377,
+      -0.0003861212335707756,
+      0.6973011501467578,
+      0.7166919721122567
+    ],
+    "box_tag": 4317,
+    "parent_link_name": "left_arm_end_effector_mount_link"
+  },
+  "ignore_collision_links": [
+    "left_arm_end_effector_mount_link",
+    "right_arm_end_effector_mount_link",
+    "left_fingertip_end_effector_mount_link",
+    "right_fingertip_end_effector_mount_link"
+  ],
+  "registration_retained_until_explicit_remove": true,
+  "before": {
+    "localized": true,
+    "current_pose_map": [
+      1.616282343864441,
+      0.7481658458709717,
+      -0.005792323499917984,
+      0.0007286255206633244,
+      -0.0006767788747829829,
+      -0.029253407996031457,
+      0.9995715328058433
+    ],
+    "navigation_status": {
+      "name": "UNKNOWN",
+      "value": 0,
+      "repr": "<NavigationTaskStatus.UNKNOWN: 0>"
+    },
+    "bounding_boxes": []
+  },
+  "parent_frame_validation": {
+    "parent_link_name": "left_arm_end_effector_mount_link",
+    "available_in_frame_names": true,
+    "base_link_from_parent_pose": [
+      0.7021768077746541,
+      0.2529459573629798,
+      0.7834094770038935,
+      -0.03465439329452811,
+      -0.06778353949542447,
+      0.021367757083861415,
+      0.9968690404240997
+    ],
+    "tf_timestamp_ns": 1788331436915176582
+  },
+  "add_bounding_box_return": [
+    true,
+    "SUCCESS"
+  ],
+  "bounding_boxes_after_add": [
+    {
+      "box_size": [
+        0.6000000238418579,
+        0.5,
+        0.375
+      ],
+      "box_pose": [
+        0.08846454322338104,
+        -0.20926272869110107,
+        -0.15889999270439148,
+        0.011116385459899902,
+        -0.0003861214790958911,
+        0.6973011493682861,
+        0.7166919708251953
+      ],
+      "box_tag": 4317,
+      "parent_link_name": "left_arm_end_effector_mount_link"
+    }
+  ],
+  "attach_box_to_link_return": [
+    true,
+    "SUCCESS"
+  ],
+  "ok": true,
+  "outcome": "payload_registered"
+}
+galbot@galbot-echo:~/ie_lab/projects/chassis_env/workspace$ /home/galbot/ie_lab/bin/s1-python   /home/galbot/Lsy03/navigation_tests/s1_navigation_cli.py.before_external_omni_noninteractive_20260901   payload-remove-4317
+A new version 1.9.1 is available. Visit https://github.com/GalaxyGeneralRobotics/GalbotSDK/releases for upgrade instructions
+
+REAL-ROBOT NAVIGATION PAYLOAD REMOVAL PREVIEW
+  expected physical motion: none
+  mobile base/arms/grippers/lift: no motion commands
+  detach PNS collision box tag: 4317
+  remove fusion filter box tag: 4317
+  run this only after navigation has stopped
+
+Type REMOVE_NAV_PAYLOAD_4317 to detach and remove payload tag 4317: REMOVE_NAV_PAYLOAD_4317
+{
+  "mode": "guarded_payload_4317_remove",
+  "motion_commands_sent": false,
+  "controller_switch_sent": false,
+  "bounding_box_changes_sent": true,
+  "attachment_changes_sent": true,
+  "box_tag": 4317,
+  "before": {
+    "localized": true,
+    "current_pose_map": [
+      1.6144185066223145,
+      0.749794065952301,
+      -0.005990850739181042,
+      0.0013603680534388573,
+      -0.0007597233578543761,
+      -0.02945202763969463,
+      0.9995649805225718
+    ],
+    "navigation_status": {
+      "name": "UNKNOWN",
+      "value": 0,
+      "repr": "<NavigationTaskStatus.UNKNOWN: 0>"
+    },
+    "bounding_boxes": [
+      {
+        "box_size": [
+          0.6000000238418579,
+          0.5,
+          0.375
+        ],
+        "box_pose": [
+          0.08846454322338104,
+          -0.20926272869110107,
+          -0.15889999270439148,
+          0.011116385459899902,
+          -0.0003861214790958911,
+          0.6973011493682861,
+          0.7166919708251953
+        ],
+        "box_tag": 4317,
+        "parent_link_name": "left_arm_end_effector_mount_link"
+      }
+    ]
+  },
+  "detach_box_from_link_return": [
+    true,
+    "SUCCESS"
+  ],
+  "remove_bounding_box_return": [
+    true,
+    "SUCCESS"
+  ],
+  "bounding_boxes_after_remove": [],
+  "filter_removed": true,
+  "ok": true,
+  "outcome": "payload_removed"
+}
+galbot@galbot-echo:~/ie_lab/projects/chassis_env/workspace$ /home/galbot/ie_lab/bin/s1-python   /home/galbot/Lsy03/navigation_tests/s1_navigation_cli.py   payload-register-4317   --execute
+
+REAL-ROBOT NAVIGATION PAYLOAD REGISTRATION (payload-register-4317 --execute)
+  expected physical motion: none
+  mobile base/arms/grippers/lift: no motion commands
+  fusion filter: {'box_size': [0.6, 0.5, 0.375], 'box_pose': [0.08846454589905783, -0.20926272696685333, -0.15890000000000004, 0.011116385394816377, -0.0003861212335707756, 0.6973011501467578, 0.7166919721122567], 'box_tag': 4317, 'parent_link_name': 'left_arm_end_effector_mount_link'}
+  PNS collision box: {'box_size': [0.4, 0.3, 0.175], 'box_pose': [0.08846454589905783, -0.20926272696685333, -0.15890000000000004, 0.011116385394816377, -0.0003861212335707756, 0.6973011501467578, 0.7166919721122567], 'box_tag': 4317, 'parent_link_name': 'left_arm_end_effector_mount_link'}
+  ignored robot links: ['left_arm_end_effector_mount_link', 'right_arm_end_effector_mount_link', 'left_fingertip_end_effector_mount_link', 'right_fingertip_end_effector_mount_link']
+  tracking frame: left_arm_end_effector_mount_link; the box follows base/torso/arm TF while the recorded rigid grasp remains valid
+  invalid after crate slip, release, regrasp, or grasp-geometry change
+  state persists until payload-remove-4317 --execute succeeds
+
+{
+  "ok": false,
+  "outcome": "failed_closed",
+  "error": {
+    "type": "NavigationCliError",
+    "message": "attach_box_to_link failed: (False, 'WAIT_INITIALIZED'); filter-removal rollback attempted"
+  }
+}
+galbot@galbot-echo:~/ie_lab/projects/chassis_env/workspace$
