@@ -1,0 +1,46 @@
+{
+  "accuracy_validated": false,
+  "box_mouth_definition": "same V5 model top-center point [0,0,height/2] transformed by each semantic pose",
+  "camera_arm": "right",
+  "comparison_is_same_bundle": true,
+  "container_fdp_center_distance_mm": 14.541794267246715,
+  "container_fdp_mouth_center_distance_mm": 14.721854989401171,
+  "container_fdp_yaw_difference_deg": 1.2372907060292846,
+  "container_v5_backend_seconds": 34.34017214399955,
+  "container_v5_center_m": [
+    0.9272119309230636,
+    -0.02553105724837429,
+    0.5314192736609826
+  ],
+  "container_v5_status": "accepted",
+  "container_v5_yaw_deg": 87.59906251635516,
+  "fdp_center_m": [
+    0.9331320650917687,
+    -0.02492835357613965,
+    0.5446877528586501
+  ],
+  "fdp_is_independent_ground_truth": false,
+  "fdp_ok": true,
+  "fdp_runtime_seconds": 1.2298705980001614,
+  "fdp_yaw_deg": 86.36177181032588,
+  "grasp_ready": false,
+  "host_container_center_distance_mm": 0.0,
+  "host_container_mouth_center_distance_mm": 0.0,
+  "host_container_yaw_difference_deg": 0.0,
+  "host_fdp_center_distance_mm": 14.541794267246715,
+  "host_fdp_mouth_center_distance_mm": 14.721854989401171,
+  "host_fdp_yaw_difference_deg": 1.2372907060292846,
+  "host_v5_backend_seconds": 17.5951269520001,
+  "host_v5_center_m": [
+    0.9272119309230636,
+    -0.02553105724837429,
+    0.5314192736609826
+  ],
+  "host_v5_status": "accepted",
+  "host_v5_yaw_deg": 87.59906251635516,
+  "image_id": "sha256:651bcf7087b9ba1ee2702a4b58ef488936c45251e2a661db8b41d547042bae89",
+  "motion_commands_sent": false,
+  "run_id": "online_docker_20260912_right_03",
+  "schema": "s1.pose_pipeline.online_docker_fdp_comparison.v1",
+  "service_url": "http://10.34.216.13:7876"
+}

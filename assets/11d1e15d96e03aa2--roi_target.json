@@ -1,0 +1,10 @@
+{
+  "model": "4317",
+  "side": "right",
+  "height": 0.175,
+  "length": 0.4000000059604645,
+  "width": 0.30000001192092896,
+  "center_world": [1.2554295063018799, 0.2464255392551422, 0.5993526577949524],
+  "yaw_deg": 90.0,
+  "source": "frozen LingBot ROI target_roi; center_world is rim/top center"
+}

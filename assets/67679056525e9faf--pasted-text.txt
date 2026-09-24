@@ -1,0 +1,624 @@
+可以，而且这是**非常适合面试追问的点**。你先把 \(a_t\) 和 \(h_t\) 的“长什么样”区分清楚。
+
+### 1. \(a_t\)：OpenVLA 最终的 action 是什么形式？
+
+从机器人控制角度，\(a_t\) 最终通常是一个很短的连续向量。例如 7-DoF action：
+
+$$
+a_t =
+[\Delta x,\Delta y,\Delta z,
+\Delta r_x,\Delta r_y,\Delta r_z,
+g]
+$$
+
+比如：
+
+```text
+a_t =
+[ 0.012, -0.004, 0.018,
+  0.006,  0.001, -0.009,
+  1.000 ]
+```
+
+可以理解为：
+
+| 维度  | 含义示例           |
+| --- | -------------- |
+| 1–3 | 末端执行器 xyz 位移增量 |
+| 4–6 | 姿态变化           |
+| 7   | gripper 开/关    |
+
+具体 action 定义取决于数据集和机器人，不一定所有系统都完全一样。
+
+但是 **OpenVLA 模型内部并不是直接像回归网络一样输出这 7 个 float**。
+
+经典 OpenVLA 会先把连续 action 离散化为 **action tokens**：
+
+```text
+continuous action
+0.012
+   ↓ quantization
+action token ID
+   ↓
+Transformer 预测 token
+   ↓ de-tokenize / de-normalize
+0.012
+```
+
+所以你可以区分两个层次：
+
+$$
+\boxed{\text{模型内部：action token / logits}}
+$$
+
+最终送给机器人：
+
+$$
+\boxed{\text{连续 action vector}}
+$$
+
+例如 Transformer 最后一层可能先产生：
+
+```text
+vocabulary logits:
+[-3.1, 0.8, ..., 7.2, ..., -1.4]
+```
+
+选出某个 action token，然后再恢复成具体 action 数值。
+
+---
+
+# 2. \(h_t\)：internal representation 到底长什么样？
+
+这个更关键。
+
+假设 OpenVLA 的语言模型 hidden size 是：
+
+$$
+d=4096
+$$
+
+那么 Transformer 中一个 token 的内部表示就是：
+
+$$
+h_{t,i}\in\mathbb R^{4096}
+$$
+
+实际就是 **4096 个浮点数**：
+
+```text
+h =
+[
+  0.127,
+ -0.843,
+  1.052,
+  ...
+ -0.017
+]
+```
+
+一共 4096 个。
+
+但是有一个非常重要的点：
+
+> **一次 forward 不是只有一个 4096 维向量。**
+
+假设输入经过 tokenization 后一共有 150 个 token，那么某一层 hidden state 实际上可能是：
+
+$$
+H_t\in\mathbb R^{150\times4096}
+$$
+
+加上 batch：
+
+$$
+[B,T,4096]
+$$
+
+例如 PyTorch：
+
+```python
+hidden_states.shape
+# torch.Size([1, 150, 4096])
+```
+
+这里：
+
+* `1` = batch size；
+* `150` = token 数；
+* `4096` = 每个 token 的 hidden dimension。
+
+所以如果候选人的简历写：
+
+> “提取 4096 维内部表示”
+
+你完全可以问：
+
+> **你原始 hidden state 明明应该是 [T,4096]，为什么最后变成了一个 4096 维 vector？你选的是哪个 token？**
+
+这是很好的问题。
+
+---
+
+# 3. 他可能怎么得到一个 4096 维向量？
+
+常见有几种方式。
+
+### 方法 A：取某一个 token
+
+例如：
+
+$$
+h_t = H_t[-1]
+$$
+
+也就是最后一个 token：
+
+```python
+h = hidden_states[:, -1, :]
+```
+
+得到：
+
+```text
+[batch, 4096]
+```
+
+---
+
+### 方法 B：取 action token 对应的 hidden state
+
+例如：
+
+```text
+Image tokens
+Language tokens
+Action token
+    ↑
+取这个位置的 4096D hidden state
+```
+
+这其实相当合理，因为它离最终 action decision 最近。
+
+---
+
+### 方法 C：Mean Pooling
+
+把所有 token 平均：
+
+$$
+h_t =
+\frac{1}{T}
+\sum_{i=1}^{T} H_{t,i}
+$$
+
+于是：
+
+$$
+[T,4096]\rightarrow[4096]
+$$
+
+---
+
+### 方法 D：只对特定 token pooling
+
+例如只对 visual token：
+
+$$
+h_t =
+Pooling(H_\text{vision})
+$$
+
+或者只取 language/action token。
+
+所以你面试时直接问：
+
+> **“你的 4096 维表示具体是哪一层、哪个 token？还是 pooling 出来的？”**
+
+非常合理。
+
+如果对方只说：
+
+> “就是 OpenVLA 的 feature。”
+
+而说不清：
+
+```text
+第几层
+哪个 token
+tensor shape
+怎么 pooling
+```
+
+那说明对底层实现理解可能不深。
+
+---
+
+# 4. “内部表示可靠性估计器”一般是什么？
+
+最简单的形式其实非常朴素。
+
+假设：
+
+$$
+h_t\in\mathbb R^{4096}
+$$
+
+你可以训练一个 classifier：
+
+$$
+h_t
+\rightarrow
+f_\theta
+\rightarrow
+p_\text{risk}
+$$
+
+最简单甚至可以是 **Logistic Regression / Linear Probe**：
+
+$$
+p =
+\sigma(W h_t+b)
+$$
+
+其中：
+
+$$
+W\in\mathbb R^{1\times4096}
+$$
+
+输出：
+
+```text
+risk_probability = 0.87
+```
+
+也就是：
+
+```text
+4096-d hidden feature
+        ↓
+Linear(4096, 1)
+        ↓
+Sigmoid
+        ↓
+0.87
+```
+
+这个就叫一种 **linear probe**。
+
+---
+
+## 更常见一点：小 MLP
+
+例如：
+
+```text
+4096
+ ↓
+Linear 4096 → 512
+ ↓
+ReLU / GELU
+ ↓
+Dropout
+ ↓
+Linear 512 → 64
+ ↓
+ReLU
+ ↓
+Linear 64 → 1
+ ↓
+Sigmoid
+ ↓
+Risk probability
+```
+
+数学上：
+
+$$
+p_\text{risk}
+=
+\sigma
+\left(
+W_2\phi(W_1h_t+b_1)+b_2
+\right)
+$$
+
+这种就属于非常典型的：
+
+> **lightweight reliability estimator**
+
+如果他简历里说“轻量可靠性估计器”，很可能就是这种东西。
+
+---
+
+# 5. 更复杂的可靠性估计也有很多形式
+
+不仅仅是 MLP。
+
+可以分成几类：
+
+| 方法                   | 输入                  | 输出               |
+| -------------------- | ------------------- | ---------------- |
+| Logistic Regression  | hidden feature      | risk probability |
+| MLP                  | hidden feature      | risk probability |
+| Transformer/GRU      | 一段时间的 hidden states | temporal risk    |
+| Ensemble             | 多模型预测               | uncertainty      |
+| Mahalanobis distance | hidden feature      | OOD score        |
+| kNN / density        | hidden feature      | familiarity      |
+| Gaussian model       | hidden feature      | uncertainty      |
+| Energy score         | logits/features     | OOD/risk         |
+| MC Dropout           | 多次 forward          | uncertainty      |
+
+但对于简历上的本科/硕士项目，**Linear Probe / MLP 是最合理、也最常见的实现**。
+
+---
+
+# 6. 这里最值得你问的，不是“用了什么网络”
+
+你可以按这个顺序问。
+
+第一问：
+
+> **你的 reliability estimator 输入具体是什么 tensor？shape 是多少？**
+
+理想回答：
+
+> “我取 OpenVLA 第 X 层 action token 的 hidden state，所以每个 timestep 是一个 4096-d vector。”
+
+这说明他真知道自己在干什么。
+
+---
+
+第二问：
+
+> **为什么选这一层？**
+
+因为 Transformer 不同层表示的信息不同：
+
+```text
+较早层
+↓
+偏视觉/局部特征
+
+中间层
+↓
+跨模态融合
+
+较后层
+↓
+更接近 action decision
+```
+
+他应该至少做过：
+
+$$
+Layer\ Ablation
+$$
+
+比如：
+
+| Layer |  AUC |
+| ----- | ---: |
+| 8     | 0.67 |
+| 16    | 0.74 |
+| 24    | 0.81 |
+| 30    | 0.83 |
+
+如果完全没比较过，也可以继续问为什么。
+
+---
+
+第三问非常重要：
+
+> **你的 label 怎么来的？什么叫 unreliable action？**
+
+因为：
+
+$$
+h_t\rightarrow risk
+$$
+
+最难的往往不是网络，而是：
+
+$$
+\boxed{y_t\text{ 怎么定义？}}
+$$
+
+例如：
+
+```text
+h_t → 4096D feature
+
+label:
+0 = safe
+1 = unsafe
+```
+
+那你就问：
+
+> 一个 episode 最后失败了，前 200 步里面哪一步算 unsafe？
+
+这并不简单。
+
+---
+
+# 7. 甚至可以问一个很厉害的问题
+
+> **你的 reliability estimator 预测的是 epistemic uncertainty、aleatoric uncertainty，还是 empirical failure probability？**
+
+这三个其实不是一回事。
+
+比如：
+
+### Failure probability
+
+$$
+P(\text{failure}|h_t)
+$$
+
+就是说：
+
+> 根据训练数据，这种内部状态下有多大概率失败。
+
+---
+
+### Epistemic uncertainty
+
+模型：
+
+> “这种情况我没怎么见过，所以我不知道。”
+
+更像 OOD / model uncertainty。
+
+---
+
+### Aleatoric uncertainty
+
+环境本身：
+
+> “这个场景存在噪声，即使模型很好也不确定。”
+
+例如严重遮挡。
+
+如果候选人只是：
+
+```text
+MLP + binary label
+```
+
+那严格来说通常更接近：
+
+$$
+\boxed{\text{empirical risk classifier}}
+$$
+
+而不一定是真正意义上的 uncertainty estimator。
+
+这是很适合研究岗的一道追问题。
+
+---
+
+# 8. 还有一个你一定可以问的问题
+
+假设他得到：
+
+$$
+p_\text{risk}=0.83
+$$
+
+然后怎么办？
+
+问：
+
+> **risk estimator 输出 0.83 之后，你的控制系统具体做什么？**
+
+可能是：
+
+```text
+risk < 0.3
+→ 原 action
+
+0.3 < risk < 0.7
+→ 缩小 action magnitude
+
+risk > 0.7
+→ reject / stop / regenerate
+```
+
+或者：
+
+$$
+a_t' = \alpha a_t
+$$
+
+其中：
+
+$$
+\alpha = f(p_\text{risk})
+$$
+
+例如：
+
+```text
+原 action:
+Δx = 4cm
+
+risk 高
+↓
+缩放
+
+修正 action:
+Δx = 1cm
+```
+
+如果简历里写：
+
+> “只修改 2.21% action”
+
+那这道尤其值得问：
+
+> **这 2.21% 是怎么被筛出来的？threshold 是多少？threshold 为什么这么选？**
+
+---
+
+## 你可以把整个项目脑补成这张结构
+
+```text
+Image + Language
+       │
+       ▼
+    OpenVLA
+       │
+       ├─────────────► Action tokens
+       │                    │
+       │                    ▼
+       │               continuous a_t
+       │
+       ▼
+Hidden States
+[T, 4096]
+       │
+       │  select token /
+       │  pooling
+       ▼
+    h_t [4096]
+       │
+       ▼
+ Reliability Estimator
+   MLP / Linear Probe
+       │
+       ▼
+ p(risk | h_t) = 0.83
+       │
+       ▼
+   Safety Policy
+       │
+   ┌───┴────┐
+ low       high
+ risk      risk
+ │          │
+ ▼          ▼
+execute    correct /
+a_t        reject a_t
+```
+
+所以你作为面试官，**“内部表示可靠性估计器”绝对是可以重点问的**。
+
+甚至我会把它列为这份简历最重要的技术追问之一：
+
+> **“请你从 PyTorch tensor 的角度，给我讲清楚：OpenVLA 某层 hidden state 原始 shape 是什么，你最终送进 reliability estimator 的 shape 是什么，中间怎么从前者变成后者？”**
+
+这一题很好，因为真正自己实现过的人一般会很快说出：
+
+```text
+[B, T, 4096]
+      ↓
+选 token / pooling
+[B, 4096]
+      ↓
+MLP
+[B, 1]
+```
+
+如果只是看论文、跑脚本，往往会在这里卡住。

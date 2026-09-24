@@ -1,0 +1,40 @@
+{
+  "baseline_to_threads1_reduction_percent": 54.59032318880133,
+  "baseline_to_threads1_speedup_factor": 2.2021737881062955,
+  "container_baseline": {
+    "algorithm_seconds": 34.34017214399955,
+    "cpu_limit": 6,
+    "thread_env": "unset"
+  },
+  "container_default_threads_cpu12": {
+    "algorithm_seconds": 43.23060838299989,
+    "cpu_limit": 12,
+    "shell_wall_seconds": 43.884,
+    "thread_env": "unset"
+  },
+  "container_threads1_cpu6": {
+    "algorithm_seconds": 15.593761186999473,
+    "cpu_limit": 6,
+    "shell_wall_seconds": 16.263,
+    "thread_env": {
+      "MKL_NUM_THREADS": 1,
+      "NUMEXPR_NUM_THREADS": 1,
+      "OMP_NUM_THREADS": 1,
+      "OPENBLAS_NUM_THREADS": 1
+    }
+  },
+  "default_threads_cpu12_vs_baseline_ratio": 1.2588931762403472,
+  "evidence": [
+    "Host V5 invocation explicitly exported OPENBLAS_NUM_THREADS=1.",
+    "run_container_compute.sh did not set BLAS/OpenMP thread environment.",
+    "Host cpu.cfs_quota_us=-1; container --cpus=6 produced cpu.cfs_quota_us=600000 and period=100000.",
+    "Host NumPy 1.24.4/SciPy 1.10.1 uses cblas/blas paths; container NumPy 1.23.5/SciPy 1.10.0 reports OpenBLAS ILP64.",
+    "V5 is NumPy/SciPy CPU code; CUDA smoke test does not execute V5 on GPU."
+  ],
+  "host_reference_seconds": 17.5951269520001,
+  "same_bundle": "container_input_bundle",
+  "same_image": "s1-box-pose-compute:v5_2_v5_3b_20260911_03",
+  "schema": "s1.pose_pipeline.v5_runtime_diagnosis.v1",
+  "scope_note": "Benchmark outputs are same-input diagnostic runs; no camera, network service, SDK, or motion access.",
+  "threads1_vs_host_ratio": 0.8862545424957491
+}

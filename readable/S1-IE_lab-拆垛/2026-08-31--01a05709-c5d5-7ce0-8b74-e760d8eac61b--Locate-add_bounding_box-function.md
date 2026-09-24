@@ -122,7 +122,7 @@ galbot_sdk.cpython-<Python版本>-<架构>-linux-gnu.so
 
 完整的二进制、日志和调用链分析记录在：
 
-[s1_add_bounding_box_runtime_analysis_20260831.md](../../assets/7b81546798fced5b--s1_add_bounding_box_runtime_analysis_20260831.md:19)
+[s1_add_bounding_box_runtime_analysis_20260831.md](../../assets/7b81546798fced5b--s1_add_bounding_box_runtime_analysis_20260831.md#L19)
 
 另外，[test_s1_navigation_cli.py](/home/lsy03/文档/ChatGPT/S1/experiments/20260827_s1_navigation/test_s1_navigation_cli.py:117) 中也有一个同名 `def add_bounding_box()`，但那只是单元测试使用的伪 SDK，不能代表厂家真实实现。
 

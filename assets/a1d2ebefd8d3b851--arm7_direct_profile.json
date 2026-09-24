@@ -1,0 +1,79 @@
+{
+  "version": 1,
+  "speed_limits_rad_s": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+  ],
+  "master_arm": "left_arm",
+  "robot_arm": "left_arm",
+  "unit": "radian",
+  "mapping": "absolute_identity_experimental",
+  "joints": [
+    {
+      "gp_index": 0,
+      "robot_joint": "left_arm_joint1",
+      "direction": 1,
+      "scale": 1,
+      "offset_rad": 0,
+      "speed_rad_s": 1.0
+    },
+    {
+      "gp_index": 1,
+      "robot_joint": "left_arm_joint2",
+      "direction": 1,
+      "scale": 1,
+      "offset_rad": 0,
+      "speed_rad_s": 1.0
+    },
+    {
+      "gp_index": 2,
+      "robot_joint": "left_arm_joint3",
+      "direction": 1,
+      "scale": 1,
+      "offset_rad": 0,
+      "speed_rad_s": 1.0
+    },
+    {
+      "gp_index": 3,
+      "robot_joint": "left_arm_joint4",
+      "direction": 1,
+      "scale": 1,
+      "offset_rad": 0,
+      "speed_rad_s": 1.0
+    },
+    {
+      "gp_index": 4,
+      "robot_joint": "left_arm_joint5",
+      "direction": 1,
+      "scale": 1,
+      "offset_rad": 0,
+      "speed_rad_s": 1.0
+    },
+    {
+      "gp_index": 5,
+      "robot_joint": "left_arm_joint6",
+      "direction": 1,
+      "scale": 1,
+      "offset_rad": 0,
+      "speed_rad_s": 1.0
+    },
+    {
+      "gp_index": 6,
+      "robot_joint": "left_arm_joint7",
+      "direction": 1,
+      "scale": 1,
+      "offset_rad": 0,
+      "speed_rad_s": 1.0,
+      "absolute_range_deg": [
+        -45,
+        45
+      ]
+    }
+  ],
+  "collision_check": false
+}

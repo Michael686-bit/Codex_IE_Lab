@@ -1,0 +1,52 @@
+{
+  "measurement": "PC feedback_read_finished_wall_ns minus G1 stamps[0]",
+  "unit": "ms",
+  "started_local": "2026-09-18T12:04:38.329",
+  "ended_local": "2026-09-18T12:04:50.324",
+  "duration_s": 11.994416242,
+  "sample_count_all": 587,
+  "sample_count_fresh": 556,
+  "sample_count_repeated": 31,
+  "all_samples": {
+    "min_ms": -26.794413,
+    "p1_ms": -26.1588303,
+    "median_ms": -15.961556,
+    "mean_ms": -14.59952701192504,
+    "p95_ms": 1.1262124999999426,
+    "p99_ms": 22.784213719999983,
+    "max_ms": 48.348107,
+    "std_ms": 9.475219734201987
+  },
+  "fresh_samples": {
+    "min_ms": -26.794413,
+    "p1_ms": -26.19074325,
+    "median_ms": -16.3576485,
+    "mean_ms": -15.931334791366906,
+    "p95_ms": -6.29988725,
+    "p99_ms": 7.416823700000178,
+    "max_ms": 48.348107,
+    "std_ms": 7.034233879283832
+  },
+  "fresh_plus_104ms_if_applied": {
+    "min_ms": 77.20558700000001,
+    "p1_ms": 77.80925674999999,
+    "median_ms": 87.6423515,
+    "mean_ms": 88.06866520863308,
+    "p95_ms": 97.70011275,
+    "p99_ms": 111.41682370000018,
+    "max_ms": 152.348107,
+    "std_ms": 7.034233879283833
+  },
+  "feedback_axis_timestamp_span_ms": {
+    "min": 0.0,
+    "median": 0.0,
+    "max": 0.0
+  },
+  "sdk_read_duration_us": {
+    "median": 243.637,
+    "p95": 387.9158,
+    "max": 614.903
+  },
+  "interpretation": "Feedback read age / clock-domain difference, not a pure host clock offset or one-way network latency. Negative means G1 timestamp is ahead of the PC read clock.",
+  "fresh_sample_rule": "Primary statistics use fresh=true; repeated reads are retained and shown separately."
+}

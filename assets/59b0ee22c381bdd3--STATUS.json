@@ -1,0 +1,57 @@
+{
+  "state": "complete",
+  "remote_host": "10.34.216.17",
+  "remote_directory": "/home/galbot/Lsy03/fdp_aligned_A0_A4_20260923",
+  "pilot_complete": true,
+  "pilot_control_verified": true,
+  "full_batch_started": true,
+  "full_batch_remote_state": "all five full versions complete; resume_exit_code=0; no task containers running",
+  "last_downloaded_A0_formal": 0,
+  "last_downloaded_A0_finished_frames": 0,
+  "full_batch_may_still_run": false,
+  "restart_instruction": "Preserve incomplete A0 output; check interruption log and resume with new run_id or explicit partial recovery. Do not overwrite archived outputs.",
+  "robot_motion_used": false,
+  "service4090_accessed": false,
+  "network_check": "Ping 2/2 and SSH successful on 2026-09-23; no codex-fdp-a120 containers running",
+  "remote_saved_A0_rows": 15,
+  "resume_launcher_pid": 29072,
+  "interrupted_archive": "output/interrupted_20260923/A0_full.json",
+  "interrupted_formal_excluded": 12,
+  "downloaded_full_progress": {
+    "A0_full": {
+      "complete": true,
+      "formal": 140,
+      "finished_frames": 28
+    },
+    "A1_full": {
+      "complete": true,
+      "formal": 140,
+      "finished_frames": 28
+    },
+    "A2_full": {
+      "complete": true,
+      "formal": 140,
+      "finished_frames": 28
+    },
+    "A3_full": {
+      "complete": true,
+      "formal": 140,
+      "finished_frames": 28
+    },
+    "A4_full": {
+      "complete": true,
+      "formal": 140,
+      "finished_frames": 28
+    }
+  },
+  "full_versions_complete": [
+    "A0",
+    "A1",
+    "A2",
+    "A3",
+    "A4"
+  ],
+  "formal_samples": 700,
+  "evidence_sha256": "c9b83772d523c9ac8b7458b6c81ba560b38fa64054fde3becc90cd155035d2f7",
+  "all_task_ssh_closed": true
+}

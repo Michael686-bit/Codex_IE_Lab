@@ -1,0 +1,64 @@
+{
+  "camera_arm": "right",
+  "camera_frame": "right_arm_camera_color_optical_frame",
+  "center_axis_max_m": 0.0,
+  "center_euclidean_m": 0.0,
+  "comparison_scope": "same frozen Observation; host current V5 CPU vs _03 container V5 CPU; container timing excludes host capture/perception/confirmation",
+  "container_backend_seconds": 34.34017214399955,
+  "container_center_base_m": [
+    0.9272119309230636,
+    -0.02553105724837429,
+    0.5314192736609826
+  ],
+  "container_contract": {
+    "accuracy_validated": false,
+    "grasp_ready": false,
+    "motion_commands_sent": false,
+    "network_services_called": false,
+    "robot_accessed": false,
+    "robot_sdk_called": false
+  },
+  "container_minus_host_seconds": 16.745045191999452,
+  "container_resource_sample": {
+    "algorithm_seconds": 32.37495717699949,
+    "cpu_limit": "6",
+    "cpu_peak_percent_periodic_sample": 615.52,
+    "exit_code": 0,
+    "mem_peak_mib_periodic_sample": 290.9,
+    "memory_limit": "8 GiB",
+    "oom_killed": false,
+    "pids_limit": 256,
+    "sample_count": 13
+  },
+  "container_result_status": "accepted",
+  "container_slower_percent": 95.16865230742755,
+  "host_backend_seconds": 17.5951269520001,
+  "host_center_base_m": [
+    0.9272119309230636,
+    -0.02553105724837429,
+    0.5314192736609826
+  ],
+  "host_over_container_ratio": 0.512377366025365,
+  "host_result_status": "accepted",
+  "host_stage_timings": {
+    "capture_seconds": 6.193096145999789,
+    "confirmation_seconds": 1678.980750797,
+    "observation_seconds": 0.015606603000378527,
+    "perception_seconds": 6.516035699999975,
+    "total_before_backend_seconds": 1691.7055055660003,
+    "total_seconds": 1709.310366624
+  },
+  "image": "s1-box-pose-compute:v5_2_v5_3b_20260911_03",
+  "image_id": "sha256:651bcf7087b9ba1ee2702a4b58ef488936c45251e2a661db8b41d547042bae89",
+  "matrix_max_abs_diff": 0.0,
+  "notes": [
+    "FDP is the observation position, not an accuracy truth reference.",
+    "V5 estimates xyz/yaw with upright roll/pitch prior.",
+    "The container timing includes its algorithm call only; no independent SSH wall-clock measurement was captured."
+  ],
+  "operator_statement": "最高最近的料箱",
+  "remote_run_dir": "/home/galbot/Lsy03/box_pose_pipeline/runs/online_docker_20260912_right_03",
+  "run_id": "online_docker_20260912_right_03",
+  "schema": "s1.pose_pipeline.online_docker_comparison.v1",
+  "selected_roi_index": 0
+}

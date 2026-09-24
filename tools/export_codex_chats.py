@@ -23,6 +23,7 @@ import shutil
 import socket
 import sqlite3
 import sys
+import tempfile
 import threading
 import urllib.error
 import urllib.parse
@@ -37,8 +38,8 @@ from zoneinfo import ZoneInfo
 
 EXPORT_VERSION = 2
 LOCAL_TIMEZONE = ZoneInfo("Asia/Shanghai")
-MAX_ASSET_BYTES = 25 * 1024 * 1024
-MAX_TOTAL_REFERENCED_BYTES = 100 * 1024 * 1024
+MAX_ASSET_BYTES = 95 * 1024 * 1024
+MAX_TOTAL_REFERENCED_BYTES = 2 * 1024 * 1024 * 1024
 
 GENERATED_CONTEXT_MARKERS = (
     "<skills_instructions>",
@@ -183,6 +184,7 @@ def parse_args() -> argparse.Namespace:
         action="store_true",
         help="Do not make network requests for external HTTP/HTTPS link checks",
     )
+    parser.add_argument("--previous-archive", type=Path, help="Preserve historical asset versions from this existing archive")
     return parser.parse_args()
 
 
@@ -196,6 +198,7 @@ def connect_readonly(path: Path) -> sqlite3.Connection:
 
 def redact(text: str) -> tuple[str, int]:
     result = text.replace("\x00", "")
+    result = re.sub(r"github\\?_pat\\?_[A-Za-z0-9_\\-]+", "[REDACTED GITHUB TOKEN]", result)
     total = 0
     for pattern, replacement in REDACTION_PATTERNS:
         result, count = pattern.subn(replacement, result)
@@ -1067,9 +1070,9 @@ def rewrite_archived_markdown_links(
             )
             text = pattern.sub(
                 lambda match: (
-                    f"{match.group('prefix')}<{replacement}{match.group('anchor') or ''}>)"
+                    f"{match.group('prefix')}<{replacement}{('#L' + match.group('anchor')[1:].split(':')[0]) if (match.group('anchor') or '').startswith(':') else (match.group('anchor') or '')}>)"
                     if match.group("left") and match.group("right").startswith(">")
-                    else f"{match.group('prefix')}{replacement}{match.group('anchor') or ''})"
+                    else f"{match.group('prefix')}{replacement}{('#L' + match.group('anchor')[1:].split(':')[0]) if (match.group('anchor') or '').startswith(':') else (match.group('anchor') or '')})"
                 ),
                 text,
             )
@@ -1326,6 +1329,30 @@ def add_visualization_assets(
     return result
 
 
+def preserve_assets(previous: Path, output: Path, store: AssetStore) -> int:
+    """Retain historical versions even when source files changed or disappeared."""
+    count = 0
+    for asset in read_json(previous / "catalog/assets.json", {}).get("assets", []):
+        if asset["asset_id"] in store.records:
+            continue
+        source = (previous / asset["path"]).resolve()
+        if not source.is_relative_to(previous) or not source.is_file():
+            continue
+        if hashlib.sha256(source.read_bytes()).hexdigest() != asset["sha256"]:
+            raise RuntimeError("Previous archive asset failed integrity check")
+        destination = output / asset["path"]
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(source, destination)
+        item = dict(asset)
+        for key in ("original_names", "source_references", "thread_ids"):
+            item[key] = set(item[key])
+        item["preserved_from_previous_archive"] = True
+        store.records[item["asset_id"]] = item
+        store.stored_bytes += item["size_bytes"]
+        count += 1
+    return count
+
+
 def write_json(path: Path, value: Any) -> None:
     path.write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
@@ -1384,8 +1411,54 @@ def write_sync_report(
     path.write_text("\n".join(lines), encoding="utf-8")
 
 
+def discover_rollouts(codex_home: Path) -> dict[str, list[Path]]:
+    groups: dict[str, list[Path]] = {}
+    for directory in ("sessions", "archived_sessions"):
+        for path in sorted((codex_home / directory).rglob("*.jsonl")):
+            try:
+                with path.open(encoding="utf-8") as stream:
+                    record = json.loads(stream.readline())
+                thread_id = record.get("payload", {}).get("id")
+                if record.get("type") == "session_meta" and thread_id:
+                    groups.setdefault(thread_id, []).append(path)
+            except (OSError, ValueError):
+                continue
+    return groups
+
+
+def merged_rollout(paths: list[Path], target: Path, cutoff: datetime) -> None:
+    # A resumed task may have several rollout segments with overlapping history.
+    # Keep one copy of each response item, ordered by its stored timestamp.
+    records: dict[str, dict[str, Any]] = {}
+    for path in paths:
+        with path.open(encoding="utf-8", errors="replace") as stream:
+            for line in stream:
+                try:
+                    record = json.loads(line)
+                except ValueError:
+                    continue
+                if record.get("type") != "response_item":
+                    continue
+                timestamp = record.get("timestamp", "")
+                try:
+                    if datetime.fromisoformat(timestamp.replace("Z", "+00:00")) > cutoff:
+                        continue
+                except ValueError:
+                    pass
+                payload = record.get("payload") or {}
+                identity = payload.get("id")
+                if not identity:
+                    identity = hashlib.sha256(json.dumps(payload, sort_keys=True).encode()).hexdigest()
+                key = str(payload.get("type")) + ":" + str(identity)
+                records[key] = record
+    with target.open("w", encoding="utf-8") as stream:
+        for record in sorted(records.values(), key=lambda item: item.get("timestamp", "")):
+            stream.write(json.dumps(record, ensure_ascii=False) + "\n")
+
+
 def main() -> int:
     args = parse_args()
+    cutoff = datetime.now(tz=timezone.utc)
     codex_home = args.codex_home.expanduser().resolve()
     output = args.output.expanduser().resolve()
     state_path = codex_home / "state_5.sqlite"
@@ -1409,6 +1482,8 @@ def main() -> int:
     finally:
         state.close()
 
+    rollout_groups = discover_rollouts(codex_home)
+    merge_workspace = tempfile.TemporaryDirectory(prefix="codex-rollout-merge-")
     selected_thread_ids = {str(row["id"]) for row in rows}
     history_paths_by_thread = load_history_image_paths(codex_home, selected_thread_ids)
     asset_store = AssetStore(output, assets_dir, codex_home)
@@ -1448,8 +1523,13 @@ def main() -> int:
 
         rollout_raw = row["rollout_path"]
         rollout = Path(rollout_raw) if rollout_raw else Path("/__missing_rollout__")
+        segments = rollout_groups.get(thread_id, [])
+        if rollout.is_file() and rollout not in segments:
+            segments.append(rollout)
+        merged = Path(merge_workspace.name) / (thread_id + ".jsonl")
+        merged_rollout(segments, merged, cutoff)
         messages, redaction_count, parse_errors = load_visible_messages(
-            rollout,
+            merged,
             thread_id=thread_id,
             output=output,
             codex_home=codex_home,
@@ -1550,6 +1630,8 @@ def main() -> int:
         writer.writeheader()
         writer.writerows(index_rows)
 
+    if args.previous_archive:
+        preserve_assets(args.previous_archive.resolve(), output, asset_store)
     assets = asset_store.finalize()
     for asset_id, text in asset_store.text_sources.items():
         record = asset_store.records.get(asset_id)
@@ -1616,6 +1698,8 @@ def main() -> int:
     manifest = {
         "export_version": EXPORT_VERSION,
         "generated_at": generated_at,
+        "snapshot_cutoff": cutoff.astimezone(LOCAL_TIMEZONE).isoformat(),
+        "rollout_segment_count": sum(len(rollout_groups.get(tid, [])) for tid in selected_thread_ids),
         "thread_scope": "all" if args.include_subagents else "user",
         "thread_count": len(index_rows),
         "archived_count": sum(1 for row in index_rows if row["archived"] == "yes"),

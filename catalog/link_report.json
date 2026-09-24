@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-12T09:59:21.942656+08:00",
+  "generated_at": "2026-09-24T16:31:33.279395+08:00",
   "links": [
     {
       "url": "http://10.34.216.11:7861",
@@ -11,10 +11,10 @@
           "role": "asset"
         }
       ],
-      "status": "skipped",
+      "status": "not_checked",
       "http_status": null,
       "final_url": null,
-      "detail": "私有、回环或保留地址"
+      "detail": ""
     },
     {
       "url": "http://10.34.216.11:7861/health",
@@ -30,15 +30,20 @@
           "role": "asset"
         },
         {
+          "thread_id": "01a0ad1e-d0b3-7bc3-b31a-a00599cfbb56",
+          "turn_id": "01a0ad3f-1b38-76c3-849b-bcf36f2f3f31",
+          "role": "user"
+        },
+        {
           "thread_id": "unknown-attachment",
           "turn_id": "asset:ea60016055615305",
           "role": "asset"
         }
       ],
-      "status": "skipped",
+      "status": "not_checked",
       "http_status": null,
       "final_url": null,
-      "detail": "私有、回环或保留地址"
+      "detail": ""
     },
     {
       "url": "http://10.34.216.11:7865",
@@ -49,10 +54,10 @@
           "role": "asset"
         }
       ],
-      "status": "skipped",
+      "status": "not_checked",
       "http_status": null,
       "final_url": null,
-      "detail": "私有、回环或保留地址"
+      "detail": ""
     },
     {
       "url": "http://10.34.216.11:7865/health",
@@ -68,15 +73,20 @@
           "role": "asset"
         },
         {
+          "thread_id": "01a0ad1e-d0b3-7bc3-b31a-a00599cfbb56",
+          "turn_id": "01a0ad3f-1b38-76c3-849b-bcf36f2f3f31",
+          "role": "user"
+        },
+        {
           "thread_id": "unknown-attachment",
           "turn_id": "asset:ea60016055615305",
           "role": "asset"
         }
       ],
-      "status": "skipped",
+      "status": "not_checked",
       "http_status": null,
       "final_url": null,
-      "detail": "私有、回环或保留地址"
+      "detail": ""
     },
     {
       "url": "http://10.34.216.132:11311",
@@ -87,10 +97,10 @@
           "role": "asset"
         }
       ],
-      "status": "skipped",
+      "status": "not_checked",
       "http_status": null,
       "final_url": null,
-      "detail": "私有、回环或保留地址"
+      "detail": ""
     },
     {
       "url": "http://10.34.216.13:7876",
@@ -156,6 +166,11 @@
           "role": "asset"
         },
         {
+          "thread_id": "01a07a67-a824-78c3-ac14-2ac2c473a3a8",
+          "turn_id": "asset:cf5e1ca6d2da6de3",
+          "role": "asset"
+        },
+        {
           "thread_id": "01a07a68-f5e7-7703-93af-9eb2265ced75",
           "turn_id": "asset:dc4dc812afdbb0cc",
           "role": "asset"
@@ -171,6 +186,21 @@
           "role": "asset"
         },
         {
+          "thread_id": "01a0941f-114f-7f23-af9f-03a29bc6738d",
+          "turn_id": "asset:e380b17991288614",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a0c7be-73a8-7973-9a79-268567b34d5f",
+          "turn_id": "01a0cc17-301f-7e61-b139-07d042e0f965",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a0c7be-73a8-7973-9a79-268567b34d5f",
+          "turn_id": "asset:bb147845ba8f16e2",
+          "role": "asset"
+        },
+        {
           "thread_id": "unknown-attachment",
           "turn_id": "asset:33cc3bc610e89530",
           "role": "asset"
@@ -181,10 +211,10 @@
           "role": "asset"
         }
       ],
-      "status": "skipped",
+      "status": "not_checked",
       "http_status": null,
       "final_url": null,
-      "detail": "私有、回环或保留地址"
+      "detail": ""
     },
     {
       "url": "http://10.34.216.13:7876/",
@@ -200,10 +230,10 @@
           "role": "asset"
         }
       ],
-      "status": "skipped",
+      "status": "not_checked",
       "http_status": null,
       "final_url": null,
-      "detail": "私有、回环或保留地址"
+      "detail": ""
     },
     {
       "url": "http://10.34.216.13:7876/first_frame_track",
@@ -234,6 +264,11 @@
           "role": "asset"
         },
         {
+          "thread_id": "01a07a67-a824-78c3-ac14-2ac2c473a3a8",
+          "turn_id": "asset:cf5e1ca6d2da6de3",
+          "role": "asset"
+        },
+        {
           "thread_id": "01a07a68-f5e7-7703-93af-9eb2265ced75",
           "turn_id": "asset:dc4dc812afdbb0cc",
           "role": "asset"
@@ -242,12 +277,17 @@
           "thread_id": "01a07bb0-0384-7f43-aa7d-1bb4a0842edb",
           "turn_id": "01a07fd3-fd0c-7b91-a140-fa13179d81dd",
           "role": "assistant"
+        },
+        {
+          "thread_id": "01a0ad1e-d0b3-7bc3-b31a-a00599cfbb56",
+          "turn_id": "01a0adfc-f3ab-7b82-954c-29ae81881b95",
+          "role": "assistant"
         }
       ],
-      "status": "skipped",
+      "status": "not_checked",
       "http_status": null,
       "final_url": null,
-      "detail": "私有、回环或保留地址"
+      "detail": ""
     },
     {
       "url": "http://10.34.216.13:7876/health",
@@ -268,15 +308,20 @@
           "role": "asset"
         },
         {
+          "thread_id": "01a0ad1e-d0b3-7bc3-b31a-a00599cfbb56",
+          "turn_id": "01a0ad3f-1b38-76c3-849b-bcf36f2f3f31",
+          "role": "user"
+        },
+        {
           "thread_id": "unknown-attachment",
           "turn_id": "asset:ea60016055615305",
           "role": "asset"
         }
       ],
-      "status": "skipped",
+      "status": "not_checked",
       "http_status": null,
       "final_url": null,
-      "detail": "私有、回环或保留地址"
+      "detail": ""
     },
     {
       "url": "http://127.0.0.1:18000",
@@ -292,10 +337,10 @@
           "role": "user"
         }
       ],
-      "status": "skipped",
+      "status": "not_checked",
       "http_status": null,
       "final_url": null,
-      "detail": "私有、回环或保留地址"
+      "detail": ""
     },
     {
       "url": "http://127.0.0.1:18001",
@@ -311,10 +356,10 @@
           "role": "user"
         }
       ],
-      "status": "skipped",
+      "status": "not_checked",
       "http_status": null,
       "final_url": null,
-      "detail": "私有、回环或保留地址"
+      "detail": ""
     },
     {
       "url": "http://127.0.0.1:18002",
@@ -330,10 +375,10 @@
           "role": "user"
         }
       ],
-      "status": "skipped",
+      "status": "not_checked",
       "http_status": null,
       "final_url": null,
-      "detail": "私有、回环或保留地址"
+      "detail": ""
     },
     {
       "url": "http://127.0.0.1:19000",
@@ -354,10 +399,299 @@
           "role": "assistant"
         }
       ],
-      "status": "skipped",
+      "status": "not_checked",
       "http_status": null,
       "final_url": null,
-      "detail": "私有、回环或保留地址"
+      "detail": ""
+    },
+    {
+      "url": "http://127.0.0.1:8006/healthz",
+      "references": [
+        {
+          "thread_id": "01a07a68-f5e7-7703-93af-9eb2265ced75",
+          "turn_id": "asset:b2289de8fd20c06c",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a0addb-959b-7433-adb3-4b36c3df088c",
+          "turn_id": "01a0bcbf-ca4b-79f2-84bf-7b7e90cb5eb4",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a0addb-959b-7433-adb3-4b36c3df088c",
+          "turn_id": "asset:9e13679fc2ed5730",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a0addb-959b-7433-adb3-4b36c3df088c",
+          "turn_id": "asset:b2289de8fd20c06c",
+          "role": "asset"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "http://127.0.0.1:8010",
+      "references": [
+        {
+          "thread_id": "01a07a68-f5e7-7703-93af-9eb2265ced75",
+          "turn_id": "asset:b2289de8fd20c06c",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a0addb-959b-7433-adb3-4b36c3df088c",
+          "turn_id": "asset:b2289de8fd20c06c",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a0bdde-34bb-7423-a82b-d6ef6d722098",
+          "turn_id": "01a0bde0-3950-76e3-a3c6-594980bc37d8",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a0bdde-34bb-7423-a82b-d6ef6d722098",
+          "turn_id": "asset:c0d815f105643499",
+          "role": "asset"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "http://127.0.0.1:8010/",
+      "references": [
+        {
+          "thread_id": "01a0bdde-34bb-7423-a82b-d6ef6d722098",
+          "turn_id": "01a0bdf2-8427-7911-aacd-67b0b7eaacfe",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a0bdde-34bb-7423-a82b-d6ef6d722098",
+          "turn_id": "01a0be9e-5be0-7953-a5df-d912677804ed",
+          "role": "user"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "http://127.0.0.1:8765",
+      "references": [
+        {
+          "thread_id": "01a0c70a-a632-7513-a567-e1d9b4e14570",
+          "turn_id": "01a0c70d-3953-78c1-8386-1838e9d70233",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a0c70a-a632-7513-a567-e1d9b4e14570",
+          "turn_id": "01a0d26f-85d1-78f0-8a89-4ca4e51d5d54",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "http://127.0.0.1:9092/?url=rerun%2Bhttp%3A%2F%2F127.0.0.1%3A9878%2Fproxy",
+      "references": [
+        {
+          "thread_id": "01a0cbc1-d956-7921-af91-28e9b8db1183",
+          "turn_id": "01a0cd83-4763-78b1-ac70-1903922af102",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "http://127.0.0.1:9093/?url=rerun%2Bhttp%3A%2F%2F127.0.0.1%3A9879%2Fproxy",
+      "references": [
+        {
+          "thread_id": "01a0cbc1-d956-7921-af91-28e9b8db1183",
+          "turn_id": "01a0ce44-cf30-71e2-a374-cf3c20bbc4a1",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a0cbc1-d956-7921-af91-28e9b8db1183",
+          "turn_id": "01a0ce4a-2f6d-7542-9c36-b5421c8fcf90",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a0cbc1-d956-7921-af91-28e9b8db1183",
+          "turn_id": "01a0ce4b-8076-7e30-8f5b-266c73eab932",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a0cbc1-d956-7921-af91-28e9b8db1183",
+          "turn_id": "01a0ce4b-fb43-7720-a02a-e5ff9d5e4637",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a0cbc1-d956-7921-af91-28e9b8db1183",
+          "turn_id": "01a0ce4c-81ce-7c43-a7a9-b4f714983964",
+          "role": "user"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "http://127.0.0.1:9094/?url=rerun%2Bhttp%3A%2F%2F127.0.0.1%3A9880%2Fproxy",
+      "references": [
+        {
+          "thread_id": "01a0cbc1-d956-7921-af91-28e9b8db1183",
+          "turn_id": "01a0d149-ee68-7482-8d6c-d04a2b2c7e15",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a0cbc1-d956-7921-af91-28e9b8db1183",
+          "turn_id": "01a0d207-bf4b-7690-a953-e5e70f046443",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a0cbc1-d956-7921-af91-28e9b8db1183",
+          "turn_id": "01a0d208-6d2d-7653-b821-5926010a73a0",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a0cbc1-d956-7921-af91-28e9b8db1183",
+          "turn_id": "01a0d20b-564d-7fc3-88aa-42ccad73fafc",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a0cbc1-d956-7921-af91-28e9b8db1183",
+          "turn_id": "01a0d20b-bda0-7b53-9e7e-e4ed46cce39e",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a0cbc1-d956-7921-af91-28e9b8db1183",
+          "turn_id": "01a0d211-2910-7862-ad15-ea90ddccc3ab",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "http://127.0.0.1:9095/?url=rerun%2Bhttp%3A%2F%2F127.0.0.1%3A9881%2Fproxy",
+      "references": [
+        {
+          "thread_id": "01a0cbc1-d956-7921-af91-28e9b8db1183",
+          "turn_id": "01a0d22b-4af8-7a33-99cb-bac8394539d3",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a0d25f-d72b-7bb3-9243-aadd0c02d55a",
+          "turn_id": "asset:60e081b27dc504b8",
+          "role": "asset"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "http://127.0.0.1:9881/proxy",
+      "references": [
+        {
+          "thread_id": "01a0cbc1-d956-7921-af91-28e9b8db1183",
+          "turn_id": "01a0d22b-4af8-7a33-99cb-bac8394539d3",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "http://192.168.42.129",
+      "references": [
+        {
+          "thread_id": "01a09437-3a87-7912-814a-5cd30e754bc2",
+          "turn_id": "01a09443-8624-76d2-b8a8-9544d176274c",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "http://192.168.42.129:7890",
+      "references": [
+        {
+          "thread_id": "01a09437-3a87-7912-814a-5cd30e754bc2",
+          "turn_id": "01a0946b-4e69-7350-bd1a-9cf2caa36b95",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a0947a-003f-7140-97c1-79d100f5cd1f",
+          "turn_id": "01a094c6-c92a-7cc0-b627-e3d6381ed789",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a0947a-003f-7140-97c1-79d100f5cd1f",
+          "turn_id": "01a0a7a9-fd2b-7280-95d1-fa7141d68a9f",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a0947a-003f-7140-97c1-79d100f5cd1f",
+          "turn_id": "01a0a87a-8045-77c2-b930-45dc4e41974a",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a0947a-003f-7140-97c1-79d100f5cd1f",
+          "turn_id": "01a0a87a-8045-77c2-b930-45dc4e41974a",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a0947a-003f-7140-97c1-79d100f5cd1f",
+          "turn_id": "01a0a914-7bff-7dd2-8b72-b3350c88ad58",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a0947a-003f-7140-97c1-79d100f5cd1f",
+          "turn_id": "01a0a920-6691-7cd2-bc5a-2c9f3c55d3ae",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a0947a-003f-7140-97c1-79d100f5cd1f",
+          "turn_id": "01a0a920-6691-7cd2-bc5a-2c9f3c55d3ae",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a0947a-003f-7140-97c1-79d100f5cd1f",
+          "turn_id": "01a0a927-f695-7a70-afd8-54ce299f2c4b",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a0947a-003f-7140-97c1-79d100f5cd1f",
+          "turn_id": "01a0a927-f695-7a70-afd8-54ce299f2c4b",
+          "role": "user"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
     },
     {
       "url": "http://fishros.com/install",
@@ -373,9 +707,9 @@
           "role": "assistant"
         }
       ],
-      "status": "redirected",
-      "http_status": 200,
-      "final_url": "https://fishros.com/install/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -387,10 +721,10 @@
           "role": "asset"
         }
       ],
-      "status": "skipped",
+      "status": "not_checked",
       "http_status": null,
       "final_url": null,
-      "detail": "本机或局域网主机"
+      "detail": ""
     },
     {
       "url": "http://mirrors.aliyun.com/ubuntu",
@@ -409,11 +743,100 @@
           "thread_id": "01a06710-9ce5-75d1-95c5-6beb503bf8ae",
           "turn_id": "01a06a12-99b0-7632-aefe-e547cf4d4d0a",
           "role": "user"
+        },
+        {
+          "thread_id": "01a09437-3a87-7912-814a-5cd30e754bc2",
+          "turn_id": "01a0943e-07f7-7e40-8497-f52b1dfedf9d",
+          "role": "user"
         }
       ],
-      "status": "redirected",
-      "http_status": 200,
-      "final_url": "http://mirrors.aliyun.com/ubuntu/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "http://mujoco.org/book/modeling.html#actuator",
+      "references": [
+        {
+          "thread_id": "01a07b13-a8a5-7cf2-b564-90d9f5ef599c",
+          "turn_id": "asset:1b99a8e28dab861b",
+          "role": "asset"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "http://mujoco.org/book/modeling.html#geom",
+      "references": [
+        {
+          "thread_id": "01a07b13-a8a5-7cf2-b564-90d9f5ef599c",
+          "turn_id": "asset:1b99a8e28dab861b",
+          "role": "asset"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "http://www.mujoco.org/book/XMLreference.html",
+      "references": [
+        {
+          "thread_id": "01a07b13-a8a5-7cf2-b564-90d9f5ef599c",
+          "turn_id": "asset:1b99a8e28dab861b",
+          "role": "asset"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "http://www.mujoco.org/book/XMLreference.html#asset",
+      "references": [
+        {
+          "thread_id": "01a07b13-a8a5-7cf2-b564-90d9f5ef599c",
+          "turn_id": "asset:1b99a8e28dab861b",
+          "role": "asset"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "http://www.mujoco.org/book/modeling.html#geom",
+      "references": [
+        {
+          "thread_id": "01a07b13-a8a5-7cf2-b564-90d9f5ef599c",
+          "turn_id": "asset:1b99a8e28dab861b",
+          "role": "asset"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "http://www.mujoco.org/forum/index.php?threads/move-camera.2201/",
+      "references": [
+        {
+          "thread_id": "01a07b13-a8a5-7cf2-b564-90d9f5ef599c",
+          "turn_id": "asset:1b99a8e28dab861b",
+          "role": "asset"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -430,8 +853,58 @@
           "role": "asset"
         },
         {
+          "thread_id": "01a07b13-a8a5-7cf2-b564-90d9f5ef599c",
+          "turn_id": "asset:1b99a8e28dab861b",
+          "role": "asset"
+        },
+        {
           "thread_id": "01a089f0-b6ba-7730-a34b-441fe7e76663",
           "turn_id": "asset:6d6e6d275b67e627",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a0a808-a4d9-7822-9412-83c295b1ce54",
+          "turn_id": "asset:657dd447e3c7442f",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a0a808-a4d9-7822-9412-83c295b1ce54",
+          "turn_id": "asset:ac6b224ceeeb7fd0",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a0a808-a4d9-7822-9412-83c295b1ce54",
+          "turn_id": "asset:b6d4777d4656eb24",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a0a808-a4d9-7822-9412-83c295b1ce54",
+          "turn_id": "asset:e8de032625b7c19b",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a0ace3-4fde-76d1-bf44-993bd36dffc5",
+          "turn_id": "asset:b6d4777d4656eb24",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a0aef8-0cbc-7df3-8ea2-c8a3f7572e4f",
+          "turn_id": "asset:7e6735a356f23c84",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a0b243-817c-79e1-bc4a-c7ec673bf2ce",
+          "turn_id": "asset:2eedd84f7f3583f7",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a0b243-817c-79e1-bc4a-c7ec673bf2ce",
+          "turn_id": "asset:b17061898ca9b0a7",
+          "role": "asset"
+        },
+        {
+          "thread_id": "visualizations",
+          "turn_id": "asset:2eedd84f7f3583f7",
           "role": "asset"
         },
         {
@@ -441,8 +914,43 @@
         },
         {
           "thread_id": "visualizations",
+          "turn_id": "asset:657dd447e3c7442f",
+          "role": "asset"
+        },
+        {
+          "thread_id": "visualizations",
+          "turn_id": "asset:7e6735a356f23c84",
+          "role": "asset"
+        },
+        {
+          "thread_id": "visualizations",
           "turn_id": "asset:9da21573323777cb",
           "role": "asset"
+        },
+        {
+          "thread_id": "visualizations",
+          "turn_id": "asset:b17061898ca9b0a7",
+          "role": "asset"
+        },
+        {
+          "thread_id": "visualizations",
+          "turn_id": "visualization:arm-follow-explainer.html",
+          "role": "visualization"
+        },
+        {
+          "thread_id": "visualizations",
+          "turn_id": "visualization:mesh-board-box.html",
+          "role": "visualization"
+        },
+        {
+          "thread_id": "visualizations",
+          "turn_id": "visualization:r1-mesh-pointcloud.html",
+          "role": "visualization"
+        },
+        {
+          "thread_id": "visualizations",
+          "turn_id": "visualization:r1-rejection-compare.html",
+          "role": "visualization"
         },
         {
           "thread_id": "visualizations",
@@ -455,9 +963,28 @@
           "role": "visualization"
         }
       ],
-      "status": "redirected",
-      "http_status": 200,
-      "final_url": "https://www.w3.org/2000/svg",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "http://www.w3.org/2000/svg&#x27",
+      "references": [
+        {
+          "thread_id": "visualizations",
+          "turn_id": "asset:2ee5f31a49680d2e",
+          "role": "asset"
+        },
+        {
+          "thread_id": "visualizations",
+          "turn_id": "visualization:vla-resource-draft-standalone.html",
+          "role": "visualization"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -467,12 +994,78 @@
           "thread_id": "01a06fc0-a86b-7612-8db0-a4af84419644",
           "turn_id": "01a06fe2-d1b8-74b2-b034-2c01f488a9cf",
           "role": "user"
+        },
+        {
+          "thread_id": "01a09332-12d3-7b91-970d-c2e04a7232fc",
+          "turn_id": "01a0935f-1e4d-7b00-8b1a-b70a86e306bc",
+          "role": "assistant"
         }
       ],
-      "status": "skipped",
+      "status": "not_checked",
       "http_status": null,
       "final_url": null,
-      "detail": "URL 含用户信息，跳过请求"
+      "detail": ""
+    },
+    {
+      "url": "https://aigate.catl.com/v1",
+      "references": [
+        {
+          "thread_id": "01a0ccce-3d4c-74b0-b95e-e6e9cc5dabe9",
+          "turn_id": "01a0ccce-9dd2-7261-a899-28faaade1dbd",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a0ccce-3d4c-74b0-b95e-e6e9cc5dabe9",
+          "turn_id": "asset:81891aa303786a4b",
+          "role": "asset"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://aigate.catl.com/v1/chat/completions",
+      "references": [
+        {
+          "thread_id": "01a0ccce-3d4c-74b0-b95e-e6e9cc5dabe9",
+          "turn_id": "asset:81891aa303786a4b",
+          "role": "asset"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://aigate.catl.com/v1/models",
+      "references": [
+        {
+          "thread_id": "01a0ccce-3d4c-74b0-b95e-e6e9cc5dabe9",
+          "turn_id": "01a0ccce-9dd2-7261-a899-28faaade1dbd",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://aigate.catl.com/v1（",
+      "references": [
+        {
+          "thread_id": "01a0ccce-3d4c-74b0-b95e-e6e9cc5dabe9",
+          "turn_id": "asset:81891aa303786a4b",
+          "role": "asset"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
     },
     {
       "url": "https://api.github.com/repos/ros-infrastructure/ros-apt-source/releases/latest",
@@ -483,10 +1076,76 @@
           "role": "assistant"
         }
       ],
-      "status": "http_error",
-      "http_status": 403,
+      "status": "not_checked",
+      "http_status": null,
       "final_url": null,
-      "detail": "rate limit exceeded"
+      "detail": ""
+    },
+    {
+      "url": "https://apps.kde.org/crowtranslate/",
+      "references": [
+        {
+          "thread_id": "01a09437-3a87-7912-814a-5cd30e754bc2",
+          "turn_id": "01a09438-0ba5-7723-af27-f6754b7d44f1",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://apps.kde.org/zh-cn/crowtranslate/",
+      "references": [
+        {
+          "thread_id": "01a09437-3a87-7912-814a-5cd30e754bc2",
+          "turn_id": "01a0943c-74af-75b0-9e9a-21ba79a4db00",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a09437-3a87-7912-814a-5cd30e754bc2",
+          "turn_id": "01a0943e-07f7-7e40-8497-f52b1dfedf9d",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a09437-3a87-7912-814a-5cd30e754bc2",
+          "turn_id": "01a09f0a-58bf-7351-a2ff-b24462420853",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://arxiv.org/abs/2309.16221",
+      "references": [
+        {
+          "thread_id": "01a09f25-95ac-74a2-b818-3ae774c667d5",
+          "turn_id": "01a09f25-edf7-7fe3-b4dc-24faa6250d96",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://arxiv.org/abs/2608.11246",
+      "references": [
+        {
+          "thread_id": "01a09eac-1ee3-78a1-982c-4d3e11c56801",
+          "turn_id": "01a09eac-caa3-7623-8ef3-744c302fe4b3",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
     },
     {
       "url": "https://catalog.ngc.nvidia.com/orgs/nvidia/-/containers/l4t-jetpack/-",
@@ -497,17 +1156,51 @@
           "role": "asset"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://catalog.ngc.nvidia.com/orgs/nvidia/-/containers/l4t-jetpack/-",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://cdn.jsdelivr.net",
+      "references": [
+        {
+          "thread_id": "01a0a808-a4d9-7822-9412-83c295b1ce54",
+          "turn_id": "asset:ac6b224ceeeb7fd0",
+          "role": "asset"
+        },
+        {
+          "thread_id": "visualizations",
+          "turn_id": "asset:2ee5f31a49680d2e",
+          "role": "asset"
+        },
+        {
+          "thread_id": "visualizations",
+          "turn_id": "visualization:vla-resource-draft-standalone.html",
+          "role": "visualization"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
       "url": "https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js",
       "references": [
         {
+          "thread_id": "01a0936a-d074-7441-8bfb-a6c44eb1412b",
+          "turn_id": "asset:4d69b0c90dfb32ee",
+          "role": "asset"
+        },
+        {
           "thread_id": "visualizations",
           "turn_id": "asset:212e0f737956b2ff",
+          "role": "asset"
+        },
+        {
+          "thread_id": "visualizations",
+          "turn_id": "asset:4d69b0c90dfb32ee",
           "role": "asset"
         },
         {
@@ -547,6 +1240,11 @@
         },
         {
           "thread_id": "visualizations",
+          "turn_id": "visualization:vla-resource-draft.html",
+          "role": "visualization"
+        },
+        {
+          "thread_id": "visualizations",
           "turn_id": "visualization:vla-total-gpu-memory-modes.html",
           "role": "visualization"
         },
@@ -556,9 +1254,52 @@
           "role": "visualization"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js&quot;&gt;&lt;/script&gt",
+      "references": [
+        {
+          "thread_id": "visualizations",
+          "turn_id": "asset:2ee5f31a49680d2e",
+          "role": "asset"
+        },
+        {
+          "thread_id": "visualizations",
+          "turn_id": "visualization:vla-resource-draft-standalone.html",
+          "role": "visualization"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://cdnjs.cloudflare.com",
+      "references": [
+        {
+          "thread_id": "01a0a808-a4d9-7822-9412-83c295b1ce54",
+          "turn_id": "asset:ac6b224ceeeb7fd0",
+          "role": "asset"
+        },
+        {
+          "thread_id": "visualizations",
+          "turn_id": "asset:2ee5f31a49680d2e",
+          "role": "asset"
+        },
+        {
+          "thread_id": "visualizations",
+          "turn_id": "visualization:vla-resource-draft-standalone.html",
+          "role": "visualization"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -570,9 +1311,9 @@
           "role": "user"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://chatgpt.com/share/6a97c216-77a4-83ee-935d-efd3b727e778",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -584,9 +1325,9 @@
           "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://chrony-project.org/doc/4.2/chrony.conf.html",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -598,9 +1339,9 @@
           "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://developer.galbot.com/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -612,9 +1353,9 @@
           "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://developer.galbot.com/docs/SDK/1.7.0/s1/zh/api_cpp_reference/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -626,9 +1367,9 @@
           "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://developer.galbot.com/docs/SDK/1.8.1/g1/en/examples_python/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -640,9 +1381,9 @@
           "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://developer.galbot.com/docs/SDK/1.8.1/s1/en/troubleshooting/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -659,9 +1400,9 @@
           "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://developer.galbot.com/docs/SDK/1.9.0/g1/en/examples_python/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -673,9 +1414,9 @@
           "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://developer.galbot.com/docs/SDK/1.9.0/s1/zh/api_python_reference/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -717,9 +1458,9 @@
           "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/en/api_python_reference/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -736,6 +1477,11 @@
           "role": "user"
         },
         {
+          "thread_id": "01a07fda-7a6a-7003-b064-cb96bfef874a",
+          "turn_id": "01a07fda-7ccd-77b3-a426-7fe22d692a8a",
+          "role": "user"
+        },
+        {
           "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
           "turn_id": "asset:6cbd365afb6a1066",
           "role": "asset"
@@ -746,9 +1492,9 @@
           "role": "user"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -765,6 +1511,11 @@
           "role": "user"
         },
         {
+          "thread_id": "01a07fda-7a6a-7003-b064-cb96bfef874a",
+          "turn_id": "01a07fda-7ccd-77b3-a426-7fe22d692a8a",
+          "role": "user"
+        },
+        {
           "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
           "turn_id": "asset:6cbd365afb6a1066",
           "role": "asset"
@@ -775,9 +1526,9 @@
           "role": "user"
         }
       ],
-      "status": "redirected",
-      "http_status": 200,
-      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/api_cpp_reference/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -794,6 +1545,11 @@
           "role": "user"
         },
         {
+          "thread_id": "01a07fda-7a6a-7003-b064-cb96bfef874a",
+          "turn_id": "01a07fda-7ccd-77b3-a426-7fe22d692a8a",
+          "role": "user"
+        },
+        {
           "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
           "turn_id": "asset:6cbd365afb6a1066",
           "role": "asset"
@@ -804,9 +1560,9 @@
           "role": "user"
         }
       ],
-      "status": "redirected",
-      "http_status": 200,
-      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/api_python_reference/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -823,6 +1579,11 @@
           "role": "user"
         },
         {
+          "thread_id": "01a07fda-7a6a-7003-b064-cb96bfef874a",
+          "turn_id": "01a07fda-7ccd-77b3-a426-7fe22d692a8a",
+          "role": "user"
+        },
+        {
           "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
           "turn_id": "asset:6cbd365afb6a1066",
           "role": "asset"
@@ -833,9 +1594,9 @@
           "role": "user"
         }
       ],
-      "status": "redirected",
-      "http_status": 200,
-      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/examples_cpp/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -852,6 +1613,11 @@
           "role": "user"
         },
         {
+          "thread_id": "01a07fda-7a6a-7003-b064-cb96bfef874a",
+          "turn_id": "01a07fda-7ccd-77b3-a426-7fe22d692a8a",
+          "role": "user"
+        },
+        {
           "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
           "turn_id": "asset:6cbd365afb6a1066",
           "role": "asset"
@@ -862,9 +1628,9 @@
           "role": "user"
         }
       ],
-      "status": "redirected",
-      "http_status": 200,
-      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/examples_python/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -881,6 +1647,11 @@
           "role": "user"
         },
         {
+          "thread_id": "01a07fda-7a6a-7003-b064-cb96bfef874a",
+          "turn_id": "01a07fda-7ccd-77b3-a426-7fe22d692a8a",
+          "role": "user"
+        },
+        {
           "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
           "turn_id": "asset:6cbd365afb6a1066",
           "role": "asset"
@@ -891,9 +1662,9 @@
           "role": "user"
         }
       ],
-      "status": "redirected",
-      "http_status": 200,
-      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_and_configuration/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -905,9 +1676,9 @@
           "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_and_configuration/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -924,6 +1695,11 @@
           "role": "user"
         },
         {
+          "thread_id": "01a07fda-7a6a-7003-b064-cb96bfef874a",
+          "turn_id": "01a07fda-7ccd-77b3-a426-7fe22d692a8a",
+          "role": "user"
+        },
+        {
           "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
           "turn_id": "asset:6cbd365afb6a1066",
           "role": "asset"
@@ -934,15 +1710,20 @@
           "role": "user"
         }
       ],
-      "status": "redirected",
-      "http_status": 200,
-      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_docker_deployment/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
       "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_docker_deployment#",
       "references": [
         {
+          "thread_id": "01a07fda-7a6a-7003-b064-cb96bfef874a",
+          "turn_id": "01a07fda-7ccd-77b3-a426-7fe22d692a8a",
+          "role": "user"
+        },
+        {
           "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
           "turn_id": "asset:6cbd365afb6a1066",
           "role": "asset"
@@ -953,15 +1734,20 @@
           "role": "user"
         }
       ],
-      "status": "redirected",
-      "http_status": 200,
-      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_docker_deployment/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
       "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_docker_deployment#1-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE",
       "references": [
         {
+          "thread_id": "01a07fda-7a6a-7003-b064-cb96bfef874a",
+          "turn_id": "01a07fda-7ccd-77b3-a426-7fe22d692a8a",
+          "role": "user"
+        },
+        {
           "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
           "turn_id": "asset:6cbd365afb6a1066",
           "role": "asset"
@@ -972,15 +1758,20 @@
           "role": "user"
         }
       ],
-      "status": "redirected",
-      "http_status": 200,
-      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_docker_deployment/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
       "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_docker_deployment#2-%E8%8E%B7%E5%8F%96%E9%95%9C%E5%83%8F",
       "references": [
         {
+          "thread_id": "01a07fda-7a6a-7003-b064-cb96bfef874a",
+          "turn_id": "01a07fda-7ccd-77b3-a426-7fe22d692a8a",
+          "role": "user"
+        },
+        {
           "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
           "turn_id": "asset:6cbd365afb6a1066",
           "role": "asset"
@@ -991,15 +1782,20 @@
           "role": "user"
         }
       ],
-      "status": "redirected",
-      "http_status": 200,
-      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_docker_deployment/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
       "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_docker_deployment#3-%E5%90%AF%E5%8A%A8%E5%AE%B9%E5%99%A8",
       "references": [
         {
+          "thread_id": "01a07fda-7a6a-7003-b064-cb96bfef874a",
+          "turn_id": "01a07fda-7ccd-77b3-a426-7fe22d692a8a",
+          "role": "user"
+        },
+        {
           "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
           "turn_id": "asset:6cbd365afb6a1066",
           "role": "asset"
@@ -1010,15 +1806,20 @@
           "role": "user"
         }
       ],
-      "status": "redirected",
-      "http_status": 200,
-      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_docker_deployment/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
       "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_docker_deployment#__docusaurus_skipToContent_fallback",
       "references": [
         {
+          "thread_id": "01a07fda-7a6a-7003-b064-cb96bfef874a",
+          "turn_id": "01a07fda-7ccd-77b3-a426-7fe22d692a8a",
+          "role": "user"
+        },
+        {
           "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
           "turn_id": "asset:6cbd365afb6a1066",
           "role": "asset"
@@ -1029,9 +1830,9 @@
           "role": "user"
         }
       ],
-      "status": "redirected",
-      "http_status": 200,
-      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_docker_deployment/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -1048,6 +1849,11 @@
           "role": "user"
         },
         {
+          "thread_id": "01a07fda-7a6a-7003-b064-cb96bfef874a",
+          "turn_id": "01a07fda-7ccd-77b3-a426-7fe22d692a8a",
+          "role": "user"
+        },
+        {
           "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
           "turn_id": "asset:6cbd365afb6a1066",
           "role": "asset"
@@ -1058,9 +1864,9 @@
           "role": "user"
         }
       ],
-      "status": "redirected",
-      "http_status": 200,
-      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_deployment/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -1077,14 +1883,19 @@
           "role": "user"
         },
         {
+          "thread_id": "01a07fda-7a6a-7003-b064-cb96bfef874a",
+          "turn_id": "01a07fda-7ccd-77b3-a426-7fe22d692a8a",
+          "role": "user"
+        },
+        {
           "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
           "turn_id": "asset:6cbd365afb6a1066",
           "role": "asset"
         }
       ],
-      "status": "redirected",
-      "http_status": 200,
-      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_ubuntu/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -1096,14 +1907,19 @@
           "role": "user"
         },
         {
+          "thread_id": "01a07fda-7a6a-7003-b064-cb96bfef874a",
+          "turn_id": "01a07fda-7ccd-77b3-a426-7fe22d692a8a",
+          "role": "user"
+        },
+        {
           "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
           "turn_id": "asset:6cbd365afb6a1066",
           "role": "asset"
         }
       ],
-      "status": "redirected",
-      "http_status": 200,
-      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_ubuntu/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -1115,14 +1931,19 @@
           "role": "user"
         },
         {
+          "thread_id": "01a07fda-7a6a-7003-b064-cb96bfef874a",
+          "turn_id": "01a07fda-7ccd-77b3-a426-7fe22d692a8a",
+          "role": "user"
+        },
+        {
           "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
           "turn_id": "asset:6cbd365afb6a1066",
           "role": "asset"
         }
       ],
-      "status": "redirected",
-      "http_status": 200,
-      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_ubuntu/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -1134,14 +1955,19 @@
           "role": "user"
         },
         {
+          "thread_id": "01a07fda-7a6a-7003-b064-cb96bfef874a",
+          "turn_id": "01a07fda-7ccd-77b3-a426-7fe22d692a8a",
+          "role": "user"
+        },
+        {
           "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
           "turn_id": "asset:6cbd365afb6a1066",
           "role": "asset"
         }
       ],
-      "status": "redirected",
-      "http_status": 200,
-      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_ubuntu/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -1153,14 +1979,19 @@
           "role": "user"
         },
         {
+          "thread_id": "01a07fda-7a6a-7003-b064-cb96bfef874a",
+          "turn_id": "01a07fda-7ccd-77b3-a426-7fe22d692a8a",
+          "role": "user"
+        },
+        {
           "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
           "turn_id": "asset:6cbd365afb6a1066",
           "role": "asset"
         }
       ],
-      "status": "redirected",
-      "http_status": 200,
-      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_ubuntu/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -1172,14 +2003,19 @@
           "role": "user"
         },
         {
+          "thread_id": "01a07fda-7a6a-7003-b064-cb96bfef874a",
+          "turn_id": "01a07fda-7ccd-77b3-a426-7fe22d692a8a",
+          "role": "user"
+        },
+        {
           "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
           "turn_id": "asset:6cbd365afb6a1066",
           "role": "asset"
         }
       ],
-      "status": "redirected",
-      "http_status": 200,
-      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_ubuntu/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -1191,14 +2027,19 @@
           "role": "user"
         },
         {
+          "thread_id": "01a07fda-7a6a-7003-b064-cb96bfef874a",
+          "turn_id": "01a07fda-7ccd-77b3-a426-7fe22d692a8a",
+          "role": "user"
+        },
+        {
           "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
           "turn_id": "asset:6cbd365afb6a1066",
           "role": "asset"
         }
       ],
-      "status": "redirected",
-      "http_status": 200,
-      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_ubuntu/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -1210,14 +2051,19 @@
           "role": "user"
         },
         {
+          "thread_id": "01a07fda-7a6a-7003-b064-cb96bfef874a",
+          "turn_id": "01a07fda-7ccd-77b3-a426-7fe22d692a8a",
+          "role": "user"
+        },
+        {
           "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
           "turn_id": "asset:6cbd365afb6a1066",
           "role": "asset"
         }
       ],
-      "status": "redirected",
-      "http_status": 200,
-      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_ubuntu/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -1229,14 +2075,19 @@
           "role": "user"
         },
         {
+          "thread_id": "01a07fda-7a6a-7003-b064-cb96bfef874a",
+          "turn_id": "01a07fda-7ccd-77b3-a426-7fe22d692a8a",
+          "role": "user"
+        },
+        {
           "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
           "turn_id": "asset:6cbd365afb6a1066",
           "role": "asset"
         }
       ],
-      "status": "redirected",
-      "http_status": 200,
-      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_ubuntu/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -1248,14 +2099,19 @@
           "role": "user"
         },
         {
+          "thread_id": "01a07fda-7a6a-7003-b064-cb96bfef874a",
+          "turn_id": "01a07fda-7ccd-77b3-a426-7fe22d692a8a",
+          "role": "user"
+        },
+        {
           "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
           "turn_id": "asset:6cbd365afb6a1066",
           "role": "asset"
         }
       ],
-      "status": "redirected",
-      "http_status": 200,
-      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_ubuntu/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -1270,11 +2126,16 @@
           "thread_id": "01a07ec9-1f73-7f01-a60c-3fdc2dc1279a",
           "turn_id": "01a07fd2-5ca2-79e1-8b0b-ff611b1522af",
           "role": "assistant"
+        },
+        {
+          "thread_id": "01a07fda-7a6a-7003-b064-cb96bfef874a",
+          "turn_id": "01a07fda-7ccd-77b3-a426-7fe22d692a8a",
+          "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_ubuntu/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -1286,9 +2147,9 @@
           "role": "user"
         }
       ],
-      "status": "redirected",
-      "http_status": 200,
-      "final_url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_ubuntu/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -1300,9 +2161,9 @@
           "role": "user"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_ubuntu/#1-%E7%89%A9%E7%90%86%E8%BF%9E%E6%8E%A5",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -1314,9 +2175,9 @@
           "role": "user"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_ubuntu/#2-%E9%85%8D%E7%BD%AE%E7%BD%91%E7%BB%9C",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -1328,9 +2189,9 @@
           "role": "user"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_ubuntu/#21-%E9%85%8D%E7%BD%AEpc%E7%BD%91%E5%8F%A3ip",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -1342,9 +2203,9 @@
           "role": "user"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_ubuntu/#22-%E4%B8%80%E9%94%AE%E9%85%8D%E7%BD%AEpcxcuhpu%E7%AB%AFip",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -1356,9 +2217,9 @@
           "role": "user"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_ubuntu/#3-%E5%9C%A8pc%E4%B8%8A%E5%AE%89%E8%A3%85sdk",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -1370,9 +2231,9 @@
           "role": "user"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_ubuntu/#4-%E7%BC%96%E8%AF%91%E7%A8%8B%E5%BA%8F",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -1384,9 +2245,9 @@
           "role": "user"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_ubuntu/#5-%E8%BF%90%E8%A1%8C%E7%A8%8B%E5%BA%8F",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -1398,9 +2259,9 @@
           "role": "user"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_ubuntu/#__docusaurus_skipToContent_fallback",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -1417,6 +2278,11 @@
           "role": "user"
         },
         {
+          "thread_id": "01a07fda-7a6a-7003-b064-cb96bfef874a",
+          "turn_id": "01a07fda-7ccd-77b3-a426-7fe22d692a8a",
+          "role": "user"
+        },
+        {
           "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
           "turn_id": "asset:6cbd365afb6a1066",
           "role": "asset"
@@ -1427,9 +2293,9 @@
           "role": "user"
         }
       ],
-      "status": "redirected",
-      "http_status": 200,
-      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_vmware/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -1446,14 +2312,19 @@
           "role": "user"
         },
         {
+          "thread_id": "01a07fda-7a6a-7003-b064-cb96bfef874a",
+          "turn_id": "01a07fda-7ccd-77b3-a426-7fe22d692a8a",
+          "role": "user"
+        },
+        {
           "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
           "turn_id": "asset:6cbd365afb6a1066",
           "role": "asset"
         }
       ],
-      "status": "redirected",
-      "http_status": 200,
-      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_pc_wsl2/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -1470,6 +2341,11 @@
           "role": "user"
         },
         {
+          "thread_id": "01a07fda-7a6a-7003-b064-cb96bfef874a",
+          "turn_id": "01a07fda-7ccd-77b3-a426-7fe22d692a8a",
+          "role": "user"
+        },
+        {
           "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
           "turn_id": "asset:6cbd365afb6a1066",
           "role": "asset"
@@ -1480,107 +2356,142 @@
           "role": "user"
         }
       ],
-      "status": "redirected",
-      "http_status": 200,
-      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_robot_deployment/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
       "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_robot_deployment#",
       "references": [
         {
+          "thread_id": "01a07fda-7a6a-7003-b064-cb96bfef874a",
+          "turn_id": "01a07fda-7ccd-77b3-a426-7fe22d692a8a",
+          "role": "user"
+        },
+        {
           "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
           "turn_id": "asset:6cbd365afb6a1066",
           "role": "asset"
         }
       ],
-      "status": "redirected",
-      "http_status": 200,
-      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_robot_deployment/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
       "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_robot_deployment#1-%E8%BF%9E%E6%8E%A5%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%BD%91%E7%BB%9C",
       "references": [
         {
+          "thread_id": "01a07fda-7a6a-7003-b064-cb96bfef874a",
+          "turn_id": "01a07fda-7ccd-77b3-a426-7fe22d692a8a",
+          "role": "user"
+        },
+        {
           "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
           "turn_id": "asset:6cbd365afb6a1066",
           "role": "asset"
         }
       ],
-      "status": "redirected",
-      "http_status": 200,
-      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_robot_deployment/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
       "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_robot_deployment#2-%E9%83%A8%E7%BD%B2sdk%E5%88%B0%E6%9C%BA%E5%99%A8%E4%BA%BA",
       "references": [
         {
+          "thread_id": "01a07fda-7a6a-7003-b064-cb96bfef874a",
+          "turn_id": "01a07fda-7ccd-77b3-a426-7fe22d692a8a",
+          "role": "user"
+        },
+        {
           "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
           "turn_id": "asset:6cbd365afb6a1066",
           "role": "asset"
         }
       ],
-      "status": "redirected",
-      "http_status": 200,
-      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_robot_deployment/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
       "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_robot_deployment#3-%E8%BF%90%E8%A1%8C%E7%A8%8B%E5%BA%8F",
       "references": [
         {
+          "thread_id": "01a07fda-7a6a-7003-b064-cb96bfef874a",
+          "turn_id": "01a07fda-7ccd-77b3-a426-7fe22d692a8a",
+          "role": "user"
+        },
+        {
           "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
           "turn_id": "asset:6cbd365afb6a1066",
           "role": "asset"
         }
       ],
-      "status": "redirected",
-      "http_status": 200,
-      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_robot_deployment/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
       "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_robot_deployment#31-python%E7%A8%8B%E5%BA%8F",
       "references": [
         {
+          "thread_id": "01a07fda-7a6a-7003-b064-cb96bfef874a",
+          "turn_id": "01a07fda-7ccd-77b3-a426-7fe22d692a8a",
+          "role": "user"
+        },
+        {
           "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
           "turn_id": "asset:6cbd365afb6a1066",
           "role": "asset"
         }
       ],
-      "status": "redirected",
-      "http_status": 200,
-      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_robot_deployment/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
       "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_robot_deployment#32-c%E7%A8%8B%E5%BA%8F",
       "references": [
         {
-          "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
-          "turn_id": "asset:6cbd365afb6a1066",
-          "role": "asset"
-        }
-      ],
-      "status": "redirected",
-      "http_status": 200,
-      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_robot_deployment/",
-      "detail": ""
-    },
-    {
-      "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_robot_deployment#__docusaurus_skipToContent_fallback",
-      "references": [
+          "thread_id": "01a07fda-7a6a-7003-b064-cb96bfef874a",
+          "turn_id": "01a07fda-7ccd-77b3-a426-7fe22d692a8a",
+          "role": "user"
+        },
         {
           "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
           "turn_id": "asset:6cbd365afb6a1066",
           "role": "asset"
         }
       ],
-      "status": "redirected",
-      "http_status": 200,
-      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_robot_deployment/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_robot_deployment#__docusaurus_skipToContent_fallback",
+      "references": [
+        {
+          "thread_id": "01a07fda-7a6a-7003-b064-cb96bfef874a",
+          "turn_id": "01a07fda-7ccd-77b3-a426-7fe22d692a8a",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
+          "turn_id": "asset:6cbd365afb6a1066",
+          "role": "asset"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -1597,9 +2508,9 @@
           "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_robot_deployment/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -1616,6 +2527,11 @@
           "role": "user"
         },
         {
+          "thread_id": "01a07fda-7a6a-7003-b064-cb96bfef874a",
+          "turn_id": "01a07fda-7ccd-77b3-a426-7fe22d692a8a",
+          "role": "user"
+        },
+        {
           "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
           "turn_id": "asset:6cbd365afb6a1066",
           "role": "asset"
@@ -1626,9 +2542,9 @@
           "role": "user"
         }
       ],
-      "status": "redirected",
-      "http_status": 200,
-      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_system_requirements/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -1645,6 +2561,11 @@
           "role": "user"
         },
         {
+          "thread_id": "01a07fda-7a6a-7003-b064-cb96bfef874a",
+          "turn_id": "01a07fda-7ccd-77b3-a426-7fe22d692a8a",
+          "role": "user"
+        },
+        {
           "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
           "turn_id": "asset:6cbd365afb6a1066",
           "role": "asset"
@@ -1655,9 +2576,9 @@
           "role": "user"
         }
       ],
-      "status": "redirected",
-      "http_status": 200,
-      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_terminology/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -1674,6 +2595,11 @@
           "role": "user"
         },
         {
+          "thread_id": "01a07fda-7a6a-7003-b064-cb96bfef874a",
+          "turn_id": "01a07fda-7ccd-77b3-a426-7fe22d692a8a",
+          "role": "user"
+        },
+        {
           "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
           "turn_id": "asset:6cbd365afb6a1066",
           "role": "asset"
@@ -1684,51 +2610,66 @@
           "role": "user"
         }
       ],
-      "status": "redirected",
-      "http_status": 200,
-      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_version_compatibility/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
       "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_version_compatibility#",
       "references": [
         {
+          "thread_id": "01a07fda-7a6a-7003-b064-cb96bfef874a",
+          "turn_id": "01a07fda-7ccd-77b3-a426-7fe22d692a8a",
+          "role": "user"
+        },
+        {
           "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
           "turn_id": "asset:6cbd365afb6a1066",
           "role": "asset"
         }
       ],
-      "status": "redirected",
-      "http_status": 200,
-      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_version_compatibility/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
       "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_version_compatibility#%E5%BF%AB%E9%80%9F%E4%BD%BF%E7%94%A8",
       "references": [
         {
-          "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
-          "turn_id": "asset:6cbd365afb6a1066",
-          "role": "asset"
-        }
-      ],
-      "status": "redirected",
-      "http_status": 200,
-      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_version_compatibility/",
-      "detail": ""
-    },
-    {
-      "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_version_compatibility#__docusaurus_skipToContent_fallback",
-      "references": [
+          "thread_id": "01a07fda-7a6a-7003-b064-cb96bfef874a",
+          "turn_id": "01a07fda-7ccd-77b3-a426-7fe22d692a8a",
+          "role": "user"
+        },
         {
           "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
           "turn_id": "asset:6cbd365afb6a1066",
           "role": "asset"
         }
       ],
-      "status": "redirected",
-      "http_status": 200,
-      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_version_compatibility/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/installation_version_compatibility#__docusaurus_skipToContent_fallback",
+      "references": [
+        {
+          "thread_id": "01a07fda-7a6a-7003-b064-cb96bfef874a",
+          "turn_id": "01a07fda-7ccd-77b3-a426-7fe22d692a8a",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
+          "turn_id": "asset:6cbd365afb6a1066",
+          "role": "asset"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -1745,6 +2686,11 @@
           "role": "user"
         },
         {
+          "thread_id": "01a07fda-7a6a-7003-b064-cb96bfef874a",
+          "turn_id": "01a07fda-7ccd-77b3-a426-7fe22d692a8a",
+          "role": "user"
+        },
+        {
           "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
           "turn_id": "asset:6cbd365afb6a1066",
           "role": "asset"
@@ -1755,9 +2701,9 @@
           "role": "user"
         }
       ],
-      "status": "redirected",
-      "http_status": 200,
-      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/license/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -1774,6 +2720,11 @@
           "role": "user"
         },
         {
+          "thread_id": "01a07fda-7a6a-7003-b064-cb96bfef874a",
+          "turn_id": "01a07fda-7ccd-77b3-a426-7fe22d692a8a",
+          "role": "user"
+        },
+        {
           "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
           "turn_id": "asset:6cbd365afb6a1066",
           "role": "asset"
@@ -1784,9 +2735,9 @@
           "role": "user"
         }
       ],
-      "status": "redirected",
-      "http_status": 200,
-      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/overview/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -1803,6 +2754,11 @@
           "role": "user"
         },
         {
+          "thread_id": "01a07fda-7a6a-7003-b064-cb96bfef874a",
+          "turn_id": "01a07fda-7ccd-77b3-a426-7fe22d692a8a",
+          "role": "user"
+        },
+        {
           "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
           "turn_id": "asset:6cbd365afb6a1066",
           "role": "asset"
@@ -1813,9 +2769,9 @@
           "role": "user"
         }
       ],
-      "status": "redirected",
-      "http_status": 200,
-      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/routine_operations/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -1832,6 +2788,11 @@
           "role": "user"
         },
         {
+          "thread_id": "01a07fda-7a6a-7003-b064-cb96bfef874a",
+          "turn_id": "01a07fda-7ccd-77b3-a426-7fe22d692a8a",
+          "role": "user"
+        },
+        {
           "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
           "turn_id": "asset:6cbd365afb6a1066",
           "role": "asset"
@@ -1842,9 +2803,9 @@
           "role": "user"
         }
       ],
-      "status": "redirected",
-      "http_status": 200,
-      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/troubleshooting/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -1861,6 +2822,11 @@
           "role": "user"
         },
         {
+          "thread_id": "01a07fda-7a6a-7003-b064-cb96bfef874a",
+          "turn_id": "01a07fda-7ccd-77b3-a426-7fe22d692a8a",
+          "role": "user"
+        },
+        {
           "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
           "turn_id": "asset:6cbd365afb6a1066",
           "role": "asset"
@@ -1871,9 +2837,9 @@
           "role": "user"
         }
       ],
-      "status": "redirected",
-      "http_status": 200,
-      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/g1/zh/tutorials/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -1890,9 +2856,9 @@
           "role": "asset"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://developer.galbot.com/docs/SDK/1.9.1/s1/en/api_python_reference/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -1904,9 +2870,9 @@
           "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://developer.galbot.com/docs/SDK/1.9.1/s1/en/examples_python/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -1923,6 +2889,11 @@
           "role": "user"
         },
         {
+          "thread_id": "01a07fda-7a6a-7003-b064-cb96bfef874a",
+          "turn_id": "01a07fda-7ccd-77b3-a426-7fe22d692a8a",
+          "role": "user"
+        },
+        {
           "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
           "turn_id": "asset:6cbd365afb6a1066",
           "role": "asset"
@@ -1933,9 +2904,9 @@
           "role": "user"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://developer.galbot.com/docs/SDK/1.9.1/s1/zh/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -1947,9 +2918,9 @@
           "role": "user"
         }
       ],
-      "status": "redirected",
-      "http_status": 200,
-      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/s1/zh/api_python_reference/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -1971,9 +2942,9 @@
           "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://developer.galbot.com/docs/SDK/1.9.1/s1/zh/api_python_reference/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -1985,9 +2956,9 @@
           "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://developer.galbot.com/docs/SDK/1.9.1/s1/zh/api_python_reference/#galbotnavigation-navigate_to_goal_v2-function",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -1999,9 +2970,9 @@
           "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://developer.galbot.com/docs/SDK/1.9.1/s1/zh/api_python_reference/#galbotrobot-set_base_pose-function",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -2013,9 +2984,9 @@
           "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://developer.galbot.com/docs/SDK/1.9.1/s1/zh/examples_python/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -2032,9 +3003,9 @@
           "role": "user"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://developer.galbot.com/docs/SDK/1.9.1/s1/zh/routine_operations/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -2046,9 +3017,9 @@
           "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://developer.galbot.com/docs/SDK/1.9.1/s1/zh/troubleshooting/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -2065,9 +3036,9 @@
           "role": "user"
         }
       ],
-      "status": "redirected",
-      "http_status": 200,
-      "final_url": "http://developer.galbot.com/docs/SDK/1.9.1/s1/zh/tutorials/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -2079,9 +3050,9 @@
           "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://developer.galbot.com/docs/g1/2.2.4/en/g1/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -2098,6 +3069,11 @@
           "role": "user"
         },
         {
+          "thread_id": "01a07fda-7a6a-7003-b064-cb96bfef874a",
+          "turn_id": "01a07fda-7ccd-77b3-a426-7fe22d692a8a",
+          "role": "user"
+        },
+        {
           "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
           "turn_id": "asset:6cbd365afb6a1066",
           "role": "asset"
@@ -2108,9 +3084,9 @@
           "role": "user"
         }
       ],
-      "status": "redirected",
-      "http_status": 200,
-      "final_url": "http://developer.galbot.com/docs/g1/2.2.4/zh/g1/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -2132,9 +3108,9 @@
           "role": "asset"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://developer.galbot.com/docs/s1/2.0.0/en/s1/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -2151,6 +3127,11 @@
           "role": "user"
         },
         {
+          "thread_id": "01a07fda-7a6a-7003-b064-cb96bfef874a",
+          "turn_id": "01a07fda-7ccd-77b3-a426-7fe22d692a8a",
+          "role": "user"
+        },
+        {
           "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
           "turn_id": "asset:6cbd365afb6a1066",
           "role": "asset"
@@ -2161,9 +3142,9 @@
           "role": "user"
         }
       ],
-      "status": "redirected",
-      "http_status": 200,
-      "final_url": "http://developer.galbot.com/docs/s1/2.0.0/zh/s1/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -2180,9 +3161,9 @@
           "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://developer.galbot.com/docs/s1/2.0.0/zh/s1/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -2199,6 +3180,11 @@
           "role": "user"
         },
         {
+          "thread_id": "01a07fda-7a6a-7003-b064-cb96bfef874a",
+          "turn_id": "01a07fda-7ccd-77b3-a426-7fe22d692a8a",
+          "role": "user"
+        },
+        {
           "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
           "turn_id": "asset:6cbd365afb6a1066",
           "role": "asset"
@@ -2209,9 +3195,9 @@
           "role": "user"
         }
       ],
-      "status": "redirected",
-      "http_status": 200,
-      "final_url": "http://developer.galbot.com/docs/tm01/1.4.0/zh/tm01/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -2261,11 +3247,16 @@
           "thread_id": "01a089f0-b6ba-7730-a34b-441fe7e76663",
           "turn_id": "01a08a3a-3f47-7200-a4c6-e84e5a78d9a1",
           "role": "user"
+        },
+        {
+          "thread_id": "01a09fc1-2e1f-7e92-983c-76b3729e977d",
+          "turn_id": "01a0ae7c-d420-79a3-8f17-bb0621c58d96",
+          "role": "user"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://developer.galbot.com/docs/tm01/1.4.0/zh/tm01/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -2282,6 +3273,11 @@
           "role": "user"
         },
         {
+          "thread_id": "01a07fda-7a6a-7003-b064-cb96bfef874a",
+          "turn_id": "01a07fda-7ccd-77b3-a426-7fe22d692a8a",
+          "role": "user"
+        },
+        {
           "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
           "turn_id": "asset:6cbd365afb6a1066",
           "role": "asset"
@@ -2292,9 +3288,9 @@
           "role": "user"
         }
       ],
-      "status": "redirected",
-      "http_status": 200,
-      "final_url": "http://developer.galbot.com/platform/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -2311,6 +3307,11 @@
           "role": "user"
         },
         {
+          "thread_id": "01a07fda-7a6a-7003-b064-cb96bfef874a",
+          "turn_id": "01a07fda-7ccd-77b3-a426-7fe22d692a8a",
+          "role": "user"
+        },
+        {
           "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
           "turn_id": "asset:6cbd365afb6a1066",
           "role": "asset"
@@ -2321,9 +3322,9 @@
           "role": "user"
         }
       ],
-      "status": "redirected",
-      "http_status": 200,
-      "final_url": "http://developer.galbot.com/privacy/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -2340,6 +3341,11 @@
           "role": "user"
         },
         {
+          "thread_id": "01a07fda-7a6a-7003-b064-cb96bfef874a",
+          "turn_id": "01a07fda-7ccd-77b3-a426-7fe22d692a8a",
+          "role": "user"
+        },
+        {
           "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
           "turn_id": "asset:6cbd365afb6a1066",
           "role": "asset"
@@ -2350,9 +3356,9 @@
           "role": "user"
         }
       ],
-      "status": "redirected",
-      "http_status": 200,
-      "final_url": "http://developer.galbot.com/products/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -2369,6 +3375,11 @@
           "role": "user"
         },
         {
+          "thread_id": "01a07fda-7a6a-7003-b064-cb96bfef874a",
+          "turn_id": "01a07fda-7ccd-77b3-a426-7fe22d692a8a",
+          "role": "user"
+        },
+        {
           "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
           "turn_id": "asset:6cbd365afb6a1066",
           "role": "asset"
@@ -2379,9 +3390,9 @@
           "role": "user"
         }
       ],
-      "status": "redirected",
-      "http_status": 200,
-      "final_url": "http://developer.galbot.com/terms/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -2398,6 +3409,11 @@
           "role": "user"
         },
         {
+          "thread_id": "01a07fda-7a6a-7003-b064-cb96bfef874a",
+          "turn_id": "01a07fda-7ccd-77b3-a426-7fe22d692a8a",
+          "role": "user"
+        },
+        {
           "thread_id": "01a08030-6908-74e0-89c3-c9cd314b3647",
           "turn_id": "asset:6cbd365afb6a1066",
           "role": "asset"
@@ -2408,9 +3424,23 @@
           "role": "user"
         }
       ],
-      "status": "redirected",
-      "http_status": 200,
-      "final_url": "http://developer.galbot.com/training/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://developer.nvidia.com/tensorrt",
+      "references": [
+        {
+          "thread_id": "01a0a7c7-74f0-7522-8a94-d63852c98f9b",
+          "turn_id": "01a0a804-28d1-79c2-a7c1-31e2d88c43d9",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -2422,9 +3452,9 @@
           "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://developers.openai.com/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -2441,9 +3471,9 @@
           "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://developers.openai.com/api/docs/guides/latest-model?model=gpt-5.2",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -2455,9 +3485,9 @@
           "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://developers.openai.com/api/docs/models/gpt-5-codex",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -2469,9 +3499,9 @@
           "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://developers.openai.com/api/docs/models/gpt-5.6-luna",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -2488,9 +3518,9 @@
           "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://developers.openai.com/api/docs/models/gpt-5.6-sol",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -2502,9 +3532,9 @@
           "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://developers.openai.com/api/reference/typescript/resources/admin/subresources/organization/subresources/projects",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -2516,10 +3546,24 @@
           "role": "assistant"
         }
       ],
-      "status": "http_error",
-      "http_status": 502,
+      "status": "not_checked",
+      "http_status": null,
       "final_url": null,
-      "detail": "Bad Gateway"
+      "detail": ""
+    },
+    {
+      "url": "https://docs.cupy.dev/en/stable/user_guide/performance.html",
+      "references": [
+        {
+          "thread_id": "01a0ae20-e41a-73f1-86c4-574bfdf5404f",
+          "turn_id": "01a0ae21-cbe0-7bb1-92af-1067905811d0",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
     },
     {
       "url": "https://docs.docker.com",
@@ -2530,9 +3574,9 @@
           "role": "asset"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://docs.docker.com",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -2540,13 +3584,18 @@
       "references": [
         {
           "thread_id": "01a08f2f-fa2d-7240-b59e-2afecc1a7542",
-          "turn_id": "asset:80c20a16f9b5a36c",
+          "turn_id": "01a08f31-3bdf-70d1-81b5-47c4728cd235",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a08f2f-fa2d-7240-b59e-2afecc1a7542",
+          "turn_id": "asset:c37a87fb3d3ef7af",
           "role": "asset"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://docs.docker.com/engine/containers/resource_constraints/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -2554,13 +3603,18 @@
       "references": [
         {
           "thread_id": "01a08f2f-fa2d-7240-b59e-2afecc1a7542",
-          "turn_id": "asset:80c20a16f9b5a36c",
+          "turn_id": "01a08f31-3bdf-70d1-81b5-47c4728cd235",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a08f2f-fa2d-7240-b59e-2afecc1a7542",
+          "turn_id": "asset:c37a87fb3d3ef7af",
           "role": "asset"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://docs.docker.com/engine/containers/run/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -2572,9 +3626,9 @@
           "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://docs.docker.com/engine/install/linux-postinstall/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -2591,9 +3645,9 @@
           "role": "user"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://docs.docker.com/engine/install/ubuntu/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -2605,10 +3659,10 @@
           "role": "asset"
         }
       ],
-      "status": "network_error",
+      "status": "not_checked",
       "http_status": null,
       "final_url": null,
-      "detail": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1007)>"
+      "detail": ""
     },
     {
       "url": "https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens",
@@ -2617,11 +3671,16 @@
           "thread_id": "01a06fc0-a86b-7612-8db0-a4af84419644",
           "turn_id": "01a06fdf-1ae9-7da2-ad68-ef7e4e79980b",
           "role": "assistant"
+        },
+        {
+          "thread_id": "01a09332-12d3-7b91-970d-c2e04a7232fc",
+          "turn_id": "01a0d274-521b-7312-b52e-d20d8f6731f5",
+          "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -2633,9 +3692,9 @@
           "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://docs.isaacsim.omniverse.nvidia.com/6.0.1/installation/requirements.html",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -2647,9 +3706,9 @@
           "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://docs.isaacsim.omniverse.nvidia.com/latest/replicator_tutorials/tutorial_replicator_ur10_palletizing.html",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -2661,9 +3720,9 @@
           "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://docs.isaacsim.omniverse.nvidia.com/latest/sensors/isaacsim_sensors_camera.html",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -2675,9 +3734,51 @@
           "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://docs.isaacsim.omniverse.nvidia.com/latest/sensors/isaacsim_sensors_camera_depth.html",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://docs.nvidia.com/cuda/cuda-c-best-practices-guide/",
+      "references": [
+        {
+          "thread_id": "01a09489-66ea-77e1-93ed-daabbba07f5f",
+          "turn_id": "01a0948c-28c2-7362-af3f-62601d8fcca1",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://docs.nvidia.com/cuda/cuda-for-tegra-appnote/",
+      "references": [
+        {
+          "thread_id": "01a0ae20-e41a-73f1-86c4-574bfdf5404f",
+          "turn_id": "01a0ae21-cbe0-7bb1-92af-1067905811d0",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://docs.nvidia.com/cuda/cuda-programming-guide/02-basics/asynchronous-execution.html",
+      "references": [
+        {
+          "thread_id": "01a0a7c7-74f0-7522-8a94-d63852c98f9b",
+          "turn_id": "01a0a804-28d1-79c2-a7c1-31e2d88c43d9",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -2697,11 +3798,21 @@
           "thread_id": "01a06710-9ce5-75d1-95c5-6beb503bf8ae",
           "turn_id": "01a06a70-0aa9-7ca0-9de2-d87c7eb0dbd5",
           "role": "user"
+        },
+        {
+          "thread_id": "01a0947a-003f-7140-97c1-79d100f5cd1f",
+          "turn_id": "01a0947b-14de-7783-8e4b-7c34f154cca7",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a0947a-003f-7140-97c1-79d100f5cd1f",
+          "turn_id": "01a09486-00b9-7452-a5ec-c0b056a9cf5e",
+          "role": "user"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -2713,9 +3824,9 @@
           "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/sample-workload.html",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -2727,9 +3838,9 @@
           "role": "asset"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://docs.nvidia.com/jetson/jetpack/5.1.4/introduction/index.html",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -2746,10 +3857,29 @@
           "role": "asset"
         }
       ],
-      "status": "http_error",
-      "http_status": 403,
+      "status": "not_checked",
+      "http_status": null,
       "final_url": null,
-      "detail": "Forbidden"
+      "detail": ""
+    },
+    {
+      "url": "https://docs.opencv.org/4.12.0/df/d4a/tutorial_charuco_detection.html",
+      "references": [
+        {
+          "thread_id": "01a09f23-48b0-7f23-8aed-bbb4ec124b04",
+          "turn_id": "01a09f23-b142-7e63-8432-f38949b800de",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a09f23-48b0-7f23-8aed-bbb4ec124b04",
+          "turn_id": "01a09f2e-dcb1-7573-af32-7ea57d801d2f",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
     },
     {
       "url": "https://docs.opencv.org/4.13.0/d3/dc0/group__imgproc__shape.html",
@@ -2765,14 +3895,19 @@
           "role": "asset"
         }
       ],
-      "status": "http_error",
-      "http_status": 403,
+      "status": "not_checked",
+      "http_status": null,
       "final_url": null,
-      "detail": "Forbidden"
+      "detail": ""
     },
     {
       "url": "https://docs.opencv.org/4.13.0/d5/d1f/calib3d_solvePnP.html",
       "references": [
+        {
+          "thread_id": "01a07a67-a824-78c3-ac14-2ac2c473a3a8",
+          "turn_id": "01a07a67-a9bd-7922-a887-2c7b7b8b878c",
+          "role": "assistant"
+        },
         {
           "thread_id": "01a07a67-a824-78c3-ac14-2ac2c473a3a8",
           "turn_id": "01a07a74-3bd3-7ad3-b697-6ef5bdf04964",
@@ -2782,12 +3917,55 @@
           "thread_id": "01a07a67-a824-78c3-ac14-2ac2c473a3a8",
           "turn_id": "asset:74f773e518de7e8f",
           "role": "asset"
+        },
+        {
+          "thread_id": "01a0a7c7-74f0-7522-8a94-d63852c98f9b",
+          "turn_id": "01a0a804-28d1-79c2-a7c1-31e2d88c43d9",
+          "role": "assistant"
         }
       ],
-      "status": "http_error",
-      "http_status": 403,
+      "status": "not_checked",
+      "http_status": null,
       "final_url": null,
-      "detail": "Forbidden"
+      "detail": ""
+    },
+    {
+      "url": "https://docs.python.org/3.11/library/venv.html",
+      "references": [
+        {
+          "thread_id": "01a0b23c-e3b0-7972-ab4e-594cdcf7e425",
+          "turn_id": "01a0bdf1-a4a8-7e42-b2bb-141878979bda",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a0b23c-e3b0-7972-ab4e-594cdcf7e425",
+          "turn_id": "asset:384e71e17a59739c",
+          "role": "asset"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://docs.ros.org/en/humble/Concepts/Intermediate/About-Quality-of-Service-Settings.html",
+      "references": [
+        {
+          "thread_id": "01a0a8fe-cc46-7933-8381-cf7321c48d21",
+          "turn_id": "01a0a900-77ce-7840-bb61-3ca1c381d675",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a0a8fe-cc46-7933-8381-cf7321c48d21",
+          "turn_id": "asset:5c1a41943f6a884b",
+          "role": "asset"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
     },
     {
       "url": "https://docs.ros.org/en/humble/Tutorials/URDF/Building-a-Movable-Robot-Model-with-URDF.html",
@@ -2798,9 +3976,23 @@
           "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://docs.ros.org/en/humble/Tutorials/URDF/Building-a-Movable-Robot-Model-with-URDF.html",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://docs.ros.org/en/humble/p/compressed_depth_image_transport/generated/namespace_compressed_depth_image_transport.html",
+      "references": [
+        {
+          "thread_id": "01a0a8fe-cc46-7933-8381-cf7321c48d21",
+          "turn_id": "asset:5c1a41943f6a884b",
+          "role": "asset"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -2812,9 +4004,9 @@
           "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://docs.ros.org/en/humble/p/ros1_bridge/index.html",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -2831,9 +4023,9 @@
           "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://docs.ros.org/en/rolling/p/pinocchio/doc/a-features/d-model.html",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -2845,9 +4037,107 @@
           "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://docs.ros.org/en/ros2_packages/humble/api/joint_state_publisher_gui/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://docs.scipy.org/doc/scipy-1.10.0/reference/generated/scipy.spatial.cKDTree.html",
+      "references": [
+        {
+          "thread_id": "01a094c0-5455-7a32-bb30-bc13a3d1fa74",
+          "turn_id": "01a09ddf-1861-77b2-92cf-659afed65ace",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.least_squares.html",
+      "references": [
+        {
+          "thread_id": "01a09489-66ea-77e1-93ed-daabbba07f5f",
+          "turn_id": "01a0948c-28c2-7362-af3f-62601d8fcca1",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://doi.org/10.1007/978-3-319-40379-3_26",
+      "references": [
+        {
+          "thread_id": "01a09f25-95ac-74a2-b818-3ae774c667d5",
+          "turn_id": "01a09f25-edf7-7fe3-b4dc-24faa6250d96",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://doi.org/10.1109/CAC48633.2019.8996450",
+      "references": [
+        {
+          "thread_id": "01a09f25-95ac-74a2-b818-3ae774c667d5",
+          "turn_id": "01a09f25-edf7-7fe3-b4dc-24faa6250d96",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://doi.org/10.1109/CoASE.2014.6899489",
+      "references": [
+        {
+          "thread_id": "01a09f25-95ac-74a2-b818-3ae774c667d5",
+          "turn_id": "01a09f25-edf7-7fe3-b4dc-24faa6250d96",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://doi.org/10.1109/IHMSC.2017.192",
+      "references": [
+        {
+          "thread_id": "01a09f25-95ac-74a2-b818-3ae774c667d5",
+          "turn_id": "01a09f25-edf7-7fe3-b4dc-24faa6250d96",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://doi.org/10.1109/TII.2018.2800744",
+      "references": [
+        {
+          "thread_id": "01a09f25-95ac-74a2-b818-3ae774c667d5",
+          "turn_id": "01a09f25-edf7-7fe3-b4dc-24faa6250d96",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -2864,9 +4154,9 @@
           "role": "user"
         }
       ],
-      "status": "redirected",
-      "http_status": 200,
-      "final_url": "https://download.docker.com/linux/ubuntu/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -2883,9 +4173,85 @@
           "role": "user"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://download.docker.com/linux/ubuntu/gpg",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://download.kde.org/stable/crow-translate/4.1.0/crow-translate-4.1.0-linux-gcc-x86_64.AppImage",
+      "references": [
+        {
+          "thread_id": "01a09437-3a87-7912-814a-5cd30e754bc2",
+          "turn_id": "01a09f0a-58bf-7351-a2ff-b24462420853",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a09437-3a87-7912-814a-5cd30e754bc2",
+          "turn_id": "01a0a315-80e5-7862-976d-b7d81302da12",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a09437-3a87-7912-814a-5cd30e754bc2",
+          "turn_id": "01a0a844-b9ef-7df2-9c99-b7ce56565486",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://eit-hai.github.io/thea/index.html",
+      "references": [
+        {
+          "thread_id": "01a09eac-1ee3-78a1-982c-4d3e11c56801",
+          "turn_id": "01a09eac-caa3-7623-8ef3-744c302fe4b3",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://eit-hai.github.io/thea/intro.html",
+      "references": [
+        {
+          "thread_id": "01a09eac-1ee3-78a1-982c-4d3e11c56801",
+          "turn_id": "01a09eac-caa3-7623-8ef3-744c302fe4b3",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://esm.sh",
+      "references": [
+        {
+          "thread_id": "01a0a808-a4d9-7822-9412-83c295b1ce54",
+          "turn_id": "asset:ac6b224ceeeb7fd0",
+          "role": "asset"
+        },
+        {
+          "thread_id": "visualizations",
+          "turn_id": "asset:2ee5f31a49680d2e",
+          "role": "asset"
+        },
+        {
+          "thread_id": "visualizations",
+          "turn_id": "visualization:vla-resource-draft-standalone.html",
+          "role": "visualization"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -2907,9 +4273,9 @@
           "role": "visualization"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://esm.sh/three@0.169.0",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -2931,9 +4297,9 @@
           "role": "visualization"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://esm.sh/three@0.169.0/examples/jsm/controls/OrbitControls.js",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -2945,9 +4311,9 @@
           "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://fishros.com/page/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -2959,9 +4325,9 @@
           "role": "user"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://fishros.org.cn/forum",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -2973,10 +4339,10 @@
           "role": "assistant"
         }
       ],
-      "status": "http_error",
-      "http_status": 308,
+      "status": "not_checked",
+      "http_status": null,
       "final_url": null,
-      "detail": "Permanent Redirect"
+      "detail": ""
     },
     {
       "url": "https://flathub.org/repo/flathub.flatpakrepo",
@@ -2987,9 +4353,9 @@
           "role": "assistant"
         }
       ],
-      "status": "redirected",
-      "http_status": 200,
-      "final_url": "https://dl.flathub.org/repo/flathub.flatpakrepo",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -3001,9 +4367,9 @@
           "role": "asset"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://fontawesome.com",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -3015,9 +4381,57 @@
           "role": "asset"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://fontawesome.com/license/free",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://fonts.bunny.net",
+      "references": [
+        {
+          "thread_id": "01a0a808-a4d9-7822-9412-83c295b1ce54",
+          "turn_id": "asset:ac6b224ceeeb7fd0",
+          "role": "asset"
+        },
+        {
+          "thread_id": "visualizations",
+          "turn_id": "asset:2ee5f31a49680d2e",
+          "role": "asset"
+        },
+        {
+          "thread_id": "visualizations",
+          "turn_id": "visualization:vla-resource-draft-standalone.html",
+          "role": "visualization"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://fonts.googleapis.com",
+      "references": [
+        {
+          "thread_id": "01a0a808-a4d9-7822-9412-83c295b1ce54",
+          "turn_id": "asset:ac6b224ceeeb7fd0",
+          "role": "asset"
+        },
+        {
+          "thread_id": "visualizations",
+          "turn_id": "asset:2ee5f31a49680d2e",
+          "role": "asset"
+        },
+        {
+          "thread_id": "visualizations",
+          "turn_id": "visualization:vla-resource-draft-standalone.html",
+          "role": "visualization"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -3029,9 +4443,23 @@
           "role": "asset"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://fonts.googleapis.com/css?family=Fira+Sans:300,300i,400,400i,700,700i%7CFira+Code:400,400i,700,700i&display=fallback",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback",
+      "references": [
+        {
+          "thread_id": "01a07b13-a8a5-7cf2-b564-90d9f5ef599c",
+          "turn_id": "asset:1b99a8e28dab861b",
+          "role": "asset"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -3043,9 +4471,9 @@
           "role": "asset"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://fonts.googleapis.com/css?family=Noto+Sans+SC:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -3057,15 +4485,35 @@
           "role": "asset"
         },
         {
+          "thread_id": "01a07b13-a8a5-7cf2-b564-90d9f5ef599c",
+          "turn_id": "asset:1b99a8e28dab861b",
+          "role": "asset"
+        },
+        {
           "thread_id": "01a089f0-b6ba-7730-a34b-441fe7e76663",
           "turn_id": "asset:6d6e6d275b67e627",
           "role": "asset"
+        },
+        {
+          "thread_id": "01a0a808-a4d9-7822-9412-83c295b1ce54",
+          "turn_id": "asset:ac6b224ceeeb7fd0",
+          "role": "asset"
+        },
+        {
+          "thread_id": "visualizations",
+          "turn_id": "asset:2ee5f31a49680d2e",
+          "role": "asset"
+        },
+        {
+          "thread_id": "visualizations",
+          "turn_id": "visualization:vla-resource-draft-standalone.html",
+          "role": "visualization"
         }
       ],
-      "status": "http_error",
-      "http_status": 404,
+      "status": "not_checked",
+      "http_status": null,
       "final_url": null,
-      "detail": "Not Found"
+      "detail": ""
     },
     {
       "url": "https://galbot.com/about/",
@@ -3081,9 +4529,9 @@
           "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://galbot.com/about/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -3095,14 +4543,19 @@
           "role": "user"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://github.com",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
       "url": "https://github.com/AprilRobotics/apriltag",
       "references": [
+        {
+          "thread_id": "01a07a67-a824-78c3-ac14-2ac2c473a3a8",
+          "turn_id": "01a07a67-a9bd-7922-a887-2c7b7b8b878c",
+          "role": "assistant"
+        },
         {
           "thread_id": "01a07a67-a824-78c3-ac14-2ac2c473a3a8",
           "turn_id": "01a07a74-3bd3-7ad3-b697-6ef5bdf04964",
@@ -3114,9 +4567,9 @@
           "role": "asset"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://github.com/AprilRobotics/apriltag",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -3128,9 +4581,9 @@
           "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://github.com/CloudCompare/CloudCompare",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -3157,9 +4610,9 @@
           "role": "asset"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://github.com/GalaxyGeneralRobotics/GalbotSDK",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -3176,9 +4629,9 @@
           "role": "user"
         }
       ],
-      "status": "redirected",
-      "http_status": 200,
-      "final_url": "https://github.com/GalaxyGeneralRobotics/GalbotSDK",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -3315,8 +4768,18 @@
           "role": "asset"
         },
         {
+          "thread_id": "01a083c3-781e-72d0-9df3-caa0ef59c0fc",
+          "turn_id": "01a083e4-4142-7c52-b2de-99e3a684831d",
+          "role": "user"
+        },
+        {
           "thread_id": "01a08e4c-af33-7161-a0f1-9eb89c9b04b6",
           "turn_id": "01a08e72-4fe0-7c10-bdb0-d839e273ed7c",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a0a2b4-75c3-7521-8547-fe507b1e459e",
+          "turn_id": "01a0a2b8-1288-7e83-9aa7-657f5a83d20c",
           "role": "user"
         },
         {
@@ -3350,9 +4813,9 @@
           "role": "asset"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://github.com/GalaxyGeneralRobotics/GalbotSDK/releases",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -3374,9 +4837,9 @@
           "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://github.com/GalaxyGeneralRobotics/galbot-mcap2lerobot",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -3393,9 +4856,9 @@
           "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://github.com/GalaxyGeneralRobotics/galbot_one_golf_description",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -3412,9 +4875,9 @@
           "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://github.com/GalaxyGeneralRobotics/galbot_s1_description",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -3431,9 +4894,23 @@
           "role": "user"
         }
       ],
-      "status": "redirected",
-      "http_status": 200,
-      "final_url": "https://github.com/GalaxyGeneralRobotics/galbot_s1_description",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/KDE/crow-translate",
+      "references": [
+        {
+          "thread_id": "01a09437-3a87-7912-814a-5cd30e754bc2",
+          "turn_id": "01a09f0a-58bf-7351-a2ff-b24462420853",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -3448,11 +4925,16 @@
           "thread_id": "01a09332-12d3-7b91-970d-c2e04a7232fc",
           "turn_id": "01a09336-cea4-7783-966a-209b417b987e",
           "role": "assistant"
+        },
+        {
+          "thread_id": "01a09332-12d3-7b91-970d-c2e04a7232fc",
+          "turn_id": "01a0d280-da3e-7700-85a9-9c98d3f9367c",
+          "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://github.com/Michael686-bit/Codex_IE_Lab",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -3469,9 +4951,9 @@
           "role": "user"
         }
       ],
-      "status": "redirected",
-      "http_status": 200,
-      "final_url": "https://github.com/Michael686-bit/Codex_IE_Lab",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -3483,9 +4965,23 @@
           "role": "user"
         }
       ],
-      "status": "redirected",
-      "http_status": 200,
-      "final_url": "https://github.com/Michael686-bit/Codex_IE_Lab/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/NVIDIA/Isaac-GR00T",
+      "references": [
+        {
+          "thread_id": "01a0c17b-036c-7113-8f5e-a0374a7f78c0",
+          "turn_id": "01a0c17c-27cb-72a2-80b6-bbe8c8a86eec",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -3502,9 +4998,28 @@
           "role": "asset"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://github.com/NVlabs/CenterPose",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/NVlabs/FoundationPose/blob/main/estimater.py",
+      "references": [
+        {
+          "thread_id": "01a0c187-680b-7ae3-a679-749fa82119d9",
+          "turn_id": "01a0c188-ed29-72b2-8709-006827bec05f",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a0c187-680b-7ae3-a679-749fa82119d9",
+          "turn_id": "asset:42b495b7015a23a2",
+          "role": "asset"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -3534,11 +5049,16 @@
           "thread_id": "01a06f17-863a-7300-bb82-78e5ac992f1b",
           "turn_id": "01a06f18-a432-7490-a852-51834bc3c5f9",
           "role": "assistant"
+        },
+        {
+          "thread_id": "01a0c17b-036c-7113-8f5e-a0374a7f78c0",
+          "turn_id": "01a0c17c-27cb-72a2-80b6-bbe8c8a86eec",
+          "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://github.com/Physical-Intelligence/openpi",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -3550,9 +5070,9 @@
           "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://github.com/Physical-Intelligence/openpi/blob/main/docs/remote_inference.md",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -3569,9 +5089,28 @@
           "role": "user"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://github.com/Physical-Intelligence/openpi/blob/main/examples/droid/README_train.md",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/Robbyant/lingbot-depth",
+      "references": [
+        {
+          "thread_id": "01a0d220-8747-75a3-b4d4-55d923654640",
+          "turn_id": "01a0d221-0127-7893-8a57-c2a77503096f",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a0d220-8747-75a3-b4d4-55d923654640",
+          "turn_id": "asset:df2e46596d0c6997",
+          "role": "asset"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -3596,11 +5135,191 @@
           "thread_id": "01a06f17-863a-7300-bb82-78e5ac992f1b",
           "turn_id": "01a06f18-a432-7490-a852-51834bc3c5f9",
           "role": "assistant"
+        },
+        {
+          "thread_id": "01a0cc7d-3c28-7d32-b74a-2766b25b60aa",
+          "turn_id": "01a0cc7d-bf78-7e91-bf1d-dd61e6367476",
+          "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://github.com/Robbyant/lingbot-vla-v2",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/Robbyant/lingbot-vla-v2#real-robot-deployment",
+      "references": [
+        {
+          "thread_id": "01a0947a-003f-7140-97c1-79d100f5cd1f",
+          "turn_id": "01a0947b-14de-7783-8e4b-7c34f154cca7",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a0947a-003f-7140-97c1-79d100f5cd1f",
+          "turn_id": "01a09486-00b9-7452-a5ec-c0b056a9cf5e",
+          "role": "user"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/Robbyant/lingbot-vla-v2#robotwin-deployment",
+      "references": [
+        {
+          "thread_id": "01a0addb-959b-7433-adb3-4b36c3df088c",
+          "turn_id": "01a0bd5e-1fa7-7041-9e41-fba1328c72eb",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/Robbyant/lingbot-vla-v2.git",
+      "references": [
+        {
+          "thread_id": "01a0addb-959b-7433-adb3-4b36c3df088c",
+          "turn_id": "asset:9d5f7b0c0cfdd677",
+          "role": "asset"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/Robbyant/lingbot-vla-v2/blob/main/configs/vla/real_robot/real_robot.yaml",
+      "references": [
+        {
+          "thread_id": "01a0947a-003f-7140-97c1-79d100f5cd1f",
+          "turn_id": "01a0947b-14de-7783-8e4b-7c34f154cca7",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a0947a-003f-7140-97c1-79d100f5cd1f",
+          "turn_id": "01a09486-00b9-7452-a5ec-c0b056a9cf5e",
+          "role": "user"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/Robbyant/lingbot-vla-v2/blob/main/deploy/lingbot_vla_v2_policy.py",
+      "references": [
+        {
+          "thread_id": "01a0947a-003f-7140-97c1-79d100f5cd1f",
+          "turn_id": "01a0947b-14de-7783-8e4b-7c34f154cca7",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a0947a-003f-7140-97c1-79d100f5cd1f",
+          "turn_id": "01a09486-00b9-7452-a5ec-c0b056a9cf5e",
+          "role": "user"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/Robbyant/lingbot-vla-v2/blob/main/docker/Dockerfile",
+      "references": [
+        {
+          "thread_id": "01a0947a-003f-7140-97c1-79d100f5cd1f",
+          "turn_id": "01a0947b-14de-7783-8e4b-7c34f154cca7",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a0947a-003f-7140-97c1-79d100f5cd1f",
+          "turn_id": "01a09486-00b9-7452-a5ec-c0b056a9cf5e",
+          "role": "user"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/Robbyant/lingbot-vla-v2/blob/main/lingbotvla/data/vla_data/README.md",
+      "references": [
+        {
+          "thread_id": "01a0947a-003f-7140-97c1-79d100f5cd1f",
+          "turn_id": "01a0947b-14de-7783-8e4b-7c34f154cca7",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a0947a-003f-7140-97c1-79d100f5cd1f",
+          "turn_id": "01a09486-00b9-7452-a5ec-c0b056a9cf5e",
+          "role": "user"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/Robbyant/lingbot-vla-v2/blob/main/tools/create_train_env.sh",
+      "references": [
+        {
+          "thread_id": "01a0947a-003f-7140-97c1-79d100f5cd1f",
+          "turn_id": "01a0947b-14de-7783-8e4b-7c34f154cca7",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a0947a-003f-7140-97c1-79d100f5cd1f",
+          "turn_id": "01a09486-00b9-7452-a5ec-c0b056a9cf5e",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a0947a-003f-7140-97c1-79d100f5cd1f",
+          "turn_id": "01a0a83c-802e-70a2-9305-dd02e645ea7e",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/RoboTwin-Platform/RoboTwin",
+      "references": [
+        {
+          "thread_id": "01a0addb-959b-7433-adb3-4b36c3df088c",
+          "turn_id": "01a0bd5e-1fa7-7041-9e41-fba1328c72eb",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/RoboTwin-Platform/RoboTwin.git",
+      "references": [
+        {
+          "thread_id": "01a0addb-959b-7433-adb3-4b36c3df088c",
+          "turn_id": "01a0bd5e-1fa7-7041-9e41-fba1328c72eb",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -3617,9 +5336,9 @@
           "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://github.com/coal-library/coal",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -3636,9 +5355,9 @@
           "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://github.com/facebookresearch/sam3",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -3650,9 +5369,28 @@
           "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://github.com/fishros/install",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/huggingface/lerobot/blob/main/src/lerobot/datasets/lerobot_dataset.py",
+      "references": [
+        {
+          "thread_id": "01a0ae7d-8a0d-79f0-86b8-6242597f71fb",
+          "turn_id": "01a0aef5-8431-7322-a01c-8a4f2d1f3563",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a0b23c-e3b0-7972-ab4e-594cdcf7e425",
+          "turn_id": "asset:97b60620850e58fe",
+          "role": "asset"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -3664,9 +5402,23 @@
           "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://github.com/huggingface/lerobot/blob/main/src/lerobot/scripts/lerobot_calibrate.py",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/huggingface/lerobot/tree/v0.4.4",
+      "references": [
+        {
+          "thread_id": "01a0c17b-036c-7113-8f5e-a0374a7f78c0",
+          "turn_id": "asset:3cbe34de68616d66",
+          "role": "asset"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -3678,9 +5430,9 @@
           "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://github.com/isaac-sim/IsaacLab/issues/6822",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -3692,9 +5444,135 @@
           "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://github.com/isaac-sim/IsaacLab/releases",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/koide3/small_gicp",
+      "references": [
+        {
+          "thread_id": "01a09f25-95ac-74a2-b818-3ae774c667d5",
+          "turn_id": "01a09f31-08a6-7542-bfec-69bbb5da406b",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/pot-app/pot-desktop",
+      "references": [
+        {
+          "thread_id": "01a09437-3a87-7912-814a-5cd30e754bc2",
+          "turn_id": "01a09438-0ba5-7723-af27-f6754b7d44f1",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/pot-app/pot-desktop#",
+      "references": [
+        {
+          "thread_id": "01a09437-3a87-7912-814a-5cd30e754bc2",
+          "turn_id": "01a0943c-74af-75b0-9e9a-21ba79a4db00",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/pot-app/pot-desktop#wayland-",
+      "references": [
+        {
+          "thread_id": "01a09437-3a87-7912-814a-5cd30e754bc2",
+          "turn_id": "01a09438-0ba5-7723-af27-f6754b7d44f1",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/pot-app/pot-desktop/blob/master/src/services/translate/google/index.jsx",
+      "references": [
+        {
+          "thread_id": "01a09437-3a87-7912-814a-5cd30e754bc2",
+          "turn_id": "01a09470-66b2-7583-bc54-6314bcceafa7",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/pot-app/pot-desktop/releases/download/3.0.7/pot_3.0.7_amd64.deb",
+      "references": [
+        {
+          "thread_id": "01a09437-3a87-7912-814a-5cd30e754bc2",
+          "turn_id": "01a0943c-74af-75b0-9e9a-21ba79a4db00",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/pot-app/pot-desktop/releases/tag/3.0.7",
+      "references": [
+        {
+          "thread_id": "01a09437-3a87-7912-814a-5cd30e754bc2",
+          "turn_id": "01a0943c-74af-75b0-9e9a-21ba79a4db00",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/robbyant/lingbot-vision",
+      "references": [
+        {
+          "thread_id": "01a0cc7d-3c28-7d32-b74a-2766b25b60aa",
+          "turn_id": "01a0cd3f-4f4a-7192-b6d8-07fb9a49eb57",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/robbyant/lingbot-vla-v2",
+      "references": [
+        {
+          "thread_id": "01a0947a-003f-7140-97c1-79d100f5cd1f",
+          "turn_id": "01a0947b-14de-7783-8e4b-7c34f154cca7",
+          "role": "user"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -3706,10 +5584,10 @@
           "role": "assistant"
         }
       ],
-      "status": "http_error",
-      "http_status": 404,
+      "status": "not_checked",
+      "http_status": null,
       "final_url": null,
-      "detail": "Not Found"
+      "detail": ""
     },
     {
       "url": "https://github.com/ros2/ros2_documentation/blob/rolling/source/Get-Started/Installation/Ubuntu-Install-Debs.rst",
@@ -3720,9 +5598,33 @@
           "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://github.com/ros2/ros2_documentation/blob/rolling/source/Get-Started/Installation/Ubuntu-Install-Debs.rst",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/settings/personal-access-tokens",
+      "references": [
+        {
+          "thread_id": "01a09332-12d3-7b91-970d-c2e04a7232fc",
+          "turn_id": "01a0d274-521b-7312-b52e-d20d8f6731f5",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a09332-12d3-7b91-970d-c2e04a7232fc",
+          "turn_id": "01a0d277-e891-7ae0-9b19-7613205b786a",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a09332-12d3-7b91-970d-c2e04a7232fc",
+          "turn_id": "01a0d279-ef95-75a3-bd2b-b32bc58fb7bd",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -3734,9 +5636,28 @@
           "role": "assistant"
         }
       ],
-      "status": "redirected",
-      "http_status": 200,
-      "final_url": "https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Fsettings%2Fpersonal-access-tokens%2Fnew%3Fcontents%3Dwrite%26description%3DCodex%2BIE%2BLab%2Bpush%26name%3DCodex%2BIE%2BLab",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/tuxera/ntfs-3g/",
+      "references": [
+        {
+          "thread_id": "01a0a514-5bf0-7ba3-b6bb-8d3b5e405052",
+          "turn_id": "01a0a519-4e30-7671-ada8-c68d444104fe",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a0a514-5bf0-7ba3-b6bb-8d3b5e405052",
+          "turn_id": "01a0a519-fc1a-78a2-a619-fbde756f7db4",
+          "role": "user"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -3748,10 +5669,10 @@
           "role": "assistant"
         }
       ],
-      "status": "http_error",
-      "http_status": 403,
+      "status": "not_checked",
+      "http_status": null,
       "final_url": null,
-      "detail": "Forbidden"
+      "detail": ""
     },
     {
       "url": "https://help.openai.com/en/articles/11096431",
@@ -3767,10 +5688,10 @@
           "role": "assistant"
         }
       ],
-      "status": "http_error",
-      "http_status": 403,
+      "status": "not_checked",
+      "http_status": null,
       "final_url": null,
-      "detail": "Forbidden"
+      "detail": ""
     },
     {
       "url": "https://help.openai.com/en/articles/20001275/",
@@ -3786,10 +5707,10 @@
           "role": "assistant"
         }
       ],
-      "status": "http_error",
-      "http_status": 403,
+      "status": "not_checked",
+      "http_status": null,
       "final_url": null,
-      "detail": "Forbidden"
+      "detail": ""
     },
     {
       "url": "https://help.ubuntu.com",
@@ -3835,9 +5756,9 @@
           "role": "asset"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://help.ubuntu.com",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -3849,9 +5770,71 @@
           "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://help.ubuntu.com/community/Grub2/CustomMenus",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://hf-mirror.com",
+      "references": [
+        {
+          "thread_id": "01a0947a-003f-7140-97c1-79d100f5cd1f",
+          "turn_id": "01a0a914-7bff-7dd2-8b72-b3350c88ad58",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a0947a-003f-7140-97c1-79d100f5cd1f",
+          "turn_id": "01a0a920-6691-7cd2-bc5a-2c9f3c55d3ae",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a0947a-003f-7140-97c1-79d100f5cd1f",
+          "turn_id": "01a0a920-6691-7cd2-bc5a-2c9f3c55d3ae",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a0947a-003f-7140-97c1-79d100f5cd1f",
+          "turn_id": "01a0a927-f695-7a70-afd8-54ce299f2c4b",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a0947a-003f-7140-97c1-79d100f5cd1f",
+          "turn_id": "01a0a927-f695-7a70-afd8-54ce299f2c4b",
+          "role": "user"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://hf-mirror.com/robbyant/lingbot-vla-v2-6b-robotwin/resolve/0451855729ec904f970600e0aec8b84661423afe/checkpoints/global_step_50000/hf_ckpt/model-00003-of-00006.safetensors?download=true",
+      "references": [
+        {
+          "thread_id": "01a0947a-003f-7140-97c1-79d100f5cd1f",
+          "turn_id": "01a0a92d-99e4-7031-abb0-3fcf5c08d551",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://hf-mirror.com/robbyant/lingbot-vla-v2-6b-robotwin/tree/main/checkpoints/global_step_50000/hf_ckpt",
+      "references": [
+        {
+          "thread_id": "01a0947a-003f-7140-97c1-79d100f5cd1f",
+          "turn_id": "01a0a92d-99e4-7031-abb0-3fcf5c08d551",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -3863,9 +5846,23 @@
           "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://hub.docker.com/_/ros",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://huggingface.co/HuggingFaceTB/SmolVLM2-500M-Video-Instruct",
+      "references": [
+        {
+          "thread_id": "01a0c17b-036c-7113-8f5e-a0374a7f78c0",
+          "turn_id": "asset:3cbe34de68616d66",
+          "role": "asset"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -3877,9 +5874,9 @@
           "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://huggingface.co/blog/smolvla",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -3899,11 +5896,31 @@
           "thread_id": "01a06108-ec88-7d61-82ea-9aa519ec0744",
           "turn_id": "01a0610a-8430-7db3-8679-8b672a3a03aa",
           "role": "user"
+        },
+        {
+          "thread_id": "01a0ae97-6c9e-7bf3-b7c0-fe2f0cca5621",
+          "turn_id": "01a0ae98-2ef2-70f2-ad6e-b151b0fb0e51",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a0c17b-036c-7113-8f5e-a0374a7f78c0",
+          "turn_id": "01a0c17c-27cb-72a2-80b6-bbe8c8a86eec",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a0c17b-036c-7113-8f5e-a0374a7f78c0",
+          "turn_id": "01a0c17d-8743-7a82-bc9d-6b885d1f2272",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a0c17b-036c-7113-8f5e-a0374a7f78c0",
+          "turn_id": "asset:3cbe34de68616d66",
+          "role": "asset"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://huggingface.co/docs/lerobot/act",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -3915,9 +5932,9 @@
           "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://huggingface.co/docs/lerobot/en/async",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -3929,9 +5946,9 @@
           "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://huggingface.co/docs/lerobot/en/integrate_hardware",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -3943,9 +5960,9 @@
           "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://huggingface.co/docs/lerobot/hardware_guide",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -3955,11 +5972,44 @@
           "thread_id": "01a07b13-a8a5-7cf2-b564-90d9f5ef599c",
           "turn_id": "01a07e99-6bca-7990-8123-e9704b7eb36f",
           "role": "assistant"
+        },
+        {
+          "thread_id": "01a0ae97-6c9e-7bf3-b7c0-fe2f0cca5621",
+          "turn_id": "01a0af05-01a6-7021-bb23-e7580cb9a61f",
+          "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://huggingface.co/docs/lerobot/il_robots",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://huggingface.co/docs/lerobot/integrate_hardware",
+      "references": [
+        {
+          "thread_id": "01a07fda-7a6a-7003-b064-cb96bfef874a",
+          "turn_id": "01a07fda-7ccd-77b3-a426-7fe22d692a8a",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://huggingface.co/docs/lerobot/lerobot-dataset-v3",
+      "references": [
+        {
+          "thread_id": "01a0ae97-6c9e-7bf3-b7c0-fe2f0cca5621",
+          "turn_id": "01a0ae98-2ef2-70f2-ad6e-b151b0fb0e51",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -3971,9 +6021,9 @@
           "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://huggingface.co/docs/lerobot/main/en/api/teleoperators",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -3990,9 +6040,9 @@
           "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://huggingface.co/docs/lerobot/main/hardware_guide",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -4009,9 +6059,9 @@
           "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://huggingface.co/docs/lerobot/main/index",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -4023,9 +6073,9 @@
           "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://huggingface.co/docs/lerobot/main/porting_datasets_v3",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -4037,9 +6087,9 @@
           "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://huggingface.co/docs/lerobot/main/smolvla",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -4064,11 +6114,31 @@
           "thread_id": "01a06f17-863a-7300-bb82-78e5ac992f1b",
           "turn_id": "01a06f18-a432-7490-a852-51834bc3c5f9",
           "role": "assistant"
+        },
+        {
+          "thread_id": "01a0ae97-6c9e-7bf3-b7c0-fe2f0cca5621",
+          "turn_id": "01a0ae98-2ef2-70f2-ad6e-b151b0fb0e51",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a0c17b-036c-7113-8f5e-a0374a7f78c0",
+          "turn_id": "01a0c17c-27cb-72a2-80b6-bbe8c8a86eec",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a0c17b-036c-7113-8f5e-a0374a7f78c0",
+          "turn_id": "01a0c17d-8743-7a82-bc9d-6b885d1f2272",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a0c17b-036c-7113-8f5e-a0374a7f78c0",
+          "turn_id": "asset:3cbe34de68616d66",
+          "role": "asset"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://huggingface.co/docs/lerobot/smolvla",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -4080,9 +6150,47 @@
           "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://huggingface.co/docs/lerobot/so101#calibrate",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://huggingface.co/docs/lerobot/using_dataset_tools",
+      "references": [
+        {
+          "thread_id": "01a0cbc1-d956-7921-af91-28e9b8db1183",
+          "turn_id": "01a0cd82-9a95-7ab3-8aeb-7ec8b8d0ae4c",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://huggingface.co/docs/lerobot/v0.4.4/lerobot-dataset-v3",
+      "references": [
+        {
+          "thread_id": "01a0b23c-e3b0-7972-ab4e-594cdcf7e425",
+          "turn_id": "asset:aacdea1e014e4c94",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a0b384-4b48-7851-aed4-47f72af68c3b",
+          "turn_id": "asset:aacdea1e014e4c94",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a0c70a-a632-7513-a567-e1d9b4e14570",
+          "turn_id": "asset:aacdea1e014e4c94",
+          "role": "asset"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -4094,9 +6202,51 @@
           "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://huggingface.co/docs/transformers/model_doc/sam3",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://huggingface.co/lerobot/smolvla_base",
+      "references": [
+        {
+          "thread_id": "01a0c17b-036c-7113-8f5e-a0374a7f78c0",
+          "turn_id": "asset:3cbe34de68616d66",
+          "role": "asset"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://huggingface.co/openvla/openvla-7b/blob/main/modeling_prismatic.py",
+      "references": [
+        {
+          "thread_id": "01a0a4b0-3d46-7d13-a407-0b61d8ab0cb6",
+          "turn_id": "01a0a4b0-4115-77e0-9d73-76c72c81f055",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://huggingface.co/robbyant/lingbot-vla-v2-6b-robotwin",
+      "references": [
+        {
+          "thread_id": "01a0947a-003f-7140-97c1-79d100f5cd1f",
+          "turn_id": "01a0a92d-99e4-7031-abb0-3fcf5c08d551",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -4118,9 +6268,9 @@
           "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://isaac-sim.github.io/IsaacLab/develop/source/features/isaac_teleop.html",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -4132,10 +6282,10 @@
           "role": "assistant"
         }
       ],
-      "status": "network_error",
+      "status": "not_checked",
       "http_status": null,
       "final_url": null,
-      "detail": "Remote end closed connection without response"
+      "detail": ""
     },
     {
       "url": "https://isaac-sim.github.io/IsaacLab/main/source/setup/installation/index",
@@ -4146,9 +6296,9 @@
           "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://isaac-sim.github.io/IsaacLab/main/source/setup/installation/index",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -4160,9 +6310,23 @@
           "role": "user"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://item.taobao.com/item.htm?id=696573635888",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://kernel.org/doc/html/v4.12/media/uapi/v4l/buffer.html",
+      "references": [
+        {
+          "thread_id": "01a0b23c-e3b0-7972-ab4e-594cdcf7e425",
+          "turn_id": "asset:97b60620850e58fe",
+          "role": "asset"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -4209,9 +6373,9 @@
           "role": "asset"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://landscape.canonical.com",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -4223,10 +6387,10 @@
           "role": "assistant"
         }
       ],
-      "status": "skipped",
+      "status": "not_checked",
       "http_status": null,
       "final_url": null,
-      "detail": "域名解析到私有、回环或保留地址"
+      "detail": ""
     },
     {
       "url": "https://learn.chatgpt.com/docs/agent-configuration/agents-md",
@@ -4237,10 +6401,10 @@
           "role": "assistant"
         }
       ],
-      "status": "skipped",
+      "status": "not_checked",
       "http_status": null,
       "final_url": null,
-      "detail": "域名解析到私有、回环或保留地址"
+      "detail": ""
     },
     {
       "url": "https://learn.chatgpt.com/docs/config-file/config-reference",
@@ -4259,12 +6423,36 @@
           "thread_id": "01a05fa2-ec9a-7173-9152-709cf6d3ac8f",
           "turn_id": "01a05fa4-47b7-7ab3-b590-64100b85d5e4",
           "role": "assistant"
+        },
+        {
+          "thread_id": "01a0a2e1-3e27-7e40-9b21-66642854a384",
+          "turn_id": "01a0a2e1-818c-7111-91d3-60fc36da2d99",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a0ace3-4fde-76d1-bf44-993bd36dffc5",
+          "turn_id": "01a0ace5-d391-72e2-ac50-e218195068e9",
+          "role": "assistant"
         }
       ],
-      "status": "skipped",
+      "status": "not_checked",
       "http_status": null,
       "final_url": null,
-      "detail": "域名解析到私有、回环或保留地址"
+      "detail": ""
+    },
+    {
+      "url": "https://learn.chatgpt.com/docs/developer-commands?surface=cli",
+      "references": [
+        {
+          "thread_id": "01a0ace3-4fde-76d1-bf44-993bd36dffc5",
+          "turn_id": "01a0ace5-d391-72e2-ac50-e218195068e9",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
     },
     {
       "url": "https://learn.chatgpt.com/docs/projects",
@@ -4280,10 +6468,10 @@
           "role": "assistant"
         }
       ],
-      "status": "skipped",
+      "status": "not_checked",
       "http_status": null,
       "final_url": null,
-      "detail": "域名解析到私有、回环或保留地址"
+      "detail": ""
     },
     {
       "url": "https://learn.chatgpt.com/docs/remote-connections",
@@ -4294,10 +6482,10 @@
           "role": "assistant"
         }
       ],
-      "status": "skipped",
+      "status": "not_checked",
       "http_status": null,
       "final_url": null,
-      "detail": "域名解析到私有、回环或保留地址"
+      "detail": ""
     },
     {
       "url": "https://learn.chatgpt.com/docs/whats-new",
@@ -4308,10 +6496,10 @@
           "role": "assistant"
         }
       ],
-      "status": "skipped",
+      "status": "not_checked",
       "http_status": null,
       "final_url": null,
-      "detail": "域名解析到私有、回环或保留地址"
+      "detail": ""
     },
     {
       "url": "https://learn.chatgpt.com/zh-Hans/docs/cloud",
@@ -4322,10 +6510,10 @@
           "role": "assistant"
         }
       ],
-      "status": "skipped",
+      "status": "not_checked",
       "http_status": null,
       "final_url": null,
-      "detail": "域名解析到私有、回环或保留地址"
+      "detail": ""
     },
     {
       "url": "https://learn.chatgpt.com/zh-Hans/docs/projects",
@@ -4341,10 +6529,10 @@
           "role": "assistant"
         }
       ],
-      "status": "skipped",
+      "status": "not_checked",
       "http_status": null,
       "final_url": null,
-      "detail": "域名解析到私有、回环或保留地址"
+      "detail": ""
     },
     {
       "url": "https://mcap.dev/",
@@ -4355,9 +6543,9 @@
           "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://mcap.dev/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -4369,9 +6557,9 @@
           "role": "assistant"
         }
       ],
-      "status": "redirected",
-      "http_status": 200,
-      "final_url": "https://mirror.sjtu.edu.cn/flathub/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -4383,9 +6571,23 @@
           "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://mirrors.sjtug.sjtu.edu.cn/flathub/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://modelscope.cn/models/robbyant/lingbot-depth-pretrain-vitl-14-v0.5",
+      "references": [
+        {
+          "thread_id": "01a0d220-8747-75a3-b4d4-55d923654640",
+          "turn_id": "asset:df2e46596d0c6997",
+          "role": "asset"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -4407,9 +6609,47 @@
           "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://moveit.picknik.ai/main/doc/examples/realtime_servo/realtime_servo_tutorial.html",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://mozhi.adminforge.de",
+      "references": [
+        {
+          "thread_id": "01a09437-3a87-7912-814a-5cd30e754bc2",
+          "turn_id": "01a09f0a-58bf-7351-a2ff-b24462420853",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a09437-3a87-7912-814a-5cd30e754bc2",
+          "turn_id": "01a0a315-80e5-7862-976d-b7d81302da12",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a09437-3a87-7912-814a-5cd30e754bc2",
+          "turn_id": "01a0b234-e530-76c3-83b6-fc00342934d3",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://mozhi.aryak.me",
+      "references": [
+        {
+          "thread_id": "01a09437-3a87-7912-814a-5cd30e754bc2",
+          "turn_id": "01a09f0a-58bf-7351-a2ff-b24462420853",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -4421,9 +6661,37 @@
           "role": "asset"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://nvidia-isaac-ros.github.io/v/release-3.2/performance/index.html",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://nvidia-isaac-ros.github.io/v/release-3.2/repositories_and_packages/isaac_ros_pose_estimation/index.html",
+      "references": [
+        {
+          "thread_id": "01a0b2b2-09de-7c70-9d87-22b39c8409a2",
+          "turn_id": "01a0b311-a1f6-7f13-9d29-a84428868691",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://nvidia-isaac-ros.github.io/v/release-3.2/repositories_and_packages/isaac_ros_pose_estimation/isaac_ros_foundationpose/index.html",
+      "references": [
+        {
+          "thread_id": "01a0b2b2-09de-7c70-9d87-22b39c8409a2",
+          "turn_id": "01a0b311-a1f6-7f13-9d29-a84428868691",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -4431,13 +6699,18 @@
       "references": [
         {
           "thread_id": "01a08f2f-fa2d-7240-b59e-2afecc1a7542",
-          "turn_id": "asset:80c20a16f9b5a36c",
+          "turn_id": "01a08f31-3bdf-70d1-81b5-47c4728cd235",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a08f2f-fa2d-7240-b59e-2afecc1a7542",
+          "turn_id": "asset:c37a87fb3d3ef7af",
           "role": "asset"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://nvidia.github.io/container-wiki/toolkit/jetson.html",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -4459,9 +6732,9 @@
           "role": "asset"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://nvidia.github.io/libnvidia-container/gpgkey",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -4483,9 +6756,9 @@
           "role": "asset"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://nvidia.github.io/libnvidia-container/stable/deb/nvidia-container-toolkit.list",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -4493,18 +6766,28 @@
       "references": [
         {
           "thread_id": "01a07a67-a824-78c3-ac14-2ac2c473a3a8",
+          "turn_id": "01a07a67-a9bd-7922-a887-2c7b7b8b878c",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a07a67-a824-78c3-ac14-2ac2c473a3a8",
           "turn_id": "asset:74f773e518de7e8f",
           "role": "asset"
         }
       ],
-      "status": "network_error",
+      "status": "not_checked",
       "http_status": null,
       "final_url": null,
-      "detail": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'open3d.org'. (_ssl.c:1007)>"
+      "detail": ""
     },
     {
       "url": "https://open3d.org/html/tutorial/t_pipelines/t_icp_registration.html",
       "references": [
+        {
+          "thread_id": "01a07a67-a824-78c3-ac14-2ac2c473a3a8",
+          "turn_id": "01a07a67-a9bd-7922-a887-2c7b7b8b878c",
+          "role": "assistant"
+        },
         {
           "thread_id": "01a07a67-a824-78c3-ac14-2ac2c473a3a8",
           "turn_id": "01a07a74-3bd3-7ad3-b697-6ef5bdf04964",
@@ -4521,10 +6804,24 @@
           "role": "asset"
         }
       ],
-      "status": "network_error",
+      "status": "not_checked",
       "http_status": null,
       "final_url": null,
-      "detail": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'open3d.org'. (_ssl.c:1007)>"
+      "detail": ""
+    },
+    {
+      "url": "https://openvla.github.io/",
+      "references": [
+        {
+          "thread_id": "01a0a4b0-3d46-7d13-a407-0b61d8ab0cb6",
+          "turn_id": "01a0a4b0-4115-77e0-9d73-76c72c81f055",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
     },
     {
       "url": "https://packages.ubuntu.com/jammy/graphics/cloudcompare",
@@ -4535,9 +6832,9 @@
           "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://packages.ubuntu.com/jammy/graphics/cloudcompare",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -4549,10 +6846,10 @@
           "role": "assistant"
         }
       ],
-      "status": "http_error",
-      "http_status": 403,
+      "status": "not_checked",
+      "http_status": null,
       "final_url": null,
-      "detail": "Forbidden"
+      "detail": ""
     },
     {
       "url": "https://platform.openai.com/usage",
@@ -4563,10 +6860,10 @@
           "role": "assistant"
         }
       ],
-      "status": "http_error",
-      "http_status": 403,
+      "status": "not_checked",
+      "http_status": null,
       "final_url": null,
-      "detail": "Forbidden"
+      "detail": ""
     },
     {
       "url": "https://pointclouds.org/documentation/tutorials/planar_segmentation.html",
@@ -4587,9 +6884,75 @@
           "role": "asset"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://pointclouds.org/documentation/tutorials/planar_segmentation.html",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://pot-app.com/",
+      "references": [
+        {
+          "thread_id": "01a09437-3a87-7912-814a-5cd30e754bc2",
+          "turn_id": "01a094b5-5af2-74f3-9d4a-aca18667a48c",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://pot-app.com/docs/config/general.html",
+      "references": [
+        {
+          "thread_id": "01a09437-3a87-7912-814a-5cd30e754bc2",
+          "turn_id": "01a09443-8624-76d2-b8a8-9544d176274c",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a09437-3a87-7912-814a-5cd30e754bc2",
+          "turn_id": "01a09470-66b2-7583-bc54-6314bcceafa7",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://pot-app.com/en/plugin.html",
+      "references": [
+        {
+          "thread_id": "01a09437-3a87-7912-814a-5cd30e754bc2",
+          "turn_id": "01a094b5-5af2-74f3-9d4a-aca18667a48c",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://publications.ri.cmu.edu/storage/publications/2020/06/msr_thesis_adityaa2.pdf",
+      "references": [
+        {
+          "thread_id": "01a09eb1-31e0-7eb0-8d5c-30d64b0a1157",
+          "turn_id": "01a09f07-6d31-7112-beeb-4a631a477ad6",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a09f25-95ac-74a2-b818-3ae774c667d5",
+          "turn_id": "01a09f31-08a6-7542-bfec-69bbb5da406b",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -4606,9 +6969,9 @@
           "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://raw.githubusercontent.com/GalaxyGeneralRobotics/galbot_one_golf_description/main/CMakeLists.txt",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -4620,9 +6983,9 @@
           "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://raw.githubusercontent.com/huggingface/lerobot/main/src/lerobot/robots/so_follower/so_follower.py",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -4634,9 +6997,51 @@
           "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://raw.githubusercontent.com/huggingface/lerobot/v0.4.4/pyproject.toml",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://raw.githubusercontent.com/scipy/scipy/v1.10.0/scipy/optimize/_lsq/least_squares.py",
+      "references": [
+        {
+          "thread_id": "01a094c0-5455-7a32-bb30-bc13a3d1fa74",
+          "turn_id": "01a09ddf-1861-77b2-92cf-659afed65ace",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://robotwin-platform.github.io/doc/",
+      "references": [
+        {
+          "thread_id": "01a0addb-959b-7433-adb3-4b36c3df088c",
+          "turn_id": "01a0bd5e-1fa7-7041-9e41-fba1328c72eb",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://sbpl-cruz.github.io/perception/",
+      "references": [
+        {
+          "thread_id": "01a09f25-95ac-74a2-b818-3ae774c667d5",
+          "turn_id": "01a09f25-edf7-7fe3-b4dc-24faa6250d96",
+          "role": "user"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -4673,9 +7078,9 @@
           "role": "user"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://ubuntu.com/20-04",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -4687,9 +7092,9 @@
           "role": "asset"
         }
       ],
-      "status": "redirected",
-      "http_status": 200,
-      "final_url": "https://ubuntu.com/pro",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -4731,9 +7136,138 @@
           "role": "asset"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://ubuntu.com/pro",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://unpkg.com",
+      "references": [
+        {
+          "thread_id": "01a0a808-a4d9-7822-9412-83c295b1ce54",
+          "turn_id": "asset:ac6b224ceeeb7fd0",
+          "role": "asset"
+        },
+        {
+          "thread_id": "visualizations",
+          "turn_id": "asset:2ee5f31a49680d2e",
+          "role": "asset"
+        },
+        {
+          "thread_id": "visualizations",
+          "turn_id": "visualization:vla-resource-draft-standalone.html",
+          "role": "visualization"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://unpkg.com/@floating-ui/core@1.7.3/dist/floating-ui.core.umd.min.js&quot;&gt;&lt;/script&gt",
+      "references": [
+        {
+          "thread_id": "01a0a808-a4d9-7822-9412-83c295b1ce54",
+          "turn_id": "asset:ac6b224ceeeb7fd0",
+          "role": "asset"
+        },
+        {
+          "thread_id": "visualizations",
+          "turn_id": "asset:2ee5f31a49680d2e",
+          "role": "asset"
+        },
+        {
+          "thread_id": "visualizations",
+          "turn_id": "visualization:vla-resource-draft-standalone.html",
+          "role": "visualization"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://unpkg.com/@floating-ui/dom@1.7.4/dist/floating-ui.dom.umd.min.js&quot;&gt;&lt;/script&gt",
+      "references": [
+        {
+          "thread_id": "01a0a808-a4d9-7822-9412-83c295b1ce54",
+          "turn_id": "asset:ac6b224ceeeb7fd0",
+          "role": "asset"
+        },
+        {
+          "thread_id": "visualizations",
+          "turn_id": "asset:2ee5f31a49680d2e",
+          "role": "asset"
+        },
+        {
+          "thread_id": "visualizations",
+          "turn_id": "visualization:vla-resource-draft-standalone.html",
+          "role": "visualization"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://unpkg.com/lucide@1.17.0/dist/umd/lucide.js&quot;&gt;&lt;/script&gt",
+      "references": [
+        {
+          "thread_id": "01a0a808-a4d9-7822-9412-83c295b1ce54",
+          "turn_id": "asset:ac6b224ceeeb7fd0",
+          "role": "asset"
+        },
+        {
+          "thread_id": "visualizations",
+          "turn_id": "asset:2ee5f31a49680d2e",
+          "role": "asset"
+        },
+        {
+          "thread_id": "visualizations",
+          "turn_id": "visualization:vla-resource-draft-standalone.html",
+          "role": "visualization"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://www.ais.uni-bonn.de/papers/ISR_2016_Holz.pdf",
+      "references": [
+        {
+          "thread_id": "01a09f25-95ac-74a2-b818-3ae774c667d5",
+          "turn_id": "01a09f25-edf7-7fe3-b4dc-24faa6250d96",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a09f25-95ac-74a2-b818-3ae774c667d5",
+          "turn_id": "01a09f31-08a6-7542-bfec-69bbb5da406b",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://www.galbot.com/g1/",
+      "references": [
+        {
+          "thread_id": "01a09fc1-2e1f-7e92-983c-76b3729e977d",
+          "turn_id": "01a09ff6-affb-7090-9392-359e3d56d341",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -4750,9 +7284,9 @@
           "role": "asset"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://www.galbot.com/s1/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -4764,9 +7298,37 @@
           "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://www.gnu.org/software/grub/manual/grub/html_node/search.html",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://www.kernel.org/doc/html/latest/userspace-api/media/v4l/ext-ctrls-camera.html",
+      "references": [
+        {
+          "thread_id": "01a0c707-561b-7b60-8c9d-05b84e02d86c",
+          "turn_id": "asset:4050a0e81c511d18",
+          "role": "asset"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://www.kernel.org/doc/html/latest/userspace-api/media/v4l/vidioc-queryctrl.html",
+      "references": [
+        {
+          "thread_id": "01a0c707-561b-7b60-8c9d-05b84e02d86c",
+          "turn_id": "asset:4050a0e81c511d18",
+          "role": "asset"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -4778,9 +7340,89 @@
           "role": "asset"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://www.livoxtech.com/cn/mid-360/specs",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://www.mdpi.com/1424-8220/18/8/2719",
+      "references": [
+        {
+          "thread_id": "01a09f25-95ac-74a2-b818-3ae774c667d5",
+          "turn_id": "01a09f25-edf7-7fe3-b4dc-24faa6250d96",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://www.omron.com/global/en/technology/omrontechnics/vol54/010.html",
+      "references": [
+        {
+          "thread_id": "01a09f25-95ac-74a2-b818-3ae774c667d5",
+          "turn_id": "01a09f25-edf7-7fe3-b4dc-24faa6250d96",
+          "role": "user"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://www.open3d.org/docs/latest/tutorial/t_pipelines/index.html",
+      "references": [
+        {
+          "thread_id": "01a0a7c7-74f0-7522-8a94-d63852c98f9b",
+          "turn_id": "01a0a804-28d1-79c2-a7c1-31e2d88c43d9",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://www.open3d.org/docs/release/tutorial/pipelines/icp_registration.html",
+      "references": [
+        {
+          "thread_id": "01a0c7aa-a1ac-7b33-914d-e1c6f583aa93",
+          "turn_id": "asset:cc0785a29109c795",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a0d285-e929-7640-9594-986823dfbd00",
+          "turn_id": "asset:cc0785a29109c795",
+          "role": "asset"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://www.open3d.org/docs/release/tutorial/pipelines/robust_kernels.html",
+      "references": [
+        {
+          "thread_id": "01a0c7aa-a1ac-7b33-914d-e1c6f583aa93",
+          "turn_id": "asset:cc0785a29109c795",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a0d285-e929-7640-9594-986823dfbd00",
+          "turn_id": "asset:cc0785a29109c795",
+          "role": "asset"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -4797,9 +7439,9 @@
           "role": "asset"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://www.orbbec.com/products/structured-light-camera/gemini-2/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -4816,9 +7458,42 @@
           "role": "user"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://www.pi.website/blog/pi07",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://www.researchgate.net/publication/304190278_Accurate_and_Versatile_Automation_of_Industrial_Kitting_Operations_with_SkiROS",
+      "references": [
+        {
+          "thread_id": "01a09f25-95ac-74a2-b818-3ae774c667d5",
+          "turn_id": "01a09f31-08a6-7542-bfec-69bbb5da406b",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://www.ri.cmu.edu/app/uploads/2020/06/msr_thesis_adityaa2.pdf",
+      "references": [
+        {
+          "thread_id": "01a09eb1-31e0-7eb0-8d5c-30d64b0a1157",
+          "turn_id": "01a09eb1-3419-79a3-b85a-a7925aa7f7cb",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a09f25-95ac-74a2-b818-3ae774c667d5",
+          "turn_id": "01a09f25-edf7-7fe3-b4dc-24faa6250d96",
+          "role": "user"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     },
     {
@@ -4830,21 +7505,51 @@
           "role": "assistant"
         }
       ],
-      "status": "ok",
-      "http_status": 200,
-      "final_url": "https://www.ros.org/blog/noetic-eol/",
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://www.scitepress.org/PublishedPapers/2022/108782/108782.pdf",
+      "references": [
+        {
+          "thread_id": "01a09f25-95ac-74a2-b818-3ae774c667d5",
+          "turn_id": "01a09f25-edf7-7fe3-b4dc-24faa6250d96",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a09f25-95ac-74a2-b818-3ae774c667d5",
+          "turn_id": "01a09f31-08a6-7542-bfec-69bbb5da406b",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://www.transfer3d.com/en/cases/logistics-case-6",
+      "references": [
+        {
+          "thread_id": "01a09f25-95ac-74a2-b818-3ae774c667d5",
+          "turn_id": "01a09f25-edf7-7fe3-b4dc-24faa6250d96",
+          "role": "user"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
       "detail": ""
     }
   ],
   "summary": {
-    "total": 237,
-    "checked": 214,
+    "total": 359,
+    "checked": 0,
     "status_counts": {
-      "http_error": 13,
-      "network_error": 4,
-      "ok": 131,
-      "redirected": 66,
-      "skipped": 23
+      "not_checked": 359
     }
-  }
+  },
+  "note": "本次未联网复查：自动审批禁止批量访问从对话提取的 URL。"
 }

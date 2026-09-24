@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-12T09:59:21.942656+08:00",
+  "generated_at": "2026-09-24T16:31:33.279395+08:00",
   "assets": [
     {
       "source": "2026/08/22/01a02731-e698-7092-ae82-d3144a0993e8/s1-urdf-joints.html",
@@ -67,7 +67,49 @@
       "asset_id": "212e0f737956b2ff",
       "path": "assets/212e0f737956b2ff--vla-total-gpu-memory.html",
       "filename": "212e0f737956b2ff--vla-total-gpu-memory.html"
+    },
+    {
+      "source": "2026/09/12/01a0936a-d074-7441-8bfb-a6c44eb1412b/vla-resource-draft-standalone.html",
+      "asset_id": "2ee5f31a49680d2e",
+      "path": "assets/2ee5f31a49680d2e--vla-resource-draft-standalone.html",
+      "filename": "2ee5f31a49680d2e--vla-resource-draft-standalone.html"
+    },
+    {
+      "source": "2026/09/12/01a0936a-d074-7441-8bfb-a6c44eb1412b/vla-resource-draft.html",
+      "asset_id": "4d69b0c90dfb32ee",
+      "path": "assets/4d69b0c90dfb32ee--vla-resource-draft.html",
+      "filename": "4d69b0c90dfb32ee--vla-resource-draft.html"
+    },
+    {
+      "source": "2026/09/16/01a0a808-a4d9-7822-9412-83c295b1ce54/mesh-board-box-relative-views.png",
+      "asset_id": "cb34c4f23070fbe1",
+      "path": "assets/cb34c4f23070fbe1--mesh-board-box-relative-views.png",
+      "filename": "cb34c4f23070fbe1--mesh-board-box-relative-views.png"
+    },
+    {
+      "source": "2026/09/16/01a0a808-a4d9-7822-9412-83c295b1ce54/mesh-board-box.html",
+      "asset_id": "657dd447e3c7442f",
+      "path": "assets/657dd447e3c7442f--mesh-board-box.html",
+      "filename": "657dd447e3c7442f--mesh-board-box.html"
+    },
+    {
+      "source": "2026/09/17/01a0aef8-0cbc-7df3-8ea2-c8a3f7572e4f/arm-follow-explainer.html",
+      "asset_id": "7e6735a356f23c84",
+      "path": "assets/7e6735a356f23c84--arm-follow-explainer.html",
+      "filename": "7e6735a356f23c84--arm-follow-explainer.html"
+    },
+    {
+      "source": "2026/09/18/01a0b243-817c-79e1-bc4a-c7ec673bf2ce/r1-mesh-pointcloud.html",
+      "asset_id": "b17061898ca9b0a7",
+      "path": "assets/b17061898ca9b0a7--r1-mesh-pointcloud.html",
+      "filename": "b17061898ca9b0a7--r1-mesh-pointcloud.html"
+    },
+    {
+      "source": "2026/09/18/01a0b243-817c-79e1-bc4a-c7ec673bf2ce/r1-rejection-compare.html",
+      "asset_id": "2eedd84f7f3583f7",
+      "path": "assets/2eedd84f7f3583f7--r1-rejection-compare.html",
+      "filename": "2eedd84f7f3583f7--r1-rejection-compare.html"
     }
   ],
-  "unassociated_pasted_attachment_count": 17
+  "unassociated_pasted_attachment_count": 18
 }

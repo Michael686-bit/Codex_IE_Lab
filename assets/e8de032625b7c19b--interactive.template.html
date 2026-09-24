@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data:; connect-src 'none'">
+<title>标定板、原算法 mesh 与实测高度 · 离线对照</title>
+<style>
+:root{color-scheme:light dark;--bg:light-dark(#f7fafc,#161b22);--fg:light-dark(#24374b,#e2eaf1);--muted:light-dark(#50657a,#adc0ce);--line:light-dark(#ccd8e1,#394a58);--panel:light-dark(#edf2f6,#202a35);--blue:light-dark(#2471a3,#56b4f1);--red:light-dark(#bf3935,#ff7870);--gold:light-dark(#997300,#ffd75e)}
+*{box-sizing:border-box}body{margin:0;padding:24px;font:16px/1.5 system-ui,"Noto Sans CJK SC",sans-serif;background:var(--bg);color:var(--fg)}main{max-width:1300px;margin:auto}h1{font-size:23px;font-weight:600;margin:0 0 8px}p{margin:8px 0;color:var(--muted)}.controls{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0}button{font:inherit;padding:8px 14px;background:var(--panel);color:var(--fg);border:1px solid var(--line);border-radius:6px;cursor:pointer}button[aria-pressed=true]{border-color:var(--blue)}label{display:inline-flex;align-items:center;gap:6px;padding:8px}.layout{display:grid;grid-template-columns:minmax(0,1fr) 270px;gap:24px}svg{width:100%;height:560px;touch-action:none;border:1px solid var(--line);border-radius:8px;cursor:grab}svg:active{cursor:grabbing}.labels{font-size:14px;fill:var(--fg);stroke:var(--bg);stroke-width:5px;paint-order:stroke;stroke-linejoin:round}.small{font-size:14px}dl{margin:8px 0}dt{color:var(--muted);margin-top:12px}dd{margin:0;font-size:19px}.legend{display:flex;flex-wrap:wrap;gap:18px;margin:12px 0}.red{color:var(--red)}.blue{color:var(--blue)}.gold{color:var(--gold)}@media(max-width:850px){.layout{grid-template-columns:1fr}aside{display:grid;grid-template-columns:1fr 1fr;gap:12px}svg{height:460px}body{padding:14px}}
+select{font:inherit;padding:8px;background:var(--panel);color:var(--fg);border:1px solid var(--line);border-radius:6px}.teal{color:#17a995}.photo-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.photo-grid svg{height:auto;aspect-ratio:16/9;cursor:default;touch-action:auto}.photo-grid h3{font-size:16px;margin:8px 0}.summary{border-left:3px solid var(--blue);padding:8px 14px;margin:18px 0}.meta{font-size:14px;overflow-wrap:anywhere}@media(max-width:750px){.photo-grid{grid-template-columns:1fr}}
+</style></head><body><main>
+<h1>标定板、算法 mesh 与实测高度 · 离线对照</h1>
+<p>拖动旋转，滚轮缩放，也可用下方按钮调整。单位 mm；高度零点为实物最低点。</p>
+<div class="controls">
+<label>mesh 安装方式 <select id="meshMode"><option value="both">旧安装与实测高度对照</option><option value="old">旧安装：中心高于板面 82.997 mm</option><option value="measured">实测推导：中心高于板面 72 mm</option><option value="none">隐藏 mesh</option></select></label>
+<label>表面透明度 <input id="opacity" type="range" min="0" max="0.25" step="0.01" value="0.06"></label>
+<label><input id="wire" type="checkbox" checked>mesh 特征边</label>
+</div>
+<div class="controls">
+<button data-view="3d" aria-pressed="true">透视 / 重置</button><button data-view="top" aria-pressed="false">俯视</button><button data-view="front" aria-pressed="false">正视</button><button data-view="side" aria-pressed="false">侧视</button>
+<button data-turn="-.2">向左转</button><button data-turn=".2">向右转</button><button data-zoom="1.15">放大</button><button data-zoom=".87">缩小</button>
+<label><input id="walls" type="checkbox">示意侧壁</label><label><input id="dims" type="checkbox" checked>尺寸标注</label>
+</div>
+<div class="layout"><section>
+<svg id="plot" role="img" aria-label="标定板在箱内底面A角，板下表面12毫米、印刷面14毫米，箱体外高172毫米；可以拖动旋转"><title>标定板安装示意</title><g id="scene"></g></svg>
+<div class="legend"><span class="blue">蓝色 mesh：旧安装</span><span class="teal">青绿色 mesh：实测高度安装</span><span class="gold">黄色：172 mm 实测高度参考框</span><span class="red">红长边：贴前侧</span></div>
+</section><aside>
+<div><strong>高度关系 · 实测推导</strong><dl><dt>箱体最高点</dt><dd>172 mm</dd><dt>外包围盒中心</dt><dd>86 mm</dd><dt>标定板印刷面</dt><dd class="red">14 mm</dd><dt>板下表面＝内底面上表面</dt><dd class="blue">12 mm</dd><dt>箱体最低点</dt><dd>0 mm</dd></dl></div>
+<div><strong>标定板位置</strong><p>A 角为两条实体板贴合边的交点。板平放、无垫高，厚 2 mm。</p><p>板面 → 顶部：158 mm<br>板面 → 箱体中心：72 mm<br>内底面 → 顶部：160 mm</p><p>板外形：300 × 200 mm<br>棋盘：280 × 180 mm<br>方格：20 mm<br>两贴合边白边：各 10 mm</p></div>
+</aside></div>
+<div class="summary"><strong>这一对照只改变安装高度，不改 mesh 形状</strong><p>两份 mesh 是原算法实际使用的同一 OBJ，外高 175 mm。蓝色沿用旧板到箱体变换；青绿色仅把中心相对板面的高度从 82.997 改为 72 mm，整体沿板法向降低 10.997 mm。黄色框外高 172 mm，采用同一水平中心。</p><p>实测高度安装后，mesh 顶点仍高于实物顶部约 1.5 mm，最低点低于实物最低点约 1.5 mm；模型内底面则约在 Z=1 mm，与实物 Z=12 mm 相差约 11 mm。这种形状差异无法靠一个刚体平移同时消除。</p></div>
+<h2>投回真实照片：同一图像、同一板位姿</h2>
+<div class="controls"><label>采集帧 <select id="frameSelect"></select></label><label><input id="photoMesh" type="checkbox" checked>完整 mesh 特征边</label><label><input id="photoBox" type="checkbox" checked>包围框</label><label><input id="photoBoard" type="checkbox" checked>实体标定板边界</label></div>
+<p class="meta" id="photoInfo"></p>
+<div class="photo-grid"><section><h3>旧安装 · 蓝色 mesh / 175 mm 黄框</h3><svg id="photoOld" viewBox="0 0 1280 720" role="img" aria-label="旧安装关系的原始照片投影"></svg></section><section><h3>实测高度安装 · 青绿色 mesh / 172 mm 黄框</h3><svg id="photoNew" viewBox="0 0 1280 720" role="img" aria-label="实测高度关系的原始照片投影"></svg></section></div>
+<p class="small">两图用同一份 V3 标定板位姿和采集时 K/D，直接投影几何；未用 FDP/V5 位姿调齐图像。线框为透明透视显示，包含被遮挡的边。默认 R04_10 对应你给的截图，也可切换 R03。原截图使用旧检测结果，本页使用已保存的 V3 结果。</p>
+<p class="small">水平安装偏移仍来自旧 mesh 贴边假设，尚非实测。黄色框的长宽也沿用 mesh 参考尺寸。实测只约束高度；不能把青绿色 mesh 或本页差异当作完整位姿真值。</p>
+<p class="meta" id="meshInfo"></p>
+</main><script id="experimentData" type="application/json">__EXPERIMENT_DATA__</script><script>
+(()=>{
+const source=document.getElementById('experimentData').textContent.trim();
+// The authoring template is not a complete viewer. Opening it directly must
+// show a usable entry point instead of throwing JSON.parse and leaving blanks.
+if(source.startsWith('__')){
+ const main=document.querySelector('main');
+ main.replaceChildren();
+ const title=document.createElement('h1');title.textContent='打开完整的三维对照图';main.appendChild(title);
+ const note=document.createElement('p');note.textContent='当前文件是生成页面用的模板，没有内嵌模型和照片数据。请打开同目录的完整页面。';main.appendChild(note);
+ const link=document.createElement('a');link.href='./interactive.html';link.textContent='打开标定板与箱体 mesh 对照图';link.style.color='var(--blue)';main.appendChild(link);
+ return;
+}
+const data=JSON.parse(source);
+const svg=document.getElementById('plot'),scene=document.getElementById('scene'),NS='http://www.w3.org/2000/svg';
+const state={yaw:-.6,pitch:.70,zoom:1,view:'3d',drag:false,x:0,y:0};
+const [x0,y0]=data.referenceBounds[0], [x1,y1]=data.referenceBounds[1];
+const cube=[[x0,y0,0],[x1,y0,0],[x1,y1,0],[x0,y1,0],[x0,y0,172],[x1,y0,172],[x1,y1,172],[x0,y1,172]];
+const edges=[[0,1],[1,2],[2,3],[3,0],[4,5],[5,6],[6,7],[7,4],[0,4],[1,5],[2,6],[3,7]];
+const elem=(name,a={})=>{let n=document.createElementNS(NS,name);for(const [k,v]of Object.entries(a))n.setAttribute(k,v);scene.appendChild(n);return n};
+function project(p){let [x,y,z]=p;if(state.view==='top')return [x,-y,z];if(state.view==='front')return [x,-z,y];if(state.view==='side')return [y,-z,-x];let cy=Math.cos(state.yaw),sy=Math.sin(state.yaw),cp=Math.cos(state.pitch),sp=Math.sin(state.pitch),d=sy*x+cy*y;return [cy*x-sy*y,-sp*d-cp*z,-cp*d+sp*z]}
+let frame;function screen(p){let q=project(p);return [frame.cx+q[0]*frame.k,frame.cy+q[1]*frame.k,q[2]]}
+function line(a,b,c,width=1.5,dash=''){let p=screen(a),q=screen(b);elem('line',{x1:p[0],y1:p[1],x2:q[0],y2:q[1],stroke:c,'stroke-width':width,'stroke-dasharray':dash})}
+function polygon(ps,c,opacity=1){elem('polygon',{points:ps.map(screen).map(q=>q.slice(0,2).join(',')).join(' '),fill:c,'fill-opacity':opacity})}
+function text(p,t,dx=0,dy=0,anchor='middle'){let q=screen(p);let n=elem('text',{x:q[0]+dx,y:q[1]+dy,class:'labels','text-anchor':anchor});n.textContent=t}
+function dim(a,b,t,dx=0,dy=0){line(a,b,'var(--muted)',1,'4 3');text(a.map((v,i)=>(v+b[i])/2),t,dx,dy)}
+function render(){scene.replaceChildren();let w=Math.max(320,svg.getBoundingClientRect().width),h=svg.getBoundingClientRect().height||560;svg.setAttribute('viewBox',`0 0 ${w} ${h}`);let qs=cube.map(project),xs=qs.map(q=>q[0]),ys=qs.map(q=>q[1]),lo=[Math.min(...xs),Math.min(...ys)],hi=[Math.max(...xs),Math.max(...ys)],k=Math.min((w-130)/Math.max(hi[0]-lo[0],1),(h-130)/Math.max(hi[1]-lo[1],1))*state.zoom;frame={k,cx:w/2-(hi[0]+lo[0])/2*k,cy:h/2-(hi[1]+lo[1])/2*k};
+let faces=[{p:[[0,0,12],[x1,0,12],[x1,y1,12],[0,y1,12]],c:'var(--blue)',a:.04}];
+if(document.getElementById('walls').checked)faces.push(...[
+[[0,0,12],[x1,0,12],[x1,0,172],[0,0,172]],[[0,0,12],[0,y1,12],[0,y1,172],[0,0,172]],[[x1,0,12],[x1,y1,12],[x1,y1,172],[x1,0,172]],[[0,y1,12],[x1,y1,12],[x1,y1,172],[0,y1,172]]].map(p=>({p,c:'var(--blue)',a:.07})));
+faces.sort((a,b)=>a.p.reduce((s,p)=>s+project(p)[2],0)/a.p.length-b.p.reduce((s,p)=>s+project(p)[2],0)/b.p.length).forEach(f=>polygon(f.p,f.c,f.a));
+const mode=document.getElementById('meshMode').value,opacity=Number(document.getElementById('opacity').value);
+const instances=[];if(mode==='old'||mode==='both')instances.push({v:data.mesh.old,color:'var(--blue)'});if(mode==='measured'||mode==='both')instances.push({v:data.mesh.measured,color:'#17a995'});
+const projectedFaces=[];for(const inst of instances)for(const face of data.mesh.faces){const p=face.map(i=>inst.v[i]);projectedFaces.push({p,c:inst.color,d:p.reduce((s,q)=>s+project(q)[2],0)/3})}if(opacity>0)projectedFaces.sort((a,b)=>a.d-b.d).forEach(f=>polygon(f.p,f.c,opacity));
+if(document.getElementById('wire').checked)for(const inst of instances)for(const [a,b]of data.mesh.edges)line(inst.v[a],inst.v[b],inst.color,.8);
+edges.forEach(([a,b])=>line(cube[a],cube[b],'var(--gold)',1.5,a<4&&b<4?'5 4':''));
+const board=[[0,0,14],[300,0,14],[300,200,14],[0,200,14]];polygon(board,'var(--panel)');for(let i=0;i<14;i++)for(let j=0;j<9;j++)if((i+j)%2===0)polygon([[10+i*20,10+j*20,14],[30+i*20,10+j*20,14],[30+i*20,30+j*20,14],[10+i*20,30+j*20,14]],'var(--muted)',.35);
+board.forEach((p,i)=>{let q=board[(i+1)%4];line(p,q,'var(--fg)',1);line([p[0],p[1],12],[q[0],q[1],12],'var(--muted)',1,'3 2');line(p,[p[0],p[1],12],'var(--muted)',1)});line(board[0],board[1],'var(--red)',3);line(board[0],board[3],'var(--blue)',3);text([0,0,14],'A · 两边贴合',-8,22,'end');
+if(document.getElementById('dims').checked){dim([0,-10,14],[300,-10,14],'板长 300',0,23);dim([-10,0,14],[-10,200,14],'板宽 200',-25,-5);dim([x1+12,y1,0],[x1+12,y1,172],'外高 172',46,0);dim([x0-12,y1,12],[x0-12,y1,172],'内深 160',-42,0);dim([x0,y1+15,172],[x1,y1+15,172],'长 402.119 · mesh参考',0,-13);text([150,100,14],'印刷面 Z=14',0,-5);text([150,100,14],'下表面 Z=12 · 厚2',0,16)}
+}
+function setView(v){state.view=v;state.zoom=1;if(v==='3d'){state.yaw=-.6;state.pitch=.7}document.querySelectorAll('[data-view]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.view===v));render()}
+document.querySelectorAll('[data-view]').forEach(b=>b.addEventListener('click',()=>setView(b.dataset.view)));document.querySelectorAll('[data-turn]').forEach(b=>b.addEventListener('click',()=>{state.view='3d';state.yaw+=Number(b.dataset.turn);render()}));document.querySelectorAll('[data-zoom]').forEach(b=>b.addEventListener('click',()=>{state.zoom=Math.min(2.5,Math.max(.5,state.zoom*Number(b.dataset.zoom)));render()}));['walls','dims'].forEach(id=>document.getElementById(id).addEventListener('change',render));
+svg.addEventListener('pointerdown',e=>{state.drag=true;state.x=e.clientX;state.y=e.clientY;svg.setPointerCapture(e.pointerId)});svg.addEventListener('pointermove',e=>{if(!state.drag)return;state.view='3d';state.yaw+=(e.clientX-state.x)*.008;state.pitch=Math.max(-1.45,Math.min(1.45,state.pitch+(e.clientY-state.y)*.008));state.x=e.clientX;state.y=e.clientY;document.querySelectorAll('[data-view]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.view==='3d'));render()});svg.addEventListener('pointerup',e=>{state.drag=false;if(svg.hasPointerCapture(e.pointerId))svg.releasePointerCapture(e.pointerId)});svg.addEventListener('pointercancel',()=>state.drag=false);svg.addEventListener('wheel',e=>{e.preventDefault();state.zoom=Math.min(2.5,Math.max(.5,state.zoom*Math.exp(-e.deltaY*.001)));render()},{passive:false});new ResizeObserver(render).observe(svg);
+['meshMode','opacity','wire'].forEach(id=>document.getElementById(id).addEventListener('input',render));
+const selector=document.getElementById('frameSelect');data.frames.forEach((f,i)=>{const o=document.createElement('option');o.value=String(i);o.textContent=f.label;selector.appendChild(o)});selector.value='0';
+function renderPhotos(){const f=data.frames[Number(selector.value)];for(const key of ['old','measured']){const target=document.getElementById(key==='old'?'photoOld':'photoNew');target.replaceChildren();const add=(name,a)=>{const n=document.createElementNS(NS,name);Object.entries(a).forEach(([k,v])=>n.setAttribute(k,v));target.appendChild(n);return n};add('image',{href:f.image,width:1280,height:720});const segments=(vs,es,color,width)=>{const d=es.map(([a,b])=>`M${vs[a][0]},${vs[a][1]}L${vs[b][0]},${vs[b][1]}`).join(' ');add('path',{d,fill:'none',stroke:color,'stroke-width':width,'stroke-opacity':.8})};if(document.getElementById('photoMesh').checked)segments(f[key].mesh,data.mesh.edges,key==='old'?'#59b4ff':'#1ee5bf',1);if(document.getElementById('photoBox').checked)segments(f[key].box,edges,'#ffe568',2);if(document.getElementById('photoBoard').checked)segments(f.board,[[0,1],[1,2],[2,3],[3,0]],'#ff6f73',2)}document.getElementById('photoInfo').textContent=`${f.capture} · V3 ${f.corners} 个角点 · 重投影 RMSE ${f.rmse.toFixed(3)} px · 左右两图仅安装高度/黄框高度不同`;}
+['frameSelect','photoMesh','photoBox','photoBoard'].forEach(id=>document.getElementById(id).addEventListener('change',renderPhotos));document.getElementById('meshInfo').textContent=`实际 OBJ：${data.mesh.verticesCount} 顶点 / ${data.mesh.faces.length} 三角面；尺寸 ${data.mesh.dimensions.join(' × ')} mm；SHA-256 ${data.mesh.sha256}`;render();renderPhotos();
+})();
+</script></body></html>

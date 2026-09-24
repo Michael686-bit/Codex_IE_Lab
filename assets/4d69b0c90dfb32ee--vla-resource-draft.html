@@ -1,0 +1,274 @@
+<div id="vla-resource-draft" class="vla-resource-draft">
+  <style>
+    #vla-resource-draft {
+      --foreground: light-dark(#18202a, #eef2f7);
+      --muted: light-dark(#5f6b78, #a7b2c0);
+      --border: light-dark(#cbd3dc, #475361);
+      --grid: light-dark(#e7ebef, #2b3540);
+      --popover: light-dark(#ffffff, #1e2732);
+      --popover-foreground: light-dark(#18202a, #f4f7fb);
+      --viz-series-1: #3478c9;
+      --viz-series-2: #d9783d;
+      --viz-series-3: #2c9a72;
+      --viz-series-4: #9b62c8;
+      --viz-series-5: #d3a22f;
+      --viz-series-6: #c94c67;
+      color: var(--foreground);
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 13px;
+      line-height: 1.35;
+      width: 100%;
+    }
+    #vla-resource-draft * { box-sizing: border-box; }
+    #vla-resource-draft .draft-header { margin: 0 0 16px; }
+    #vla-resource-draft h2 { font-size: 20px; line-height: 1.2; margin: 0 0 5px; font-weight: 650; }
+    #vla-resource-draft p { margin: 0; color: var(--muted); }
+    #vla-resource-draft .chart-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+    #vla-resource-draft .chart-block { min-width: 0; }
+    #vla-resource-draft .chart-block.wide { grid-column: 1 / -1; }
+    #vla-resource-draft .chart-title { font-size: 14px; font-weight: 650; margin: 0 0 6px; }
+    #vla-resource-draft .chart-note { color: var(--muted); font-size: 11px; margin: 5px 0 0; }
+    #vla-resource-draft .legend { display: flex; flex-wrap: wrap; gap: 4px 14px; margin: 0 0 4px; }
+    #vla-resource-draft .legend button { appearance: none; border: 0; background: transparent; color: var(--foreground); cursor: pointer; font: inherit; padding: 2px 0; display: inline-flex; align-items: center; gap: 6px; }
+    #vla-resource-draft .legend button[aria-pressed="false"] { color: var(--muted); }
+    #vla-resource-draft .swatch { width: 10px; height: 10px; display: inline-block; border-radius: 50%; background: var(--swatch); flex: 0 0 auto; }
+    #vla-resource-draft svg { display: block; width: 100%; height: auto; overflow: visible; }
+    #vla-resource-draft text { fill: var(--foreground); font-size: 12px; }
+    #vla-resource-draft .axis-title { font-size: 12px; font-weight: 600; }
+    #vla-resource-draft .tick text { fill: var(--muted); font-size: 11px; }
+    #vla-resource-draft .tick line { stroke: var(--grid); }
+    #vla-resource-draft .domain { stroke: var(--border); }
+    #vla-resource-draft .chart-frame { fill: none; stroke: var(--border); stroke-width: 1; }
+    #vla-resource-draft .tooltip { position: fixed; z-index: 10; pointer-events: none; opacity: 0; background: var(--popover); color: var(--popover-foreground); border: 1px solid var(--border); padding: 8px 10px; font-size: 12px; line-height: 1.35; max-width: 260px; }
+    #vla-resource-draft .tooltip .tip-title { font-weight: 650; margin-bottom: 4px; }
+    #vla-resource-draft .footnote { border-top: 1px solid var(--border); margin-top: 18px; padding-top: 10px; color: var(--muted); font-size: 11px; }
+    @media (max-width: 760px) {
+      #vla-resource-draft .chart-grid { grid-template-columns: 1fr; gap: 20px; }
+      #vla-resource-draft .chart-block.wide { grid-column: auto; }
+    }
+  </style>
+
+  <div class="draft-header">
+    <h2>VLA / 大模型算力需求：经理版草图</h2>
+    <p>先看图形和信息层级；数值沿用当前对话中的草稿，带“估算”或“规划”的项不用于采购。</p>
+  </div>
+
+  <div class="chart-grid">
+    <section class="chart-block">
+      <div class="chart-title">图 1：总 GPU 显存（对数坐标，GB）</div>
+      <div class="legend" data-legend="memory"></div>
+      <svg data-chart="memory" role="img" aria-label="不同模型在不同使用方式下的总 GPU 显存草稿"></svg>
+      <div class="chart-note">横轴是整套部署的 GPU 显存容量；空白表示当前材料没有可靠数字。</div>
+    </section>
+
+    <section class="chart-block">
+      <div class="chart-title">图 2：推荐推理配置折算成 A800 / H20 卡数</div>
+      <div class="legend" data-legend="cards"></div>
+      <svg data-chart="cards" role="img" aria-label="推荐推理配置折算成 A800 和 H20 卡数"></svg>
+      <div class="chart-note">临时按 A800 80GB、H20 96GB 计算；实际应以对方文档中的具体 SKU 和可用容量替换。</div>
+    </section>
+
+    <section class="chart-block wide">
+      <div class="chart-title">图 3：不同任务的资源瓶颈（定性示意）</div>
+      <svg data-chart="bottleneck" role="img" aria-label="不同任务对显存容量、GPU 算力、显存带宽和多卡互联的关注度"></svg>
+      <div class="chart-note">1 = 次要关注，3 = 首要关注；这是解释用的经验示意，不是基准测试结果。</div>
+    </section>
+  </div>
+
+  <div class="footnote">数据口径：ACT、SmolVLA、π0.5、UniFoLM-VLA-0 等沿用此前草稿的代表值；DeepSeek-V4-Flash 的 564GB 是 4×H200 官方拓扑示例，DeepSeek-V4.1-Flash 的 640GB 是 8×80GB 规划值，GLM-5.3-Flash 的 320GB 是量化推理的规划估值。拿到平台文档后应重新填充。</div>
+  <div class="tooltip" role="tooltip" aria-hidden="true"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+  <script>
+  (() => {
+    const root = document.getElementById('vla-resource-draft');
+    if (!root || typeof d3 === 'undefined') return;
+
+    const modes = [
+      { key: 'inference', label: '推理', color: 'var(--viz-series-1)' },
+      { key: 'lora', label: 'LoRA / PEFT', color: 'var(--viz-series-2)' },
+      { key: 'sft', label: '常规 / 官方微调', color: 'var(--viz-series-3)' },
+      { key: 'full', label: '全参微调', color: 'var(--viz-series-4)' }
+    ];
+
+    const models = [
+      { name: 'ACT', inference: { value: 1.5, label: '1–2', basis: '估算' }, lora: null, sft: { value: 4, label: '2–6', basis: '估算' }, full: { value: 4, label: '2–6', basis: '估算' } },
+      { name: 'SmolVLA', inference: { value: 6, label: '4–8', basis: '估算' }, lora: { value: 9, label: '6–12', basis: '估算' }, sft: { value: 13, label: '10–16', basis: '估算' }, full: { value: 16, label: '12–20', basis: '估算' } },
+      { name: 'π0.5', inference: { value: 20, label: '16–24', basis: '官方/建议' }, lora: { value: 22.5, label: '>22.5', basis: '官方' }, sft: { value: 32, label: '24–40', basis: '估算' }, full: { value: 70, label: '>70', basis: '官方' } },
+      { name: 'UniFoLM-VLA-0', inference: { value: 48, label: '48 推荐', basis: '估算' }, lora: { value: 40, label: '32–48', basis: '估算' }, sft: { value: 64, label: '48–80', basis: '估算' }, full: { value: 320, label: '4×80', basis: '估算' } },
+      { name: 'DeepSeek-V4-Flash', inference: { value: 564, label: '4×H200=564', basis: '官方拓扑' }, lora: null, sft: null, full: null },
+      { name: 'DeepSeek-V4.1-Flash', inference: { value: 640, label: '8×80 规划', basis: '规划估算' }, lora: null, sft: null, full: null },
+      { name: 'GLM-5.3-Flash', inference: { value: 320, label: '4×80 规划', basis: '量化估算' }, lora: null, sft: null, full: null }
+    ];
+
+    const cardSeries = [
+      { key: 'a800', label: 'A800 80GB', color: 'var(--viz-series-1)', memory: 80 },
+      { key: 'h20', label: 'H20 96GB', color: 'var(--viz-series-2)', memory: 96 }
+    ];
+
+    const inferenceTotals = [
+      { name: 'ACT', value: 24, label: '1×24 规划' },
+      { name: 'SmolVLA', value: 24, label: '1×24 规划' },
+      { name: 'π0.5', value: 80, label: '1×80+' },
+      { name: 'UniFoLM-VLA-0', value: 48, label: '1×48 推荐' },
+      { name: 'DeepSeek-V4-Flash', value: 564, label: '4×H200 官方' },
+      { name: 'DeepSeek-V4.1-Flash', value: 640, label: '8×80 规划' },
+      { name: 'GLM-5.3-Flash', value: 320, label: '4×80 估算' }
+    ];
+
+    const bottleneckRows = [
+      { name: '从头 / 全参训练', capacity: 3, compute: 2, bandwidth: 1, fabric: 3 },
+      { name: '全参 SFT', capacity: 3, compute: 2, bandwidth: 1, fabric: 3 },
+      { name: 'LoRA / QLoRA', capacity: 2, compute: 3, bandwidth: 1, fabric: 2 },
+      { name: '推理 Prefill', capacity: 2, compute: 3, bandwidth: 2, fabric: 2 },
+      { name: '推理 Decode', capacity: 2, compute: 2, bandwidth: 3, fabric: 2 },
+      { name: '长上下文 / 高并发推理', capacity: 3, compute: 2, bandwidth: 2, fabric: 2 }
+    ];
+    const bottleneckCols = [
+      { key: 'capacity', label: '显存容量', color: 'var(--viz-series-1)' },
+      { key: 'compute', label: 'GPU 算力', color: 'var(--viz-series-2)' },
+      { key: 'bandwidth', label: '显存带宽', color: 'var(--viz-series-3)' },
+      { key: 'fabric', label: '多卡互联', color: 'var(--viz-series-4)' }
+    ];
+
+    const tooltip = root.querySelector('.tooltip');
+    const active = new Map(modes.map(d => [d.key, true]));
+
+    function makeLegend(which) {
+      const host = root.querySelector(`[data-legend="${which}"]`);
+      if (!host) return;
+      const series = which === 'memory' ? modes : cardSeries;
+      host.replaceChildren();
+      series.forEach(s => {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.setAttribute('aria-pressed', 'true');
+        button.innerHTML = `<span class="swatch" style="--swatch:${s.color}"></span>${s.label}`;
+        button.addEventListener('click', () => {
+          const state = button.getAttribute('aria-pressed') === 'true';
+          button.setAttribute('aria-pressed', String(!state));
+          if (which === 'memory') active.set(s.key, !state);
+          else cardActive.set(s.key, !state);
+          drawAll();
+        });
+        host.appendChild(button);
+      });
+    }
+
+    const cardActive = new Map(cardSeries.map(d => [d.key, true]));
+    makeLegend('memory');
+    makeLegend('cards');
+
+    function showTip(event, title, rows) {
+      tooltip.innerHTML = `<div class="tip-title">${title}</div>${rows.map(r => `<div>${r}</div>`).join('')}`;
+      tooltip.style.opacity = '1';
+      tooltip.setAttribute('aria-hidden', 'false');
+      const pad = 12;
+      const rect = tooltip.getBoundingClientRect();
+      const x = Math.min(window.innerWidth - rect.width - pad, event.clientX + 14);
+      const y = Math.min(window.innerHeight - rect.height - pad, event.clientY + 14);
+      tooltip.style.left = `${Math.max(pad, x)}px`;
+      tooltip.style.top = `${Math.max(pad, y)}px`;
+    }
+    function hideTip() { tooltip.style.opacity = '0'; tooltip.setAttribute('aria-hidden', 'true'); }
+
+    function sizeSvg(svg, height) {
+      const width = Math.max(320, svg.parentElement.clientWidth || 640);
+      svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
+      svg.setAttribute('height', height);
+      return { width, height };
+    }
+
+    function drawMemory() {
+      const svg = d3.select(root.querySelector('svg[data-chart="memory"]'));
+      const { width, height } = sizeSvg(svg.node(), 420);
+      svg.selectAll('*').remove();
+      const margin = { top: 22, right: 18, bottom: 46, left: 152 };
+      const frame = { x: margin.left, y: margin.top, w: width - margin.left - margin.right, h: height - margin.top - margin.bottom };
+      const x = d3.scaleLog().domain([1, 1000]).range([frame.x, frame.x + frame.w]);
+      const y = d3.scaleBand().domain(models.map(d => d.name)).range([frame.y, frame.y + frame.h]).paddingInner(0.25);
+      const visibleModes = modes.filter(d => active.get(d.key));
+      const offset = d3.scaleBand().domain(visibleModes.map(d => d.key)).range([0, y.bandwidth()]).padding(0.18);
+      const ticks = [1, 2, 5, 10, 20, 50, 100, 200, 500, 1000];
+      const xAxis = d3.axisBottom(x).tickValues(ticks).tickFormat(d => d >= 1000 ? '1k' : d);
+      const yAxis = d3.axisLeft(y).tickSize(0);
+      svg.append('rect').attr('data-chart-frame', true).attr('class', 'chart-frame').attr('x', frame.x).attr('y', frame.y).attr('width', frame.w).attr('height', frame.h);
+      svg.append('g').attr('transform', `translate(0,${frame.y + frame.h})`).call(xAxis).call(g => g.selectAll('.tick line').attr('y2', -frame.h)).call(g => g.select('.domain').remove());
+      svg.append('g').attr('transform', `translate(${frame.x},0)`).call(yAxis).call(g => g.select('.domain').remove());
+      svg.append('text').attr('class', 'axis-title').attr('data-axis', 'x').attr('x', frame.x + frame.w / 2).attr('y', height - 8).attr('text-anchor', 'middle').text('总 GPU 显存 / GB（对数）');
+      svg.append('text').attr('class', 'axis-title').attr('data-axis', 'y').attr('transform', `translate(15,${frame.y + frame.h / 2}) rotate(-90)`).attr('text-anchor', 'middle').text('模型');
+      const points = [];
+      models.forEach(model => visibleModes.forEach(mode => {
+        const datum = model[mode.key];
+        if (datum) points.push({ model, mode, datum });
+      }));
+      svg.append('g').selectAll('circle').data(points).join('circle')
+        .attr('cx', d => x(d.datum.value)).attr('cy', d => y(d.model.name) + offset(d.mode.key) + offset.bandwidth() / 2)
+        .attr('r', 5).attr('fill', d => d.mode.color).attr('stroke', 'var(--foreground)').attr('stroke-width', 0.7)
+        .attr('data-chart-hit', true)
+        .on('pointerenter', (event, d) => showTip(event, d.model.name, [`${d.mode.label}：${d.datum.label} GB`, `口径：${d.datum.basis}`]))
+        .on('pointermove', (event, d) => showTip(event, d.model.name, [`${d.mode.label}：${d.datum.label} GB`, `口径：${d.datum.basis}`]))
+        .on('pointerleave', hideTip);
+    }
+
+    function drawCards() {
+      const svg = d3.select(root.querySelector('svg[data-chart="cards"]'));
+      const { width, height } = sizeSvg(svg.node(), 420);
+      svg.selectAll('*').remove();
+      const margin = { top: 22, right: 18, bottom: 46, left: 152 };
+      const frame = { x: margin.left, y: margin.top, w: width - margin.left - margin.right, h: height - margin.top - margin.bottom };
+      const visible = cardSeries.filter(d => cardActive.get(d.key));
+      const x = d3.scaleLinear().domain([0, 9]).range([frame.x, frame.x + frame.w]);
+      const y = d3.scaleBand().domain(inferenceTotals.map(d => d.name)).range([frame.y, frame.y + frame.h]).paddingInner(0.25);
+      const offset = d3.scaleBand().domain(visible.map(d => d.key)).range([0, y.bandwidth()]).padding(0.18);
+      const xAxis = d3.axisBottom(x).tickValues(d3.range(0, 10)).tickFormat(d => d === 9 ? '9+' : d);
+      const yAxis = d3.axisLeft(y).tickSize(0);
+      svg.append('rect').attr('data-chart-frame', true).attr('class', 'chart-frame').attr('x', frame.x).attr('y', frame.y).attr('width', frame.w).attr('height', frame.h);
+      svg.append('g').attr('transform', `translate(0,${frame.y + frame.h})`).call(xAxis).call(g => g.selectAll('.tick line').attr('y2', -frame.h)).call(g => g.select('.domain').remove());
+      svg.append('g').attr('transform', `translate(${frame.x},0)`).call(yAxis).call(g => g.select('.domain').remove());
+      svg.append('text').attr('class', 'axis-title').attr('data-axis', 'x').attr('x', frame.x + frame.w / 2).attr('y', height - 8).attr('text-anchor', 'middle').text('卡数（按容量向上取整）');
+      svg.append('text').attr('class', 'axis-title').attr('data-axis', 'y').attr('transform', `translate(15,${frame.y + frame.h / 2}) rotate(-90)`).attr('text-anchor', 'middle').text('模型');
+      const points = [];
+      inferenceTotals.forEach(model => visible.forEach(card => points.push({ model, card, count: Math.ceil(model.value / card.memory) })));
+      svg.append('g').selectAll('rect.bar').data(points).join('rect').attr('class', 'bar')
+        .attr('x', frame.x).attr('y', d => y(d.model.name) + offset(d.card.key)).attr('width', d => Math.max(2, x(d.count) - frame.x)).attr('height', offset.bandwidth())
+        .attr('fill', d => d.card.color).attr('opacity', 0.84).attr('data-chart-hit', true)
+        .on('pointerenter', (event, d) => showTip(event, d.model.name, [`${d.card.label}：${d.count} 张`, `基准：${d.model.label}`]))
+        .on('pointermove', (event, d) => showTip(event, d.model.name, [`${d.card.label}：${d.count} 张`, `基准：${d.model.label}`]))
+        .on('pointerleave', hideTip);
+      svg.append('g').selectAll('text.value').data(points).join('text').attr('class', 'value')
+        .attr('x', d => Math.min(frame.x + frame.w - 4, x(d.count) + 5)).attr('y', d => y(d.model.name) + offset(d.card.key) + offset.bandwidth() / 2 + 4)
+        .attr('font-size', 11).attr('fill', 'var(--muted)').text(d => `${d.count}`);
+    }
+
+    function drawBottleneck() {
+      const svg = d3.select(root.querySelector('svg[data-chart="bottleneck"]'));
+      const { width, height } = sizeSvg(svg.node(), 300);
+      svg.selectAll('*').remove();
+      const margin = { top: 54, right: 18, bottom: 24, left: 150 };
+      const frame = { x: margin.left, y: margin.top, w: width - margin.left - margin.right, h: height - margin.top - margin.bottom };
+      const x = d3.scaleBand().domain(bottleneckCols.map(d => d.key)).range([frame.x, frame.x + frame.w]).padding(0.12);
+      const y = d3.scaleBand().domain(bottleneckRows.map(d => d.name)).range([frame.y, frame.y + frame.h]).padding(0.1);
+      svg.append('rect').attr('data-chart-frame', true).attr('class', 'chart-frame').attr('x', frame.x).attr('y', frame.y).attr('width', frame.w).attr('height', frame.h);
+      svg.append('g').attr('transform', `translate(0,${frame.y})`).call(d3.axisTop(x).tickSize(0).tickFormat(d => bottleneckCols.find(c => c.key === d).label)).call(g => g.select('.domain').remove()).call(g => g.selectAll('.tick text').attr('text-anchor', 'middle').attr('dy', '-0.45em'));
+      svg.append('g').attr('transform', `translate(${frame.x},0)`).call(d3.axisLeft(y).tickSize(0)).call(g => g.select('.domain').remove());
+      svg.append('text').attr('class', 'axis-title').attr('data-axis', 'y').attr('transform', `translate(15,${frame.y + frame.h / 2}) rotate(-90)`).attr('text-anchor', 'middle').text('任务');
+      const cells = [];
+      bottleneckRows.forEach(row => bottleneckCols.forEach(col => cells.push({ row, col, value: row[col.key] })));
+      svg.append('g').selectAll('rect.cell').data(cells).join('rect').attr('class', 'cell')
+        .attr('x', d => x(d.col.key)).attr('y', d => y(d.row.name)).attr('width', x.bandwidth()).attr('height', y.bandwidth())
+        .attr('fill', d => d.col.color).attr('opacity', d => [0.16, 0.45, 0.82][d.value - 1]).attr('data-chart-hit', true)
+        .on('pointerenter', (event, d) => showTip(event, d.row.name, [`${d.col.label}：${d.value === 3 ? '高' : d.value === 2 ? '中' : '低'}`]))
+        .on('pointermove', (event, d) => showTip(event, d.row.name, [`${d.col.label}：${d.value === 3 ? '高' : d.value === 2 ? '中' : '低'}`]))
+        .on('pointerleave', hideTip);
+      svg.append('g').selectAll('text.cell-value').data(cells).join('text').attr('class', 'cell-value')
+        .attr('x', d => x(d.col.key) + x.bandwidth() / 2).attr('y', d => y(d.row.name) + y.bandwidth() / 2 + 4).attr('text-anchor', 'middle').text(d => d.value === 3 ? '高' : d.value === 2 ? '中' : '低');
+    }
+
+    function drawAll() { drawMemory(); drawCards(); drawBottleneck(); }
+    drawAll();
+    const observer = new ResizeObserver(drawAll);
+    root.querySelectorAll('svg').forEach(svg => observer.observe(svg.parentElement));
+  })();
+  </script>
+</div>

@@ -1,0 +1,60 @@
+{
+  "schema": "codex.s1.fdp_orin_probe.v1",
+  "input_dir": "/data/input",
+  "input_shape": {
+    "rgb": [
+      720,
+      1280,
+      3
+    ],
+    "depth": [
+      720,
+      1280
+    ],
+    "mask": [
+      720,
+      1280
+    ]
+  },
+  "tracker": "off",
+  "est_refine_iter": 2,
+  "timing_seconds": {
+    "process_wall": 128.6457978419985,
+    "import_fdp": 7.342350812999939,
+    "model_init": 106.93170080599884,
+    "first_frame_track": 11.291384029000255
+  },
+  "pose_camera_from_mesh_center": [
+    [
+      -0.026215745395605228,
+      0.0030464924813308645,
+      0.9993587544627427,
+      0.44806404058796484
+    ],
+    [
+      -0.8260538671361464,
+      -0.562902281951511,
+      -0.019953755765615196,
+      -0.14570346934229378
+    ],
+    [
+      0.5628851022770256,
+      -0.8266662183752272,
+      0.01725983025087655,
+      1.8935071288809455
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "cuda_available": true,
+  "cuda_device": "Orin",
+  "torch_version": "2.0.0a0+ec3941ad.nv23.02",
+  "torch_cuda_version": "11.4",
+  "motion_commands_sent": false,
+  "robot_sdk_called": false,
+  "network_services_called": false
+}

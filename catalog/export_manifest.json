@@ -1,28 +1,26 @@
 {
   "export_version": 2,
-  "generated_at": "2026-09-12T09:59:21.942656+08:00",
+  "generated_at": "2026-09-24T16:31:33.279395+08:00",
+  "snapshot_cutoff": "2026-09-24T16:31:22.354200+08:00",
+  "rollout_segment_count": 233,
   "thread_scope": "user",
-  "thread_count": 124,
-  "archived_count": 1,
-  "message_count": 3596,
-  "redaction_count": 68,
+  "thread_count": 195,
+  "archived_count": 5,
+  "message_count": 6070,
+  "redaction_count": 82,
   "missing_rollout_count": 0,
   "parse_error_count": 0,
   "attachments_exported": true,
-  "asset_count": 366,
-  "asset_bytes": 103973305,
-  "asset_reference_count": 2405,
-  "unresolved_reference_count": 1757,
-  "visualization_count": 11,
-  "orphan_attachment_count": 17,
-  "link_count": 237,
-  "link_checked_count": 214,
+  "asset_count": 753,
+  "asset_bytes": 224242241,
+  "asset_reference_count": 3541,
+  "unresolved_reference_count": 2354,
+  "visualization_count": 18,
+  "orphan_attachment_count": 18,
+  "link_count": 359,
+  "link_checked_count": 0,
   "link_status_counts": {
-    "http_error": 13,
-    "network_error": 4,
-    "ok": 131,
-    "redirected": 66,
-    "skipped": 23
+    "not_checked": 359
   },
   "excluded_record_types": [
     "session_meta",
@@ -33,12 +31,13 @@
     "subagent activity"
   ],
   "project_counts": {
-    "S1 IE_lab 拆垛": 65,
-    "VLA G1 项目": 31,
+    "S1 IE_lab 拆垛": 101,
+    "VLA G1 项目": 59,
     "VLA 项目": 4,
-    "无项目对话": 17,
+    "无项目对话": 24,
     "本地对话云端接口": 2,
     "遥操主臂 和 synthnova": 3,
     "银河通用s1 项目 代码": 2
-  }
+  },
+  "preserved_asset_count": 9
 }

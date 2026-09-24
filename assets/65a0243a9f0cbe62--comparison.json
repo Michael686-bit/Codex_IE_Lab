@@ -1,0 +1,3085 @@
+{
+  "schema": "s1.v5_r.report.v1",
+  "batch": "experiments/20260916_v5_r_roi_init/remote_full_20260916T071438Z",
+  "groups": {
+    "BCM": {
+      "accepted": 10,
+      "algorithm_seconds": {
+        "n": 12,
+        "median": 16.23395563650047,
+        "min": 14.003350088001753,
+        "max": 19.693771443002333,
+        "mean": 16.77469804258423
+      },
+      "wall_seconds": {
+        "n": 12,
+        "median": 17.23599464000108,
+        "min": 15.00508484600141,
+        "max": 20.673210535002,
+        "mean": 17.772076031833723
+      },
+      "seed_count": [
+        12
+      ],
+      "fit_count": [
+        14
+      ],
+      "rejected_to_accepted": [],
+      "accepted_to_rejected": [],
+      "center_vs_BCM_mm": {
+        "n": 12,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "mean": 0.0
+      },
+      "yaw_vs_BCM_deg": {
+        "n": 12,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "mean": 0.0
+      },
+      "center_vs_FDP_mm_all_candidates": {
+        "n": 12,
+        "median": 10.09882904498938,
+        "min": 7.552446668974234,
+        "max": 17.92523233588406,
+        "mean": 10.760598524473906
+      },
+      "yaw_vs_FDP_deg_all_candidates": {
+        "n": 12,
+        "median": 1.1557363239972098,
+        "min": 0.12406377216449561,
+        "max": 2.1508156338951427,
+        "mean": 1.0318173894255769
+      },
+      "center_vs_FDP_mm_accepted": {
+        "n": 10,
+        "median": 9.841406772620498,
+        "min": 7.552446668974234,
+        "max": 14.364639421722567,
+        "mean": 10.108204691711837
+      }
+    },
+    "M": {
+      "accepted": 6,
+      "algorithm_seconds": {
+        "n": 12,
+        "median": 6.050791278499673,
+        "min": 3.9808207860005496,
+        "max": 7.575942679999571,
+        "mean": 5.767862656999871
+      },
+      "wall_seconds": {
+        "n": 12,
+        "median": 7.060135432497191,
+        "min": 4.980772342998534,
+        "max": 8.58965309099949,
+        "mean": 6.780548893332707
+      },
+      "seed_count": [
+        12
+      ],
+      "fit_count": [
+        14
+      ],
+      "rejected_to_accepted": [],
+      "accepted_to_rejected": [
+        "D01",
+        "D02",
+        "D08",
+        "D09"
+      ],
+      "center_vs_BCM_mm": {
+        "n": 12,
+        "median": 6.864767214822624,
+        "min": 0.0,
+        "max": 27.86491438936143,
+        "mean": 9.765685620058637
+      },
+      "yaw_vs_BCM_deg": {
+        "n": 12,
+        "median": 35.29918793261123,
+        "min": 0.0,
+        "max": 78.72543970861302,
+        "mean": 37.42367358751613
+      },
+      "center_vs_FDP_mm_all_candidates": {
+        "n": 12,
+        "median": 12.814725205651023,
+        "min": 7.552446668974234,
+        "max": 35.77298876316189,
+        "mean": 17.695225836062495
+      },
+      "yaw_vs_FDP_deg_all_candidates": {
+        "n": 12,
+        "median": 37.10315778170761,
+        "min": 0.7366538998367566,
+        "max": 78.25016750210591,
+        "mean": 38.00027663789755
+      },
+      "center_vs_FDP_mm_accepted": {
+        "n": 6,
+        "median": 9.635076484399598,
+        "min": 7.552446668974234,
+        "max": 11.925843306082804,
+        "mean": 9.517813760923943
+      }
+    },
+    "R1": {
+      "accepted": 8,
+      "algorithm_seconds": {
+        "n": 12,
+        "median": 0.861772000500423,
+        "min": 0.6971932369997376,
+        "max": 1.0570926389991655,
+        "mean": 0.8800261734168089
+      },
+      "wall_seconds": {
+        "n": 12,
+        "median": 1.8707851649996883,
+        "min": 1.6704128780002065,
+        "max": 2.071125646998553,
+        "mean": 1.8835730222493414
+      },
+      "seed_count": [
+        1
+      ],
+      "fit_count": [
+        3
+      ],
+      "rejected_to_accepted": [],
+      "accepted_to_rejected": [
+        "D01",
+        "D02"
+      ],
+      "center_vs_BCM_mm": {
+        "n": 12,
+        "median": 2.605037251041993,
+        "min": 0.7667467128171127,
+        "max": 4.334432572126871,
+        "mean": 2.726679406727493
+      },
+      "yaw_vs_BCM_deg": {
+        "n": 12,
+        "median": 0.19392268112568303,
+        "min": 0.019826318738979828,
+        "max": 0.6172771855936182,
+        "mean": 0.24669828939375266
+      },
+      "center_vs_FDP_mm_all_candidates": {
+        "n": 12,
+        "median": 9.346102101806755,
+        "min": 6.650225318886366,
+        "max": 20.21924530794461,
+        "mean": 10.376213171293365
+      },
+      "yaw_vs_FDP_deg_all_candidates": {
+        "n": 12,
+        "median": 1.0590855647087296,
+        "min": 0.10498638173652299,
+        "max": 1.6759340280120367,
+        "mean": 0.969556296789545
+      },
+      "center_vs_FDP_mm_accepted": {
+        "n": 8,
+        "median": 9.042435675753072,
+        "min": 6.650225318886366,
+        "max": 11.953047097498295,
+        "mean": 8.915551356181023
+      }
+    },
+    "R9": {
+      "accepted": 8,
+      "algorithm_seconds": {
+        "n": 12,
+        "median": 3.1331348520016036,
+        "min": 2.327722955000354,
+        "max": 3.5099314549988776,
+        "mean": 3.049346791500587
+      },
+      "wall_seconds": {
+        "n": 12,
+        "median": 4.127729458999966,
+        "min": 3.375020552000933,
+        "max": 4.529026305001025,
+        "mean": 4.056506352833821
+      },
+      "seed_count": [
+        9
+      ],
+      "fit_count": [
+        11
+      ],
+      "rejected_to_accepted": [],
+      "accepted_to_rejected": [
+        "D01",
+        "D02"
+      ],
+      "center_vs_BCM_mm": {
+        "n": 12,
+        "median": 1.844065288907554,
+        "min": 0.1533428440566611,
+        "max": 4.366673604892209,
+        "mean": 2.097336096223363
+      },
+      "yaw_vs_BCM_deg": {
+        "n": 12,
+        "median": 0.1638956016698898,
+        "min": 0.020974645065286956,
+        "max": 0.6138527030503684,
+        "mean": 0.20998728985653484
+      },
+      "center_vs_FDP_mm_all_candidates": {
+        "n": 12,
+        "median": 9.3196156133158,
+        "min": 6.786390627781613,
+        "max": 18.191993891951178,
+        "mean": 9.961826541403845
+      },
+      "yaw_vs_FDP_deg_all_candidates": {
+        "n": 12,
+        "median": 1.0895785701664797,
+        "min": 0.06458312897271469,
+        "max": 2.1990566978396484,
+        "mean": 1.0279141615634013
+      },
+      "center_vs_FDP_mm_accepted": {
+        "n": 8,
+        "median": 8.769047461854939,
+        "min": 6.786390627781613,
+        "max": 9.81620501822954,
+        "mean": 8.572394945935304
+      }
+    },
+    "RM": {
+      "accepted": 8,
+      "algorithm_seconds": {
+        "n": 12,
+        "median": 5.608235996001895,
+        "min": 3.8546643589979794,
+        "max": 7.125371608999558,
+        "mean": 5.430099591000119
+      },
+      "wall_seconds": {
+        "n": 12,
+        "median": 6.634683669000879,
+        "min": 4.87801424600184,
+        "max": 8.140657842002838,
+        "mean": 6.437540601834068
+      },
+      "seed_count": [
+        12
+      ],
+      "fit_count": [
+        14
+      ],
+      "rejected_to_accepted": [],
+      "accepted_to_rejected": [
+        "D01",
+        "D02"
+      ],
+      "center_vs_BCM_mm": {
+        "n": 12,
+        "median": 1.0258738501772515,
+        "min": 0.0,
+        "max": 4.334432572126871,
+        "mean": 1.5558332250682116
+      },
+      "yaw_vs_BCM_deg": {
+        "n": 12,
+        "median": 0.06989760085782909,
+        "min": 0.0,
+        "max": 0.6039065848969963,
+        "mean": 0.1725620340646451
+      },
+      "center_vs_FDP_mm_all_candidates": {
+        "n": 12,
+        "median": 9.938233297330456,
+        "min": 7.482102444074936,
+        "max": 20.21924530794461,
+        "mean": 10.754055193912397
+      },
+      "yaw_vs_FDP_deg_all_candidates": {
+        "n": 12,
+        "median": 1.1540099023689705,
+        "min": 0.10498638173652299,
+        "max": 1.6759340280120367,
+        "mean": 1.001964594846154
+      },
+      "center_vs_FDP_mm_accepted": {
+        "n": 8,
+        "median": 9.495554732435728,
+        "min": 7.482102444074936,
+        "max": 11.925843306082804,
+        "mean": 9.482314390109568
+      }
+    }
+  },
+  "rows": [
+    {
+      "frame": "D01",
+      "group": "BCM",
+      "accepted": true,
+      "algorithm_seconds": 14.379152057997999,
+      "wall_seconds": 15.359396693002054,
+      "rejection_reasons": [],
+      "seed_count": 12,
+      "fit_count": 14,
+      "best_sources": [
+        "C_multiplane_joint"
+      ],
+      "variant": "BCM",
+      "delta_vs_BCM": {
+        "center_mm": 0.0,
+        "yaw_sym180_deg": 0.0,
+        "rim_center_mm": 0.0,
+        "short_edge_labeled_mm": [
+          0.0,
+          0.0
+        ],
+        "short_edge_unordered_mm": [
+          0.0,
+          0.0
+        ],
+        "short_edge_max_unordered_mm": 0.0
+      },
+      "delta_vs_FDP": {
+        "center_mm": 14.364639421722567,
+        "yaw_sym180_deg": 1.174919163490244,
+        "rim_center_mm": 16.43906444304987,
+        "short_edge_labeled_mm": [
+          22.354335014745836,
+          10.954983007565874
+        ],
+        "short_edge_unordered_mm": [
+          22.354335014745836,
+          10.954983007565874
+        ],
+        "short_edge_max_unordered_mm": 22.354335014745836
+      },
+      "rejected_to_accepted": false,
+      "accepted_to_rejected": false,
+      "native_rival_count": 0
+    },
+    {
+      "frame": "D01",
+      "group": "M",
+      "accepted": false,
+      "algorithm_seconds": 4.3747331209997355,
+      "wall_seconds": 5.380633246000798,
+      "rejection_reasons": [
+        "visible_shell_residual_or_coverage_too_low",
+        "ambiguous_inner_outer_surface_hypotheses"
+      ],
+      "seed_count": 12,
+      "fit_count": 14,
+      "best_sources": [
+        "mesh_coarse_projection"
+      ],
+      "variant": "M",
+      "delta_vs_BCM": {
+        "center_mm": 13.893729233510257,
+        "yaw_sym180_deg": 76.48366653742812,
+        "rim_center_mm": 13.893729233510257,
+        "short_edge_labeled_mm": [
+          243.6499391721525,
+          254.80835751575347
+        ],
+        "short_edge_unordered_mm": [
+          243.6499391721525,
+          254.80835751575347
+        ],
+        "short_edge_max_unordered_mm": 254.80835751575347
+      },
+      "delta_vs_FDP": {
+        "center_mm": 13.70360710521924,
+        "yaw_sym180_deg": 75.30874737393788,
+        "rim_center_mm": 16.568584832235807,
+        "short_edge_labeled_mm": [
+          233.24786511993278,
+          257.3179287771609
+        ],
+        "short_edge_unordered_mm": [
+          233.24786511993278,
+          257.3179287771609
+        ],
+        "short_edge_max_unordered_mm": 257.3179287771609
+      },
+      "rejected_to_accepted": false,
+      "accepted_to_rejected": true,
+      "native_rival_count": 0
+    },
+    {
+      "frame": "D01",
+      "group": "R1",
+      "accepted": false,
+      "algorithm_seconds": 0.6971932369997376,
+      "wall_seconds": 1.6704128780002065,
+      "rejection_reasons": [
+        "ambiguous_inner_outer_surface_hypotheses"
+      ],
+      "seed_count": 1,
+      "fit_count": 3,
+      "best_sources": [
+        "R_roi"
+      ],
+      "variant": "R1",
+      "delta_vs_BCM": {
+        "center_mm": 2.4972567838387674,
+        "yaw_sym180_deg": 0.5010148645217927,
+        "rim_center_mm": 2.4972567838387674,
+        "short_edge_labeled_mm": [
+          2.519372937368215,
+          3.5081869637710144
+        ],
+        "short_edge_unordered_mm": [
+          2.519372937368215,
+          3.5081869637710144
+        ],
+        "short_edge_max_unordered_mm": 3.5081869637710144
+      },
+      "delta_vs_FDP": {
+        "center_mm": 12.809502956028519,
+        "yaw_sym180_deg": 1.6759340280120367,
+        "rim_center_mm": 15.153065253155455,
+        "short_edge_labeled_mm": [
+          22.521274451794998,
+          8.139026859933844
+        ],
+        "short_edge_unordered_mm": [
+          22.521274451794998,
+          8.139026859933844
+        ],
+        "short_edge_max_unordered_mm": 22.521274451794998
+      },
+      "rejected_to_accepted": false,
+      "accepted_to_rejected": true,
+      "native_rival_count": 0
+    },
+    {
+      "frame": "D01",
+      "group": "R9",
+      "accepted": false,
+      "algorithm_seconds": 3.2198843420010235,
+      "wall_seconds": 4.177499736000755,
+      "rejection_reasons": [
+        "ambiguous_inner_outer_surface_hypotheses"
+      ],
+      "seed_count": 9,
+      "fit_count": 11,
+      "best_sources": [
+        "R_roi"
+      ],
+      "variant": "R9",
+      "delta_vs_BCM": {
+        "center_mm": 2.7359491396486946,
+        "yaw_sym180_deg": 0.4565879345565547,
+        "rim_center_mm": 2.7359491396486946,
+        "short_edge_labeled_mm": [
+          2.722422241210838,
+          3.562798197288844
+        ],
+        "short_edge_unordered_mm": [
+          2.722422241210838,
+          3.562798197288844
+        ],
+        "short_edge_max_unordered_mm": 3.562798197288844
+      },
+      "delta_vs_FDP": {
+        "center_mm": 12.856416279378877,
+        "yaw_sym180_deg": 1.631507098046799,
+        "rim_center_mm": 15.239080363454079,
+        "short_edge_labeled_mm": [
+          22.513597441141695,
+          8.259511780665635
+        ],
+        "short_edge_unordered_mm": [
+          22.513597441141695,
+          8.259511780665635
+        ],
+        "short_edge_max_unordered_mm": 22.513597441141695
+      },
+      "rejected_to_accepted": false,
+      "accepted_to_rejected": true,
+      "native_rival_count": 0
+    },
+    {
+      "frame": "D01",
+      "group": "RM",
+      "accepted": false,
+      "algorithm_seconds": 4.118376851001813,
+      "wall_seconds": 5.129297769999539,
+      "rejection_reasons": [
+        "ambiguous_inner_outer_surface_hypotheses"
+      ],
+      "seed_count": 12,
+      "fit_count": 14,
+      "best_sources": [
+        "R_roi"
+      ],
+      "variant": "RM",
+      "delta_vs_BCM": {
+        "center_mm": 2.4972567838387674,
+        "yaw_sym180_deg": 0.5010148645217927,
+        "rim_center_mm": 2.4972567838387674,
+        "short_edge_labeled_mm": [
+          2.519372937368215,
+          3.5081869637710144
+        ],
+        "short_edge_unordered_mm": [
+          2.519372937368215,
+          3.5081869637710144
+        ],
+        "short_edge_max_unordered_mm": 3.5081869637710144
+      },
+      "delta_vs_FDP": {
+        "center_mm": 12.809502956028519,
+        "yaw_sym180_deg": 1.6759340280120367,
+        "rim_center_mm": 15.153065253155455,
+        "short_edge_labeled_mm": [
+          22.521274451794998,
+          8.139026859933844
+        ],
+        "short_edge_unordered_mm": [
+          22.521274451794998,
+          8.139026859933844
+        ],
+        "short_edge_max_unordered_mm": 22.521274451794998
+      },
+      "rejected_to_accepted": false,
+      "accepted_to_rejected": true,
+      "native_rival_count": 0
+    },
+    {
+      "frame": "D02",
+      "group": "BCM",
+      "accepted": true,
+      "algorithm_seconds": 16.169677870002488,
+      "wall_seconds": 17.211091211000166,
+      "rejection_reasons": [],
+      "seed_count": 12,
+      "fit_count": 14,
+      "best_sources": [
+        "B_rim"
+      ],
+      "variant": "BCM",
+      "delta_vs_BCM": {
+        "center_mm": 0.0,
+        "yaw_sym180_deg": 0.0,
+        "rim_center_mm": 0.0,
+        "short_edge_labeled_mm": [
+          0.0,
+          0.0
+        ],
+        "short_edge_unordered_mm": [
+          0.0,
+          0.0
+        ],
+        "short_edge_max_unordered_mm": 0.0
+      },
+      "delta_vs_FDP": {
+        "center_mm": 12.348526395158192,
+        "yaw_sym180_deg": 0.47527220650709523,
+        "rim_center_mm": 12.716360984869514,
+        "short_edge_labeled_mm": [
+          18.93855340525676,
+          11.425427021146897
+        ],
+        "short_edge_unordered_mm": [
+          18.93855340525676,
+          11.425427021146897
+        ],
+        "short_edge_max_unordered_mm": 18.93855340525676
+      },
+      "rejected_to_accepted": false,
+      "accepted_to_rejected": false,
+      "native_rival_count": 0
+    },
+    {
+      "frame": "D02",
+      "group": "M",
+      "accepted": false,
+      "algorithm_seconds": 3.9808207860005496,
+      "wall_seconds": 4.980772342998534,
+      "rejection_reasons": [
+        "visible_shell_residual_or_coverage_too_low",
+        "ambiguous_inner_outer_surface_hypotheses"
+      ],
+      "seed_count": 12,
+      "fit_count": 14,
+      "best_sources": [
+        "mesh_coarse_projection"
+      ],
+      "variant": "M",
+      "delta_vs_BCM": {
+        "center_mm": 12.461039194941359,
+        "yaw_sym180_deg": 78.72543970861302,
+        "rim_center_mm": 12.461039194941359,
+        "short_edge_labeled_mm": [
+          265.5898992530502,
+          244.6587540325023
+        ],
+        "short_edge_unordered_mm": [
+          265.5898992530502,
+          244.6587540325023
+        ],
+        "short_edge_max_unordered_mm": 265.5898992530502
+      },
+      "delta_vs_FDP": {
+        "center_mm": 22.174707348198535,
+        "yaw_sym180_deg": 78.25016750210591,
+        "rim_center_mm": 20.717817212226812,
+        "short_edge_labeled_mm": [
+          272.3947679196459,
+          234.0653556234527
+        ],
+        "short_edge_unordered_mm": [
+          272.3947679196459,
+          234.0653556234527
+        ],
+        "short_edge_max_unordered_mm": 272.3947679196459
+      },
+      "rejected_to_accepted": false,
+      "accepted_to_rejected": true,
+      "native_rival_count": 0
+    },
+    {
+      "frame": "D02",
+      "group": "R1",
+      "accepted": false,
+      "algorithm_seconds": 0.7989647169997625,
+      "wall_seconds": 1.7702802089988836,
+      "rejection_reasons": [
+        "ambiguous_inner_outer_surface_hypotheses"
+      ],
+      "seed_count": 1,
+      "fit_count": 3,
+      "best_sources": [
+        "R_roi"
+      ],
+      "variant": "R1",
+      "delta_vs_BCM": {
+        "center_mm": 4.334432572126871,
+        "yaw_sym180_deg": 0.06288829608084134,
+        "rim_center_mm": 4.334432572126871,
+        "short_edge_labeled_mm": [
+          4.357948303399114,
+          4.322071385317501
+        ],
+        "short_edge_unordered_mm": [
+          4.357948303399114,
+          4.322071385317501
+        ],
+        "short_edge_max_unordered_mm": 4.357948303399114
+      },
+      "delta_vs_FDP": {
+        "center_mm": 9.529236073917795,
+        "yaw_sym180_deg": 0.5381605025879366,
+        "rim_center_mm": 10.019017027860464,
+        "short_edge_labeled_mm": [
+          14.804504874018747,
+          12.204317333398787
+        ],
+        "short_edge_unordered_mm": [
+          14.804504874018747,
+          12.204317333398787
+        ],
+        "short_edge_max_unordered_mm": 14.804504874018747
+      },
+      "rejected_to_accepted": false,
+      "accepted_to_rejected": true,
+      "native_rival_count": 0
+    },
+    {
+      "frame": "D02",
+      "group": "R9",
+      "accepted": false,
+      "algorithm_seconds": 3.3395146149996435,
+      "wall_seconds": 4.327561295998748,
+      "rejection_reasons": [
+        "ambiguous_inner_outer_surface_hypotheses"
+      ],
+      "seed_count": 9,
+      "fit_count": 11,
+      "best_sources": [
+        "R_roi"
+      ],
+      "variant": "R9",
+      "delta_vs_BCM": {
+        "center_mm": 4.366673604892209,
+        "yaw_sym180_deg": 0.08327647674326165,
+        "rim_center_mm": 4.366673604892209,
+        "short_edge_labeled_mm": [
+          4.404227151221546,
+          4.348477417804303
+        ],
+        "short_edge_unordered_mm": [
+          4.404227151221546,
+          4.348477417804303
+        ],
+        "short_edge_max_unordered_mm": 4.404227151221546
+      },
+      "delta_vs_FDP": {
+        "center_mm": 9.423252184432988,
+        "yaw_sym180_deg": 0.5585486832503569,
+        "rim_center_mm": 9.936071419587034,
+        "short_edge_labeled_mm": [
+          14.716795477488386,
+          12.197193113566035
+        ],
+        "short_edge_unordered_mm": [
+          14.716795477488386,
+          12.197193113566035
+        ],
+        "short_edge_max_unordered_mm": 14.716795477488386
+      },
+      "rejected_to_accepted": false,
+      "accepted_to_rejected": true,
+      "native_rival_count": 0
+    },
+    {
+      "frame": "D02",
+      "group": "RM",
+      "accepted": false,
+      "algorithm_seconds": 3.8546643589979794,
+      "wall_seconds": 4.87801424600184,
+      "rejection_reasons": [
+        "ambiguous_inner_outer_surface_hypotheses"
+      ],
+      "seed_count": 12,
+      "fit_count": 14,
+      "best_sources": [
+        "R_roi"
+      ],
+      "variant": "RM",
+      "delta_vs_BCM": {
+        "center_mm": 4.334432572126871,
+        "yaw_sym180_deg": 0.06288829608084134,
+        "rim_center_mm": 4.334432572126871,
+        "short_edge_labeled_mm": [
+          4.357948303399114,
+          4.322071385317501
+        ],
+        "short_edge_unordered_mm": [
+          4.357948303399114,
+          4.322071385317501
+        ],
+        "short_edge_max_unordered_mm": 4.357948303399114
+      },
+      "delta_vs_FDP": {
+        "center_mm": 9.529236073917795,
+        "yaw_sym180_deg": 0.5381605025879366,
+        "rim_center_mm": 10.019017027860464,
+        "short_edge_labeled_mm": [
+          14.804504874018747,
+          12.204317333398787
+        ],
+        "short_edge_unordered_mm": [
+          14.804504874018747,
+          12.204317333398787
+        ],
+        "short_edge_max_unordered_mm": 14.804504874018747
+      },
+      "rejected_to_accepted": false,
+      "accepted_to_rejected": true,
+      "native_rival_count": 0
+    },
+    {
+      "frame": "D03",
+      "group": "BCM",
+      "accepted": false,
+      "algorithm_seconds": 16.29823340299845,
+      "wall_seconds": 17.260898069001996,
+      "rejection_reasons": [
+        "ambiguous_inner_outer_surface_hypotheses"
+      ],
+      "seed_count": 12,
+      "fit_count": 14,
+      "best_sources": [
+        "B_rim"
+      ],
+      "variant": "BCM",
+      "delta_vs_BCM": {
+        "center_mm": 0.0,
+        "yaw_sym180_deg": 0.0,
+        "rim_center_mm": 0.0,
+        "short_edge_labeled_mm": [
+          0.0,
+          0.0
+        ],
+        "short_edge_unordered_mm": [
+          0.0,
+          0.0
+        ],
+        "short_edge_max_unordered_mm": 0.0
+      },
+      "delta_vs_FDP": {
+        "center_mm": 10.119903040684433,
+        "yaw_sym180_deg": 0.31414215272350315,
+        "rim_center_mm": 10.33440120089221,
+        "short_edge_labeled_mm": [
+          7.0990498494667165,
+          14.733434794056093
+        ],
+        "short_edge_unordered_mm": [
+          7.0990498494667165,
+          14.733434794056093
+        ],
+        "short_edge_max_unordered_mm": 14.733434794056093
+      },
+      "rejected_to_accepted": false,
+      "accepted_to_rejected": false,
+      "native_rival_count": 0
+    },
+    {
+      "frame": "D03",
+      "group": "M",
+      "accepted": false,
+      "algorithm_seconds": 5.480105276998074,
+      "wall_seconds": 6.483182927000598,
+      "rejection_reasons": [
+        "visible_shell_residual_or_coverage_too_low",
+        "ambiguous_inner_outer_surface_hypotheses"
+      ],
+      "seed_count": 12,
+      "fit_count": 14,
+      "best_sources": [
+        "mesh_coarse_projection"
+      ],
+      "variant": "M",
+      "delta_vs_BCM": {
+        "center_mm": 16.488416710844415,
+        "yaw_sym180_deg": 75.04854289939782,
+        "rim_center_mm": 16.488416710844415,
+        "short_edge_labeled_mm": [
+          257.1598359908936,
+          233.223784408059
+        ],
+        "short_edge_unordered_mm": [
+          257.1598359908936,
+          233.223784408059
+        ],
+        "short_edge_max_unordered_mm": 257.1598359908936
+      },
+      "delta_vs_FDP": {
+        "center_mm": 19.01496862928117,
+        "yaw_sym180_deg": 75.36268505212132,
+        "rim_center_mm": 20.80843167953445,
+        "short_edge_labeled_mm": [
+          252.26894652888421,
+          239.67140390768097
+        ],
+        "short_edge_unordered_mm": [
+          252.26894652888421,
+          239.67140390768097
+        ],
+        "short_edge_max_unordered_mm": 252.26894652888421
+      },
+      "rejected_to_accepted": false,
+      "accepted_to_rejected": false,
+      "native_rival_count": 0
+    },
+    {
+      "frame": "D03",
+      "group": "R1",
+      "accepted": false,
+      "algorithm_seconds": 1.0570926389991655,
+      "wall_seconds": 2.071125646998553,
+      "rejection_reasons": [
+        "ambiguous_inner_outer_surface_hypotheses"
+      ],
+      "seed_count": 1,
+      "fit_count": 3,
+      "best_sources": [
+        "R_roi"
+      ],
+      "variant": "R1",
+      "delta_vs_BCM": {
+        "center_mm": 0.7667467128171127,
+        "yaw_sym180_deg": 0.20915577098698018,
+        "rim_center_mm": 0.7667467128171127,
+        "short_edge_labeled_mm": [
+          1.1602773651245126,
+          0.95233677838428
+        ],
+        "short_edge_unordered_mm": [
+          1.1602773651245126,
+          0.95233677838428
+        ],
+        "short_edge_max_unordered_mm": 1.1602773651245126
+      },
+      "delta_vs_FDP": {
+        "center_mm": 10.632162868181275,
+        "yaw_sym180_deg": 0.10498638173652299,
+        "rim_center_mm": 10.739452976157928,
+        "short_edge_labeled_mm": [
+          8.061047049904516,
+          14.745005419979654
+        ],
+        "short_edge_unordered_mm": [
+          8.061047049904516,
+          14.745005419979654
+        ],
+        "short_edge_max_unordered_mm": 14.745005419979654
+      },
+      "rejected_to_accepted": false,
+      "accepted_to_rejected": false,
+      "native_rival_count": 0
+    },
+    {
+      "frame": "D03",
+      "group": "R9",
+      "accepted": false,
+      "algorithm_seconds": 2.9588786130007065,
+      "wall_seconds": 3.9764266189995396,
+      "rejection_reasons": [
+        "ambiguous_inner_outer_surface_hypotheses"
+      ],
+      "seed_count": 9,
+      "fit_count": 11,
+      "best_sources": [
+        "R_roi"
+      ],
+      "variant": "R9",
+      "delta_vs_BCM": {
+        "center_mm": 0.9892985454483304,
+        "yaw_sym180_deg": 0.21635645563863526,
+        "rim_center_mm": 0.9892985454483304,
+        "short_edge_labeled_mm": [
+          1.3931332070602684,
+          1.0814116268466953
+        ],
+        "short_edge_unordered_mm": [
+          1.3931332070602684,
+          1.0814116268466953
+        ],
+        "short_edge_max_unordered_mm": 1.3931332070602684
+      },
+      "delta_vs_FDP": {
+        "center_mm": 10.491096573600649,
+        "yaw_sym180_deg": 0.09778569708486792,
+        "rim_center_mm": 10.50781825759769,
+        "short_edge_labeled_mm": [
+          8.106814762168606,
+          14.38041196266403
+        ],
+        "short_edge_unordered_mm": [
+          8.106814762168606,
+          14.38041196266403
+        ],
+        "short_edge_max_unordered_mm": 14.38041196266403
+      },
+      "rejected_to_accepted": false,
+      "accepted_to_rejected": false,
+      "native_rival_count": 0
+    },
+    {
+      "frame": "D03",
+      "group": "RM",
+      "accepted": false,
+      "algorithm_seconds": 5.6276652320011635,
+      "wall_seconds": 6.634175428000162,
+      "rejection_reasons": [
+        "ambiguous_inner_outer_surface_hypotheses"
+      ],
+      "seed_count": 12,
+      "fit_count": 14,
+      "best_sources": [
+        "R_roi"
+      ],
+      "variant": "RM",
+      "delta_vs_BCM": {
+        "center_mm": 0.7667467128171127,
+        "yaw_sym180_deg": 0.20915577098698018,
+        "rim_center_mm": 0.7667467128171127,
+        "short_edge_labeled_mm": [
+          1.1602773651245126,
+          0.95233677838428
+        ],
+        "short_edge_unordered_mm": [
+          1.1602773651245126,
+          0.95233677838428
+        ],
+        "short_edge_max_unordered_mm": 1.1602773651245126
+      },
+      "delta_vs_FDP": {
+        "center_mm": 10.632162868181275,
+        "yaw_sym180_deg": 0.10498638173652299,
+        "rim_center_mm": 10.739452976157928,
+        "short_edge_labeled_mm": [
+          8.061047049904516,
+          14.745005419979654
+        ],
+        "short_edge_unordered_mm": [
+          8.061047049904516,
+          14.745005419979654
+        ],
+        "short_edge_max_unordered_mm": 14.745005419979654
+      },
+      "rejected_to_accepted": false,
+      "accepted_to_rejected": false,
+      "native_rival_count": 0
+    },
+    {
+      "frame": "D04",
+      "group": "BCM",
+      "accepted": true,
+      "algorithm_seconds": 14.003350088001753,
+      "wall_seconds": 15.00508484600141,
+      "rejection_reasons": [],
+      "seed_count": 12,
+      "fit_count": 14,
+      "best_sources": [
+        "mesh_coarse_projection"
+      ],
+      "variant": "BCM",
+      "delta_vs_BCM": {
+        "center_mm": 0.0,
+        "yaw_sym180_deg": 0.0,
+        "rim_center_mm": 0.0,
+        "short_edge_labeled_mm": [
+          0.0,
+          0.0
+        ],
+        "short_edge_unordered_mm": [
+          0.0,
+          0.0
+        ],
+        "short_edge_max_unordered_mm": 0.0
+      },
+      "delta_vs_FDP": {
+        "center_mm": 11.283609751046402,
+        "yaw_sym180_deg": 1.1365534845041756,
+        "rim_center_mm": 12.002796613609888,
+        "short_edge_labeled_mm": [
+          20.45387635572795,
+          3.919547049493442
+        ],
+        "short_edge_unordered_mm": [
+          20.45387635572795,
+          3.919547049493442
+        ],
+        "short_edge_max_unordered_mm": 20.45387635572795
+      },
+      "rejected_to_accepted": false,
+      "accepted_to_rejected": false,
+      "native_rival_count": 0
+    },
+    {
+      "frame": "D04",
+      "group": "M",
+      "accepted": true,
+      "algorithm_seconds": 6.814379990002635,
+      "wall_seconds": 7.836168365000049,
+      "rejection_reasons": [],
+      "seed_count": 12,
+      "fit_count": 14,
+      "best_sources": [
+        "mesh_coarse_projection"
+      ],
+      "variant": "M",
+      "delta_vs_BCM": {
+        "center_mm": 0.7832524656506131,
+        "yaw_sym180_deg": 0.06840868332086196,
+        "rim_center_mm": 0.7832524656506131,
+        "short_edge_labeled_mm": [
+          0.8577456293024894,
+          0.7787779459109448
+        ],
+        "short_edge_unordered_mm": [
+          0.8577456293024894,
+          0.7787779459109448
+        ],
+        "short_edge_max_unordered_mm": 0.8577456293024894
+      },
+      "delta_vs_FDP": {
+        "center_mm": 11.925843306082804,
+        "yaw_sym180_deg": 1.0681448011833137,
+        "rim_center_mm": 12.507700653449628,
+        "short_edge_labeled_mm": [
+          20.845755810300794,
+          4.498576913330883
+        ],
+        "short_edge_unordered_mm": [
+          20.845755810300794,
+          4.498576913330883
+        ],
+        "short_edge_max_unordered_mm": 20.845755810300794
+      },
+      "rejected_to_accepted": false,
+      "accepted_to_rejected": false,
+      "native_rival_count": 0
+    },
+    {
+      "frame": "D04",
+      "group": "R1",
+      "accepted": true,
+      "algorithm_seconds": 0.843288265998126,
+      "wall_seconds": 1.8213741069994285,
+      "rejection_reasons": [],
+      "seed_count": 1,
+      "fit_count": 3,
+      "best_sources": [
+        "R_roi"
+      ],
+      "variant": "R1",
+      "delta_vs_BCM": {
+        "center_mm": 3.63366378326942,
+        "yaw_sym180_deg": 0.17868959126438588,
+        "rim_center_mm": 3.63366378326942,
+        "short_edge_labeled_mm": [
+          3.543574399514057,
+          3.825765653909479
+        ],
+        "short_edge_unordered_mm": [
+          3.543574399514057,
+          3.825765653909479
+        ],
+        "short_edge_max_unordered_mm": 3.825765653909479
+      },
+      "delta_vs_FDP": {
+        "center_mm": 7.9826556801010184,
+        "yaw_sym180_deg": 1.3152430757685616,
+        "rim_center_mm": 9.499466205874489,
+        "short_edge_labeled_mm": [
+          18.22025207592032,
+          2.1946616933982286
+        ],
+        "short_edge_unordered_mm": [
+          18.22025207592032,
+          2.1946616933982286
+        ],
+        "short_edge_max_unordered_mm": 18.22025207592032
+      },
+      "rejected_to_accepted": false,
+      "accepted_to_rejected": false,
+      "native_rival_count": 0
+    },
+    {
+      "frame": "D04",
+      "group": "R9",
+      "accepted": true,
+      "algorithm_seconds": 2.84568552500059,
+      "wall_seconds": 3.8766245620026893,
+      "rejection_reasons": [],
+      "seed_count": 9,
+      "fit_count": 11,
+      "best_sources": [
+        "R_roi"
+      ],
+      "variant": "R9",
+      "delta_vs_BCM": {
+        "center_mm": 3.6230928440939385,
+        "yaw_sym180_deg": 0.1708792765953394,
+        "rim_center_mm": 3.6230928440939385,
+        "short_edge_labeled_mm": [
+          3.5278156770398157,
+          3.811463833651408
+        ],
+        "short_edge_unordered_mm": [
+          3.5278156770398157,
+          3.811463833651408
+        ],
+        "short_edge_max_unordered_mm": 3.811463833651408
+      },
+      "delta_vs_FDP": {
+        "center_mm": 8.026581765917166,
+        "yaw_sym180_deg": 1.3074327610995151,
+        "rim_center_mm": 9.557771524268386,
+        "short_edge_labeled_mm": [
+          18.265807254457403,
+          2.2079980515407915
+        ],
+        "short_edge_unordered_mm": [
+          18.265807254457403,
+          2.2079980515407915
+        ],
+        "short_edge_max_unordered_mm": 18.265807254457403
+      },
+      "rejected_to_accepted": false,
+      "accepted_to_rejected": false,
+      "native_rival_count": 0
+    },
+    {
+      "frame": "D04",
+      "group": "RM",
+      "accepted": true,
+      "algorithm_seconds": 6.097197723000136,
+      "wall_seconds": 7.0849487769992265,
+      "rejection_reasons": [],
+      "seed_count": 12,
+      "fit_count": 14,
+      "best_sources": [
+        "M_mesh_coarse"
+      ],
+      "variant": "RM",
+      "delta_vs_BCM": {
+        "center_mm": 0.7832524656506131,
+        "yaw_sym180_deg": 0.06840868332086196,
+        "rim_center_mm": 0.7832524656506131,
+        "short_edge_labeled_mm": [
+          0.8577456293024894,
+          0.7787779459109448
+        ],
+        "short_edge_unordered_mm": [
+          0.8577456293024894,
+          0.7787779459109448
+        ],
+        "short_edge_max_unordered_mm": 0.8577456293024894
+      },
+      "delta_vs_FDP": {
+        "center_mm": 11.925843306082804,
+        "yaw_sym180_deg": 1.0681448011833137,
+        "rim_center_mm": 12.507700653449628,
+        "short_edge_labeled_mm": [
+          20.845755810300794,
+          4.498576913330883
+        ],
+        "short_edge_unordered_mm": [
+          20.845755810300794,
+          4.498576913330883
+        ],
+        "short_edge_max_unordered_mm": 20.845755810300794
+      },
+      "rejected_to_accepted": false,
+      "accepted_to_rejected": false,
+      "native_rival_count": 0
+    },
+    {
+      "frame": "D05",
+      "group": "BCM",
+      "accepted": true,
+      "algorithm_seconds": 17.404036181000265,
+      "wall_seconds": 18.414785929999198,
+      "rejection_reasons": [],
+      "seed_count": 12,
+      "fit_count": 14,
+      "best_sources": [
+        "mesh_coarse_projection"
+      ],
+      "variant": "BCM",
+      "delta_vs_BCM": {
+        "center_mm": 0.0,
+        "yaw_sym180_deg": 0.0,
+        "rim_center_mm": 0.0,
+        "short_edge_labeled_mm": [
+          0.0,
+          0.0
+        ],
+        "short_edge_unordered_mm": [
+          0.0,
+          0.0
+        ],
+        "short_edge_max_unordered_mm": 0.0
+      },
+      "delta_vs_FDP": {
+        "center_mm": 9.605058495946672,
+        "yaw_sym180_deg": 1.372213432009553,
+        "rim_center_mm": 9.842767615228052,
+        "short_edge_labeled_mm": [
+          15.506369308006182,
+          6.054054226303368
+        ],
+        "short_edge_unordered_mm": [
+          15.506369308006182,
+          6.054054226303368
+        ],
+        "short_edge_max_unordered_mm": 15.506369308006182
+      },
+      "rejected_to_accepted": false,
+      "accepted_to_rejected": false,
+      "native_rival_count": 0
+    },
+    {
+      "frame": "D05",
+      "group": "M",
+      "accepted": true,
+      "algorithm_seconds": 4.532051488000434,
+      "wall_seconds": 5.53154882599847,
+      "rejection_reasons": [],
+      "seed_count": 12,
+      "fit_count": 14,
+      "best_sources": [
+        "mesh_coarse_projection"
+      ],
+      "variant": "M",
+      "delta_vs_BCM": {
+        "center_mm": 1.2684952347038898,
+        "yaw_sym180_deg": 0.0033586815770373446,
+        "rim_center_mm": 1.2684952347038898,
+        "short_edge_labeled_mm": [
+          1.2684207979599988,
+          1.2686791654006686
+        ],
+        "short_edge_unordered_mm": [
+          1.2684207979599988,
+          1.2686791654006686
+        ],
+        "short_edge_max_unordered_mm": 1.2686791654006686
+      },
+      "delta_vs_FDP": {
+        "center_mm": 9.19239791950487,
+        "yaw_sym180_deg": 1.3755721135865902,
+        "rim_center_mm": 9.400835519926176,
+        "short_edge_labeled_mm": [
+          14.872042253820306,
+          6.256094075108939
+        ],
+        "short_edge_unordered_mm": [
+          14.872042253820306,
+          6.256094075108939
+        ],
+        "short_edge_max_unordered_mm": 14.872042253820306
+      },
+      "rejected_to_accepted": false,
+      "accepted_to_rejected": false,
+      "native_rival_count": 0
+    },
+    {
+      "frame": "D05",
+      "group": "R1",
+      "accepted": true,
+      "algorithm_seconds": 1.002464161003445,
+      "wall_seconds": 2.021493656997336,
+      "rejection_reasons": [],
+      "seed_count": 1,
+      "fit_count": 3,
+      "best_sources": [
+        "R_roi"
+      ],
+      "variant": "R1",
+      "delta_vs_BCM": {
+        "center_mm": 2.0142523159511683,
+        "yaw_sym180_deg": 0.019826318738979828,
+        "rim_center_mm": 2.0142523159511683,
+        "short_edge_labeled_mm": [
+          1.9758193916184648,
+          2.0543231111445177
+        ],
+        "short_edge_unordered_mm": [
+          1.9758193916184648,
+          2.0543231111445177
+        ],
+        "short_edge_max_unordered_mm": 2.0543231111445177
+      },
+      "delta_vs_FDP": {
+        "center_mm": 9.162968129695715,
+        "yaw_sym180_deg": 1.3523871132705731,
+        "rim_center_mm": 9.878347586752268,
+        "short_edge_labeled_mm": [
+          15.633142586981643,
+          5.72575786493112
+        ],
+        "short_edge_unordered_mm": [
+          15.633142586981643,
+          5.72575786493112
+        ],
+        "short_edge_max_unordered_mm": 15.633142586981643
+      },
+      "rejected_to_accepted": false,
+      "accepted_to_rejected": false,
+      "native_rival_count": 0
+    },
+    {
+      "frame": "D05",
+      "group": "R9",
+      "accepted": true,
+      "algorithm_seconds": 3.3882144400013203,
+      "wall_seconds": 4.428773481002281,
+      "rejection_reasons": [],
+      "seed_count": 9,
+      "fit_count": 11,
+      "best_sources": [
+        "R_roi"
+      ],
+      "variant": "R9",
+      "delta_vs_BCM": {
+        "center_mm": 1.7573787168438757,
+        "yaw_sym180_deg": 0.020974645065286956,
+        "rim_center_mm": 1.7573787168438757,
+        "short_edge_labeled_mm": [
+          1.8000563112062127,
+          1.7167970220952697
+        ],
+        "short_edge_unordered_mm": [
+          1.8000563112062127,
+          1.7167970220952697
+        ],
+        "short_edge_max_unordered_mm": 1.8000563112062127
+      },
+      "delta_vs_FDP": {
+        "center_mm": 9.23520044725909,
+        "yaw_sym180_deg": 1.39318807707484,
+        "rim_center_mm": 9.924405166828468,
+        "short_edge_labeled_mm": [
+          15.86634514406008,
+          5.477790205356291
+        ],
+        "short_edge_unordered_mm": [
+          15.86634514406008,
+          5.477790205356291
+        ],
+        "short_edge_max_unordered_mm": 15.86634514406008
+      },
+      "rejected_to_accepted": false,
+      "accepted_to_rejected": false,
+      "native_rival_count": 0
+    },
+    {
+      "frame": "D05",
+      "group": "RM",
+      "accepted": true,
+      "algorithm_seconds": 4.530123413998808,
+      "wall_seconds": 5.530973471999459,
+      "rejection_reasons": [],
+      "seed_count": 12,
+      "fit_count": 14,
+      "best_sources": [
+        "M_mesh_coarse"
+      ],
+      "variant": "RM",
+      "delta_vs_BCM": {
+        "center_mm": 1.2684952347038898,
+        "yaw_sym180_deg": 0.0033586815770373446,
+        "rim_center_mm": 1.2684952347038898,
+        "short_edge_labeled_mm": [
+          1.2684207979599988,
+          1.2686791654006686
+        ],
+        "short_edge_unordered_mm": [
+          1.2684207979599988,
+          1.2686791654006686
+        ],
+        "short_edge_max_unordered_mm": 1.2686791654006686
+      },
+      "delta_vs_FDP": {
+        "center_mm": 9.19239791950487,
+        "yaw_sym180_deg": 1.3755721135865902,
+        "rim_center_mm": 9.400835519926176,
+        "short_edge_labeled_mm": [
+          14.872042253820306,
+          6.256094075108939
+        ],
+        "short_edge_unordered_mm": [
+          14.872042253820306,
+          6.256094075108939
+        ],
+        "short_edge_max_unordered_mm": 14.872042253820306
+      },
+      "rejected_to_accepted": false,
+      "accepted_to_rejected": false,
+      "native_rival_count": 0
+    },
+    {
+      "frame": "D06",
+      "group": "BCM",
+      "accepted": true,
+      "algorithm_seconds": 15.00831867800298,
+      "wall_seconds": 16.01051894199918,
+      "rejection_reasons": [],
+      "seed_count": 12,
+      "fit_count": 14,
+      "best_sources": [
+        "mesh_coarse_projection"
+      ],
+      "variant": "BCM",
+      "delta_vs_BCM": {
+        "center_mm": 0.0,
+        "yaw_sym180_deg": 0.0,
+        "rim_center_mm": 0.0,
+        "short_edge_labeled_mm": [
+          0.0,
+          0.0
+        ],
+        "short_edge_unordered_mm": [
+          0.0,
+          0.0
+        ],
+        "short_edge_max_unordered_mm": 0.0
+      },
+      "delta_vs_FDP": {
+        "center_mm": 10.247553047461569,
+        "yaw_sym180_deg": 0.7366538998367566,
+        "rim_center_mm": 11.38252036099856,
+        "short_edge_labeled_mm": [
+          16.542035038576593,
+          6.36305459587603
+        ],
+        "short_edge_unordered_mm": [
+          16.542035038576593,
+          6.36305459587603
+        ],
+        "short_edge_max_unordered_mm": 16.542035038576593
+      },
+      "rejected_to_accepted": false,
+      "accepted_to_rejected": false,
+      "native_rival_count": 0
+    },
+    {
+      "frame": "D06",
+      "group": "M",
+      "accepted": true,
+      "algorithm_seconds": 5.97507851300179,
+      "wall_seconds": 6.984820423997007,
+      "rejection_reasons": [],
+      "seed_count": 12,
+      "fit_count": 14,
+      "best_sources": [
+        "mesh_coarse_projection"
+      ],
+      "variant": "M",
+      "delta_vs_BCM": {
+        "center_mm": 0.0,
+        "yaw_sym180_deg": 0.0,
+        "rim_center_mm": 0.0,
+        "short_edge_labeled_mm": [
+          0.0,
+          0.0
+        ],
+        "short_edge_unordered_mm": [
+          0.0,
+          0.0
+        ],
+        "short_edge_max_unordered_mm": 0.0
+      },
+      "delta_vs_FDP": {
+        "center_mm": 10.247553047461569,
+        "yaw_sym180_deg": 0.7366538998367566,
+        "rim_center_mm": 11.38252036099856,
+        "short_edge_labeled_mm": [
+          16.542035038576593,
+          6.36305459587603
+        ],
+        "short_edge_unordered_mm": [
+          16.542035038576593,
+          6.36305459587603
+        ],
+        "short_edge_max_unordered_mm": 16.542035038576593
+      },
+      "rejected_to_accepted": false,
+      "accepted_to_rejected": false,
+      "native_rival_count": 0
+    },
+    {
+      "frame": "D06",
+      "group": "R1",
+      "accepted": true,
+      "algorithm_seconds": 1.0203944759996375,
+      "wall_seconds": 2.0219129150027584,
+      "rejection_reasons": [],
+      "seed_count": 1,
+      "fit_count": 3,
+      "best_sources": [
+        "R_roi"
+      ],
+      "variant": "R1",
+      "delta_vs_BCM": {
+        "center_mm": 1.5129856167454003,
+        "yaw_sym180_deg": 0.25323157095634435,
+        "rim_center_mm": 1.5129856167454003,
+        "short_edge_labeled_mm": [
+          1.7897024224863316,
+          1.7188740128748645
+        ],
+        "short_edge_unordered_mm": [
+          1.7897024224863316,
+          1.7188740128748645
+        ],
+        "short_edge_max_unordered_mm": 1.7897024224863316
+      },
+      "delta_vs_FDP": {
+        "center_mm": 9.061606116640535,
+        "yaw_sym180_deg": 0.9898854707931009,
+        "rim_center_mm": 10.3158273333015,
+        "short_edge_labeled_mm": [
+          15.986704030932078,
+          4.792678093170762
+        ],
+        "short_edge_unordered_mm": [
+          15.986704030932078,
+          4.792678093170762
+        ],
+        "short_edge_max_unordered_mm": 15.986704030932078
+      },
+      "rejected_to_accepted": false,
+      "accepted_to_rejected": false,
+      "native_rival_count": 0
+    },
+    {
+      "frame": "D06",
+      "group": "R9",
+      "accepted": true,
+      "algorithm_seconds": 3.5099314549988776,
+      "wall_seconds": 4.529026305001025,
+      "rejection_reasons": [],
+      "seed_count": 9,
+      "fit_count": 11,
+      "best_sources": [
+        "R_roi"
+      ],
+      "variant": "R9",
+      "delta_vs_BCM": {
+        "center_mm": 1.539426308877302,
+        "yaw_sym180_deg": 0.29963304831676635,
+        "rim_center_mm": 1.539426308877302,
+        "short_edge_labeled_mm": [
+          1.8775400842673307,
+          1.850844334832376
+        ],
+        "short_edge_unordered_mm": [
+          1.8775400842673307,
+          1.850844334832376
+        ],
+        "short_edge_max_unordered_mm": 1.8775400842673307
+      },
+      "delta_vs_FDP": {
+        "center_mm": 9.019224499462501,
+        "yaw_sym180_deg": 1.0362869481535228,
+        "rim_center_mm": 10.26366450919588,
+        "short_edge_labeled_mm": [
+          16.044468825027504,
+          4.6124956945713915
+        ],
+        "short_edge_unordered_mm": [
+          16.044468825027504,
+          4.6124956945713915
+        ],
+        "short_edge_max_unordered_mm": 16.044468825027504
+      },
+      "rejected_to_accepted": false,
+      "accepted_to_rejected": false,
+      "native_rival_count": 0
+    },
+    {
+      "frame": "D06",
+      "group": "RM",
+      "accepted": true,
+      "algorithm_seconds": 5.588806760002626,
+      "wall_seconds": 6.635191910001595,
+      "rejection_reasons": [],
+      "seed_count": 12,
+      "fit_count": 14,
+      "best_sources": [
+        "M_mesh_coarse"
+      ],
+      "variant": "RM",
+      "delta_vs_BCM": {
+        "center_mm": 0.0,
+        "yaw_sym180_deg": 0.0,
+        "rim_center_mm": 0.0,
+        "short_edge_labeled_mm": [
+          0.0,
+          0.0
+        ],
+        "short_edge_unordered_mm": [
+          0.0,
+          0.0
+        ],
+        "short_edge_max_unordered_mm": 0.0
+      },
+      "delta_vs_FDP": {
+        "center_mm": 10.247553047461569,
+        "yaw_sym180_deg": 0.7366538998367566,
+        "rim_center_mm": 11.38252036099856,
+        "short_edge_labeled_mm": [
+          16.542035038576593,
+          6.36305459587603
+        ],
+        "short_edge_unordered_mm": [
+          16.542035038576593,
+          6.36305459587603
+        ],
+        "short_edge_max_unordered_mm": 16.542035038576593
+      },
+      "rejected_to_accepted": false,
+      "accepted_to_rejected": false,
+      "native_rival_count": 0
+    },
+    {
+      "frame": "D07",
+      "group": "BCM",
+      "accepted": true,
+      "algorithm_seconds": 16.156231266002578,
+      "wall_seconds": 17.160801299000013,
+      "rejection_reasons": [],
+      "seed_count": 12,
+      "fit_count": 14,
+      "best_sources": [
+        "mesh_coarse_projection"
+      ],
+      "variant": "BCM",
+      "delta_vs_BCM": {
+        "center_mm": 0.0,
+        "yaw_sym180_deg": 0.0,
+        "rim_center_mm": 0.0,
+        "short_edge_labeled_mm": [
+          0.0,
+          0.0
+        ],
+        "short_edge_unordered_mm": [
+          0.0,
+          0.0
+        ],
+        "short_edge_max_unordered_mm": 0.0
+      },
+      "delta_vs_FDP": {
+        "center_mm": 8.078622064254048,
+        "yaw_sym180_deg": 1.5665495932461908,
+        "rim_center_mm": 9.053901906657636,
+        "short_edge_labeled_mm": [
+          16.887636061916677,
+          2.2005346111797817
+        ],
+        "short_edge_unordered_mm": [
+          16.887636061916677,
+          2.2005346111797817
+        ],
+        "short_edge_max_unordered_mm": 16.887636061916677
+      },
+      "rejected_to_accepted": false,
+      "accepted_to_rejected": false,
+      "native_rival_count": 0
+    },
+    {
+      "frame": "D07",
+      "group": "M",
+      "accepted": true,
+      "algorithm_seconds": 4.443796670999291,
+      "wall_seconds": 5.429922197999986,
+      "rejection_reasons": [],
+      "seed_count": 12,
+      "fit_count": 14,
+      "best_sources": [
+        "mesh_coarse_projection"
+      ],
+      "variant": "M",
+      "delta_vs_BCM": {
+        "center_mm": 0.15685036635482486,
+        "yaw_sym180_deg": 0.04101684562770594,
+        "rim_center_mm": 0.15685036635482486,
+        "short_edge_labeled_mm": [
+          0.26630102789200044,
+          0.14043462655752956
+        ],
+        "short_edge_unordered_mm": [
+          0.26630102789200044,
+          0.14043462655752956
+        ],
+        "short_edge_max_unordered_mm": 0.26630102789200044
+      },
+      "delta_vs_FDP": {
+        "center_mm": 8.110886574225848,
+        "yaw_sym180_deg": 1.5255327476184848,
+        "rim_center_mm": 9.043386078079514,
+        "short_edge_labeled_mm": [
+          16.77439592830558,
+          2.2733588149473256
+        ],
+        "short_edge_unordered_mm": [
+          16.77439592830558,
+          2.2733588149473256
+        ],
+        "short_edge_max_unordered_mm": 16.77439592830558
+      },
+      "rejected_to_accepted": false,
+      "accepted_to_rejected": false,
+      "native_rival_count": 0
+    },
+    {
+      "frame": "D07",
+      "group": "R1",
+      "accepted": true,
+      "algorithm_seconds": 0.8456505469985132,
+      "wall_seconds": 1.8211732829986431,
+      "rejection_reasons": [],
+      "seed_count": 1,
+      "fit_count": 3,
+      "best_sources": [
+        "R_roi"
+      ],
+      "variant": "R1",
+      "delta_vs_BCM": {
+        "center_mm": 4.2333531311729145,
+        "yaw_sym180_deg": 0.03941233932816358,
+        "rim_center_mm": 4.2333531311729145,
+        "short_edge_labeled_mm": [
+          4.274576625972533,
+          4.196285015711741
+        ],
+        "short_edge_unordered_mm": [
+          4.274576625972533,
+          4.196285015711741
+        ],
+        "short_edge_max_unordered_mm": 4.274576625972533
+      },
+      "delta_vs_FDP": {
+        "center_mm": 11.953047097498295,
+        "yaw_sym180_deg": 1.6059619325743544,
+        "rim_center_mm": 12.63324240147061,
+        "short_edge_labeled_mm": [
+          20.56354510650175,
+          5.048579154736256
+        ],
+        "short_edge_unordered_mm": [
+          20.56354510650175,
+          5.048579154736256
+        ],
+        "short_edge_max_unordered_mm": 20.56354510650175
+      },
+      "rejected_to_accepted": false,
+      "accepted_to_rejected": false,
+      "native_rival_count": 0
+    },
+    {
+      "frame": "D07",
+      "group": "R9",
+      "accepted": true,
+      "algorithm_seconds": 3.088384082002449,
+      "wall_seconds": 4.078488024999388,
+      "rejection_reasons": [],
+      "seed_count": 9,
+      "fit_count": 11,
+      "best_sources": [
+        "R_roi"
+      ],
+      "variant": "R9",
+      "delta_vs_BCM": {
+        "center_mm": 1.9307518609712322,
+        "yaw_sym180_deg": 0.1569119267444402,
+        "rim_center_mm": 1.9307518609712322,
+        "short_edge_labeled_mm": [
+          2.1948426891025763,
+          1.8012913549467522
+        ],
+        "short_edge_unordered_mm": [
+          2.1948426891025763,
+          1.8012913549467522
+        ],
+        "short_edge_max_unordered_mm": 2.1948426891025763
+      },
+      "delta_vs_FDP": {
+        "center_mm": 9.404030779372514,
+        "yaw_sym180_deg": 1.7234615199906311,
+        "rim_center_mm": 10.602307409559023,
+        "short_edge_labeled_mm": [
+          18.920391663013508,
+          2.3590951637706907
+        ],
+        "short_edge_unordered_mm": [
+          18.920391663013508,
+          2.3590951637706907
+        ],
+        "short_edge_max_unordered_mm": 18.920391663013508
+      },
+      "rejected_to_accepted": false,
+      "accepted_to_rejected": false,
+      "native_rival_count": 0
+    },
+    {
+      "frame": "D07",
+      "group": "RM",
+      "accepted": true,
+      "algorithm_seconds": 4.4404802409990225,
+      "wall_seconds": 5.4302495420015475,
+      "rejection_reasons": [],
+      "seed_count": 12,
+      "fit_count": 14,
+      "best_sources": [
+        "M_mesh_coarse"
+      ],
+      "variant": "RM",
+      "delta_vs_BCM": {
+        "center_mm": 0.15685036635482486,
+        "yaw_sym180_deg": 0.04101684562770594,
+        "rim_center_mm": 0.15685036635482486,
+        "short_edge_labeled_mm": [
+          0.26630102789200044,
+          0.14043462655752956
+        ],
+        "short_edge_unordered_mm": [
+          0.26630102789200044,
+          0.14043462655752956
+        ],
+        "short_edge_max_unordered_mm": 0.26630102789200044
+      },
+      "delta_vs_FDP": {
+        "center_mm": 8.110886574225848,
+        "yaw_sym180_deg": 1.5255327476184848,
+        "rim_center_mm": 9.043386078079514,
+        "short_edge_labeled_mm": [
+          16.77439592830558,
+          2.2733588149473256
+        ],
+        "short_edge_unordered_mm": [
+          16.77439592830558,
+          2.2733588149473256
+        ],
+        "short_edge_max_unordered_mm": 16.77439592830558
+      },
+      "rejected_to_accepted": false,
+      "accepted_to_rejected": false,
+      "native_rival_count": 0
+    },
+    {
+      "frame": "D08",
+      "group": "BCM",
+      "accepted": true,
+      "algorithm_seconds": 16.020511081998848,
+      "wall_seconds": 17.010339319000195,
+      "rejection_reasons": [],
+      "seed_count": 12,
+      "fit_count": 14,
+      "best_sources": [
+        "B_rim"
+      ],
+      "variant": "BCM",
+      "delta_vs_BCM": {
+        "center_mm": 0.0,
+        "yaw_sym180_deg": 0.0,
+        "rim_center_mm": 0.0,
+        "short_edge_labeled_mm": [
+          0.0,
+          0.0
+        ],
+        "short_edge_unordered_mm": [
+          0.0,
+          0.0
+        ],
+        "short_edge_max_unordered_mm": 0.0
+      },
+      "delta_vs_FDP": {
+        "center_mm": 8.64737747110876,
+        "yaw_sym180_deg": 0.12406377216449561,
+        "rim_center_mm": 11.945674053176406,
+        "short_edge_labeled_mm": [
+          13.020355348586744,
+          11.008701694861989
+        ],
+        "short_edge_unordered_mm": [
+          13.020355348586744,
+          11.008701694861989
+        ],
+        "short_edge_max_unordered_mm": 13.020355348586744
+      },
+      "rejected_to_accepted": false,
+      "accepted_to_rejected": false,
+      "native_rival_count": 0
+    },
+    {
+      "frame": "D08",
+      "group": "M",
+      "accepted": false,
+      "algorithm_seconds": 6.126504043997556,
+      "wall_seconds": 7.135450440997374,
+      "rejection_reasons": [
+        "visible_shell_residual_or_coverage_too_low",
+        "ambiguous_inner_outer_surface_hypotheses"
+      ],
+      "seed_count": 12,
+      "fit_count": 14,
+      "best_sources": [
+        "mesh_coarse_projection"
+      ],
+      "variant": "M",
+      "delta_vs_BCM": {
+        "center_mm": 26.6519892641423,
+        "yaw_sym180_deg": 73.1285327808846,
+        "rim_center_mm": 26.6519892641423,
+        "short_edge_labeled_mm": [
+          223.38026501624554,
+          257.47217303475605
+        ],
+        "short_edge_unordered_mm": [
+          223.38026501624554,
+          257.47217303475605
+        ],
+        "short_edge_max_unordered_mm": 257.47217303475605
+      },
+      "delta_vs_FDP": {
+        "center_mm": 32.75843437383251,
+        "yaw_sym180_deg": 73.0044690087201,
+        "rim_center_mm": 34.48215183667443,
+        "short_edge_labeled_mm": [
+          211.20958984100344,
+          267.5887861798945
+        ],
+        "short_edge_unordered_mm": [
+          211.20958984100344,
+          267.5887861798945
+        ],
+        "short_edge_max_unordered_mm": 267.5887861798945
+      },
+      "rejected_to_accepted": false,
+      "accepted_to_rejected": true,
+      "native_rival_count": 0
+    },
+    {
+      "frame": "D08",
+      "group": "R1",
+      "accepted": true,
+      "algorithm_seconds": 0.9165953629999422,
+      "wall_seconds": 1.9719753739991575,
+      "rejection_reasons": [],
+      "seed_count": 1,
+      "fit_count": 3,
+      "best_sources": [
+        "R_roi"
+      ],
+      "variant": "R1",
+      "delta_vs_BCM": {
+        "center_mm": 2.238091705278285,
+        "yaw_sym180_deg": 0.0713865183947962,
+        "rim_center_mm": 2.238091705278285,
+        "short_edge_labeled_mm": [
+          2.1557651182807778,
+          2.344417182084036
+        ],
+        "short_edge_unordered_mm": [
+          2.1557651182807778,
+          2.344417182084036
+        ],
+        "short_edge_max_unordered_mm": 2.344417182084036
+      },
+      "delta_vs_FDP": {
+        "center_mm": 9.023265234865612,
+        "yaw_sym180_deg": 0.19545029055929183,
+        "rim_center_mm": 12.064372612422027,
+        "short_edge_labeled_mm": [
+          13.444105137365037,
+          10.781275181685748
+        ],
+        "short_edge_unordered_mm": [
+          13.444105137365037,
+          10.781275181685748
+        ],
+        "short_edge_max_unordered_mm": 13.444105137365037
+      },
+      "rejected_to_accepted": false,
+      "accepted_to_rejected": false,
+      "native_rival_count": 0
+    },
+    {
+      "frame": "D08",
+      "group": "R9",
+      "accepted": true,
+      "algorithm_seconds": 3.1778856220007583,
+      "wall_seconds": 4.176970893000544,
+      "rejection_reasons": [],
+      "seed_count": 9,
+      "fit_count": 11,
+      "best_sources": [
+        "R_roi"
+      ],
+      "variant": "R9",
+      "delta_vs_BCM": {
+        "center_mm": 0.1533428440566611,
+        "yaw_sym180_deg": 0.059480643191780924,
+        "rim_center_mm": 0.1533428440566611,
+        "short_edge_labeled_mm": [
+          0.323974392531386,
+          0.1708857570122446
+        ],
+        "short_edge_unordered_mm": [
+          0.323974392531386,
+          0.1708857570122446
+        ],
+        "short_edge_max_unordered_mm": 0.323974392531386
+      },
+      "delta_vs_FDP": {
+        "center_mm": 8.518870424247377,
+        "yaw_sym180_deg": 0.06458312897271469,
+        "rim_center_mm": 11.825027005738262,
+        "short_edge_labeled_mm": [
+          12.711438854434604,
+          11.096389967949278
+        ],
+        "short_edge_unordered_mm": [
+          12.711438854434604,
+          11.096389967949278
+        ],
+        "short_edge_max_unordered_mm": 12.711438854434604
+      },
+      "rejected_to_accepted": false,
+      "accepted_to_rejected": false,
+      "native_rival_count": 0
+    },
+    {
+      "frame": "D08",
+      "group": "RM",
+      "accepted": true,
+      "algorithm_seconds": 5.560495456000353,
+      "wall_seconds": 6.583099135001248,
+      "rejection_reasons": [],
+      "seed_count": 12,
+      "fit_count": 14,
+      "best_sources": [
+        "R_roi"
+      ],
+      "variant": "RM",
+      "delta_vs_BCM": {
+        "center_mm": 2.238091705278285,
+        "yaw_sym180_deg": 0.0713865183947962,
+        "rim_center_mm": 2.238091705278285,
+        "short_edge_labeled_mm": [
+          2.1557651182807778,
+          2.344417182084036
+        ],
+        "short_edge_unordered_mm": [
+          2.1557651182807778,
+          2.344417182084036
+        ],
+        "short_edge_max_unordered_mm": 2.344417182084036
+      },
+      "delta_vs_FDP": {
+        "center_mm": 9.023265234865612,
+        "yaw_sym180_deg": 0.19545029055929183,
+        "rim_center_mm": 12.064372612422027,
+        "short_edge_labeled_mm": [
+          13.444105137365037,
+          10.781275181685748
+        ],
+        "short_edge_unordered_mm": [
+          13.444105137365037,
+          10.781275181685748
+        ],
+        "short_edge_max_unordered_mm": 13.444105137365037
+      },
+      "rejected_to_accepted": false,
+      "accepted_to_rejected": false,
+      "native_rival_count": 0
+    },
+    {
+      "frame": "D09",
+      "group": "BCM",
+      "accepted": true,
+      "algorithm_seconds": 17.220834488998662,
+      "wall_seconds": 18.21437195099861,
+      "rejection_reasons": [],
+      "seed_count": 12,
+      "fit_count": 14,
+      "best_sources": [
+        "C_multiplane_joint"
+      ],
+      "variant": "BCM",
+      "delta_vs_BCM": {
+        "center_mm": 0.0,
+        "yaw_sym180_deg": 0.0,
+        "rim_center_mm": 0.0,
+        "short_edge_labeled_mm": [
+          0.0,
+          0.0
+        ],
+        "short_edge_unordered_mm": [
+          0.0,
+          0.0
+        ],
+        "short_edge_max_unordered_mm": 0.0
+      },
+      "delta_vs_FDP": {
+        "center_mm": 8.876458552151602,
+        "yaw_sym180_deg": 0.8476053631544676,
+        "rim_center_mm": 11.248329137121322,
+        "short_edge_labeled_mm": [
+          14.942012726518422,
+          7.8026250712590075
+        ],
+        "short_edge_unordered_mm": [
+          14.942012726518422,
+          7.8026250712590075
+        ],
+        "short_edge_max_unordered_mm": 14.942012726518422
+      },
+      "rejected_to_accepted": false,
+      "accepted_to_rejected": false,
+      "native_rival_count": 0
+    },
+    {
+      "frame": "D09",
+      "group": "M",
+      "accepted": false,
+      "algorithm_seconds": 6.440485848001117,
+      "wall_seconds": 7.488388320001832,
+      "rejection_reasons": [
+        "visible_shell_residual_or_coverage_too_low"
+      ],
+      "seed_count": 12,
+      "fit_count": 14,
+      "best_sources": [
+        "mesh_coarse_projection"
+      ],
+      "variant": "M",
+      "delta_vs_BCM": {
+        "center_mm": 27.86491438936143,
+        "yaw_sym180_deg": 75.05514973144273,
+        "rim_center_mm": 27.86491438936143,
+        "short_edge_labeled_mm": [
+          222.3883568267613,
+          268.5053434664601
+        ],
+        "short_edge_unordered_mm": [
+          222.3883568267613,
+          268.5053434664601
+        ],
+        "short_edge_max_unordered_mm": 268.5053434664601
+      },
+      "delta_vs_FDP": {
+        "center_mm": 35.77298876316189,
+        "yaw_sym180_deg": 74.20754436828825,
+        "rim_center_mm": 37.78668072458767,
+        "short_edge_labeled_mm": [
+          208.8657634005807,
+          276.2395160532544
+        ],
+        "short_edge_unordered_mm": [
+          208.8657634005807,
+          276.2395160532544
+        ],
+        "short_edge_max_unordered_mm": 276.2395160532544
+      },
+      "rejected_to_accepted": false,
+      "accepted_to_rejected": true,
+      "native_rival_count": 0
+    },
+    {
+      "frame": "D09",
+      "group": "R1",
+      "accepted": true,
+      "algorithm_seconds": 0.8778934540023329,
+      "wall_seconds": 1.920966153000336,
+      "rejection_reasons": [],
+      "seed_count": 1,
+      "fit_count": 3,
+      "best_sources": [
+        "R_roi"
+      ],
+      "variant": "R1",
+      "delta_vs_BCM": {
+        "center_mm": 2.7128177182452182,
+        "yaw_sym180_deg": 0.2920010870318648,
+        "rim_center_mm": 2.7128177182452182,
+        "short_edge_labeled_mm": [
+          3.1640978686405576,
+          2.609052595721264
+        ],
+        "short_edge_unordered_mm": [
+          3.1640978686405576,
+          2.609052595721264
+        ],
+        "short_edge_max_unordered_mm": 3.1640978686405576
+      },
+      "delta_vs_FDP": {
+        "center_mm": 9.798711545366585,
+        "yaw_sym180_deg": 0.5556042761226028,
+        "rim_center_mm": 12.072829565893306,
+        "short_edge_labeled_mm": [
+          14.841305043274815,
+          9.607287538705766
+        ],
+        "short_edge_unordered_mm": [
+          14.841305043274815,
+          9.607287538705766
+        ],
+        "short_edge_max_unordered_mm": 14.841305043274815
+      },
+      "rejected_to_accepted": false,
+      "accepted_to_rejected": false,
+      "native_rival_count": 0
+    },
+    {
+      "frame": "D09",
+      "group": "R9",
+      "accepted": true,
+      "algorithm_seconds": 2.327722955000354,
+      "wall_seconds": 3.375020552000933,
+      "rejection_reasons": [],
+      "seed_count": 9,
+      "fit_count": 11,
+      "best_sources": [
+        "R_roi"
+      ],
+      "variant": "R9",
+      "delta_vs_BCM": {
+        "center_mm": 2.801275872291343,
+        "yaw_sym180_deg": 0.2966484930562881,
+        "rim_center_mm": 2.801275872291343,
+        "short_edge_labeled_mm": [
+          3.252754290098364,
+          2.6983640080248
+        ],
+        "short_edge_unordered_mm": [
+          3.252754290098364,
+          2.6983640080248
+        ],
+        "short_edge_max_unordered_mm": 3.252754290098364
+      },
+      "delta_vs_FDP": {
+        "center_mm": 9.81620501822954,
+        "yaw_sym180_deg": 0.5509568700981794,
+        "rim_center_mm": 12.092811112498996,
+        "short_edge_labeled_mm": [
+          14.831105958306404,
+          9.66655900958867
+        ],
+        "short_edge_unordered_mm": [
+          14.831105958306404,
+          9.66655900958867
+        ],
+        "short_edge_max_unordered_mm": 14.831105958306404
+      },
+      "rejected_to_accepted": false,
+      "accepted_to_rejected": false,
+      "native_rival_count": 0
+    },
+    {
+      "frame": "D09",
+      "group": "RM",
+      "accepted": true,
+      "algorithm_seconds": 6.08493492100024,
+      "wall_seconds": 7.08438153699899,
+      "rejection_reasons": [],
+      "seed_count": 12,
+      "fit_count": 14,
+      "best_sources": [
+        "R_roi"
+      ],
+      "variant": "RM",
+      "delta_vs_BCM": {
+        "center_mm": 2.7128177182452182,
+        "yaw_sym180_deg": 0.2920010870318648,
+        "rim_center_mm": 2.7128177182452182,
+        "short_edge_labeled_mm": [
+          3.1640978686405576,
+          2.609052595721264
+        ],
+        "short_edge_unordered_mm": [
+          3.1640978686405576,
+          2.609052595721264
+        ],
+        "short_edge_max_unordered_mm": 3.1640978686405576
+      },
+      "delta_vs_FDP": {
+        "center_mm": 9.798711545366585,
+        "yaw_sym180_deg": 0.5556042761226028,
+        "rim_center_mm": 12.072829565893306,
+        "short_edge_labeled_mm": [
+          14.841305043274815,
+          9.607287538705766
+        ],
+        "short_edge_unordered_mm": [
+          14.841305043274815,
+          9.607287538705766
+        ],
+        "short_edge_max_unordered_mm": 14.841305043274815
+      },
+      "rejected_to_accepted": false,
+      "accepted_to_rejected": false,
+      "native_rival_count": 0
+    },
+    {
+      "frame": "D10",
+      "group": "BCM",
+      "accepted": true,
+      "algorithm_seconds": 19.693771443002333,
+      "wall_seconds": 20.673210535002,
+      "rejection_reasons": [],
+      "seed_count": 12,
+      "fit_count": 14,
+      "best_sources": [
+        "mesh_coarse_projection"
+      ],
+      "variant": "BCM",
+      "delta_vs_BCM": {
+        "center_mm": 0.0,
+        "yaw_sym180_deg": 0.0,
+        "rim_center_mm": 0.0,
+        "short_edge_labeled_mm": [
+          0.0,
+          0.0
+        ],
+        "short_edge_unordered_mm": [
+          0.0,
+          0.0
+        ],
+        "short_edge_max_unordered_mm": 0.0
+      },
+      "delta_vs_FDP": {
+        "center_mm": 7.552446668974234,
+        "yaw_sym180_deg": 1.2431449680206725,
+        "rim_center_mm": 7.7587665755197,
+        "short_edge_labeled_mm": [
+          12.053199649999046,
+          4.683816157522202
+        ],
+        "short_edge_unordered_mm": [
+          12.053199649999046,
+          4.683816157522202
+        ],
+        "short_edge_max_unordered_mm": 12.053199649999046
+      },
+      "rejected_to_accepted": false,
+      "accepted_to_rejected": false,
+      "native_rival_count": 0
+    },
+    {
+      "frame": "D10",
+      "group": "M",
+      "accepted": true,
+      "algorithm_seconds": 7.575942679999571,
+      "wall_seconds": 8.58965309099949,
+      "rejection_reasons": [],
+      "seed_count": 12,
+      "fit_count": 14,
+      "best_sources": [
+        "mesh_coarse_projection"
+      ],
+      "variant": "M",
+      "delta_vs_BCM": {
+        "center_mm": 0.0,
+        "yaw_sym180_deg": 0.0,
+        "rim_center_mm": 0.0,
+        "short_edge_labeled_mm": [
+          0.0,
+          0.0
+        ],
+        "short_edge_unordered_mm": [
+          0.0,
+          0.0
+        ],
+        "short_edge_max_unordered_mm": 0.0
+      },
+      "delta_vs_FDP": {
+        "center_mm": 7.552446668974234,
+        "yaw_sym180_deg": 1.2431449680206725,
+        "rim_center_mm": 7.7587665755197,
+        "short_edge_labeled_mm": [
+          12.053199649999046,
+          4.683816157522202
+        ],
+        "short_edge_unordered_mm": [
+          12.053199649999046,
+          4.683816157522202
+        ],
+        "short_edge_max_unordered_mm": 12.053199649999046
+      },
+      "rejected_to_accepted": false,
+      "accepted_to_rejected": false,
+      "native_rival_count": 0
+    },
+    {
+      "frame": "D10",
+      "group": "R1",
+      "accepted": true,
+      "algorithm_seconds": 0.8886298979996354,
+      "wall_seconds": 1.8707820050003647,
+      "rejection_reasons": [],
+      "seed_count": 1,
+      "fit_count": 3,
+      "best_sources": [
+        "R_roi"
+      ],
+      "variant": "R1",
+      "delta_vs_BCM": {
+        "center_mm": 2.0056819033234903,
+        "yaw_sym180_deg": 0.6172771855936182,
+        "rim_center_mm": 2.0056819033234903,
+        "short_edge_labeled_mm": [
+          2.79318193315513,
+          3.102850047909713
+        ],
+        "short_edge_unordered_mm": [
+          2.79318193315513,
+          3.102850047909713
+        ],
+        "short_edge_max_unordered_mm": 3.102850047909713
+      },
+      "delta_vs_FDP": {
+        "center_mm": 6.650225318886366,
+        "yaw_sym180_deg": 0.6258677824270544,
+        "rim_center_mm": 7.081593732458532,
+        "short_edge_labeled_mm": [
+          9.614724146500567,
+          5.139511550649006
+        ],
+        "short_edge_unordered_mm": [
+          9.614724146500567,
+          5.139511550649006
+        ],
+        "short_edge_max_unordered_mm": 9.614724146500567
+      },
+      "rejected_to_accepted": false,
+      "accepted_to_rejected": false,
+      "native_rival_count": 0
+    },
+    {
+      "frame": "D10",
+      "group": "R9",
+      "accepted": true,
+      "algorithm_seconds": 2.855798178999976,
+      "wall_seconds": 3.87877330399715,
+      "rejection_reasons": [],
+      "seed_count": 9,
+      "fit_count": 11,
+      "best_sources": [
+        "R_roi"
+      ],
+      "variant": "R9",
+      "delta_vs_BCM": {
+        "center_mm": 1.5992724093590733,
+        "yaw_sym180_deg": 0.6138527030503684,
+        "rim_center_mm": 1.5992724093590733,
+        "short_edge_labeled_mm": [
+          2.5783183670287673,
+          2.7834893029006524
+        ],
+        "short_edge_unordered_mm": [
+          2.5783183670287673,
+          2.7834893029006524
+        ],
+        "short_edge_max_unordered_mm": 2.7834893029006524
+      },
+      "delta_vs_FDP": {
+        "center_mm": 6.786390627781613,
+        "yaw_sym180_deg": 0.6292922649703042,
+        "rim_center_mm": 7.189515942643644,
+        "short_edge_labeled_mm": [
+          9.779639919916692,
+          5.1382658954505125
+        ],
+        "short_edge_unordered_mm": [
+          9.779639919916692,
+          5.1382658954505125
+        ],
+        "short_edge_max_unordered_mm": 9.779639919916692
+      },
+      "rejected_to_accepted": false,
+      "accepted_to_rejected": false,
+      "native_rival_count": 0
+    },
+    {
+      "frame": "D10",
+      "group": "RM",
+      "accepted": true,
+      "algorithm_seconds": 6.238402873001178,
+      "wall_seconds": 7.234919432001334,
+      "rejection_reasons": [],
+      "seed_count": 12,
+      "fit_count": 14,
+      "best_sources": [
+        "M_mesh_coarse"
+      ],
+      "variant": "RM",
+      "delta_vs_BCM": {
+        "center_mm": 0.4653402858035308,
+        "yaw_sym180_deg": 0.2176070763368643,
+        "rim_center_mm": 0.4653402858035308,
+        "short_edge_labeled_mm": [
+          0.6733998978176435,
+          1.0704345096481658
+        ],
+        "short_edge_unordered_mm": [
+          0.6733998978176435,
+          1.0704345096481658
+        ],
+        "short_edge_max_unordered_mm": 1.0704345096481658
+      },
+      "delta_vs_FDP": {
+        "center_mm": 7.482102444074936,
+        "yaw_sym180_deg": 1.4607520443575368,
+        "rim_center_mm": 7.632172946162399,
+        "short_edge_labeled_mm": [
+          12.516502765465013,
+          4.59028923208148
+        ],
+        "short_edge_unordered_mm": [
+          12.516502765465013,
+          4.59028923208148
+        ],
+        "short_edge_max_unordered_mm": 12.516502765465013
+      },
+      "rejected_to_accepted": false,
+      "accepted_to_rejected": false,
+      "native_rival_count": 0
+    },
+    {
+      "frame": "D11",
+      "group": "BCM",
+      "accepted": true,
+      "algorithm_seconds": 19.53228497100281,
+      "wall_seconds": 20.56996802299909,
+      "rejection_reasons": [],
+      "seed_count": 12,
+      "fit_count": 14,
+      "best_sources": [
+        "mesh_coarse_projection"
+      ],
+      "variant": "BCM",
+      "delta_vs_BCM": {
+        "center_mm": 0.0,
+        "yaw_sym180_deg": 0.0,
+        "rim_center_mm": 0.0,
+        "short_edge_labeled_mm": [
+          0.0,
+          0.0
+        ],
+        "short_edge_unordered_mm": [
+          0.0,
+          0.0
+        ],
+        "short_edge_max_unordered_mm": 0.0
+      },
+      "delta_vs_FDP": {
+        "center_mm": 10.077755049294327,
+        "yaw_sym180_deg": 1.239875003554627,
+        "rim_center_mm": 10.373435305172396,
+        "short_edge_labeled_mm": [
+          15.812172349442065,
+          5.209015449439336
+        ],
+        "short_edge_unordered_mm": [
+          15.812172349442065,
+          5.209015449439336
+        ],
+        "short_edge_max_unordered_mm": 15.812172349442065
+      },
+      "rejected_to_accepted": false,
+      "accepted_to_rejected": false,
+      "native_rival_count": 0
+    },
+    {
+      "frame": "D11",
+      "group": "M",
+      "accepted": true,
+      "algorithm_seconds": 6.788904824999918,
+      "wall_seconds": 7.7874102179994225,
+      "rejection_reasons": [],
+      "seed_count": 12,
+      "fit_count": 14,
+      "best_sources": [
+        "mesh_coarse_projection"
+      ],
+      "variant": "M",
+      "delta_vs_BCM": {
+        "center_mm": 0.0,
+        "yaw_sym180_deg": 0.0,
+        "rim_center_mm": 0.0,
+        "short_edge_labeled_mm": [
+          0.0,
+          0.0
+        ],
+        "short_edge_unordered_mm": [
+          0.0,
+          0.0
+        ],
+        "short_edge_max_unordered_mm": 0.0
+      },
+      "delta_vs_FDP": {
+        "center_mm": 10.077755049294327,
+        "yaw_sym180_deg": 1.239875003554627,
+        "rim_center_mm": 10.373435305172396,
+        "short_edge_labeled_mm": [
+          15.812172349442065,
+          5.209015449439336
+        ],
+        "short_edge_unordered_mm": [
+          15.812172349442065,
+          5.209015449439336
+        ],
+        "short_edge_max_unordered_mm": 15.812172349442065
+      },
+      "rejected_to_accepted": false,
+      "accepted_to_rejected": false,
+      "native_rival_count": 0
+    },
+    {
+      "frame": "D11",
+      "group": "R1",
+      "accepted": true,
+      "algorithm_seconds": 0.7685331889988447,
+      "wall_seconds": 1.770591713997419,
+      "rejection_reasons": [],
+      "seed_count": 1,
+      "fit_count": 3,
+      "best_sources": [
+        "R_roi"
+      ],
+      "variant": "R1",
+      "delta_vs_BCM": {
+        "center_mm": 3.324155781961838,
+        "yaw_sym180_deg": 0.11158934493026866,
+        "rim_center_mm": 3.324155781961838,
+        "short_edge_labeled_mm": [
+          3.459273731205605,
+          3.2311179856979977
+        ],
+        "short_edge_unordered_mm": [
+          3.459273731205605,
+          3.2311179856979977
+        ],
+        "short_edge_max_unordered_mm": 3.459273731205605
+      },
+      "delta_vs_FDP": {
+        "center_mm": 7.691931726394061,
+        "yaw_sym180_deg": 1.1282856586243586,
+        "rim_center_mm": 8.383832540672488,
+        "short_edge_labeled_mm": [
+          13.603830055711361,
+          3.3140261514944513
+        ],
+        "short_edge_unordered_mm": [
+          13.603830055711361,
+          3.3140261514944513
+        ],
+        "short_edge_max_unordered_mm": 13.603830055711361
+      },
+      "rejected_to_accepted": false,
+      "accepted_to_rejected": false,
+      "native_rival_count": 0
+    },
+    {
+      "frame": "D11",
+      "group": "R9",
+      "accepted": true,
+      "algorithm_seconds": 3.2958784270012984,
+      "wall_seconds": 4.277679126000294,
+      "rejection_reasons": [],
+      "seed_count": 9,
+      "fit_count": 11,
+      "best_sources": [
+        "R_roi"
+      ],
+      "variant": "R9",
+      "delta_vs_BCM": {
+        "center_mm": 3.296848668468734,
+        "yaw_sym180_deg": 0.09700481137519043,
+        "rim_center_mm": 3.296848668468734,
+        "short_edge_labeled_mm": [
+          3.415267898565162,
+          3.2103141952154517
+        ],
+        "short_edge_unordered_mm": [
+          3.415267898565162,
+          3.2103141952154517
+        ],
+        "short_edge_max_unordered_mm": 3.415267898565162
+      },
+      "delta_vs_FDP": {
+        "center_mm": 7.772656005212634,
+        "yaw_sym180_deg": 1.1428701921794369,
+        "rim_center_mm": 8.469252021066895,
+        "short_edge_labeled_mm": [
+          13.718222756288446,
+          3.3982062781171645
+        ],
+        "short_edge_unordered_mm": [
+          13.718222756288446,
+          3.3982062781171645
+        ],
+        "short_edge_max_unordered_mm": 13.718222756288446
+      },
+      "rejected_to_accepted": false,
+      "accepted_to_rejected": false,
+      "native_rival_count": 0
+    },
+    {
+      "frame": "D11",
+      "group": "RM",
+      "accepted": true,
+      "algorithm_seconds": 7.125371608999558,
+      "wall_seconds": 8.140657842002838,
+      "rejection_reasons": [],
+      "seed_count": 12,
+      "fit_count": 14,
+      "best_sources": [
+        "M_mesh_coarse"
+      ],
+      "variant": "RM",
+      "delta_vs_BCM": {
+        "center_mm": 0.0,
+        "yaw_sym180_deg": 0.0,
+        "rim_center_mm": 0.0,
+        "short_edge_labeled_mm": [
+          0.0,
+          0.0
+        ],
+        "short_edge_unordered_mm": [
+          0.0,
+          0.0
+        ],
+        "short_edge_max_unordered_mm": 0.0
+      },
+      "delta_vs_FDP": {
+        "center_mm": 10.077755049294327,
+        "yaw_sym180_deg": 1.239875003554627,
+        "rim_center_mm": 10.373435305172396,
+        "short_edge_labeled_mm": [
+          15.812172349442065,
+          5.209015449439336
+        ],
+        "short_edge_unordered_mm": [
+          15.812172349442065,
+          5.209015449439336
+        ],
+        "short_edge_max_unordered_mm": 15.812172349442065
+      },
+      "rejected_to_accepted": false,
+      "accepted_to_rejected": false,
+      "native_rival_count": 0
+    },
+    {
+      "frame": "D12",
+      "group": "BCM",
+      "accepted": false,
+      "algorithm_seconds": 19.409974982001586,
+      "wall_seconds": 20.37444556400078,
+      "rejection_reasons": [
+        "visible_shell_residual_or_coverage_too_low",
+        "mask_touches_image_border"
+      ],
+      "seed_count": 12,
+      "fit_count": 14,
+      "best_sources": [
+        "C_multiplane_joint"
+      ],
+      "variant": "BCM",
+      "delta_vs_BCM": {
+        "center_mm": 0.0,
+        "yaw_sym180_deg": 0.0,
+        "rim_center_mm": 0.0,
+        "short_edge_labeled_mm": [
+          0.0,
+          0.0
+        ],
+        "short_edge_unordered_mm": [
+          0.0,
+          0.0
+        ],
+        "short_edge_max_unordered_mm": 0.0
+      },
+      "delta_vs_FDP": {
+        "center_mm": 17.92523233588406,
+        "yaw_sym180_deg": 2.1508156338951427,
+        "rim_center_mm": 23.670124523906118,
+        "short_edge_labeled_mm": [
+          18.801187275986724,
+          29.851096180539052
+        ],
+        "short_edge_unordered_mm": [
+          18.801187275986724,
+          29.851096180539052
+        ],
+        "short_edge_max_unordered_mm": 29.851096180539052
+      },
+      "rejected_to_accepted": false,
+      "accepted_to_rejected": false,
+      "native_rival_count": 0
+    },
+    {
+      "frame": "D12",
+      "group": "M",
+      "accepted": false,
+      "algorithm_seconds": 6.681548640997789,
+      "wall_seconds": 7.738636320998921,
+      "rejection_reasons": [
+        "visible_shell_residual_or_coverage_too_low",
+        "mask_touches_image_border",
+        "ambiguous_inner_outer_surface_hypotheses"
+      ],
+      "seed_count": 12,
+      "fit_count": 14,
+      "best_sources": [
+        "mesh_coarse_projection"
+      ],
+      "variant": "M",
+      "delta_vs_BCM": {
+        "center_mm": 17.61954058119456,
+        "yaw_sym180_deg": 70.5299671819016,
+        "rim_center_mm": 17.61954058119456,
+        "short_edge_labeled_mm": [
+          218.27713028866955,
+          246.53332198954422
+        ],
+        "short_edge_unordered_mm": [
+          218.27713028866955,
+          246.53332198954422
+        ],
+        "short_edge_max_unordered_mm": 246.53332198954422
+      },
+      "delta_vs_FDP": {
+        "center_mm": 31.811121247512933,
+        "yaw_sym180_deg": 72.68078281579673,
+        "rim_center_mm": 36.66347236904464,
+        "short_edge_labeled_mm": [
+          202.4771549937151,
+          273.24001889690777
+        ],
+        "short_edge_unordered_mm": [
+          202.4771549937151,
+          273.24001889690777
+        ],
+        "short_edge_max_unordered_mm": 273.24001889690777
+      },
+      "rejected_to_accepted": false,
+      "accepted_to_rejected": false,
+      "native_rival_count": 0
+    },
+    {
+      "frame": "D12",
+      "group": "R1",
+      "accepted": false,
+      "algorithm_seconds": 0.8436141340025642,
+      "wall_seconds": 1.8707883249990118,
+      "rejection_reasons": [
+        "visible_shell_residual_or_coverage_too_low",
+        "mask_touches_image_border"
+      ],
+      "seed_count": 1,
+      "fit_count": 3,
+      "best_sources": [
+        "R_roi"
+      ],
+      "variant": "R1",
+      "delta_vs_BCM": {
+        "center_mm": 3.446714855999427,
+        "yaw_sym180_deg": 0.6039065848969963,
+        "rim_center_mm": 3.446714855999427,
+        "short_edge_labeled_mm": [
+          4.185440136404893,
+          3.901753523978876
+        ],
+        "short_edge_unordered_mm": [
+          4.185440136404893,
+          3.901753523978876
+        ],
+        "short_edge_max_unordered_mm": 4.185440136404893
+      },
+      "delta_vs_FDP": {
+        "center_mm": 20.21924530794461,
+        "yaw_sym180_deg": 1.5469090489981465,
+        "rim_center_mm": 25.580968638033145,
+        "short_edge_labeled_mm": [
+          22.83177309429702,
+          29.27132802286426
+        ],
+        "short_edge_unordered_mm": [
+          22.83177309429702,
+          29.27132802286426
+        ],
+        "short_edge_max_unordered_mm": 29.27132802286426
+      },
+      "rejected_to_accepted": false,
+      "accepted_to_rejected": false,
+      "native_rival_count": 0
+    },
+    {
+      "frame": "D12",
+      "group": "R9",
+      "accepted": false,
+      "algorithm_seconds": 2.5843832430000475,
+      "wall_seconds": 3.575232335002511,
+      "rejection_reasons": [
+        "visible_shell_residual_or_coverage_too_low",
+        "mask_touches_image_border"
+      ],
+      "seed_count": 9,
+      "fit_count": 11,
+      "best_sources": [
+        "R_roi"
+      ],
+      "variant": "R9",
+      "delta_vs_BCM": {
+        "center_mm": 0.37472233972896357,
+        "yaw_sym180_deg": 0.04824106394450567,
+        "rim_center_mm": 0.37472233972896357,
+        "short_edge_labeled_mm": [
+          0.37586566812418976,
+          0.4437042229168474
+        ],
+        "short_edge_unordered_mm": [
+          0.37586566812418976,
+          0.4437042229168474
+        ],
+        "short_edge_max_unordered_mm": 0.4437042229168474
+      },
+      "delta_vs_FDP": {
+        "center_mm": 18.191993891951178,
+        "yaw_sym180_deg": 2.1990566978396484,
+        "rim_center_mm": 23.901806816473123,
+        "short_edge_labeled_mm": [
+          18.978228775095477,
+          30.192414264376914
+        ],
+        "short_edge_unordered_mm": [
+          18.978228775095477,
+          30.192414264376914
+        ],
+        "short_edge_max_unordered_mm": 30.192414264376914
+      },
+      "rejected_to_accepted": false,
+      "accepted_to_rejected": false,
+      "native_rival_count": 0
+    },
+    {
+      "frame": "D12",
+      "group": "RM",
+      "accepted": false,
+      "algorithm_seconds": 5.894675652998558,
+      "wall_seconds": 6.884578131001035,
+      "rejection_reasons": [
+        "visible_shell_residual_or_coverage_too_low",
+        "mask_touches_image_border"
+      ],
+      "seed_count": 12,
+      "fit_count": 14,
+      "best_sources": [
+        "R_roi"
+      ],
+      "variant": "RM",
+      "delta_vs_BCM": {
+        "center_mm": 3.446714855999427,
+        "yaw_sym180_deg": 0.6039065848969963,
+        "rim_center_mm": 3.446714855999427,
+        "short_edge_labeled_mm": [
+          4.185440136404893,
+          3.901753523978876
+        ],
+        "short_edge_unordered_mm": [
+          4.185440136404893,
+          3.901753523978876
+        ],
+        "short_edge_max_unordered_mm": 4.185440136404893
+      },
+      "delta_vs_FDP": {
+        "center_mm": 20.21924530794461,
+        "yaw_sym180_deg": 1.5469090489981465,
+        "rim_center_mm": 25.580968638033145,
+        "short_edge_labeled_mm": [
+          22.83177309429702,
+          29.27132802286426
+        ],
+        "short_edge_unordered_mm": [
+          22.83177309429702,
+          29.27132802286426
+        ],
+        "short_edge_max_unordered_mm": 29.27132802286426
+      },
+      "rejected_to_accepted": false,
+      "accepted_to_rejected": false,
+      "native_rival_count": 0
+    }
+  ],
+  "integrity": {
+    "input_unchanged": true,
+    "image_unchanged": true,
+    "package_unchanged": true
+  },
+  "accuracy_validated": false,
+  "FDP_is_truth": false,
+  "FDP_recomputed": false,
+  "native_rival_logic_audited": false,
+  "notes": [
+    "FDP is an archived reference, not independent ground truth.",
+    "The native rival count is reported but the original rival threshold needs a separate source-level audit."
+  ]
+}

@@ -1,0 +1,1124 @@
+{
+  "cases": [
+    {
+      "frame": "D01",
+      "group": "D",
+      "branch": "lingbot",
+      "input_dir": "D01_lingbot",
+      "camera_frame": "right_arm_camera_color_optical_frame",
+      "source": "/home/lsy03/\u6587\u6863/ChatGPT/S1/experiments/20260903_fdp_baseline/cases/right_wrist_20260907_01_lingbot_operator1",
+      "sha256": {
+        "rgb.png": "eb045825a3ec3a497d0695a3f21722bfd67bdf07cf8f9d2dde0bb0b1f007d794",
+        "mask.png": "4f624276282eb32407018855c6fc1b2a8baf77abf23d81fb5b42d9fe238cdc07",
+        "depth_m.npy": "fa3d09ff5a102385dc5c8730cc696dc18182e64a31f4aac816e297a0f3cd3ee0",
+        "intrinsics.npy": "0d7554b837d90016c02ac7959b0d48be3524f44a4fd0aa074305906032d283ff",
+        "base_from_camera.npy": "e8b6f7c45d07aa1bbc58ae320fa1be92d8480b522fd663ebdf13028402c6b068"
+      },
+      "mask_pixels": 31948,
+      "valid_mask_depth_fraction": 1.0
+    },
+    {
+      "frame": "D02",
+      "group": "D",
+      "branch": "lingbot",
+      "input_dir": "D02_lingbot",
+      "camera_frame": "right_arm_camera_color_optical_frame",
+      "source": "/home/lsy03/\u6587\u6863/ChatGPT/S1/experiments/20260903_fdp_baseline/cases/batches/round2_confirmed_20260908_01/right_wrist_D02_20260907_165547_084851541_lingbot_operator_confirmed",
+      "sha256": {
+        "rgb.png": "e4a9395ff29c270fcede334cec42984bcd8c201ea7cc43382c90cd589abae700",
+        "mask.png": "0b4cd76eb5ea257353875e80729bbe85e8310c4db4a57f0e2d1ef2d1663b0599",
+        "depth_m.npy": "c1be9e741179863b9dc95feee5fbf78fbe15b32ac69646e3ad2d2673fd5756ab",
+        "intrinsics.npy": "0d7554b837d90016c02ac7959b0d48be3524f44a4fd0aa074305906032d283ff",
+        "base_from_camera.npy": "272dc055984f159fe882e1c06d69f427faca5f108eddc4f780d6b61832055078"
+      },
+      "mask_pixels": 54118,
+      "valid_mask_depth_fraction": 1.0
+    },
+    {
+      "frame": "D03",
+      "group": "D",
+      "branch": "lingbot",
+      "input_dir": "D03_lingbot",
+      "camera_frame": "right_arm_camera_color_optical_frame",
+      "source": "/home/lsy03/\u6587\u6863/ChatGPT/S1/experiments/20260903_fdp_baseline/cases/batches/round2_confirmed_20260908_01/right_wrist_D03_20260907_170359_732494930_lingbot_operator_confirmed",
+      "sha256": {
+        "rgb.png": "bebaa714648e3cc925f85700397a099a7fc734e58dff02ad6f1c004ec86de9ed",
+        "mask.png": "065ed7cceb85260372ea1ecec9fc2254223f8d69a3c1dd5dfa7c52466cd51e49",
+        "depth_m.npy": "2591c3fd1020f75d64be6081b356f68223988a2f0ddb591598b63342c2d1725b",
+        "intrinsics.npy": "0d7554b837d90016c02ac7959b0d48be3524f44a4fd0aa074305906032d283ff",
+        "base_from_camera.npy": "a0948ff898c896098c22aac19888835dec7a433fe5b1ef9f2de158eb5992b6d7"
+      },
+      "mask_pixels": 53082,
+      "valid_mask_depth_fraction": 1.0
+    },
+    {
+      "frame": "D04",
+      "group": "D",
+      "branch": "lingbot",
+      "input_dir": "D04_lingbot",
+      "camera_frame": "right_arm_camera_color_optical_frame",
+      "source": "/home/lsy03/\u6587\u6863/ChatGPT/S1/experiments/20260903_fdp_baseline/cases/batches/round2_confirmed_20260908_01/right_wrist_D04_20260907_182659_071599799_lingbot_operator_confirmed",
+      "sha256": {
+        "rgb.png": "cc6de6242d8615de6b1af0451e1959dab7675e5be9552048e67d9f8a79fb3fd4",
+        "mask.png": "785b8e916ae2bfccf62080b1186839cab36ab5efddba08d842cb1e501b19749f",
+        "depth_m.npy": "32f75965f13b2a719c88ea897532a99e4dcc42a6c3e85e9b518f06064e5e3031",
+        "intrinsics.npy": "0d7554b837d90016c02ac7959b0d48be3524f44a4fd0aa074305906032d283ff",
+        "base_from_camera.npy": "47faccb220c25771c6692eb1417b1ec86d6a6f50d82b12fb4e6c888314f91352"
+      },
+      "mask_pixels": 113464,
+      "valid_mask_depth_fraction": 1.0
+    },
+    {
+      "frame": "D05",
+      "group": "D",
+      "branch": "lingbot",
+      "input_dir": "D05_lingbot",
+      "camera_frame": "right_arm_camera_color_optical_frame",
+      "source": "/home/lsy03/\u6587\u6863/ChatGPT/S1/experiments/20260903_fdp_baseline/cases/batches/round2_confirmed_20260908_01/right_wrist_D05_20260907_183211_489378596_lingbot_operator_confirmed",
+      "sha256": {
+        "rgb.png": "100b911550420fd167fa7c7c3237167117d8b076e8dd796d4b157024f8055247",
+        "mask.png": "f92eb2337ec521dcee7a13ae7f350a73ab6af23d60bb31a559ccac1f37bada64",
+        "depth_m.npy": "fced9e1ce66202bccc7eef3a1cbb7954735bbe6ee9202626bf351802e6417845",
+        "intrinsics.npy": "0d7554b837d90016c02ac7959b0d48be3524f44a4fd0aa074305906032d283ff",
+        "base_from_camera.npy": "a26cf9102b93ec79d6d31c3a730d3d592e9913095affc2ac85af35f8b9665d24"
+      },
+      "mask_pixels": 101468,
+      "valid_mask_depth_fraction": 1.0
+    },
+    {
+      "frame": "D06",
+      "group": "D",
+      "branch": "lingbot",
+      "input_dir": "D06_lingbot",
+      "camera_frame": "right_arm_camera_color_optical_frame",
+      "source": "/home/lsy03/\u6587\u6863/ChatGPT/S1/experiments/20260903_fdp_baseline/cases/batches/round2_confirmed_20260908_01/right_wrist_D06_20260907_183534_988072685_lingbot_operator_confirmed",
+      "sha256": {
+        "rgb.png": "542208ff258d414c17c77a1fe9141b5549bbaf99b88a44c17ea5f3ced47b7bc0",
+        "mask.png": "f671c9b4e103da96895ec1029ddcd1f9e89826a21c2240bd8e2405af6165a1d9",
+        "depth_m.npy": "7e1cb4baedf9e045473f403cd12e2217491b7318b42b9d94c8034b5668f056b8",
+        "intrinsics.npy": "0d7554b837d90016c02ac7959b0d48be3524f44a4fd0aa074305906032d283ff",
+        "base_from_camera.npy": "c013f58235e158f81bf534440d7ca5d5845ad41ea7a8fa63107bb9d3839a108d"
+      },
+      "mask_pixels": 118505,
+      "valid_mask_depth_fraction": 1.0
+    },
+    {
+      "frame": "D07",
+      "group": "D",
+      "branch": "lingbot",
+      "input_dir": "D07_lingbot",
+      "camera_frame": "right_arm_camera_color_optical_frame",
+      "source": "/home/lsy03/\u6587\u6863/ChatGPT/S1/experiments/20260903_fdp_baseline/cases/batches/round2_confirmed_20260908_01/right_wrist_D07_20260907_183622_577749279_lingbot_operator_confirmed",
+      "sha256": {
+        "rgb.png": "891c5e4ce44ddb144e1be4fca932fdb07ac19a5deb0b00a2711fb1f340a300f1",
+        "mask.png": "96991d21698e7a048e2f11d96e12cc37915d0fc12cc323a7a012d11e69226a1e",
+        "depth_m.npy": "b5bba040ac6b5ff81f0dc1ca5f566fc8d49c68edd20028b2af96e88a41cc49d1",
+        "intrinsics.npy": "0d7554b837d90016c02ac7959b0d48be3524f44a4fd0aa074305906032d283ff",
+        "base_from_camera.npy": "4fe8eb34f07cfadd4fbc35d4a7a3003ab01b95c44701aef19e6c1fa9885f8308"
+      },
+      "mask_pixels": 108346,
+      "valid_mask_depth_fraction": 1.0
+    },
+    {
+      "frame": "D08",
+      "group": "D",
+      "branch": "lingbot",
+      "input_dir": "D08_lingbot",
+      "camera_frame": "right_arm_camera_color_optical_frame",
+      "source": "/home/lsy03/\u6587\u6863/ChatGPT/S1/experiments/20260903_fdp_baseline/cases/batches/round2_confirmed_20260908_01/right_wrist_D08_20260907_190617_386973688_lingbot_operator_confirmed",
+      "sha256": {
+        "rgb.png": "2f043c0274efbe33b575325c34de64959241e3d9850095a189966e58399a79da",
+        "mask.png": "fe93e4fc9a832ad147bd60223d4ee644aa992b1adde3720259beccccf3bb52e6",
+        "depth_m.npy": "f9dca857dc1799c56e9b3d22f7f3e6974aae98bc5ce921d5c9e4e7bc73c9b06c",
+        "intrinsics.npy": "0d7554b837d90016c02ac7959b0d48be3524f44a4fd0aa074305906032d283ff",
+        "base_from_camera.npy": "77cbcdbceac91e16754b22c97375f9fbdad86d86bb62a55526eacb0bf126584d"
+      },
+      "mask_pixels": 118100,
+      "valid_mask_depth_fraction": 1.0
+    },
+    {
+      "frame": "D09",
+      "group": "D",
+      "branch": "lingbot",
+      "input_dir": "D09_lingbot",
+      "camera_frame": "right_arm_camera_color_optical_frame",
+      "source": "/home/lsy03/\u6587\u6863/ChatGPT/S1/experiments/20260903_fdp_baseline/cases/batches/round2_confirmed_20260908_01/right_wrist_D09_20260907_190653_193583878_lingbot_operator_confirmed",
+      "sha256": {
+        "rgb.png": "a9435a3e4a3163fb97a321145ce8a1903b3acf6680f046a55851794619d4fa8c",
+        "mask.png": "5352a8c75d7766a167d8e0fb9b307ce0307abd5928700c1b40af898838bc2856",
+        "depth_m.npy": "588e4d1425995747ad39743566adca4031694538b37db319f8bc9f70fc865167",
+        "intrinsics.npy": "0d7554b837d90016c02ac7959b0d48be3524f44a4fd0aa074305906032d283ff",
+        "base_from_camera.npy": "0cab86fb4db898dde63d917a2606e15a8086fe173fad0d14c080126571bce8f6"
+      },
+      "mask_pixels": 117904,
+      "valid_mask_depth_fraction": 1.0
+    },
+    {
+      "frame": "D10",
+      "group": "D",
+      "branch": "lingbot",
+      "input_dir": "D10_lingbot",
+      "camera_frame": "right_arm_camera_color_optical_frame",
+      "source": "/home/lsy03/\u6587\u6863/ChatGPT/S1/experiments/20260903_fdp_baseline/cases/batches/round2_confirmed_20260908_01/right_wrist_D10_20260907_190736_821693545_lingbot_operator_confirmed",
+      "sha256": {
+        "rgb.png": "a6bae50471f3a2deb4b3eefeae59dea835bf6e9db2528197be9d0538fd9717c9",
+        "mask.png": "5107740fd0f20122e6256317beba89653f43515938e48e3b6502d98bb8edf7e8",
+        "depth_m.npy": "d6b3448f8c14e3d586f667005cce479e18e62aca6031fbeaede897b7e06463e6",
+        "intrinsics.npy": "0d7554b837d90016c02ac7959b0d48be3524f44a4fd0aa074305906032d283ff",
+        "base_from_camera.npy": "c2b039d7514de686e41d41bdebddfcbf81080ce1903cff3c4f194514c3c30230"
+      },
+      "mask_pixels": 126847,
+      "valid_mask_depth_fraction": 1.0
+    },
+    {
+      "frame": "D11",
+      "group": "D",
+      "branch": "lingbot",
+      "input_dir": "D11_lingbot",
+      "camera_frame": "right_arm_camera_color_optical_frame",
+      "source": "/home/lsy03/\u6587\u6863/ChatGPT/S1/experiments/20260903_fdp_baseline/cases/batches/round2_confirmed_20260908_01/right_wrist_D11_20260907_190826_818308342_lingbot_operator_confirmed",
+      "sha256": {
+        "rgb.png": "5b54fb335af3826156e4cf70676dc509697fb898fd01de2ae6e7bcbae0056f2d",
+        "mask.png": "1f9029d5e8af298bbf73c5c8b977d5ec6b3b3bad97a3b044c39f720f804031b2",
+        "depth_m.npy": "bf5c48efa416306a9f2fe735137b25686ac819373df137979ed7b4cfc44020a9",
+        "intrinsics.npy": "0d7554b837d90016c02ac7959b0d48be3524f44a4fd0aa074305906032d283ff",
+        "base_from_camera.npy": "203c2e13d2f1b76717cb40d9f8c5c2a1b3e4b42d568b9184884d3e84d919d18c"
+      },
+      "mask_pixels": 124681,
+      "valid_mask_depth_fraction": 1.0
+    },
+    {
+      "frame": "D12",
+      "group": "D",
+      "branch": "lingbot",
+      "input_dir": "D12_lingbot",
+      "camera_frame": "right_arm_camera_color_optical_frame",
+      "source": "/home/lsy03/\u6587\u6863/ChatGPT/S1/experiments/20260903_fdp_baseline/cases/batches/round2_confirmed_20260908_01/right_wrist_D12_20260907_190946_145566561_lingbot_operator_confirmed",
+      "sha256": {
+        "rgb.png": "0a2daacd4ae90a0b18f6f69338752333cd99e34393e66c93c98b56699b5f654a",
+        "mask.png": "fce4b14164661cb8145541b831bd809e3385f68b8713dea2e9a98e784a4bcfac",
+        "depth_m.npy": "3a9d763bf122736a2d7d6a3a37981e2411e90fb87bed4b18dade5785fe6fbd0f",
+        "intrinsics.npy": "0d7554b837d90016c02ac7959b0d48be3524f44a4fd0aa074305906032d283ff",
+        "base_from_camera.npy": "8609ad86ddbee839d68b4e0addd45a8c22f0016e4700c36003b704a7a4be2149"
+      },
+      "mask_pixels": 77626,
+      "valid_mask_depth_fraction": 1.0
+    },
+    {
+      "frame": "H01L",
+      "group": "H",
+      "branch": "lingbot",
+      "input_dir": "H01L_lingbot",
+      "camera_frame": "left_arm_camera_color_optical_frame",
+      "source": "/home/lsy03/\u6587\u6863/ChatGPT/S1/experiments/20260903_fdp_baseline/cases/batches/h01l_h03l_confirmed_20260909_01/left_wrist_H01L_20260909_095903_202442167_lingbot_operator_confirmed",
+      "sha256": {
+        "rgb.png": "9f38bcee1ad821ee20b31e078d25bf0be99b8a92334eff329dc0d0f19f22133d",
+        "mask.png": "a0ab8978a4018de27e30a5ea2bbb8dd9b19d83ca080181e1b23ad0dde93b8599",
+        "depth_m.npy": "38224489ef4871209e82ffe680255127f27216d0dd69f5bb63e9c6a8cf9fba9c",
+        "intrinsics.npy": "7bad7ecc5026b1c2891b06f145326bdf2b56b4f1aaadbf7e81a7ae713569f04c",
+        "base_from_camera.npy": "8205ab18290e2643e28cb46abc20a1f74481974533a91f7da735a345158f3b4c"
+      },
+      "mask_pixels": 144079,
+      "valid_mask_depth_fraction": 1.0
+    },
+    {
+      "frame": "H02L",
+      "group": "H",
+      "branch": "lingbot",
+      "input_dir": "H02L_lingbot",
+      "camera_frame": "left_arm_camera_color_optical_frame",
+      "source": "/home/lsy03/\u6587\u6863/ChatGPT/S1/experiments/20260903_fdp_baseline/cases/batches/h01l_h03l_confirmed_20260909_01/left_wrist_H02L_20260909_101912_757536619_lingbot_operator_confirmed",
+      "sha256": {
+        "rgb.png": "eed25b474ed93d19104e8f3b3e28895347949730ddc9335520824b4f3c807106",
+        "mask.png": "a7437c300eb37cf6266354368e0cd3fe05c7b40853b02c10364757d225a6b109",
+        "depth_m.npy": "b2d321012ca500c8e7b6122b9c2376e795507d7cfcd74791c9354ec177757738",
+        "intrinsics.npy": "7bad7ecc5026b1c2891b06f145326bdf2b56b4f1aaadbf7e81a7ae713569f04c",
+        "base_from_camera.npy": "a7c5252d28255fe6099682181d3d2cea99d91c639753944519ff16b73619947c"
+      },
+      "mask_pixels": 143935,
+      "valid_mask_depth_fraction": 1.0
+    },
+    {
+      "frame": "H03L",
+      "group": "H",
+      "branch": "lingbot",
+      "input_dir": "H03L_lingbot",
+      "camera_frame": "left_arm_camera_color_optical_frame",
+      "source": "/home/lsy03/\u6587\u6863/ChatGPT/S1/experiments/20260903_fdp_baseline/cases/batches/h01l_h03l_confirmed_20260909_01/left_wrist_H03L_20260909_102639_767663149_lingbot_operator_confirmed",
+      "sha256": {
+        "rgb.png": "26a52aa414b406e8d77e11817fc1b41c7d24f8c376dfb6bb70c5b6113976c5cb",
+        "mask.png": "cf2ae0286d0fdf96730a0c278572b92c4692e22b1bb279b4a51c0a0e87a59a2d",
+        "depth_m.npy": "49e3f0c9d0a16e1779d522b98bc2ab1a47bb3c83c5837e7e88e2edaa9f5bcd1f",
+        "intrinsics.npy": "7bad7ecc5026b1c2891b06f145326bdf2b56b4f1aaadbf7e81a7ae713569f04c",
+        "base_from_camera.npy": "a9e9bde775a4ee7640705dcf9371ef0f12c6c4c638a41b351a3c27f9a11cc505"
+      },
+      "mask_pixels": 142624,
+      "valid_mask_depth_fraction": 1.0
+    },
+    {
+      "frame": "C01",
+      "group": "C",
+      "branch": "raw",
+      "input_dir": "C01_raw",
+      "camera_frame": "left_arm_camera_color_optical_frame",
+      "source": "L01_wrist_charuco_20260915_093818_877801116",
+      "sha256": {
+        "rgb.png": "c0b5609cffa4582adab6595189659924c17efe2ab3447cd75d8d689e1c3fbe65",
+        "mask.png": "751e73cac9abbe3387afcb0ca62dbd51edd076a03ee2938681b8bf45d82ec4db",
+        "depth_m.npy": "1b79d6fde95c5af900e2eece9cf6be1ba214789da440f66e9da167395aa820cb",
+        "intrinsics.npy": "7bad7ecc5026b1c2891b06f145326bdf2b56b4f1aaadbf7e81a7ae713569f04c",
+        "base_from_camera.npy": "8539e331f1a6f7ff20e83f16eba3f9e455c545bf844ea954721288337ad1cf99"
+      },
+      "mask_pixels": 113240,
+      "valid_mask_depth_fraction": 0.9932974214058636
+    },
+    {
+      "frame": "C01",
+      "group": "C",
+      "branch": "lingbot",
+      "input_dir": "C01_lingbot",
+      "camera_frame": "left_arm_camera_color_optical_frame",
+      "source": "L01_wrist_charuco_20260915_093818_877801116",
+      "sha256": {
+        "rgb.png": "c0b5609cffa4582adab6595189659924c17efe2ab3447cd75d8d689e1c3fbe65",
+        "mask.png": "751e73cac9abbe3387afcb0ca62dbd51edd076a03ee2938681b8bf45d82ec4db",
+        "depth_m.npy": "5a494d56e16bc1113a9d96e034c7627bf005a4f57d35f35bd28aaf441527f93c",
+        "intrinsics.npy": "7bad7ecc5026b1c2891b06f145326bdf2b56b4f1aaadbf7e81a7ae713569f04c",
+        "base_from_camera.npy": "8539e331f1a6f7ff20e83f16eba3f9e455c545bf844ea954721288337ad1cf99"
+      },
+      "mask_pixels": 113240,
+      "valid_mask_depth_fraction": 1.0
+    },
+    {
+      "frame": "C02",
+      "group": "C",
+      "branch": "raw",
+      "input_dir": "C02_raw",
+      "camera_frame": "left_arm_camera_color_optical_frame",
+      "source": "L02_wrist_charuco_20260915_100236_358935353",
+      "sha256": {
+        "rgb.png": "c83e6f8721bfb3996bda5cdb456c9d2313f14b59cb98c90139bcd03e06f65ff9",
+        "mask.png": "e7d9c385b850f31ef0fec3e8c7bb5c2c6565905ae4ea1f21db44d22c91510200",
+        "depth_m.npy": "640cfed4e9032ba511224124449866037da9646bd18fe4ea5a4e909318d97c3c",
+        "intrinsics.npy": "7bad7ecc5026b1c2891b06f145326bdf2b56b4f1aaadbf7e81a7ae713569f04c",
+        "base_from_camera.npy": "a61d8ef46e2113691285e4521f8e146f29350c928b6e2b7bd3a05b8112b21d9a"
+      },
+      "mask_pixels": 148943,
+      "valid_mask_depth_fraction": 0.9454019322828197
+    },
+    {
+      "frame": "C02",
+      "group": "C",
+      "branch": "lingbot",
+      "input_dir": "C02_lingbot",
+      "camera_frame": "left_arm_camera_color_optical_frame",
+      "source": "L02_wrist_charuco_20260915_100236_358935353",
+      "sha256": {
+        "rgb.png": "c83e6f8721bfb3996bda5cdb456c9d2313f14b59cb98c90139bcd03e06f65ff9",
+        "mask.png": "e7d9c385b850f31ef0fec3e8c7bb5c2c6565905ae4ea1f21db44d22c91510200",
+        "depth_m.npy": "a1b4e98d6b42036607470787e26c0578be231c847624e84b9e9471aaa078247d",
+        "intrinsics.npy": "7bad7ecc5026b1c2891b06f145326bdf2b56b4f1aaadbf7e81a7ae713569f04c",
+        "base_from_camera.npy": "a61d8ef46e2113691285e4521f8e146f29350c928b6e2b7bd3a05b8112b21d9a"
+      },
+      "mask_pixels": 148943,
+      "valid_mask_depth_fraction": 1.0
+    },
+    {
+      "frame": "C03",
+      "group": "C",
+      "branch": "raw",
+      "input_dir": "C03_raw",
+      "camera_frame": "left_arm_camera_color_optical_frame",
+      "source": "L03_00_wrist_charuco_20260915_104002_497962253",
+      "sha256": {
+        "rgb.png": "22f3fe91490c80f2696dfe3d57a1975b393eb16bb08c789390ca7734468f1cf8",
+        "mask.png": "8d4fe39dafb478e0fceeaafa540672402feaee3c6dc412988da45dca61886fbb",
+        "depth_m.npy": "162b3a2531d11eeb33f1d5f5d50ae72b658bd4d44f1f7b8fadf52174c4997874",
+        "intrinsics.npy": "7bad7ecc5026b1c2891b06f145326bdf2b56b4f1aaadbf7e81a7ae713569f04c",
+        "base_from_camera.npy": "90d961707ac7c80c4a7557e7900b83d34be69af47012127373086995270c4803"
+      },
+      "mask_pixels": 175860,
+      "valid_mask_depth_fraction": 0.795866029796429
+    },
+    {
+      "frame": "C03",
+      "group": "C",
+      "branch": "lingbot",
+      "input_dir": "C03_lingbot",
+      "camera_frame": "left_arm_camera_color_optical_frame",
+      "source": "L03_00_wrist_charuco_20260915_104002_497962253",
+      "sha256": {
+        "rgb.png": "22f3fe91490c80f2696dfe3d57a1975b393eb16bb08c789390ca7734468f1cf8",
+        "mask.png": "8d4fe39dafb478e0fceeaafa540672402feaee3c6dc412988da45dca61886fbb",
+        "depth_m.npy": "207189b3cef9e6a04516f3d4834d22886dcca1f37b52d392749626e8e5ce32b4",
+        "intrinsics.npy": "7bad7ecc5026b1c2891b06f145326bdf2b56b4f1aaadbf7e81a7ae713569f04c",
+        "base_from_camera.npy": "90d961707ac7c80c4a7557e7900b83d34be69af47012127373086995270c4803"
+      },
+      "mask_pixels": 175860,
+      "valid_mask_depth_fraction": 1.0
+    },
+    {
+      "frame": "C04",
+      "group": "C",
+      "branch": "raw",
+      "input_dir": "C04_raw",
+      "camera_frame": "left_arm_camera_color_optical_frame",
+      "source": "L03_10_wrist_charuco_20260915_103928_398335507",
+      "sha256": {
+        "rgb.png": "e45ef5840666707605ee115d65831b17cb1ade67c38e85b66d62e25e023fb51c",
+        "mask.png": "6bcbe1cbf9d35ac44d54b472a60678511510232b27558a6e9fe226d171551e8c",
+        "depth_m.npy": "faef37ddba9bfcc7065eb489150c4a20185f5d4caa5331317bcb3cf32ccb4163",
+        "intrinsics.npy": "7bad7ecc5026b1c2891b06f145326bdf2b56b4f1aaadbf7e81a7ae713569f04c",
+        "base_from_camera.npy": "8902a45c8c7c3bf7bfad41455db63cd63116d59d810bf2526f3d65d07b4e3895"
+      },
+      "mask_pixels": 175382,
+      "valid_mask_depth_fraction": 0.8046435780182687
+    },
+    {
+      "frame": "C04",
+      "group": "C",
+      "branch": "lingbot",
+      "input_dir": "C04_lingbot",
+      "camera_frame": "left_arm_camera_color_optical_frame",
+      "source": "L03_10_wrist_charuco_20260915_103928_398335507",
+      "sha256": {
+        "rgb.png": "e45ef5840666707605ee115d65831b17cb1ade67c38e85b66d62e25e023fb51c",
+        "mask.png": "6bcbe1cbf9d35ac44d54b472a60678511510232b27558a6e9fe226d171551e8c",
+        "depth_m.npy": "b7485e40fb37e2b9b83f198c2428b8e26d2504137e37bea7427e44f7ef2c670a",
+        "intrinsics.npy": "7bad7ecc5026b1c2891b06f145326bdf2b56b4f1aaadbf7e81a7ae713569f04c",
+        "base_from_camera.npy": "8902a45c8c7c3bf7bfad41455db63cd63116d59d810bf2526f3d65d07b4e3895"
+      },
+      "mask_pixels": 175382,
+      "valid_mask_depth_fraction": 1.0
+    },
+    {
+      "frame": "C05",
+      "group": "C",
+      "branch": "raw",
+      "input_dir": "C05_raw",
+      "camera_frame": "left_arm_camera_color_optical_frame",
+      "source": "L04_00_wrist_charuco_20260915_104435_858773771",
+      "sha256": {
+        "rgb.png": "fc8d9ed4f2d9c5740fd3ec7594abc4977e005f04802a5d0d3f4b9ee58b1723fe",
+        "mask.png": "b8e44236fde245993f959ec3b43235df8fdf9d82e9b0aa563ba76980753070cc",
+        "depth_m.npy": "618fbd00eb41dd484586060e21cee35a41801c09ad8c413c3c734dc293d13152",
+        "intrinsics.npy": "7bad7ecc5026b1c2891b06f145326bdf2b56b4f1aaadbf7e81a7ae713569f04c",
+        "base_from_camera.npy": "b781d9ef9c26188fb7093567ce2cbcbe21f48d6abc143334ff553fc1a6160645"
+      },
+      "mask_pixels": 163331,
+      "valid_mask_depth_fraction": 0.8450753378109483
+    },
+    {
+      "frame": "C05",
+      "group": "C",
+      "branch": "lingbot",
+      "input_dir": "C05_lingbot",
+      "camera_frame": "left_arm_camera_color_optical_frame",
+      "source": "L04_00_wrist_charuco_20260915_104435_858773771",
+      "sha256": {
+        "rgb.png": "fc8d9ed4f2d9c5740fd3ec7594abc4977e005f04802a5d0d3f4b9ee58b1723fe",
+        "mask.png": "b8e44236fde245993f959ec3b43235df8fdf9d82e9b0aa563ba76980753070cc",
+        "depth_m.npy": "40d248ac1bb6e9b635e8e7b874633aef6e3a8794364701e044cb481c39afcf75",
+        "intrinsics.npy": "7bad7ecc5026b1c2891b06f145326bdf2b56b4f1aaadbf7e81a7ae713569f04c",
+        "base_from_camera.npy": "b781d9ef9c26188fb7093567ce2cbcbe21f48d6abc143334ff553fc1a6160645"
+      },
+      "mask_pixels": 163331,
+      "valid_mask_depth_fraction": 0.997232613527132
+    },
+    {
+      "frame": "C06",
+      "group": "C",
+      "branch": "raw",
+      "input_dir": "C06_raw",
+      "camera_frame": "left_arm_camera_color_optical_frame",
+      "source": "L04_10_wrist_charuco_20260915_104717_786588568",
+      "sha256": {
+        "rgb.png": "fc141b1ca1f41773308e0ae4b058b191a98b096ed43ef7be498f3221b8c88638",
+        "mask.png": "df025e0c4268b2224d6bf90c308bb4ddd438f85f9de82b56c1569999c9e39b3d",
+        "depth_m.npy": "1a6c9680ec8d44cb8e78a6085468ea766e7b13e2aaa6dbe52fea9da95b31b462",
+        "intrinsics.npy": "7bad7ecc5026b1c2891b06f145326bdf2b56b4f1aaadbf7e81a7ae713569f04c",
+        "base_from_camera.npy": "12c6c3407f6b39af90a2dfd8d1dfd6e6f0193bf929a6569e74626358250269fb"
+      },
+      "mask_pixels": 151116,
+      "valid_mask_depth_fraction": 0.8549855739961354
+    },
+    {
+      "frame": "C06",
+      "group": "C",
+      "branch": "lingbot",
+      "input_dir": "C06_lingbot",
+      "camera_frame": "left_arm_camera_color_optical_frame",
+      "source": "L04_10_wrist_charuco_20260915_104717_786588568",
+      "sha256": {
+        "rgb.png": "fc141b1ca1f41773308e0ae4b058b191a98b096ed43ef7be498f3221b8c88638",
+        "mask.png": "df025e0c4268b2224d6bf90c308bb4ddd438f85f9de82b56c1569999c9e39b3d",
+        "depth_m.npy": "4362834c9a81316c00da837287f9f6a287fd61fe77114a8c37f7da7dcf0a2cfe",
+        "intrinsics.npy": "7bad7ecc5026b1c2891b06f145326bdf2b56b4f1aaadbf7e81a7ae713569f04c",
+        "base_from_camera.npy": "12c6c3407f6b39af90a2dfd8d1dfd6e6f0193bf929a6569e74626358250269fb"
+      },
+      "mask_pixels": 151116,
+      "valid_mask_depth_fraction": 1.0
+    },
+    {
+      "frame": "C07",
+      "group": "C",
+      "branch": "raw",
+      "input_dir": "C07_raw",
+      "camera_frame": "left_arm_camera_color_optical_frame",
+      "source": "L04_wrist_charuco_20260915_104358_532673829",
+      "sha256": {
+        "rgb.png": "591dde3f09c577b98ea166bfe7fcff745e5b9bda8845bd66aec4457856c095d4",
+        "mask.png": "b04fe398d37d5e40cebe1d837fbcc4c42be79f897868d339c5c9c0691202180e",
+        "depth_m.npy": "26cd7c3ca469fd3458bd84835e5913c51d3fff2013fca734bd118195a00eb726",
+        "intrinsics.npy": "7bad7ecc5026b1c2891b06f145326bdf2b56b4f1aaadbf7e81a7ae713569f04c",
+        "base_from_camera.npy": "2fc5b375e2e6c48a08107361bf7adda5b2cb787558b468a9314fbef340b8c1b5"
+      },
+      "mask_pixels": 163385,
+      "valid_mask_depth_fraction": 0.8503228570554212
+    },
+    {
+      "frame": "C07",
+      "group": "C",
+      "branch": "lingbot",
+      "input_dir": "C07_lingbot",
+      "camera_frame": "left_arm_camera_color_optical_frame",
+      "source": "L04_wrist_charuco_20260915_104358_532673829",
+      "sha256": {
+        "rgb.png": "591dde3f09c577b98ea166bfe7fcff745e5b9bda8845bd66aec4457856c095d4",
+        "mask.png": "b04fe398d37d5e40cebe1d837fbcc4c42be79f897868d339c5c9c0691202180e",
+        "depth_m.npy": "150f80e086eadf83065ae2b610f5eee61b85366125dd68edb73460049824c23b",
+        "intrinsics.npy": "7bad7ecc5026b1c2891b06f145326bdf2b56b4f1aaadbf7e81a7ae713569f04c",
+        "base_from_camera.npy": "2fc5b375e2e6c48a08107361bf7adda5b2cb787558b468a9314fbef340b8c1b5"
+      },
+      "mask_pixels": 163385,
+      "valid_mask_depth_fraction": 1.0
+    },
+    {
+      "frame": "C08",
+      "group": "C",
+      "branch": "raw",
+      "input_dir": "C08_raw",
+      "camera_frame": "left_arm_camera_color_optical_frame",
+      "source": "R01_wrist_charuco_20260915_093900_967150252",
+      "sha256": {
+        "rgb.png": "4ef3107a591e1b97f1d297583fa15168f3e9088bf5033d5f622eb24985e2d7dc",
+        "mask.png": "cc59d8955176f18171a4d97e102145edc6944d706ca0bd0e6c8411f1ab0a9f17",
+        "depth_m.npy": "4dd6ceee452bbdc20a0f35d1010ec27bffa31bb920c3674d2ad18b85fb4acc8e",
+        "intrinsics.npy": "7bad7ecc5026b1c2891b06f145326bdf2b56b4f1aaadbf7e81a7ae713569f04c",
+        "base_from_camera.npy": "4c3ea29506245069242d4e27180afd484a031ddeb5bd804e44371945e8486885"
+      },
+      "mask_pixels": 112840,
+      "valid_mask_depth_fraction": 0.9919532080822403
+    },
+    {
+      "frame": "C08",
+      "group": "C",
+      "branch": "lingbot",
+      "input_dir": "C08_lingbot",
+      "camera_frame": "left_arm_camera_color_optical_frame",
+      "source": "R01_wrist_charuco_20260915_093900_967150252",
+      "sha256": {
+        "rgb.png": "4ef3107a591e1b97f1d297583fa15168f3e9088bf5033d5f622eb24985e2d7dc",
+        "mask.png": "cc59d8955176f18171a4d97e102145edc6944d706ca0bd0e6c8411f1ab0a9f17",
+        "depth_m.npy": "0d230549fc38d592e165a02c41df875ed868754d0375e8bb0b4e9d56dceb8626",
+        "intrinsics.npy": "7bad7ecc5026b1c2891b06f145326bdf2b56b4f1aaadbf7e81a7ae713569f04c",
+        "base_from_camera.npy": "4c3ea29506245069242d4e27180afd484a031ddeb5bd804e44371945e8486885"
+      },
+      "mask_pixels": 112840,
+      "valid_mask_depth_fraction": 1.0
+    },
+    {
+      "frame": "C09",
+      "group": "C",
+      "branch": "raw",
+      "input_dir": "C09_raw",
+      "camera_frame": "right_arm_camera_color_optical_frame",
+      "source": "R01_wrist_charuco_20260915_094033_680788016",
+      "sha256": {
+        "rgb.png": "a58cdcc5ad65efc8f86ec5fc7322a8052488e50a8624a304cc75a2ef4fccdf3d",
+        "mask.png": "a745c5e5875117bc9236769575dae9b0fb81e42e3e4c40de6ad1d406c6b022c5",
+        "depth_m.npy": "c604c7f91b2364054427223cebe82963b4cd4b6575d39483527dda394971d3be",
+        "intrinsics.npy": "0d7554b837d90016c02ac7959b0d48be3524f44a4fd0aa074305906032d283ff",
+        "base_from_camera.npy": "ee3480f5a758450880c7037d07828a6ab7072e39ecebfc95d6106bce7b975df4"
+      },
+      "mask_pixels": 111013,
+      "valid_mask_depth_fraction": 0.9843081440912326
+    },
+    {
+      "frame": "C09",
+      "group": "C",
+      "branch": "lingbot",
+      "input_dir": "C09_lingbot",
+      "camera_frame": "right_arm_camera_color_optical_frame",
+      "source": "R01_wrist_charuco_20260915_094033_680788016",
+      "sha256": {
+        "rgb.png": "a58cdcc5ad65efc8f86ec5fc7322a8052488e50a8624a304cc75a2ef4fccdf3d",
+        "mask.png": "a745c5e5875117bc9236769575dae9b0fb81e42e3e4c40de6ad1d406c6b022c5",
+        "depth_m.npy": "d82e9f9276d118cfcc80d2732095d3f6394e55fe81ac379b5ae98801dffe65e3",
+        "intrinsics.npy": "0d7554b837d90016c02ac7959b0d48be3524f44a4fd0aa074305906032d283ff",
+        "base_from_camera.npy": "ee3480f5a758450880c7037d07828a6ab7072e39ecebfc95d6106bce7b975df4"
+      },
+      "mask_pixels": 111013,
+      "valid_mask_depth_fraction": 1.0
+    },
+    {
+      "frame": "C10",
+      "group": "C",
+      "branch": "raw",
+      "input_dir": "C10_raw",
+      "camera_frame": "right_arm_camera_color_optical_frame",
+      "source": "R02_wrist_charuco_20260915_100308_809523978",
+      "sha256": {
+        "rgb.png": "7a7d578beb88bb60f6dc4286ff0cf9c45e008fe56c0022d2f0ed210b7e8192d9",
+        "mask.png": "5a82fd2ff05c015b0b59e547966eb953d00df71bbf133f3750686ebd95ccef71",
+        "depth_m.npy": "edc132a70cd852af8d7bb407ccf331ba0518c251908064fd43befdf9c3d805c1",
+        "intrinsics.npy": "0d7554b837d90016c02ac7959b0d48be3524f44a4fd0aa074305906032d283ff",
+        "base_from_camera.npy": "baf6c446877b07b017d37b4dbb26e165a66c6700ea8d081577cafdd914c6b2be"
+      },
+      "mask_pixels": 140132,
+      "valid_mask_depth_fraction": 0.9289955185111181
+    },
+    {
+      "frame": "C10",
+      "group": "C",
+      "branch": "lingbot",
+      "input_dir": "C10_lingbot",
+      "camera_frame": "right_arm_camera_color_optical_frame",
+      "source": "R02_wrist_charuco_20260915_100308_809523978",
+      "sha256": {
+        "rgb.png": "7a7d578beb88bb60f6dc4286ff0cf9c45e008fe56c0022d2f0ed210b7e8192d9",
+        "mask.png": "5a82fd2ff05c015b0b59e547966eb953d00df71bbf133f3750686ebd95ccef71",
+        "depth_m.npy": "69ad0003036e6d3460ad0d4d3c87b63c701fcbf5fed13d224b5707e821731dcd",
+        "intrinsics.npy": "0d7554b837d90016c02ac7959b0d48be3524f44a4fd0aa074305906032d283ff",
+        "base_from_camera.npy": "baf6c446877b07b017d37b4dbb26e165a66c6700ea8d081577cafdd914c6b2be"
+      },
+      "mask_pixels": 140132,
+      "valid_mask_depth_fraction": 1.0
+    },
+    {
+      "frame": "C11",
+      "group": "C",
+      "branch": "raw",
+      "input_dir": "C11_raw",
+      "camera_frame": "right_arm_camera_color_optical_frame",
+      "source": "R03_wrist_charuco_20260915_103743_184821162",
+      "sha256": {
+        "rgb.png": "183811c4bf28ee56d02181a18b7ac04b175a552a4fe246c29b9d9c5e1c9b2c65",
+        "mask.png": "d5b7297631a1375ca60e5f93b4cace079e0c9a8d27b668a60fbed5162314a70b",
+        "depth_m.npy": "a409b54ffb7752901ac3a27613d3d98a1e22cd1b32e26ef0ffb2c42833273cb9",
+        "intrinsics.npy": "0d7554b837d90016c02ac7959b0d48be3524f44a4fd0aa074305906032d283ff",
+        "base_from_camera.npy": "2a9c02f502122ae0056dec111d5fad4f381c1a4cda1aeb65510c32806880520c"
+      },
+      "mask_pixels": 241604,
+      "valid_mask_depth_fraction": 0.9594129236270923
+    },
+    {
+      "frame": "C11",
+      "group": "C",
+      "branch": "lingbot",
+      "input_dir": "C11_lingbot",
+      "camera_frame": "right_arm_camera_color_optical_frame",
+      "source": "R03_wrist_charuco_20260915_103743_184821162",
+      "sha256": {
+        "rgb.png": "183811c4bf28ee56d02181a18b7ac04b175a552a4fe246c29b9d9c5e1c9b2c65",
+        "mask.png": "d5b7297631a1375ca60e5f93b4cace079e0c9a8d27b668a60fbed5162314a70b",
+        "depth_m.npy": "a3f53b6ad8f27c90799ea45f233f0d2dfbb0f3389ce805846fc43dca5dd9812b",
+        "intrinsics.npy": "0d7554b837d90016c02ac7959b0d48be3524f44a4fd0aa074305906032d283ff",
+        "base_from_camera.npy": "2a9c02f502122ae0056dec111d5fad4f381c1a4cda1aeb65510c32806880520c"
+      },
+      "mask_pixels": 241604,
+      "valid_mask_depth_fraction": 1.0
+    },
+    {
+      "frame": "C12",
+      "group": "C",
+      "branch": "raw",
+      "input_dir": "C12_raw",
+      "camera_frame": "right_arm_camera_color_optical_frame",
+      "source": "R04_00_wrist_charuco_20260915_104526_910331328",
+      "sha256": {
+        "rgb.png": "478194fc63fe94c089e7e8a529d8ab04cb5a056c2921a3ec87c6d30fbcd63707",
+        "mask.png": "09fcab095028558e23960d4550b50e11edac27c2202e18dfed62143fe1b10b34",
+        "depth_m.npy": "68aaa94768714c53cd05fbbe09aeba4bb4c68578a8d49331c3b614bb2fc27800",
+        "intrinsics.npy": "0d7554b837d90016c02ac7959b0d48be3524f44a4fd0aa074305906032d283ff",
+        "base_from_camera.npy": "a639726e4da9907d9b4571f84b9029d156af0081a27e6236fc85e7404a34d8d8"
+      },
+      "mask_pixels": 155536,
+      "valid_mask_depth_fraction": 0.7712876761650036
+    },
+    {
+      "frame": "C12",
+      "group": "C",
+      "branch": "lingbot",
+      "input_dir": "C12_lingbot",
+      "camera_frame": "right_arm_camera_color_optical_frame",
+      "source": "R04_00_wrist_charuco_20260915_104526_910331328",
+      "sha256": {
+        "rgb.png": "478194fc63fe94c089e7e8a529d8ab04cb5a056c2921a3ec87c6d30fbcd63707",
+        "mask.png": "09fcab095028558e23960d4550b50e11edac27c2202e18dfed62143fe1b10b34",
+        "depth_m.npy": "a2c4fa5ce3b4fddbf66dfac4d0d0a604d44dd0ba188650defcdb36991a4fde6a",
+        "intrinsics.npy": "0d7554b837d90016c02ac7959b0d48be3524f44a4fd0aa074305906032d283ff",
+        "base_from_camera.npy": "a639726e4da9907d9b4571f84b9029d156af0081a27e6236fc85e7404a34d8d8"
+      },
+      "mask_pixels": 155536,
+      "valid_mask_depth_fraction": 1.0
+    },
+    {
+      "frame": "C13",
+      "group": "C",
+      "branch": "raw",
+      "input_dir": "C13_raw",
+      "camera_frame": "right_arm_camera_color_optical_frame",
+      "source": "R04_10_wrist_charuco_20260915_105839_488564574",
+      "sha256": {
+        "rgb.png": "ffdbff03eaedf21f4d1015e0cc7939b97f42b01fddc408631cde1a065c7d196e",
+        "mask.png": "02d4790c645d45d101d553dcfe76d68fda4fb36d57714f1b0d079293bd449d11",
+        "depth_m.npy": "80c2c4cc02d1d57ef474488d78b80f31a1452700524a626cd8be5cb3fc727f6f",
+        "intrinsics.npy": "0d7554b837d90016c02ac7959b0d48be3524f44a4fd0aa074305906032d283ff",
+        "base_from_camera.npy": "6a5365146b20aef5beaa0605fc6c8fad8dedd66ce2c62f62363006b1d8ab833b"
+      },
+      "mask_pixels": 149843,
+      "valid_mask_depth_fraction": 0.7905808079122815
+    },
+    {
+      "frame": "C13",
+      "group": "C",
+      "branch": "lingbot",
+      "input_dir": "C13_lingbot",
+      "camera_frame": "right_arm_camera_color_optical_frame",
+      "source": "R04_10_wrist_charuco_20260915_105839_488564574",
+      "sha256": {
+        "rgb.png": "ffdbff03eaedf21f4d1015e0cc7939b97f42b01fddc408631cde1a065c7d196e",
+        "mask.png": "02d4790c645d45d101d553dcfe76d68fda4fb36d57714f1b0d079293bd449d11",
+        "depth_m.npy": "51484cb618b2ff7cd7d9e7d926d25bcf220b7125176873ffc45fa7999424a5ee",
+        "intrinsics.npy": "0d7554b837d90016c02ac7959b0d48be3524f44a4fd0aa074305906032d283ff",
+        "base_from_camera.npy": "6a5365146b20aef5beaa0605fc6c8fad8dedd66ce2c62f62363006b1d8ab833b"
+      },
+      "mask_pixels": 149843,
+      "valid_mask_depth_fraction": 1.0
+    },
+    {
+      "frame": "F01",
+      "group": "field",
+      "branch": "raw",
+      "input_dir": "F01_raw",
+      "camera_frame": "left_arm_camera_color_optical_frame",
+      "source": "/home/lsy03/\u6587\u6863/ChatGPT/S1/experiments/20260910_orin_pose_pipeline/outputs/bilateral_20260911_01/bilateral_20260911_01_left",
+      "sha256": {
+        "rgb.png": "2e8432982ec20527520486e6fc1113613523a73bb37eb461a169caa2fe482ae7",
+        "intrinsics.npy": "7bad7ecc5026b1c2891b06f145326bdf2b56b4f1aaadbf7e81a7ae713569f04c",
+        "base_from_camera.npy": "f5926fe4fea9ca0765580a99dc5aa9bbdbd63db83ed65e313f9e8f67d26509cd",
+        "depth_m.npy": "6c29186cc660ba80113ee5a33de99ef0f992c3a5cd1310305607ddaef7417a20",
+        "mask.png": "421874682bfdffc14bdcdafc0ae76dd241a598bab66caca483dd4440b7821649"
+      },
+      "mask_pixels": 118521,
+      "valid_mask_depth_fraction": 0.9643269969035023
+    },
+    {
+      "frame": "F01",
+      "group": "field",
+      "branch": "lingbot",
+      "input_dir": "F01_lingbot",
+      "camera_frame": "left_arm_camera_color_optical_frame",
+      "source": "/home/lsy03/\u6587\u6863/ChatGPT/S1/experiments/20260910_orin_pose_pipeline/outputs/bilateral_20260911_01/bilateral_20260911_01_left",
+      "sha256": {
+        "rgb.png": "2e8432982ec20527520486e6fc1113613523a73bb37eb461a169caa2fe482ae7",
+        "intrinsics.npy": "7bad7ecc5026b1c2891b06f145326bdf2b56b4f1aaadbf7e81a7ae713569f04c",
+        "base_from_camera.npy": "f5926fe4fea9ca0765580a99dc5aa9bbdbd63db83ed65e313f9e8f67d26509cd",
+        "depth_m.npy": "544ad7d5778f353cd74e97f2efc95f379836278c1088aca18287203603db690e",
+        "mask.png": "421874682bfdffc14bdcdafc0ae76dd241a598bab66caca483dd4440b7821649"
+      },
+      "mask_pixels": 118521,
+      "valid_mask_depth_fraction": 1.0
+    },
+    {
+      "frame": "F02",
+      "group": "field",
+      "branch": "raw",
+      "input_dir": "F02_raw",
+      "camera_frame": "right_arm_camera_color_optical_frame",
+      "source": "/home/lsy03/\u6587\u6863/ChatGPT/S1/experiments/20260910_orin_pose_pipeline/outputs/bilateral_20260911_01/bilateral_20260911_01_right",
+      "sha256": {
+        "rgb.png": "32fe757b6d6d943bb4fff762e6f6fb53969b8bd55360b34834c474517b54834c",
+        "intrinsics.npy": "0d7554b837d90016c02ac7959b0d48be3524f44a4fd0aa074305906032d283ff",
+        "base_from_camera.npy": "8efc55c09fb0f17e347c4cf13f096b1011ac094e4a2191aa206f2de09aafffd4",
+        "depth_m.npy": "70ccd8877869956ca812e99ad348b8a8f12266fb3c6c346c8fd0ab7bf9457773",
+        "mask.png": "7cc8d8c9b10718e74a505d72d485bb8b7c10570ab174b8cc4351cc8bf0ed9bc7"
+      },
+      "mask_pixels": 111720,
+      "valid_mask_depth_fraction": 0.9704260651629073
+    },
+    {
+      "frame": "F02",
+      "group": "field",
+      "branch": "lingbot",
+      "input_dir": "F02_lingbot",
+      "camera_frame": "right_arm_camera_color_optical_frame",
+      "source": "/home/lsy03/\u6587\u6863/ChatGPT/S1/experiments/20260910_orin_pose_pipeline/outputs/bilateral_20260911_01/bilateral_20260911_01_right",
+      "sha256": {
+        "rgb.png": "32fe757b6d6d943bb4fff762e6f6fb53969b8bd55360b34834c474517b54834c",
+        "intrinsics.npy": "0d7554b837d90016c02ac7959b0d48be3524f44a4fd0aa074305906032d283ff",
+        "base_from_camera.npy": "8efc55c09fb0f17e347c4cf13f096b1011ac094e4a2191aa206f2de09aafffd4",
+        "depth_m.npy": "2053f314e3ce5de488a963e68bfc7e51c0ff232f3f7022a08deeab37f3681682",
+        "mask.png": "7cc8d8c9b10718e74a505d72d485bb8b7c10570ab174b8cc4351cc8bf0ed9bc7"
+      },
+      "mask_pixels": 111720,
+      "valid_mask_depth_fraction": 1.0
+    },
+    {
+      "frame": "F03",
+      "group": "field",
+      "branch": "raw",
+      "input_dir": "F03_raw",
+      "camera_frame": "left_arm_camera_color_optical_frame",
+      "source": "/home/lsy03/\u6587\u6863/ChatGPT/S1/experiments/20260910_orin_pose_pipeline/outputs/live_left_20260911_04",
+      "sha256": {
+        "rgb.png": "7bf75fb0c2ac6c9f844d7867ae8cd6b83a11bf16cc9b808367c87fa793e4a4c3",
+        "intrinsics.npy": "7bad7ecc5026b1c2891b06f145326bdf2b56b4f1aaadbf7e81a7ae713569f04c",
+        "base_from_camera.npy": "d984929af71c23fceeb154cfcf30994ffa959fe10be9e76009cd312d675d6a08",
+        "depth_m.npy": "31c31e011c9f8023d96e209cfc6a70f7a99d43a00e11f89d48cef4d2588ab40d",
+        "mask.png": "4560d315ce0d6b81771e175b219e5c2ddfb62eccc7d86c143b24b0321ff39cd7"
+      },
+      "mask_pixels": 118090,
+      "valid_mask_depth_fraction": 0.9644677788127699
+    },
+    {
+      "frame": "F03",
+      "group": "field",
+      "branch": "lingbot",
+      "input_dir": "F03_lingbot",
+      "camera_frame": "left_arm_camera_color_optical_frame",
+      "source": "/home/lsy03/\u6587\u6863/ChatGPT/S1/experiments/20260910_orin_pose_pipeline/outputs/live_left_20260911_04",
+      "sha256": {
+        "rgb.png": "7bf75fb0c2ac6c9f844d7867ae8cd6b83a11bf16cc9b808367c87fa793e4a4c3",
+        "intrinsics.npy": "7bad7ecc5026b1c2891b06f145326bdf2b56b4f1aaadbf7e81a7ae713569f04c",
+        "base_from_camera.npy": "d984929af71c23fceeb154cfcf30994ffa959fe10be9e76009cd312d675d6a08",
+        "depth_m.npy": "fe01129221de66034e4258c7fe1b521aa56f0fcf0b6825f079227d7f71a4f9cd",
+        "mask.png": "4560d315ce0d6b81771e175b219e5c2ddfb62eccc7d86c143b24b0321ff39cd7"
+      },
+      "mask_pixels": 118090,
+      "valid_mask_depth_fraction": 1.0
+    },
+    {
+      "frame": "F04",
+      "group": "field",
+      "branch": "raw",
+      "input_dir": "F04_raw",
+      "camera_frame": "right_arm_camera_color_optical_frame",
+      "source": "/home/lsy03/\u6587\u6863/ChatGPT/S1/experiments/20260910_orin_pose_pipeline/outputs/online_docker_20260912_right_03",
+      "sha256": {
+        "rgb.png": "d030585843580d205a14bffb304b06d92f9085cb1db6e33406b5ba6500292375",
+        "intrinsics.npy": "0d7554b837d90016c02ac7959b0d48be3524f44a4fd0aa074305906032d283ff",
+        "base_from_camera.npy": "d2efd1bc8ca9068cb99c1c4a351af2894ec2fcc9374bdebd06002b9aa04585f1",
+        "depth_m.npy": "4e43e7155afc6dac0e0771c4e952faf98c88f100a2d0646fe18432ce89c34b6b",
+        "mask.png": "28ddede930f3db3029f7c44ca53723c6384091db922358acf59b5e3a0d7d2aa6"
+      },
+      "mask_pixels": 114229,
+      "valid_mask_depth_fraction": 0.9747962426354079
+    },
+    {
+      "frame": "F04",
+      "group": "field",
+      "branch": "lingbot",
+      "input_dir": "F04_lingbot",
+      "camera_frame": "right_arm_camera_color_optical_frame",
+      "source": "/home/lsy03/\u6587\u6863/ChatGPT/S1/experiments/20260910_orin_pose_pipeline/outputs/online_docker_20260912_right_03",
+      "sha256": {
+        "rgb.png": "d030585843580d205a14bffb304b06d92f9085cb1db6e33406b5ba6500292375",
+        "intrinsics.npy": "0d7554b837d90016c02ac7959b0d48be3524f44a4fd0aa074305906032d283ff",
+        "base_from_camera.npy": "d2efd1bc8ca9068cb99c1c4a351af2894ec2fcc9374bdebd06002b9aa04585f1",
+        "depth_m.npy": "f3ef75f67e3288d74485d7eca5be68e860c4e464e6de9f97566e79f9d6b6558c",
+        "mask.png": "28ddede930f3db3029f7c44ca53723c6384091db922358acf59b5e3a0d7d2aa6"
+      },
+      "mask_pixels": 114229,
+      "valid_mask_depth_fraction": 1.0
+    },
+    {
+      "frame": "D01",
+      "group": "D",
+      "branch": "raw",
+      "input_dir": "D01_raw",
+      "camera_frame": "right_arm_camera_color_optical_frame",
+      "source": "/home/lsy03/\u6587\u6863/ChatGPT/S1/experiments/20260903_fdp_baseline/cases/right_wrist_20260907_01_lingbot_operator1",
+      "sha256": {
+        "rgb.png": "eb045825a3ec3a497d0695a3f21722bfd67bdf07cf8f9d2dde0bb0b1f007d794",
+        "mask.png": "4f624276282eb32407018855c6fc1b2a8baf77abf23d81fb5b42d9fe238cdc07",
+        "depth_m.npy": "5eb28b8feb72e8480ce1f15f160434c6dcb7855cc9a2dc1db51cad597916c084",
+        "intrinsics.npy": "0d7554b837d90016c02ac7959b0d48be3524f44a4fd0aa074305906032d283ff",
+        "base_from_camera.npy": "e8b6f7c45d07aa1bbc58ae320fa1be92d8480b522fd663ebdf13028402c6b068"
+      },
+      "mask_pixels": 31948,
+      "valid_mask_depth_fraction": 1.0,
+      "raw_depth_source": "/home/lsy03/\u6587\u6863/ChatGPT/S1/experiments/20260903_fdp_baseline/cases/batches/full_20260907_110222_165338253/right_wrist_20260907_01_raw/input/depth_m.npy",
+      "mask_policy": "same confirmed LingBot mask, raw depth ablation"
+    },
+    {
+      "frame": "D02",
+      "group": "D",
+      "branch": "raw",
+      "input_dir": "D02_raw",
+      "camera_frame": "right_arm_camera_color_optical_frame",
+      "source": "/home/lsy03/\u6587\u6863/ChatGPT/S1/experiments/20260903_fdp_baseline/cases/batches/round2_confirmed_20260908_01/right_wrist_D02_20260907_165547_084851541_lingbot_operator_confirmed",
+      "sha256": {
+        "rgb.png": "e4a9395ff29c270fcede334cec42984bcd8c201ea7cc43382c90cd589abae700",
+        "mask.png": "0b4cd76eb5ea257353875e80729bbe85e8310c4db4a57f0e2d1ef2d1663b0599",
+        "depth_m.npy": "803194c534df4a646767f4b974c59b424d0e728763965f695053c49adb62736f",
+        "intrinsics.npy": "0d7554b837d90016c02ac7959b0d48be3524f44a4fd0aa074305906032d283ff",
+        "base_from_camera.npy": "272dc055984f159fe882e1c06d69f427faca5f108eddc4f780d6b61832055078"
+      },
+      "mask_pixels": 54118,
+      "valid_mask_depth_fraction": 1.0,
+      "raw_depth_source": "/home/lsy03/\u6587\u6863/ChatGPT/S1/experiments/20260903_fdp_baseline/cases/batches/round2_D02_D11_20260907_01/right_wrist_D02_20260907_165547_084851541_raw/input/depth_m.npy",
+      "mask_policy": "same confirmed LingBot mask, raw depth ablation"
+    },
+    {
+      "frame": "D03",
+      "group": "D",
+      "branch": "raw",
+      "input_dir": "D03_raw",
+      "camera_frame": "right_arm_camera_color_optical_frame",
+      "source": "/home/lsy03/\u6587\u6863/ChatGPT/S1/experiments/20260903_fdp_baseline/cases/batches/round2_confirmed_20260908_01/right_wrist_D03_20260907_170359_732494930_lingbot_operator_confirmed",
+      "sha256": {
+        "rgb.png": "bebaa714648e3cc925f85700397a099a7fc734e58dff02ad6f1c004ec86de9ed",
+        "mask.png": "065ed7cceb85260372ea1ecec9fc2254223f8d69a3c1dd5dfa7c52466cd51e49",
+        "depth_m.npy": "087e03853ca0a5b1ef22e4c26ec86711f7d316a463aa3ea36a09dc623904ecca",
+        "intrinsics.npy": "0d7554b837d90016c02ac7959b0d48be3524f44a4fd0aa074305906032d283ff",
+        "base_from_camera.npy": "a0948ff898c896098c22aac19888835dec7a433fe5b1ef9f2de158eb5992b6d7"
+      },
+      "mask_pixels": 53082,
+      "valid_mask_depth_fraction": 1.0,
+      "raw_depth_source": "/home/lsy03/\u6587\u6863/ChatGPT/S1/experiments/20260903_fdp_baseline/cases/batches/round2_D02_D11_20260907_01/right_wrist_D03_20260907_170359_732494930_raw/input/depth_m.npy",
+      "mask_policy": "same confirmed LingBot mask, raw depth ablation"
+    },
+    {
+      "frame": "D04",
+      "group": "D",
+      "branch": "raw",
+      "input_dir": "D04_raw",
+      "camera_frame": "right_arm_camera_color_optical_frame",
+      "source": "/home/lsy03/\u6587\u6863/ChatGPT/S1/experiments/20260903_fdp_baseline/cases/batches/round2_confirmed_20260908_01/right_wrist_D04_20260907_182659_071599799_lingbot_operator_confirmed",
+      "sha256": {
+        "rgb.png": "cc6de6242d8615de6b1af0451e1959dab7675e5be9552048e67d9f8a79fb3fd4",
+        "mask.png": "785b8e916ae2bfccf62080b1186839cab36ab5efddba08d842cb1e501b19749f",
+        "depth_m.npy": "c86a354cddd7333cfc4374c15e3a65bd21159aade9c0e462548d3d4146ebc004",
+        "intrinsics.npy": "0d7554b837d90016c02ac7959b0d48be3524f44a4fd0aa074305906032d283ff",
+        "base_from_camera.npy": "47faccb220c25771c6692eb1417b1ec86d6a6f50d82b12fb4e6c888314f91352"
+      },
+      "mask_pixels": 113464,
+      "valid_mask_depth_fraction": 1.0,
+      "raw_depth_source": "/home/lsy03/\u6587\u6863/ChatGPT/S1/experiments/20260903_fdp_baseline/cases/batches/round2_D02_D11_20260907_01/right_wrist_D04_20260907_182659_071599799_raw/input/depth_m.npy",
+      "mask_policy": "same confirmed LingBot mask, raw depth ablation"
+    },
+    {
+      "frame": "D05",
+      "group": "D",
+      "branch": "raw",
+      "input_dir": "D05_raw",
+      "camera_frame": "right_arm_camera_color_optical_frame",
+      "source": "/home/lsy03/\u6587\u6863/ChatGPT/S1/experiments/20260903_fdp_baseline/cases/batches/round2_confirmed_20260908_01/right_wrist_D05_20260907_183211_489378596_lingbot_operator_confirmed",
+      "sha256": {
+        "rgb.png": "100b911550420fd167fa7c7c3237167117d8b076e8dd796d4b157024f8055247",
+        "mask.png": "f92eb2337ec521dcee7a13ae7f350a73ab6af23d60bb31a559ccac1f37bada64",
+        "depth_m.npy": "a839338d19c2ca25114ce6e342194daf9a45230e581139589965664876487e86",
+        "intrinsics.npy": "0d7554b837d90016c02ac7959b0d48be3524f44a4fd0aa074305906032d283ff",
+        "base_from_camera.npy": "a26cf9102b93ec79d6d31c3a730d3d592e9913095affc2ac85af35f8b9665d24"
+      },
+      "mask_pixels": 101468,
+      "valid_mask_depth_fraction": 1.0,
+      "raw_depth_source": "/home/lsy03/\u6587\u6863/ChatGPT/S1/experiments/20260903_fdp_baseline/cases/batches/round2_D02_D11_20260907_01/right_wrist_D05_20260907_183211_489378596_raw/input/depth_m.npy",
+      "mask_policy": "same confirmed LingBot mask, raw depth ablation"
+    },
+    {
+      "frame": "D06",
+      "group": "D",
+      "branch": "raw",
+      "input_dir": "D06_raw",
+      "camera_frame": "right_arm_camera_color_optical_frame",
+      "source": "/home/lsy03/\u6587\u6863/ChatGPT/S1/experiments/20260903_fdp_baseline/cases/batches/round2_confirmed_20260908_01/right_wrist_D06_20260907_183534_988072685_lingbot_operator_confirmed",
+      "sha256": {
+        "rgb.png": "542208ff258d414c17c77a1fe9141b5549bbaf99b88a44c17ea5f3ced47b7bc0",
+        "mask.png": "f671c9b4e103da96895ec1029ddcd1f9e89826a21c2240bd8e2405af6165a1d9",
+        "depth_m.npy": "c05d52be7b6d95fd9a85875a57848e1bc59d19f515b84be83d1fac9d2f910efb",
+        "intrinsics.npy": "0d7554b837d90016c02ac7959b0d48be3524f44a4fd0aa074305906032d283ff",
+        "base_from_camera.npy": "c013f58235e158f81bf534440d7ca5d5845ad41ea7a8fa63107bb9d3839a108d"
+      },
+      "mask_pixels": 118505,
+      "valid_mask_depth_fraction": 1.0,
+      "raw_depth_source": "/home/lsy03/\u6587\u6863/ChatGPT/S1/experiments/20260903_fdp_baseline/cases/batches/round2_D02_D11_20260907_01/right_wrist_D06_20260907_183534_988072685_raw/input/depth_m.npy",
+      "mask_policy": "same confirmed LingBot mask, raw depth ablation"
+    },
+    {
+      "frame": "D07",
+      "group": "D",
+      "branch": "raw",
+      "input_dir": "D07_raw",
+      "camera_frame": "right_arm_camera_color_optical_frame",
+      "source": "/home/lsy03/\u6587\u6863/ChatGPT/S1/experiments/20260903_fdp_baseline/cases/batches/round2_confirmed_20260908_01/right_wrist_D07_20260907_183622_577749279_lingbot_operator_confirmed",
+      "sha256": {
+        "rgb.png": "891c5e4ce44ddb144e1be4fca932fdb07ac19a5deb0b00a2711fb1f340a300f1",
+        "mask.png": "96991d21698e7a048e2f11d96e12cc37915d0fc12cc323a7a012d11e69226a1e",
+        "depth_m.npy": "de788355a565a38b378a55bb0d2be00adcd8ebad717a936cccd813cb3c2c1c8b",
+        "intrinsics.npy": "0d7554b837d90016c02ac7959b0d48be3524f44a4fd0aa074305906032d283ff",
+        "base_from_camera.npy": "4fe8eb34f07cfadd4fbc35d4a7a3003ab01b95c44701aef19e6c1fa9885f8308"
+      },
+      "mask_pixels": 108346,
+      "valid_mask_depth_fraction": 1.0,
+      "raw_depth_source": "/home/lsy03/\u6587\u6863/ChatGPT/S1/experiments/20260903_fdp_baseline/cases/batches/round2_D02_D11_20260907_01/right_wrist_D07_20260907_183622_577749279_raw/input/depth_m.npy",
+      "mask_policy": "same confirmed LingBot mask, raw depth ablation"
+    },
+    {
+      "frame": "D08",
+      "group": "D",
+      "branch": "raw",
+      "input_dir": "D08_raw",
+      "camera_frame": "right_arm_camera_color_optical_frame",
+      "source": "/home/lsy03/\u6587\u6863/ChatGPT/S1/experiments/20260903_fdp_baseline/cases/batches/round2_confirmed_20260908_01/right_wrist_D08_20260907_190617_386973688_lingbot_operator_confirmed",
+      "sha256": {
+        "rgb.png": "2f043c0274efbe33b575325c34de64959241e3d9850095a189966e58399a79da",
+        "mask.png": "fe93e4fc9a832ad147bd60223d4ee644aa992b1adde3720259beccccf3bb52e6",
+        "depth_m.npy": "dee28a3ed8220faad07d713227be482707ecf1cbfe76bec0d1996e7e6287b845",
+        "intrinsics.npy": "0d7554b837d90016c02ac7959b0d48be3524f44a4fd0aa074305906032d283ff",
+        "base_from_camera.npy": "77cbcdbceac91e16754b22c97375f9fbdad86d86bb62a55526eacb0bf126584d"
+      },
+      "mask_pixels": 118100,
+      "valid_mask_depth_fraction": 1.0,
+      "raw_depth_source": "/home/lsy03/\u6587\u6863/ChatGPT/S1/experiments/20260903_fdp_baseline/cases/batches/round2_D02_D11_20260907_01/right_wrist_D08_20260907_190617_386973688_raw/input/depth_m.npy",
+      "mask_policy": "same confirmed LingBot mask, raw depth ablation"
+    },
+    {
+      "frame": "D09",
+      "group": "D",
+      "branch": "raw",
+      "input_dir": "D09_raw",
+      "camera_frame": "right_arm_camera_color_optical_frame",
+      "source": "/home/lsy03/\u6587\u6863/ChatGPT/S1/experiments/20260903_fdp_baseline/cases/batches/round2_confirmed_20260908_01/right_wrist_D09_20260907_190653_193583878_lingbot_operator_confirmed",
+      "sha256": {
+        "rgb.png": "a9435a3e4a3163fb97a321145ce8a1903b3acf6680f046a55851794619d4fa8c",
+        "mask.png": "5352a8c75d7766a167d8e0fb9b307ce0307abd5928700c1b40af898838bc2856",
+        "depth_m.npy": "b84299f33c363df310a19d9a7983fa91830e37d9f55204df75e397f4f424bf02",
+        "intrinsics.npy": "0d7554b837d90016c02ac7959b0d48be3524f44a4fd0aa074305906032d283ff",
+        "base_from_camera.npy": "0cab86fb4db898dde63d917a2606e15a8086fe173fad0d14c080126571bce8f6"
+      },
+      "mask_pixels": 117904,
+      "valid_mask_depth_fraction": 1.0,
+      "raw_depth_source": "/home/lsy03/\u6587\u6863/ChatGPT/S1/experiments/20260903_fdp_baseline/cases/batches/round2_D02_D11_20260907_01/right_wrist_D09_20260907_190653_193583878_raw/input/depth_m.npy",
+      "mask_policy": "same confirmed LingBot mask, raw depth ablation"
+    },
+    {
+      "frame": "D10",
+      "group": "D",
+      "branch": "raw",
+      "input_dir": "D10_raw",
+      "camera_frame": "right_arm_camera_color_optical_frame",
+      "source": "/home/lsy03/\u6587\u6863/ChatGPT/S1/experiments/20260903_fdp_baseline/cases/batches/round2_confirmed_20260908_01/right_wrist_D10_20260907_190736_821693545_lingbot_operator_confirmed",
+      "sha256": {
+        "rgb.png": "a6bae50471f3a2deb4b3eefeae59dea835bf6e9db2528197be9d0538fd9717c9",
+        "mask.png": "5107740fd0f20122e6256317beba89653f43515938e48e3b6502d98bb8edf7e8",
+        "depth_m.npy": "71048e95b010561acd57a0729d28ded9951a399da5e7760a73c24f5655a8b826",
+        "intrinsics.npy": "0d7554b837d90016c02ac7959b0d48be3524f44a4fd0aa074305906032d283ff",
+        "base_from_camera.npy": "c2b039d7514de686e41d41bdebddfcbf81080ce1903cff3c4f194514c3c30230"
+      },
+      "mask_pixels": 126847,
+      "valid_mask_depth_fraction": 1.0,
+      "raw_depth_source": "/home/lsy03/\u6587\u6863/ChatGPT/S1/experiments/20260903_fdp_baseline/cases/batches/round2_D02_D11_20260907_01/right_wrist_D10_20260907_190736_821693545_raw/input/depth_m.npy",
+      "mask_policy": "same confirmed LingBot mask, raw depth ablation"
+    },
+    {
+      "frame": "D11",
+      "group": "D",
+      "branch": "raw",
+      "input_dir": "D11_raw",
+      "camera_frame": "right_arm_camera_color_optical_frame",
+      "source": "/home/lsy03/\u6587\u6863/ChatGPT/S1/experiments/20260903_fdp_baseline/cases/batches/round2_confirmed_20260908_01/right_wrist_D11_20260907_190826_818308342_lingbot_operator_confirmed",
+      "sha256": {
+        "rgb.png": "5b54fb335af3826156e4cf70676dc509697fb898fd01de2ae6e7bcbae0056f2d",
+        "mask.png": "1f9029d5e8af298bbf73c5c8b977d5ec6b3b3bad97a3b044c39f720f804031b2",
+        "depth_m.npy": "8eeda3440de5ad4dde47155b63554b38b45e4861d4ad578ffe319db361875ae0",
+        "intrinsics.npy": "0d7554b837d90016c02ac7959b0d48be3524f44a4fd0aa074305906032d283ff",
+        "base_from_camera.npy": "203c2e13d2f1b76717cb40d9f8c5c2a1b3e4b42d568b9184884d3e84d919d18c"
+      },
+      "mask_pixels": 124681,
+      "valid_mask_depth_fraction": 1.0,
+      "raw_depth_source": "/home/lsy03/\u6587\u6863/ChatGPT/S1/experiments/20260903_fdp_baseline/cases/batches/round2_D02_D11_20260907_01/right_wrist_D11_20260907_190826_818308342_raw/input/depth_m.npy",
+      "mask_policy": "same confirmed LingBot mask, raw depth ablation"
+    },
+    {
+      "frame": "D12",
+      "group": "D",
+      "branch": "raw",
+      "input_dir": "D12_raw",
+      "camera_frame": "right_arm_camera_color_optical_frame",
+      "source": "/home/lsy03/\u6587\u6863/ChatGPT/S1/experiments/20260903_fdp_baseline/cases/batches/round2_confirmed_20260908_01/right_wrist_D12_20260907_190946_145566561_lingbot_operator_confirmed",
+      "sha256": {
+        "rgb.png": "0a2daacd4ae90a0b18f6f69338752333cd99e34393e66c93c98b56699b5f654a",
+        "mask.png": "fce4b14164661cb8145541b831bd809e3385f68b8713dea2e9a98e784a4bcfac",
+        "depth_m.npy": "3be65329ec35ca026d4ef1f9cac88aec60602e6b58ec3668378fa90c5a539d7e",
+        "intrinsics.npy": "0d7554b837d90016c02ac7959b0d48be3524f44a4fd0aa074305906032d283ff",
+        "base_from_camera.npy": "8609ad86ddbee839d68b4e0addd45a8c22f0016e4700c36003b704a7a4be2149"
+      },
+      "mask_pixels": 77626,
+      "valid_mask_depth_fraction": 1.0,
+      "raw_depth_source": "/home/lsy03/\u6587\u6863/ChatGPT/S1/experiments/20260903_fdp_baseline/cases/batches/round2_D12_20260907_01/right_wrist_D12_20260907_190946_145566561_raw/input/depth_m.npy",
+      "mask_policy": "same confirmed LingBot mask, raw depth ablation"
+    },
+    {
+      "frame": "H01L",
+      "group": "H",
+      "branch": "raw",
+      "input_dir": "H01L_raw",
+      "camera_frame": "left_arm_camera_color_optical_frame",
+      "source": "/home/lsy03/\u6587\u6863/ChatGPT/S1/experiments/20260903_fdp_baseline/cases/batches/h01l_h03l_confirmed_20260909_01/left_wrist_H01L_20260909_095903_202442167_lingbot_operator_confirmed",
+      "sha256": {
+        "rgb.png": "9f38bcee1ad821ee20b31e078d25bf0be99b8a92334eff329dc0d0f19f22133d",
+        "mask.png": "a0ab8978a4018de27e30a5ea2bbb8dd9b19d83ca080181e1b23ad0dde93b8599",
+        "depth_m.npy": "f19509e4788a6601caf5829a8e7e1eb42c855f7541dc1062b7772b00c8d3521b",
+        "intrinsics.npy": "7bad7ecc5026b1c2891b06f145326bdf2b56b4f1aaadbf7e81a7ae713569f04c",
+        "base_from_camera.npy": "8205ab18290e2643e28cb46abc20a1f74481974533a91f7da735a345158f3b4c"
+      },
+      "mask_pixels": 144079,
+      "valid_mask_depth_fraction": 1.0,
+      "raw_depth_source": "/home/lsy03/\u6587\u6863/ChatGPT/S1/experiments/20260903_fdp_baseline/cases/batches/h01l_h03l_20260909_01/left_wrist_H01L_20260909_095903_202442167_raw/input/depth_m.npy",
+      "mask_policy": "same confirmed LingBot mask, raw depth ablation"
+    },
+    {
+      "frame": "H02L",
+      "group": "H",
+      "branch": "raw",
+      "input_dir": "H02L_raw",
+      "camera_frame": "left_arm_camera_color_optical_frame",
+      "source": "/home/lsy03/\u6587\u6863/ChatGPT/S1/experiments/20260903_fdp_baseline/cases/batches/h01l_h03l_confirmed_20260909_01/left_wrist_H02L_20260909_101912_757536619_lingbot_operator_confirmed",
+      "sha256": {
+        "rgb.png": "eed25b474ed93d19104e8f3b3e28895347949730ddc9335520824b4f3c807106",
+        "mask.png": "a7437c300eb37cf6266354368e0cd3fe05c7b40853b02c10364757d225a6b109",
+        "depth_m.npy": "f2e625f3c4d79c61856624919ecb2f1dd2a74e5f5b44e8359e841848f31090c2",
+        "intrinsics.npy": "7bad7ecc5026b1c2891b06f145326bdf2b56b4f1aaadbf7e81a7ae713569f04c",
+        "base_from_camera.npy": "a7c5252d28255fe6099682181d3d2cea99d91c639753944519ff16b73619947c"
+      },
+      "mask_pixels": 143935,
+      "valid_mask_depth_fraction": 1.0,
+      "raw_depth_source": "/home/lsy03/\u6587\u6863/ChatGPT/S1/experiments/20260903_fdp_baseline/cases/batches/h01l_h03l_20260909_01/left_wrist_H02L_20260909_101912_757536619_raw/input/depth_m.npy",
+      "mask_policy": "same confirmed LingBot mask, raw depth ablation"
+    },
+    {
+      "frame": "H03L",
+      "group": "H",
+      "branch": "raw",
+      "input_dir": "H03L_raw",
+      "camera_frame": "left_arm_camera_color_optical_frame",
+      "source": "/home/lsy03/\u6587\u6863/ChatGPT/S1/experiments/20260903_fdp_baseline/cases/batches/h01l_h03l_confirmed_20260909_01/left_wrist_H03L_20260909_102639_767663149_lingbot_operator_confirmed",
+      "sha256": {
+        "rgb.png": "26a52aa414b406e8d77e11817fc1b41c7d24f8c376dfb6bb70c5b6113976c5cb",
+        "mask.png": "cf2ae0286d0fdf96730a0c278572b92c4692e22b1bb279b4a51c0a0e87a59a2d",
+        "depth_m.npy": "62619ed3933164b67e802aff5ef99d969ee65784843f80fce0501b8e6b4a07e1",
+        "intrinsics.npy": "7bad7ecc5026b1c2891b06f145326bdf2b56b4f1aaadbf7e81a7ae713569f04c",
+        "base_from_camera.npy": "a9e9bde775a4ee7640705dcf9371ef0f12c6c4c638a41b351a3c27f9a11cc505"
+      },
+      "mask_pixels": 142624,
+      "valid_mask_depth_fraction": 1.0,
+      "raw_depth_source": "/home/lsy03/\u6587\u6863/ChatGPT/S1/experiments/20260903_fdp_baseline/cases/batches/h01l_h03l_20260909_01/left_wrist_H03L_20260909_102639_767663149_raw/input/depth_m.npy",
+      "mask_policy": "same confirmed LingBot mask, raw depth ablation"
+    }
+  ],
+  "missing": [],
+  "raw_pairing": "same RGB/K/TF and fixed confirmed mask; no target reselection"
+}

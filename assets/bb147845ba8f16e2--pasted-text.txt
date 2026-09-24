@@ -1,0 +1,129 @@
+结论：当前 S1 拆垛项目实际使用的是工作站 10.34.216.13:7876 的本地 FDP wrapper，不是 Thor 的 7866 FoundationPose API。
+账号：c
+密码：[REDACTED]
+1. FDP 权重目录
+主权重目录：
+/home/c/workspace/foundationpose_plus_dynamic_tracking/FoundationPose/weights
+当前 FDP 源码目录下的路径是软链接：
+/home/c/workspace/260611_sjtu_workbin_movement/migrate_back/g1_workbin_perception/third_party/FoundationPose-plus-plus/FoundationPose/weights
+ -> /home/c/workspace/foundationpose_plus_dynamic_tracking/FoundationPose/weights
+实际使用的两个 checkpoint：
+模块	权重
+ScorePredictor	2024-01-11-20-02-45/model_best.pth，约 190 MB
+PoseRefinePredictor	2023-10-28-18-33-37/model_best.pth，约 68 MB
+
+
+源码中的绑定位置：
+- [predict_score.py (line 117)](/home/c/workspace/260611_sjtu_workbin_movement/migrate_back/g1_workbin_perception/third_party/FoundationPose-plus-plus/FoundationPose/learning/training/predict_score.py:117)
+- [predict_pose_refine.py (line 93)](/home/c/workspace/260611_sjtu_workbin_movement/migrate_back/g1_workbin_perception/third_party/FoundationPose-plus-plus/FoundationPose/learning/training/predict_pose_refine.py:93)
+历史服务日志也确认加载过这两个权重。当前机器上的 FDP PID 文件存在，但对应进程目前没有被我确认仍在运行，因此这里确认的是部署路径和加载记录，不把服务状态误报为当前在线。
+2. 当前完整感知链路
+S1 腕部 RGBD
+  → 正面 Survey
+  → SAM3 / LingBot 或原始深度几何
+  → H1-H4 / ROI / 箱型 / mode 选择
+  → FDP 观察姿态
+  → 重新采集一帧 RGBD
+  → 同一帧 Workbin mask 与候选身份锁定
+  → 本地 mask-depth 几何门
+  → 7876 FDP 首帧初始化
+  → FDP raw pose
+  → 语义轴转换 + base_link 变换
+  → FDP/身份/IMC/碰撞门
+  → 预抓、抓取、持箱、卸货、复位
+  → 返回正面并重新 Survey
+当前配置：
+- 默认链路：Workbin ws://10.34.216.13:8040
+- 原始深度 Survey 实验：Survey 使用 8042，FDP 候选仍使用 8040
+- 最终 FDP 姿态：http://10.34.216.13:7876
+- SAM3：Thor 7861
+- LingBot-Depth：Thor 7865
+详见：
+- [lab.yaml (line 6)](/home/c/workspace/s1_continuous_destack/config/services/lab.yaml:6)
+- [lab_raw_surface.yaml (line 5)](/home/c/workspace/s1_continuous_destack/config/services/lab_raw_surface.yaml:5)
+- [连续拆垛流程说明 (line 22)](/home/c/workspace/s1_continuous_destack/docs/commissioning/top-four-raw-surface-run-20260911.md:22)
+3. FDP 初始化帧数
+当前项目是：
+FDP 初始化使用一帧 RGBD，不是多帧初始化。
+
+具体来说：
+- 一次 capture 得到一组 RGB + depth；
+- RGB 和 depth 必须时间对齐；
+- 前后各读取一次机器人状态，用于静止/定位 bracket；
+- 前后状态不是额外的图像帧；
+- 随后只调用一次 /first_frame_track；
+- 当前 S1 链路没有调用 /next_frame_track 做连续 tracking。
+代码依据：
+- [S1 RGBD 单帧采集 (line 911)](/home/c/workspace/s1_continuous_destack/src/s1_destack/adapters/services.py:911)
+- [采集前后状态 bracket (line 1067)](/home/c/workspace/s1_continuous_destack/src/s1_destack/adapters/services.py:1067)
+- [FDP 首帧请求 (line 3701)](/home/c/workspace/s1_continuous_destack/src/s1_destack/adapters/services.py:3701)
+mode00 使用一次 FDP 初始化；mode10/mode01 则是：
+主臂采集一帧 → FDP 初始化
+主臂抬升/外拉
+次臂重新采集一帧 → 再次 FDP 初始化
+次臂不会沿用主臂的第一帧 FDP 结果。见 [sequential.py (line 341)](/home/c/workspace/s1_continuous_destack/src/s1_destack/steps/sequential.py:341)。
+4. Mask 的具体处理
+处理顺序如下：
+1. Workbin 返回 boxes 和 aug_masks/masks，二者必须一一对应。
+2. S1 根据 ROI、地图位置、箱型、层高和 mode 做身份锁定。
+3. 只选择当前目标对应的同帧 mask。
+4. S1 本地先做 mask-depth 几何检查。
+5. mask 必须和 depth 尺寸完全一致，不能为空。
+6. 客户端执行：
+mask_u8 = (mask > 0).astype(np.uint8) * 255
+7. 以 PNG 形式发送到 FDP。
+当前客户端不会对 mask 做腐蚀、膨胀或多帧融合；深度的腐蚀和滤波发生在 FoundationPose 内部。详见：
+- [候选 mask 绑定 (line 4231)](/home/c/workspace/s1_continuous_destack/src/s1_destack/adapters/services.py:4231)
+- [mask-depth 检查 (line 4040)](/home/c/workspace/s1_continuous_destack/src/s1_destack/adapters/services.py:4040)
+- [FDP 请求 mask 二值化 (line 3709)](/home/c/workspace/s1_continuous_destack/src/s1_destack/adapters/services.py:3709)
+5. 当前实际 FDP 参数
+7876 启动脚本的实际参数：
+est_refine_iter       = 3
+track_refine_iter     = 1
+activate_2d_tracker   = false
+activate_kalman_filter= false
+apply_scale           = 1.0
+来源：
+- [启动脚本 (line 10)](/home/c/workspace/260611_sjtu_workbin_movement/migrate_back/g1_workbin_perception/scripts/start_local_fdp_4090_service.sh:10)
+- [服务参数 (line 316)](/home/c/workspace/260611_sjtu_workbin_movement/migrate_back/g1_workbin_perception/scripts/serve_local_fdp_4090.py:316)
+注意：FdpPlusPlus 类本身的默认值是 est=2、track=5、2D tracker=True、Kalman=True，但当前服务启动参数覆盖了这些默认值，不能把类默认值当成当前运行值。见 [fdp_plus.py (line 76)](/home/c/workspace/260611_sjtu_workbin_movement/migrate_back/g1_workbin_perception/third_party/FoundationPose-plus-plus/src/fdp_plus.py:76)。
+FoundationPose 内部首帧流程：
+- 深度腐蚀：半径 2
+- 深度双边滤波：半径 2
+- 腐蚀深度差阈值：0.001 m
+- 邻域坏点比例阈值：0.8
+- 有效点条件：depth >= 0.001 m 且 mask > 0
+- 有效点少于 4 个时，退化为单位旋转 + mask bbox/深度中值平移
+- mask bbox 中心作为初始投影中心
+- mask 内有效深度中值作为初始距离
+- 旋转候选网格：源码参数 min_n_views=40、面内步长 60°
+- 当前日志实际生成 252 个旋转假设
+- 每个候选执行 3 次 PoseRefine
+- ScorePredictor 对候选评分并选最高分
+代码：
+- [FoundationPose 初始化网格与 register (line 18)](/home/c/workspace/260611_sjtu_workbin_movement/migrate_back/g1_workbin_perception/third_party/FoundationPose-plus-plus/FoundationPose/estimater.py:18)
+- [register 深度/Mask/候选处理 (line 160)](/home/c/workspace/260611_sjtu_workbin_movement/migrate_back/g1_workbin_perception/third_party/FoundationPose-plus-plus/FoundationPose/estimater.py:160)
+- [深度滤波参数 (line 352)](/home/c/workspace/260611_sjtu_workbin_movement/migrate_back/g1_workbin_perception/third_party/FoundationPose-plus-plus/FoundationPose/Utils.py:352)
+模型输入配置中，Score 和 Refiner 都是 120×120、c_in=6、normalize_xyz=true、不使用 normal；Score 的 crop ratio 是 1.1，Refiner 是 1.2。
+6. FDP 后的本地安全门
+FDP 结果不会直接进入运动控制，还要经过：
+- mask-depth 可见表面中心检查；
+- Workbin 候选身份检查；
+- FDP 原点与候选中心距离检查；
+- raw pose 到 4317 语义轴转换；
+- base_link 坐标变换；
+- IMC 和碰撞检查。
+当前 mask-depth 门限：
+mode00: 0.300 m
+mode10: 0.200 m
+mode01: 0.150 m
+当前 FDP 姿态与候选中心门限：
+普通/主臂: 0.150 m
+顺序拆垛次臂: 0.200 m
+比较点沿语义 Z 上移: 0.100 m
+4317 语义轴映射为：
+length = +raw_axis_2
+width  = +raw_axis_1
+height = -raw_axis_0
+见 [4317.yaml (line 14)](/home/c/workspace/s1_continuous_destack/config/crates/4317.yaml:14) 和 [perception.py (line 216)](/home/c/workspace/s1_continuous_destack/src/s1_destack/adapters/perception.py:216)。
+另外，当前结果明确记录为 service_response_binding_verified=false：本地能确认请求内容和返回结果在同步 HTTP 链路中对应，但还不能证明远端服务内部确实使用了请求中的每一个 RGB、depth、mask 和 mesh 字节。

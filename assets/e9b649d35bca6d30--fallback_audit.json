@@ -1,0 +1,258 @@
+{
+  "schema": "s1.charuco13.fallback_audit.v1",
+  "formal_rows": 130,
+  "fallback_triggered": 100,
+  "fallback_not_triggered": 30,
+  "fallback_compare_to_bcm": [
+    {
+      "capture": "L01_wrist_charuco_20260915_093818_877801116",
+      "depth_mode": "lingbot",
+      "repeat": "rep01",
+      "fallback_triggered": true,
+      "status_r1f": "accepted",
+      "status_bcm": "accepted",
+      "matrix_max_abs_diff": 0.0,
+      "center_diff_mm": 0.0
+    },
+    {
+      "capture": "L01_wrist_charuco_20260915_093818_877801116",
+      "depth_mode": "lingbot",
+      "repeat": "rep02",
+      "fallback_triggered": true,
+      "status_r1f": "accepted",
+      "status_bcm": "accepted",
+      "matrix_max_abs_diff": 0.0,
+      "center_diff_mm": 0.0
+    },
+    {
+      "capture": "L01_wrist_charuco_20260915_093818_877801116",
+      "depth_mode": "lingbot",
+      "repeat": "rep03",
+      "fallback_triggered": true,
+      "status_r1f": "accepted",
+      "status_bcm": "accepted",
+      "matrix_max_abs_diff": 0.0,
+      "center_diff_mm": 0.0
+    },
+    {
+      "capture": "L01_wrist_charuco_20260915_093818_877801116",
+      "depth_mode": "lingbot",
+      "repeat": "rep04",
+      "fallback_triggered": true,
+      "status_r1f": "accepted",
+      "status_bcm": "accepted",
+      "matrix_max_abs_diff": 0.0,
+      "center_diff_mm": 0.0
+    },
+    {
+      "capture": "L01_wrist_charuco_20260915_093818_877801116",
+      "depth_mode": "lingbot",
+      "repeat": "rep05",
+      "fallback_triggered": true,
+      "status_r1f": "accepted",
+      "status_bcm": "accepted",
+      "matrix_max_abs_diff": 0.0,
+      "center_diff_mm": 0.0
+    },
+    {
+      "capture": "L04_00_wrist_charuco_20260915_104435_858773771",
+      "depth_mode": "raw",
+      "repeat": "rep01",
+      "fallback_triggered": false,
+      "status_r1f": "accepted",
+      "status_bcm": "accepted",
+      "matrix_max_abs_diff": 0.0018012121167151098,
+      "center_diff_mm": 2.2661225066155932
+    },
+    {
+      "capture": "L04_00_wrist_charuco_20260915_104435_858773771",
+      "depth_mode": "raw",
+      "repeat": "rep02",
+      "fallback_triggered": false,
+      "status_r1f": "accepted",
+      "status_bcm": "accepted",
+      "matrix_max_abs_diff": 0.0018012121167151098,
+      "center_diff_mm": 2.2661225066155932
+    },
+    {
+      "capture": "L04_00_wrist_charuco_20260915_104435_858773771",
+      "depth_mode": "raw",
+      "repeat": "rep03",
+      "fallback_triggered": false,
+      "status_r1f": "accepted",
+      "status_bcm": "accepted",
+      "matrix_max_abs_diff": 0.0018012121167151098,
+      "center_diff_mm": 2.2661225066155932
+    },
+    {
+      "capture": "L04_00_wrist_charuco_20260915_104435_858773771",
+      "depth_mode": "raw",
+      "repeat": "rep04",
+      "fallback_triggered": false,
+      "status_r1f": "accepted",
+      "status_bcm": "accepted",
+      "matrix_max_abs_diff": 0.0018012121167151098,
+      "center_diff_mm": 2.2661225066155932
+    },
+    {
+      "capture": "L04_00_wrist_charuco_20260915_104435_858773771",
+      "depth_mode": "raw",
+      "repeat": "rep05",
+      "fallback_triggered": false,
+      "status_r1f": "accepted",
+      "status_bcm": "accepted",
+      "matrix_max_abs_diff": 0.0018012121167151098,
+      "center_diff_mm": 2.2661225066155932
+    },
+    {
+      "capture": "L04_10_wrist_charuco_20260915_104717_786588568",
+      "depth_mode": "lingbot",
+      "repeat": "rep01",
+      "fallback_triggered": false,
+      "status_r1f": "accepted",
+      "status_bcm": "accepted",
+      "matrix_max_abs_diff": 0.0017107440245324457,
+      "center_diff_mm": 2.2821530011414604
+    },
+    {
+      "capture": "L04_10_wrist_charuco_20260915_104717_786588568",
+      "depth_mode": "lingbot",
+      "repeat": "rep02",
+      "fallback_triggered": false,
+      "status_r1f": "accepted",
+      "status_bcm": "accepted",
+      "matrix_max_abs_diff": 0.0017107440245324457,
+      "center_diff_mm": 2.2821530011414604
+    },
+    {
+      "capture": "L04_10_wrist_charuco_20260915_104717_786588568",
+      "depth_mode": "lingbot",
+      "repeat": "rep03",
+      "fallback_triggered": false,
+      "status_r1f": "accepted",
+      "status_bcm": "accepted",
+      "matrix_max_abs_diff": 0.0017107440245324457,
+      "center_diff_mm": 2.2821530011414604
+    },
+    {
+      "capture": "L04_10_wrist_charuco_20260915_104717_786588568",
+      "depth_mode": "lingbot",
+      "repeat": "rep04",
+      "fallback_triggered": false,
+      "status_r1f": "accepted",
+      "status_bcm": "accepted",
+      "matrix_max_abs_diff": 0.0017107440245324457,
+      "center_diff_mm": 2.2821530011414604
+    },
+    {
+      "capture": "L04_10_wrist_charuco_20260915_104717_786588568",
+      "depth_mode": "lingbot",
+      "repeat": "rep05",
+      "fallback_triggered": false,
+      "status_r1f": "accepted",
+      "status_bcm": "accepted",
+      "matrix_max_abs_diff": 0.0017107440245324457,
+      "center_diff_mm": 2.2821530011414604
+    },
+    {
+      "capture": "R01_wrist_charuco_20260915_094033_680788016",
+      "depth_mode": "lingbot",
+      "repeat": "rep01",
+      "fallback_triggered": false,
+      "status_r1f": "accepted",
+      "status_bcm": "accepted",
+      "matrix_max_abs_diff": 0.002849864126220661,
+      "center_diff_mm": 2.35067944551779
+    },
+    {
+      "capture": "R01_wrist_charuco_20260915_094033_680788016",
+      "depth_mode": "lingbot",
+      "repeat": "rep02",
+      "fallback_triggered": false,
+      "status_r1f": "accepted",
+      "status_bcm": "accepted",
+      "matrix_max_abs_diff": 0.002849864126220661,
+      "center_diff_mm": 2.35067944551779
+    },
+    {
+      "capture": "R01_wrist_charuco_20260915_094033_680788016",
+      "depth_mode": "lingbot",
+      "repeat": "rep03",
+      "fallback_triggered": false,
+      "status_r1f": "accepted",
+      "status_bcm": "accepted",
+      "matrix_max_abs_diff": 0.002849864126220661,
+      "center_diff_mm": 2.35067944551779
+    },
+    {
+      "capture": "R01_wrist_charuco_20260915_094033_680788016",
+      "depth_mode": "lingbot",
+      "repeat": "rep04",
+      "fallback_triggered": false,
+      "status_r1f": "accepted",
+      "status_bcm": "accepted",
+      "matrix_max_abs_diff": 0.002849864126220661,
+      "center_diff_mm": 2.35067944551779
+    },
+    {
+      "capture": "R01_wrist_charuco_20260915_094033_680788016",
+      "depth_mode": "lingbot",
+      "repeat": "rep05",
+      "fallback_triggered": false,
+      "status_r1f": "accepted",
+      "status_bcm": "accepted",
+      "matrix_max_abs_diff": 0.002849864126220661,
+      "center_diff_mm": 2.35067944551779
+    },
+    {
+      "capture": "R02_wrist_charuco_20260915_100308_809523978",
+      "depth_mode": "lingbot",
+      "repeat": "rep01",
+      "fallback_triggered": false,
+      "status_r1f": "accepted",
+      "status_bcm": "accepted",
+      "matrix_max_abs_diff": 0.004566523615151303,
+      "center_diff_mm": 1.44720417502201
+    },
+    {
+      "capture": "R02_wrist_charuco_20260915_100308_809523978",
+      "depth_mode": "lingbot",
+      "repeat": "rep02",
+      "fallback_triggered": false,
+      "status_r1f": "accepted",
+      "status_bcm": "accepted",
+      "matrix_max_abs_diff": 0.004566523615151303,
+      "center_diff_mm": 1.44720417502201
+    },
+    {
+      "capture": "R02_wrist_charuco_20260915_100308_809523978",
+      "depth_mode": "lingbot",
+      "repeat": "rep03",
+      "fallback_triggered": false,
+      "status_r1f": "accepted",
+      "status_bcm": "accepted",
+      "matrix_max_abs_diff": 0.004566523615151303,
+      "center_diff_mm": 1.44720417502201
+    },
+    {
+      "capture": "R02_wrist_charuco_20260915_100308_809523978",
+      "depth_mode": "lingbot",
+      "repeat": "rep04",
+      "fallback_triggered": false,
+      "status_r1f": "accepted",
+      "status_bcm": "accepted",
+      "matrix_max_abs_diff": 0.004566523615151303,
+      "center_diff_mm": 1.44720417502201
+    },
+    {
+      "capture": "R02_wrist_charuco_20260915_100308_809523978",
+      "depth_mode": "lingbot",
+      "repeat": "rep05",
+      "fallback_triggered": false,
+      "status_r1f": "accepted",
+      "status_bcm": "accepted",
+      "matrix_max_abs_diff": 0.004566523615151303,
+      "center_diff_mm": 1.44720417502201
+    }
+  ]
+}

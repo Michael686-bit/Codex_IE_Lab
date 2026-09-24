@@ -1,0 +1,313 @@
+[
+    {
+        "Id": "915b95377516586ccf00629e356475ae6cba756a1a1dc710ba15f08118946e6d",
+        "Created": "2026-09-12T08:38:55.744665438Z",
+        "Path": "/usr/bin/python3",
+        "Args": [
+            "/opt/box-pose/app/compute_observation.py",
+            "--bundle-dir",
+            "/input",
+            "--output-dir",
+            "/outputs/result",
+            "--algorithm-root",
+            "/opt/box-pose/algorithm",
+            "--model-dir",
+            "/opt/box-pose/model",
+            "--config",
+            "/opt/box-pose/config/default.json",
+            "--image-id",
+            "sha256:651bcf7087b9ba1ee2702a4b58ef488936c45251e2a661db8b41d547042bae89"
+        ],
+        "State": {
+            "Status": "exited",
+            "Running": false,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 0,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2026-09-12T08:38:56.046715721Z",
+            "FinishedAt": "2026-09-12T08:39:11.869595358Z",
+            "Health": {
+                "Status": "unhealthy",
+                "FailingStreak": 0,
+                "Log": []
+            }
+        },
+        "Image": "sha256:651bcf7087b9ba1ee2702a4b58ef488936c45251e2a661db8b41d547042bae89",
+        "ResolvConfPath": "/var/lib/docker/containers/915b95377516586ccf00629e356475ae6cba756a1a1dc710ba15f08118946e6d/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/915b95377516586ccf00629e356475ae6cba756a1a1dc710ba15f08118946e6d/hostname",
+        "HostsPath": "/var/lib/docker/containers/915b95377516586ccf00629e356475ae6cba756a1a1dc710ba15f08118946e6d/hosts",
+        "LogPath": "/var/lib/docker/containers/915b95377516586ccf00629e356475ae6cba756a1a1dc710ba15f08118946e6d/915b95377516586ccf00629e356475ae6cba756a1a1dc710ba15f08118946e6d-json.log",
+        "Name": "/v5-thread-ab-20260912t083736z-3",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "none",
+            "PortBindings": {},
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "CapAdd": null,
+            "CapDrop": [
+                "ALL"
+            ],
+            "CgroupnsMode": "host",
+            "Dns": [],
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": [
+                "44"
+            ],
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": true,
+            "SecurityOpt": [
+                "no-new-privileges"
+            ],
+            "Tmpfs": {
+                "/tmp": "rw,nosuid,nodev,size=512m"
+            },
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "nvidia",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 8589934592,
+            "NanoCpus": 6000000000,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 8589934592,
+            "MemorySwappiness": null,
+            "OomKillDisable": false,
+            "PidsLimit": 256,
+            "Ulimits": [],
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "Mounts": [
+                {
+                    "Type": "bind",
+                    "Source": "/home/galbot/Lsy03/box_pose_pipeline/runs/online_docker_20260912_right_03/container_input_bundle",
+                    "Target": "/input",
+                    "ReadOnly": true
+                },
+                {
+                    "Type": "bind",
+                    "Source": "/home/galbot/Lsy03/box_pose_pipeline/runs/thread_ab_20260912T083736Z/03_formal_pair1_B",
+                    "Target": "/outputs"
+                }
+            ],
+            "MaskedPaths": [
+                "/proc/asound",
+                "/proc/acpi",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/sys/firmware",
+                "/sys/devices/virtual/powercap"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/39f60df50fe583737d775fb89528109f825a0857bf6e2cae82f30464256ca09d-init/diff:/var/lib/docker/overlay2/d4b933402c2baabeb2bd83f4cfa6b4509008a8d5c012f675a9cf693b404ac8dd/diff:/var/lib/docker/overlay2/c9dd9cfd6bdb74e5f27a3de952ef49553a2db2efbb203a168f685271c16de907/diff:/var/lib/docker/overlay2/7943e3ddded29b05c4736f1ac70488a0dde9deac06b115db986fa74f5189045f/diff:/var/lib/docker/overlay2/08af52e9d123e7c64f8cd45a0fb891ec949bcfc40f9dc94e9b544889df73358c/diff:/var/lib/docker/overlay2/b9e22ce5716ed0ab0de61a716312bd67d2e473b0bb50927f1838b56646ca4ef9/diff:/var/lib/docker/overlay2/1b08b24ca5f203679272b2ffb8b5e5fd46e8220b3d68ad9241c0d5ce039cdb38/diff:/var/lib/docker/overlay2/e8284825fbc00a4a4e5a236a34cae1c9ba2732753899d9253386d3c1852c0529/diff:/var/lib/docker/overlay2/b1c9b77b39e01d42030799f8f6b0a3a8ecec7b45c9f282ec2aec906ca2b68ff2/diff:/var/lib/docker/overlay2/321d8f8a78fd532ba35cfdf8c877aec333071b093b92a55291208b689e33f002/diff:/var/lib/docker/overlay2/91376fe756b845593bffc510eba4722fa02a47f8add729da6379d7ef60b9a59c/diff:/var/lib/docker/overlay2/3c16cb18a7a3e62a12ef9f2061dcbfbf9c831cabd6772a414ce0fd03a88ef154/diff:/var/lib/docker/overlay2/281095177be86bf9608f056ea1ed949334aa2bc301fa1f0321b2d84d26b2019e/diff:/var/lib/docker/overlay2/6a57c13c4948a6ea65004dec0101a6e22bac193c5c3b0f36d549738f72206d3e/diff:/var/lib/docker/overlay2/63ee08661f2f0f95b859f3f47709b80af3ace9dcd94c07c36d711e6dec334c61/diff:/var/lib/docker/overlay2/90373549e1f6b0c29f87ed726fef6dddc6f916338b443a081223ad49385695b2/diff:/var/lib/docker/overlay2/124f29f41d640de8f904aacb8ff9460efca6221e0ab12bb9dc898572756c5fca/diff:/var/lib/docker/overlay2/b159c7406842bd91e309d71fd1270b47f4e18a3a6591ab5fcfb26aae35b9eac8/diff:/var/lib/docker/overlay2/35ab9da9df49e8db4ce632d82a146f1c61ec12c1db864c0ba8346d1c221bb216/diff:/var/lib/docker/overlay2/5b727d10ce40afd76d3b803fbb621e68d1fb9f99cc4022bc883291c8c8d325b7/diff:/var/lib/docker/overlay2/3be183ccc91597b24a6bcdf9a864519d4c357c19caa2dc80d766171d3e29c5b6/diff:/var/lib/docker/overlay2/8d805dd6ef7fec075166f0d4e44e920c471505d583db24da5c0a28d61b0bf9c5/diff:/var/lib/docker/overlay2/d30700823e9d049c3ae40972cc1dffd6b896e88a3d4ce43cb62240e3df04511e/diff:/var/lib/docker/overlay2/cd2445317bcac384fc517a32348035eef62aa9de5bce1d93b81ab9c2d0eaf68b/diff:/var/lib/docker/overlay2/2d0b607ca571d7965381cd44a116914e470c8d83cfe763c41ada26a01ae9f22a/diff:/var/lib/docker/overlay2/380b361f1b9cba4b9a1e248e786c30cd3bd9699a47e7d187467b5aae12bb2fb7/diff:/var/lib/docker/overlay2/15b839f8b6f12cb571fff3a71591ccbabe6df9759782dd50ef3bffc7fd4cd182/diff:/var/lib/docker/overlay2/adfb1c3db2058d67676c042d47cbbf2268bbdb85624281c534050a147229264b/diff:/var/lib/docker/overlay2/b84821749868afc4b539a4c71bfe837c840daa7026b0c3b70f2155bd107d966e/diff:/var/lib/docker/overlay2/a9d08a3c2996108ac245f3f8cfb4fef5360ff8c6b80bba678b39c777484ce138/diff:/var/lib/docker/overlay2/ac364551fb7875830d5697d1adda90c9a4c1000a86ec9c2f7304182997e2152f/diff:/var/lib/docker/overlay2/9fad32b45db47c06ff7cc1394ff649ed61f72e1552759d2f3c9468053d04679c/diff:/var/lib/docker/overlay2/63543ec4ef9c7fc40276f053507b790e919519940ca1154046483f0eeeb58145/diff:/var/lib/docker/overlay2/4299c41df651c26f6ae58a25e1d18e5ac7c5adeebd0c4fd57fcd04885afd88e6/diff",
+                "MergedDir": "/var/lib/docker/overlay2/39f60df50fe583737d775fb89528109f825a0857bf6e2cae82f30464256ca09d/merged",
+                "UpperDir": "/var/lib/docker/overlay2/39f60df50fe583737d775fb89528109f825a0857bf6e2cae82f30464256ca09d/diff",
+                "WorkDir": "/var/lib/docker/overlay2/39f60df50fe583737d775fb89528109f825a0857bf6e2cae82f30464256ca09d/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [
+            {
+                "Type": "bind",
+                "Source": "/home/galbot/Lsy03/box_pose_pipeline/runs/online_docker_20260912_right_03/container_input_bundle",
+                "Destination": "/input",
+                "Mode": "",
+                "RW": false,
+                "Propagation": "rprivate"
+            },
+            {
+                "Type": "bind",
+                "Source": "/home/galbot/Lsy03/box_pose_pipeline/runs/thread_ab_20260912T083736Z/03_formal_pair1_B",
+                "Destination": "/outputs",
+                "Mode": "",
+                "RW": true,
+                "Propagation": "rprivate"
+            }
+        ],
+        "Config": {
+            "Hostname": "915b95377516",
+            "Domainname": "",
+            "User": "1000:1000",
+            "AttachStdin": false,
+            "AttachStdout": true,
+            "AttachStderr": true,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "NVIDIA_DRIVER_CAPABILITIES=compute,utility",
+                "OPENBLAS_NUM_THREADS=1",
+                "OMP_NUM_THREADS=1",
+                "MKL_NUM_THREADS=1",
+                "NUMEXPR_NUM_THREADS=1",
+                "NVIDIA_VISIBLE_DEVICES=all",
+                "PATH=/opt/galbot/sdk/galbot_sdk/bin:/opt/galbot/sdk/galbot_sdk/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "LANG=C.UTF-8",
+                "LC_ALL=C.UTF-8",
+                "ROS_DISTRO=noetic",
+                "GALBOT_SDK_VERSION=1.9.0",
+                "GALBOT_TARGET_GBS=1.17.x",
+                "PYTHONPATH=/opt/box-pose/app:/opt/box-pose/algorithm:/opt/box-pose/20260903_fdp_baseline",
+                "LD_LIBRARY_PATH=/opt/galbot/sdk:/root/workspace/imc/build:/root/workspace/imc/build/interface:/root/workspace/imc/build/src/hal:/root/workspace/imc/build/src/kinematics:/root/workspace/imc/build/src/math:/root/workspace/imc/build/src/path_planner:/root/workspace/imc/build/src/planner:/root/workspace/imc/build/src/ral:/root/workspace/imc/build/src/traj_planner:/root/workspace/imc/build/src/validator:/usr/local/lib:/usr/local/lib/python3.8/dist-packages/numpy.libs:/usr/local/lib/python3.8/dist-packages/scipy.libs:/usr/local/lib/python3.8/dist-packages/opencv_python.libs:/usr/lib/aarch64-linux-gnu/blas:/usr/lib/aarch64-linux-gnu/lapack:/usr/lib/aarch64-linux-gnu:/opt/ros/noetic/lib",
+                "PYTHONNOUSERSITE=1",
+                "PYTHONDONTWRITEBYTECODE=1",
+                "S1_SJTU_CONFIG=/opt/s1-sjtu/config/site.production.yaml",
+                "S1_SJTU_IMC_ROOT=/root/workspace/imc",
+                "ROS_PACKAGE_PATH=/data/galbot/config/galbot_description:/opt/ros/noetic/share",
+                "HOME=/data/home",
+                "XDG_CACHE_HOME=/data/cache",
+                "MPLBACKEND=Agg"
+            ],
+            "Cmd": [
+                "/opt/box-pose/app/compute_observation.py",
+                "--bundle-dir",
+                "/input",
+                "--output-dir",
+                "/outputs/result",
+                "--algorithm-root",
+                "/opt/box-pose/algorithm",
+                "--model-dir",
+                "/opt/box-pose/model",
+                "--config",
+                "/opt/box-pose/config/default.json",
+                "--image-id",
+                "sha256:651bcf7087b9ba1ee2702a4b58ef488936c45251e2a661db8b41d547042bae89"
+            ],
+            "Healthcheck": {
+                "Test": [
+                    "CMD",
+                    "/opt/s1-sjtu/deploy/bin/healthcheck"
+                ],
+                "Interval": 60000000000,
+                "Timeout": 15000000000,
+                "StartPeriod": 20000000000,
+                "Retries": 3
+            },
+            "Image": "sha256:651bcf7087b9ba1ee2702a4b58ef488936c45251e2a661db8b41d547042bae89",
+            "Volumes": null,
+            "WorkingDir": "/opt/box-pose",
+            "Entrypoint": [
+                "/usr/bin/python3"
+            ],
+            "OnBuild": null,
+            "Labels": {
+                "io.galbot.base-image-id": "sha256:547fd10070fcb8190d04b6923e9f20800c6097d062870239d07a40a140316bc0",
+                "io.galbot.robot.model": "S1",
+                "io.galbot.sdk.source-commit": "5745f32fcb6e8011fe4db7bfb1df0cb24ffa9dfa",
+                "io.galbot.sdk.version": "1.9.0",
+                "io.galbot.target-gbs": "1.17.x",
+                "io.ie-lab.foundationpose.mode": "remote-http",
+                "io.ie-lab.imc.module": "imc_interface_py",
+                "io.ie-lab.runtime.profile": "slim-under-10g",
+                "org.opencontainers.image.description": "ROS Noetic and official Galbot S1 SDK for chassis development",
+                "org.opencontainers.image.ref.name": "ubuntu",
+                "org.opencontainers.image.revision": "1735aac",
+                "org.opencontainers.image.title": "S1 SJTU 4317 slim production runtime",
+                "org.opencontainers.image.version": "s1-sjtu-0806-slim"
+            }
+        },
+        "NetworkSettings": {
+            "Bridge": "",
+            "SandboxID": "28ed43e2dcfcd2e0187144e75b5095ddbddaefd6e9b235bf89e5be67dcbf8afc",
+            "SandboxKey": "/var/run/docker/netns/28ed43e2dcfc",
+            "Ports": {},
+            "HairpinMode": false,
+            "LinkLocalIPv6Address": "",
+            "LinkLocalIPv6PrefixLen": 0,
+            "SecondaryIPAddresses": null,
+            "SecondaryIPv6Addresses": null,
+            "EndpointID": "",
+            "Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAddress": "",
+            "IPPrefixLen": 0,
+            "IPv6Gateway": "",
+            "MacAddress": "",
+            "Networks": {
+                "none": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": null,
+                    "MacAddress": "",
+                    "NetworkID": "71bddc958f1247c88b1bcb3cfb65308f41c3b6baebd867fee4d27dff8214e286",
+                    "EndpointID": "",
+                    "Gateway": "",
+                    "IPAddress": "",
+                    "IPPrefixLen": 0,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DriverOpts": null,
+                    "DNSNames": null
+                }
+            }
+        }
+    }
+]

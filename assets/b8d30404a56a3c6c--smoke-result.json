@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "scope": "synthetic input; no task success or robot execution evaluated",
+  "checkpoint": "/models/lingbot-vla-v2-6b-robotwin/checkpoints/global_step_50000/hf_ckpt",
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "use_compile": false,
+  "action_shape": [
+    25,
+    14
+  ],
+  "warm_latency_ms": [
+    357.92652299278416,
+    356.8368840205949,
+    369.62754899286665
+  ],
+  "mean_warm_latency_ms": 361.4636520020819,
+  "peak_allocated_mib": 12427.951171875,
+  "peak_reserved_mib": 12468.0
+}

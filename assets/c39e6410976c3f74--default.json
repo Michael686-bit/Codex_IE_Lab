@@ -1,0 +1,109 @@
+{
+  "seed": 7,
+  "dimensions_m": [
+    0.4,
+    0.3,
+    0.175
+  ],
+  "min_depth_m": 0.2,
+  "max_depth_m": 4.0,
+  "canny_low": 40,
+  "canny_high": 100,
+  "height_quantiles": [
+    0.8,
+    0.997
+  ],
+  "plane_trials": 1500,
+  "plane_tolerance_m": 0.004,
+  "rim_band_m": 0.008,
+  "max_tilt_deg": 12,
+  "min_plane_points": 80,
+  "min_plane_minor_spread_m": 0.045,
+  "voxel_m": 0.004,
+  "edge_tolerance_m": 0.01,
+  "edge_bins": 12,
+  "min_edge_points": 10,
+  "min_edge_coverage": 0.5,
+  "min_rectangle_inlier_fraction": 0.7,
+  "max_rectangle_rmse_m": 0.008,
+  "yaw_step_deg": 10,
+  "ambiguity_score_gap": 0.03,
+  "distinct_center_m": 0.015,
+  "distinct_yaw_deg": 3.0,
+  "max_plane_candidates": 8,
+  "distinct_plane_height_m": 0.006,
+  "distinct_plane_angle_deg": 3.0,
+  "plane_competitor_min_support_ratio": 0.65,
+  "max_above_rim_p95_m": 0.015,
+  "wall_normal_radius_px": 2,
+  "wall_normal_max_abs_z": 0.35,
+  "wall_neighbor_span_max_m": 0.025,
+  "wall_voxel_m": 0.006,
+  "wall_height_quantiles": [
+    0.01,
+    0.99
+  ],
+  "wall_height_error_allowance_m": 0.005,
+  "wall_max_center_z_interval_m": 0.015,
+  "multiplane_line_trials": 1800,
+  "multiplane_line_tolerance_m": 0.005,
+  "multiplane_min_pair_separation_m": 0.03,
+  "multiplane_min_points": 80,
+  "multiplane_min_vertical_span_m": 0.06,
+  "multiplane_min_tangent_span_m": 0.08,
+  "multiplane_extent_quantiles": [0.01, 0.99],
+  "multiplane_max_planes": 12,
+  "multiplane_orthogonal_tolerance_deg": 10.0,
+  "multiplane_face_angle_tolerance_deg": 8.0,
+  "multiplane_face_offset_tolerance_m": 0.018,
+  "multiplane_min_observed_faces": 3,
+  "multiplane_min_face_containment": 0.65,
+  "multiplane_ambiguity_score_ratio": 0.92,
+  "multiplane_height_error_allowance_m": 0.008,
+  "multiplane_max_center_z_interval_m": 0.025,
+  "shell_observation_voxel_m": 0.008,
+  "shell_min_observation_points": 120,
+  "shell_min_view_cosine": 0.12,
+  "shell_min_visible_model_points": 80,
+  "shell_max_residual_m": 0.08,
+  "shell_robust_scale_m": 0.012,
+  "shell_max_iterations": 120,
+  "shell_pose_diff_step": 0.0001,
+  "shell_inlier_threshold_m": 0.015,
+  "shell_ambiguity_score_ratio": 0.95,
+  "shell_max_p90_residual_m": 0.04,
+  "shell_min_model_inlier_fraction": 0.25
+  ,"v5_fused_seed_center_dedup_m": 0.01
+  ,"v5_fused_seed_yaw_dedup_deg": 1.0
+  ,"v5_fused_seed_max_count": 12
+  ,"v5_min_view_cosine": 0.10
+  ,"v5_min_visible_model_points": 80
+  ,"v5_zbuffer_pixel_size_px": 2.0
+  ,"v5_fit_observation_voxel_m": 0.012
+  ,"v5_max_residual_m": 0.08
+  ,"v5_robust_scale_m": 0.012
+  ,"v5_max_iterations": 120
+  ,"v5_pose_diff_step": 0.0001
+  ,"v5_inlier_threshold_m": 0.015
+  ,"v5_max_p90_residual_m": 0.04
+  ,"v5_min_model_inlier_fraction": 0.25
+  ,"v5_min_observed_inlier_fraction": 0.30
+  ,"v5_ambiguity_score_ratio": 0.95
+  ,"v5_surface_distinct_center_m": 0.015
+  ,"v5_surface_distinct_yaw_deg": 3.0
+  ,"v5_surface_ambiguity_ratio": 1.10
+  ,"icp_min_view_cosine": 0.10
+  ,"icp_min_visible_model_points": 80
+  ,"icp_zbuffer_pixel_size_px": 2.0
+  ,"icp_require_mask_inside": false
+  ,"icp_robust_scale_m": 0.012
+  ,"icp_max_correspondence_m": 0.08
+  ,"icp_inlier_threshold_m": 0.015
+  ,"icp_max_translation_from_initial_m": 0.08
+  ,"icp_max_yaw_from_initial_deg": 12.0
+  ,"icp_max_iterations_per_level": 45
+  ,"icp_pose_diff_step": 0.0001
+  ,"icp_voxel_levels_m": [0.020, 0.012, 0.008]
+  ,"icp_axis_support_cosine": 0.50
+  ,"icp_min_axis_support_fraction": 0.15
+}

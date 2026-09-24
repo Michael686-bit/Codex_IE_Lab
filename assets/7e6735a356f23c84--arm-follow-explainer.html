@@ -1,0 +1,66 @@
+<div id="arm-follow-explainer">
+  <style>
+    #arm-follow-explainer .drawing { width:100%; display:block; }
+    #arm-follow-explainer .drawing text { fill:var(--foreground); font-size:12px; }
+    #arm-follow-explainer .flow { display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin-bottom:20px; }
+    #arm-follow-explainer .key { display:inline-flex; align-items:center; gap:6px; }
+    #arm-follow-explainer .dot { width:10px; height:10px; border-radius:50%; background:var(--viz-series-1); }
+    #arm-follow-explainer .dash { width:20px; border-top:2px dashed var(--viz-series-2); }
+  </style>
+  <div class="flow" aria-label="控制链路"><span>GP 七关节角</span><span>→</span><span>逐关节限制增量</span><span>→</span><span>100 ms 位置轨迹</span><span>→</span><span>G1 底层执行</span></div>
+  <div class="viz-controls"><label class="form-label" for="arm-case">查看场景<select class="form-select" id="arm-case"><option value="compare">慢速 / 快速：同算法，不同步长</option><option value="lag">衔接问题：实际位置落后于新起点</option></select></label></div>
+  <label class="form-label" for="arm-step" id="arm-step-label">第 1 段 / 5 段</label>
+  <input class="form-range" id="arm-step" type="range" min="1" max="5" step="1" value="1">
+  <svg class="drawing" role="img" aria-label="单关节位置轨迹对比"></svg>
+  <div class="viz-row text-small"><span class="key"><span class="dot"></span>指令轨迹</span><span class="key"><span class="dash"></span>假设的实测位置</span><span>单关节示意 · 非真机回放</span></div>
+  <div class="text-small" aria-live="polite" id="arm-detail"></div>
+  <script>
+  (()=>{
+    const root=document.getElementById('arm-follow-explainer');
+    const svg=root.querySelector('.drawing'), select=root.querySelector('#arm-case'), slider=root.querySelector('#arm-step'), label=root.querySelector('#arm-step-label'), detail=root.querySelector('#arm-detail');
+    const NS='http://www.w3.org/2000/svg';
+    function el(tag,attrs,text){const e=document.createElementNS(NS,tag);for(const [k,v]of Object.entries(attrs))e.setAttribute(k,v);if(text!==undefined)e.textContent=text;svg.appendChild(e);return e;}
+    function text(x,y,t,anchor='start'){el('text',{x,y,'text-anchor':anchor},t);}
+    function line(x1,y1,x2,y2,color='var(--border)',width=1,dash=''){el('line',{x1,y1,x2,y2,stroke:color,'stroke-width':width,'stroke-dasharray':dash});}
+    function draw(){
+      const w=Math.max(280,root.clientWidth), left=26,right=w-26;
+      svg.replaceChildren();
+      const lag=select.value==='lag';const height=lag?300:344;
+      svg.setAttribute('viewBox',`0 0 ${w} ${height}`);
+      el('title',{},lag?'新轨迹起点与实际位置不一致':'同一关节的慢速和快速分段目标');
+      const max=lag?8:12,x=q=>left+q/max*(right-left), n=Number(slider.value);
+      function track(y){line(left,y,right,y);for(const q of(lag?[0,2,4,6,8]:[0,4,8,12])){line(x(q),y-4,x(q),y+4);text(x(q),y+22,`${q}°`,'middle');}}
+      if(!lag){
+        label.textContent=`第 ${n} 段 / 5 段（每段轨迹 100 ms）`;
+        text(left,25,'GP 目标固定在 10° · G1 初始位置 0°');
+        const rows=[{y:111,v:.4,name:'慢速 0.4 rad/s'},{y:247,v:1,name:'快速 1.0 rad/s'}];
+        rows.forEach(({y,v,name})=>{
+          const step=v*.1*180/Math.PI,prev=Math.min(10,(n-1)*step),goal=Math.min(10,n*step);
+          text(left,y-49,name);text(left,y-28,`${prev.toFixed(2)}° → ${goal.toFixed(2)}°　增量 ${(goal-prev).toFixed(2)}°`);
+          track(y);line(x(10),y-15,x(10),y+7,'var(--foreground)',1,'3 3');
+          for(let i=0;i<n;i++){const a=Math.min(10,i*step),b=Math.min(10,(i+1)*step);line(x(a),y,x(b),y,'var(--viz-series-1)',6);el('circle',{cx:x(a),cy:y,r:3,fill:'var(--foreground)'});}
+          el('circle',{cx:x(goal),cy:y,r:7,fill:'var(--viz-series-1)'});
+          text(x(10),y+45,'GP 10°','middle');
+        });
+        detail.textContent='每段都向 GP 最新目标靠近；图中固定 GP，仅比较两种速度参数。';
+      }else{
+        const progress=(n-1)/4,q=4+2*progress;
+        label.textContent=`新轨迹段内：${Math.round(progress*100)} ms / 100 ms`;
+        text(left,25,'假设：新轨迹发布瞬间，G1 实际在 2°');
+        text(left,64,'实际位置（发布瞬间）');track(95);
+        line(x(2),79,x(2),106,'var(--viz-series-2)',3,'4 3');
+        text(left,156,'新轨迹：起点 4° → 终点 6°');track(192);
+        line(x(4),192,x(6),192,'var(--viz-series-1)',6);
+        el('circle',{cx:x(q),cy:192,r:7,fill:'var(--viz-series-1)'});
+        line(x(2),109,x(2),193,'var(--viz-series-2)',1,'4 3');
+        line(x(2),239,x(4),239,'var(--viz-series-2)',2);
+        line(x(2),234,x(2),244,'var(--viz-series-2)',2);line(x(4),234,x(4),244,'var(--viz-series-2)',2);
+        text((x(2)+x(4))/2,269,'起点已领先 2°','middle');
+        detail.textContent=`当前指令位置 ${q.toFixed(1)}°；底层实际如何追赶未模拟。此衔接问题在慢、快两阶段均存在。`;
+      }
+    }
+    slider.addEventListener('input',draw);select.addEventListener('change',()=>{slider.value=1;draw();});
+    new ResizeObserver(draw).observe(root);draw();
+  })();
+  </script>
+</div>

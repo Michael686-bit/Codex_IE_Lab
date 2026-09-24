@@ -1,0 +1,229 @@
+{
+  "condition_count": 12,
+  "original_exact_max": {},
+  "fast_exact_max": {},
+  "rows": [
+    {
+      "frame_id": "L01_wrist_charuco_20260915_093818_877801116",
+      "branch": "lingbot",
+      "original_vs_exact": {
+        "center_mm": 0.0,
+        "rotation_sym_deg": 0.0
+      },
+      "fast_vs_exact": {
+        "center_mm": 13.08860084330322,
+        "rotation_sym_deg": 2.4079351718789184
+      },
+      "original_vs_fast": {
+        "center_mm": 13.08860084330322,
+        "rotation_sym_deg": 2.4079351718789184
+      }
+    },
+    {
+      "frame_id": "L01_wrist_charuco_20260915_093818_877801116",
+      "branch": "raw",
+      "original_vs_exact": {
+        "center_mm": 0.0,
+        "rotation_sym_deg": 1.987846675914698e-16
+      },
+      "fast_vs_exact": {
+        "center_mm": 1.7697996468465245,
+        "rotation_sym_deg": 1.2562677402833256
+      },
+      "original_vs_fast": {
+        "center_mm": 1.7697996468465245,
+        "rotation_sym_deg": 1.2562677402833267
+      }
+    },
+    {
+      "frame_id": "L03_00_wrist_charuco_20260915_104002_497962253",
+      "branch": "lingbot",
+      "original_vs_exact": {
+        "center_mm": 0.0,
+        "rotation_sym_deg": 9.93923337957349e-17
+      },
+      "fast_vs_exact": {
+        "center_mm": 6.162685528844788,
+        "rotation_sym_deg": 1.0456910758709712
+      },
+      "original_vs_fast": {
+        "center_mm": 6.162685528844788,
+        "rotation_sym_deg": 1.0456910758709712
+      }
+    },
+    {
+      "frame_id": "L03_00_wrist_charuco_20260915_104002_497962253",
+      "branch": "raw",
+      "original_vs_exact": {
+        "center_mm": 0.0,
+        "rotation_sym_deg": 0.0
+      },
+      "fast_vs_exact": {
+        "center_mm": 53.849393711543684,
+        "rotation_sym_deg": 89.3562489453861
+      },
+      "original_vs_fast": {
+        "center_mm": 53.849393711543684,
+        "rotation_sym_deg": 89.3562489453861
+      }
+    },
+    {
+      "frame_id": "L03_10_wrist_charuco_20260915_103928_398335507",
+      "branch": "lingbot",
+      "original_vs_exact": {
+        "center_mm": 0.0,
+        "rotation_sym_deg": 0.0
+      },
+      "fast_vs_exact": {
+        "center_mm": 14.587550681253967,
+        "rotation_sym_deg": 3.4215746450614213
+      },
+      "original_vs_fast": {
+        "center_mm": 14.587550681253967,
+        "rotation_sym_deg": 3.4215746450614217
+      }
+    },
+    {
+      "frame_id": "L03_10_wrist_charuco_20260915_103928_398335507",
+      "branch": "raw",
+      "original_vs_exact": {
+        "center_mm": 0.0,
+        "rotation_sym_deg": 0.0
+      },
+      "fast_vs_exact": {
+        "center_mm": 4.804745945982191,
+        "rotation_sym_deg": 1.4576115456222414
+      },
+      "original_vs_fast": {
+        "center_mm": 4.804745945982191,
+        "rotation_sym_deg": 1.4576115456222414
+      }
+    },
+    {
+      "frame_id": "R02_wrist_charuco_20260915_100308_809523978",
+      "branch": "lingbot",
+      "original_vs_exact": {
+        "center_mm": 0.0,
+        "rotation_sym_deg": 0.0
+      },
+      "fast_vs_exact": {
+        "center_mm": 6.077328467974613,
+        "rotation_sym_deg": 2.0697039917911955
+      },
+      "original_vs_fast": {
+        "center_mm": 6.077328467974613,
+        "rotation_sym_deg": 2.0697039917911955
+      }
+    },
+    {
+      "frame_id": "R02_wrist_charuco_20260915_100308_809523978",
+      "branch": "raw",
+      "original_vs_exact": {
+        "center_mm": 0.0,
+        "rotation_sym_deg": 0.0
+      },
+      "fast_vs_exact": {
+        "center_mm": 6.33518097900415,
+        "rotation_sym_deg": 2.4625034830234975
+      },
+      "original_vs_fast": {
+        "center_mm": 6.33518097900415,
+        "rotation_sym_deg": 2.4625034830234975
+      }
+    },
+    {
+      "frame_id": "R04_00_wrist_charuco_20260915_104526_910331328",
+      "branch": "lingbot",
+      "original_vs_exact": {
+        "center_mm": 0.0,
+        "rotation_sym_deg": 1.4056198644984203e-16
+      },
+      "fast_vs_exact": {
+        "center_mm": 6.199783667145146,
+        "rotation_sym_deg": 2.0130616036938958
+      },
+      "original_vs_fast": {
+        "center_mm": 6.199783667145146,
+        "rotation_sym_deg": 2.013061603693896
+      }
+    },
+    {
+      "frame_id": "R04_00_wrist_charuco_20260915_104526_910331328",
+      "branch": "raw",
+      "original_vs_exact": {
+        "center_mm": 0.0,
+        "rotation_sym_deg": 0.0
+      },
+      "fast_vs_exact": {
+        "center_mm": 128.74128349239837,
+        "rotation_sym_deg": 110.39607242281812
+      },
+      "original_vs_fast": {
+        "center_mm": 128.74128349239837,
+        "rotation_sym_deg": 110.39607242281812
+      }
+    },
+    {
+      "frame_id": "R04_10_wrist_charuco_20260915_105839_488564574",
+      "branch": "lingbot",
+      "original_vs_exact": {
+        "center_mm": 0.0,
+        "rotation_sym_deg": 0.0
+      },
+      "fast_vs_exact": {
+        "center_mm": 4.221838370904376,
+        "rotation_sym_deg": 0.80919244375551
+      },
+      "original_vs_fast": {
+        "center_mm": 4.221838370904376,
+        "rotation_sym_deg": 0.8091924437555116
+      }
+    },
+    {
+      "frame_id": "R04_10_wrist_charuco_20260915_105839_488564574",
+      "branch": "raw",
+      "original_vs_exact": {
+        "center_mm": 0.0,
+        "rotation_sym_deg": 0.0
+      },
+      "fast_vs_exact": {
+        "center_mm": 22.280372101670068,
+        "rotation_sym_deg": 3.582384048389024
+      },
+      "original_vs_fast": {
+        "center_mm": 22.280372101670068,
+        "rotation_sym_deg": 3.5823840483890224
+      }
+    }
+  ],
+  "original_vs_exact": {
+    "center_mm": {
+      "median": 0.0,
+      "max": 0.0
+    },
+    "rotation_sym_deg": {
+      "median": 0.0,
+      "max": 1.987846675914698e-16
+    }
+  },
+  "fast_vs_exact": {
+    "center_mm": {
+      "median": 6.267482323074648,
+      "max": 128.74128349239837
+    },
+    "rotation_sym_deg": {
+      "median": 2.238819581835057,
+      "max": 110.39607242281812
+    }
+  },
+  "original_vs_fast": {
+    "center_mm": {
+      "median": 6.267482323074648,
+      "max": 128.74128349239837
+    },
+    "rotation_sym_deg": {
+      "median": 2.238819581835057,
+      "max": 110.39607242281812
+    }
+  }
+}
