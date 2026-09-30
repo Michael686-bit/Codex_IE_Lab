@@ -1,0 +1,199 @@
+{
+  "api_allowlists": {
+    "GalbotMotion": [
+      "get_robot_states",
+      "init"
+    ],
+    "GalbotRobot": [
+      "destroy",
+      "get_camera_intrinsic",
+      "get_depth_data",
+      "get_rgb_data",
+      "get_sensor_extrinsic",
+      "get_transform",
+      "init"
+    ]
+  },
+  "api_call_trace": [
+    "GalbotRobot.init",
+    "GalbotMotion.init",
+    "GalbotRobot.get_rgb_data",
+    "GalbotRobot.get_depth_data",
+    "GalbotRobot.get_camera_intrinsic",
+    "GalbotMotion.get_robot_states",
+    "GalbotRobot.get_sensor_extrinsic",
+    "GalbotRobot.get_transform",
+    "GalbotRobot.destroy"
+  ],
+  "camera_arm": "left",
+  "capture_started_wall_time_ns": 1789436299426206711,
+  "capture_time_joint_state": {
+    "base_state": [],
+    "chain_name": "",
+    "read_after_depth_skew_ns": 86511674,
+    "read_wall_time_ns": 1789436305205351738,
+    "whole_body_joint_count": 17,
+    "whole_body_joint_rad": [
+      0.41999998688697815,
+      -0.00424241553992033,
+      -0.2648753523826599,
+      1.0093713254356385,
+      -0.6839756563560486,
+      -1.1148444870285035,
+      -2.333963713179779,
+      -1.3225910222190858,
+      0.0341790088470459,
+      0.9590016290176392,
+      -1.009431246559143,
+      0.6839277194572448,
+      1.1147965501296997,
+      2.3338798236068725,
+      1.322555069544983,
+      -0.03421496152114868,
+      -0.9590495659164429
+    ],
+    "whole_body_layout": {
+      "left_arm": [
+        3,
+        9
+      ],
+      "right_arm": [
+        10,
+        16
+      ],
+      "torso": [
+        0,
+        2
+      ]
+    }
+  },
+  "capture_transform_quality": {
+    "bottom_row_error_l2": 0.0,
+    "finite": true,
+    "rotation_determinant": 1.0000000000000007,
+    "rotation_orthogonality_error_fro": 1.0090438193895653e-15,
+    "shape": [
+      4,
+      4
+    ],
+    "valid": true
+  },
+  "capture_transform_timestamp_ns": 1789436305118840064,
+  "capture_transform_timestamp_skew_ns": 0,
+  "depth_header": {
+    "frame_id": "left_arm_camera_color_optical_frame",
+    "timestamp_ns": 1789436305118840064
+  },
+  "depth_stats_m": {
+    "max": 6.353000164031982,
+    "min": 0.2639999985694885,
+    "p50": 1.3660000562667847,
+    "p95": 2.1760001182556152
+  },
+  "depth_valid_points": 806324,
+  "depth_valid_ratio": 0.8749175347222222,
+  "frame_sync_skew_ns": 0,
+  "intrinsic": {
+    "D": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "K": [
+      911.9766235351562,
+      0.0,
+      648.1232299804688,
+      0.0,
+      911.7081909179688,
+      360.41265869140625,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "P": [
+      911.9766235351562,
+      0.0,
+      648.1232299804688,
+      0.0,
+      0.0,
+      911.7081909179688,
+      360.41265869140625,
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    "R": [
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ],
+    "T": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "binning_x": 0,
+    "binning_y": 0,
+    "camera_type": "D435I",
+    "distortion_model": "plumb_bob",
+    "header": {
+      "frame_id": "left_arm_camera_color_optical_frame",
+      "timestamp_ns": 1789436305118840064
+    },
+    "height": 720,
+    "roi": {
+      "do_rectify": false,
+      "height": 720,
+      "width": 1280,
+      "x_offset": 0,
+      "y_offset": 0
+    },
+    "width": 1280
+  },
+  "motion_commands_sent": false,
+  "reference_frame": "base_link",
+  "rgb_header": {
+    "frame_id": "left_arm_camera_color_optical_frame",
+    "timestamp_ns": 1789436305118840064
+  },
+  "robot_sdk_read_only": true,
+  "schema": "s1.fdp_baseline.live_capture.v1",
+  "sensor_extrinsic_quality": {
+    "bottom_row_error_l2": 0.0,
+    "finite": true,
+    "rotation_determinant": 0.9999999999999998,
+    "rotation_orthogonality_error_fro": 2.3957155752286783e-16,
+    "shape": [
+      4,
+      4
+    ],
+    "valid": true
+  },
+  "sensor_extrinsic_timestamp_ns": 1789436305232935477,
+  "sensor_frame": "left_arm_camera_color_optical_frame",
+  "tf_crosscheck": {
+    "matrix_max_abs": 1.498649796927154e-05,
+    "rotation_geodesic_deg": 0.0010851419381235792,
+    "translation_l2_m": 1.4545005702914712e-05
+  },
+  "transform_semantics": "T_base_link_from_camera_at_depth_timestamp"
+}

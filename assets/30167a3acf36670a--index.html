@@ -1,0 +1,58 @@
+<!doctype html><html lang="zh"><meta charset="utf-8"><title>4090 与 Orin A4-64：28帧RGB对比</title><style>body{font:16px system-ui;background:#f2f5f9;color:#152638;max-width:1350px;margin:30px auto;padding:15px}img{max-width:100%}figure{margin:25px 0;background:white;padding:12px;border-radius:12px}a{color:#13699b}nav{line-height:2}select{font-size:18px;padding:8px}</style><aside style="background:#e3f4e8;padding:16px;margin:18px 0"><b>D12已更新为左侧箱体ROI 9：</b>4090和Orin均已重算；此前C01/C04/C09/C11修正结果保留。当前画廊展示4090与A4-64。<a href="../20260928_fdp_aligned_comparison/REPORT.md">最新统计表</a> · <a href="../20260929_fdp_d12_left/REPORT.md">D12复算记录</a></aside><h1>4090 FDP 与 Orin A4-64：全部28帧</h1><p>蓝色实线=4090；橙色虚线=A4-64。使用原始归档RGB、相机K和175mm模型三维包围框。2026-09-29已重跑C01/C04/C09/C11，使用审核ROI 5/6/0/6；D12另已改选左侧ROI9并重跑，其余23帧沿用历史结果。所有输入哈希匹配。位置/角度数字是base_link下算法−4090。</p><p>绘制同帧第1次正式输出；统计报告使用全部5次配对。4090是参考输出，不是绝对真值；投影采用与FDP一致的K针孔模型，不额外施加畸变。框边包括被箱体遮挡的背面边。</p><label>全页视图：<select onchange="document.querySelectorAll('img[data-f]').forEach(im=>im.src=im.dataset.f+'/'+this.value)"><option value="comparison.jpg">四格对比＋局部放大</option><option value="overlay.png">同图叠加</option><option value="4090.png">仅4090</option><option value="a4_64.png">仅A4-64</option><option value="rgb.png">原始RGB</option><option value="zoom.png">目标放大</option></select></label><nav>
+<a href="#D01">D01</a>
+<a href="#D02">D02</a>
+<a href="#D03">D03</a>
+<a href="#D04">D04</a>
+<a href="#D05">D05</a>
+<a href="#D06">D06</a>
+<a href="#D07">D07</a>
+<a href="#D08">D08</a>
+<a href="#D09">D09</a>
+<a href="#D10">D10</a>
+<a href="#D11">D11</a>
+<a href="#D12">D12</a>
+<a href="#H01L">H01L</a>
+<a href="#H02L">H02L</a>
+<a href="#H03L">H03L</a>
+<a href="#C01">C01</a>
+<a href="#C02">C02</a>
+<a href="#C03">C03</a>
+<a href="#C04">C04</a>
+<a href="#C05">C05</a>
+<a href="#C06">C06</a>
+<a href="#C07">C07</a>
+<a href="#C08">C08</a>
+<a href="#C09">C09</a>
+<a href="#C10">C10</a>
+<a href="#C11">C11</a>
+<a href="#C12">C12</a>
+<a href="#C13">C13</a>
+</nav>
+<figure id="D01"><h2>D01 · 中心差 0.263 mm</h2><p>right_arm_camera_color_optical_frame</p><a href="D01/comparison.jpg"><img loading="lazy" data-f="D01" src="D01/comparison.jpg"></a></figure>
+<figure id="D02"><h2>D02 · 中心差 1.247 mm</h2><p>right_arm_camera_color_optical_frame</p><a href="D02/comparison.jpg"><img loading="lazy" data-f="D02" src="D02/comparison.jpg"></a></figure>
+<figure id="D03"><h2>D03 · 中心差 0.157 mm</h2><p>right_arm_camera_color_optical_frame</p><a href="D03/comparison.jpg"><img loading="lazy" data-f="D03" src="D03/comparison.jpg"></a></figure>
+<figure id="D04"><h2>D04 · 中心差 0.100 mm</h2><p>right_arm_camera_color_optical_frame</p><a href="D04/comparison.jpg"><img loading="lazy" data-f="D04" src="D04/comparison.jpg"></a></figure>
+<figure id="D05"><h2>D05 · 中心差 0.766 mm</h2><p>right_arm_camera_color_optical_frame</p><a href="D05/comparison.jpg"><img loading="lazy" data-f="D05" src="D05/comparison.jpg"></a></figure>
+<figure id="D06"><h2>D06 · 中心差 0.292 mm</h2><p>right_arm_camera_color_optical_frame</p><a href="D06/comparison.jpg"><img loading="lazy" data-f="D06" src="D06/comparison.jpg"></a></figure>
+<figure id="D07"><h2>D07 · 中心差 3.714 mm</h2><p>right_arm_camera_color_optical_frame</p><a href="D07/comparison.jpg"><img loading="lazy" data-f="D07" src="D07/comparison.jpg"></a></figure>
+<figure id="D08"><h2>D08 · 中心差 5.002 mm</h2><p>right_arm_camera_color_optical_frame</p><a href="D08/comparison.jpg"><img loading="lazy" data-f="D08" src="D08/comparison.jpg"></a></figure>
+<figure id="D09"><h2>D09 · 中心差 0.097 mm</h2><p>right_arm_camera_color_optical_frame</p><a href="D09/comparison.jpg"><img loading="lazy" data-f="D09" src="D09/comparison.jpg"></a></figure>
+<figure id="D10"><h2>D10 · 中心差 3.394 mm</h2><p>right_arm_camera_color_optical_frame</p><a href="D10/comparison.jpg"><img loading="lazy" data-f="D10" src="D10/comparison.jpg"></a></figure>
+<figure id="D11"><h2>D11 · 中心差 0.540 mm</h2><p>right_arm_camera_color_optical_frame</p><a href="D11/comparison.jpg"><img loading="lazy" data-f="D11" src="D11/comparison.jpg"></a></figure>
+<figure id="D12"><h2>D12 · 中心差 0.160 mm</h2><p>right_arm_camera_color_optical_frame</p><a href="D12/comparison.jpg"><img loading="lazy" data-f="D12" src="D12/comparison.jpg"></a></figure>
+<figure id="H01L"><h2>H01L · 中心差 0.005 mm</h2><p>left_arm_camera_color_optical_frame</p><a href="H01L/comparison.jpg"><img loading="lazy" data-f="H01L" src="H01L/comparison.jpg"></a></figure>
+<figure id="H02L"><h2>H02L · 中心差 5.199 mm</h2><p>left_arm_camera_color_optical_frame</p><a href="H02L/comparison.jpg"><img loading="lazy" data-f="H02L" src="H02L/comparison.jpg"></a></figure>
+<figure id="H03L"><h2>H03L · 中心差 0.088 mm</h2><p>left_arm_camera_color_optical_frame</p><a href="H03L/comparison.jpg"><img loading="lazy" data-f="H03L" src="H03L/comparison.jpg"></a></figure>
+<figure id="C01"><h2>C01 · 中心差 2.277 mm</h2><p>left_arm_camera_color_optical_frame</p><a href="C01/comparison.jpg"><img loading="lazy" data-f="C01" src="C01/comparison.jpg"></a></figure>
+<figure id="C02"><h2>C02 · 中心差 0.100 mm</h2><p>left_arm_camera_color_optical_frame</p><a href="C02/comparison.jpg"><img loading="lazy" data-f="C02" src="C02/comparison.jpg"></a></figure>
+<figure id="C03"><h2>C03 · 中心差 0.171 mm</h2><p>left_arm_camera_color_optical_frame</p><a href="C03/comparison.jpg"><img loading="lazy" data-f="C03" src="C03/comparison.jpg"></a></figure>
+<figure id="C04"><h2>C04 · 中心差 0.118 mm</h2><p>left_arm_camera_color_optical_frame</p><a href="C04/comparison.jpg"><img loading="lazy" data-f="C04" src="C04/comparison.jpg"></a></figure>
+<figure id="C05"><h2>C05 · 中心差 0.063 mm</h2><p>left_arm_camera_color_optical_frame</p><a href="C05/comparison.jpg"><img loading="lazy" data-f="C05" src="C05/comparison.jpg"></a></figure>
+<figure id="C06"><h2>C06 · 中心差 0.011 mm</h2><p>left_arm_camera_color_optical_frame</p><a href="C06/comparison.jpg"><img loading="lazy" data-f="C06" src="C06/comparison.jpg"></a></figure>
+<figure id="C07"><h2>C07 · 中心差 0.149 mm</h2><p>left_arm_camera_color_optical_frame</p><a href="C07/comparison.jpg"><img loading="lazy" data-f="C07" src="C07/comparison.jpg"></a></figure>
+<figure id="C08"><h2>C08 · 中心差 1.265 mm</h2><p>left_arm_camera_color_optical_frame</p><a href="C08/comparison.jpg"><img loading="lazy" data-f="C08" src="C08/comparison.jpg"></a></figure>
+<figure id="C09"><h2>C09 · 中心差 2.725 mm</h2><p>right_arm_camera_color_optical_frame</p><a href="C09/comparison.jpg"><img loading="lazy" data-f="C09" src="C09/comparison.jpg"></a></figure>
+<figure id="C10"><h2>C10 · 中心差 0.030 mm</h2><p>right_arm_camera_color_optical_frame</p><a href="C10/comparison.jpg"><img loading="lazy" data-f="C10" src="C10/comparison.jpg"></a></figure>
+<figure id="C11"><h2>C11 · 中心差 0.197 mm</h2><p>right_arm_camera_color_optical_frame</p><a href="C11/comparison.jpg"><img loading="lazy" data-f="C11" src="C11/comparison.jpg"></a></figure>
+<figure id="C12"><h2>C12 · 中心差 0.259 mm</h2><p>right_arm_camera_color_optical_frame</p><a href="C12/comparison.jpg"><img loading="lazy" data-f="C12" src="C12/comparison.jpg"></a></figure>
+<figure id="C13"><h2>C13 · 中心差 0.075 mm</h2><p>right_arm_camera_color_optical_frame</p><a href="C13/comparison.jpg"><img loading="lazy" data-f="C13" src="C13/comparison.jpg"></a></figure>

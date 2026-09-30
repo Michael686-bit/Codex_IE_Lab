@@ -1,26 +1,26 @@
 {
   "export_version": 2,
-  "generated_at": "2026-09-24T16:31:33.279395+08:00",
-  "snapshot_cutoff": "2026-09-24T16:31:22.354200+08:00",
-  "rollout_segment_count": 233,
+  "generated_at": "2026-09-30T16:18:37.466408+08:00",
+  "snapshot_cutoff": "2026-09-30T16:18:24.610123+08:00",
+  "rollout_segment_count": 253,
   "thread_scope": "user",
-  "thread_count": 195,
+  "thread_count": 212,
   "archived_count": 5,
-  "message_count": 6070,
-  "redaction_count": 82,
+  "message_count": 6761,
+  "redaction_count": 83,
   "missing_rollout_count": 0,
   "parse_error_count": 0,
   "attachments_exported": true,
-  "asset_count": 753,
-  "asset_bytes": 224242241,
-  "asset_reference_count": 3541,
-  "unresolved_reference_count": 2354,
-  "visualization_count": 18,
-  "orphan_attachment_count": 18,
-  "link_count": 359,
+  "asset_count": 979,
+  "asset_bytes": 262917318,
+  "asset_reference_count": 4005,
+  "unresolved_reference_count": 2568,
+  "visualization_count": 19,
+  "orphan_attachment_count": 19,
+  "link_count": 384,
   "link_checked_count": 0,
   "link_status_counts": {
-    "not_checked": 359
+    "not_checked": 384
   },
   "excluded_record_types": [
     "session_meta",
@@ -31,13 +31,12 @@
     "subagent activity"
   ],
   "project_counts": {
-    "S1 IE_lab 拆垛": 101,
-    "VLA G1 项目": 59,
+    "S1 IE_lab 拆垛": 105,
+    "VLA G1 项目": 65,
     "VLA 项目": 4,
-    "无项目对话": 24,
+    "无项目对话": 31,
     "本地对话云端接口": 2,
     "遥操主臂 和 synthnova": 3,
     "银河通用s1 项目 代码": 2
-  },
-  "preserved_asset_count": 9
+  }
 }

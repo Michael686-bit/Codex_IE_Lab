@@ -1,0 +1,81 @@
+<div id="roller-motion">
+  <div class="viz-controls">
+    <label class="form-label">观察角度
+      <select class="form-select" id="rs-view"><option value="side">侧面：旋转 → 前进</option><option value="end">端面：滚柱怎样转</option><option value="lift">竖起来：升降示意</option></select>
+    </label>
+    <button type="button" class="btn btn-primary" id="rs-play">暂停</button>
+    <button type="button" class="btn" id="rs-reverse">反转电机</button>
+  </div>
+  <div class="viz-row text-small" id="rs-legend"><span><b class="rs-dot rs-shaft"></b>① 丝杠</span><span><b class="rs-dot rs-nut"></b>② 螺母</span><span><b class="rs-dot rs-roller"></b>③ 滚柱</span></div>
+  <svg class="rs-scene" role="img" aria-label="滚柱丝杠运动示意动画"></svg>
+  <div class="text-small" id="rs-state" aria-live="polite">丝杠原地转；螺母沿导轨前进。</div>
+  <div class="text-small text-muted" style="margin-top:8px">原理简图 · 螺纹与转速比例简化 · 升降图不代表 S1 内部结构</div>
+</div>
+<style>
+#roller-motion {color:var(--foreground)}
+#roller-motion .rs-scene {width:100%;display:block;overflow:hidden;margin:8px 0}
+#roller-motion .rs-scene text {fill:var(--foreground);font:inherit}
+#roller-motion .rs-dot {display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px}
+#roller-motion .rs-shaft {background:var(--viz-series-1)}
+#roller-motion .rs-nut {background:var(--viz-series-2)}
+#roller-motion .rs-roller {background:var(--viz-series-3)}
+#roller-motion #rs-legend {gap:18px;margin-top:10px}
+</style>
+<script>
+(()=>{
+const root=document.getElementById('roller-motion'), svg=root.querySelector('svg'), select=root.querySelector('#rs-view'), play=root.querySelector('#rs-play'), reverse=root.querySelector('#rs-reverse'), status=root.querySelector('#rs-state');
+const NS='http://www.w3.org/2000/svg';
+let mode='side', running=!matchMedia('(prefers-reduced-motion: reduce)').matches, dir=1, progress=.22, angle=0, last=0, width=600;
+const col={shaft:'var(--viz-series-1)',nut:'var(--viz-series-2)',roller:'var(--viz-series-3)',fg:'var(--foreground)',line:'var(--border)',muted:'var(--muted)',bg:'var(--background)'};
+function el(tag,a={},parent=svg){const e=document.createElementNS(NS,tag);for(const [k,v]of Object.entries(a))e.setAttribute(k,v);parent.appendChild(e);return e;}
+function line(x1,y1,x2,y2,c=col.line,sw=2,p=svg){return el('line',{x1,y1,x2,y2,stroke:c,'stroke-width':sw},p)}
+function text(x,y,value,anchor='middle',p=svg){const e=el('text',{x,y,'text-anchor':anchor},p);e.textContent=value;return e;}
+function rect(x,y,w,h,c,opacity=1,p=svg){return el('rect',{x,y,width:w,height:h,rx:5,fill:c,'fill-opacity':opacity},p)}
+function arrow(x,y,dx,dy,c=col.fg,p=svg){line(x,y,x+dx,y+dy,c,2,p);const a=Math.atan2(dy,dx),l=8;line(x+dx,y+dy,x+dx-l*Math.cos(a-.5),y+dy-l*Math.sin(a-.5),c,2,p);line(x+dx,y+dy,x+dx-l*Math.cos(a+.5),y+dy-l*Math.sin(a+.5),c,2,p)}
+function helix(x,y,len,r,phase,color,p=svg){let d='';for(let i=0;i<=len;i+=2){const yy=y+r*Math.sin(i/8+phase);d+=(i===0?'M':'L')+(x+i)+','+yy;}el('path',{d,fill:'none',stroke:color,'stroke-width':1.8},p)}
+function rotor(cx,cy,r,phase,c,p=svg){el('circle',{cx,cy,r,fill:c,'fill-opacity':.15,stroke:c,'stroke-width':2},p);line(cx,cy,cx+r*.8*Math.cos(phase),cy+r*.8*Math.sin(phase),c,3,p)}
+function motor(x,y,p=svg){rect(x,y,50,60,col.muted,1,p);text(x+25,y+35,'电机','middle',p)}
+function side(){
+const w=width, y=153, start=70, end=w-20, len=end-start,nw=Math.min(116,len*.43), cx=start+nw/2+10+progress*(len-nw-20);
+text(12,25,'① 丝杠只转，不左右移动','start');text(12,49,'② 螺母不能转，只能左右移动','start');
+line(start,235,end,235,col.line,3);text(w/2,266,'导轨：限制螺母跟着转');
+motor(8,y-30);line(58,y,start,y,col.fg,5);
+rect(start,y-17,len,34,col.shaft,.16);helix(start,y,len,15,angle,col.shaft);
+rect(cx-nw/2,y-46,nw,92,col.nut,.16);el('rect',{x:cx-nw/2,y:y-46,width:nw,height:92,rx:7,fill:'none',stroke:col.nut,'stroke-width':2});
+for(const yy of [y-30,y+30]){rect(cx-nw/2+9,yy-8,nw-18,16,col.roller,.25);helix(cx-nw/2+9,yy,nw-18,6,-angle,col.roller)}
+line(cx,y+46,cx,227,col.nut,5);rect(cx-22,227,44,16,col.nut,.6);
+text(cx,y-68,'② 螺母');arrow(cx-dir*20,y-55,dir*40,0,col.nut);
+rotor(32,94,13,angle,col.shaft);text(w-20,306,'③ 小滚柱夹在中间传力','end');
+}
+function end(){
+const cx=width/2,cy=173,rs=46,rr=23,R=69;
+text(12,25,'沿丝杠轴线看进去','start');
+el('circle',{cx,cy,r:108,fill:col.nut,'fill-opacity':.14,stroke:col.nut,'stroke-width':2});el('circle',{cx,cy,r:92,fill:col.bg,stroke:col.nut,'stroke-width':1.5});
+rotor(cx,cy,rs,angle,col.shaft);text(cx,cy+5,'①');
+for(let i=0;i<7;i++){const a=angle/3+i*Math.PI*2/7,x=cx+R*Math.cos(a),y=cy+R*Math.sin(a);rotor(x,y,rr,-angle+i*.5,col.roller);if(i===0)text(x,y+5,'③')}
+text(cx,cy-120,'② 外圈螺母：不旋转');text(cx,cy+139,'③ 滚柱：自己转，也绕着丝杠转');
+}
+function lift(){
+const cx=width*.46,top=79,bottom=299,len=bottom-top, yy=bottom-35-progress*(len-75),rail=cx-43;
+text(12,25,'把直线机构竖起来','start');
+line(rail,top,rail,bottom,col.line,4);line(cx+44,top,cx+44,bottom,col.line,4);
+rect(cx-14,top,28,len,col.shaft,.15);
+let d='';for(let j=0;j<=len;j+=2)d+=(j===0?'M':'L')+(cx+12*Math.sin(j/8+angle))+','+(top+j);el('path',{d,fill:'none',stroke:col.shaft,'stroke-width':1.8});
+rect(cx-36,yy-23,72,46,col.nut,.22);el('rect',{x:cx-36,y:yy-23,width:72,height:46,rx:5,fill:'none',stroke:col.nut,'stroke-width':2});
+line(cx+36,yy,cx+74,yy,col.nut,5);rect(cx+74,yy-37,49,64,col.muted);text(cx+98,yy-10,'负载');text(cx+98,yy+11,'平台');
+arrow(cx-70,yy+dir*20,0,-dir*40,col.nut);text(cx-84,yy+5,dir>0?'升':'降');
+motor(cx-25,bottom+8);text(cx-55,top-16,'导轨');text(cx+22,top-16,'丝杠');
+}
+function draw(){svg.replaceChildren();svg.setAttribute('viewBox',`0 0 ${width} ${mode==='lift'?385:335}`);svg.style.height=(mode==='lift'?385:335)+'px';const title=el('title');title.textContent='旋转丝杠通过滚柱推动受导轨约束的螺母做直线运动';if(mode==='side')side();else if(mode==='end')end();else lift()}
+function update(){play.textContent=running?'暂停':'播放';select.value=mode;status.textContent=mode==='side'?(dir>0?'丝杠原地转；螺母沿导轨向右前进。':'电机反转；螺母沿导轨向左退回。'):mode==='end'?'中间转，外圈不转，小滚柱在两者之间滚动。':(dir>0?'电机带动丝杠转动，螺母托着平台上升。':'电机反转，螺母带着平台下降。');draw()}
+function save(){if(window.openai?.setWidgetState)window.openai.setWidgetState({modelContent:{view:mode,motorDirection:dir===1?'forward':'reverse'},privateContent:{running,progress,angle}}).catch(()=>{})}
+function restore(s){if(!s)return;const m=s.modelContent||{},p=s.privateContent||{};if(['side','end','lift'].includes(m.view))mode=m.view;if(m.motorDirection)dir=m.motorDirection==='reverse'?-1:1;if(typeof p.running==='boolean')running=p.running;if(Number.isFinite(p.progress))progress=Math.max(0,Math.min(1,p.progress));if(Number.isFinite(p.angle))angle=p.angle;update()}
+play.addEventListener('click',()=>{if(!running&&((progress>=1&&dir>0)||(progress<=0&&dir<0))){progress=dir>0?0:1;}running=!running;update();save()});
+reverse.addEventListener('click',()=>{dir*=-1;update();save()});
+select.addEventListener('change',()=>{mode=select.value;update();save()});
+window.addEventListener('openai:set_globals',e=>{if(e.detail?.globals?.widgetState)restore(e.detail.globals.widgetState)});
+new ResizeObserver(es=>{width=Math.max(280,es[0].contentRect.width);draw()}).observe(root);
+restore(window.openai?.widgetState);update();
+function frame(t){const dt=last?Math.min((t-last)/1000,.06):0;last=t;if(running){angle+=dir*dt*2.2;progress+=dir*dt/16;if(progress>=1||progress<=0){progress=Math.max(0,Math.min(1,progress));running=false;update()}else draw()}requestAnimationFrame(frame)}requestAnimationFrame(frame);
+})();
+</script>

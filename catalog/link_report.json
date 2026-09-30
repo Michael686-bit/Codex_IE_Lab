@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-24T16:31:33.279395+08:00",
+  "generated_at": "2026-09-30T16:18:37.466408+08:00",
   "links": [
     {
       "url": "http://10.34.216.11:7861",
@@ -201,6 +201,16 @@
           "role": "asset"
         },
         {
+          "thread_id": "01a0f02e-593c-7362-86fa-5077d349c741",
+          "turn_id": "asset:81da217bb1a97dc6",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a0f02e-593c-7362-86fa-5077d349c741",
+          "turn_id": "asset:c0d584fbf1c1cc70",
+          "role": "asset"
+        },
+        {
           "thread_id": "unknown-attachment",
           "turn_id": "asset:33cc3bc610e89530",
           "role": "asset"
@@ -282,6 +292,11 @@
           "thread_id": "01a0ad1e-d0b3-7bc3-b31a-a00599cfbb56",
           "turn_id": "01a0adfc-f3ab-7b82-954c-29ae81881b95",
           "role": "assistant"
+        },
+        {
+          "thread_id": "01a0f02e-593c-7362-86fa-5077d349c741",
+          "turn_id": "01a0f04e-f596-73d2-a0d2-4b04606f620c",
+          "role": "assistant"
         }
       ],
       "status": "not_checked",
@@ -315,6 +330,48 @@
         {
           "thread_id": "unknown-attachment",
           "turn_id": "asset:ea60016055615305",
+          "role": "asset"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "http://10.34.216.17:17876",
+      "references": [
+        {
+          "thread_id": "01a0f02e-593c-7362-86fa-5077d349c741",
+          "turn_id": "asset:81da217bb1a97dc6",
+          "role": "asset"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "http://127.0.0.1:17876",
+      "references": [
+        {
+          "thread_id": "01a0f02e-593c-7362-86fa-5077d349c741",
+          "turn_id": "asset:81da217bb1a97dc6",
+          "role": "asset"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "http://127.0.0.1:17876/health",
+      "references": [
+        {
+          "thread_id": "01a0f02e-593c-7362-86fa-5077d349c741",
+          "turn_id": "asset:81da217bb1a97dc6",
           "role": "asset"
         }
       ],
@@ -493,6 +550,11 @@
           "thread_id": "01a0c70a-a632-7513-a567-e1d9b4e14570",
           "turn_id": "01a0d26f-85d1-78f0-8a89-4ca4e51d5d54",
           "role": "assistant"
+        },
+        {
+          "thread_id": "01a0c70a-a632-7513-a567-e1d9b4e14570",
+          "turn_id": "01a0e7f9-4f87-7373-82a0-37b184edd619",
+          "role": "assistant"
         }
       ],
       "status": "not_checked",
@@ -599,6 +661,63 @@
           "thread_id": "01a0d25f-d72b-7bb3-9243-aadd0c02d55a",
           "turn_id": "asset:60e081b27dc504b8",
           "role": "asset"
+        },
+        {
+          "thread_id": "01a0d284-95c7-73f0-99a6-55f4c29896d9",
+          "turn_id": "asset:60e081b27dc504b8",
+          "role": "asset"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "http://127.0.0.1:9096/?url=rerun%2Bhttp%3A%2F%2F127.0.0.1%3A9882%2Fproxy",
+      "references": [
+        {
+          "thread_id": "01a0e801-69cd-7c30-9130-9ff3b3ac2bf5",
+          "turn_id": "01a0eaa1-44b4-7a51-99be-34bea160f2d4",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a0e801-69cd-7c30-9130-9ff3b3ac2bf5",
+          "turn_id": "01a0eacc-9ca1-7a02-8901-e1de828ff02c",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "http://127.0.0.1:9097/?url=rerun%2Bhttp%3A%2F%2F127.0.0.1%3A9883%2Fproxy",
+      "references": [
+        {
+          "thread_id": "01a0e801-69cd-7c30-9130-9ff3b3ac2bf5",
+          "turn_id": "01a0eab4-9625-7082-9782-24c400a9c250",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a0e801-69cd-7c30-9130-9ff3b3ac2bf5",
+          "turn_id": "01a0eac2-873d-7760-ad6c-5909a196b277",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "http://127.0.0.1:9097?url=rerun%2Bhttp%3A%2F%2Flocalhost%3A9883%2Fproxy",
+      "references": [
+        {
+          "thread_id": "01a0e801-69cd-7c30-9130-9ff3b3ac2bf5",
+          "turn_id": "01a0eac2-873d-7760-ad6c-5909a196b277",
+          "role": "user"
         }
       ],
       "status": "not_checked",
@@ -613,6 +732,20 @@
           "thread_id": "01a0cbc1-d956-7921-af91-28e9b8db1183",
           "turn_id": "01a0d22b-4af8-7a33-99cb-bac8394539d3",
           "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "http://127.0.0.1:9883/proxy",
+      "references": [
+        {
+          "thread_id": "01a0e801-69cd-7c30-9130-9ff3b3ac2bf5",
+          "turn_id": "01a0eac2-873d-7760-ad6c-5909a196b277",
+          "role": "user"
         }
       ],
       "status": "not_checked",
@@ -903,6 +1036,21 @@
           "role": "asset"
         },
         {
+          "thread_id": "01a0e5a9-040f-75a1-ab9b-a5e36ab3d792",
+          "turn_id": "asset:0d3f45d77e458fc7",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a0e716-2a0e-7be1-a05d-cf4b2ba61aa7",
+          "turn_id": "asset:57d675dc89e8c864",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a0f051-e3ed-7ba3-b8d9-2caddd71466b",
+          "turn_id": "asset:6973e0db11cb1ff3",
+          "role": "asset"
+        },
+        {
           "thread_id": "visualizations",
           "turn_id": "asset:2eedd84f7f3583f7",
           "role": "asset"
@@ -915,6 +1063,11 @@
         {
           "thread_id": "visualizations",
           "turn_id": "asset:657dd447e3c7442f",
+          "role": "asset"
+        },
+        {
+          "thread_id": "visualizations",
+          "turn_id": "asset:6973e0db11cb1ff3",
           "role": "asset"
         },
         {
@@ -950,6 +1103,11 @@
         {
           "thread_id": "visualizations",
           "turn_id": "visualization:r1-rejection-compare.html",
+          "role": "visualization"
+        },
+        {
+          "thread_id": "visualizations",
+          "turn_id": "visualization:roller-screw-motion.html",
           "role": "visualization"
         },
         {
@@ -1162,6 +1320,35 @@
       "detail": ""
     },
     {
+      "url": "https://cdn.emag.com/fileadmin/user_upload/content/workpieces/Planetary_screw_drives/Planetary_screw_drive_1184x423px.jpg",
+      "references": [
+        {
+          "thread_id": "01a0f051-e3ed-7ba3-b8d9-2caddd71466b",
+          "turn_id": "01a0f055-5d5f-7403-9c2f-5d8977562d56",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a0f051-e3ed-7ba3-b8d9-2caddd71466b",
+          "turn_id": "01a0f059-64d7-7d30-bb1d-a48ace7da05c",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a0f051-e3ed-7ba3-b8d9-2caddd71466b",
+          "turn_id": "01a0f095-b14f-7610-8be1-02578d5950ff",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a0f051-e3ed-7ba3-b8d9-2caddd71466b",
+          "turn_id": "01a0f0bc-08d7-7223-827d-e3d899bbf52d",
+          "role": "user"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
       "url": "https://cdn.jsdelivr.net",
       "references": [
         {
@@ -1336,6 +1523,20 @@
         {
           "thread_id": "01a066da-16e2-7e71-ac06-566fe700cc5c",
           "turn_id": "01a066dd-054f-70e2-9c42-109ea62c37f4",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/assets/images/37a50e162c69a5ddc737abf8e133a37fd05fee66ed05bd7c4240e2072889fa9a-2c2d781c67c2dc3187d658a22abcf3fc.jpg",
+      "references": [
+        {
+          "thread_id": "01a0f051-e3ed-7ba3-b8d9-2caddd71466b",
+          "turn_id": "01a0f059-64d7-7d30-bb1d-a48ace7da05c",
           "role": "assistant"
         }
       ],
@@ -3538,11 +3739,39 @@
       "detail": ""
     },
     {
+      "url": "https://developers.openai.com/plugins/build/skills",
+      "references": [
+        {
+          "thread_id": "01a0f0f1-0b94-7171-970c-957352129b4a",
+          "turn_id": "01a0f12a-5438-7520-8e29-07c140b81463",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
       "url": "https://dl.flathub.org/repo",
       "references": [
         {
           "thread_id": "01a041e0-a6bc-7fc3-9f55-075e9a1ad893",
           "turn_id": "01a04216-41a5-7ae1-825e-b5a2ab508ef9",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://docs.blender.org/manual/en/latest/animation/armatures/posing/editing/inverse_kinematics.html",
+      "references": [
+        {
+          "thread_id": "01a0f01a-d3dd-7813-8238-63009fc43111",
+          "turn_id": "01a0f0c1-aa52-7ad0-9d6e-336688c802d5",
           "role": "assistant"
         }
       ],
@@ -4231,6 +4460,20 @@
       "detail": ""
     },
     {
+      "url": "https://en.esotericsoftware.com/spine-ik-constraints",
+      "references": [
+        {
+          "thread_id": "01a0f01a-d3dd-7813-8238-63009fc43111",
+          "turn_id": "01a0f0c1-aa52-7ad0-9d6e-336688c802d5",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
       "url": "https://esm.sh",
       "references": [
         {
@@ -4295,6 +4538,20 @@
           "thread_id": "visualizations",
           "turn_id": "visualization:s1-urdf-joints.html",
           "role": "visualization"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://eu.esotericsoftware.com/spine-weights",
+      "references": [
+        {
+          "thread_id": "01a0f01a-d3dd-7813-8238-63009fc43111",
+          "turn_id": "01a0f0c1-aa52-7ad0-9d6e-336688c802d5",
+          "role": "assistant"
         }
       ],
       "status": "not_checked",
@@ -4971,6 +5228,25 @@
       "detail": ""
     },
     {
+      "url": "https://github.com/Michael686-bit/Codex_IE_Lab/blob/main/reports/sync_report.md",
+      "references": [
+        {
+          "thread_id": "01a09332-12d3-7b91-970d-c2e04a7232fc",
+          "turn_id": "01a0d287-bd19-79b0-af5a-6f4dd8151b5e",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a09332-12d3-7b91-970d-c2e04a7232fc",
+          "turn_id": "01a0d295-0d95-7420-bed7-8acb68ae7783",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
       "url": "https://github.com/NVIDIA/Isaac-GR00T",
       "references": [
         {
@@ -5053,6 +5329,20 @@
         {
           "thread_id": "01a0c17b-036c-7113-8f5e-a0374a7f78c0",
           "turn_id": "01a0c17c-27cb-72a2-80b6-bbe8c8a86eec",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/Physical-Intelligence/openpi#requirements",
+      "references": [
+        {
+          "thread_id": "01a0f012-d1e9-7b10-b99a-1a5fbe13da56",
+          "turn_id": "01a0f0c8-111e-7bb3-8f83-6a508c6e6546",
           "role": "assistant"
         }
       ],
@@ -5916,6 +6206,11 @@
           "thread_id": "01a0c17b-036c-7113-8f5e-a0374a7f78c0",
           "turn_id": "asset:3cbe34de68616d66",
           "role": "asset"
+        },
+        {
+          "thread_id": "01a0f012-d1e9-7b10-b99a-1a5fbe13da56",
+          "turn_id": "01a0f0c8-111e-7bb3-8f83-6a508c6e6546",
+          "role": "assistant"
         }
       ],
       "status": "not_checked",
@@ -5976,6 +6271,11 @@
         {
           "thread_id": "01a0ae97-6c9e-7bf3-b7c0-fe2f0cca5621",
           "turn_id": "01a0af05-01a6-7021-bb23-e7580cb9a61f",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a0d25f-d72b-7bb3-9243-aadd0c02d55a",
+          "turn_id": "01a0e7ed-788e-7f31-8ad5-f14521506105",
           "role": "assistant"
         }
       ],
@@ -6046,6 +6346,20 @@
       "detail": ""
     },
     {
+      "url": "https://huggingface.co/docs/lerobot/main/hil_data_collection",
+      "references": [
+        {
+          "thread_id": "01a0f012-d1e9-7b10-b99a-1a5fbe13da56",
+          "turn_id": "01a0f0c3-a44b-7b03-9b4d-c8999f68b06b",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
       "url": "https://huggingface.co/docs/lerobot/main/index",
       "references": [
         {
@@ -6056,6 +6370,20 @@
         {
           "thread_id": "01a06f17-863a-7300-bb82-78e5ac992f1b",
           "turn_id": "01a06f18-a432-7490-a852-51834bc3c5f9",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://huggingface.co/docs/lerobot/main/language_and_recipes",
+      "references": [
+        {
+          "thread_id": "01a0f012-d1e9-7b10-b99a-1a5fbe13da56",
+          "turn_id": "01a0f012-d48c-7003-bb4c-0bcfa7b2cce0",
           "role": "assistant"
         }
       ],
@@ -6134,6 +6462,11 @@
           "thread_id": "01a0c17b-036c-7113-8f5e-a0374a7f78c0",
           "turn_id": "asset:3cbe34de68616d66",
           "role": "asset"
+        },
+        {
+          "thread_id": "01a0f012-d1e9-7b10-b99a-1a5fbe13da56",
+          "turn_id": "01a0f0c8-111e-7bb3-8f83-6a508c6e6546",
+          "role": "assistant"
         }
       ],
       "status": "not_checked",
@@ -6194,6 +6527,20 @@
       "detail": ""
     },
     {
+      "url": "https://huggingface.co/docs/lerobot/v0.5.1/il_robots",
+      "references": [
+        {
+          "thread_id": "01a0f012-d1e9-7b10-b99a-1a5fbe13da56",
+          "turn_id": "01a0f0c3-a44b-7b03-9b4d-c8999f68b06b",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
       "url": "https://huggingface.co/docs/transformers/model_doc/sam3",
       "references": [
         {
@@ -6214,6 +6561,11 @@
           "thread_id": "01a0c17b-036c-7113-8f5e-a0374a7f78c0",
           "turn_id": "asset:3cbe34de68616d66",
           "role": "asset"
+        },
+        {
+          "thread_id": "01a0f012-d1e9-7b10-b99a-1a5fbe13da56",
+          "turn_id": "01a0f0c8-111e-7bb3-8f83-6a508c6e6546",
+          "role": "assistant"
         }
       ],
       "status": "not_checked",
@@ -6241,6 +6593,20 @@
         {
           "thread_id": "01a0947a-003f-7140-97c1-79d100f5cd1f",
           "turn_id": "01a0a92d-99e4-7031-abb0-3fcf5c08d551",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://infosys.beckhoff.com/content/1033/ax5000_system_doku_hw2/651483275.html",
+      "references": [
+        {
+          "thread_id": "01a0f051-e3ed-7ba3-b8d9-2caddd71466b",
+          "turn_id": "01a0f0bc-08d7-7223-827d-e3d899bbf52d",
           "role": "assistant"
         }
       ],
@@ -6549,6 +6915,20 @@
       "detail": ""
     },
     {
+      "url": "https://medialibrary.ewellix.com/asset/16174",
+      "references": [
+        {
+          "thread_id": "01a0f051-e3ed-7ba3-b8d9-2caddd71466b",
+          "turn_id": "01a0f0bc-08d7-7223-827d-e3d899bbf52d",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
       "url": "https://mirror.sjtu.edu.cn/flathub",
       "references": [
         {
@@ -6762,6 +7142,20 @@
       "detail": ""
     },
     {
+      "url": "https://nvlabs.github.io/FoundationPose/",
+      "references": [
+        {
+          "thread_id": "01a0d285-e929-7640-9594-986823dfbd00",
+          "turn_id": "01a0e5e0-0258-7e43-a26e-f2d34260e89f",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
       "url": "https://open3d.org/docs/latest/tutorial/pipelines/robust_kernels.html",
       "references": [
         {
@@ -6824,12 +7218,40 @@
       "detail": ""
     },
     {
+      "url": "https://oss-cn-beijing.galbot.com/online/portal/website/s1/s1-about-product-render.png",
+      "references": [
+        {
+          "thread_id": "01a0f051-e3ed-7ba3-b8d9-2caddd71466b",
+          "turn_id": "01a0f055-5d5f-7403-9c2f-5d8977562d56",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
       "url": "https://packages.ubuntu.com/jammy/graphics/cloudcompare",
       "references": [
         {
           "thread_id": "01a041e0-a6bc-7fc3-9f55-075e9a1ad893",
           "turn_id": "01a041e1-0f74-77b2-a8dc-46107fbbb723",
           "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://platform.openai.com/api-keys",
+      "references": [
+        {
+          "thread_id": "01a0f01a-d3dd-7813-8238-63009fc43111",
+          "turn_id": "01a0f020-e262-7532-b962-ab28f9bfb3c9",
+          "role": "user"
         }
       ],
       "status": "not_checked",
@@ -7257,6 +7679,20 @@
       "detail": ""
     },
     {
+      "url": "https://www.emag.com/cn/industries-solutions/workpieces/robotics/nuts-for-planetary-roller-screws/",
+      "references": [
+        {
+          "thread_id": "01a0f051-e3ed-7ba3-b8d9-2caddd71466b",
+          "turn_id": "01a0f055-5d5f-7403-9c2f-5d8977562d56",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
       "url": "https://www.galbot.com/g1/",
       "references": [
         {
@@ -7282,6 +7718,11 @@
           "thread_id": "01a0667b-ce68-75f0-b8e7-bbfb74cfbf87",
           "turn_id": "asset:8f7267aa4bcdb93e",
           "role": "asset"
+        },
+        {
+          "thread_id": "01a0f051-e3ed-7ba3-b8d9-2caddd71466b",
+          "turn_id": "01a0f055-5d5f-7403-9c2f-5d8977562d56",
+          "role": "assistant"
         }
       ],
       "status": "not_checked",
@@ -7542,14 +7983,67 @@
       "http_status": null,
       "final_url": null,
       "detail": ""
+    },
+    {
+      "url": "https://zhida.zhihu.com/search?content_id=282990617%5C&content_type=Article%5C&match_order=1%5C&q=SVG%5C&zd_token=%5BREDACTED%5D&zhida_source=entity",
+      "references": [
+        {
+          "thread_id": "01a0eac7-111d-7f62-9823-674bc35dacf2",
+          "turn_id": "01a0eac7-1385-7ec3-b0dc-c89e24edd24a",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a0eac7-111d-7f62-9823-674bc35dacf2",
+          "turn_id": "01a0efe1-5f2e-7eb2-b076-639f4f84df11",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a0eac7-111d-7f62-9823-674bc35dacf2",
+          "turn_id": "01a0efe2-1630-7ad0-b0da-59d8af4f130c",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a0efe4-5a5a-7653-b15c-819b553406ed",
+          "turn_id": "01a0efe4-5eb3-76a1-b010-fed6e643e574",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a0f01a-d3dd-7813-8238-63009fc43111",
+          "turn_id": "01a0f01b-3d16-77e0-97b1-0504b8708445",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a0f01a-d3dd-7813-8238-63009fc43111",
+          "turn_id": "01a0f093-8f60-7891-8655-2a65065ad6bb",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a0f01a-d3dd-7813-8238-63009fc43111",
+          "turn_id": "01a0f096-e5cf-76d2-8117-676e2b525d94",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a0f047-9806-7921-853d-9ca6dd522d1a",
+          "turn_id": "01a0f047-ace1-78d3-b0e8-785142b8a216",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a0f047-9806-7921-853d-9ca6dd522d1a",
+          "turn_id": "01a0f058-766f-7181-935a-0a3362ba20ea",
+          "role": "user"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
     }
   ],
   "summary": {
-    "total": 359,
+    "total": 384,
     "checked": 0,
     "status_counts": {
-      "not_checked": 359
+      "not_checked": 384
     }
-  },
-  "note": "本次未联网复查：自动审批禁止批量访问从对话提取的 URL。"
+  }
 }

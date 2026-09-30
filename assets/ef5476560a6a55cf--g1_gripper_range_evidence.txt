@@ -1,0 +1,39 @@
+tool_config:
+  left_arm: "galbot_gripper" # "gripper_hitbot" or "galbot_gripper"
+  right_arm: "galbot_gripper"
+gripper_config:
+  galbot_gripper:
+    min_width: 0.0 # unit: m
+    max_width: 0.12 # unit: m
+    min_force: 30.0 # unit: percentage
+  gripper_hitbot:
+    min_width: 0.0 # unit: m
+    max_width: 0.1 # unit: m
+    min_force: 10.0 # unit: percentage
+    def set_gripper_command(
+        self,
+        end_effector: str,
+        width_m: typing.SupportsFloat,
+        velocity_mps: typing.SupportsFloat = 0.03,
+        effort: typing.SupportsFloat = 5,
+        is_blocking: bool = True,
+    ) -> ControlStatus:
+        """
+        Set gripper command.
+
+        Parameters:
+            end_effector (str): Gripper name, e.g. "left_gripper" or "right_gripper".
+            width_m (float): Target gripper width in meters. G1 gripper width range is 0 to 0.12 m. S1 long-stroke gripper
+            width range is 0 to 0.11 m. S1 short-stroke gripper width range is 0 to 0.076 m.
+            velocity_mps (float): Gripper motion speed in m/s (optional, default: 0.03). The value range is greater than 0 and
+            less than or equal to 0.2 m/s.
+            effort (float): Gripper effort in Nm (optional, default: 5). The value range is greater than 0 and
+            less than or equal to 100.
+            is_blocking (bool): Whether to block until action completes (optional, default: True).
+
+    @property
+    def width(self) -> float:
+        """
+        Gripper width (meters)
+        """
+    @width.setter

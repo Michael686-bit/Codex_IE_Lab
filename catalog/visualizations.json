@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-24T16:31:33.279395+08:00",
+  "generated_at": "2026-09-30T16:18:37.466408+08:00",
   "assets": [
     {
       "source": "2026/08/22/01a02731-e698-7092-ae82-d3144a0993e8/s1-urdf-joints.html",
@@ -109,7 +109,13 @@
       "asset_id": "2eedd84f7f3583f7",
       "path": "assets/2eedd84f7f3583f7--r1-rejection-compare.html",
       "filename": "2eedd84f7f3583f7--r1-rejection-compare.html"
+    },
+    {
+      "source": "2026/09/30/01a0f051-e3ed-7ba3-b8d9-2caddd71466b/roller-screw-motion.html",
+      "asset_id": "6973e0db11cb1ff3",
+      "path": "assets/6973e0db11cb1ff3--roller-screw-motion.html",
+      "filename": "6973e0db11cb1ff3--roller-screw-motion.html"
     }
   ],
-  "unassociated_pasted_attachment_count": 18
+  "unassociated_pasted_attachment_count": 19
 }

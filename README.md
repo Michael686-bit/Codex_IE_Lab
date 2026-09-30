@@ -48,8 +48,12 @@ python3 tools/export_codex_chats.py --output . --overwrite --skip-link-check
 
 ## 2026-09-24 更新说明
 
-当前归档包含 195 条用户对话，截止时间见 `catalog/export_manifest.json` 的 `snapshot_cutoff`。同一线程的多个 rollout 分段按消息 ID 去重合并；旧资源版本保留，新旧线程差异见 `catalog/sync_delta.json`。
+9 月 24 日归档包含 195 条用户对话，截止时间见 `catalog/export_manifest.json` 的 `snapshot_cutoff`。同一线程的多个 rollout 分段按消息 ID 去重合并；旧资源版本保留，新旧线程差异见 `catalog/sync_delta.json`。
 
 本次仅完成内部资源链接校验，外部网址未联网复查。资源清单中的 missing、unsupported_type、outside_allowed_root 等状态仍需结合具体引用理解；不承诺原电脑上所有路径都能在云端访问。
 
 重复更新建议先导出到新的临时目录，使用 `--previous-archive` 指定现有仓库以保留旧资源，再校验并替换生成目录。单资源限制为 95 MiB，总资源限制为 2 GiB，触发限制会记录在资源清单中。本次没有大小限制导致的遗漏。
+
+## 2026-09-30 更新
+
+本版包含 212 条用户对话、6,761 条消息和 979 个资源。新增 17 条对话，49 条已有归档更新；截止时间见导出清单。旧对话和全部旧资源保留，外链本次未联网复查。一个超过 95 MiB 的 ZIP 未入库，详情见 `reports/sync_report.md` 和 `catalog/assets.json`。

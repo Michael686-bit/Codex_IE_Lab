@@ -1,0 +1,178 @@
+lsy03@lsy03-System-Product-Name:~/文档/ChatGPT/VLA G1 项目$ bash teleoperation/view_white_block_all.sh
+
+===== 1/4：下载/校验/生成 dual_arm_capture_20260928_203810_727975/episode_000001 =====
+1: dual_arm_capture_20260928_203810_727975 / episode_000001 | closed / success
+2: dual_arm_capture_20260928_203810_727975 / episode_000002 | closed / interrupted
+3: dual_arm_capture_20260928_204855_728822 / episode_000001 | closed / success
+4: dual_arm_capture_20260928_204855_728822 / episode_000002 | failed / interrupted
+预览文件：/home/lsy03/文档/ChatGPT/VLA G1 项目/reports/white_block_rerun_20260928/dual_arm_capture_20260928_203810_727975_episode_000001_w320.rrd
+
+===== 2/4：下载/校验/生成 dual_arm_capture_20260928_203810_727975/episode_000002 =====
+1: dual_arm_capture_20260928_203810_727975 / episode_000001 | closed / success
+2: dual_arm_capture_20260928_203810_727975 / episode_000002 | closed / interrupted
+3: dual_arm_capture_20260928_204855_728822 / episode_000001 | closed / success
+4: dual_arm_capture_20260928_204855_728822 / episode_000002 | failed / interrupted
+首次查看：从G1复制本组原件，保留机器人上的文件；请等待。
+校验原始分片、记录数量及身份…
+文件完整性通过；原始录制状态=interrupted；不代表任务/时序通过。
+校验原始分片、记录数量及身份…
+文件完整性通过；原始录制状态=interrupted；不代表任务/时序通过。
+read chunk_000000.g1raw
+read chunk_000001.g1raw
+read chunk_000002.g1raw
+read chunk_000003.g1raw
+read chunk_000004.g1raw
+read chunk_000005.g1raw
+read chunk_000006.g1raw
+read chunk_000007.g1raw
+read chunk_000008.g1raw
+read chunk_000009.g1raw
+read chunk_000010.g1raw
+read chunk_000011.g1raw
+read chunk_000012.g1raw
+read chunk_000013.g1raw
+read chunk_000014.g1raw
+read chunk_000015.g1raw
+read chunk_000016.g1raw
+read chunk_000017.g1raw
+read chunk_000018.g1raw
+read chunk_000019.g1raw
+read chunk_000020.g1raw
+read chunk_000021.g1raw
+read chunk_000022.g1raw
+read chunk_000023.g1raw
+read chunk_000024.g1raw
+read chunk_000025.g1raw
+read chunk_000026.g1raw
+read chunk_000027.g1raw
+read chunk_000028.g1raw
+read chunk_000029.g1raw
+read chunk_000030.g1raw
+read chunk_000031.g1raw
+read chunk_000032.g1raw
+read chunk_000033.g1raw
+read chunk_000034.g1raw
+read chunk_000035.g1raw
+read chunk_000036.g1raw
+read chunk_000037.g1raw
+read chunk_000038.g1raw
+read chunk_000039.g1raw
+read chunk_000040.g1raw
+read chunk_000041.g1raw
+read chunk_000042.g1raw
+read chunk_000043.g1raw
+read chunk_000044.g1raw
+read chunk_000045.g1raw
+read chunk_000046.g1raw
+read chunk_000047.g1raw
+read chunk_000048.g1raw
+read chunk_000049.g1raw
+read chunk_000050.g1raw
+read chunk_000051.g1raw
+read chunk_000052.g1raw
+read chunk_000053.g1raw
+read chunk_000054.g1raw
+read chunk_000055.g1raw
+read chunk_000056.g1raw
+read chunk_000057.g1raw
+read chunk_000058.g1raw
+read chunk_000059.g1raw
+read chunk_000060.g1raw
+read chunk_000061.g1raw
+read chunk_000062.g1raw
+read chunk_000063.g1raw
+read chunk_000064.g1raw
+read chunk_000065.g1raw
+read chunk_000066.g1raw
+read chunk_000067.g1raw
+read chunk_000068.g1raw
+read chunk_000069.g1raw
+read chunk_000070.g1raw
+read chunk_000071.g1raw
+read chunk_000072.g1raw
+read chunk_000073.g1raw
+read chunk_000074.g1raw
+read chunk_000075.g1raw
+read chunk_000076.g1raw
+read chunk_000077.g1raw
+read chunk_000078.g1raw
+read chunk_000079.g1raw
+read chunk_000080.g1raw
+read chunk_000081.g1raw
+read chunk_000082.g1raw
+read chunk_000083.g1raw
+read chunk_000084.g1raw
+read chunk_000085.g1raw
+read chunk_000086.g1raw
+read chunk_000087.g1raw
+read chunk_000088.g1raw
+read chunk_000089.g1raw
+read chunk_000090.g1raw
+read chunk_000091.g1raw
+read chunk_000092.g1raw
+read chunk_000093.g1raw
+read chunk_000094.g1raw
+read chunk_000095.g1raw
+read chunk_000096.g1raw
+read chunk_000097.g1raw
+read chunk_000098.g1raw
+read chunk_000099.g1raw
+read chunk_000100.g1raw
+read chunk_000101.g1raw
+read chunk_000102.g1raw
+read chunk_000103.g1raw
+read chunk_000104.g1raw
+read chunk_000105.g1raw
+read chunk_000106.g1raw
+read chunk_000107.g1raw
+read chunk_000108.g1raw
+read chunk_000109.g1raw
+read chunk_000110.g1raw
+read chunk_000111.g1raw
+read chunk_000112.g1raw
+read chunk_000113.g1raw
+read chunk_000114.g1raw
+read chunk_000115.g1raw
+{
+  "session": "/home/lsy03/\u6587\u6863/ChatGPT/VLA G1 \u9879\u76ee/lerobot_runs/dual_arm_capture_20260928_203810_727975",
+  "episode": "episode_000002",
+  "output": "/home/lsy03/\u6587\u6863/ChatGPT/VLA G1 \u9879\u76ee/reports/white_block_rerun_20260928/dual_arm_capture_20260928_203810_727975_episode_000002_w320.rrd",
+  "preview_width": 320,
+  "diagnostic": true,
+  "raw_status": "interrupted",
+  "task_result": "interrupted",
+  "stream_counts": {
+    "HEAD_LEFT_CAMERA": 3238,
+    "HEAD_RIGHT_CAMERA": 3238,
+    "LEFT_ARM_CAMERA": 3226,
+    "RIGHT_ARM_CAMERA": 3230,
+    "LEFT_ARM_DEPTH_CAMERA": 3226,
+    "RIGHT_ARM_DEPTH_CAMERA": 3230,
+    "LEFT_FRONT_SURROUND_CAMERA": 2135,
+    "RIGHT_FRONT_SURROUND_CAMERA": 2135,
+    "LEFT_WRIST_FORCE": 24134,
+    "RIGHT_WRIST_FORCE": 24101,
+    "JOINT_chassis": 12711,
+    "JOINT_head": 12711,
+    "JOINT_left_arm": 12711,
+    "JOINT_right_arm": 12711,
+    "JOINT_leg": 12711,
+    "LEFT_GRIPPER": 24027,
+    "RIGHT_GRIPPER": 23982
+  },
+  "gap_events": 996,
+  "accepted_arm_commands": 189,
+  "unmapped_control_events": 9,
+  "motion_api_called": false,
+  "timeline": "sensor source epoch; PC events piecewise mapped; physical synchronization unverified",
+  "image_display": "latest frame held; inspect source gaps and age; no frame interpolation",
+  "initial_targets": "accepted pre-episode context displayed at zero, not a new command"
+}
+预览文件：/home/lsy03/文档/ChatGPT/VLA G1 项目/reports/white_block_rerun_20260928/dual_arm_capture_20260928_203810_727975_episode_000002_w320.rrd
+
+===== 3/4：下载/校验/生成 dual_arm_capture_20260928_204855_728822/episode_000001 =====
+1: dual_arm_capture_20260928_203810_727975 / episode_000001 | closed / success
+2: dual_arm_capture_20260928_203810_727975 / episode_000002 | closed / interrupted
+3: dual_arm_capture_20260928_204855_728822 / episode_000001 | closed / success
+4: dual_arm_capture_20260928_204855_728822 / episode_000002 | failed / interrupted
+首次查看：从G1复制本组原件，保留机器人上的文件；请等待。
