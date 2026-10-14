@@ -1,0 +1,117 @@
+{
+  "updates": 400,
+  "windows": 713,
+  "full_validation": true,
+  "quick_check": false,
+  "seeds": [
+    20261009,
+    42,
+    1729,
+    9
+  ],
+  "per_seed": {
+    "20261009": {
+      "first_joint_mae_deg": 0.5397677388750902,
+      "first_gripper_mae_mm": 20.571266898564044,
+      "short_joint_mae_deg": 2.7738109345935507,
+      "short_gripper_mae_mm": 22.516744680798038,
+      "full_joint_mae_deg": 9.016563158887086,
+      "full_gripper_mae_mm": 39.94575376804594,
+      "hold_first_joint_mae_deg": 0.4171382016873597,
+      "hold_first_gripper_mae_mm": 24.061623124763642,
+      "hold_short_joint_mae_deg": 2.2488759312040236,
+      "hold_short_gripper_mae_mm": 27.579160281267608,
+      "gripper_prediction_range_mm": [
+        3.161876695230603,
+        99.02915358543396
+      ],
+      "selection_score": 7.560415362094674,
+      "closed_false_open_rate": 0.005649717514124294
+    },
+    "42": {
+      "first_joint_mae_deg": 0.5621879634487267,
+      "first_gripper_mae_mm": 20.571266898564044,
+      "short_joint_mae_deg": 3.0155092770786323,
+      "short_gripper_mae_mm": 22.516744680798038,
+      "full_joint_mae_deg": 10.29394185584237,
+      "full_gripper_mae_mm": 39.94575376804594,
+      "hold_first_joint_mae_deg": 0.4171382016873597,
+      "hold_first_gripper_mae_mm": 24.061623124763642,
+      "hold_short_joint_mae_deg": 2.2488759312040236,
+      "hold_short_gripper_mae_mm": 27.579160281267608,
+      "gripper_prediction_range_mm": [
+        3.161876695230603,
+        99.02915358543396
+      ],
+      "selection_score": 7.652191588543186,
+      "closed_false_open_rate": 0.005649717514124294
+    },
+    "1729": {
+      "first_joint_mae_deg": 0.5390481250295811,
+      "first_gripper_mae_mm": 20.571266898564044,
+      "short_joint_mae_deg": 2.786557901283302,
+      "short_gripper_mae_mm": 22.516744680798038,
+      "full_joint_mae_deg": 9.923821174466573,
+      "full_gripper_mae_mm": 39.94575376804594,
+      "hold_first_joint_mae_deg": 0.4171382016873597,
+      "hold_first_gripper_mae_mm": 24.061623124763642,
+      "hold_short_joint_mae_deg": 2.2488759312040236,
+      "hold_short_gripper_mae_mm": 27.579160281267608,
+      "gripper_prediction_range_mm": [
+        3.161876695230603,
+        99.02915358543396
+      ],
+      "selection_score": 7.564304544068503,
+      "closed_false_open_rate": 0.005649717514124294
+    },
+    "9": {
+      "first_joint_mae_deg": 0.5589050441934814,
+      "first_gripper_mae_mm": 20.571266898564044,
+      "short_joint_mae_deg": 3.0061091600449785,
+      "short_gripper_mae_mm": 22.516744680798038,
+      "full_joint_mae_deg": 11.908462735326053,
+      "full_gripper_mae_mm": 39.94575376804594,
+      "hold_first_joint_mae_deg": 0.4171382016873597,
+      "hold_first_gripper_mae_mm": 24.061623124763642,
+      "hold_short_joint_mae_deg": 2.2488759312040236,
+      "hold_short_gripper_mae_mm": 27.579160281267608,
+      "gripper_prediction_range_mm": [
+        3.161876695230603,
+        99.02915358543396
+      ],
+      "selection_score": 7.647416756571013,
+      "closed_false_open_rate": 0.005649717514124294
+    }
+  },
+  "mean": {
+    "selection_score": 7.606082062819343,
+    "first_joint_mae_deg": 0.5499772178867198,
+    "first_gripper_mae_mm": 20.571266898564044,
+    "short_joint_mae_deg": 2.8954968182501157,
+    "short_gripper_mae_mm": 22.516744680798038,
+    "worst_seed_score": 7.652191588543186
+  },
+  "loss_by_time": {
+    "0.1": {
+      "joint_flow7": 4.7982335906543705,
+      "gripper_regression": 0.36669239279164884,
+      "gripper_extreme_bce": 1.0581201512149703,
+      "loss": 5.743242406076001
+    },
+    "0.5": {
+      "joint_flow7": 1.4748019225801359,
+      "gripper_regression": 0.36669239279164884,
+      "gripper_extreme_bce": 1.0581201512149703,
+      "loss": 2.419810745525494
+    },
+    "0.9": {
+      "joint_flow7": 1.4365083443165494,
+      "gripper_regression": 0.36669239279164884,
+      "gripper_extreme_bce": 1.0581201512149703,
+      "loss": 2.381517165631766
+    }
+  },
+  "gripper_seed_invariance_max_error": 0.0,
+  "physical_deployment_certified": false,
+  "durable_parts": 29
+}

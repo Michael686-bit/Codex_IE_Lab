@@ -1,0 +1,23 @@
+{
+  "schema_version": "g1_lerobot_capture/1",
+  "session_id": "0f7abede-6064-468a-b30b-4b968bfc5e67",
+  "task": "Pick up the white tape from the table and place it into the blue bin.",
+  "created_wall_ns": 1791461323455090448,
+  "training_ready": false,
+  "active_arms": [
+    "left_arm"
+  ],
+  "recorded_sensor_stream_count": 7,
+  "sensor_profile": "left7",
+  "sensor_streams": [
+    "HEAD_LEFT_CAMERA",
+    "LEFT_ARM_CAMERA",
+    "LEFT_ARM_DEPTH_CAMERA",
+    "RIGHT_FRONT_SURROUND_CAMERA",
+    "JOINT_left_arm",
+    "LEFT_GRIPPER",
+    "LEFT_WRIST_FORCE"
+  ],
+  "status": "closed",
+  "updated_wall_ns": 1791461338727172515
+}

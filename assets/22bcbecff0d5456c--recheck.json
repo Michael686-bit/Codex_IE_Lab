@@ -1,0 +1,108 @@
+{
+  "driver_fps": {
+    "right_arm_camera(D405,SN:323622272123)": {
+      "samples": 19,
+      "min_hz": 13.6369686,
+      "median_hz": 15.0020094,
+      "max_hz": 15.0044823
+    },
+    "stereo_right": {
+      "samples": 18,
+      "min_hz": 14.9694967,
+      "median_hz": 15.05783555,
+      "max_hz": 15.0666389
+    },
+    "stereo_left": {
+      "samples": 18,
+      "min_hz": 14.9694967,
+      "median_hz": 15.05783555,
+      "max_hz": 15.0666389
+    },
+    "left_arm_camera(D405,SN:323622271465)": {
+      "samples": 18,
+      "min_hz": 15.0012951,
+      "median_hz": 15.0018139,
+      "max_hz": 15.0049381
+    },
+    "surround_right_rear": {
+      "samples": 18,
+      "min_hz": 9.78248692,
+      "median_hz": 10.000006675,
+      "max_hz": 10.1123972
+    },
+    "surround_right_front": {
+      "samples": 18,
+      "min_hz": 9.78248692,
+      "median_hz": 10.000002845000001,
+      "max_hz": 10.1123972
+    },
+    "surround_left_rear": {
+      "samples": 18,
+      "min_hz": 9.78248787,
+      "median_hz": 10.000006195000001,
+      "max_hz": 10.1123972
+    },
+    "surround_left_front": {
+      "samples": 18,
+      "min_hz": 9.78248787,
+      "median_hz": 10.000006195000001,
+      "max_hz": 10.1123972
+    }
+  },
+  "clock": {
+    "valid_samples": 180,
+    "duration_s": 35.975487339,
+    "offset_min_ms": 7.210622,
+    "offset_median_ms": 8.085768,
+    "offset_max_ms": 8.96742,
+    "offset_range_ms": 1.7567980000000007,
+    "max_valid_rtt_ms": 2.556431,
+    "startup_rule_windows_passed": 169,
+    "startup_rule_windows_total": 169,
+    "sensor_exposure_sync_verified": false
+  },
+  "preview": {
+    "HEAD_LEFT_CAMERA": {
+      "median_fps": 6.636489139161865,
+      "max_age_s": 0.1461778210000375,
+      "errors": []
+    },
+    "HEAD_RIGHT_CAMERA": {
+      "median_fps": 6.636362670058601,
+      "max_age_s": 0.14164235599992026,
+      "errors": []
+    },
+    "LEFT_FRONT_SURROUND_CAMERA": {
+      "median_fps": 6.635521612167714,
+      "max_age_s": 0.14703579999991234,
+      "errors": []
+    },
+    "RIGHT_FRONT_SURROUND_CAMERA": {
+      "median_fps": 6.636611276922585,
+      "max_age_s": 0.13950049400000353,
+      "errors": []
+    },
+    "LEFT_ARM_CAMERA": {
+      "median_fps": 6.636704257473449,
+      "max_age_s": 0.14950892199999544,
+      "errors": []
+    },
+    "RIGHT_ARM_CAMERA": {
+      "median_fps": 6.636588657765618,
+      "max_age_s": 0.13806384700001217,
+      "errors": []
+    },
+    "LEFT_ARM_DEPTH_CAMERA": {
+      "median_fps": 6.6370681611886715,
+      "max_age_s": 0.13842359499994927,
+      "errors": []
+    },
+    "RIGHT_ARM_DEPTH_CAMERA": {
+      "median_fps": 6.63682413775155,
+      "max_age_s": 0.13760630100000526,
+      "errors": []
+    }
+  },
+  "live_preview_8765_running": true,
+  "motion_called": false
+}

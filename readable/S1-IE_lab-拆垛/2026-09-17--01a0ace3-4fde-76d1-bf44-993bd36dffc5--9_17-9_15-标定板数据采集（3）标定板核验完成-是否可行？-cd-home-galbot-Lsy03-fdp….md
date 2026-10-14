@@ -197,3 +197,9 @@ FDP 和 V5 的完整旋转差约 179°，主要来自箱体前后方向的 180°
 完整定义已记录在[当前数据集定义](../../assets/8a345389fee53d59--DATASET_DEFINITION_20260917.md)。
 
 [附件：8a345389fee53d59--DATASET_DEFINITION_20260917.md](../../assets/8a345389fee53d59--DATASET_DEFINITION_20260917.md)
+
+## 19. 助手
+
+_历史投影中的图片引用（用于补全本地对话资源）。_
+
+> 资源未归档：`/tmp/codex-clipboard-6b8dc23a-6f28-4c1a-9c47-1538b8ac8f7a.png`（missing）

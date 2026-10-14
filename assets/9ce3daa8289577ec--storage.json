@@ -1,0 +1,23 @@
+{
+  "storage_root": "/home/lsy03/文档/ChatGPT/蚂蚁灵波具身大模型挑战赛",
+  "device": "/dev/nvme0n1p2",
+  "paths": {
+    "archives": "data/archives",
+    "raw": "data/raw",
+    "lerobot": "data/lerobot",
+    "assets": "data/assets",
+    "models": "models",
+    "cache": "cache",
+    "runs": "outputs/runs",
+    "evaluation": "outputs/evaluation"
+  },
+  "container_data_root": "/competition/data",
+  "planning_budget_gib": 200,
+  "minimum_free_space_gib": 80,
+  "archive_policy": "retain until extraction and conversion verified; do not delete automatically",
+  "conversion_policy": "process task by task; avoid duplicate intermediate copies",
+  "checkpoint_policy": "retain best, latest resumable, and selected milestones; exact limit chosen with training configuration",
+  "video_policy": "small verification sample during development; submission retention follows competition requirements",
+  "migration_policy": "copy and verify before updating mounts; keep container paths stable",
+  "large_download_started": true
+}

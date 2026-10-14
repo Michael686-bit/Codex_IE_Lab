@@ -1,0 +1,46 @@
+{
+  "updated_at": 1791635577.8250887,
+  "overall_status": "first_stage_environment_accepted",
+  "host_python_modified": false,
+  "model_image": "lingbo-competition-model:be969b8",
+  "model_image_built": true,
+  "model_gpu_import_pass": true,
+  "cuda_matrix_pass": true,
+  "vulkan_pass": true,
+  "sapien_base_render_pass": true,
+  "render_image": "outputs/setup_render.png",
+  "resource_download": "complete_all_76_files_verified",
+  "sim_image": "built_and_scene_and_closed_loop_accepted",
+  "complete_model_loaded": true,
+  "robotwin_task_evaluated": true,
+  "short_training_verified": true,
+  "preserved_existing_jobs": true,
+  "next_steps": [
+    "Convert all 50 clean tasks and compute training normalization",
+    "Choose reproducible training/validation setup",
+    "Train a genuine baseline",
+    "Evaluate larger clean and randomized samples before full official evaluation"
+  ],
+  "sim_build_service": "stopped_by_user_request",
+  "download_container": "lingbo-competition-download",
+  "paused_build_container": "85ff77aa65f8",
+  "assets_extracted": true,
+  "click_bell_clean_dataset": {
+    "episodes": 50,
+    "frames": 3855,
+    "format": "LeRobot v3.0",
+    "path": "data/lerobot/click_bell_clean_50"
+  },
+  "model_preprocessing_pass": true,
+  "action_roundtrip_max_error": 1.5868063574231428e-07,
+  "gpu_acceptance": "model_inference_pass; closed_loop_waits_for_sim_image",
+  "real_observation_inference_pass": true,
+  "model_inference_action_shape": [
+    50,
+    14
+  ],
+  "model_first_request_seconds": 1.826403951010434,
+  "model_service": "stopped_after_acceptance_to_release_gpu",
+  "checkpoint_replay_max_error": 0.0,
+  "trained_checkpoint_closed_loop_verified": true
+}

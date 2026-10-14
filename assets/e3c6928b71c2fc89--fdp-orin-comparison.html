@@ -1,0 +1,59 @@
+<div id="fdp-orin-compare">
+  <style>
+    #fdp-orin-compare .routes {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;margin:16px 0}
+    #fdp-orin-compare .flow {display:flex;flex-direction:column;gap:10px}
+    #fdp-orin-compare .arrow {color:var(--muted-foreground);padding-left:12px}
+    #fdp-orin-compare .step {padding-left:12px;border-left:2px solid var(--border)}
+    #fdp-orin-compare .lane {display:grid;grid-template-columns:110px 1fr;gap:14px;margin:16px 0;align-items:start}
+    #fdp-orin-compare .stages {display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+    #fdp-orin-compare .candidate {background:color-mix(in srgb,var(--viz-series-1) 14%,transparent);padding:8px 12px}
+    #fdp-orin-compare .detail {margin-top:5px}
+    #fdp-orin-compare strong {font-weight:500}
+    @media(max-width:520px){#fdp-orin-compare .routes{grid-template-columns:1fr}#fdp-orin-compare .lane{grid-template-columns:1fr;gap:6px}}
+  </style>
+  <h2>4090 → Orin：优化的是部署与推理流程</h2>
+  <div class="text-small text-muted">同一套 FDP 网络与权重 · 首帧 6D 位姿估计 · 归档结果截至 2026-10-08</div>
+  <div class="routes" role="img" aria-label="原流程为S1通过网络调用4090 FDP；迁移方案为S1 Orin本地执行优化FDP，已完成独立实验，未切换生产。">
+    <div class="flow">
+      <strong>原流程｜远程 4090</strong>
+      <div class="step">S1 提供 RGB、深度、mask、相机参数</div>
+      <div class="arrow">↓ 网络请求</div>
+      <div class="step">4090 执行 FDP<br><span class="text-small text-muted">252 个候选，每轮全部精修</span></div>
+      <div class="arrow">↓ 网络返回</div>
+      <div class="step">S1 获取箱体位置与朝向</div>
+    </div>
+    <div class="flow">
+      <strong>迁移方案｜本机 Orin</strong>
+      <div class="step">同类输入 + 采集时相机到基座变换</div>
+      <div class="arrow">↓ 本机调用</div>
+      <div class="step">Orin 执行优化 FDP<br><span class="text-small text-muted">等价优化 + 分批计算 + 候选筛选</span></div>
+      <div class="arrow">↓ 本机返回</div>
+      <div class="step">输出兼容的箱体位姿<br><span class="text-small text-muted">独立实验 / 首帧 HTTP 已验证，未切生产</span></div>
+    </div>
+  </div>
+  <hr>
+  <h3>真正省在哪里：每轮精修的候选数</h3>
+  <div class="text-small text-muted">候选 = 箱体可能的一个姿态；轮次统一为 3 轮</div>
+  <div class="lane"><strong>A0 原版</strong><div><div class="stages"><span class="candidate">252</span> → <span class="candidate">252</span> → <span class="candidate">252</span></div><div class="detail text-small">全部候选走完三轮。</div></div></div>
+  <div class="lane"><strong>A1 → A2</strong><div><div class="stages"><span class="candidate">252</span> → <span class="candidate">252</span> → <span class="candidate">252</span></div><div class="detail text-small">A1：等价 XYZ 采样、去掉无用日志计算。<br>A2：再加微批次 64、cuDNN 算法选择；候选总数不变。</div></div></div>
+  <div class="lane"><strong>A3 分阶段筛选</strong><div><div class="stages"><span class="candidate">252</span> → <span class="candidate">16</span> → <span class="candidate">16</span></div><div class="detail text-small">第一轮后评分，只保留 16 个继续计算。</div></div></div>
+  <div class="lane"><strong>A4 快速版</strong><div><div class="stages"><span class="candidate">64</span> → <span class="candidate">16</span> → <span class="candidate">16</span></div><div class="detail text-small">先按箱体近直立偏好，从 252 个选 64 个；再筛到 16 个。<br>不把 roll / pitch 强制归零；需要匹配的相机外参。</div></div></div>
+  <div class="lane"><strong>A4-64</strong><div><div class="stages"><span class="candidate">64</span> → <span class="candidate">64</span> → <span class="candidate">64</span></div><div class="detail text-small">保留更多候选，以计算量换取更宽的搜索范围。</div></div></div>
+  <hr>
+  <h3>已有 28 帧 × 5 次正式结果</h3>
+  <table class="table table-sm">
+    <thead><tr><th>版本</th><th>耗时中位数</th><th>相对 4090 中心差<br>中位 / 最大</th></tr></thead>
+    <tbody>
+      <tr><td>4090 参考</td><td>0.484 s *</td><td>参考自身</td></tr>
+      <tr><td>Orin A0</td><td>5.757 s</td><td>0.166 / 5.002 mm</td></tr>
+      <tr><td>Orin A2</td><td>2.227 s</td><td>0.166 / 5.002 mm</td></tr>
+      <tr><td><strong>Orin A4</strong></td><td><strong>0.598 s</strong></td><td>0.229 / 5.144 mm</td></tr>
+      <tr><td>Orin A4-64</td><td>0.851 s</td><td>0.184 / 5.199 mm</td></tr>
+    </tbody>
+  </table>
+  <div class="text-small text-muted">所列 Orin 版本均为 28/28 帧满足中心差 ≤10 mm、180°对称处理后各轴角差 ≤3°。4090 是一致性参考，非绝对真值。</div>
+  <div class="text-small text-muted">* 4090 为服务自报时间；Orin 为预热后的 register 时间，不含前端、初始化及网络。数据跨批次归档，不能当严格端到端硬件加速比。</div>
+  <hr>
+  <div class="text-small">数值对齐：120×120 输入 / 3 轮 / 毫米深度 / 关闭 matmul TF32；AMP 与 cuDNN TF32 保持开启。</div>
+  <div class="text-small text-muted">验证边界：旧 28 帧、近直立场景；新增 67 帧未验证 A4 系列。单 D12 本机 HTTP 中位：A4 0.816 s，A4-64 0.921 s。</div>
+</div>

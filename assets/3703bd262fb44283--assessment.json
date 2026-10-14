@@ -1,0 +1,37 @@
+{
+  "status": "requested_stages_1_to_4_complete_for_800ms_shadow_configuration",
+  "baseline_commit": "c662274",
+  "baseline_tag": "g1-sync-baseline-20261010",
+  "stage1_commit": "f8a90d3",
+  "stage2_commit": "2aec074",
+  "stage3_commit": "fcbf20e",
+  "branch": "codex/g1-async-control",
+  "stages": {
+    "1": "training timeline and static SDK contract verified; physical override continuity remains phase5",
+    "2": "async planning, independent feedback and read-only fixed-rate reference implemented",
+    "3": "time queue, finite overlap blend, q/v/a continuous and braking-feasible reference verified",
+    "4": "91 regression tests passed; two800ms thirty-second shadow runs passed, latest includes source-timestamp feedback fix; 500ms comparison depleted and stopped correctly. Physical motion not tested."
+  },
+  "tests": {
+    "total": 91,
+    "passed": 91,
+    "log": "all_tests.log",
+    "real_target_replay": "real_target_replay.json"
+  },
+  "latest_connection_attempt": {
+    "date_client": "2026-10-12",
+    "host": "192.168.1.88",
+    "result": "SSH, URDF and clock verified; two read-only SDK clients connected and cleaned up",
+    "audit": "connection_runtime_20261012.audit.json"
+  },
+  "robot_motion_commands_sent": 0,
+  "g1_files_modified": false,
+  "host_system_settings_modified": false,
+  "model_weights_modified": false,
+  "pending": [
+    "User-run physical trajectory verification is a separate next stage; no asynchronous motion entrypoint enabled",
+    "500ms future window has not passed sustained real shadow validation; 800ms is the validated shadow configuration",
+    "SDK publish/override interpolation continuity, physical tracking/stop and task success remain unverified"
+  ],
+  "latest_readonly_acceptance": "readonly_acceptance_20261012.json"
+}

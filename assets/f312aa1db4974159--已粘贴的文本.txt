@@ -1,0 +1,657 @@
+现在是否有标准的 agent 架构？  机器人的agent 架构和 语言模型 harness
+
+思考了 10s
+现在更准确的说法是：
+
+Agent 没有一个像 Transformer 那样公认唯一的“标准网络架构”，但已经逐渐收敛出一个比较标准的“系统架构”。
+
+尤其你现在在做机器人/VLA，可以把 语言模型 Harness Agent 和 机器人 Agent 看成同一个抽象框架的两个不同落地版本。
+
+一个很通用的 Agent 抽象是：
+
+                  ┌───────────────┐
+                  │     Goal      │
+                  │ 用户目标/任务   │
+                  └───────┬───────┘
+                          ↓
+                 ┌─────────────────┐
+                 │ Agent / Policy  │
+                 │  决策核心        │
+                 └───────┬─────────┘
+                         ↓
+              ┌──────────────────────┐
+              │ Planning / Reasoning │
+              │ 下一步应该做什么？    │
+              └─────────┬────────────┘
+                        ↓
+                  ┌─────────────┐
+                  │ Tool / Action│
+                  └──────┬──────┘
+                         ↓
+                ┌────────────────┐
+                │  Environment   │
+                └───────┬────────┘
+                        ↓
+                 Observation
+                        │
+                        └────────────→ Agent
+核心其实就是：
+
+O
+b
+s
+e
+r
+v
+a
+t
+i
+o
+n
+→
+R
+e
+a
+s
+o
+n
+i
+n
+g
+/
+P
+o
+l
+i
+c
+y
+→
+A
+c
+t
+i
+o
+n
+→
+E
+n
+v
+i
+r
+o
+n
+m
+e
+n
+t
+→
+O
+b
+s
+e
+r
+v
+a
+t
+i
+o
+n
+Observation→Reasoning/Policy→Action→Environment→Observation
+也就是闭环。
+
+1. 语言模型 Harness，本质上是什么
+你之前说的 Harness，我建议理解为：
+
+给 LLM 包上一层“运行时 Runtime”，让模型不只是输出文字，而是能够持续调用工具、读取结果、修改状态、继续决策。
+
+现在 OpenAI 对 Harness 的定义也越来越明确：Harness 负责运行 model + tool loop、维护 session/context，而执行环境则负责真正运行代码、操作文件等。
+
+典型结构：
+
+User
+ ↓
+Harness
+ │
+ ├── Prompt / Instructions
+ ├── LLM
+ ├── Context
+ ├── Memory
+ ├── Tool Registry
+ ├── Agent Loop
+ ├── Permission / Guardrail
+ └── State
+       │
+       ↓
+   ┌───────────────┐
+   │ Tools         │
+   │ search        │
+   │ python        │
+   │ shell         │
+   │ file          │
+   │ database      │
+   │ browser       │
+   │ MCP           │
+   └───────────────┘
+LLM 自己一般只负责：
+
+输入 context
+    ↓
+Transformer
+    ↓
+生成 token
+而真正的 Agent：
+
+LLM
+ ↓
+"我要调用 search()"
+ ↓
+Harness
+ ↓
+执行 search
+ ↓
+得到 observation
+ ↓
+放回 context
+ ↓
+LLM
+ ↓
+"再调用 python()"
+ ↓
+...
+ ↓
+Final answer
+现在比较典型的 Agent loop 基本就是：
+
+while not finished:
+
+    response = model(context)
+
+    if response.tool_call:
+        result = execute_tool(response.tool_call)
+        context.append(result)
+
+    elif response.handoff:
+        switch_agent()
+
+    else:
+        return response
+
+OpenAI Agents SDK 当前的 Runner 基本也是这个结构：模型调用 → 检查工具调用 → 执行工具 → 继续模型 → handoff 或结束。
+
+所以你之前说：
+
+Harness 是不是 Agent？
+
+可以回答：
+
+Harness ≠ Agent 的智能本身。
+
+更准确地说：
+
+Agent System
+=
+Model
++
+Harness
++
+Tools
++
+Memory
++
+Environment
+2. 机器人 Agent 其实也是一样
+机器人只是把：
+
+search()
+python()
+filesystem()
+browser()
+换成：
+
+navigate()
+detect_object()
+move_arm()
+grasp()
+open_gripper()
+get_camera()
+get_robot_state()
+于是：
+
+Language Agent
+变成：
+
+Robot Agent
+你可以直接这么对应。
+
+LLM Agent	Robot Agent
+User prompt	Language command / task
+Context	Robot state / history
+LLM observation	Camera / LiDAR / proprioception
+Tool	Robot skill
+search()	detect_object()
+python()	plan_grasp()
+browser()	navigate()
+Tool result	Sensor feedback
+Sandbox	Physical world / simulation
+Agent loop	Sense-plan-act loop
+3. 所以机器人 Agent 的典型架构其实是这样
+比较成熟的机器人系统，一般不会：
+
+LLM
+ ↓
+直接输出 motor torque
+而是分层。
+
+比较合理的是：
+
+                    Language
+                       │
+                       ↓
+               ┌──────────────┐
+               │   LLM Agent  │
+               │ Task Planner │
+               └──────┬───────┘
+                      │
+               skill / subgoal
+                      ↓
+          ┌──────────────────────┐
+          │ Skill / Policy Layer │
+          ├──────────────────────┤
+          │ Navigate             │
+          │ Detect               │
+          │ Grasp                │
+          │ Place                │
+          │ OpenDoor             │
+          │ VLA                  │
+          └───────────┬──────────┘
+                      ↓
+           ┌─────────────────────┐
+           │ Motion / Controller │
+           │ Nav2 / IK / MPC     │
+           │ Impedance / PID     │
+           └──────────┬──────────┘
+                      ↓
+                 Robot
+                      │
+                      ↓
+         Camera / LiDAR / Joint state
+                      │
+                      └──────────→ Agent
+这其实就是：
+
+High-level Agent + Mid-level Skills + Low-level Controller
+
+这个分层在机器人里面非常关键。
+
+4. 为什么机器人不应该完全照搬 LLM Harness
+这里是最大的区别。
+
+软件 Agent：
+
+LLM:
+"我调用 grep"
+调用错了：
+
+grep error
+再调用一次就行。
+
+但是机器人：
+
+LLM:
+"机械臂向下移动 30 cm"
+调用错了：
+
+撞桌子
+所以机器人必须额外加入：
+
+Safety Layer
+完整一点：
+
+              ┌──────────────┐
+              │ LLM / VLM    │
+              │ Task Agent   │
+              └──────┬───────┘
+                     ↓
+              ┌──────────────┐
+              │ Skill Router │
+              └──────┬───────┘
+                     ↓
+              ┌──────────────┐
+              │ Safety Check │
+              │ Collision    │
+              │ Joint limit  │
+              │ Workspace    │
+              │ Confidence   │
+              └──────┬───────┘
+                     ↓
+                Controller
+                     ↓
+                   Robot
+因此机器人 Agent 通常比纯 LLM Harness 多三样非常重要的东西：
+
+实时状态、低层控制、安全约束。
+
+5. VLA 在这里是什么位置？
+这是你现在最容易混淆的地方。
+
+例如 SmolVLA：
+
+Image
+Language
+Robot State
+    │
+    ↓
+  VLA
+    │
+    ↓
+Action Chunk
+本质：
+
+a
+t
+:
+t
++
+H
+=
+π
+θ
+(
+I
+t
+,
+L
+,
+s
+t
+)
+a
+t:t+H
+​
+ =π
+θ
+​
+ (I
+t
+​
+ ,L,s
+t
+​
+ )
+它实际上更接近：
+
+policy
+
+而不是完整的 Agent。
+
+例如：
+
+"把箱子放到桌面"
+        ↓
+      VLA
+        ↓
+ Δx Δy Δz ΔR gripper
+VLA 很擅长：
+
+短时间连续操作
+但通常不负责完整的：
+
+我要先去哪里？
+现在任务做到第几步？
+抓取失败是否需要重新检测？
+导航失败怎么办？
+应该换哪个策略？
+我要不要重新规划？
+这些才是 Agent 层的问题。
+
+6. 所以你的机器人系统，我建议这样理解
+你之前设想的：
+
+语言
+ ↓
+导航
+ ↓
+到工位
+ ↓
+VLA
+ ↓
+机械臂
+其实已经是一个 Agent 系统的雏形。
+
+以后可以升级成：
+
+                         User
+                          │
+          "把这个箱子搬到桌子上"
+                          │
+                          ↓
+                ┌────────────────┐
+                │ Robot Agent    │
+                │ LLM / VLM      │
+                └───────┬────────┘
+                        │
+        ┌───────────────┼───────────────┐
+        ↓               ↓               ↓
+
+ navigate()       inspect_scene()      grasp()
+
+        │               │               │
+       Nav2           VLM / CV          VLA
+        │               │               │
+        └───────────────┼───────────────┘
+                        ↓
+                    Robot State
+                        │
+                        ↓
+                 Agent decides again
+例如实际执行：
+
+Agent:
+
+Goal:
+搬箱子到桌子
+
+↓ reasoning
+
+1. 找箱子
+→ detect_box()
+
+Observation:
+box = (x,y,z)
+
+↓
+
+2. 移动过去
+→ navigate(box_station)
+
+Observation:
+success
+
+↓
+
+3. 检查箱子
+→ inspect_scene()
+
+Observation:
+box detected
+
+↓
+
+4. 抓取
+→ run_vla(
+     task="pick box"
+   )
+
+Observation:
+grasp_success = true
+
+↓
+
+5. 去桌子
+→ navigate(table)
+
+↓
+
+6. 放下
+→ run_vla(
+     task="place box"
+   )
+你会发现，这和 Codex：
+
+read_file()
+↓
+grep()
+↓
+edit_file()
+↓
+run_test()
+↓
+发现 error
+↓
+edit_file()
+从系统结构上几乎一样。
+
+7. Harness 在机器人里面可以直接对应什么？
+甚至可以把你的机器人系统写成：
+
+              Robot Harness
+                    │
+          ┌─────────┼─────────┐
+          ↓         ↓         ↓
+       Memory     State      Tools
+                    │
+       ┌────────────┼────────────┐
+       ↓            ↓            ↓
+   navigate      grasp        camera
+     Nav2          VLA           CV
+       │            │            │
+       └────────────┼────────────┘
+                    ↓
+                  Robot
+例如定义 Tools：
+
+tools = {
+
+    "navigate":
+        navigate_to_pose,
+
+    "detect_box":
+        detect_box_pose,
+
+    "grasp":
+        vla_grasp,
+
+    "place":
+        vla_place,
+
+    "move_arm":
+        move_arm,
+
+    "get_robot_state":
+        get_robot_state,
+}
+
+LLM 做：
+
+Tool selection
++
+Task decomposition
++
+Failure recovery
+而：
+
+Nav2
+VLA
+IK
+PID
+MPC
+负责真正执行。
+
+8. 目前正在形成哪些“标准”
+严格意义上，真正开始标准化的更多是接口层，而不是 Agent 内部的神经网络结构。
+
+例如现在逐渐形成：
+
+Agent
+ ├── Model
+ ├── Instructions
+ ├── Tools
+ ├── State / Memory
+ ├── Guardrails
+ ├── Handoff
+ └── Runtime / Harness
+这套构成已经非常常见，OpenAI 当前 Agents SDK 也是把 agent 定义成 model、instructions、tools、guardrails、handoffs、structured outputs 等组件。
+
+机器人领域则更多还是：
+
+Task Planning
+     ↓
+Behavior Tree / FSM
+     ↓
+Skills
+     ↓
+Motion Planning
+     ↓
+Controller
+比如 Nav2 大量使用 Behavior Tree，把 ComputePath → FollowPath → Recovery → Replan 这种复杂机器人逻辑组织起来；BT 现在已经属于相当成熟的机器人任务编排范式。
+
+9. 因此可以得到一个非常重要的统一视角
+你可以以后统一用这张图理解 Codex / DeepSeek Harness / LLM Agent / Robot Agent / VLA：
+
+                    ┌─────────────┐
+                    │    Goal     │
+                    └──────┬──────┘
+                           ↓
+                ┌──────────────────┐
+                │ Decision Model   │
+                │ LLM / VLM       │
+                └────────┬─────────┘
+                         ↓
+                ┌──────────────────┐
+                │     Harness      │
+                │ loop/state/memory│
+                │ safety/routing   │
+                └────────┬─────────┘
+                         ↓
+                 Tool / Skill Call
+                         ↓
+           ┌─────────────┼─────────────┐
+           ↓             ↓             ↓
+        Search         Nav2           VLA
+        Shell          IK             CV
+        Python         MPC            Grasp
+           │             │             │
+           └─────────────┼─────────────┘
+                         ↓
+                    Environment
+                         ↓
+                     Observation
+                         │
+                         └───────────────↑
+区别仅仅是 Environment：
+
+Codex Agent
+Environment = Computer
+
+Web Agent
+Environment = Internet
+
+Business Agent
+Environment = APIs / Database
+
+Robot Agent
+Environment = Physical World
+一句话总结
+你现在可以这样定义它们：
+
+Harness 是 Agent 的“运行框架”。
+
+LLM/VLM 是 Agent 的“认知/决策模型”。
+
+Tool/Skill 是 Agent 与环境交互的“动作接口”。
+
+VLA 是机器人 Agent 中一种 learned manipulation policy，它通常不是完整 Agent。
+
+机器人 Agent = LLM/VLM Agent Harness + Robot Skills/VLA + State Estimation + Controller + Safety + Physical Feedback。
+
+这其实是你把 LLM Agent 和 VLA/机器人控制 串起来时最关键的一层认知。

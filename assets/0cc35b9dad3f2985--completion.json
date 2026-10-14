@@ -1,0 +1,160 @@
+{
+  "status": "completed",
+  "stop_reason": "validation_plateau",
+  "last_step": 5012,
+  "additional_updates": 5000,
+  "best_checkpoint": {
+    "step": 12,
+    "path": "/output/checkpoints/step_000012",
+    "score": 4.92523355736184
+  },
+  "best_full_validation": {
+    "first_joint_mae_deg": 0.591975910716184,
+    "first_gripper_mae_mm": 7.807585811451454,
+    "short_joint_mae_deg": 3.3230567274924945,
+    "short_gripper_mae_mm": 15.830678940722153,
+    "full_joint_mae_deg": 13.000774308313304,
+    "full_gripper_mae_mm": 40.58758797227538,
+    "hold_first_joint_mae_deg": 0.4171382016873597,
+    "hold_first_gripper_mae_mm": 24.061623124763642,
+    "hold_short_joint_mae_deg": 2.2488759312040236,
+    "hold_short_gripper_mae_mm": 27.579160281267608,
+    "gripper_prediction_range_mm": [
+      -1.533042173832655,
+      99.11202639341354
+    ],
+    "selection_score": 4.548258587551429,
+    "validation_loss": 2.718666915137838,
+    "flow_windows": 713,
+    "physical_windows": 713,
+    "step": 12,
+    "evaluation_seconds": 430.57172786499723,
+    "fixed_flow_time": 0.5,
+    "fixed_noise": true,
+    "physical_deployment_certified": false,
+    "per_episode": {
+      "(0, 'episode_000005')": {
+        "first_joint_mae_deg": 0.5732130946640188,
+        "first_gripper_mae_mm": 10.003590158761499,
+        "short_joint_mae_deg": 3.156095836581942,
+        "short_gripper_mae_mm": 13.985296056644268,
+        "full_joint_mae_deg": 12.788573924959696,
+        "full_gripper_mae_mm": 36.29940630266805,
+        "hold_first_joint_mae_deg": 0.43459071368638097,
+        "hold_first_gripper_mae_mm": 25.82831878928428,
+        "hold_short_joint_mae_deg": 2.3765567476539076,
+        "hold_short_gripper_mae_mm": 29.881228185556036,
+        "gripper_prediction_range_mm": [
+          -0.35434160963632166,
+          96.89319878816605
+        ],
+        "selection_score": 4.73788613027605
+      },
+      "(0, 'episode_000009')": {
+        "first_joint_mae_deg": 0.6919647150226909,
+        "first_gripper_mae_mm": 11.154456273221445,
+        "short_joint_mae_deg": 3.888374281026961,
+        "short_gripper_mae_mm": 23.05629205281645,
+        "full_joint_mae_deg": 13.253863395876808,
+        "full_gripper_mae_mm": 38.21619738092754,
+        "hold_first_joint_mae_deg": 0.5256724319407824,
+        "hold_first_gripper_mae_mm": 25.876958130134476,
+        "hold_short_joint_mae_deg": 2.9059800671490055,
+        "hold_short_gripper_mae_mm": 29.557683001513833,
+        "gripper_prediction_range_mm": [
+          -0.7840459002181888,
+          99.11202639341354
+        ],
+        "selection_score": 6.1786275777796
+      },
+      "(1, 'episode_000002')": {
+        "first_joint_mae_deg": 0.47036852978640653,
+        "first_gripper_mae_mm": 5.649681645445526,
+        "short_joint_mae_deg": 2.4634585212111846,
+        "short_gripper_mae_mm": 13.562533468114756,
+        "full_joint_mae_deg": 9.493221875831567,
+        "full_gripper_mae_mm": 43.25560993153582,
+        "hold_first_joint_mae_deg": 0.32307536185096336,
+        "hold_first_gripper_mae_mm": 22.949805855751038,
+        "hold_short_joint_mae_deg": 1.5521096889468868,
+        "hold_short_gripper_mae_mm": 25.543862062816817,
+        "gripper_prediction_range_mm": [
+          0.0844666501507163,
+          98.59513491392136
+        ],
+        "selection_score": 3.542526781197512
+      },
+      "(1, 'episode_000010')": {
+        "first_joint_mae_deg": 0.5813246441861396,
+        "first_gripper_mae_mm": 8.686026915286979,
+        "short_joint_mae_deg": 3.4570116905335695,
+        "short_gripper_mae_mm": 18.898487311265246,
+        "full_joint_mae_deg": 15.909269150431834,
+        "full_gripper_mae_mm": 33.663470772018925,
+        "hold_first_joint_mae_deg": 0.38848666400643894,
+        "hold_first_gripper_mae_mm": 23.720699455589056,
+        "hold_short_joint_mae_deg": 2.140758953789248,
+        "hold_short_gripper_mae_mm": 27.12417021393776,
+        "gripper_prediction_range_mm": [
+          -0.7287597400136292,
+          98.73861074447632
+        ],
+        "selection_score": 5.070053666454847
+      },
+      "(2, 'episode_000008')": {
+        "first_joint_mae_deg": 0.6440155795644437,
+        "first_gripper_mae_mm": 6.91588913972597,
+        "short_joint_mae_deg": 3.619664800669507,
+        "short_gripper_mae_mm": 12.566410475133475,
+        "full_joint_mae_deg": 14.452642098019925,
+        "full_gripper_mae_mm": 47.85811206109709,
+        "hold_first_joint_mae_deg": 0.4136444565556147,
+        "hold_first_gripper_mae_mm": 22.11852052893776,
+        "hold_short_joint_mae_deg": 2.196935640165761,
+        "hold_short_gripper_mae_mm": 26.802588096604897,
+        "gripper_prediction_range_mm": [
+          -0.7287597400136292,
+          98.06769341230392
+        ],
+        "selection_score": 4.168381598797266
+      },
+      "(2, 'episode_000012')": {
+        "first_joint_mae_deg": 0.6295563394724122,
+        "first_gripper_mae_mm": 7.1473227768775915,
+        "short_joint_mae_deg": 3.4263923833058714,
+        "short_gripper_mae_mm": 18.544766086752034,
+        "full_joint_mae_deg": 11.94419435117286,
+        "full_gripper_mae_mm": 49.00079526330134,
+        "hold_first_joint_mae_deg": 0.45580769235714835,
+        "hold_first_gripper_mae_mm": 20.383358562505375,
+        "hold_short_joint_mae_deg": 2.427394703452215,
+        "hold_short_gripper_mae_mm": 25.596284978492285,
+        "gripper_prediction_range_mm": [
+          0.271717959549278,
+          97.84679859876633
+        ],
+        "selection_score": 4.740850128222219
+      },
+      "(2, 'episode_000020')": {
+        "first_joint_mae_deg": 0.5639873445598498,
+        "first_gripper_mae_mm": 4.2912353387077316,
+        "short_joint_mae_deg": 3.3400805322444462,
+        "short_gripper_mae_mm": 7.509247090523466,
+        "full_joint_mae_deg": 13.159798785428718,
+        "full_gripper_mae_mm": 35.606073194238945,
+        "hold_first_joint_mae_deg": 0.3918757580145433,
+        "hold_first_gripper_mae_mm": 28.877361148998546,
+        "hold_short_joint_mae_deg": 2.2815284633821267,
+        "hold_short_gripper_mae_mm": 29.38903417136218,
+        "gripper_prediction_range_mm": [
+          -1.533042173832655,
+          97.84679859876633
+        ],
+        "selection_score": 3.004525626488633
+      }
+    }
+  },
+  "rank": 8,
+  "physical_deployment_certified": false,
+  "smoke": false
+}

@@ -1,0 +1,77 @@
+{
+  "robot_host": "galbot-echo",
+  "robot_boot_time_beijing": "2026-10-09 09:28:00",
+  "local_preview_8765_running": false,
+  "camera_driver_fps": {
+    "right_arm_camera(D405,SN:323622272123)": {
+      "samples": 14,
+      "min_hz": 14.9995918,
+      "median_hz": 15.0017395,
+      "max_hz": 15.0022011
+    },
+    "stereo_right": {
+      "samples": 13,
+      "min_hz": 14.9680634,
+      "median_hz": 15.0584192,
+      "max_hz": 15.0620127
+    },
+    "stereo_left": {
+      "samples": 13,
+      "min_hz": 14.9680634,
+      "median_hz": 15.0584192,
+      "max_hz": 15.0620127
+    },
+    "left_arm_camera(D405,SN:323622271465)": {
+      "samples": 13,
+      "min_hz": 15.0013275,
+      "median_hz": 15.0015087,
+      "max_hz": 15.0023718
+    },
+    "surround_right_rear": {
+      "samples": 13,
+      "min_hz": 9.99998474,
+      "median_hz": 9.99999142,
+      "max_hz": 10.1123695
+    },
+    "surround_right_front": {
+      "samples": 13,
+      "min_hz": 9.99998474,
+      "median_hz": 9.99999142,
+      "max_hz": 10.1123695
+    },
+    "surround_left_rear": {
+      "samples": 13,
+      "min_hz": 9.99998474,
+      "median_hz": 9.99999142,
+      "max_hz": 10.1123695
+    },
+    "surround_left_front": {
+      "samples": 13,
+      "min_hz": 9.99998569,
+      "median_hz": 9.99999142,
+      "max_hz": 10.1123695
+    }
+  },
+  "clock_observation": {
+    "samples": 181,
+    "valid_samples": 180,
+    "duration_s": 35.996,
+    "offset_min_ms": 2.087883,
+    "offset_median_ms": 2.5111280000000002,
+    "offset_max_ms": 2.662033,
+    "offset_range_ms": 0.5741499999999999,
+    "max_valid_rtt_ms": 1.126288,
+    "g1_monotonic_minus_raw_range_ms": 0.90651,
+    "pc_monotonic_minus_raw_range_ms": 0.102256,
+    "startup_check_windows_passed": 169,
+    "startup_check_windows_total": 169,
+    "sensor_exposure_sync_verified": false,
+    "robot_motion_called": false
+  },
+  "time_services_active": [
+    "systemd-timesyncd",
+    "ptp4l",
+    "phc2sys"
+  ],
+  "scope": "Read-only driver statistics and cross-host clock queries; no SDK initialization, motion, service changes, or camera configuration writes. Current recovery does not isolate reboot versus preview shutdown or lighting effects. A short clock observation does not certify long-term or sensor exposure synchronization."
+}

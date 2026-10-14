@@ -1,0 +1,8 @@
+{
+  "state": "completed",
+  "stop_reason": "validation_plateau",
+  "last_step": 5012,
+  "best_step": 12,
+  "best_score": 4.92523355736184,
+  "smoke": false
+}

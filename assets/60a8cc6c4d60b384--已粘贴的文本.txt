@@ -1,0 +1,246 @@
+# 蚂蚁灵波具身大模型挑战赛｜参赛价值分析
+
+正在进行 · 2026年
+
+阿里云天池赛事 532514
+
+你发的是 蚂蚁灵波具身大模型挑战赛，由蚂蚁灵波科技、魔搭社区和阿里云天池联合举办。
+
+这场比赛的核心是：基于 LingBot-VLA 2.0，在 RoboTwin 2.0 中进行后训练、测试泛化成功率，再通过线下决赛验证真实机器人的操作能力。&#x20;
+
+[image](https://www.google.com/s2/favicons?domain=https://tianchi.aliyun.com\&sz=32)
+
+天池大数据
+
++1
+
+
+
+总奖金池
+
+# ¥280,000
+
+一等奖
+
+# ¥80,000
+
+初赛提交截止
+
+## 10月26日
+
+线下决赛
+
+## 11月13–15日
+
+比赛时间为 2026 年 9 月 11 日至 11 月 15 日；决赛在上海举办。
+
+[image](https://www.google.com/s2/favicons?domain=https://tianchi.aliyun.com\&sz=32)
+
+天池大数据
+
++1
+
+## 一、这场比赛值得参加吗？
+
+我的判断：值得参加，而且与你当前的 VLA 研发方向高度匹配，但建议以“复现基线＋提升泛化成功率”为第一目标，而不是一开始就投入大量资源冲击冠军。
+
+与 VLA 研发的相关性
+
+直接涉及 VLA 训练、RoboTwin 评测、机器人动作生成
+
+工程实践价值
+
+从后训练、闭环推理到真机部署的完整流程
+
+单卡 4090 的友好程度
+
+能进行部分实验，但完整评测和大规模调参压力较高
+
+短期冲奖可行性
+
+剩余时间紧张，强依赖现成团队、算力和代码基础
+
+对论文与技术积累的价值
+
+适合沉淀 VLA 泛化、数据效率、推理优化等实验
+
+这里最大的价值不只是奖项，而是通过一个统一 Benchmark，得到能与其他队伍比较的 VLA 闭环控制成功率，同时积累可复现的实验成果。
+
+## 二、比赛具体要做什么？
+
+赛事分成两个阶段，初赛以仿真成功率为核心，决赛考验真机快速适配能力。
+
+线上初赛：RoboTwin 2.0（必做）
+
+使用统一的 LingBot-VLA 2.0 预训练模型，在 Aloha-AgileX 双臂机器人任务上训练和评测。目标是提升 clean 和 randomized 环境中的任务成功率。
+
+真机创新 Demo（初赛可选）
+
+可以使用自有机械臂或移动双臂机器人做实际操作任务。不能用人工遥控、硬编码代替模型决策。该项目不设置固定分数，但会作为晋级参考。
+
+线下决赛：真机黑客马拉松
+
+主办方提供机器人、数据集、任务物料和算力，现场公布赛题。团队需要在限定时间内完成模型微调、真机部署和测试。决赛成绩重新计算。
+
+依据官方赛题与赛制。
+
+[image](https://www.google.com/s2/favicons?domain=https://tianchi.aliyun.com\&sz=32)
+
+天池大数据
+
++1
+
+### 关键：初赛不只是“把模型跑起来”
+
+官方要求：
+
+| 项目   | 具体要求                               |
+| ---- | ---------------------------------- |
+| 基座模型 | LingBot-VLA 2.0（6B）                |
+| 仿真平台 | RoboTwin 2.0                       |
+| 机器人  | Aloha-AgileX                       |
+| 训练任务 | 50 个                               |
+| 训练数据 | 每个任务 50 条 clean 轨迹，共 2,500 条       |
+| 禁止事项 | 使用 randomized 数据进行训练               |
+| 评测   | 每个任务分别在 clean、randomized 下测试 100 次 |
+| 总测试量 | 10,000 次任务执行                       |
+
+[image](https://www.google.com/s2/favicons?domain=https://tianchi.aliyun.com\&sz=32)
+
+天池大数据
+
++1
+
+这意味着参赛算法需要解决的核心问题是：
+
+只利用 clean 示范数据训练，如何让机器人在随机化环境中仍然成功完成操作？
+
+随机化环境可以考验策略对于视觉变化和场景扰动的鲁棒性，而不是仅靠记住训练场景。
+
+## 三、这个 Benchmark 有多难？
+
+官方发布的 LingBot-VLA 2.0 在 RoboTwin 2.0 上已有较高成绩。
+
+RoboTwin 2.0 官方公开成功率
+
+单位：%；此处为原模型论文/仓库实验设置，不是当前比赛排行榜
+
+LingBot 1.0
+
+Clean88.6%
+
+Randomized86.7%
+
+Clean
+
+Randomized
+
+0%25%50%75%100%π0.5LingBot 1.0LingBot 2.0
+
+数据来自 [LingBot-VLA 2.0 官方仓库](https://github.com/Robbyant/lingbot-vla-v2)。
+
+[image](https://www.google.com/s2/favicons?domain=https://github.com\&sz=32)
+
+GitHub
+
+但这里有一个非常重要的细节：
+
+官方 93.52% / 92.80% 的结果使用了 clean＋randomized 数据进行后训练，而本次比赛禁止使用 randomized 进行训练。
+
+因此不能直接把 93% 当成本次竞赛的有效基线，也不能认为参赛队伍必须超过这个数字才能获得好成绩。
+
+在本次数据限制下，先建立一个合规基线，然后研究 randomized 成功率下降幅度，才是正确方向。
+
+## 四、用你现有的 4090 能参加吗？
+
+可以尝试，但要区分单卡复现和完整竞赛评测。
+
+| 资源配置                | 适合做什么                   | 判断    |
+| ------------------- | ----------------------- | ----- |
+| 单张 RTX 4090 24GB    | 小批量推理、部分 LoRA 实验、少量任务测试 | 有条件可行 |
+| 2–4 张 RTX 4090      | 分布式训练和并行评测              | 更适合   |
+| AMD W7900D 48GB 云算力 | 官方支持的模型后训练与评测           | 值得申请  |
+| 多张 80GB 级 GPU       | 大规模实验、全参后训练、快速对比        | 更充足   |
+
+这些是工程适配判断，并不是官方公布的最低硬件门槛。
+
+特别要注意：官方 RoboTwin 全量评测示例使用了 8 张 GPU 并行运行，虽然可以降低并行数量，但单卡跑完整的 10,000 次测试可能非常耗时。FP32 和 BF16 的评测结果也可能存在明显差别。
+
+[image](https://www.google.com/s2/favicons?domain=https://github.com\&sz=32)
+
+GitHub
+
+
+
+本次比赛有个实际优势：AMD 提供可申请的 Radeon Cloud 专项算力，使用 W7900D 48GB GPU，配套 ROCm 环境。资源按队伍申请，不能保证即时获批。
+
+[image](https://www.google.com/s2/favicons?domain=https://github.com\&sz=32)
+
+GitHub
+
++1
+
+
+
+参赛技术资源
+
+[LingBot-VLA 2.0 官方代码](https://github.com/Robbyant/lingbot-vla-v2)
+
+[RoboTwin 2.0 数据集](https://huggingface.co/datasets/TianxingChen/RoboTwin2.0)
+
+[AMD 训练与评测复现指南](https://github.com/ZiguanWang/Robotwin-radeon-cloud/blob/main/Reproduce_Guide.md)
+
+[AMD 赛事算力申请指南](https://github.com/AMD-DEV-CONTEST/Embodied-AI-Challenge-AMD-Platform-2026-09)
+
+## 五、我建议你们怎么参加？
+
+结合你之前做的 S1、VLA 训练、RoboTwin 相关学习以及真机操作项目，我建议把重点放在以下技术链路：
+
+RoboTwin 2.0
+
+50 个任务的 clean 演示数据
+
+LingBot-VLA 2.0
+
+数据预处理 → LoRA/后训练 → 动作预测
+
+闭环仿真评测
+
+Clean SR / Randomized SR / Generalization Gap
+
+可选：银河 S1 / 现有机械臂真机验证
+
+Action mapping → 控制器 → 真机操作
+
+### 我建议的 17 天工作安排
+
+| 时间          | 重点工作                         | 交付目标                  |
+| ----------- | ---------------------------- | --------------------- |
+| 10/9–10/12  | 环境安装，模型下载，跑通 RoboTwin 及单任务推理 | 基础链路可运行               |
+| 10/13–10/17 | Clean-only LoRA，先选部分任务调参     | 第一个训练 checkpoint      |
+| 10/18–10/22 | 扩展 50 任务，优化泛化成功率，进行全量评测      | Clean 与 Randomized 结果 |
+| 10/23–10/26 | 消融实验、复现文档、打包提交               | 完整合规的参赛作品             |
+
+如果有 3 人，我建议分别负责仿真与评测、模型训练与实验、环境与提交工程。这样比三个人同时研究网络结构更有效。
+
+此外，官方要求提交评测 JSON、训练及评测代码、模型权重、复现说明。对企业团队来说还应核查开源许可证和赛事知识产权条款：赛事允许主办方在规定期间内将作品用于展示及非商业传播。
+
+[image](https://www.google.com/s2/favicons?domain=https://tianchi.aliyun.com\&sz=32)
+
+天池大数据
+
++1
+
+
+
+## 六、最后的结论
+
+这场比赛有三个值得投入的点：一是 LingBot-VLA 2.0 的完整后训练工程；二是 Clean-to-Randomized 的泛化能力评测；三是可能获得线下真实机器人测试机会。
+
+但如果你们目前还没有搭建 RoboTwin 2.0 和 LingBot-VLA 2.0 的可运行环境，17 天内完成高质量的 50 任务评测，比训练一个 6B 模型本身更容易成为项目瓶颈。
+
+我会优先选择 “Clean-only 数据高效后训练＋泛化能力优化” 作为参赛技术方向，真机 Demo 在主赛题完成之后再考虑。
+
+另外，你给的是论坛页，这次公开访问没有取得具体帖子内容；以上赛事要求核对了官方赛题介绍、赛制和模型仓库，但不代表论坛中的最新答疑已经全部覆盖。报名后应及时查看钉钉群规则更新。
+
+相关官方入口： [赛事介绍](https://tianchi.aliyun.com/competition/entrance/532514/introduction) · [赛题与数据](https://tianchi.aliyun.com/competition/entrance/532514/information) · [赛事论坛](https://tianchi.aliyun.com/competition/entrance/532514/forum)

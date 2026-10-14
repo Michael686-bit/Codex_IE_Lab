@@ -1,0 +1,68 @@
+{
+  "status": "pass",
+  "checked_at": 1791943255.5467076,
+  "gpu": "NVIDIA RTX PRO 5000 Blackwell",
+  "project": "/home/catl/文档/LSY_ssh/lingbo-competition",
+  "images": {
+    "lingbo-competition-model-train:be969b8": "sha256:5eacc8bb2a81954789b82ea3ae6614ce0755fd1c1ea46fda2ac3925f1705e90a",
+    "lingbo-competition-sim-pro5000:13c3c47-cu128": "sha256:55d81bf3194bc574ca1e928c585a4a876b42e3b63ab24c62e0f16a6a9f921733"
+  },
+  "cuda_and_flashattention_forward_backward": "pass",
+  "training_update": "pass",
+  "training_peak_allocated_mib": 14132.7626953125,
+  "policy_inference": {
+    "status": "pass",
+    "action_shape": [
+      50,
+      14
+    ],
+    "elapsed_seconds": 1.4893116099992767,
+    "source": "click_bell clean episode0 frame0",
+    "checkpoint": "robotwin50 best LoRA step4500, train-only global normalization",
+    "precision": "BF16",
+    "actions_executed": false,
+    "simulation_success_rate_measured": false,
+    "reply_keys": [
+      "action",
+      "server_timing"
+    ]
+  },
+  "scene": {
+    "status": "pass",
+    "scene": "click_bell demo_clean seed100000",
+    "state_shape": [
+      14
+    ],
+    "camera_shapes": {
+      "head_camera": [
+        240,
+        320,
+        3
+      ],
+      "left_camera": [
+        240,
+        320,
+        3
+      ],
+      "right_camera": [
+        240,
+        320,
+        3
+      ]
+    },
+    "elapsed_seconds": 20.471714015002362,
+    "policy_actions_executed": false,
+    "success_rate_measured": false
+  },
+  "closed_loop": {
+    "task": "click_bell",
+    "setting": "clean",
+    "seed": 100000,
+    "successes": 1,
+    "episodes": 1,
+    "video": "/home/catl/文档/LSY_ssh/lingbo-competition/outputs/evaluation/pro5000_best4500_smoke_clean_no_denoise/click_bell/episode0_success.mp4",
+    "oidn_errors": false
+  },
+  "runtime_config": "/home/catl/文档/LSY_ssh/lingbo-competition/configs/pro5000-runtime.json",
+  "scope": "environment acceptance; not formal competition score"
+}

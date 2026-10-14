@@ -1,0 +1,145 @@
+{
+  "status": "offline_checks_passed",
+  "tests": {
+    "status": "passed",
+    "tests_run": 27,
+    "failures": 0,
+    "errors": 0,
+    "time": "2026-10-09T10:49:18.127692+08:00",
+    "robot_commands_sent": false,
+    "scope": "Unit, local HTTP, simulated SDK and timeout/watchdog behavior"
+  },
+  "gpu_models": [
+    {
+      "status": "passed",
+      "model": "milk-v2-best",
+      "profile_id": "c22495726d456cbde1c04f9f8ddbdbff257a7be6e3711ff336feab307ea30121",
+      "shape": [
+        10,
+        8
+      ],
+      "first_action": [
+        1.4896283149719238,
+        -0.9572830200195312,
+        -0.4780958890914917,
+        -1.6316821575164795,
+        -0.5079701542854309,
+        -0.5834329128265381,
+        -0.01226083654910326,
+        0.0998615175485611
+      ],
+      "raw_first_action": [
+        1.4896283149719238,
+        -0.9572830200195312,
+        -0.4780958890914917,
+        -1.6316821575164795,
+        -0.5079701542854309,
+        -0.5834329128265381,
+        -0.01226083654910326,
+        0.0998615175485611
+      ],
+      "inference_ms": 462.03220800089184,
+      "ref": [
+        0,
+        488,
+        3,
+        "episode_000005"
+      ],
+      "robot_commands_sent": false,
+      "warm_http_roundtrip_ms": [
+        136.13460199849214,
+        131.01976498728618,
+        127.02493900724221
+      ],
+      "scope": "Existing validation observation re-encoded as JPEG; adapter and service smoke test, not task success"
+    },
+    {
+      "status": "passed",
+      "model": "milk-rgb-best",
+      "profile_id": "48fbf89f952a8e3991f98d065d74d33d35aea41b0773df8d86069758e6e3a74a",
+      "shape": [
+        50,
+        8
+      ],
+      "first_action": [
+        1.4632112979888916,
+        -0.9169018268585205,
+        -0.4483042061328888,
+        -1.654119610786438,
+        -0.549340009689331,
+        -0.5778013467788696,
+        0.06011989712715149,
+        0.07893340289592743
+      ],
+      "raw_first_action": [
+        1.4632112979888916,
+        -0.9169018268585205,
+        -0.4483042061328888,
+        -1.654119610786438,
+        -0.549340009689331,
+        -0.5778013467788696,
+        0.06011989712715149,
+        0.07893340289592743
+      ],
+      "inference_ms": 351.4693680044729,
+      "ref": [
+        0,
+        488,
+        3,
+        "episode_000005"
+      ],
+      "robot_commands_sent": false,
+      "scope": "Existing validation observation re-encoded as JPEG; adapter and service smoke test, not task success"
+    },
+    {
+      "status": "passed",
+      "model": "milk-depth-force-best",
+      "profile_id": "95be2e1cf085f5ea6787cfdb7f52b402b80191d837db9740ee7f9f60aff9735e",
+      "shape": [
+        50,
+        8
+      ],
+      "first_action": [
+        1.5268218517303467,
+        -0.9272078275680542,
+        -0.38788050413131714,
+        -1.7002356052398682,
+        -0.49952954053878784,
+        -0.5839014053344727,
+        0.027386441826820374,
+        0.09645401686429977
+      ],
+      "raw_first_action": [
+        1.5268218517303467,
+        -0.9272078275680542,
+        -0.38788050413131714,
+        -1.7002356052398682,
+        -0.49952954053878784,
+        -0.5839014053344727,
+        0.027386441826820374,
+        0.09645401686429977
+      ],
+      "inference_ms": 446.05772900104057,
+      "ref": [
+        0,
+        488,
+        3,
+        "episode_000005"
+      ],
+      "robot_commands_sent": false,
+      "warm_http_roundtrip_ms": [
+        139.23141700797714,
+        135.53082900762092,
+        137.43946400063578
+      ],
+      "scope": "Existing validation observation re-encoded as JPEG; adapter and service smoke test, not task success"
+    }
+  ],
+  "physical_robot_tested": false,
+  "remaining": [
+    "Deploy package alongside existing teleoperation helpers on G1 and verify live SDK observations in preview mode.",
+    "ACT, PI05 and LingBot need matching G1 task checkpoints; template interfaces have no real-weight acceptance yet.",
+    "LingBot-completed depth requires an online transform; raw substitution is rejected.",
+    "Synchronous full observation-to-command latency and actual physical stop behavior still need on-site measurement."
+  ]
+}

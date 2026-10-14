@@ -1,0 +1,39 @@
+{
+  "mode": "train",
+  "trainable_parameters": 3962167,
+  "lora_modules": 144,
+  "base_model": "robbyant/lingbot-vla-v2-6b",
+  "training_data": "click_bell clean",
+  "auxiliary_teacher_losses": false,
+  "native_queries_preserved": true,
+  "formal_training": false,
+  "training_attention": "flex_cached",
+  "replay_attention": "eager",
+  "input_resolution": [
+    256,
+    256
+  ],
+  "original_dataset_resolution": [
+    480,
+    640
+  ],
+  "pytorch_allocator_fraction": 0.76,
+  "status": "pass",
+  "updates": 2,
+  "metrics": [
+    {
+      "step": 1,
+      "loss": 0.18884766101837158,
+      "gradient_norm": 1.2193125486373901,
+      "seconds": 4.241441381018376
+    },
+    {
+      "step": 2,
+      "loss": 0.19386500120162964,
+      "gradient_norm": 0.7753819823265076,
+      "seconds": 0.23929915399639867
+    }
+  ],
+  "frozen_unchanged": true,
+  "peak_allocated_mib": 14120.826171875
+}

@@ -1,0 +1,84 @@
+lsy03@lsy03-System-Product-Name:~/文档/ChatGPT/VLA G1 项目$ bash g1_policy_control/run_pc.sh --diagnose-sdk --seconds 10 --sensor-mode model --read-images
+{"urdf_verified": true, "g1_minus_pc_ms": 118.540951, "runtime": "lerobot_runs/model_20261009_172039_670764/runtime.json"}
+READ-ONLY SDK direct probe: init() in main process; no model or multiprocessing
+{"elapsed_s": 0.0007389180100290105, "joint_count": 21, "age_ms": 24.898534, "timestamp_advanced": false, "controller": "left_arm_pvt_ctrl"}
+A new version 1.10.0 is available. Visit https://github.com/GalaxyGeneralRobotics/GalbotSDK/releases for upgrade instructions
+{"elapsed_s": 0.20382999400317203, "joint_count": 21, "age_ms": 33.745001, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 0.4070193939987803, "joint_count": 21, "age_ms": 18.733211, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 0.610254024999449, "joint_count": 21, "age_ms": 29.739041, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 0.8132072150037857, "joint_count": 21, "age_ms": 26.358247, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 1.0160492819995852, "joint_count": 21, "age_ms": 29.971664, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 1.2190363690024242, "joint_count": 21, "age_ms": 53.313802, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 1.4218243189970963, "joint_count": 21, "age_ms": 30.551631, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 1.6254029060073663, "joint_count": 21, "age_ms": 18.510424, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 1.8291416709980695, "joint_count": 21, "age_ms": 21.608, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 2.032400919997599, "joint_count": 21, "age_ms": 8.843591, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 2.2351587870070944, "joint_count": 21, "age_ms": 36.362265, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 2.4379341309977463, "joint_count": 21, "age_ms": 19.359007, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 2.6407721790019423, "joint_count": 21, "age_ms": 16.836888, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 2.8433328200044343, "joint_count": 21, "age_ms": 16.893892, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 3.046187102008844, "joint_count": 21, "age_ms": 12.510341, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 3.2491204120015027, "joint_count": 21, "age_ms": 7.609863, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 3.452605594007764, "joint_count": 21, "age_ms": 33.393738, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 3.6560906630038517, "joint_count": 21, "age_ms": 14.921168, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 3.8590162500040606, "joint_count": 21, "age_ms": 9.727138, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 4.061921326996526, "joint_count": 21, "age_ms": 20.737131, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 4.2651814520068, "joint_count": 21, "age_ms": 15.634073, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 4.468219771006261, "joint_count": 21, "age_ms": 5.993062, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 4.673326878008083, "joint_count": 21, "age_ms": 18.811687, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 4.87838136900973, "joint_count": 21, "age_ms": 15.673002, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 5.081471363999299, "joint_count": 21, "age_ms": 19.973986, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 5.284790375008015, "joint_count": 21, "age_ms": 15.446358, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 5.48952628900588, "joint_count": 21, "age_ms": 12.176546, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 5.69309170699853, "joint_count": 21, "age_ms": 15.177859, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 5.896224636002444, "joint_count": 21, "age_ms": 8.157498, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 6.099526874008006, "joint_count": 21, "age_ms": 22.125752, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 6.302658166998299, "joint_count": 21, "age_ms": 15.628042, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 6.505961684000795, "joint_count": 21, "age_ms": 12.574274, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 6.7091525690048, "joint_count": 21, "age_ms": 13.695384, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 6.912609673003317, "joint_count": 21, "age_ms": 9.111478, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 7.115952357009519, "joint_count": 21, "age_ms": 20.467723, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 7.319490523004788, "joint_count": 21, "age_ms": 15.868371, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 7.523153183996328, "joint_count": 21, "age_ms": 17.887209, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 7.726847065001493, "joint_count": 21, "age_ms": 14.296931, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 7.930902471009176, "joint_count": 21, "age_ms": 8.66332, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 8.13402440599748, "joint_count": 21, "age_ms": 17.033063, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 8.337933771996177, "joint_count": 21, "age_ms": 25.517141, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 8.542027119998238, "joint_count": 21, "age_ms": 21.094308, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 8.745652368001174, "joint_count": 21, "age_ms": 14.166794, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 8.950290424007108, "joint_count": 21, "age_ms": 12.453868, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 9.15388789899589, "joint_count": 21, "age_ms": 6.721439, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 9.357421134001925, "joint_count": 21, "age_ms": 13.358423, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 9.56195548400865, "joint_count": 21, "age_ms": 10.503393, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 9.764995527002611, "joint_count": 21, "age_ms": 21.50344, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 9.968620451007155, "joint_count": 21, "age_ms": 17.047819, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{
+  "mode": "read_only_direct_sdk",
+  "sdk_version": "1.9.1",
+  "sensor_mode": "model",
+  "cleanup_confirmed": false,
+  "read_images": true,
+  "unique_image_timestamps": {
+    "head_left": 151,
+    "left_wrist": 151,
+    "left_depth": 151,
+    "right_front": 100
+  },
+  "image_read_counts": {
+    "head_left": 492,
+    "left_wrist": 492,
+    "left_depth": 492,
+    "right_front": 492
+  },
+  "samples": 50,
+  "unique_joint_timestamps": 50,
+  "timestamp_advances": 49,
+  "first_age_ms": 24.898534,
+  "last_age_ms": 17.047819,
+  "error": null,
+  "feedback_samples_within_300ms": 50,
+  "motion_commands_sent": 0,
+  "scope": "Main-process get_joint_states() comparison; no model, no motion, no service changes"
+}
+SDK diagnosis: /home/lsy03/文档/ChatGPT/VLA G1 项目/lerobot_runs/model_20261009_172039_670764/sdk_diagnosis.json
+lsy03@lsy03-System-Product-Name:~/文档/ChatGPT/VLA G1 项目$

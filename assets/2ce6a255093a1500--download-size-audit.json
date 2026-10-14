@@ -1,0 +1,793 @@
+{
+  "units": "bytes; GB = 10^9 bytes; GiB = 2^30 bytes",
+  "dataset_source": "https://huggingface.co/datasets/TianxingChen/RoboTwin2.0/tree/main/dataset",
+  "model_source": "https://huggingface.co/robbyant/lingbot-vla-v2-6b/tree/main",
+  "model_revision": "11c703bf6a5c1f45b3b69168482da11fdbba53d7",
+  "clean_tasks_match_official_template": true,
+  "training_archive_bytes": 23780715316,
+  "model_repository_bytes": 28239981618,
+  "model_weight_bytes": 25503889124,
+  "simulation_asset_archive_bytes": 14928313317,
+  "training_archives": [
+    {
+      "type": "file",
+      "oid": "50d380b9c6a4dc5921a6ff9816ddc669c54e9d36",
+      "size": 298659710,
+      "lfs": {
+        "oid": "5554b6b30e37c6ed2f0bbc48079e8ad79d9512e9d4f910a5e71b0d5ad8fbe50e",
+        "size": 298659710,
+        "pointerSize": 134
+      },
+      "xetHash": "e2efedb79d7fd979d15c8a984af006e8a8a222e7ae1527c90048258cef4059c4",
+      "path": "dataset/adjust_bottle/aloha-agilex_clean_50.zip"
+    },
+    {
+      "type": "file",
+      "oid": "de2fc59a5d39eacebf3af218c9dc87a35c34a877",
+      "size": 229401324,
+      "lfs": {
+        "oid": "a135ad233bdcffff65fb636780f95ec34abc36ccf2bd0ff26ab07c9c464cc6af",
+        "size": 229401324,
+        "pointerSize": 134
+      },
+      "xetHash": "188cf574766b8b6b1cd74f2ca3c6aad60d4f6d98b279990efb6223c82354d758",
+      "path": "dataset/beat_block_hammer/aloha-agilex_clean_50.zip"
+    },
+    {
+      "type": "file",
+      "oid": "c38d14a14a50b3bafe2b7a7dd4c243def5a234d4",
+      "size": 927813070,
+      "lfs": {
+        "oid": "3752a61e42081ce64e3d3d76b5634836904bced29007b6cec8f3bfa12b4d6387",
+        "size": 927813070,
+        "pointerSize": 134
+      },
+      "xetHash": "dea80e35775339c356206325a0d0960e978967f0b30d60e5de8c1f4e741eafc2",
+      "path": "dataset/blocks_ranking_rgb/aloha-agilex_clean_50.zip"
+    },
+    {
+      "type": "file",
+      "oid": "9ed5f23eba346f08edea99ec36ae9b3e0f2597e1",
+      "size": 887903544,
+      "lfs": {
+        "oid": "da55764f0b61a0a4ba2ddb6b6cf8577b96246937bb3621d6d3eace8842ac51e8",
+        "size": 887903544,
+        "pointerSize": 134
+      },
+      "xetHash": "2a30fd8c0b6793957eecc933c061928b1b801925940e265b5f2a61ab7043961b",
+      "path": "dataset/blocks_ranking_size/aloha-agilex_clean_50.zip"
+    },
+    {
+      "type": "file",
+      "oid": "6372069a937908e44921707c3e571057fc795e86",
+      "size": 169381564,
+      "lfs": {
+        "oid": "65f6ca24635e9937f84b441ad66cf585a330e5664035a14dc98b58348a85dca1",
+        "size": 169381564,
+        "pointerSize": 134
+      },
+      "xetHash": "63103879c839219c9b11355ab990e58a1703074cfd6aa42caa6bd4c7b6e84a8e",
+      "path": "dataset/click_alarmclock/aloha-agilex_clean_50.zip"
+    },
+    {
+      "type": "file",
+      "oid": "5ea98278975fd81dc7271afa1e39970337519258",
+      "size": 139515715,
+      "lfs": {
+        "oid": "4b959d712791792a6dba9a97fa31d81cb4393acd39874470ee19070f8dbeb212",
+        "size": 139515715,
+        "pointerSize": 134
+      },
+      "xetHash": "a42ba341f6cf29047d9743964719d26acb89e774898e76486e9a84c0c4034ab5",
+      "path": "dataset/click_bell/aloha-agilex_clean_50.zip"
+    },
+    {
+      "type": "file",
+      "oid": "e59c50eba53f45a290ea39bbf18f057e9c4cbdf4",
+      "size": 436498168,
+      "lfs": {
+        "oid": "0b6725f856465167ad33efe94612294f2645bce86e8ad5734ab0e72f5b4824ab",
+        "size": 436498168,
+        "pointerSize": 134
+      },
+      "xetHash": "dcd53526481d356d60886e8aeafcefb37f203f379d04b326785a652da1b16921",
+      "path": "dataset/dump_bin_bigbin/aloha-agilex_clean_50.zip"
+    },
+    {
+      "type": "file",
+      "oid": "32ce160688dd39f9d74b167ff7977889837ab024",
+      "size": 222454332,
+      "lfs": {
+        "oid": "e35c8c68022ef07517d50418e7281ec054581aaf01fce65b2a64dc7642c78f9b",
+        "size": 222454332,
+        "pointerSize": 134
+      },
+      "xetHash": "69d6ebdf7a68397940256f494557507c815208c653f951b19cf9028c6330bee2",
+      "path": "dataset/grab_roller/aloha-agilex_clean_50.zip"
+    },
+    {
+      "type": "file",
+      "oid": "a0242d6e9f80c21aa4644c81a55b8f7492dfd952",
+      "size": 546033461,
+      "lfs": {
+        "oid": "7e9e7145c3f1a4093d7a24a44dc5c0b1af2ccc551c3bc8e50d7bdde824da4947",
+        "size": 546033461,
+        "pointerSize": 134
+      },
+      "xetHash": "ccab98d21033a78cec58a3a5c1659ac6c525b07c067e6e58f62da4920485d989",
+      "path": "dataset/handover_block/aloha-agilex_clean_50.zip"
+    },
+    {
+      "type": "file",
+      "oid": "7500f8dcf33f8a98aa303cc02cc79d194e270b34",
+      "size": 412495381,
+      "lfs": {
+        "oid": "7573da11ab08822daa3e94559081f327a887e8eb293e13cabd639a6064df70dc",
+        "size": 412495381,
+        "pointerSize": 134
+      },
+      "xetHash": "88d8c9d0721836d85c51be9ea094fa04107e345226fb2e27dbdf123fe825fb1a",
+      "path": "dataset/handover_mic/aloha-agilex_clean_50.zip"
+    },
+    {
+      "type": "file",
+      "oid": "55001e074a1dc2a6d1a9f72cd8ea50ffa76cd487",
+      "size": 735324234,
+      "lfs": {
+        "oid": "d854cbe1e70563417a05bffc9295e3b46e993287e43294f9575a5d4cbf8d2b09",
+        "size": 735324234,
+        "pointerSize": 134
+      },
+      "xetHash": "68b5ddb09ea3e268877b28160ac819cc6fee74f17b552eeb0a4f6e36003a2e5c",
+      "path": "dataset/hanging_mug/aloha-agilex_clean_50.zip"
+    },
+    {
+      "type": "file",
+      "oid": "cebb69f37cd5e77e13516feacaf87d4773174af7",
+      "size": 280277294,
+      "lfs": {
+        "oid": "17df35b8616e718bab334b0e518ab0bca68d8a1101554250f497262da2ec820f",
+        "size": 280277294,
+        "pointerSize": 134
+      },
+      "xetHash": "bf61c6a1a1e7c49549e32e8619bc1c75fa87dfc847988f8ceb99de54876b9bc0",
+      "path": "dataset/lift_pot/aloha-agilex_clean_50.zip"
+    },
+    {
+      "type": "file",
+      "oid": "62b3f5a1fcad7ea5ed8be2c467436e0b02411b77",
+      "size": 312581958,
+      "lfs": {
+        "oid": "fbf5231c5be71405364b09ed718cfca1e07a6509f6d1a801f5922516da0ade09",
+        "size": 312581958,
+        "pointerSize": 134
+      },
+      "xetHash": "cdfadfb4596651e96d450e767abda1db646bcbd86a33663c729996fd988049ad",
+      "path": "dataset/move_can_pot/aloha-agilex_clean_50.zip"
+    },
+    {
+      "type": "file",
+      "oid": "eb5562e89d88e7bb029687d261aadabf487ffe3f",
+      "size": 283878275,
+      "lfs": {
+        "oid": "1fe168f8d156ab1ece9cb3bdf71542a24821bcd620408a04fd822e87c24bfaf0",
+        "size": 283878275,
+        "pointerSize": 134
+      },
+      "xetHash": "dab497a23bf7d673819e501e82f93b6cd9e57c3a17dfbb6a8c2429f92ed2b59c",
+      "path": "dataset/move_pillbottle_pad/aloha-agilex_clean_50.zip"
+    },
+    {
+      "type": "file",
+      "oid": "42007a5789a623c41bc364902642511d28432a5f",
+      "size": 238198663,
+      "lfs": {
+        "oid": "911a26e767ed4fe2d5d5ff3a729d16a07ffd32ed0bb2fae23873fd8bb977600b",
+        "size": 238198663,
+        "pointerSize": 134
+      },
+      "xetHash": "ec1185bfa9869704c5b74fa223a2faf6cc91d0f1249fe2d0637dd9b4d192e662",
+      "path": "dataset/move_playingcard_away/aloha-agilex_clean_50.zip"
+    },
+    {
+      "type": "file",
+      "oid": "004a97eed7f5d595fdc48b7c386119ae262b90a8",
+      "size": 286330480,
+      "lfs": {
+        "oid": "775a4932559327339b0bb7fa8ff6fd136dbcf5c9e1d495a6e9f0334fbe494527",
+        "size": 286330480,
+        "pointerSize": 134
+      },
+      "xetHash": "6111b3aca9576bd7e0e49e4664956382d7778dd599efbf5e14bb1496f71d8f38",
+      "path": "dataset/move_stapler_pad/aloha-agilex_clean_50.zip"
+    },
+    {
+      "type": "file",
+      "oid": "88ca2c12b10d67066bb3640a185fa3634268b27c",
+      "size": 418553810,
+      "lfs": {
+        "oid": "89407cff2389d80d8b2df9a9228775ccbebb7cf470e22704b9655d887d0ec4a3",
+        "size": 418553810,
+        "pointerSize": 134
+      },
+      "xetHash": "87d3e13c7c071b5144d51176e525c2cc655b2ef8e11a951f19bfe4b57a56565d",
+      "path": "dataset/open_laptop/aloha-agilex_clean_50.zip"
+    },
+    {
+      "type": "file",
+      "oid": "dd420ca0863dc374d5e544110b3fccd5a28cc890",
+      "size": 982663234,
+      "lfs": {
+        "oid": "8cf14879560849a76738fb05a1842608fe79831efac625b81aa4c886edeff132",
+        "size": 982663234,
+        "pointerSize": 134
+      },
+      "xetHash": "cf78bfc487aec8c70c2f4d7c579d3d1f7f84eabbdcf5f838d2671d1ac8e6fec4",
+      "path": "dataset/open_microwave/aloha-agilex_clean_50.zip"
+    },
+    {
+      "type": "file",
+      "oid": "4c918a4893ca3b10878bcb63e21daffb052729cb",
+      "size": 327815050,
+      "lfs": {
+        "oid": "95e6527af4857cd6141047cadf39105ca6f917601ac26e08ff54d8d6589147a4",
+        "size": 327815050,
+        "pointerSize": 134
+      },
+      "xetHash": "29f7fb22c0534a730028f44bbb5a8406ceec34b7025f9872babb0ce46267e1ca",
+      "path": "dataset/pick_diverse_bottles/aloha-agilex_clean_50.zip"
+    },
+    {
+      "type": "file",
+      "oid": "29fa72e8ad5682649146c48123d6cfce1b142d40",
+      "size": 320663140,
+      "lfs": {
+        "oid": "39de6dfd41d020933bc209c5b60479eaf3e45a1c6a5ed7debf7be41af6c52a42",
+        "size": 320663140,
+        "pointerSize": 134
+      },
+      "xetHash": "e3ac1fc76876446693f3ea664a522c92e1b8df9b9bb616c106437c14b9302f21",
+      "path": "dataset/pick_dual_bottles/aloha-agilex_clean_50.zip"
+    },
+    {
+      "type": "file",
+      "oid": "4ecc0c741ca7ddb9fd36dab66600f9350e39a981",
+      "size": 311043880,
+      "lfs": {
+        "oid": "e7aad39683853ac31c605c7b8317576eaae8927c183e84d62428c29c9f44a465",
+        "size": 311043880,
+        "pointerSize": 134
+      },
+      "xetHash": "593b02ddcfdc886606463f655c83c52420bc2cfbdd4451edc1564dfcbe9efbd4",
+      "path": "dataset/place_a2b_left/aloha-agilex_clean_50.zip"
+    },
+    {
+      "type": "file",
+      "oid": "9fc280c7cbccfd6c7bf37b6d0ddf8d8c691faaa5",
+      "size": 302808692,
+      "lfs": {
+        "oid": "ecf2f3ee62973220b23c8cd8bf2c3301f1c116f745b3df615760fa378767eac2",
+        "size": 302808692,
+        "pointerSize": 134
+      },
+      "xetHash": "e0dde126542ab96dc6887a488af8c0f4d182e0639cb0da9d63e867961e55a753",
+      "path": "dataset/place_a2b_right/aloha-agilex_clean_50.zip"
+    },
+    {
+      "type": "file",
+      "oid": "4057560d5e99469cbfe4673084e2c7f6db739382",
+      "size": 650985692,
+      "lfs": {
+        "oid": "f5730c4cc254601dbfdbbc55fe91c8f62bcf3c52011939fe60b4f5bf9a4b156a",
+        "size": 650985692,
+        "pointerSize": 134
+      },
+      "xetHash": "de053e4200b3db54d7368488b7d9e6d4da01a35eae2ca530ea201fa6a80dba46",
+      "path": "dataset/place_bread_basket/aloha-agilex_clean_50.zip"
+    },
+    {
+      "type": "file",
+      "oid": "e325f9d3e62f6a2b2033c1dcbbdd34331945727c",
+      "size": 394729396,
+      "lfs": {
+        "oid": "f0570822c1286b7610a3bec1018f421548df0002c98b9392a0f809cf5245cfb3",
+        "size": 394729396,
+        "pointerSize": 134
+      },
+      "xetHash": "bb49fb84e561aec2fdf2c7a49e000c3df88784aede66384874cd4d389b188806",
+      "path": "dataset/place_bread_skillet/aloha-agilex_clean_50.zip"
+    },
+    {
+      "type": "file",
+      "oid": "8a388c3a59971e8292b7811962dce4489305fcd3",
+      "size": 689932579,
+      "lfs": {
+        "oid": "23ebeffcb668e55ef6d560a169c3a68032017a080a8228d97da57538844de0b1",
+        "size": 689932579,
+        "pointerSize": 134
+      },
+      "xetHash": "95e3f41423405eabde251a8df3aa9463ae76efaf07a71c715efec78633234c36",
+      "path": "dataset/place_burger_fries/aloha-agilex_clean_50.zip"
+    },
+    {
+      "type": "file",
+      "oid": "57f7a215cc49cf77d1471f3d4793839d3a5c4517",
+      "size": 679970104,
+      "lfs": {
+        "oid": "5972dcde682e9395f16c8fd407b8ab38627d5378ea2a01c4944b4b16436e1a4d",
+        "size": 679970104,
+        "pointerSize": 134
+      },
+      "xetHash": "6e9bb4b85debc49a3e82f67c90ffd8e4491c3a87e2bbf3362d54462c3cb6431d",
+      "path": "dataset/place_can_basket/aloha-agilex_clean_50.zip"
+    },
+    {
+      "type": "file",
+      "oid": "f898b5c2aa616fd98f2875e580024237747e10d1",
+      "size": 848656844,
+      "lfs": {
+        "oid": "e09f4b7278872e8785d55efc0613d4d2bc1e5655731dcc9e0a7d084288785f8f",
+        "size": 848656844,
+        "pointerSize": 134
+      },
+      "xetHash": "a25e850885f7372417cd93c2d67d6f86cf07309d952842cafe67155292d37b13",
+      "path": "dataset/place_cans_plasticbox/aloha-agilex_clean_50.zip"
+    },
+    {
+      "type": "file",
+      "oid": "df64ad286a2a074e8b0438b26fee4413171c593c",
+      "size": 286764000,
+      "lfs": {
+        "oid": "bb6a7191530f69f1bdc5d4b7d0643b89a4fbb769f0fbdc256ae1e0bc590f66f2",
+        "size": 286764000,
+        "pointerSize": 134
+      },
+      "xetHash": "52084d0aa0374c8a39491ac872738a51de0884d671332ebcd226c7d70663d29f",
+      "path": "dataset/place_container_plate/aloha-agilex_clean_50.zip"
+    },
+    {
+      "type": "file",
+      "oid": "a1bebf87cdb468a0c53eb24979f76e3ffde8bab4",
+      "size": 627881534,
+      "lfs": {
+        "oid": "0cdb0e5c03a30332c928cce1c430a21da8248adc01608706487709283168f703",
+        "size": 627881534,
+        "pointerSize": 134
+      },
+      "xetHash": "d24af6756cc9cb0add11255812c2c4266de21653b08458213a30a5fe26a71fc9",
+      "path": "dataset/place_dual_shoes/aloha-agilex_clean_50.zip"
+    },
+    {
+      "type": "file",
+      "oid": "75b9d65e799b0f4544c3b59184fbf21f0097a8dd",
+      "size": 300192138,
+      "lfs": {
+        "oid": "e397359cdc7b19cace5efd766fabe15e549c6722c9b90f854915198258c24fac",
+        "size": 300192138,
+        "pointerSize": 134
+      },
+      "xetHash": "ee0f548c503549521391c311b0f356be903a6688178becf25b35dc827af6eee6",
+      "path": "dataset/place_empty_cup/aloha-agilex_clean_50.zip"
+    },
+    {
+      "type": "file",
+      "oid": "2c6a46161f1043751a84ff159062d38bd71c9438",
+      "size": 314130763,
+      "lfs": {
+        "oid": "4b458e951402b50e8006ac10b63a8e3e5eec002e7b67e40b12ee30736b9694ff",
+        "size": 314130763,
+        "pointerSize": 134
+      },
+      "xetHash": "524df3c6848802e55b8648a77283806ec797ed63cef34f09c75e5ce2ff2123b4",
+      "path": "dataset/place_fan/aloha-agilex_clean_50.zip"
+    },
+    {
+      "type": "file",
+      "oid": "b07776dad391571f068b315a8e8943e135be532c",
+      "size": 264860850,
+      "lfs": {
+        "oid": "2e20e01f599e547579e82b5667a289111e523bb526951b60d06678f6a015696f",
+        "size": 264860850,
+        "pointerSize": 134
+      },
+      "xetHash": "e43ba860858c3705fcaa16942e7d689bda620839ab9be5d3e2d7957e6d989c18",
+      "path": "dataset/place_mouse_pad/aloha-agilex_clean_50.zip"
+    },
+    {
+      "type": "file",
+      "oid": "8a4d5c5f00630380d92253b0ec49c1e317202011",
+      "size": 635212427,
+      "lfs": {
+        "oid": "76518a717756589fc6787741e83dff24c6467e4506de8f7c5994008765f094d2",
+        "size": 635212427,
+        "pointerSize": 134
+      },
+      "xetHash": "0c151415265fdf6a76a8e08389eb0dfb09bc213ffcd5e764beb30e3c202114b0",
+      "path": "dataset/place_object_basket/aloha-agilex_clean_50.zip"
+    },
+    {
+      "type": "file",
+      "oid": "e63fdad319af066641223ce72d660c5332584f81",
+      "size": 287992209,
+      "lfs": {
+        "oid": "a4a1bcf424a36026a27a67dee7c544f1e4245bee4f4cfab939b730c94812da8a",
+        "size": 287992209,
+        "pointerSize": 134
+      },
+      "xetHash": "4938cbab9a7e5bd4f07bfa58afd4df51cd34025594919546f2acb18564f4cb44",
+      "path": "dataset/place_object_scale/aloha-agilex_clean_50.zip"
+    },
+    {
+      "type": "file",
+      "oid": "56ed4ced8c34a00e98da5df4746dbd930571cf9f",
+      "size": 283279837,
+      "lfs": {
+        "oid": "4fd24a6e29b63149b4c5c1598cb16dccb25514acb60666ec457bcd174ab60c3d",
+        "size": 283279837,
+        "pointerSize": 134
+      },
+      "xetHash": "0984bcb0e5f59b2595376c987e55c408cb45f5ac39ce93c267eabaf512668eb8",
+      "path": "dataset/place_object_stand/aloha-agilex_clean_50.zip"
+    },
+    {
+      "type": "file",
+      "oid": "b3457a2380d3c344fd0d0592a687a951b1d05e2f",
+      "size": 255542392,
+      "lfs": {
+        "oid": "745a98306a28fd5e112388489b1973c43b9bb9946233c7ab4f1e40c6d1b5d065",
+        "size": 255542392,
+        "pointerSize": 134
+      },
+      "xetHash": "cdb343eea2fe38dfcf28be6219addd8c15a677fec2b364f4f451ce09e97562dd",
+      "path": "dataset/place_phone_stand/aloha-agilex_clean_50.zip"
+    },
+    {
+      "type": "file",
+      "oid": "8b72e264f5b6a224608074cbebf4f75bb767de71",
+      "size": 397873892,
+      "lfs": {
+        "oid": "56389d47bc4df90a40a3f0648ef4f1e48beda1d15386ee03c8586227809e29db",
+        "size": 397873892,
+        "pointerSize": 134
+      },
+      "xetHash": "f7040e2709054c68f4f987c3b8868a2f57886f34fabb11d63e653f2087787229",
+      "path": "dataset/place_shoe/aloha-agilex_clean_50.zip"
+    },
+    {
+      "type": "file",
+      "oid": "7e3d13d6da3a4377343f0d6f7f8bd3234e3c2c8b",
+      "size": 213699969,
+      "lfs": {
+        "oid": "233188b276f97b7c40cbf5e9ce44b5ccc223946eaa9013ee0df8ab9303c376f4",
+        "size": 213699969,
+        "pointerSize": 134
+      },
+      "xetHash": "290e727e7bba7ab714c923ec78372de1117f41f5d338c8406b3a6622c05ee22c",
+      "path": "dataset/press_stapler/aloha-agilex_clean_50.zip"
+    },
+    {
+      "type": "file",
+      "oid": "2b49eaa1bf37936af144f464a3e0f53a5ee3a493",
+      "size": 1644675302,
+      "lfs": {
+        "oid": "ca3e2620150854946bf07c8fe5f4d148d77b0d988bc3586683ea3c185de57b23",
+        "size": 1644675302,
+        "pointerSize": 135
+      },
+      "xetHash": "dc19fbe1c97da60c9126ff4c9680b1820ec5b736bb5a9171dcd69c5ffb0a94b6",
+      "path": "dataset/put_bottles_dustbin/aloha-agilex_clean_50.zip"
+    },
+    {
+      "type": "file",
+      "oid": "7fedbcf496b84e70f3a6ba2d95e42c3660676655",
+      "size": 711701227,
+      "lfs": {
+        "oid": "07aae71f44276920851a57d19a5864df468c758ff17ed7256e501bf2107ed6e9",
+        "size": 711701227,
+        "pointerSize": 134
+      },
+      "xetHash": "7ff990cbf2fbf0da5109904b7787328032a72f1765717a2b69069146bed96f8b",
+      "path": "dataset/put_object_cabinet/aloha-agilex_clean_50.zip"
+    },
+    {
+      "type": "file",
+      "oid": "767e0b831624e544a602edaa747b802589d29db9",
+      "size": 276321846,
+      "lfs": {
+        "oid": "81d80f668fbd0af6f79428593bfc2a9d5f59445cfbf91009ff4cf8e5fd5898fa",
+        "size": 276321846,
+        "pointerSize": 134
+      },
+      "xetHash": "111732b7a144d9163e6c16d36bdddc2f0963f740d9896feb19cf5a947a108598",
+      "path": "dataset/rotate_qrcode/aloha-agilex_clean_50.zip"
+    },
+    {
+      "type": "file",
+      "oid": "e3b5236c5ea0e17ad2f081817461bc2b8b3a8cba",
+      "size": 417482645,
+      "lfs": {
+        "oid": "3908e3d03f08ceaf800a8754ed39abfe8186d1ef3797be9b0c58fe6010d613bf",
+        "size": 417482645,
+        "pointerSize": 134
+      },
+      "xetHash": "a4cf8e80f9a17fb4a3c38dd7ef61379b7eb51561ee6be45827316b457e96e73f",
+      "path": "dataset/scan_object/aloha-agilex_clean_50.zip"
+    },
+    {
+      "type": "file",
+      "oid": "8d80333669fae78290ca3d92ebb53a19bb43dbe9",
+      "size": 427689943,
+      "lfs": {
+        "oid": "dc5b09dc2c1cb932bd60722d4f8295b4d89d3703ae5e4020f17318e3da730e36",
+        "size": 427689943,
+        "pointerSize": 134
+      },
+      "xetHash": "52a02ab32bb7170541aa505d1541a9567a49f9b087a2c3a9006bfdc274b59772",
+      "path": "dataset/shake_bottle/aloha-agilex_clean_50.zip"
+    },
+    {
+      "type": "file",
+      "oid": "0c51b604755b265d55742cef9b10ba98e04e7b5d",
+      "size": 483114791,
+      "lfs": {
+        "oid": "605c099234ba3a1f471fce6d5339adc8ff816e926cac2ce782579af1f3ab555d",
+        "size": 483114791,
+        "pointerSize": 134
+      },
+      "xetHash": "70db07d490689a7e0d6c12423e61147cbda33b3a1ecd47a0f0d0e217cf7f7006",
+      "path": "dataset/shake_bottle_horizontally/aloha-agilex_clean_50.zip"
+    },
+    {
+      "type": "file",
+      "oid": "91855a67bb2b2f8ee111d6d198add594bf4c8540",
+      "size": 950507257,
+      "lfs": {
+        "oid": "d8b3de21979e1a89b1f8b4dbc9d95ea9622e66c1db62c4d6736be996976b0a90",
+        "size": 950507257,
+        "pointerSize": 134
+      },
+      "xetHash": "47905739f2bef8c8d077c2018507ee01ef5b0cc77d5c522709a9187817a4ba25",
+      "path": "dataset/stack_blocks_three/aloha-agilex_clean_50.zip"
+    },
+    {
+      "type": "file",
+      "oid": "9aac5460d24c6f93f6b2fd83dec1859a7530cf8c",
+      "size": 601634751,
+      "lfs": {
+        "oid": "49f0a3581142be4934b5e25cd9e315432315a069ba26e65318417ed691389ecd",
+        "size": 601634751,
+        "pointerSize": 134
+      },
+      "xetHash": "60eaf51bfb637b6fde7a6d4bed5fecc092e08aba1c5d038c38c075fd1e486bb3",
+      "path": "dataset/stack_blocks_two/aloha-agilex_clean_50.zip"
+    },
+    {
+      "type": "file",
+      "oid": "526125e65bd1eac0e9c55cdf44579f075ceb0950",
+      "size": 1018303066,
+      "lfs": {
+        "oid": "46ecebaaa1828c7f4c941a6761324cf445c7a66e91161d6fbf13c43a214c26ea",
+        "size": 1018303066,
+        "pointerSize": 135
+      },
+      "xetHash": "6e25dbdf7234528b47c232db2075a650baa02840c102d30c741d65bd32c94ec2",
+      "path": "dataset/stack_bowls_three/aloha-agilex_clean_50.zip"
+    },
+    {
+      "type": "file",
+      "oid": "e376add2ad1f5ea7f52ce26e2707863de8e56a61",
+      "size": 622234585,
+      "lfs": {
+        "oid": "e3fbb78738e195387a14e80cdfd7270db4743271a951400be2a21e8ecddb9f9a",
+        "size": 622234585,
+        "pointerSize": 134
+      },
+      "xetHash": "2e97d9113b883dd538a1dd6006bd774fa9bb0cd657249a1f9755ba79f230633d",
+      "path": "dataset/stack_bowls_two/aloha-agilex_clean_50.zip"
+    },
+    {
+      "type": "file",
+      "oid": "7878c75a4552441d49f64bc62716a37787018fdd",
+      "size": 264588288,
+      "lfs": {
+        "oid": "f23fa7187f4d95f0498a9cd273acead4bcca6ecefc98c602d0ba9b2995520141",
+        "size": 264588288,
+        "pointerSize": 134
+      },
+      "xetHash": "dc3d92595b2c132776f44be9033c2bd7b08b4cbdef0bb539b677ef4e2f2bd2f6",
+      "path": "dataset/stamp_seal/aloha-agilex_clean_50.zip"
+    },
+    {
+      "type": "file",
+      "oid": "bdcf322fd740b0dc4a9ef6c34e6923e19c5a1b25",
+      "size": 160462010,
+      "lfs": {
+        "oid": "e3af06581e4a89c0ef438453e6e3b2449aaee3d5f1ee812ac6866ced0e735cc4",
+        "size": 160462010,
+        "pointerSize": 134
+      },
+      "xetHash": "d114d98b450cacc3e846fdd5d24d27b5f7468aa5179acff56be6a9d971463060",
+      "path": "dataset/turn_switch/aloha-agilex_clean_50.zip"
+    }
+  ],
+  "model_files": [
+    {
+      "rfilename": ".gitattributes",
+      "blobId": "1f652735ddd4e0c09ef277872f717c63c8b58f24",
+      "size": 1797
+    },
+    {
+      "rfilename": "README.md",
+      "blobId": "be90760c49c132460b18fed4e9327ef326a697ee",
+      "size": 2227
+    },
+    {
+      "rfilename": "added_tokens.json",
+      "blobId": "b54f9135e44c1e81047e8d05cb027af8bc039eed",
+      "size": 707
+    },
+    {
+      "rfilename": "assets/lingbot_vla2_framework.png",
+      "blobId": "bc5c298f2a9560b31634917e3c58e936fe365990",
+      "size": 1178043,
+      "lfs": {
+        "sha256": "1dbbf05745216032dad897f6f5e59d02153325e1d39cfc01329b85e2ea2e41e7",
+        "size": 1178043,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "assets/lingbot_vla2_loss_mse_comparison.png",
+      "blobId": "dbc01ac444b9c3d29d829e116ade9391ea45bbb3",
+      "size": 445663,
+      "lfs": {
+        "sha256": "95108dee5d57842d18be27bf92424123b823449567f3d60cefbbac59379ffedd",
+        "size": 445663,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "assets/lingbot_vla2_vis_distillation.png",
+      "blobId": "76fb54d614747dc6a998776da324ec2b0b4cb79c",
+      "size": 2317830,
+      "lfs": {
+        "sha256": "40ce6810ea47ab944de030551efd7753fb2ed84bd7477d3668ba0fab84c3277e",
+        "size": 2317830,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "config.json",
+      "blobId": "69c8d69fb69ea6ef5740c524ade3ffdd1409b4c4",
+      "size": 31
+    },
+    {
+      "rfilename": "depth/model.pt",
+      "blobId": "1e42b4fd865b57dd468f48b16a59cc686ec8a1ea",
+      "size": 1316220456,
+      "lfs": {
+        "sha256": "d70c5191eab853d436763b35d40ff99d13534b4bcd43e4d02823656968159e5b",
+        "size": 1316220456,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "dino_video/config.yaml",
+      "blobId": "9223ab64a8e0081cd46446381dc4e6dce3a23080",
+      "size": 1388
+    },
+    {
+      "rfilename": "dino_video/teacher_step_10000.pth",
+      "blobId": "7465d0f90206db65e1923464843c36a15744b2d2",
+      "size": 1401509792,
+      "lfs": {
+        "sha256": "086285efd8d65bc66e96b363807c4010ee5c790b7452b765edaa23837a63705b",
+        "size": 1401509792,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "model-00001-of-00006.safetensors",
+      "blobId": "bd0dd34a5269a5ecf1050c81078b1121afb5e720",
+      "size": 4987151072,
+      "lfs": {
+        "sha256": "4afb52b06a13df8b738a156ae5c8196d3bfe6b3ca931cecbd701e44cb9674e45",
+        "size": 4987151072,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "model-00002-of-00006.safetensors",
+      "blobId": "766a2175137142a250fc88417caa28b1600876e9",
+      "size": 4985113408,
+      "lfs": {
+        "sha256": "ec131afa26a340db94c0dba8ec00e990be5f3d842ce6532070f0c8e26a067501",
+        "size": 4985113408,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "model-00003-of-00006.safetensors",
+      "blobId": "1d987bd9214fa3602e892c8b0d3b5b10903cbbc5",
+      "size": 4928593216,
+      "lfs": {
+        "sha256": "7dccb068ca66c11fa514476d64661eeead56e2e80e1c0572c9ea82aa0d9ecf27",
+        "size": 4928593216,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "model-00004-of-00006.safetensors",
+      "blobId": "7053f6eb8b983e3acb41b2c868b5c33206505f0f",
+      "size": 4990740540,
+      "lfs": {
+        "sha256": "1c2cb78066b69ae11255db851df95071e2cd69a3a4bc5020b3fd3b13b17819fb",
+        "size": 4990740540,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "model-00005-of-00006.safetensors",
+      "blobId": "798fdaf6a23ac885c2fc67a0e42042b1448ba79c",
+      "size": 4990095864,
+      "lfs": {
+        "sha256": "8fe36bf1f4f617869954bdfa1ad12e16abd8b0235a5fa99c88d571d4cddf4a17",
+        "size": 4990095864,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "model-00006-of-00006.safetensors",
+      "blobId": "cc95a23d9636fbb6e9d7400008cc3cd1a765b34b",
+      "size": 622195024,
+      "lfs": {
+        "sha256": "3cf613d592dad64b1e2a1b1bb34a6f556a7fa05eacdb9972d73e0ea4882555a0",
+        "size": 622195024,
+        "pointerSize": 134
+      }
+    },
+    {
+      "rfilename": "model.safetensors.index.json",
+      "blobId": "ecd860c133b9b5c77072202d56e3ab38b8e74326",
+      "size": 207389
+    },
+    {
+      "rfilename": "preprocessor_config.json",
+      "blobId": "2fa6553554f69b4e3a6b742a75264ff9dff90ad0",
+      "size": 782
+    },
+    {
+      "rfilename": "special_tokens_map.json",
+      "blobId": "ac23c0aaa2434523c494330aeb79c58395378103",
+      "size": 613
+    },
+    {
+      "rfilename": "tokenizer.json",
+      "blobId": "cd71f61a15a522601badb3dc960d800d9cb3766c",
+      "size": 11422654,
+      "lfs": {
+        "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+        "size": 11422654,
+        "pointerSize": 133
+      }
+    },
+    {
+      "rfilename": "tokenizer_config.json",
+      "blobId": "35d32052b3bc1bc9493b6cc3d8b0f22acf33dc83",
+      "size": 5472
+    },
+    {
+      "rfilename": "video_preprocessor_config.json",
+      "blobId": "e32b1d90356f74457edbfca27aa1e121dab7cdc7",
+      "size": 817
+    },
+    {
+      "rfilename": "vocab.json",
+      "blobId": "4783fe10ac3adce15ac8f358ef5462739852c569",
+      "size": 2776833
+    }
+  ],
+  "uncompressed_and_conversion_bytes": "not_yet_measured",
+  "download_started": false,
+  "combined_download_bytes": 66949010251
+}

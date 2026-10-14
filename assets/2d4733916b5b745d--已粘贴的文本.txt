@@ -1,0 +1,306 @@
+给我看一下，现在是什么问题？
+
+16:18
+现在卡在传感器输入的新鲜度，预览还没通过。
+
+SDK 能正常启动，模型能推理，延迟约 147 ms。
+7 次推理仅 2 次通过，另有 90 次输入拒收。
+已确认缓存逻辑有遗漏：允许重复返回历史匹配帧，没有要求时间戳推进。SDK 源流是否也冻结，目前还不能确定。
+右前环视仍有超时效问题，SDK 退出清理也未确认完成。
+session_completed: true 只表示跑满了 10 秒，不表示数据合格。全部运动命令计数仍为零。
+
+我已修正缓存：只返回更新且未过期的配对，并补充 SDK 原始时间戳诊断。55 项离线测试通过，需要真机复测确认效果：
+
+bash g1_policy_control/run_pc.sh --mode preview --channels arm --seconds 10
+继续保持只读预览；下一份日志可以区分缓存滞留和 SDK 源流冻结。
+
+
+已编辑 4 个文件
++32
+-4
+g1_policy_control/pairing.py
+g1_policy_control/
+pairing.py
++4
+-1
+g1_policy_control/report.py
+g1_policy_control/
+report.py
++3
+-0
+g1_policy_control/robot.py
+g1_policy_control/
+robot.py
++12
+-3
+
+再显示 1 个文件
+16:22
+
+lsy03@lsy03-System-Product-Name:~/文档/ChatGPT/VLA G1 项目$ bash g1_policy_control/…
+看下现在还有问题没？
+
+16:29
+还有问题，这次卡在关节反馈接收，模型尚未运行。
+
+日志显示：
+
+SDK 初始化成功，约 4.1 秒。
+返回了 21 个关节，但反馈年龄从 2.16 秒增长到 16.79 秒，时间戳基本没有更新。
+时钟偏移约 104 ms，已经补偿，无法解释这种持续增长。
+所有运动请求计数仍为 0。SDK 升级提示只是通知，不是本次错误证据。
+因此这次预览未通过，不能进入运动阶段。现在需要区分：PC SDK 本身接收不到新反馈，还是多进程运行方式影响了接收。
+
+我已准备一个不经过模型和多进程控制框架的只读对照入口，请运行：
+
+bash g1_policy_control/run_pc.sh --diagnose-sdk --seconds 10
+它只读取关节反馈，不发送运动、停止或控制器修改命令。重点看 timestamp_advanced 是否持续为 true，以及 unique_joint_timestamps 是否增长。采样 10 秒，初始化和清理另计。
+
+
+已编辑 4 个文件
++130
+-7
+g1_policy_control/diagnose_sdk.py
+g1_policy_control/
+diagnose_sdk.py
++69
+-0
+g1_policy_control/run_pc.sh
+g1_policy_control/
+run_pc.sh
++13
+-4
+g1_policy_control/tests/test_sdk_diagnosis.py
+g1_policy_control/tests/
+test_sdk_diagnosis.py
++43
+-0
+
+再显示 1 个文件
+16:46
+"left_arm_pvt_ctrl"}
+{"elapsed_s": 4.405773339996813, "joint_count": 21, "age_ms": 19.843595, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 4.606049080990488, "joint_count": 21, "age_ms": 9.555879, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 4.806356655986747, "joint_count": 21, "age_ms": 26.796655, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 5.006578259999515, "joint_count": 21, "age_ms": 19.65638, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 5.206906022998737, "joint_count": 21, "age_ms": 10.047445, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 5.407222898997134, "joint_count": 21, "age_ms": 20.193715, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 5.607541101999232, "joint_count": 21, "age_ms": 20.510512, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 5.807874413992977, "joint_count": 21, "age_ms": 8.140987, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 6.008077933991444, "joint_count": 21, "age_ms": 36.815095, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 6.208295860997168, "joint_count": 21, "age_ms": 8.881934, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 6.408615651991568, "joint_count": 21, "age_ms": 17.223909, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 6.608834146987647, "joint_count": 21, "age_ms": 26.809812, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 6.809073179989355, "joint_count": 21, "age_ms": 20.401637, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 7.0093402349884855, "joint_count": 21, "age_ms": 16.577204, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 7.209537488000933, "joint_count": 21, "age_ms": 8.615921, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 7.409763850999298, "joint_count": 21, "age_ms": 17.625682, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 7.609992390993284, "joint_count": 21, "age_ms": 10.377135, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 7.810297695992631, "joint_count": 21, "age_ms": 20.461781, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 8.010588341989205, "joint_count": 21, "age_ms": 14.597935, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 8.210780958994292, "joint_count": 21, "age_ms": 6.454076, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 8.411031591997016, "joint_count": 21, "age_ms": 14.326728, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 8.61140689199965, "joint_count": 21, "age_ms": 24.823881, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 8.811709114001133, "joint_count": 21, "age_ms": 8.349446, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 9.012015930988127, "joint_count": 21, "age_ms": 18.624963, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 9.212237196989008, "joint_count": 21, "age_ms": 21.839281, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 9.412480926999706, "joint_count": 21, "age_ms": 16.147524, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 9.612735845992574, "joint_count": 21, "age_ms": 13.098852, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 9.813023454000358, "joint_count": 21, "age_ms": 22.649905, "timestamp_advanced": true, "controller": "left_arm_pvt_ctrl"}
+{
+  "mode": "read_only_direct_sdk",
+  "sdk_version": "1.9.1",
+  "samples": 50,
+  "unique_joint_timestamps": 50,
+  "timestamp_advances": 49,
+  "first_age_ms": 17.957601,
+  "last_age_ms": 22.649905,
+  "error": null,
+  "motion_commands_sent": 0,
+  "scope": "Main-process get_joint_states() comparison; no model, no motion, no service changes"
+}
+SDK diagnosis: /home/lsy03/文档/ChatGPT/VLA G1 项目/lerobot_runs/model_20261009_164749_652769/sdk_diagnosis.json
+lsy03@lsy03-System-Product-Name:~/文档/ChatGPT/VLA G1 项目$
+
+运行完了，给我评估一下
+
+…
+16:49
+这次只读关节反馈对照通过了。 完整日志结果：
+
+指标	结果
+采样数／不同时间戳数	50／50
+相邻采样时间戳推进	49／49
+反馈年龄最小／中位／最大	5.44／18.56／73.06 ms
+超过 300 ms 的次数	0
+控制器	left_arm_pvt_ctrl
+运动命令	0
+说明 PC 主进程通过 SDK 能持续收到新关节反馈，机器人反馈链路并非一直冻结。
+
+但还不能直接认定是多进程导致：这次同时改变了运行方式和SDK 初始化传感器集合。相机、深度及完整模型控制链路仍未通过验收。
+
+我已准备下一项单变量对照：保持主进程读取，只改为模型预览使用的相机集合。请运行：
+
+bash g1_policy_control/run_pc.sh --diagnose-sdk --seconds 10 --sensor-mode model
+仍然只读，不发送运动命令。如果这项也稳定，再检查子进程运行方式；如果冻结，就重点排查显式传感器初始化路径。
+
+
+已编辑 3 个文件
++29
+-6
+g1_policy_control/diagnose_sdk.py
+g1_policy_control/
+diagnose_sdk.py
++14
+-3
+g1_policy_control/run_pc.sh
+g1_policy_control/
+run_pc.sh
++1
+-0
+g1_policy_control/tests/test_sdk_diagnosis.py
+g1_policy_control/tests/
+test_sdk_diagnosis.py
++14
+-3
+16:52
+": "left_arm_pvt_ctrl"}
+{"elapsed_s": 9.212480329995742, "joint_count": 21, "age_ms": 5411.995117, "timestamp_advanced": false, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 9.412707979994593, "joint_count": 21, "age_ms": 5612.223964, "timestamp_advanced": false, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 9.612937090001651, "joint_count": 21, "age_ms": 5812.45197, "timestamp_advanced": false, "controller": "left_arm_pvt_ctrl"}
+{"elapsed_s": 9.813131503004115, "joint_count": 21, "age_ms": 6012.647278, "timestamp_advanced": false, "controller": "left_arm_pvt_ctrl"}
+{
+  "mode": "read_only_direct_sdk",
+  "sdk_version": "1.9.1",
+  "sensor_mode": "model",
+  "cleanup_confirmed": false,
+  "samples": 50,
+  "unique_joint_timestamps": 21,
+  "timestamp_advances": 20,
+  "first_age_ms": 51.008559,
+  "last_age_ms": 6012.647278,
+  "error": null,
+  "motion_commands_sent": 0,
+  "scope": "Main-process get_joint_states() comparison; no model, no motion, no service changes"
+}
+SDK diagnosis: /home/lsy03/文档/ChatGPT/VLA G1 项目/lerobot_runs/model_20261009_171304_669146/sdk_diagnosis.json
+lsy03@lsy03-System-Product-Name:~/文档/ChatGPT/VLA G1 项目$
+
+看看如何
+
+…
+17:13
+已处理 3分钟 34秒
+这个对照很关键：仍在主进程读取，仅换成模型的传感器集合后，关节反馈也停止更新了。因此多进程不是触发冻结的必要条件。我会核对冻结开始的时间和清理结果，再判断下一项该怎样缩小范围。
+
+
+正在思考
+正在思考
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+v2 是加了 lingbot depth 的 还是没有？
+
+10:51
+不是。v2 没有加入 LingBot-Depth。
+
+v2 使用的是：
+
+三路 RGB
+14 维状态：7 个关节＋夹爪＋6 维原始腕力
+原始深度图，只做缩放、有效掩码和输入编码
+10 步、约 1 秒动作预测
+v2 自定义关节残差和夹爪头
+训练说明里明确写着“深度仍为原始深度……没有加入 LingBot-Depth”：v2 README。
+
+加入 LingBot-Depth 的是另一条多模态实验线：
+
+配置中的 depth_processing.method 是 lingbot_full_frame
+使用 LingBot-Depth v0.5
+模型名是 milk-lingbot-depth-best
+不是当前的 milk-v2-best
+所以当前模型关系是：
+
+milk-v2-best
+= v2 + 原始深度 + 原始六维力
+
+milk-lingbot-depth-best
+= SmolVLA 多模态版本 + LingBot-Depth 补全深度 + 原始六维力
+当前用于实机首轮验证的 milk-v2-best 是原始深度版。 LingBot-Depth 版本还需要先解决在线深度补全处理，不能把原始深度直接替代进去。
+
+10:51
+当前模型控制G1程序是否已经完成，可以继续下一步真机验证了？
+
+13:42
+结论：控制程序的离线框架已经完成，可以进入下一步真机验证；但还没有完成“真机运动控制验收”，所以第一步只能做实时预览，暂时不要直接启动自主执行。
+
+目前已完成：
+
+27 项单元、HTTP、模拟 SDK、超时和停止路径测试全部通过。
+milk-v2-best、RGB 基线、原始深度/力模型都已完成 GPU 离线推理。
+G1 端控制路径已复用遥操作脚本的：
+publish_target
+read_full
+URDF 限位
+G1 进程锁
+左夹爪 set_gripper_command
+默认模式不会发送任何运动命令。
+尚未完成：
+
+G1 上的实时相机、深度、六维力和关节反馈验证。
+真机端到端时延和实际重规划频率测量。
+实际停止、夹爪保持和异常断链行为验证。
+当前路径没有碰撞检查。
+milk-v2-best 仍有离线预测越界样本，越界会被程序拒绝，不会自动裁剪执行。
+验收记录也明确标记：
+
+physical_robot_tested: false
+robot_commands_sent: false
+因此下一步可以这样进行：
+
+在 GPU 主机启动 milk-v2-best 模型服务。
+在 G1 上运行默认预览模式：
+python3 -m g1_policy_control run \
+  --server http://模型服务器地址:8091 \
+  --seconds 30
+检查实时预览是否稳定：
+
+三路 RGB 是否正常；
+左腕 RGB 和深度时间戳是否匹配；
+六维力格式是否正确；
+反馈年龄是否小于限制；
+模型输出是否经常被限位或时效检查拒绝；
+推理和往返延迟是否可接受。
+预览通过后，再进行非常短的低速执行：
+
+python3 -m g1_policy_control run \
+  --server http://模型服务器地址:8091 \
+  --seconds 5 \
+  --execute
+程序会先完成预检，显示 READY，必须现场输入 ARM 才会开始发命令。第一次建议只验证接近动作和夹爪开合，不直接跑完整抓取放置任务。
+
+所以准确地说：现在可以继续真机验证，但当前阶段是“真机实时预览 → 低速单步运动 → 短程闭环”，还不是直接进行完整自主任务。 મુખ્ય候选继续使用 milk-v2-best；LingBot-Depth 版本的在线深度处理还没有完成，暂时不要切换过去。
+
+13:43

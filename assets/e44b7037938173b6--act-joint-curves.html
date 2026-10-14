@@ -1,0 +1,129 @@
+<div id="act-joint-curves" class="act-joint-viz">
+  <h2>ACT 左臂关节预测与参考动作</h2>
+  <div class="joint-subtitle">验证窗口 195：验证集内关节总运动量最大的代表窗口；单位为 rad，预测跨度为未来 1 秒。</div>
+  <div class="joint-legend" aria-label="曲线说明">
+    <span><i class="legend-line reference"></i>参考动作</span>
+    <span><i class="legend-line step1500"></i>1500 步模型</span>
+    <span><i class="legend-line step2000"></i>2000 步模型</span>
+  </div>
+  <div class="joint-grid">
+    <figure data-joint="J1"><figcaption>J1</figcaption><svg role="img" aria-label="J1参考动作与两个模型预测"></svg></figure>
+    <figure data-joint="J2"><figcaption>J2</figcaption><svg role="img" aria-label="J2参考动作与两个模型预测"></svg></figure>
+    <figure data-joint="J3"><figcaption>J3</figcaption><svg role="img" aria-label="J3参考动作与两个模型预测"></svg></figure>
+    <figure data-joint="J4"><figcaption>J4</figcaption><svg role="img" aria-label="J4参考动作与两个模型预测"></svg></figure>
+    <figure data-joint="J5"><figcaption>J5</figcaption><svg role="img" aria-label="J5参考动作与两个模型预测"></svg></figure>
+    <figure data-joint="J6"><figcaption>J6</figcaption><svg role="img" aria-label="J6参考动作与两个模型预测"></svg></figure>
+    <figure data-joint="J7"><figcaption>J7</figcaption><svg role="img" aria-label="J7参考动作与两个模型预测"></svg></figure>
+  </div>
+  <p class="joint-caption">参考曲线是 SDK 已接受的绝对关节目标；预测曲线是模型输出，未做关节限位裁剪。横轴刻度为相对未来时间。</p>
+</div>
+<style>
+  #act-joint-curves { color: var(--foreground); font-family: inherit; width: 100%; }
+  #act-joint-curves h2 { margin: 0 0 4px; font-size: 16px; font-weight: 500; }
+  #act-joint-curves .joint-subtitle, #act-joint-curves .joint-caption { color: var(--muted-foreground); font-size: 12px; }
+  #act-joint-curves .joint-subtitle { margin: 0 0 10px; }
+  #act-joint-curves .joint-caption { margin: 12px 0 0; }
+  #act-joint-curves .joint-legend { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; margin: 0 0 14px; color: var(--muted-foreground); font-size: 12px; }
+  #act-joint-curves .joint-legend span { display: inline-flex; align-items: center; gap: 6px; }
+  #act-joint-curves .legend-line { width: 24px; height: 0; display: inline-block; border-top: 2px solid var(--viz-series-1); }
+  #act-joint-curves .legend-line.reference { border-top-style: dashed; border-color: var(--viz-series-1); }
+  #act-joint-curves .legend-line.step1500 { border-color: var(--viz-series-2); }
+  #act-joint-curves .legend-line.step2000 { border-color: var(--viz-series-3); }
+  #act-joint-curves .joint-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 24px; }
+  #act-joint-curves figure { margin: 0; min-width: 0; }
+  #act-joint-curves figcaption { margin: 0 0 3px; color: var(--foreground); font-size: 13px; font-weight: 500; }
+  #act-joint-curves svg { display: block; width: 100%; height: auto; overflow: visible; }
+  @media (max-width: 620px) { #act-joint-curves .joint-grid { grid-template-columns: 1fr; gap: 18px; } }
+</style>
+<script>
+(() => {
+  const root = document.getElementById('act-joint-curves');
+  if (!root) return;
+  const values = {
+    J1: {
+      reference: [1.0467, 0.9741, 0.8741, 0.7991, 0.7991, 0.7411, 0.6787, 0.6155, 0.5502, 0.4879],
+      step1500: [0.8689, 0.8589, 0.8237, 0.8065, 0.7641, 0.7582, 0.7596, 0.7566, 0.7357, 0.7352],
+      step2000: [0.9697, 0.9592, 0.9346, 0.8916, 0.8632, 0.8273, 0.8247, 0.8201, 0.7784, 0.7613]
+    },
+    J2: {
+      reference: [-0.8024, -0.7962, -0.7969, -0.8046, -0.8046, -0.8237, -0.856, -0.9005, -0.9518, -1.0023],
+      step1500: [-0.7787, -0.7863, -0.8136, -0.8275, -0.8672, -0.8731, -0.8738, -0.8757, -0.8844, -0.8927],
+      step2000: [-0.775, -0.7813, -0.7964, -0.827, -0.8467, -0.8752, -0.8797, -0.8837, -0.9028, -0.9166]
+    },
+    J3: {
+      reference: [-0.0032, 0.0245, 0.0757, 0.1229, 0.1229, 0.1731, 0.2314, 0.2897, 0.351, 0.4031],
+      step1500: [0.1151, 0.1231, 0.1528, 0.1681, 0.209, 0.2179, 0.2143, 0.2193, 0.2353, 0.2449],
+      step2000: [0.0232, 0.032, 0.0509, 0.0885, 0.1131, 0.1475, 0.1491, 0.1557, 0.1907, 0.2087]
+    },
+    J4: {
+      reference: [-1.6702, -1.675, -1.6682, -1.6573, -1.6573, -1.6421, -1.6282, -1.5998, -1.5698, -1.5304],
+      step1500: [-1.6694, -1.6656, -1.6449, -1.6355, -1.6063, -1.6025, -1.6009, -1.6012, -1.5927, -1.5848],
+      step2000: [-1.6924, -1.6902, -1.6798, -1.659, -1.6455, -1.6244, -1.621, -1.6191, -1.5925, -1.5836]
+    },
+    J5: {
+      reference: [-0.6367, -0.6601, -0.6853, -0.7019, -0.7019, -0.7117, -0.7203, -0.7274, -0.7334, -0.738],
+      step1500: [-0.689, -0.6906, -0.693, -0.6941, -0.6949, -0.6949, -0.6948, -0.6929, -0.6939, -0.6902],
+      step2000: [-0.6646, -0.6678, -0.6707, -0.675, -0.6769, -0.679, -0.6786, -0.6771, -0.677, -0.6747]
+    },
+    J6: {
+      reference: [-0.3806, -0.359, -0.3485, -0.3397, -0.3397, -0.3324, -0.3196, -0.3094, -0.2987, -0.2941],
+      step1500: [-0.3249, -0.3233, -0.3217, -0.3195, -0.3176, -0.3178, -0.3174, -0.3179, -0.3224, -0.3214],
+      step2000: [-0.3734, -0.3719, -0.3706, -0.3673, -0.3657, -0.3644, -0.3642, -0.3639, -0.3698, -0.3702]
+    },
+    J7: {
+      reference: [0.3504, 0.349, 0.3464, 0.3466, 0.3466, 0.3472, 0.3438, 0.3368, 0.3301, 0.3308],
+      step1500: [0.3107, 0.3123, 0.3218, 0.3249, 0.3358, 0.3372, 0.3385, 0.3403, 0.3318, 0.3326],
+      step2000: [0.3307, 0.3323, 0.3389, 0.3474, 0.3535, 0.362, 0.3636, 0.3667, 0.3601, 0.3618]
+    }
+  };
+  const colors = { reference: 'var(--viz-series-1)', step1500: 'var(--viz-series-2)', step2000: 'var(--viz-series-3)' };
+  const ns = 'http://www.w3.org/2000/svg';
+  const make = (tag, attrs, parent) => {
+    const node = document.createElementNS(ns, tag);
+    Object.entries(attrs || {}).forEach(([key, value]) => node.setAttribute(key, value));
+    if (parent) parent.appendChild(node);
+    return node;
+  };
+  const text = (value, attrs, parent) => { const node = make('text', attrs, parent); node.textContent = value; return node; };
+  const draw = (figure, data) => {
+    const svg = figure.querySelector('svg');
+    const width = Math.max(320, figure.clientWidth || 520);
+    const height = 245;
+    const margin = { top: 10, right: 14, bottom: 42, left: 58 };
+    const innerW = width - margin.left - margin.right;
+    const innerH = height - margin.top - margin.bottom;
+    const all = Object.values(data).flat();
+    const rawMin = Math.min(...all);
+    const rawMax = Math.max(...all);
+    const pad = Math.max(0.03, (rawMax - rawMin) * 0.1);
+    const yMin = rawMin - pad;
+    const yMax = rawMax + pad;
+    const x = i => margin.left + i * innerW / 9;
+    const y = value => margin.top + (yMax - value) * innerH / (yMax - yMin);
+    svg.replaceChildren();
+    svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
+    svg.setAttribute('preserveAspectRatio', 'none');
+    make('rect', { x: margin.left, y: margin.top, width: innerW, height: innerH, 'data-chart-frame': 'true', fill: 'none', stroke: 'var(--border)', 'stroke-width': 1 }, svg);
+    const ticks = [yMin, (yMin + yMax) / 2, yMax];
+    ticks.forEach(value => {
+      make('line', { x1: margin.left, x2: margin.left + innerW, y1: y(value), y2: y(value), stroke: 'var(--border)', 'stroke-width': 1, opacity: 0.6 }, svg);
+      text(value.toFixed(2), { x: margin.left - 8, y: y(value) + 4, 'text-anchor': 'end', fill: 'var(--muted-foreground)', 'font-size': 12 }, svg);
+    });
+    [0, 0.5, 0.9].forEach((value, index) => {
+      const xx = x(Math.round(value * 10));
+      make('line', { x1: xx, x2: xx, y1: margin.top + innerH, y2: margin.top + innerH + 4, stroke: 'var(--border)', 'stroke-width': 1 }, svg);
+      text(value.toFixed(1), { x: xx, y: margin.top + innerH + 18, 'text-anchor': index === 0 ? 'start' : index === 2 ? 'end' : 'middle', fill: 'var(--muted-foreground)', 'font-size': 12 }, svg);
+    });
+    text('未来时间 (s)', { x: margin.left + innerW / 2, y: height - 5, 'text-anchor': 'middle', fill: 'var(--foreground)', 'font-size': 12, class: 'axis-title' }, svg);
+    text('rad', { x: 15, y: margin.top + innerH / 2, transform: `rotate(-90 15 ${margin.top + innerH / 2})`, 'text-anchor': 'middle', fill: 'var(--foreground)', 'font-size': 12, class: 'axis-title' }, svg);
+    Object.entries(data).forEach(([name, series]) => {
+      const d = series.map((value, i) => `${i ? 'L' : 'M'}${x(i).toFixed(2)},${y(value).toFixed(2)}`).join(' ');
+      make('path', { d, fill: 'none', stroke: colors[name], 'stroke-width': name === 'reference' ? 2.4 : 2, 'stroke-dasharray': name === 'reference' ? '6 4' : 'none', 'vector-effect': 'non-scaling-stroke' }, svg);
+    });
+  };
+  const redraw = () => root.querySelectorAll('figure').forEach(figure => draw(figure, values[figure.dataset.joint]));
+  redraw();
+  if (window.ResizeObserver) new ResizeObserver(redraw).observe(root);
+  window.addEventListener('openai:set_globals', redraw);
+})();
+</script>

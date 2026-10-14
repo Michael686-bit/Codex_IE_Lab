@@ -1,0 +1,64 @@
+{
+  "batches": [
+    {
+      "batch": "milk_left_20260930",
+      "status": "passed",
+      "errors": [],
+      "hashed_files": 10,
+      "frames": 1941,
+      "episodes": 11,
+      "state_dim": 8,
+      "action_dim": 8,
+      "nominal_clock_frames": 59,
+      "core_temporal_valid_frames": 1627,
+      "depth_temporal_valid_frames": 1875,
+      "rgb_inputs": [
+        "observation.images.head_left_camera",
+        "observation.images.left_arm_camera",
+        "observation.images.right_front_surround_camera"
+      ],
+      "depth_pixel_inputs": []
+    },
+    {
+      "batch": "milk_left_20260930_145800",
+      "status": "passed",
+      "errors": [],
+      "hashed_files": 10,
+      "frames": 2262,
+      "episodes": 11,
+      "state_dim": 8,
+      "action_dim": 8,
+      "nominal_clock_frames": 140,
+      "core_temporal_valid_frames": 1857,
+      "depth_temporal_valid_frames": 2103,
+      "rgb_inputs": [
+        "observation.images.head_left_camera",
+        "observation.images.left_arm_camera",
+        "observation.images.right_front_surround_camera"
+      ],
+      "depth_pixel_inputs": []
+    },
+    {
+      "batch": "milk_left_20260930_154454",
+      "status": "passed",
+      "errors": [],
+      "hashed_files": 10,
+      "frames": 2981,
+      "episodes": 17,
+      "state_dim": 8,
+      "action_dim": 8,
+      "nominal_clock_frames": 216,
+      "core_temporal_valid_frames": 2316,
+      "depth_temporal_valid_frames": 2744,
+      "rgb_inputs": [
+        "observation.images.head_left_camera",
+        "observation.images.left_arm_camera",
+        "observation.images.right_front_surround_camera"
+      ],
+      "depth_pixel_inputs": []
+    }
+  ],
+  "depth_used_as_model_input": false,
+  "depth_quality_mask_part_of_current_training_filter": false,
+  "scope": "All delivered file hashes and numeric frame/source provenance; RGB videos were hash checked, not fully re-decoded in this pass."
+}

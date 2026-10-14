@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "python": "3.11.13",
+  "versions": {
+    "lerobot": "0.4.4",
+    "torch": "2.8.0+cu128",
+    "transformers": "4.53.3",
+    "tokenizers": "0.21.4",
+    "peft": "0.18.0",
+    "sentencepiece": "0.2.1",
+    "scipy": "1.14.1"
+  },
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "cuda": "12.8",
+  "cuda_bf16_matmul": true,
+  "pi05_import": true,
+  "transformers_pi05_patch": true,
+  "peft_import": true,
+  "expert_only_config": true,
+  "training_executed": false
+}

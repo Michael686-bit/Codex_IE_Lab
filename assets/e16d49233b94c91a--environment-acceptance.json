@@ -1,0 +1,130 @@
+{
+  "status": "first_stage_environment_accepted",
+  "updated_at": 1791635577.8132591,
+  "checks": {
+    "assets-preparation.json": "complete",
+    "click-bell-conversion.json": "complete",
+    "click-bell-preprocessing-check.json": "pass",
+    "pretrained-policy-observation-check.json": "pass",
+    "click-bell-scene-check.json": "pass",
+    "click-bell-lora-train.json": "pass",
+    "click-bell-lora-verify.json": "pass"
+  },
+  "resources": {
+    "files": 76,
+    "verified_bytes": 66949010251
+  },
+  "single_task_dataset": {
+    "task": "click_bell",
+    "setting": "clean",
+    "episodes": 50,
+    "frames": 3855,
+    "format": "LeRobot v3.0"
+  },
+  "smoke_evaluations": [
+    {
+      "checkpoint": "pretrained",
+      "setting": "clean",
+      "attempts": 1,
+      "successes": 0,
+      "result": "outputs/evaluation/pretrained_smoke_clean/click_bell/_result.txt",
+      "video": "outputs/evaluation/pretrained_smoke_clean/click_bell/episode0_failure.mp4"
+    },
+    {
+      "checkpoint": "pretrained",
+      "setting": "randomized",
+      "attempts": 1,
+      "successes": 0,
+      "result": "outputs/evaluation/pretrained_smoke_randomized/click_bell/_result.txt",
+      "video": "outputs/evaluation/pretrained_smoke_randomized/click_bell/episode0_failure.mp4"
+    },
+    {
+      "checkpoint": "lora",
+      "setting": "clean",
+      "attempts": 1,
+      "successes": 0,
+      "result": "outputs/evaluation/lora_smoke_clean/click_bell/_result.txt",
+      "video": "outputs/evaluation/lora_smoke_clean/click_bell/episode0_failure.mp4"
+    }
+  ],
+  "official_submission_results": false,
+  "training_acceptance": {
+    "mode": "train",
+    "trainable_parameters": 3962167,
+    "lora_modules": 144,
+    "base_model": "robbyant/lingbot-vla-v2-6b",
+    "training_data": "click_bell clean",
+    "auxiliary_teacher_losses": false,
+    "native_queries_preserved": true,
+    "formal_training": false,
+    "training_attention": "flex_cached",
+    "replay_attention": "eager",
+    "input_resolution": [
+      256,
+      256
+    ],
+    "original_dataset_resolution": [
+      480,
+      640
+    ],
+    "pytorch_allocator_fraction": 0.76,
+    "status": "pass",
+    "updates": 2,
+    "metrics": [
+      {
+        "step": 1,
+        "loss": 0.18884766101837158,
+        "gradient_norm": 1.2193125486373901,
+        "seconds": 4.241441381018376
+      },
+      {
+        "step": 2,
+        "loss": 0.19386500120162964,
+        "gradient_norm": 0.7753819823265076,
+        "seconds": 0.23929915399639867
+      }
+    ],
+    "frozen_unchanged": true,
+    "peak_allocated_mib": 14120.826171875
+  },
+  "checkpoint_replay": {
+    "mode": "verify",
+    "trainable_parameters": 3962167,
+    "lora_modules": 144,
+    "base_model": "robbyant/lingbot-vla-v2-6b",
+    "training_data": "click_bell clean",
+    "auxiliary_teacher_losses": false,
+    "native_queries_preserved": true,
+    "formal_training": false,
+    "training_attention": "flex_cached",
+    "replay_attention": "eager",
+    "input_resolution": [
+      256,
+      256
+    ],
+    "original_dataset_resolution": [
+      480,
+      640
+    ],
+    "pytorch_allocator_fraction": 0.76,
+    "status": "pass",
+    "restored_step": 2,
+    "optimizer_restored": true,
+    "reload_max_error": 0.0,
+    "peak_allocated_mib": 12452.33935546875
+  },
+  "checkpoint_sha256": "a40f12ffa0017cb5dd7182b4e7238c71ef92280f46333e332967135f5e47d591",
+  "limits": [
+    "Only click_bell was converted and evaluated; remaining 49 tasks are still archives.",
+    "Training acceptance used 256x256 input; 640x480 backward did not pass the shared-GPU memory budget.",
+    "Only action-expert LoRA and state/action projections were updated; auxiliary teacher losses were disabled.",
+    "BF16 and single-episode smoke results are not the official FP32/100-episode benchmark.",
+    "Two optimizer updates validate the pipeline, not task performance."
+  ],
+  "next_steps": [
+    "Convert all 50 clean tasks and compute training normalization",
+    "Choose reproducible training/validation setup",
+    "Train a genuine baseline",
+    "Evaluate larger clean and randomized samples before full official evaluation"
+  ]
+}

@@ -1,0 +1,76 @@
+DK stop: robot_construct_begin (0.03s)
+SDK stop: robot_construct_complete (0.03s)
+SDK stop: sdk_init_begin (0.03s)
+A new version 1.10.0 is available. Visit https://github.com/GalaxyGeneralRobotics/GalbotSDK/releases for upgrade instructions
+SDK stop: sdk_init_complete (3.10s)
+SDK stop: feedback_wait_begin (3.10s)
+SDK stop: backend_ready (3.10s)
+SDK stop: metadata_feedback_read (3.10s)
+READY closed-loop | arm | measured=[0.7198924422264099, -1.0014978647232056, -0.6029989719390869, -1.1600958108901978, -0.15001802146434784, -0.2740306556224823, 0.18942232429981232, 0.05] | prediction=[0.7178028225898743, -1.0116139650344849, -0.5924683213233948, -1.159752368927002, -0.14807957410812378, -0.27978935837745667, 0.19627082347869873, 0.0006827788893133402] | limited=[0.7178028225898743, -1.0044978647232055, -0.5999989719390869, -1.159752368927002, -0.14807957410812378, -0.2770306556224823, 0.19242232429981232, 0.05]
+已通过 --execute 启用运动；预检完成后直接开始。输入 STOP 并回车或 Ctrl+C 停止。
+closed-loop elapsed=0.2s accepted=1 rejected=0 commands=1 latency=153.9ms target=[0.7174433469772339, -1.0045223026275634, -0.5999989719390869, -1.159937858581543, -0.14845699071884155, -0.27698350834846497, 0.19244676220417023, 0.05]
+closed-loop elapsed=0.7s accepted=5 rejected=0 commands=5 latency=140.0ms target=[0.7146016359329224, -1.0119153308868407, -0.588411922454834, -1.1585350036621094, -0.14764048159122467, -0.28184249997138977, 0.19823237240314484, 0.05]
+closed-loop elapsed=1.3s accepted=9 rejected=0 commands=9 latency=142.9ms target=[0.7149568409919739, -1.0149347829818725, -0.5792314958572388, -1.1580674648284912, -0.14798910915851593, -0.2851916301250458, 0.2046527862548828, 0.05]
+closed-loop elapsed=1.9s accepted=13 rejected=0 commands=13 latency=148.8ms target=[0.7175366282463074, -1.0171879577636718, -0.5747983407974243, -1.1593551635742188, -0.14739011228084564, -0.2885706174373627, 0.21330853283405304, 0.05]
+closed-loop elapsed=2.5s accepted=17 rejected=0 commands=17 latency=139.4ms target=[0.7191465497016907, -1.0210939693450927, -0.5707945775985718, -1.1609022617340088, -0.1482929289340973, -0.29238343238830566, 0.2210872620344162, 0.05]
+closed-loop elapsed=3.1s accepted=21 rejected=0 commands=21 latency=139.4ms target=[0.7209539413452148, -1.0237801122665404, -0.567989821434021, -1.1624178886413574, -0.14824266731739044, -0.29571250557899476, 0.23016716539859772, 0.05]
+closed-loop elapsed=3.7s accepted=25 rejected=0 commands=25 latency=140.1ms target=[0.7235103249549866, -1.0259373235702514, -0.5662881088256836, -1.1661930084228516, -0.1474703699350357, -0.29825371980667115, 0.23737313330173493, 0.05]
+closed-loop elapsed=4.3s accepted=28 rejected=0 commands=28 latency=140.9ms target=[0.7255938649177551, -1.0307787704467772, -0.5611603212356567, -1.1679165363311768, -0.14662423729896545, -0.3023517179489136, 0.24482742428779602, 0.05]
+closed-loop elapsed=4.9s accepted=32 rejected=0 commands=32 latency=173.0ms target=[0.7258554100990295, -1.03355908870697, -0.5585702610015869, -1.169992446899414, -0.1466853767633438, -0.3060186553001404, 0.25384509563446045, 0.05]
+closed-loop elapsed=5.5s accepted=36 rejected=0 commands=36 latency=171.7ms target=[0.7275885343551636, -1.0361474800109862, -0.5558859658241272, -1.1717426776885986, -0.14547893404960632, -0.3090192675590515, 0.26338592171669006, 0.05]
+closed-loop elapsed=6.1s accepted=40 rejected=0 commands=40 latency=169.5ms target=[0.7293345332145691, -1.039309983253479, -0.5522190284729004, -1.1772408485412598, -0.1460675597190857, -0.31229836225509644, 0.27277833223342896, 0.05]
+STOPPED: Cumulative joint displacement budget exceeded
+{
+  "log": "/home/lsy03/文档/ChatGPT/VLA G1 项目/lerobot_runs/model_20261010_091700_829217/events.jsonl",
+  "mode": "closed-loop",
+  "channels": "arm",
+  "model": "milk-v2-best",
+  "execute_requested": true,
+  "sdk_attempts": 42,
+  "arm_command_attempts": 42,
+  "gripper_command_attempts": 0,
+  "acknowledged_commands": 42,
+  "prediction_rejections": 1,
+  "abort_count": 1,
+  "input_rejections": 0,
+  "cleanup_unconfirmed": 0,
+  "cleanup_confirmed": 2,
+  "session_completed": false,
+  "stationary_verified": true,
+  "stop_acknowledged": true,
+  "roundtrip_ms_median": 143.84067749779206,
+  "roundtrip_ms_max": 289.5785399887245,
+  "event_counts": {
+    "start": 1,
+    "sdk_startup_stage": 42,
+    "preflight_observation_timing": 1,
+    "preflight_inference_timing": 1,
+    "preflight": 1,
+    "observation": 43,
+    "sdk_rpc_attempt": 42,
+    "arm_command_attempt": 42,
+    "command": 42,
+    "accepted_prediction": 42,
+    "inference": 42,
+    "prediction_rejected": 1,
+    "stop": 3,
+    "supervisor_stop": 1,
+    "stationary": 1,
+    "sdk_cleanup_confirmed": 2,
+    "session_summary": 1,
+    "abort": 1
+  },
+  "final_displacement_deg": [
+    0.667401689464041,
+    -2.032493542266544,
+    2.8522972426810798,
+    -1.3266003217348965,
+    0.09890028540813839,
+    -2.10520090598133,
+    4.906699470484086
+  ],
+  "final_gripper_change_mm": 0.0,
+  "scope": "Evidence from this run only; SDK acknowledgement does not establish task success"
+}
+Run report: /home/lsy03/文档/ChatGPT/VLA G1 项目/lerobot_runs/model_20261010_091700_829217/report.json
+lsy03@lsy03-System-Product-Name:~/文档/ChatGPT/VLA G1 项目$

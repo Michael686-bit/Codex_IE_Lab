@@ -1,0 +1,11 @@
+请执行S1项目中新67帧数据的ICP评估。先阅读 /home/lsy03/文档/ChatGPT/S1/AGENTS.md、README.md、docs/knowledge_base.md、docs/opencode_session_knowledge.md，以及 experiments/20261009_icp_new67_plan/PLAN.md 和 READINESS.json。
+
+源数据 /home/lsy03/Lsy03_document/FDP 优化/interactive_rgbd_capture/ 为67帧，当前只完成FDP测试，未找到ICP测试记录。最新目标沿用 experiments/20260930_fdp_new67_roi3/merged/code/cases_manifest.json：N07/N08/N09=ROI5/5/6。不得用旧mask或旧目标4090结果。
+
+目标是在S1 Orin独立Docker完整测ICP，并与已有4090和Orin FDP A0/A2/A3同帧同目标比较。主标准为相机系逐轴位置及中心≤10mm、180°箱体对称后的roll/pitch/yaw各≤3°；至少64/67帧联合通过，335次正式至少319次完整ICP≤1秒。没有独立真值，成绩只能称相对4090一致性。
+
+当前ICP推荐基线ICP6D-RF-2T在 experiments/20260929_icp6d_v2_regression/package/。新67帧全部缺逐帧base_from_camera和缓存LingBot，历史K身份/配准也有待验证。先查找同采集匹配的历史TF；如无法恢复，新增明确标记的ICP6D-CAM-2T/provided_depth相机初始化适配，仅用输入RGB-D/mask/model估计方向和候选。不能把单位矩阵或当前机器人腕姿当历史外参，不能用4090位姿反推初始化，不能原样调用旧Z向上初始化后声称原版验收。保持内核/门限和双线程；相机适配的全部开销计入完整调用。没有缓存LingBot时不假装测试RF的LingBot回退。
+
+按PLAN进行预定14帧小批28次、冻结代码，再67帧首轮1+正式5共402次主配置调用。记录失败且继续完整批次。评分程序独立读取已有4090 pose_camera_from_4317_semantic和Orin FDP A0/A2/A3归档，统一3°与对称规则，不直接抄旧4°报告。主输入是提供的uint16毫米深度，精确转float32米，不新生成LingBot。
+
+成果存 experiments/20261009_icp_new67/：版本及输入清单、逐次/逐帧CSV和JSON、完整报告、三方RGB图层页、审计及任务清理记录。先交固定版本全量结果，再讨论新优化；不覆盖旧32帧/67帧FDP归档。只处理冻结数据、任务文件和独立实验容器，不调用SDK/运动/相机，不修改生产服务。按PLAN中的镜像、6CPU/8GiB和SSH技能执行并校验收尾。

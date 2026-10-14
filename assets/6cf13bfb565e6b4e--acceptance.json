@@ -1,0 +1,115 @@
+{
+  "status": "offline_deployment_passed",
+  "verified_at": "2026-10-08T15:27:46.653958+08:00",
+  "image": "lerobot-pi05:0.4.4-cu128",
+  "image_id": "sha256:1ace0ac08840dd22278810c7ae2f18bd72ab816fa2a1fff5b0fd606fee4184f6",
+  "environment": {
+    "status": "passed",
+    "python": "3.11.13",
+    "versions": {
+      "lerobot": "0.4.4",
+      "torch": "2.8.0+cu128",
+      "transformers": "4.53.3",
+      "tokenizers": "0.21.4",
+      "peft": "0.18.0",
+      "sentencepiece": "0.2.1",
+      "scipy": "1.14.1"
+    },
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "cuda": "12.8",
+    "cuda_bf16_matmul": true,
+    "pi05_import": true,
+    "transformers_pi05_patch": true,
+    "peft_import": true,
+    "expert_only_config": true,
+    "training_executed": false
+  },
+  "tokenizer": {
+    "status": "passed",
+    "source": "gs://big_vision/paligemma_tokenizer.model",
+    "source_sha256": "8986bb4f423f07f8c7f70d0dbe3526fb2316056c17bae71b1ea975e77a168fc6",
+    "sentencepiece_vocab_size": 257152,
+    "hf_vocab_size": 257152,
+    "bos_id": 2,
+    "eos_id": 1,
+    "pad_id": 0,
+    "token_id_parity_samples": 2
+  },
+  "inference": {
+    "status": "passed",
+    "model": "pi05_base",
+    "revision": "22c30e5b34f9e7ab738b1b34fc2fc5ecfe2d28f0",
+    "model_sha256": "0eb11ca9587678c1d2ef8cf32807c29f8ce53a2bfdfc1aa4a4c96f16fca59b0f",
+    "strict_reload": true,
+    "missing_keys": 0,
+    "unexpected_keys": 0,
+    "tied_weight_aliases": {
+      "model.paligemma_with_expert.paligemma.model.language_model.embed_tokens.weight": "model.paligemma_with_expert.paligemma.lm_head.weight"
+    },
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "versions": {
+      "lerobot": "0.4.4",
+      "torch": "2.8.0+cu128",
+      "transformers": "4.53.3",
+      "peft": "0.18.0"
+    },
+    "precision": "bfloat16 with selected float32 layers",
+    "compile_model": false,
+    "synthetic": true,
+    "batch_size": 1,
+    "rgb_cameras": [
+      "head_left_camera",
+      "left_arm_camera",
+      "right_front_surround_camera"
+    ],
+    "image_shape": [
+      3,
+      224,
+      224
+    ],
+    "state_dim": 8,
+    "output_shape": [
+      1,
+      50,
+      8
+    ],
+    "num_inference_steps": 10,
+    "load_s": 24.968974288000027,
+    "first_inference_ms": 274.15023000139627,
+    "warmup_iterations": 2,
+    "iterations": 5,
+    "mean_ms": 120.52582819960662,
+    "median_ms": 119.4668299976911,
+    "min_ms": 117.4024339998141,
+    "max_ms": 124.21673700009705,
+    "samples_ms": [
+      119.4668299976911,
+      124.21673700009705,
+      122.64194900126313,
+      117.4024339998141,
+      118.90119099916774
+    ],
+    "latency_scope": "CPU synthetic input preprocessing + full action chunk + CPU postprocessing; excludes camera/network/robot",
+    "inference_peak_allocated_mib": 7292.55859375,
+    "inference_peak_reserved_mib": 7410.0,
+    "normalization": "synthetic unit quantiles; not G1 calibration",
+    "training_executed": false,
+    "robot_control_executed": false,
+    "g1_task_success_rate": null,
+    "real_robot_ready": false,
+    "validation_scripts_sha256": {
+      "benchmark.py": "27a5d3871ebd1ea932184e900431a7b824f46e04162f73c27ca7ca0ecf57073f",
+      "checkpoint.py": "1e33daba69ca61f6162ecc25571ce63f13ac202ef6746d6f32080eaa9ca99336"
+    },
+    "peft": {
+      "adapter_construction": "passed",
+      "inference": "passed",
+      "rank": 8,
+      "trainable_parameters": 643584,
+      "inference_ms": 143.16295000026003,
+      "training_memory_verified": false
+    }
+  },
+  "training_verified": false,
+  "real_robot_verified": false
+}

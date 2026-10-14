@@ -1,0 +1,151 @@
+{
+  "conclusion": "Suitable for a preliminary offline pretrained SmolVLA fine-tuning experiment after explicit quality-aware sampling, episode-level train/validation split, dataset integration and 8D preprocessing configuration. Not certified for robot deployment.",
+  "data": {
+    "total_episodes": 39,
+    "total_frames": 7184,
+    "clock_flagged_frames": 415,
+    "strict_temporal_valid_frames": 5800,
+    "whole_clock_valid_episodes": 14,
+    "eligible_unpadded_start_counts": {
+      "16": 5348,
+      "50": 4296
+    },
+    "definition": "Valid current observation and action, full future valid action chunk within same episode. Original indices retained; no training sampler created; sensor physical synchronization and online causality not certified."
+  },
+  "model_compatibility": {
+    "status": "passed",
+    "scope": "Real data forward/loss and inference only; no backward, optimizer step, weight save, or robot call. Does not establish training convergence or task success.",
+    "lerobot_version": "0.4.4",
+    "torch_version": "2.8.0+cu128",
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "batch_size": 1,
+    "chunk_size": 50,
+    "max_action_dim": 32,
+    "input_features": {
+      "observation.state": [
+        8
+      ],
+      "observation.images.head_left_camera": [
+        3,
+        960,
+        1280
+      ],
+      "observation.images.left_arm_camera": [
+        3,
+        720,
+        1280
+      ],
+      "observation.images.right_front_surround_camera": [
+        3,
+        960,
+        1280
+      ]
+    },
+    "results": [
+      {
+        "bundle": "milk_left_20260930",
+        "sample_index": 1,
+        "input_state_shape": [
+          1,
+          8
+        ],
+        "input_action_shape": [
+          1,
+          50,
+          8
+        ],
+        "predicted_action_shape": [
+          1,
+          50,
+          8
+        ],
+        "loss_finite": true,
+        "forward_loss_diagnostic_only": 1.5008748769760132,
+        "elapsed_s": 0.5006498680450022
+      },
+      {
+        "bundle": "milk_left_20260930_145800",
+        "sample_index": 1,
+        "input_state_shape": [
+          1,
+          8
+        ],
+        "input_action_shape": [
+          1,
+          50,
+          8
+        ],
+        "predicted_action_shape": [
+          1,
+          50,
+          8
+        ],
+        "loss_finite": true,
+        "forward_loss_diagnostic_only": 0.7732492089271545,
+        "elapsed_s": 0.1803380020428449
+      },
+      {
+        "bundle": "milk_left_20260930_154454",
+        "sample_index": 1,
+        "input_state_shape": [
+          1,
+          8
+        ],
+        "input_action_shape": [
+          1,
+          50,
+          8
+        ],
+        "predicted_action_shape": [
+          1,
+          50,
+          8
+        ],
+        "loss_finite": true,
+        "forward_loss_diagnostic_only": 0.13004250824451447,
+        "elapsed_s": 0.18004221888259053
+      }
+    ],
+    "peak_allocated_mib": 1253.08251953125,
+    "peak_reserved_mib": 1310.0,
+    "forward_checks_custom_quality_fields": false,
+    "forward_pad_key_actions_id_pad": true,
+    "forward_pad_key_action_is_pad": false,
+    "normalization_note": "Each diagnostic batch uses its own dataset statistics. A combined experiment needs statistics fitted only on the chosen training split."
+  },
+  "training_started": false,
+  "optimizer_steps_executed": 0,
+  "dataset_or_originals_modified": false,
+  "remaining_preparation": [
+    "Use explicit camera feature mapping and 8D state/action; fit normalization using training episodes only.",
+    "Integrate the three separate v3 datasets with session-aware episode identity; do not naively concatenate metadata or reuse the six-dimensional synthetic smoke config.",
+    "Preserve original timelines; select valid current observation/action anchors with complete within-episode future action windows. Proposed eligibility counts are before validation split.",
+    "Split by complete original episode, e.g. 32 training and 7 held-out episodes distributed across all three sessions; do not random-split correlated frames.",
+    "First check overfitting and loss on a few clean episodes, then expand to selected training episodes; stop or revise if validation degrades."
+  ],
+  "code_observation": {
+    "runtime_version": "LeRobot 0.4.4 Docker",
+    "quality_flags_automatically_applied": false,
+    "forward_padding_key": "actions_id_pad",
+    "dataset_padding_key": "action_is_pad",
+    "implication": "Do not rely on current default loss to mask padded tail actions without confirming mapping. Initial assessment counts only complete unpadded action windows, avoiding this mismatch."
+  },
+  "limitations": [
+    "415 frames use flagged nominal clock mapping; clock mapping and sensor exposure synchronization are not equivalent.",
+    "Surround camera source-to-receive difference is around 0.39 s; source-nearest observations are not verified online-causal observations. Physical delay not calibrated.",
+    "Single task language and repeated scene; cannot infer language-conditioned selection or unseen-scene generalization.",
+    "No backward pass, optimizer update, learning curve, held-out performance, or robot task success tested in this assessment.",
+    "Measured forward GPU peak about 1.28 GiB reserved is not training memory requirement. GPU currently has about 8.4 GiB free; start small batch and measure rather than assuming fit."
+  ],
+  "suggested_initial_experiment": {
+    "weights": "cached lerobot/smolvla_base",
+    "initial_batch_size": 1,
+    "chunk_size": 50,
+    "fps": 10,
+    "chunk_duration_s": 5.0,
+    "first_stage": "3–5 clock-clean episodes; 200–500 steps as a diagnostic proposal, not a convergence guarantee",
+    "second_stage": "episode-level 32/7 train-validation split; initial 2000–5000 step budget adjusted to validation",
+    "keep_training_ready_false_until_quality_selection_reviewed": true
+  },
+  "official_reference": "https://huggingface.co/docs/lerobot/main/smolvla"
+}

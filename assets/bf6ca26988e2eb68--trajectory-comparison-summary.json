@@ -1,0 +1,30 @@
+{
+  "checkpoint": "step_000012",
+  "validation_windows": 713,
+  "representative_window_row": 64,
+  "representative_manifest_index": 370,
+  "episode": "episode_000005",
+  "frame": 559,
+  "representative_mae": [
+    23.576210021972656,
+    22.269712448120117,
+    23.663135528564453,
+    22.749006271362305,
+    3.1227753162384033,
+    3.1610641479492188,
+    2.349238395690918,
+    2.862893581390381
+  ],
+  "full_validation_mean_mae": [
+    31.56495475769043,
+    10.223238945007324,
+    16.259252548217773,
+    14.911088943481445,
+    7.563236236572266,
+    4.3340044021606445,
+    6.149617671966553,
+    40.58810043334961
+  ],
+  "trajectory_png": "/home/lsy03/.codex/visualizations/2026/10/09/01a120ad-0adb-7533-8af6-fc3d066f5dd2/reference-prediction-trajectory.png",
+  "profile_png": "/home/lsy03/.codex/visualizations/2026/10/09/01a120ad-0adb-7533-8af6-fc3d066f5dd2/validation-error-profile.png"
+}

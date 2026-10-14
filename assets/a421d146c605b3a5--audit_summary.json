@@ -1,0 +1,167 @@
+{
+  "status": "completed",
+  "date": "2026-10-10",
+  "scope": "Read-only offline gripper consistency audit, same70 held-out windows/7 episodes; no retraining or robot commands",
+  "encoding_decoding": {
+    "window_counts": {
+      "train": 3581,
+      "validation": 713
+    },
+    "action_match_max_error_m": 0,
+    "observed_sensor_width_max_error_m": 0,
+    "raw_target_range_m": [
+      0.0,
+      0.1
+    ],
+    "recomputed_train_only_mean_max_error_m": 0.0,
+    "recomputed_train_only_std_max_error_m": 0.0,
+    "state_mean_error_m": 0.0,
+    "state_std_error_m": 0.0,
+    "train_current_targets_closed_ratio": 0.4808712650097738,
+    "train_current_targets_open_ratio": 0.4646746718793633,
+    "units": "metres; sensor widths and accepted command widths directly traced"
+  },
+  "numerical_roundtrip": {
+    "samples": 14,
+    "selected_refs": [
+      [
+        0,
+        568,
+        3,
+        "episode_000005"
+      ],
+      [
+        0,
+        509,
+        3,
+        "episode_000005"
+      ],
+      [
+        0,
+        1347,
+        7,
+        "episode_000009"
+      ],
+      [
+        0,
+        1281,
+        7,
+        "episode_000009"
+      ],
+      [
+        1,
+        310,
+        1,
+        "episode_000002"
+      ],
+      [
+        1,
+        237,
+        1,
+        "episode_000002"
+      ],
+      [
+        1,
+        1982,
+        9,
+        "episode_000010"
+      ],
+      [
+        1,
+        1906,
+        9,
+        "episode_000010"
+      ],
+      [
+        2,
+        980,
+        5,
+        "episode_000008"
+      ],
+      [
+        2,
+        914,
+        5,
+        "episode_000008"
+      ],
+      [
+        2,
+        1714,
+        9,
+        "episode_000012"
+      ],
+      [
+        2,
+        1670,
+        9,
+        "episode_000012"
+      ],
+      [
+        2,
+        2898,
+        16,
+        "episode_000020"
+      ],
+      [
+        2,
+        2821,
+        16,
+        "episode_000020"
+      ]
+    ],
+    "raw_gripper_index": 7,
+    "canonical_gripper_index": 28,
+    "gripper_subtract_state": false,
+    "independent_formula_max_error_z": 5.8876607367253087e-08,
+    "roundtrip_max_error_mm": 2.8220314973737004e-06,
+    "bf16_roundtrip_max_error_mm": 0.18496441771276295,
+    "normalization_std_mm_range": [
+      47.71741620463763,
+      48.305135235326674
+    ],
+    "status": "completed"
+  },
+  "findings": [
+    "Raw target index7 maps to canonical index28; absolute gripper target in metres, no state subtraction",
+    "Recomputed training-only normalization matches saved statistics exactly; raw labels trace to accepted SDK command widths",
+    "FP32/BF16 inversion errors, KV-cache/full-forward differences, clipping, and inactive-coordinate projection do not explain the large regression",
+    "5012-step model has improved teacher-interpolation denoising MSE but much stronger initial-noise sensitivity in free sampling",
+    "Original single-seed best-checkpoint conclusion applies to that seed only; some other seeds improve, but worst-case robustness deteriorates",
+    "Source sample_beta is a power-uniform ratio, not standard Beta; fixed t=.5 loss misses high-noise weaknesses; causal effect of changing time distribution not yet tested"
+  ],
+  "first_gripper_mae_mm": {
+    "12": {
+      "seed_20261009": 8.884312974156014,
+      "seed_42": 9.488526845130504,
+      "seed_1729": 10.376053079796423,
+      "fp32_grid_10": 8.970621783685472,
+      "fp32_grid_50": 9.790623939729162
+    },
+    "5012": {
+      "seed_20261009": 38.25555800160925,
+      "seed_42": 6.549113614996064,
+      "seed_1729": 8.501899155089632,
+      "fp32_grid_10": 37.88041402752112,
+      "fp32_grid_50": 49.1217132890597
+    }
+  },
+  "gripper_noise_reflection": {
+    "step12_closed_mean_change_mm": -2.3704427294433117,
+    "step12_open_mean_change_mm": -8.909985423088074,
+    "step5012_closed_mean_change_mm": -73.69525916874409,
+    "step5012_open_mean_change_mm": -82.91473984718323,
+    "observations_and_other_noise_unchanged": true
+  },
+  "recommendation": {
+    "start_checkpoint": 12,
+    "rank": 8,
+    "pilot_updates": 500,
+    "loss": "Track gripper separately; prioritize first1/10 actions rather than only mean over50x8; test stronger gripper supervision or bounded deterministic gripper head",
+    "evaluation": "Fixed seeds predeclared with positive/negative noise; report mean/worst-case MAE and false-open rate on closed commands; t=.1/.5/.9 flow losses",
+    "time_distribution": "Treat proper Beta or stratified/end-point-rich time sampling as a controlled ablation, not a proven repair",
+    "do_not": "Do not select a favorable seed as a fix; do not replace closed command targets with measured contact widths"
+  },
+  "original_checkpoints_preserved": true,
+  "retraining_started": false,
+  "physical_deployment_certified": false
+}

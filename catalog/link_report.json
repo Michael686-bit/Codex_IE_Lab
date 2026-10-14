@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-30T16:18:37.466408+08:00",
+  "generated_at": "2026-10-14T10:03:28.998277+08:00",
   "links": [
     {
       "url": "http://10.34.216.11:7861",
@@ -207,6 +207,11 @@
         },
         {
           "thread_id": "01a0f02e-593c-7362-86fa-5077d349c741",
+          "turn_id": "asset:c0d584fbf1c1cc70",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a13808-5028-7582-99b9-b1fb76d3ebf8",
           "turn_id": "asset:c0d584fbf1c1cc70",
           "role": "asset"
         },
@@ -462,6 +467,30 @@
       "detail": ""
     },
     {
+      "url": "http://127.0.0.1:40135/index.html",
+      "references": [
+        {
+          "thread_id": "01a11a35-fab0-75a3-8f38-2d81d26a5b86",
+          "turn_id": "01a11a6f-d75f-7691-bee8-5ca6559e31ee",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a11a35-fab0-75a3-8f38-2d81d26a5b86",
+          "turn_id": "01a11a7c-3582-7f40-b2fe-2cfe848d167d",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a11a35-fab0-75a3-8f38-2d81d26a5b86",
+          "turn_id": "01a11a92-7912-7490-b2ca-92ffd95ca5ed",
+          "role": "user"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
       "url": "http://127.0.0.1:8006/healthz",
       "references": [
         {
@@ -539,6 +568,44 @@
       "detail": ""
     },
     {
+      "url": "http://127.0.0.1:8091",
+      "references": [
+        {
+          "thread_id": "01a11e50-be6f-7061-afe3-8c8c7fdf77e5",
+          "turn_id": "asset:613efb365313e824",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a12099-d1f4-7580-9b1d-cecda1b997d0",
+          "turn_id": "asset:745e99790c118567",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a12f39-9b78-7d52-b841-83cc19db6f83",
+          "turn_id": "asset:613efb365313e824",
+          "role": "asset"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "http://127.0.0.1:8092",
+      "references": [
+        {
+          "thread_id": "01a12f39-9b78-7d52-b841-83cc19db6f83",
+          "turn_id": "asset:6d0618425642788a",
+          "role": "asset"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
       "url": "http://127.0.0.1:8765",
       "references": [
         {
@@ -555,6 +622,35 @@
           "thread_id": "01a0c70a-a632-7513-a567-e1d9b4e14570",
           "turn_id": "01a0e7f9-4f87-7373-82a0-37b184edd619",
           "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "http://127.0.0.1:8765/",
+      "references": [
+        {
+          "thread_id": "01a11b2f-db52-7d80-8cfa-5b113d0cfd57",
+          "turn_id": "01a11b90-9215-7832-aa82-a745864aeb75",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a11b2f-db52-7d80-8cfa-5b113d0cfd57",
+          "turn_id": "01a11e54-6d77-7610-9568-d30d1ee59b61",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a11b2f-db52-7d80-8cfa-5b113d0cfd57",
+          "turn_id": "01a11e54-6d77-7610-9568-d30d1ee59b61",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a11b2f-db52-7d80-8cfa-5b113d0cfd57",
+          "turn_id": "01a11e5c-366f-7b02-9e16-2fba2a2cf18b",
+          "role": "user"
         }
       ],
       "status": "not_checked",
@@ -726,6 +822,45 @@
       "detail": ""
     },
     {
+      "url": "http://127.0.0.1:9098/?url=rerun%2Bhttp%3A%2F%2F127.0.0.1%3A9890%2Fproxy",
+      "references": [
+        {
+          "thread_id": "01a11b2f-db52-7d80-8cfa-5b113d0cfd57",
+          "turn_id": "01a11e50-88d6-77e0-9804-cacce249dda5",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a11b2f-db52-7d80-8cfa-5b113d0cfd57",
+          "turn_id": "01a11e54-6d77-7610-9568-d30d1ee59b61",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a11b2f-db52-7d80-8cfa-5b113d0cfd57",
+          "turn_id": "01a11e62-56f7-7853-a5b1-f1eadc518f9c",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a11b2f-db52-7d80-8cfa-5b113d0cfd57",
+          "turn_id": "01a11f56-2e65-7da1-b508-da2c54425fc0",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a11b2f-db52-7d80-8cfa-5b113d0cfd57",
+          "turn_id": "01a11f6d-29f0-7340-878c-0f5948315d44",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a11b2f-db52-7d80-8cfa-5b113d0cfd57",
+          "turn_id": "01a11f71-df9c-7981-8eb3-b71d19e3b165",
+          "role": "user"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
       "url": "http://127.0.0.1:9881/proxy",
       "references": [
         {
@@ -745,6 +880,25 @@
         {
           "thread_id": "01a0e801-69cd-7c30-9130-9ff3b3ac2bf5",
           "turn_id": "01a0eac2-873d-7760-ad6c-5909a196b277",
+          "role": "user"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "http://127.0.0.1:9890/proxy",
+      "references": [
+        {
+          "thread_id": "01a0f123-ee3f-7da3-8232-cff7bba23cd2",
+          "turn_id": "01a11a64-2214-7b02-8254-de9658dd4421",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a11b2f-db52-7d80-8cfa-5b113d0cfd57",
+          "turn_id": "01a11e50-88d6-77e0-9804-cacce249dda5",
           "role": "user"
         }
       ],
@@ -1051,8 +1205,28 @@
           "role": "asset"
         },
         {
+          "thread_id": "01a11fbe-f96b-7400-83c8-e0f7dd1e3c7b",
+          "turn_id": "asset:0d3f45d77e458fc7",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a11fbe-f96b-7400-83c8-e0f7dd1e3c7b",
+          "turn_id": "asset:57d675dc89e8c864",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a11fc6-7a82-7a73-9e12-13b83c25da43",
+          "turn_id": "asset:0d3f45d77e458fc7",
+          "role": "asset"
+        },
+        {
           "thread_id": "visualizations",
           "turn_id": "asset:2eedd84f7f3583f7",
+          "role": "asset"
+        },
+        {
+          "thread_id": "visualizations",
+          "turn_id": "asset:31de220aa9a982f2",
           "role": "asset"
         },
         {
@@ -1084,6 +1258,21 @@
           "thread_id": "visualizations",
           "turn_id": "asset:b17061898ca9b0a7",
           "role": "asset"
+        },
+        {
+          "thread_id": "visualizations",
+          "turn_id": "asset:e44b7037938173b6",
+          "role": "asset"
+        },
+        {
+          "thread_id": "visualizations",
+          "turn_id": "visualization:act-gripper-curves.html",
+          "role": "visualization"
+        },
+        {
+          "thread_id": "visualizations",
+          "turn_id": "visualization:act-joint-curves.html",
+          "role": "visualization"
         },
         {
           "thread_id": "visualizations",
@@ -1306,6 +1495,109 @@
       "detail": ""
     },
     {
+      "url": "https://arxiv.org/html/2406.09246v1",
+      "references": [
+        {
+          "thread_id": "01a11b95-883d-7b02-baa3-1451c029dbfb",
+          "turn_id": "01a11b95-8c73-7910-8c50-3ab1a89004b5",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://arxiv.org/html/2504.16054v1",
+      "references": [
+        {
+          "thread_id": "01a11b95-883d-7b02-baa3-1451c029dbfb",
+          "turn_id": "01a11b95-8c73-7910-8c50-3ab1a89004b5",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://arxiv.org/html/2506.01844v1",
+      "references": [
+        {
+          "thread_id": "01a11b95-883d-7b02-baa3-1451c029dbfb",
+          "turn_id": "01a11b95-8c73-7910-8c50-3ab1a89004b5",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://arxiv.org/html/2607.06403v1",
+      "references": [
+        {
+          "thread_id": "01a11b95-883d-7b02-baa3-1451c029dbfb",
+          "turn_id": "01a11b95-8c73-7910-8c50-3ab1a89004b5",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a12f39-9b78-7d52-b841-83cc19db6f83",
+          "turn_id": "01a12f3b-5d3a-7141-a76d-8afd0b916c8c",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://arxiv.org/html/2607.06403v1#S4",
+      "references": [
+        {
+          "thread_id": "01a12372-6a74-70c0-b77b-266a7ec6299a",
+          "turn_id": "01a12373-345b-7f51-93be-142489a7e97d",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://arxiv.org/html/2607.06403v1#S4.SS2",
+      "references": [
+        {
+          "thread_id": "01a12372-6a74-70c0-b77b-266a7ec6299a",
+          "turn_id": "01a12373-345b-7f51-93be-142489a7e97d",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://behaviortree.dev/docs/ros2_integration/",
+      "references": [
+        {
+          "thread_id": "01a11f6b-8664-70a2-85d2-765dfdc8236f",
+          "turn_id": "01a11f6f-e4f9-7491-9bd3-aec4a046138d",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
       "url": "https://catalog.ngc.nvidia.com/orgs/nvidia/-/containers/l4t-jetpack/-",
       "references": [
         {
@@ -1381,6 +1673,16 @@
           "role": "asset"
         },
         {
+          "thread_id": "01a134d2-03de-7ac2-b1f0-2302cd467dbe",
+          "turn_id": "asset:05e84bda0819c21a",
+          "role": "asset"
+        },
+        {
+          "thread_id": "visualizations",
+          "turn_id": "asset:05e84bda0819c21a",
+          "role": "asset"
+        },
+        {
           "thread_id": "visualizations",
           "turn_id": "asset:212e0f737956b2ff",
           "role": "asset"
@@ -1409,6 +1711,11 @@
           "thread_id": "visualizations",
           "turn_id": "asset:c2cb6cc05b4a689f",
           "role": "asset"
+        },
+        {
+          "thread_id": "visualizations",
+          "turn_id": "visualization:robotwin-data-compare.html",
+          "role": "visualization"
         },
         {
           "thread_id": "visualizations",
@@ -1510,6 +1817,20 @@
           "thread_id": "01a08a8d-f846-7a83-881a-f5f06bf6497f",
           "turn_id": "01a08b3a-b61c-7f72-b6ad-2c4e08d7d3ac",
           "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://codeload.github.com/huggingface/transformers/tar.gz/dcddb970176382c0fcf4521b0c0e6fc15894dfe0",
+      "references": [
+        {
+          "thread_id": "01a11a43-205c-7cf1-804c-b84ffe6022af",
+          "turn_id": "asset:7ea7e80209c11093",
+          "role": "asset"
         }
       ],
       "status": "not_checked",
@@ -1767,6 +2088,20 @@
       "detail": ""
     },
     {
+      "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/api_python_reference/",
+      "references": [
+        {
+          "thread_id": "01a11b51-6e8e-72a3-b199-3ab889480520",
+          "turn_id": "01a11b51-ed7e-72e2-9a52-f3c4782e9448",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
       "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/examples_cpp",
       "references": [
         {
@@ -1827,6 +2162,20 @@
           "thread_id": "01a080cb-5824-7282-89bc-2dd1013446a2",
           "turn_id": "01a080d2-19aa-7463-8e62-dcb8beba71b2",
           "role": "user"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://developer.galbot.com/docs/SDK/1.9.1/g1/zh/examples_python/",
+      "references": [
+        {
+          "thread_id": "01a11b51-6e8e-72a3-b199-3ab889480520",
+          "turn_id": "01a11b51-ed7e-72e2-9a52-f3c4782e9448",
+          "role": "assistant"
         }
       ],
       "status": "not_checked",
@@ -3739,11 +4088,39 @@
       "detail": ""
     },
     {
+      "url": "https://developers.openai.com/codex/mcp/",
+      "references": [
+        {
+          "thread_id": "01a11aa7-cfb3-77c0-bcb4-92f9a3dfd026",
+          "turn_id": "01a11ab1-689d-7bb2-9ff0-28b699d35b39",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
       "url": "https://developers.openai.com/plugins/build/skills",
       "references": [
         {
           "thread_id": "01a0f0f1-0b94-7171-970c-957352129b4a",
           "turn_id": "01a0f12a-5438-7520-8e29-07c140b81463",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://diffusion-policy.cs.columbia.edu/",
+      "references": [
+        {
+          "thread_id": "01a11ac6-1d59-75c1-a76a-a9a1fd503412",
+          "turn_id": "01a11ac6-b13d-78a0-9561-c60cc93c0e13",
           "role": "assistant"
         }
       ],
@@ -3969,6 +4346,20 @@
       "detail": ""
     },
     {
+      "url": "https://docs.langchain.com/oss/python/langgraph/persistence",
+      "references": [
+        {
+          "thread_id": "01a11f6b-8664-70a2-85d2-765dfdc8236f",
+          "turn_id": "01a11f6f-e4f9-7491-9bd3-aec4a046138d",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
       "url": "https://docs.nvidia.com/cuda/cuda-c-best-practices-guide/",
       "references": [
         {
@@ -4050,6 +4441,20 @@
         {
           "thread_id": "01a06710-9ce5-75d1-95c5-6beb503bf8ae",
           "turn_id": "01a06a12-99b0-7632-aefe-e547cf4d4d0a",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://docs.nvidia.com/datacenter/tesla/drivers/latest/cuda-toolkit-driver-and-architecture-matrix.html",
+      "references": [
+        {
+          "thread_id": "01a12569-9fbc-78a2-8bc2-766d4e0d1aec",
+          "turn_id": "01a12f3e-4b97-7643-819d-9551e9ad9ce6",
           "role": "assistant"
         }
       ],
@@ -4178,6 +4583,48 @@
       "detail": ""
     },
     {
+      "url": "https://docs.pytorch.org/docs/main/generated/torch.nn.utils.clip_grad_norm_.html",
+      "references": [
+        {
+          "thread_id": "01a0f168-756e-7703-af28-e1ee1ee9a728",
+          "turn_id": "01a0f183-fd20-7802-8cad-dd8b70b609de",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://docs.pytorch.org/docs/stable/generated/torch.optim.lr_scheduler.ReduceLROnPlateau.html",
+      "references": [
+        {
+          "thread_id": "01a119bc-6791-7603-9b66-d8fecaa5bde1",
+          "turn_id": "01a11a25-7b47-7673-a7cd-bbc56ab8ae41",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://docs.pytorch.org/tutorials/intermediate/FSDP_tutorial.html",
+      "references": [
+        {
+          "thread_id": "01a12330-1faa-7241-90f5-84f78a093b4a",
+          "turn_id": "01a12410-8515-7b32-b424-403b95c4dcf0",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
       "url": "https://docs.ros.org/en/humble/Concepts/Intermediate/About-Quality-of-Service-Settings.html",
       "references": [
         {
@@ -4263,6 +4710,20 @@
         {
           "thread_id": "01a02731-e698-7092-ae82-d3144a0993e8",
           "turn_id": "01a02745-a2b1-7932-9941-6826319a7b4e",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://docs.ruckig.com/index.html",
+      "references": [
+        {
+          "thread_id": "01a124e6-24ff-7b90-8ca1-7504b9d57a04",
+          "turn_id": "01a12554-5c67-7bd3-bd2f-31f8cc78765f",
           "role": "assistant"
         }
       ],
@@ -4806,6 +5267,53 @@
       "detail": ""
     },
     {
+      "url": "https://github.com/AMD-DEV-CONTEST/Embodied-AI-Challenge-AMD-Platform-2026-09",
+      "references": [
+        {
+          "thread_id": "01a12330-1faa-7241-90f5-84f78a093b4a",
+          "turn_id": "asset:60a8cc6c4d60b384",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a132fe-231b-76f2-ad91-bb57915ad417",
+          "turn_id": "01a132fe-5ba0-7773-aa29-9a9db46817d8",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/AMD-DEV-CONTEST/Embodied-AI-Challenge-AMD-Platform-2026-09/blob/main/Radeon-Cloud-User-Guide/AMD_VLA_Contest_Compute_Rules.md",
+      "references": [
+        {
+          "thread_id": "01a132fe-231b-76f2-ad91-bb57915ad417",
+          "turn_id": "01a132fe-5ba0-7773-aa29-9a9db46817d8",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/AMD-DEV-CONTEST/Embodied-AI-Challenge-AMD-Platform-2026-09?spm=a2c22.12281976.J_fscw32KETAEZq74iVzBdb.5.5063201dTOhfAu",
+      "references": [
+        {
+          "thread_id": "01a132fe-231b-76f2-ad91-bb57915ad417",
+          "turn_id": "01a132fe-5ba0-7773-aa29-9a9db46817d8",
+          "role": "user"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
       "url": "https://github.com/AprilRobotics/apriltag",
       "references": [
         {
@@ -5040,6 +5548,36 @@
           "role": "user"
         },
         {
+          "thread_id": "01a11e50-be6f-7061-afe3-8c8c7fdf77e5",
+          "turn_id": "asset:b9d72d4902a5c679",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a11e50-be6f-7061-afe3-8c8c7fdf77e5",
+          "turn_id": "asset:f56884439a2bb207",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a12099-d1f4-7580-9b1d-cecda1b997d0",
+          "turn_id": "01a1233a-c083-73d2-b54f-0fcd1fa0952f",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a12099-d1f4-7580-9b1d-cecda1b997d0",
+          "turn_id": "01a1235b-f804-7920-a8ba-1c9f2729221c",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a12099-d1f4-7580-9b1d-cecda1b997d0",
+          "turn_id": "asset:a87d41737c98c04f",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a124e6-24ff-7b90-8ca1-7504b9d57a04",
+          "turn_id": "01a13312-eccb-7d92-9e4c-b172da82228b",
+          "role": "user"
+        },
+        {
           "thread_id": "unknown-attachment",
           "turn_id": "asset:0fc04430abbd3875",
           "role": "asset"
@@ -5239,6 +5777,39 @@
           "thread_id": "01a09332-12d3-7b91-970d-c2e04a7232fc",
           "turn_id": "01a0d295-0d95-7420-bed7-8acb68ae7783",
           "role": "assistant"
+        },
+        {
+          "thread_id": "01a09332-12d3-7b91-970d-c2e04a7232fc",
+          "turn_id": "01a0f163-f9ac-7dc0-b7b2-37cc97ef4583",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/Michael686-bit/Codex_IE_Lab/tree/main/assets",
+      "references": [
+        {
+          "thread_id": "01a09332-12d3-7b91-970d-c2e04a7232fc",
+          "turn_id": "01a0f16a-938f-7d31-a576-2fd474ade547",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/Michael686-bit/Codex_IE_Lab/tree/main/readable",
+      "references": [
+        {
+          "thread_id": "01a09332-12d3-7b91-970d-c2e04a7232fc",
+          "turn_id": "01a0f16a-938f-7d31-a576-2fd474ade547",
+          "role": "assistant"
         }
       ],
       "status": "not_checked",
@@ -5330,6 +5901,40 @@
           "thread_id": "01a0c17b-036c-7113-8f5e-a0374a7f78c0",
           "turn_id": "01a0c17c-27cb-72a2-80b6-bbe8c8a86eec",
           "role": "assistant"
+        },
+        {
+          "thread_id": "01a11a43-205c-7cf1-804c-b84ffe6022af",
+          "turn_id": "asset:7ea7e80209c11093",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a11e56-c76f-7870-aa4f-be1617e32350",
+          "turn_id": "asset:75f0da6e2ceee6bd",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a11ea9-1a88-7a41-b177-45fad5a84852",
+          "turn_id": "asset:75f0da6e2ceee6bd",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a11fd1-8292-75e0-8706-b3a598275e6f",
+          "turn_id": "asset:75f0da6e2ceee6bd",
+          "role": "asset"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/Physical-Intelligence/openpi#fine-tuning-base-models-on-your-own-data",
+      "references": [
+        {
+          "thread_id": "01a11b2f-db52-7d80-8cfa-5b113d0cfd57",
+          "turn_id": "01a11b30-f0b0-72f2-8380-8b783673bc24",
+          "role": "assistant"
         }
       ],
       "status": "not_checked",
@@ -5343,6 +5948,16 @@
         {
           "thread_id": "01a0f012-d1e9-7b10-b99a-1a5fbe13da56",
           "turn_id": "01a0f0c8-111e-7bb3-8f83-6a508c6e6546",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a11a43-205c-7cf1-804c-b84ffe6022af",
+          "turn_id": "01a11a43-75ba-7022-a5af-a57d3eb494f8",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a12079-1017-77d1-bb8f-4df9033ca979",
+          "turn_id": "01a12080-14f3-7010-bf8c-5d81d7e885f4",
           "role": "assistant"
         }
       ],
@@ -5396,6 +6011,21 @@
           "thread_id": "01a0d220-8747-75a3-b4d4-55d923654640",
           "turn_id": "asset:df2e46596d0c6997",
           "role": "asset"
+        },
+        {
+          "thread_id": "01a11941-f7ab-75f2-b3de-43d29ee29060",
+          "turn_id": "01a119b2-545a-7c20-a2e6-0bb51b4a2192",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a11a35-fab0-75a3-8f38-2d81d26a5b86",
+          "turn_id": "01a11a38-4c26-7bc3-b318-a4c5e32eef31",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a11a35-fab0-75a3-8f38-2d81d26a5b86",
+          "turn_id": "asset:cd975f20f7358aee",
+          "role": "asset"
         }
       ],
       "status": "not_checked",
@@ -5429,6 +6059,59 @@
         {
           "thread_id": "01a0cc7d-3c28-7d32-b74a-2766b25b60aa",
           "turn_id": "01a0cc7d-bf78-7e91-bf1d-dd61e6367476",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a11b95-883d-7b02-baa3-1451c029dbfb",
+          "turn_id": "01a11b95-8c73-7910-8c50-3ab1a89004b5",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a12330-1faa-7241-90f5-84f78a093b4a",
+          "turn_id": "01a12db8-b4a2-7e21-a27a-a51cb2242f49",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a12330-1faa-7241-90f5-84f78a093b4a",
+          "turn_id": "asset:60a8cc6c4d60b384",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a12372-6a74-70c0-b77b-266a7ec6299a",
+          "turn_id": "01a12373-345b-7f51-93be-142489a7e97d",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/Robbyant/lingbot-vla-v2#evaluation-and-deployment",
+      "references": [
+        {
+          "thread_id": "01a12330-1faa-7241-90f5-84f78a093b4a",
+          "turn_id": "01a12368-16d8-77d2-91c3-1cfb39c827ac",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/Robbyant/lingbot-vla-v2#post-training-example",
+      "references": [
+        {
+          "thread_id": "01a11b2f-db52-7d80-8cfa-5b113d0cfd57",
+          "turn_id": "01a11b30-f0b0-72f2-8380-8b783673bc24",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a12f39-9b78-7d52-b841-83cc19db6f83",
+          "turn_id": "01a12f3b-5d3a-7141-a76d-8afd0b916c8c",
           "role": "assistant"
         }
       ],
@@ -5471,12 +6154,94 @@
       "detail": ""
     },
     {
+      "url": "https://github.com/Robbyant/lingbot-vla-v2#training",
+      "references": [
+        {
+          "thread_id": "01a12330-1faa-7241-90f5-84f78a093b4a",
+          "turn_id": "01a1236b-c277-7023-abe9-525ce9233820",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a12330-1faa-7241-90f5-84f78a093b4a",
+          "turn_id": "01a1239d-9f4e-7401-acd8-7ce848136560",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a12330-1faa-7241-90f5-84f78a093b4a",
+          "turn_id": "01a123a3-8c77-7c81-b786-e5e9e230dd88",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a12330-1faa-7241-90f5-84f78a093b4a",
+          "turn_id": "01a12410-8515-7b32-b424-403b95c4dcf0",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a12330-1faa-7241-90f5-84f78a093b4a",
+          "turn_id": "01a12da5-c30c-7ec0-8d80-2f1f4e5d5afd",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/Robbyant/lingbot-vla-v2#unified-action-representation",
+      "references": [
+        {
+          "thread_id": "01a11b95-883d-7b02-baa3-1451c029dbfb",
+          "turn_id": "01a11b95-8c73-7910-8c50-3ab1a89004b5",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a12372-6a74-70c0-b77b-266a7ec6299a",
+          "turn_id": "01a12373-345b-7f51-93be-142489a7e97d",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
       "url": "https://github.com/Robbyant/lingbot-vla-v2.git",
       "references": [
         {
           "thread_id": "01a0addb-959b-7433-adb3-4b36c3df088c",
           "turn_id": "asset:9d5f7b0c0cfdd677",
           "role": "asset"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/Robbyant/lingbot-vla-v2/blob/main/configs/vla/Training_Config.md",
+      "references": [
+        {
+          "thread_id": "01a11fd7-938b-74e0-9590-f1e9c849b66f",
+          "turn_id": "01a11fd8-8ec1-7be1-b376-77eabcf5805c",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a12079-1017-77d1-bb8f-4df9033ca979",
+          "turn_id": "01a12080-14f3-7010-bf8c-5d81d7e885f4",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a12330-1faa-7241-90f5-84f78a093b4a",
+          "turn_id": "01a12368-16d8-77d2-91c3-1cfb39c827ac",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a12372-6a74-70c0-b77b-266a7ec6299a",
+          "turn_id": "01a12373-345b-7f51-93be-142489a7e97d",
+          "role": "assistant"
         }
       ],
       "status": "not_checked",
@@ -5496,6 +6261,40 @@
           "thread_id": "01a0947a-003f-7140-97c1-79d100f5cd1f",
           "turn_id": "01a09486-00b9-7452-a5ec-c0b056a9cf5e",
           "role": "user"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/Robbyant/lingbot-vla-v2/blob/main/configs/vla/robotwin/robotwin.yaml",
+      "references": [
+        {
+          "thread_id": "01a12330-1faa-7241-90f5-84f78a093b4a",
+          "turn_id": "01a1239d-9f4e-7401-acd8-7ce848136560",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a12330-1faa-7241-90f5-84f78a093b4a",
+          "turn_id": "01a123a3-8c77-7c81-b786-e5e9e230dd88",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a12330-1faa-7241-90f5-84f78a093b4a",
+          "turn_id": "01a12410-8515-7b32-b424-403b95c4dcf0",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a12330-1faa-7241-90f5-84f78a093b4a",
+          "turn_id": "01a124b8-ae86-7b43-be64-d23ac3f77388",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a12372-6a74-70c0-b77b-266a7ec6299a",
+          "turn_id": "01a12373-345b-7f51-93be-142489a7e97d",
+          "role": "assistant"
         }
       ],
       "status": "not_checked",
@@ -5542,6 +6341,34 @@
       "detail": ""
     },
     {
+      "url": "https://github.com/Robbyant/lingbot-vla-v2/blob/main/docs/config/lingbotvla_config_doc.md",
+      "references": [
+        {
+          "thread_id": "01a12079-1017-77d1-bb8f-4df9033ca979",
+          "turn_id": "01a12080-14f3-7010-bf8c-5d81d7e885f4",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/Robbyant/lingbot-vla-v2/blob/main/experiment/robotwin/README.md",
+      "references": [
+        {
+          "thread_id": "01a12375-ec8b-7910-a3fb-d76005404aec",
+          "turn_id": "01a12377-07e4-7c82-a719-bbbda0f0f055",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
       "url": "https://github.com/Robbyant/lingbot-vla-v2/blob/main/lingbotvla/data/vla_data/README.md",
       "references": [
         {
@@ -5553,6 +6380,39 @@
           "thread_id": "01a0947a-003f-7140-97c1-79d100f5cd1f",
           "turn_id": "01a09486-00b9-7452-a5ec-c0b056a9cf5e",
           "role": "user"
+        },
+        {
+          "thread_id": "01a11fd7-938b-74e0-9590-f1e9c849b66f",
+          "turn_id": "01a11fd8-8ec1-7be1-b376-77eabcf5805c",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/Robbyant/lingbot-vla-v2/blob/main/lingbotvla/models/vla/lingbot_vla/modeling_lingbot_vla_v2.py",
+      "references": [
+        {
+          "thread_id": "01a11b95-883d-7b02-baa3-1451c029dbfb",
+          "turn_id": "01a11b95-8c73-7910-8c50-3ab1a89004b5",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/Robbyant/lingbot-vla-v2/blob/main/lingbotvla/models/vla/lingbot_vla/qwen2_action_expert.py",
+      "references": [
+        {
+          "thread_id": "01a12372-6a74-70c0-b77b-266a7ec6299a",
+          "turn_id": "01a12373-345b-7f51-93be-142489a7e97d",
+          "role": "assistant"
         }
       ],
       "status": "not_checked",
@@ -5585,11 +6445,39 @@
       "detail": ""
     },
     {
+      "url": "https://github.com/Robbyant/lingbot-vla-v2/tree/main/configs/robot_configs",
+      "references": [
+        {
+          "thread_id": "01a12f39-9b78-7d52-b841-83cc19db6f83",
+          "turn_id": "01a12f3b-5d3a-7141-a76d-8afd0b916c8c",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
       "url": "https://github.com/RoboTwin-Platform/RoboTwin",
       "references": [
         {
           "thread_id": "01a0addb-959b-7433-adb3-4b36c3df088c",
           "turn_id": "01a0bd5e-1fa7-7041-9e41-fba1328c72eb",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/RoboTwin-Platform/RoboTwin#-pre-collected-large-scale-dataset",
+      "references": [
+        {
+          "thread_id": "01a1240d-43ef-7c10-b4de-a25c7ad7d3ee",
+          "turn_id": "01a12412-cf4d-76e3-bb68-8b9e2836c4ba",
           "role": "assistant"
         }
       ],
@@ -5613,6 +6501,25 @@
       "detail": ""
     },
     {
+      "url": "https://github.com/ZiguanWang/Robotwin-radeon-cloud/blob/main/Reproduce_Guide.md",
+      "references": [
+        {
+          "thread_id": "01a12330-1faa-7241-90f5-84f78a093b4a",
+          "turn_id": "asset:60a8cc6c4d60b384",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a132fe-231b-76f2-ad91-bb57915ad417",
+          "turn_id": "01a132fe-5ba0-7773-aa29-9a9db46817d8",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
       "url": "https://github.com/coal-library/coal",
       "references": [
         {
@@ -5623,6 +6530,20 @@
         {
           "thread_id": "01a08e0c-eda8-79d3-8b02-b11244304c95",
           "turn_id": "01a08e1f-6d62-7ab1-800b-783655272f16",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/cyanheads/obsidian-mcp-server",
+      "references": [
+        {
+          "thread_id": "01a11aa7-cfb3-77c0-bcb4-92f9a3dfd026",
+          "turn_id": "01a11ab1-689d-7bb2-9ff0-28b699d35b39",
           "role": "assistant"
         }
       ],
@@ -5665,6 +6586,34 @@
       "detail": ""
     },
     {
+      "url": "https://github.com/git/git/blob/v2.43.0/bulk-checkin.c",
+      "references": [
+        {
+          "thread_id": "01a1241d-d026-7330-8c86-50793a7b6bde",
+          "turn_id": "01a1244d-f864-7422-8b8c-fb1ca7fd3341",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/huggingface/lerobot/blob/main/docs/source/rtc.mdx",
+      "references": [
+        {
+          "thread_id": "01a124e6-24ff-7b90-8ca1-7504b9d57a04",
+          "turn_id": "01a12554-5c67-7bd3-bd2f-31f8cc78765f",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
       "url": "https://github.com/huggingface/lerobot/blob/main/src/lerobot/datasets/lerobot_dataset.py",
       "references": [
         {
@@ -5689,6 +6638,34 @@
         {
           "thread_id": "01a08a39-0e0e-72a2-8c11-0f26ea893183",
           "turn_id": "01a08a3d-3fda-73c3-9de4-be2c863ebfb2",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/huggingface/lerobot/blob/v0.4.4/docs/source/pi05.mdx",
+      "references": [
+        {
+          "thread_id": "01a11a43-205c-7cf1-804c-b84ffe6022af",
+          "turn_id": "asset:7ea7e80209c11093",
+          "role": "asset"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/huggingface/lerobot/blob/v0.4.4/src/lerobot/policies/pi05/modeling_pi05.py#L84",
+      "references": [
+        {
+          "thread_id": "01a11e56-c76f-7870-aa4f-be1617e32350",
+          "turn_id": "01a12369-3816-7f82-a80e-77dc5c249a34",
           "role": "assistant"
         }
       ],
@@ -5858,6 +6835,20 @@
           "thread_id": "01a0947a-003f-7140-97c1-79d100f5cd1f",
           "turn_id": "01a0947b-14de-7783-8e4b-7c34f154cca7",
           "role": "user"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/robotmcp/ros-mcp-server",
+      "references": [
+        {
+          "thread_id": "01a11f6b-8664-70a2-85d2-765dfdc8236f",
+          "turn_id": "01a11f6f-e4f9-7491-9bd3-aec4a046138d",
+          "role": "assistant"
         }
       ],
       "status": "not_checked",
@@ -6041,6 +7032,11 @@
           "role": "asset"
         },
         {
+          "thread_id": "01a12079-1017-77d1-bb8f-4df9033ca979",
+          "turn_id": "01a12079-3570-7d31-b353-5e1a5d6442d4",
+          "role": "user"
+        },
+        {
           "thread_id": "unknown-attachment",
           "turn_id": "asset:02850b3288b8f24d",
           "role": "asset"
@@ -6128,6 +7124,20 @@
       "detail": ""
     },
     {
+      "url": "https://hf.co/cli/install.sh",
+      "references": [
+        {
+          "thread_id": "01a12375-ec8b-7910-a3fb-d76005404aec",
+          "turn_id": "01a1241d-6318-7f23-845e-c3929441301e",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
       "url": "https://hub.docker.com/_/ros",
       "references": [
         {
@@ -6156,11 +7166,139 @@
       "detail": ""
     },
     {
+      "url": "https://huggingface.co/Qwen/Qwen3-VL-4B-Instruct/blob/main/config.json",
+      "references": [
+        {
+          "thread_id": "01a12372-6a74-70c0-b77b-266a7ec6299a",
+          "turn_id": "01a12373-345b-7f51-93be-142489a7e97d",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
       "url": "https://huggingface.co/blog/smolvla",
       "references": [
         {
           "thread_id": "01a060cb-ba03-7842-b505-80c0c7b8ff53",
           "turn_id": "01a060d4-f322-7e30-89a5-9959e3a7d8c1",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a11b95-883d-7b02-baa3-1451c029dbfb",
+          "turn_id": "01a11b95-8c73-7910-8c50-3ab1a89004b5",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://huggingface.co/datasets/TianxingChen/RoboTwin2.0",
+      "references": [
+        {
+          "thread_id": "01a12330-1faa-7241-90f5-84f78a093b4a",
+          "turn_id": "asset:3b15bfed59afca11",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a12330-1faa-7241-90f5-84f78a093b4a",
+          "turn_id": "asset:60a8cc6c4d60b384",
+          "role": "asset"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://huggingface.co/datasets/TianxingChen/RoboTwin2.0/tree/main",
+      "references": [
+        {
+          "thread_id": "01a12375-ec8b-7910-a3fb-d76005404aec",
+          "turn_id": "01a12416-1e30-7250-8590-925fbe4480d8",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://huggingface.co/datasets/TianxingChen/RoboTwin2.0/tree/main/dataset",
+      "references": [
+        {
+          "thread_id": "01a12330-1faa-7241-90f5-84f78a093b4a",
+          "turn_id": "asset:2ce6a255093a1500",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a12375-ec8b-7910-a3fb-d76005404aec",
+          "turn_id": "asset:2ce6a255093a1500",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a1240d-43ef-7c10-b4de-a25c7ad7d3ee",
+          "turn_id": "01a12412-cf4d-76e3-bb68-8b9e2836c4ba",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a1240d-43ef-7c10-b4de-a25c7ad7d3ee",
+          "turn_id": "01a1249b-43b4-7743-b652-a94a2e9e1017",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://huggingface.co/datasets/TianxingChen/RoboTwin2.0/tree/main/dataset/lift_pot",
+      "references": [
+        {
+          "thread_id": "01a1240d-43ef-7c10-b4de-a25c7ad7d3ee",
+          "turn_id": "01a12412-cf4d-76e3-bb68-8b9e2836c4ba",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a1240d-43ef-7c10-b4de-a25c7ad7d3ee",
+          "turn_id": "01a1249b-43b4-7743-b652-a94a2e9e1017",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://huggingface.co/docs/huggingface_hub/guides/cli#standalone-installer-recommended",
+      "references": [
+        {
+          "thread_id": "01a12375-ec8b-7910-a3fb-d76005404aec",
+          "turn_id": "01a1241d-6318-7f23-845e-c3929441301e",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://huggingface.co/docs/huggingface_hub/guides/download#faster-downloads",
+      "references": [
+        {
+          "thread_id": "01a12375-ec8b-7910-a3fb-d76005404aec",
+          "turn_id": "01a1241d-6318-7f23-845e-c3929441301e",
           "role": "assistant"
         }
       ],
@@ -6210,6 +7348,25 @@
         {
           "thread_id": "01a0f012-d1e9-7b10-b99a-1a5fbe13da56",
           "turn_id": "01a0f0c8-111e-7bb3-8f83-6a508c6e6546",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a11ea9-1a88-7a41-b177-45fad5a84852",
+          "turn_id": "01a11ea9-a873-76b3-9974-62f36000ad3e",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://huggingface.co/docs/lerobot/async",
+      "references": [
+        {
+          "thread_id": "01a124e6-24ff-7b90-8ca1-7504b9d57a04",
+          "turn_id": "01a12554-5c67-7bd3-bd2f-31f8cc78765f",
           "role": "assistant"
         }
       ],
@@ -6413,6 +7570,45 @@
           "thread_id": "01a066da-16e2-7e71-ac06-566fe700cc5c",
           "turn_id": "01a066dd-054f-70e2-9c42-109ea62c37f4",
           "role": "assistant"
+        },
+        {
+          "thread_id": "01a0f168-756e-7703-af28-e1ee1ee9a728",
+          "turn_id": "01a0f168-d35e-7741-8b84-a476f061a93c",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a0f168-756e-7703-af28-e1ee1ee9a728",
+          "turn_id": "asset:20e70a15a8a48207",
+          "role": "asset"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://huggingface.co/docs/lerobot/pi05",
+      "references": [
+        {
+          "thread_id": "01a11a43-205c-7cf1-804c-b84ffe6022af",
+          "turn_id": "01a11a43-75ba-7022-a5af-a57d3eb494f8",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a11e56-c76f-7870-aa4f-be1617e32350",
+          "turn_id": "asset:75f0da6e2ceee6bd",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a11ea9-1a88-7a41-b177-45fad5a84852",
+          "turn_id": "asset:75f0da6e2ceee6bd",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a11fd1-8292-75e0-8706-b3a598275e6f",
+          "turn_id": "asset:75f0da6e2ceee6bd",
+          "role": "asset"
         }
       ],
       "status": "not_checked",
@@ -6467,6 +7663,30 @@
           "thread_id": "01a0f012-d1e9-7b10-b99a-1a5fbe13da56",
           "turn_id": "01a0f0c8-111e-7bb3-8f83-6a508c6e6546",
           "role": "assistant"
+        },
+        {
+          "thread_id": "01a11941-f7ab-75f2-b3de-43d29ee29060",
+          "turn_id": "01a1197e-4671-7471-aa9f-2bf999e4d749",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://huggingface.co/docs/lerobot/smolvla#collect-a-dataset",
+      "references": [
+        {
+          "thread_id": "01a11b2f-db52-7d80-8cfa-5b113d0cfd57",
+          "turn_id": "01a11b30-f0b0-72f2-8380-8b783673bc24",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a11b2f-db52-7d80-8cfa-5b113d0cfd57",
+          "turn_id": "01a11b4e-d558-7e90-8fb5-2ec724dd22fd",
+          "role": "assistant"
         }
       ],
       "status": "not_checked",
@@ -6494,6 +7714,49 @@
         {
           "thread_id": "01a0cbc1-d956-7921-af91-28e9b8db1183",
           "turn_id": "01a0cd82-9a95-7ab3-8aeb-7ec8b8d0ae4c",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://huggingface.co/docs/lerobot/v0.4.4/async",
+      "references": [
+        {
+          "thread_id": "01a11e42-5dd8-7022-82bd-15a112720787",
+          "turn_id": "01a11e44-be38-7702-bec6-e07fc7117e57",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a11e50-be6f-7061-afe3-8c8c7fdf77e5",
+          "turn_id": "01a11e80-e67a-7bc2-a038-b0999beaa2b7",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a11e50-be6f-7061-afe3-8c8c7fdf77e5",
+          "turn_id": "asset:613efb365313e824",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a12f39-9b78-7d52-b841-83cc19db6f83",
+          "turn_id": "asset:613efb365313e824",
+          "role": "asset"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://huggingface.co/docs/lerobot/v0.4.4/il_robots#tips-for-gathering-data",
+      "references": [
+        {
+          "thread_id": "01a11e56-c76f-7870-aa4f-be1617e32350",
+          "turn_id": "01a11e5e-8cdb-7972-b361-b89a14d50c2f",
           "role": "assistant"
         }
       ],
@@ -6555,6 +7818,34 @@
       "detail": ""
     },
     {
+      "url": "https://huggingface.co/docs/transformers/model_memory_anatomy",
+      "references": [
+        {
+          "thread_id": "01a12330-1faa-7241-90f5-84f78a093b4a",
+          "turn_id": "01a12410-8515-7b32-b424-403b95c4dcf0",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://huggingface.co/lerobot/pi05_base",
+      "references": [
+        {
+          "thread_id": "01a11a43-205c-7cf1-804c-b84ffe6022af",
+          "turn_id": "asset:7ea7e80209c11093",
+          "role": "asset"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
       "url": "https://huggingface.co/lerobot/smolvla_base",
       "references": [
         {
@@ -6594,6 +7885,35 @@
           "thread_id": "01a0947a-003f-7140-97c1-79d100f5cd1f",
           "turn_id": "01a0a92d-99e4-7031-abb0-3fcf5c08d551",
           "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://huggingface.co/robbyant/lingbot-vla-v2-6b/tree/main",
+      "references": [
+        {
+          "thread_id": "01a12330-1faa-7241-90f5-84f78a093b4a",
+          "turn_id": "asset:2ce6a255093a1500",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a12330-1faa-7241-90f5-84f78a093b4a",
+          "turn_id": "asset:3b15bfed59afca11",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a12375-ec8b-7910-a3fb-d76005404aec",
+          "turn_id": "01a12416-1e30-7250-8590-925fbe4480d8",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a12375-ec8b-7910-a3fb-d76005404aec",
+          "turn_id": "asset:2ce6a255093a1500",
+          "role": "asset"
         }
       ],
       "status": "not_checked",
@@ -6682,6 +8002,20 @@
       "detail": ""
     },
     {
+      "url": "https://jsoncanvas.org/spec/1.0/",
+      "references": [
+        {
+          "thread_id": "01a11aa7-cfb3-77c0-bcb4-92f9a3dfd026",
+          "turn_id": "01a11ab1-689d-7bb2-9ff0-28b699d35b39",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
       "url": "https://kernel.org/doc/html/v4.12/media/uapi/v4l/buffer.html",
       "references": [
         {
@@ -6732,6 +8066,11 @@
           "thread_id": "01a080cb-5824-7282-89bc-2dd1013446a2",
           "turn_id": "asset:25b218dc6f7bc7b5",
           "role": "asset"
+        },
+        {
+          "thread_id": "01a12079-1017-77d1-bb8f-4df9033ca979",
+          "turn_id": "01a12079-3570-7d31-b353-5e1a5d6442d4",
+          "role": "user"
         },
         {
           "thread_id": "unknown-attachment",
@@ -6821,6 +8160,20 @@
       "detail": ""
     },
     {
+      "url": "https://learn.chatgpt.com/docs/linux/linux-app#update-the-app",
+      "references": [
+        {
+          "thread_id": "01a11907-33c5-7150-852b-0f87e6dc2d80",
+          "turn_id": "01a11907-963a-72c2-9ec5-71ea700ec116",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
       "url": "https://learn.chatgpt.com/docs/projects",
       "references": [
         {
@@ -6901,6 +8254,30 @@
       "detail": ""
     },
     {
+      "url": "https://man7.org/linux/man-pages/man3/clock_gettime.3.html",
+      "references": [
+        {
+          "thread_id": "01a11b2f-db52-7d80-8cfa-5b113d0cfd57",
+          "turn_id": "01a11f75-74b9-7291-9518-0396803f3d2d",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a11b2f-db52-7d80-8cfa-5b113d0cfd57",
+          "turn_id": "asset:82fa4ff9065b52bc",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a11fd1-8292-75e0-8706-b3a598275e6f",
+          "turn_id": "asset:82fa4ff9065b52bc",
+          "role": "asset"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
       "url": "https://mcap.dev/",
       "references": [
         {
@@ -6949,6 +8326,20 @@
           "thread_id": "01a041e0-a6bc-7fc3-9f55-075e9a1ad893",
           "turn_id": "01a04216-41a5-7ae1-825e-b5a2ab508ef9",
           "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://modelscope.cn/models/Robbyant/",
+      "references": [
+        {
+          "thread_id": "01a12330-1faa-7241-90f5-84f78a093b4a",
+          "turn_id": "asset:3b15bfed59afca11",
+          "role": "asset"
         }
       ],
       "status": "not_checked",
@@ -7025,6 +8416,20 @@
           "thread_id": "01a09437-3a87-7912-814a-5cd30e754bc2",
           "turn_id": "01a09f0a-58bf-7351-a2ff-b24462420853",
           "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://mp.weixin.qq.com/s/aqBmhi5n79cfpfA0YCH50A?poc_token=%5BREDACTED%5D",
+      "references": [
+        {
+          "thread_id": "01a12330-1faa-7241-90f5-84f78a093b4a",
+          "turn_id": "01a12330-2457-7723-b1b9-9389a54ae772",
+          "role": "user"
         }
       ],
       "status": "not_checked",
@@ -7156,6 +8561,152 @@
       "detail": ""
     },
     {
+      "url": "https://obsidian.md/canvas",
+      "references": [
+        {
+          "thread_id": "01a11aa7-cfb3-77c0-bcb4-92f9a3dfd026",
+          "turn_id": "01a11aa9-70cf-7122-bb41-b82469b9c12f",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a11aa7-cfb3-77c0-bcb4-92f9a3dfd026",
+          "turn_id": "01a11ab3-8f09-7061-84b2-607c6f71e835",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://obsidian.md/download",
+      "references": [
+        {
+          "thread_id": "01a11aa7-cfb3-77c0-bcb4-92f9a3dfd026",
+          "turn_id": "01a11ab1-689d-7bb2-9ff0-28b699d35b39",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a11aa7-cfb3-77c0-bcb4-92f9a3dfd026",
+          "turn_id": "01a11ab3-8f09-7061-84b2-607c6f71e835",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a11ab4-fd5d-7b62-9070-f939efc40b55",
+          "turn_id": "01a11ab5-9e51-75b2-88bd-b99f8ee144c5",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://obsidian.md/help/Getting%20started/Sync%20your%20notes%20across%20devices",
+      "references": [
+        {
+          "thread_id": "01a11aa7-cfb3-77c0-bcb4-92f9a3dfd026",
+          "turn_id": "01a11ab3-8f09-7061-84b2-607c6f71e835",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://obsidian.md/help/Plugins/Canvas",
+      "references": [
+        {
+          "thread_id": "01a11ab4-fd5d-7b62-9070-f939efc40b55",
+          "turn_id": "01a11ab5-9e51-75b2-88bd-b99f8ee144c5",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://obsidian.md/help/links",
+      "references": [
+        {
+          "thread_id": "01a11ac6-1d59-75c1-a76a-a9a1fd503412",
+          "turn_id": "01a11ac6-b13d-78a0-9561-c60cc93c0e13",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://obsidian.md/help/plugins/canvas",
+      "references": [
+        {
+          "thread_id": "01a11ac6-1d59-75c1-a76a-a9a1fd503412",
+          "turn_id": "01a11ac6-b13d-78a0-9561-c60cc93c0e13",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a11ac6-1d59-75c1-a76a-a9a1fd503412",
+          "turn_id": "01a11acc-6ce3-74a0-84b6-64aa368253ca",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://obsidian.md/help/plugins/graph",
+      "references": [
+        {
+          "thread_id": "01a11ac6-1d59-75c1-a76a-a9a1fd503412",
+          "turn_id": "01a11ac6-b13d-78a0-9561-c60cc93c0e13",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://obsidian.md/pricing",
+      "references": [
+        {
+          "thread_id": "01a11aa7-cfb3-77c0-bcb4-92f9a3dfd026",
+          "turn_id": "01a11ab3-8f09-7061-84b2-607c6f71e835",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://obsidian.md/sync",
+      "references": [
+        {
+          "thread_id": "01a11aa7-cfb3-77c0-bcb4-92f9a3dfd026",
+          "turn_id": "01a11ab3-8f09-7061-84b2-607c6f71e835",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
       "url": "https://open3d.org/docs/latest/tutorial/pipelines/robust_kernels.html",
       "references": [
         {
@@ -7210,6 +8761,16 @@
           "thread_id": "01a0a4b0-3d46-7d13-a407-0b61d8ab0cb6",
           "turn_id": "01a0a4b0-4115-77e0-9d73-76c72c81f055",
           "role": "assistant"
+        },
+        {
+          "thread_id": "01a11ac6-1d59-75c1-a76a-a9a1fd503412",
+          "turn_id": "01a11ac6-b13d-78a0-9561-c60cc93c0e13",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a11b95-883d-7b02-baa3-1451c029dbfb",
+          "turn_id": "01a11b95-8c73-7910-8c50-3ab1a89004b5",
+          "role": "assistant"
         }
       ],
       "status": "not_checked",
@@ -7237,6 +8798,20 @@
         {
           "thread_id": "01a041e0-a6bc-7fc3-9f55-075e9a1ad893",
           "turn_id": "01a041e1-0f74-77b2-a8dc-46107fbbb723",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://plansys2.github.io/design/index.html",
+      "references": [
+        {
+          "thread_id": "01a11f6b-8664-70a2-85d2-765dfdc8236f",
+          "turn_id": "01a11f6f-e4f9-7491-9bd3-aec4a046138d",
           "role": "assistant"
         }
       ],
@@ -7378,6 +8953,62 @@
       "detail": ""
     },
     {
+      "url": "https://py-trees-ros.readthedocs.io/en/release-2.1.x/features.html",
+      "references": [
+        {
+          "thread_id": "01a11f6b-8664-70a2-85d2-765dfdc8236f",
+          "turn_id": "01a11f6f-e4f9-7491-9bd3-aec4a046138d",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://pytorch.org/blog/pytorch-2-7/",
+      "references": [
+        {
+          "thread_id": "01a13303-aad0-7382-88d0-990928cdee70",
+          "turn_id": "01a13304-fe14-78d3-825b-2005efb99148",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://pytorch.org/docs/stable/notes/cuda.html#environment-variables",
+      "references": [
+        {
+          "thread_id": "01a11e56-c76f-7870-aa4f-be1617e32350",
+          "turn_id": "01a12562-4425-7890-9965-c242f9b883b1",
+          "role": "user"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://pytorch.org/get-started/previous-versions/",
+      "references": [
+        {
+          "thread_id": "01a12569-9fbc-78a2-8bc2-766d4e0d1aec",
+          "turn_id": "01a12f3e-4b97-7643-819d-9551e9ad9ce6",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
       "url": "https://raw.githubusercontent.com/GalaxyGeneralRobotics/galbot_one_golf_description/main/CMakeLists.txt",
       "references": [
         {
@@ -7439,11 +9070,100 @@
       "detail": ""
     },
     {
+      "url": "https://rerun.io/docs/concepts/logging-and-ingestion/rrd-format",
+      "references": [
+        {
+          "thread_id": "01a1241d-d026-7330-8c86-50793a7b6bde",
+          "turn_id": "01a12451-eb21-7180-a944-5b0b2c4a6bad",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://rerun.io/docs/getting-started",
+      "references": [
+        {
+          "thread_id": "01a134d2-03de-7ac2-b1f0-2302cd467dbe",
+          "turn_id": "01a134d2-083b-71a2-b840-7f174b9f3e18",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://rerun.io/docs/howto/logging-and-ingestion/lerobot",
+      "references": [
+        {
+          "thread_id": "01a0f123-ee3f-7da3-8232-cff7bba23cd2",
+          "turn_id": "01a119b4-9dc3-7cd1-a056-12eb6e4e5588",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a0f123-ee3f-7da3-8232-cff7bba23cd2",
+          "turn_id": "asset:144bda9e05e693e7",
+          "role": "asset"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://robocasa.ai/docs/build/html/tasks/composite_tasks.html",
+      "references": [
+        {
+          "thread_id": "01a11f6b-8664-70a2-85d2-765dfdc8236f",
+          "turn_id": "01a11f6f-e4f9-7491-9bd3-aec4a046138d",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
       "url": "https://robotwin-platform.github.io/doc/",
       "references": [
         {
           "thread_id": "01a0addb-959b-7433-adb3-4b36c3df088c",
           "turn_id": "01a0bd5e-1fa7-7041-9e41-fba1328c72eb",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://robotwin-platform.github.io/doc/usage/collect-data.html",
+      "references": [
+        {
+          "thread_id": "01a12330-1faa-7241-90f5-84f78a093b4a",
+          "turn_id": "01a12db8-b4a2-7e21-a27a-a51cb2242f49",
+          "role": "user"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://say-can.github.io/",
+      "references": [
+        {
+          "thread_id": "01a11f6b-8664-70a2-85d2-765dfdc8236f",
+          "turn_id": "01a11f6f-e4f9-7491-9bd3-aec4a046138d",
           "role": "assistant"
         }
       ],
@@ -7459,6 +9179,202 @@
           "thread_id": "01a09f25-95ac-74a2-b818-3ae774c667d5",
           "turn_id": "01a09f25-edf7-7fe3-b4dc-24faa6250d96",
           "role": "user"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://tasks.extensions.modelcontextprotocol.io/specification/2026-07-28/tasks",
+      "references": [
+        {
+          "thread_id": "01a11f6b-8664-70a2-85d2-765dfdc8236f",
+          "turn_id": "01a11f6f-e4f9-7491-9bd3-aec4a046138d",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://tianchi.aliyun.com/competition/entrance/532514",
+      "references": [
+        {
+          "thread_id": "01a12330-1faa-7241-90f5-84f78a093b4a",
+          "turn_id": "01a12336-1c0b-7e93-8719-6a472b5c3c22",
+          "role": "user"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://tianchi.aliyun.com/competition/entrance/532514/customize898",
+      "references": [
+        {
+          "thread_id": "01a12330-1faa-7241-90f5-84f78a093b4a",
+          "turn_id": "asset:3b15bfed59afca11",
+          "role": "asset"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://tianchi.aliyun.com/competition/entrance/532514/forum",
+      "references": [
+        {
+          "thread_id": "01a12330-1faa-7241-90f5-84f78a093b4a",
+          "turn_id": "asset:60a8cc6c4d60b384",
+          "role": "asset"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://tianchi.aliyun.com/competition/entrance/532514/information",
+      "references": [
+        {
+          "thread_id": "01a12330-1faa-7241-90f5-84f78a093b4a",
+          "turn_id": "01a1233e-905f-7c73-ad1a-90db7fe7ab94",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a12330-1faa-7241-90f5-84f78a093b4a",
+          "turn_id": "01a1233e-905f-7c73-ad1a-90db7fe7ab94",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a12330-1faa-7241-90f5-84f78a093b4a",
+          "turn_id": "01a12347-83ce-7a10-94e5-14a998595f28",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a12330-1faa-7241-90f5-84f78a093b4a",
+          "turn_id": "01a124b8-ae86-7b43-be64-d23ac3f77388",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a12330-1faa-7241-90f5-84f78a093b4a",
+          "turn_id": "01a124c8-b278-7b33-8d8d-d0fd492036cf",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a12330-1faa-7241-90f5-84f78a093b4a",
+          "turn_id": "01a12db8-b4a2-7e21-a27a-a51cb2242f49",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a12330-1faa-7241-90f5-84f78a093b4a",
+          "turn_id": "01a134d4-0158-7943-9002-6a5b845feed3",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a12330-1faa-7241-90f5-84f78a093b4a",
+          "turn_id": "asset:60a8cc6c4d60b384",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a12375-ec8b-7910-a3fb-d76005404aec",
+          "turn_id": "01a12413-bb58-75b3-913b-26a04fb50d6d",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a12375-ec8b-7910-a3fb-d76005404aec",
+          "turn_id": "asset:b4ba876585185514",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a132fe-231b-76f2-ad91-bb57915ad417",
+          "turn_id": "01a132fe-5ba0-7773-aa29-9a9db46817d8",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://tianchi.aliyun.com/competition/entrance/532514/introduction",
+      "references": [
+        {
+          "thread_id": "01a12330-1faa-7241-90f5-84f78a093b4a",
+          "turn_id": "01a124b8-ae86-7b43-be64-d23ac3f77388",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a12330-1faa-7241-90f5-84f78a093b4a",
+          "turn_id": "asset:60a8cc6c4d60b384",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a12375-ec8b-7910-a3fb-d76005404aec",
+          "turn_id": "01a12377-07e4-7c82-a719-bbbda0f0f055",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://tianchi.aliyun.com/forum/post/1081761",
+      "references": [
+        {
+          "thread_id": "01a12330-1faa-7241-90f5-84f78a093b4a",
+          "turn_id": "01a1233e-905f-7c73-ad1a-90db7fe7ab94",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a12330-1faa-7241-90f5-84f78a093b4a",
+          "turn_id": "01a124b8-ae86-7b43-be64-d23ac3f77388",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a12330-1faa-7241-90f5-84f78a093b4a",
+          "turn_id": "01a124c8-b278-7b33-8d8d-d0fd492036cf",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://tianchi.aliyun.com/forum/post/1081761?spm=a2c22.12281978.J_fscw32KETAEZq74iVzBdb.7.69b6201d85GGEH",
+      "references": [
+        {
+          "thread_id": "01a12330-1faa-7241-90f5-84f78a093b4a",
+          "turn_id": "01a1233e-905f-7c73-ad1a-90db7fe7ab94",
+          "role": "user"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://tonyzhaozh.github.io/aloha/",
+      "references": [
+        {
+          "thread_id": "01a124e6-24ff-7b90-8ca1-7504b9d57a04",
+          "turn_id": "01a12554-5c67-7bd3-bd2f-31f8cc78765f",
+          "role": "assistant"
         }
       ],
       "status": "not_checked",
@@ -7520,6 +9436,20 @@
       "detail": ""
     },
     {
+      "url": "https://ubuntu.com/esm",
+      "references": [
+        {
+          "thread_id": "01a12079-1017-77d1-bb8f-4df9033ca979",
+          "turn_id": "01a12079-3570-7d31-b353-5e1a5d6442d4",
+          "role": "user"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
       "url": "https://ubuntu.com/pro",
       "references": [
         {
@@ -7550,6 +9480,11 @@
         {
           "thread_id": "01a065fa-b05d-78c3-ba64-416652f60649",
           "turn_id": "01a06600-b42e-7922-b03e-d1428709aaa7",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a12079-1017-77d1-bb8f-4df9033ca979",
+          "turn_id": "01a12079-3570-7d31-b353-5e1a5d6442d4",
           "role": "user"
         },
         {
@@ -7660,6 +9595,20 @@
       "detail": ""
     },
     {
+      "url": "https://www.aiboss88.com/en/news/ant-lingbot-embodied-model-challenge",
+      "references": [
+        {
+          "thread_id": "01a12330-1faa-7241-90f5-84f78a093b4a",
+          "turn_id": "01a12336-1c0b-7e93-8719-6a472b5c3c22",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
       "url": "https://www.ais.uni-bonn.de/papers/ISR_2016_Holz.pdf",
       "references": [
         {
@@ -7670,6 +9619,39 @@
         {
           "thread_id": "01a09f25-95ac-74a2-b818-3ae774c667d5",
           "turn_id": "01a09f31-08a6-7542-bfec-69bbb5da406b",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://www.deepspeed.ai/tutorials/zero/",
+      "references": [
+        {
+          "thread_id": "01a12330-1faa-7241-90f5-84f78a093b4a",
+          "turn_id": "01a12da5-c30c-7ec0-8d80-2f1f4e5d5afd",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://www.drawio.com/docs/manual/editor/offline/",
+      "references": [
+        {
+          "thread_id": "01a11aa7-cfb3-77c0-bcb4-92f9a3dfd026",
+          "turn_id": "01a11aa9-70cf-7122-bb41-b82469b9c12f",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a11aa7-cfb3-77c0-bcb4-92f9a3dfd026",
+          "turn_id": "01a11ab1-689d-7bb2-9ff0-28b699d35b39",
           "role": "assistant"
         }
       ],
@@ -7745,6 +9727,34 @@
       "detail": ""
     },
     {
+      "url": "https://www.google.com/s2/favicons?domain=https://github.com\\&sz=32",
+      "references": [
+        {
+          "thread_id": "01a12330-1faa-7241-90f5-84f78a093b4a",
+          "turn_id": "asset:60a8cc6c4d60b384",
+          "role": "asset"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://www.google.com/s2/favicons?domain=https://tianchi.aliyun.com\\&sz=32",
+      "references": [
+        {
+          "thread_id": "01a12330-1faa-7241-90f5-84f78a093b4a",
+          "turn_id": "asset:60a8cc6c4d60b384",
+          "role": "asset"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
       "url": "https://www.kernel.org/doc/html/latest/userspace-api/media/v4l/ext-ctrls-camera.html",
       "references": [
         {
@@ -7773,6 +9783,30 @@
       "detail": ""
     },
     {
+      "url": "https://www.linuxptp.org/documentation/phc2sys/",
+      "references": [
+        {
+          "thread_id": "01a11b2f-db52-7d80-8cfa-5b113d0cfd57",
+          "turn_id": "01a11f75-74b9-7291-9518-0396803f3d2d",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a11b2f-db52-7d80-8cfa-5b113d0cfd57",
+          "turn_id": "asset:82fa4ff9065b52bc",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a11fd1-8292-75e0-8706-b3a598275e6f",
+          "turn_id": "asset:82fa4ff9065b52bc",
+          "role": "asset"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
       "url": "https://www.livoxtech.com/cn/mid-360/specs",
       "references": [
         {
@@ -7792,6 +9826,20 @@
         {
           "thread_id": "01a09f25-95ac-74a2-b818-3ae774c667d5",
           "turn_id": "01a09f25-edf7-7fe3-b4dc-24faa6250d96",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5090/",
+      "references": [
+        {
+          "thread_id": "01a12330-1faa-7241-90f5-84f78a093b4a",
+          "turn_id": "01a134d4-0158-7943-9002-6a5b845feed3",
           "role": "assistant"
         }
       ],
@@ -7886,6 +9934,35 @@
       "detail": ""
     },
     {
+      "url": "https://www.physicalintelligence.company/download/pi05.pdf",
+      "references": [
+        {
+          "thread_id": "01a11e56-c76f-7870-aa4f-be1617e32350",
+          "turn_id": "asset:75f0da6e2ceee6bd",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a11ea9-1a88-7a41-b177-45fad5a84852",
+          "turn_id": "asset:75f0da6e2ceee6bd",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a11f6b-8664-70a2-85d2-765dfdc8236f",
+          "turn_id": "01a11f6f-e4f9-7491-9bd3-aec4a046138d",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a11fd1-8292-75e0-8706-b3a598275e6f",
+          "turn_id": "asset:75f0da6e2ceee6bd",
+          "role": "asset"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
       "url": "https://www.pi.website/blog/pi07",
       "references": [
         {
@@ -7897,6 +9974,25 @@
           "thread_id": "01a06108-ec88-7d61-82ea-9aa519ec0744",
           "turn_id": "01a0610a-8430-7db3-8679-8b672a3a03aa",
           "role": "user"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://www.realsenseai.com/products/stereo-depth-camera-d405/",
+      "references": [
+        {
+          "thread_id": "01a11941-f7ab-75f2-b3de-43d29ee29060",
+          "turn_id": "01a11974-7a2f-7bf2-9198-46ae0efd79d4",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a11941-f7ab-75f2-b3de-43d29ee29060",
+          "turn_id": "asset:ebd73e2855583c9a",
+          "role": "asset"
         }
       ],
       "status": "not_checked",
@@ -7930,6 +10026,20 @@
           "thread_id": "01a09f25-95ac-74a2-b818-3ae774c667d5",
           "turn_id": "01a09f25-edf7-7fe3-b4dc-24faa6250d96",
           "role": "user"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://www.roboticsproceedings.org/rss19/p016.pdf",
+      "references": [
+        {
+          "thread_id": "01a11b95-883d-7b02-baa3-1451c029dbfb",
+          "turn_id": "01a11b95-8c73-7910-8c50-3ab1a89004b5",
+          "role": "assistant"
         }
       ],
       "status": "not_checked",
@@ -7977,6 +10087,34 @@
           "thread_id": "01a09f25-95ac-74a2-b818-3ae774c667d5",
           "turn_id": "01a09f25-edf7-7fe3-b4dc-24faa6250d96",
           "role": "user"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://xmind.com/download",
+      "references": [
+        {
+          "thread_id": "01a11aa7-cfb3-77c0-bcb4-92f9a3dfd026",
+          "turn_id": "01a11ab1-689d-7bb2-9ff0-28b699d35b39",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://xmind.com/features",
+      "references": [
+        {
+          "thread_id": "01a11aa7-cfb3-77c0-bcb4-92f9a3dfd026",
+          "turn_id": "01a11aa9-70cf-7122-bb41-b82469b9c12f",
+          "role": "assistant"
         }
       ],
       "status": "not_checked",
@@ -8040,10 +10178,10 @@
     }
   ],
   "summary": {
-    "total": 384,
+    "total": 496,
     "checked": 0,
     "status_counts": {
-      "not_checked": 384
+      "not_checked": 496
     }
   }
 }

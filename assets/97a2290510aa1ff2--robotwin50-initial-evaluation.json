@@ -1,0 +1,107 @@
+{
+  "updated_at": 1791853283.3616035,
+  "status": "complete",
+  "checkpoint_step": 4500,
+  "episodes_per_task_per_setting": 2,
+  "planned_episodes": 20,
+  "completed_episodes": 20,
+  "rows": [
+    {
+      "setting": "clean",
+      "task": "click_bell",
+      "status": "complete",
+      "episodes_finished": 2,
+      "successes": 2,
+      "success_rate": 1.0,
+      "result_file": "/home/lsy03/\u6587\u6863/ChatGPT/\u8682\u8681\u7075\u6ce2\u5177\u8eab\u5927\u6a21\u578b\u6311\u6218\u8d5b/outputs/evaluation/robotwin50_best4500_initial/clean/click_bell/_result.txt"
+    },
+    {
+      "setting": "clean",
+      "task": "press_stapler",
+      "status": "complete",
+      "episodes_finished": 2,
+      "successes": 2,
+      "success_rate": 1.0,
+      "result_file": "/home/lsy03/\u6587\u6863/ChatGPT/\u8682\u8681\u7075\u6ce2\u5177\u8eab\u5927\u6a21\u578b\u6311\u6218\u8d5b/outputs/evaluation/robotwin50_best4500_initial/clean/press_stapler/_result.txt"
+    },
+    {
+      "setting": "clean",
+      "task": "adjust_bottle",
+      "status": "complete",
+      "episodes_finished": 2,
+      "successes": 0,
+      "success_rate": 0.0,
+      "result_file": "/home/lsy03/\u6587\u6863/ChatGPT/\u8682\u8681\u7075\u6ce2\u5177\u8eab\u5927\u6a21\u578b\u6311\u6218\u8d5b/outputs/evaluation/robotwin50_best4500_initial/clean/adjust_bottle/_result.txt"
+    },
+    {
+      "setting": "clean",
+      "task": "place_object_basket",
+      "status": "complete",
+      "episodes_finished": 2,
+      "successes": 0,
+      "success_rate": 0.0,
+      "result_file": "/home/lsy03/\u6587\u6863/ChatGPT/\u8682\u8681\u7075\u6ce2\u5177\u8eab\u5927\u6a21\u578b\u6311\u6218\u8d5b/outputs/evaluation/robotwin50_best4500_initial/clean/place_object_basket/_result.txt"
+    },
+    {
+      "setting": "clean",
+      "task": "handover_block",
+      "status": "complete",
+      "episodes_finished": 2,
+      "successes": 0,
+      "success_rate": 0.0,
+      "result_file": "/home/lsy03/\u6587\u6863/ChatGPT/\u8682\u8681\u7075\u6ce2\u5177\u8eab\u5927\u6a21\u578b\u6311\u6218\u8d5b/outputs/evaluation/robotwin50_best4500_initial/clean/handover_block/_result.txt"
+    },
+    {
+      "setting": "randomized",
+      "task": "click_bell",
+      "status": "complete",
+      "episodes_finished": 2,
+      "successes": 2,
+      "success_rate": 1.0,
+      "result_file": "/home/lsy03/\u6587\u6863/ChatGPT/\u8682\u8681\u7075\u6ce2\u5177\u8eab\u5927\u6a21\u578b\u6311\u6218\u8d5b/outputs/evaluation/robotwin50_best4500_initial/randomized/click_bell/_result.txt"
+    },
+    {
+      "setting": "randomized",
+      "task": "press_stapler",
+      "status": "complete",
+      "episodes_finished": 2,
+      "successes": 2,
+      "success_rate": 1.0,
+      "result_file": "/home/lsy03/\u6587\u6863/ChatGPT/\u8682\u8681\u7075\u6ce2\u5177\u8eab\u5927\u6a21\u578b\u6311\u6218\u8d5b/outputs/evaluation/robotwin50_best4500_initial/randomized/press_stapler/_result.txt"
+    },
+    {
+      "setting": "randomized",
+      "task": "adjust_bottle",
+      "status": "complete",
+      "episodes_finished": 2,
+      "successes": 0,
+      "success_rate": 0.0,
+      "result_file": "/home/lsy03/\u6587\u6863/ChatGPT/\u8682\u8681\u7075\u6ce2\u5177\u8eab\u5927\u6a21\u578b\u6311\u6218\u8d5b/outputs/evaluation/robotwin50_best4500_initial/randomized/adjust_bottle/_result.txt"
+    },
+    {
+      "setting": "randomized",
+      "task": "place_object_basket",
+      "status": "complete",
+      "episodes_finished": 2,
+      "successes": 0,
+      "success_rate": 0.0,
+      "result_file": "/home/lsy03/\u6587\u6863/ChatGPT/\u8682\u8681\u7075\u6ce2\u5177\u8eab\u5927\u6a21\u578b\u6311\u6218\u8d5b/outputs/evaluation/robotwin50_best4500_initial/randomized/place_object_basket/_result.txt"
+    },
+    {
+      "setting": "randomized",
+      "task": "handover_block",
+      "status": "complete",
+      "episodes_finished": 2,
+      "successes": 0,
+      "success_rate": 0.0,
+      "result_file": "/home/lsy03/\u6587\u6863/ChatGPT/\u8682\u8681\u7075\u6ce2\u5177\u8eab\u5927\u6a21\u578b\u6311\u6218\u8d5b/outputs/evaluation/robotwin50_best4500_initial/randomized/handover_block/_result.txt"
+    }
+  ],
+  "precision": "BF16",
+  "input_resolution": [
+    256,
+    256
+  ],
+  "instruction_type": "unseen",
+  "scope": "initial diagnostic subset; not official 50-task 100-episode competition evaluation"
+}

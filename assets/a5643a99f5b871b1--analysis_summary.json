@@ -1,0 +1,90 @@
+{
+  "status": "completed",
+  "training_remains_stopped_at": 5000,
+  "same_split_stats_and_validation_noise": true,
+  "full_validation_windows": 713,
+  "held_out_episodes": 7,
+  "prediction_diagnostic_windows": 21,
+  "window_overlap_note": "Eligible windows overlap; 713 is not 713 independent demonstrations. Prediction comparisons use 3 windows per held-out episode with one fixed prediction seed.",
+  "results": [
+    {
+      "model": "short_2000",
+      "fixed56_loss": 0.07961771071755461,
+      "full713_loss": 0.08487107156975741,
+      "episode_equal_weight_loss": 0.08609035484279424,
+      "mean_joint_chunk_mae_deg": 5.837475736596317,
+      "gripper_chunk_mae_mm": 20.988280892017343,
+      "mean_joint_first_action_mae_deg": 3.126220342944952,
+      "gripper_first_action_mae_mm": 29.05209158502874,
+      "gripper_prediction_min_mm": -31.348325312137604,
+      "gripper_prediction_max_mm": 146.26136422157288,
+      "gripper_out_of_bounds_fraction": 0.4076190476190476,
+      "hold_state_first_joint_mae_deg": 0.22949891066087214,
+      "joint_mae_deg_by_horizon": {
+        "0": 3.1262203382259655,
+        "9": 4.327681183917928,
+        "24": 6.927792597573166,
+        "49": 6.054047216466176
+      },
+      "hold_state_chunk_joint_mae_deg": 8.690754437923276
+    },
+    {
+      "model": "long_4500",
+      "fixed56_loss": 0.08966315191771303,
+      "full713_loss": 0.09502727605224826,
+      "episode_equal_weight_loss": 0.09649232840459161,
+      "mean_joint_chunk_mae_deg": 5.128282945991036,
+      "gripper_chunk_mae_mm": 15.04770473444036,
+      "mean_joint_first_action_mae_deg": 3.562810830271947,
+      "gripper_first_action_mae_mm": 20.81145763042427,
+      "gripper_prediction_min_mm": -25.477677583694458,
+      "gripper_prediction_max_mm": 117.40456521511078,
+      "gripper_out_of_bounds_fraction": 0.3295238095238095,
+      "hold_state_first_joint_mae_deg": 0.22949891066087214,
+      "joint_mae_deg_by_horizon": {
+        "0": 3.5628108273679553,
+        "9": 4.316573603300156,
+        "24": 6.041868675907907,
+        "49": 5.264118815753133
+      },
+      "hold_state_chunk_joint_mae_deg": 8.690754437923276
+    },
+    {
+      "model": "long_5000",
+      "fixed56_loss": 0.09471206090945218,
+      "full713_loss": 0.09839228282030803,
+      "episode_equal_weight_loss": 0.10035427234302151,
+      "mean_joint_chunk_mae_deg": 5.8860405744139825,
+      "gripper_chunk_mae_mm": 14.100747856178454,
+      "mean_joint_first_action_mae_deg": 2.9236479774959236,
+      "gripper_first_action_mae_mm": 17.342819566173212,
+      "gripper_prediction_min_mm": -7.855460047721863,
+      "gripper_prediction_max_mm": 117.44201183319092,
+      "gripper_out_of_bounds_fraction": 0.21142857142857144,
+      "hold_state_first_joint_mae_deg": 0.22949891066087214,
+      "joint_mae_deg_by_horizon": {
+        "0": 2.923647980036917,
+        "9": 3.7476237154326673,
+        "24": 7.008885052315293,
+        "49": 6.656989971379532
+      },
+      "hold_state_chunk_joint_mae_deg": 8.690754437923276
+    }
+  ],
+  "interpretation": [
+    "All three checkpoints strictly reload and all model parameters are finite; 5000-step optimizer/scheduler state loads and is finite.",
+    "Lowest official flow-matching loss belongs to the completed 2k schedule. This does not establish the best robot policy.",
+    "4500 steps has the lowest sampled full-chunk joint MAE. 5000 steps has the lowest sampled gripper MAE and first-action joint MAE.",
+    "The 2k schedule already decayed learning rate to 2.5e-6; the 20k schedule is incomplete at 5000, with LR approximately 8.57e-5. Different LR schedules prevent attributing differences to step count alone.",
+    "One validation increase from 4500 to 5000 does not establish sustained overfitting.",
+    "First-action joint errors near 3 degrees are much higher than the 0.23-degree hold-current-state reference, while full-chunk predictions improve over holding state across the full horizon. Review prediction continuity at the beginning of each chunk.",
+    "Raw gripper predictions exceed the intended 0–100 mm command range. Bounds and grasp/release timing need independent verification. Clamping alone does not establish task completion.",
+    "No physical grasp success, robot tracking performance, unseen-scene generalization or causal camera synchronization was evaluated."
+  ],
+  "suggested_next_checks": [
+    "Retain all three candidate checkpoints; compare per-episode and per-horizon action plots before choosing a model.",
+    "Prioritize first-action continuity and gripper timing/range checks.",
+    "For continued training, keep held-out episodes fixed and use best validation checkpoint selection; 20k is not a required convergence target.",
+    "Use a separate controlled robot evaluation only after action-interface and observation-timing checks. No robot actions were sent in this assessment."
+  ]
+}

@@ -1,0 +1,124 @@
+<div id="act-gripper-curves" class="act-gripper-viz">
+  <h2>ACT 夹爪预测与参考动作</h2>
+  <div class="act-legend" aria-label="曲线说明">
+    <span><i class="legend-line reference"></i>参考动作</span>
+    <span><i class="legend-line step1500"></i>1500 步模型</span>
+    <span><i class="legend-line step2000"></i>2000 步模型</span>
+    <span class="legend-note">阴影带：物理范围 0–100 mm</span>
+  </div>
+  <div class="act-grid">
+    <figure data-panel="open-example">
+      <figcaption>开夹转折示例：验证窗口 93</figcaption>
+      <svg role="img" aria-label="开夹转折示例的参考动作与两个模型预测"></svg>
+    </figure>
+    <figure data-panel="close-example">
+      <figcaption>闭夹转折示例：验证窗口 40</figcaption>
+      <svg role="img" aria-label="闭夹转折示例的参考动作与两个模型预测"></svg>
+    </figure>
+    <figure data-panel="open-mean">
+      <figcaption>全部开夹转折均值：88 个窗口</figcaption>
+      <svg role="img" aria-label="全部开夹转折窗口的平均参考动作与模型预测"></svg>
+    </figure>
+    <figure data-panel="close-mean">
+      <figcaption>全部闭夹转折均值：104 个窗口</figcaption>
+      <svg role="img" aria-label="全部闭夹转折窗口的平均参考动作与模型预测"></svg>
+    </figure>
+  </div>
+  <p class="act-caption">纵轴是夹爪目标开度（mm），横轴是模型一次预测的未来 1 秒。参考曲线是 SDK 已接受的动作目标；预测曲线没有做裁剪。</p>
+</div>
+<style>
+  #act-gripper-curves { color: var(--foreground); font-family: inherit; width: 100%; }
+  #act-gripper-curves h2 { margin: 0 0 10px; font-size: 16px; font-weight: 500; }
+  #act-gripper-curves .act-legend { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; margin: 0 0 14px; color: var(--muted-foreground); font-size: 12px; }
+  #act-gripper-curves .act-legend span { display: inline-flex; align-items: center; gap: 6px; }
+  #act-gripper-curves .legend-line { width: 24px; height: 0; display: inline-block; border-top: 2px solid var(--viz-series-1); }
+  #act-gripper-curves .legend-line.reference { border-top-style: dashed; border-color: var(--viz-series-1); }
+  #act-gripper-curves .legend-line.step1500 { border-color: var(--viz-series-2); }
+  #act-gripper-curves .legend-line.step2000 { border-color: var(--viz-series-3); }
+  #act-gripper-curves .legend-note { color: var(--muted-foreground); }
+  #act-gripper-curves .act-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 24px; }
+  #act-gripper-curves figure { margin: 0; min-width: 0; }
+  #act-gripper-curves figcaption { margin: 0 0 5px; color: var(--foreground); font-size: 13px; font-weight: 500; }
+  #act-gripper-curves svg { display: block; width: 100%; height: auto; overflow: visible; }
+  #act-gripper-curves .act-caption { margin: 12px 0 0; color: var(--muted-foreground); font-size: 12px; }
+  @media (max-width: 620px) { #act-gripper-curves .act-grid { grid-template-columns: 1fr; gap: 18px; } }
+</style>
+<script>
+(() => {
+  const root = document.getElementById('act-gripper-curves');
+  if (!root) return;
+  const panels = {
+    'open-example': {
+      reference: [0, 0, 0, 0, 0, 14.875, 44.982, 61.29, 93.907, 100],
+      step1500: [26.644, 26.857, 27.676, 27.897, 28.484, 28.986, 29.194, 29.333, 29.423, 29.934],
+      step2000: [10.232, 10.292, 10.729, 10.944, 10.987, 11.61, 11.923, 12.199, 12.671, 12.978]
+    },
+    'close-example': {
+      reference: [100, 93.907, 73.835, 47.491, 32.437, 14.875, 3.584, 0, 0, 0],
+      step1500: [85.957, 85.777, 84.929, 84.123, 82.814, 82.787, 82.592, 82.521, 82.687, 81.508],
+      step2000: [92.03, 91.637, 90.597, 89.425, 88.756, 88.244, 87.739, 87.75, 87.466, 86.798]
+    },
+    'open-mean': {
+      reference: [12.01, 20.59, 30, 38.85, 47.45, 56.48, 65.12, 73.79, 81.38, 88.1],
+      step1500: [28.46, 28.74, 29.52, 29.52, 30.18, 30.88, 31.07, 31.22, 31, 31.59],
+      step2000: [10.58, 10.72, 11.19, 11.4, 11.37, 12.09, 12.41, 12.8, 13.35, 13.51]
+    },
+    'close-mean': {
+      reference: [80.58, 74.65, 68.59, 61.9, 55.31, 48.62, 42.22, 34.95, 27.63, 20.79],
+      step1500: [53.59, 53.26, 53.2, 52.84, 52.16, 52.28, 52.25, 52.19, 52.02, 51.71],
+      step2000: [52.22, 51.65, 51.24, 50.29, 49.44, 48.97, 48.72, 48.62, 48.49, 48.13]
+    }
+  };
+  const colors = { reference: 'var(--viz-series-1)', step1500: 'var(--viz-series-2)', step2000: 'var(--viz-series-3)' };
+  const ns = 'http://www.w3.org/2000/svg';
+  const make = (tag, attrs, parent) => {
+    const node = document.createElementNS(ns, tag);
+    Object.entries(attrs || {}).forEach(([key, value]) => node.setAttribute(key, value));
+    if (parent) parent.appendChild(node);
+    return node;
+  };
+  const text = (value, attrs, parent) => { const node = make('text', attrs, parent); node.textContent = value; return node; };
+  const draw = (figure, data) => {
+    const svg = figure.querySelector('svg');
+    const width = Math.max(320, figure.clientWidth || 520);
+    const height = 270;
+    const margin = { top: 12, right: 14, bottom: 42, left: 52 };
+    const innerW = width - margin.left - margin.right;
+    const innerH = height - margin.top - margin.bottom;
+    const all = Object.values(data).flat();
+    const rawMin = Math.min(...all, 0);
+    const rawMax = Math.max(...all, 100);
+    const pad = Math.max(4, (rawMax - rawMin) * 0.08);
+    const yMin = rawMin - pad;
+    const yMax = rawMax + pad;
+    const x = i => margin.left + i * innerW / 9;
+    const y = value => margin.top + (yMax - value) * innerH / (yMax - yMin);
+    svg.replaceChildren();
+    svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
+    svg.setAttribute('preserveAspectRatio', 'none');
+    const frame = make('rect', { x: margin.left, y: margin.top, width: innerW, height: innerH, 'data-chart-frame': 'true', fill: 'none', stroke: 'var(--border)', 'stroke-width': 1 }, svg);
+    make('rect', { x: margin.left, y: Math.min(y(100), y(0)), width: innerW, height: Math.abs(y(0) - y(100)), fill: 'var(--muted)', opacity: 0.28 }, svg);
+    [0, 50, 100].forEach(value => {
+      if (value < yMin || value > yMax) return;
+      make('line', { x1: margin.left, x2: margin.left + innerW, y1: y(value), y2: y(value), stroke: 'var(--border)', 'stroke-width': 1, opacity: 0.6 }, svg);
+      text(`${value}`, { x: margin.left - 8, y: y(value) + 4, 'text-anchor': 'end', fill: 'var(--muted-foreground)', 'font-size': 12 }, svg);
+    });
+    [0, 0.5, 0.9].forEach((value, index) => {
+      const i = Math.round(value * 10);
+      const xx = x(i);
+      make('line', { x1: xx, x2: xx, y1: margin.top + innerH, y2: margin.top + innerH + 4, stroke: 'var(--border)', 'stroke-width': 1 }, svg);
+      text(`${value.toFixed(1)}`, { x: xx, y: margin.top + innerH + 18, 'text-anchor': index === 0 ? 'start' : index === 2 ? 'end' : 'middle', fill: 'var(--muted-foreground)', 'font-size': 12 }, svg);
+    });
+    text('未来时间 (s)', { x: margin.left + innerW / 2, y: height - 5, 'text-anchor': 'middle', fill: 'var(--foreground)', 'font-size': 12, class: 'axis-title' }, svg);
+    text('夹爪开度 (mm)', { x: 14, y: margin.top + innerH / 2, transform: `rotate(-90 14 ${margin.top + innerH / 2})`, 'text-anchor': 'middle', fill: 'var(--foreground)', 'font-size': 12, class: 'axis-title' }, svg);
+    Object.entries(data).forEach(([name, values]) => {
+      const d = values.map((value, i) => `${i ? 'L' : 'M'}${x(i).toFixed(2)},${y(value).toFixed(2)}`).join(' ');
+      make('path', { d, fill: 'none', stroke: colors[name], 'stroke-width': name === 'reference' ? 2.4 : 2, 'stroke-dasharray': name === 'reference' ? '6 4' : 'none', 'vector-effect': 'non-scaling-stroke' }, svg);
+    });
+  };
+  const redraw = () => root.querySelectorAll('figure').forEach(figure => draw(figure, panels[figure.dataset.panel]));
+  redraw();
+  if (window.ResizeObserver) new ResizeObserver(redraw).observe(root);
+  window.addEventListener('openai:set_globals', redraw);
+})();
+</script>

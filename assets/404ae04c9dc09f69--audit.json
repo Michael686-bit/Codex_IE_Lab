@@ -1,0 +1,61 @@
+{
+  "source_run": "/mnt/data/VLA_data/smolvla_runs/smolvla-retrain-v2-train-20261008_155613-141874",
+  "checkpoint_step": 1800,
+  "full_evaluation_dir": "/mnt/data/VLA_data/smolvla_runs/smolvla-retrain-v2-eval-20261008_161107-148262",
+  "continuation_check_dir": "/mnt/data/VLA_data/smolvla_runs/smolvla-retrain-v2-verify-continue-20261008_161313-148792",
+  "validation_windows": 713,
+  "fixed_selection_windows": 56,
+  "optimizer_updates_during_audit": 0,
+  "first_gripper_error_over_mm_counts": {
+    "10": 70,
+    "20": 53,
+    "30": 32,
+    "50": 18
+  },
+  "first_gripper_max_error_mm": 92.63162994384766,
+  "raw_first_joint_violation_count_by_dim": [
+    0,
+    74,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "raw_first_joint_max_excess_deg_by_dim": [
+    0.0,
+    1.904954181254015,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "raw_all_horizons_max_excess_deg_by_dim": [
+    0.0,
+    8.063947491718784,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "continuation_verification": {
+    "status": "continuation_check_passed",
+    "all_five_source_metrics_reproduced": true,
+    "source_selection_score": 2.9601067168824384
+  },
+  "continuation_plan": {
+    "source_best_step": 1800,
+    "additional_steps_max": 3000,
+    "cumulative_steps_max": 4800,
+    "lr": 2e-05,
+    "warmup_steps": 100,
+    "eval_every": 100,
+    "reduce_patience": 5,
+    "early_stop_patience": 15,
+    "optimizer": "new AdamW state; complete v2 model weights and preprocessing retained"
+  },
+  "formal_training_launched": false,
+  "note": "713 overlapping windows from seven existing validation episodes; used for model selection, not an independent test set. Low first-joint MAE alone does not establish learned motion: measured-state persistence first-joint MAE is 0.417 degrees. Use the short-horizon baseline comparison as well."
+}

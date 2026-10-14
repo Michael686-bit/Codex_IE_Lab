@@ -1,0 +1,140 @@
+{
+  "status": "paused_at_user_request",
+  "saved_at": "2026-10-09T21:03:37.359463+08:00",
+  "motion_commands_sent": false,
+  "physical_motion_acceptance_completed": false,
+  "active_preview_containers": 0,
+  "scope": "User asked to stop for today. Do not resume automatically; continue on next user request.",
+  "fixed": [
+    {
+      "problem": "SDK data freeze",
+      "evidence": "Before tuning, Linux IP fragment reassembly memory pinned at 4196128 bytes, successful reassembly stopped at 372 while failures exceeded 840000 in ~12 seconds. After tuning, long previews continued without frozen streams.",
+      "settings": {
+        "net.ipv4.ipfrag_high_thresh": 134217728,
+        "net.ipv4.ipfrag_time": 3,
+        "net.core.rmem_max": 16777216
+      },
+      "persistent_file": "/etc/sysctl.d/90-g1-policy-receive.conf",
+      "original_values_file": "/home/lsy03/文档/ChatGPT/VLA G1 项目/reports/g1_sdk_debug_20261009/network_sysctl.json"
+    },
+    {
+      "problem": "SDK cleanup hangs",
+      "cause": "EmbOSA AsyncShutdown sends SIGINT to its own process. Our worker ignored SIGINT; direct diagnosis replaced the SDK handler. Preserve native SIGINT after SDK init, isolate worker session, confirm both cleanup acknowledgement and process exit.",
+      "verified": "Direct SDK diagnosis exit 0 and cleanup_confirmed=true; full previews now also confirm cleanup."
+    }
+  ],
+  "latest_run": {
+    "log": "/home/lsy03/文档/ChatGPT/VLA G1 项目/lerobot_runs/model_20261009_210210_777419/events.jsonl",
+    "mode": "preview",
+    "channels": "arm",
+    "model": "milk-v2-best",
+    "execute_requested": false,
+    "sdk_attempts": 0,
+    "arm_command_attempts": 0,
+    "gripper_command_attempts": 0,
+    "acknowledged_commands": 0,
+    "prediction_rejections": 1,
+    "abort_count": 0,
+    "input_rejections": 0,
+    "cleanup_unconfirmed": 0,
+    "cleanup_confirmed": 1,
+    "session_completed": true,
+    "stationary_verified": false,
+    "stop_acknowledged": false,
+    "roundtrip_ms_median": 198.36765000945888,
+    "roundtrip_ms_max": 271.19078500254545,
+    "event_counts": {
+      "start": 1,
+      "sdk_startup_stage": 14,
+      "observation": 150,
+      "preview": 148,
+      "inference": 149,
+      "prediction_rejected": 1,
+      "supervisor_stop": 1,
+      "stop": 1,
+      "sdk_cleanup_confirmed": 1,
+      "session_summary": 1,
+      "completed": 1
+    },
+    "preview_motion_api_calls_zero": true,
+    "input_and_prediction_accepted": true,
+    "preview_data_quality_passed": false,
+    "preview_validation_passed": false,
+    "preview_gate": "At least 10 accepted observations, full duration, zero input/prediction rejections; not motion certification",
+    "scope": "Evidence from this run only; SDK acknowledgement does not establish task success"
+  },
+  "latest_prediction_rejections": [
+    {
+      "event": "prediction_rejected",
+      "reason": "Depth observation became stale during inference",
+      "prediction": [
+        0.6540713310241699,
+        -1.1735981702804565,
+        -0.6039139032363892,
+        -1.131636142730713,
+        -0.15377077460289001,
+        -0.2633824646472931,
+        0.17770124971866608,
+        0.09969504922628403
+      ],
+      "raw_prediction": [
+        0.6540713310241699,
+        -1.1735981702804565,
+        -0.6039139032363892,
+        -1.131636142730713,
+        -0.15377077460289001,
+        -0.2633824646472931,
+        0.17770124971866608,
+        0.09969504922628403
+      ],
+      "mode": "preview",
+      "wall_ns": 1791550946657472849,
+      "monotonic_ns": 130382478001018
+    }
+  ],
+  "earlier_clean_run": "/home/lsy03/文档/ChatGPT/VLA G1 项目/lerobot_runs/model_20261009_205631_773770/report.json",
+  "earlier_clean_run_details": "40 seconds, 252 accepted, zero input/prediction rejections, clean SDK exit, inference reserve .18 before concurrent GPU workload became material.",
+  "current_config": {
+    "period_s": 0.1,
+    "max_speed_rad_s": 0.05,
+    "max_acceleration_rad_s2": 0.3,
+    "max_target_lead_rad": 0.15,
+    "max_tracking_error_rad": 0.1,
+    "gripper_speed_m_s": 0.02,
+    "gripper_effort": 5.0,
+    "max_prediction_age_s": 0.5,
+    "watchdog_s": 0.6,
+    "feedback_max_age_s": 0.3,
+    "rgb_max_age_s": 0.6,
+    "depth_max_age_s": 0.3,
+    "wrench_max_age_s": 0.3,
+    "inference_reserve_s": 0.21
+  },
+  "pending": [
+    "Current parallel GPU workload raises inference latency. Latest 30s: 148 accepted, 0 input rejection, 1 prediction rejection; does not pass strict preview gate.",
+    "Reserve .24 with 60ms acquisition age was too strict: 59 input rejections in 60s. Current reserve .21 permits 90ms source age with 200ms bounded exact-pair wait; final depth deadline remains300ms.",
+    "Need settle latency under expected GPU load and obtain repeatable long strict preview passes; do not lower safety gates to hide rejections.",
+    "Need check multi-client observer/executor/stopper SDK lifecycle using only read APIs before asking user for motion.",
+    "README still contains old descriptions about user-only preview and 120ms pairing; update after final validation.",
+    "No step or closed-loop physical motion has been run. User executes motion commands."
+  ],
+  "offline_tests": {
+    "passed": 65,
+    "log": "/home/lsy03/文档/ChatGPT/VLA G1 项目/reports/g1_sdk_debug_20261009/offline_tests.log",
+    "note": "Last suite passed after network/signal/cleanup tests; subsequent config reserve .24->.21 and pair wait .20 should be included in next final check."
+  },
+  "other_gpu_process": {
+    "pid": 773998,
+    "command": "python -u /code/audit_sampler.py",
+    "observed_memory_mib": 13030,
+    "observed_sm_percent": 49,
+    "action": "Not modified or stopped; belongs to another task."
+  },
+  "model_service": "Existing g1-policy-milk-v2-20261009 on localhost8091 left running; token file /tmp/g1_policy_control_20261009.token (never print).",
+  "tools_and_artifacts": {
+    "debug_image": "vla-g1-sdk-debug:20261009",
+    "debug_scripts": "reports/g1_sdk_debug_20261009/ and /tmp/g1_capture_*.py",
+    "raw_logs": "Each new run keeps sdk_logs (EmbOSA) and sdk_native_logs (Galbot)."
+  },
+  "rejected_hypotheses": "Host PID namespace did not solve freeze and was reverted; do not retain --pid host. Native gdb early tests perturbed timing and are not acceptance evidence."
+}

@@ -1,0 +1,3090 @@
+{
+  "scope": "Three archived milk sessions only; all44 raw attempts and39 exported episodes.",
+  "manifest_sha256": "3248871578568c8b5a7096eab2c03203fed44c7f06efec767b0926c9a9e41e12",
+  "units": "Width statistics in mm; GP trigger unitless.",
+  "semantics": {
+    "master": "GP trigger, not a measured mechanical master-jaw width.",
+    "action": "Latest SDK-accepted width setpoint held until next accepted command.",
+    "state": "SDK measured slave gripper width; can differ from a setpoint during motion or contact."
+  },
+  "raw_integrity_scope": "Header/length/identity and matched scalar checks; media payload hashes not rescanned.",
+  "batches": [
+    {
+      "bundle": "milk_left_20260930",
+      "included_episodes": 11,
+      "exported_frames": 1941,
+      "raw_attempts": 13,
+      "raw_episode_feedback_mm": {
+        "episode_000001": {
+          "count": 2386,
+          "min": 39.0,
+          "max": 100.0,
+          "mean": 78.77347024308466,
+          "p05": 39.0,
+          "median": 100.0,
+          "p95": 100.0,
+          "nonfinite": 0
+        },
+        "episode_000002": {
+          "count": 1794,
+          "min": 39.0,
+          "max": 100.0,
+          "mean": 75.54598662207358,
+          "p05": 39.0,
+          "median": 100.0,
+          "p95": 100.0,
+          "nonfinite": 0
+        },
+        "episode_000003": {
+          "count": 1800,
+          "min": 39.5,
+          "max": 100.0,
+          "mean": 74.28333333333333,
+          "p05": 39.5,
+          "median": 100.0,
+          "p95": 100.0,
+          "nonfinite": 0
+        },
+        "episode_000004": {
+          "count": 1794,
+          "min": 38.5,
+          "max": 100.0,
+          "mean": 74.52898550724638,
+          "p05": 38.5,
+          "median": 100.0,
+          "p95": 100.0,
+          "nonfinite": 0
+        },
+        "episode_000005": {
+          "count": 1875,
+          "min": 45.5,
+          "max": 100.0,
+          "mean": 76.0112,
+          "p05": 45.5,
+          "median": 100.0,
+          "p95": 100.0,
+          "nonfinite": 0
+        },
+        "episode_000006": {
+          "count": 2299,
+          "min": 46.5,
+          "max": 100.0,
+          "mean": 79.80230535015224,
+          "p05": 46.5,
+          "median": 100.0,
+          "p95": 100.0,
+          "nonfinite": 0
+        },
+        "episode_000007": {
+          "count": 1925,
+          "min": 46.0,
+          "max": 100.0,
+          "mean": 81.15558441558441,
+          "p05": 46.0,
+          "median": 100.0,
+          "p95": 100.0,
+          "nonfinite": 0
+        },
+        "episode_000008": {
+          "count": 2350,
+          "min": 39.0,
+          "max": 100.0,
+          "mean": 66.56297872340426,
+          "p05": 39.0,
+          "median": 62.5,
+          "p95": 100.0,
+          "nonfinite": 0
+        },
+        "episode_000009": {
+          "count": 1958,
+          "min": 46.0,
+          "max": 100.0,
+          "mean": 79.04111338100103,
+          "p05": 46.0,
+          "median": 100.0,
+          "p95": 100.0,
+          "nonfinite": 0
+        },
+        "episode_000010": {
+          "count": 2017,
+          "min": 39.0,
+          "max": 100.0,
+          "mean": 74.90356965790778,
+          "p05": 39.0,
+          "median": 100.0,
+          "p95": 100.0,
+          "nonfinite": 0
+        },
+        "episode_000011": {
+          "count": 1800,
+          "min": 39.0,
+          "max": 100.0,
+          "mean": 75.42027777777778,
+          "p05": 39.0,
+          "median": 100.0,
+          "p95": 100.0,
+          "nonfinite": 0
+        },
+        "episode_000012": {
+          "count": 1953,
+          "min": 38.5,
+          "max": 100.0,
+          "mean": 74.1405529953917,
+          "p05": 38.5,
+          "median": 100.0,
+          "p95": 100.0,
+          "nonfinite": 0
+        },
+        "episode_000013": {
+          "count": 1879,
+          "min": 46.5,
+          "max": 100.0,
+          "mean": 78.70250133049494,
+          "p05": 46.5,
+          "median": 100.0,
+          "p95": 100.0,
+          "nonfinite": 0
+        }
+      },
+      "master_trigger": {
+        "count": 3571,
+        "min": 0.0,
+        "max": 0.7,
+        "mean": 0.4221431905161953,
+        "p05": 0.007777777777777784,
+        "median": 0.7,
+        "p95": 0.7,
+        "nonfinite": 0
+      },
+      "master_mapped_width_mm": {
+        "count": 3571,
+        "min": 0.0,
+        "max": 100.0,
+        "mean": 59.4849087983748,
+        "p05": 0.0,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "slave_goal_width_mm": {
+        "count": 3571,
+        "min": 0.0,
+        "max": 100.0,
+        "mean": 59.4849087983748,
+        "p05": 0.0,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "control_feedback_width_mm": {
+        "count": 3571,
+        "min": 38.5,
+        "max": 100.0,
+        "mean": 74.83478017362083,
+        "p05": 38.5,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "mapping_max_error_mm": 1.4210854715202004e-14,
+      "left_trigger_mapping_source_hash": "9a495b97af449f0a7eeaf9b4549d274611f07000bb5030ae79dbbc7092088cfc",
+      "mapping_matches_current_source": true,
+      "dataset_action_mm": {
+        "count": 1941,
+        "min": 0.0,
+        "max": 100.0,
+        "mean": 59.41585001264913,
+        "p05": 0.0,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "dataset_state_mm": {
+        "count": 1941,
+        "min": 38.5,
+        "max": 100.0,
+        "mean": 74.75347758887172,
+        "p05": 38.5,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "target_vs_measured_gap_mm": {
+        "count": 1941,
+        "min": 0.0,
+        "max": 75.66129032258065,
+        "mean": 18.166140388780867,
+        "p05": 0.0,
+        "median": 0.0448028673835239,
+        "p95": 46.5,
+        "nonfinite": 0
+      },
+      "feedback_when_target_closed_mm": {
+        "count": 679,
+        "min": 38.5,
+        "max": 73.0,
+        "mean": 42.04418262150221,
+        "p05": 38.5,
+        "median": 39.0,
+        "p95": 46.5,
+        "nonfinite": 0
+      },
+      "stationary_feedback_when_target_closed_mm": {
+        "count": 622,
+        "min": 38.5,
+        "max": 46.5,
+        "mean": 41.530546623794216,
+        "p05": 38.5,
+        "median": 39.0,
+        "p95": 46.5,
+        "nonfinite": 0
+      },
+      "left_master_vs_latest_accepted_target_gap_mm_recent100ms": {
+        "count": 1926,
+        "min": 0.0,
+        "max": 20.07168458781361,
+        "mean": 0.04550073136144888,
+        "p05": 0.0,
+        "median": 0.0,
+        "p95": 0.0,
+        "nonfinite": 0
+      },
+      "traceability_checks": {
+        "raw_feedback_compared": 1941,
+        "raw_feedback_mismatches": 0,
+        "accepted_command_compared": 1941,
+        "command_mismatches": 0,
+        "latest_accepted_target_mismatches": 0
+      },
+      "configured_speed_mm_s": 60.0,
+      "right_side": {
+        "note": "Disabled side: state logs only, no right gripper raw stream or training dimension.",
+        "trigger": {
+          "count": 385,
+          "min": 0.7,
+          "max": 0.7,
+          "mean": 0.7,
+          "p05": 0.7,
+          "median": 0.7,
+          "p95": 0.7,
+          "nonfinite": 0
+        },
+        "feedback_mm": {
+          "count": 385,
+          "min": 50.0,
+          "max": 50.0,
+          "mean": 50.0,
+          "p05": 50.0,
+          "median": 50.0,
+          "p95": 50.0,
+          "nonfinite": 0
+        },
+        "accepted_commands": 0
+      }
+    },
+    {
+      "bundle": "milk_left_20260930_145800",
+      "included_episodes": 11,
+      "exported_frames": 2262,
+      "raw_attempts": 11,
+      "raw_episode_feedback_mm": {
+        "episode_000001": {
+          "count": 2333,
+          "min": 39.0,
+          "max": 100.0,
+          "mean": 73.1551650235748,
+          "p05": 39.0,
+          "median": 100.0,
+          "p95": 100.0,
+          "nonfinite": 0
+        },
+        "episode_000002": {
+          "count": 2157,
+          "min": 46.0,
+          "max": 100.0,
+          "mean": 79.68196569309225,
+          "p05": 46.0,
+          "median": 96.5,
+          "p95": 100.0,
+          "nonfinite": 0
+        },
+        "episode_000003": {
+          "count": 2418,
+          "min": 38.5,
+          "max": 100.0,
+          "mean": 72.27936311000828,
+          "p05": 38.5,
+          "median": 89.0,
+          "p95": 100.0,
+          "nonfinite": 0
+        },
+        "episode_000004": {
+          "count": 2343,
+          "min": 46.0,
+          "max": 100.0,
+          "mean": 77.36918480580452,
+          "p05": 46.0,
+          "median": 90.0,
+          "p95": 100.0,
+          "nonfinite": 0
+        },
+        "episode_000005": {
+          "count": 2231,
+          "min": 39.0,
+          "max": 100.0,
+          "mean": 75.46100403406544,
+          "p05": 39.0,
+          "median": 100.0,
+          "p95": 100.0,
+          "nonfinite": 0
+        },
+        "episode_000006": {
+          "count": 2707,
+          "min": 39.0,
+          "max": 100.0,
+          "mean": 74.19190986331732,
+          "p05": 39.0,
+          "median": 100.0,
+          "p95": 100.0,
+          "nonfinite": 0
+        },
+        "episode_000007": {
+          "count": 2516,
+          "min": 45.5,
+          "max": 100.0,
+          "mean": 77.08525437201908,
+          "p05": 45.5,
+          "median": 97.5,
+          "p95": 100.0,
+          "nonfinite": 0
+        },
+        "episode_000008": {
+          "count": 2536,
+          "min": 46.0,
+          "max": 100.0,
+          "mean": 82.59660883280758,
+          "p05": 46.0,
+          "median": 100.0,
+          "p95": 100.0,
+          "nonfinite": 0
+        },
+        "episode_000009": {
+          "count": 2353,
+          "min": 39.0,
+          "max": 100.0,
+          "mean": 78.50424989375266,
+          "p05": 39.0,
+          "median": 100.0,
+          "p95": 100.0,
+          "nonfinite": 0
+        },
+        "episode_000010": {
+          "count": 2204,
+          "min": 46.5,
+          "max": 100.0,
+          "mean": 80.26066243194192,
+          "p05": 46.5,
+          "median": 100.0,
+          "p95": 100.0,
+          "nonfinite": 0
+        },
+        "episode_000011": {
+          "count": 2311,
+          "min": 46.0,
+          "max": 100.0,
+          "mean": 82.0296408481177,
+          "p05": 46.0,
+          "median": 98.5,
+          "p95": 100.0,
+          "nonfinite": 0
+        }
+      },
+      "master_trigger": {
+        "count": 4159,
+        "min": 0.0,
+        "max": 0.7,
+        "mean": 0.43546205017231704,
+        "p05": 0.0,
+        "median": 0.6611111111111111,
+        "p95": 0.7,
+        "nonfinite": 0
+      },
+      "master_mapped_width_mm": {
+        "count": 4159,
+        "min": 0.0,
+        "max": 100.0,
+        "mean": 62.06292696841758,
+        "p05": 0.0,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "slave_goal_width_mm": {
+        "count": 4159,
+        "min": 0.0,
+        "max": 100.0,
+        "mean": 62.06292696841758,
+        "p05": 0.0,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "control_feedback_width_mm": {
+        "count": 4159,
+        "min": 38.5,
+        "max": 100.0,
+        "mean": 77.02163981726376,
+        "p05": 39.0,
+        "median": 99.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "mapping_max_error_mm": 1.4210854715202004e-14,
+      "left_trigger_mapping_source_hash": "9a495b97af449f0a7eeaf9b4549d274611f07000bb5030ae79dbbc7092088cfc",
+      "mapping_matches_current_source": true,
+      "dataset_action_mm": {
+        "count": 2262,
+        "min": 0.0,
+        "max": 100.0,
+        "mean": 62.308864867263075,
+        "p05": 0.0,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "dataset_state_mm": {
+        "count": 2262,
+        "min": 38.5,
+        "max": 100.0,
+        "mean": 77.11870026525199,
+        "p05": 39.0,
+        "median": 99.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "target_vs_measured_gap_mm": {
+        "count": 2262,
+        "min": 0.0,
+        "max": 75.0,
+        "mean": 16.529062839685754,
+        "p05": 0.0,
+        "median": 0.10215053763440096,
+        "p95": 46.0,
+        "nonfinite": 0
+      },
+      "feedback_when_target_closed_mm": {
+        "count": 725,
+        "min": 38.5,
+        "max": 75.0,
+        "mean": 42.772413793103446,
+        "p05": 38.5,
+        "median": 45.5,
+        "p95": 46.5,
+        "nonfinite": 0
+      },
+      "stationary_feedback_when_target_closed_mm": {
+        "count": 676,
+        "min": 38.5,
+        "max": 46.5,
+        "mean": 42.510355029585796,
+        "p05": 38.5,
+        "median": 45.5,
+        "p95": 46.5,
+        "nonfinite": 0
+      },
+      "left_master_vs_latest_accepted_target_gap_mm_recent100ms": {
+        "count": 2249,
+        "min": 0.0,
+        "max": 26.34408602150537,
+        "mean": 0.07052118743336344,
+        "p05": 0.0,
+        "median": 0.0,
+        "p95": 0.0,
+        "nonfinite": 0
+      },
+      "traceability_checks": {
+        "raw_feedback_compared": 2262,
+        "raw_feedback_mismatches": 0,
+        "accepted_command_compared": 2262,
+        "command_mismatches": 0,
+        "latest_accepted_target_mismatches": 0
+      },
+      "configured_speed_mm_s": 60.0,
+      "right_side": {
+        "note": "Disabled side: state logs only, no right gripper raw stream or training dimension.",
+        "trigger": {
+          "count": 446,
+          "min": 0.7,
+          "max": 0.7,
+          "mean": 0.7,
+          "p05": 0.7,
+          "median": 0.7,
+          "p95": 0.7,
+          "nonfinite": 0
+        },
+        "feedback_mm": {
+          "count": 446,
+          "min": 50.0,
+          "max": 50.0,
+          "mean": 50.0,
+          "p05": 50.0,
+          "median": 50.0,
+          "p95": 50.0,
+          "nonfinite": 0
+        },
+        "accepted_commands": 0
+      }
+    },
+    {
+      "bundle": "milk_left_20260930_154454",
+      "included_episodes": 17,
+      "exported_frames": 2981,
+      "raw_attempts": 20,
+      "raw_episode_feedback_mm": {
+        "episode_000001": {
+          "count": 196,
+          "min": 100.0,
+          "max": 100.0,
+          "mean": 100.0,
+          "p05": 100.0,
+          "median": 100.0,
+          "p95": 100.0,
+          "nonfinite": 0
+        },
+        "episode_000002": {
+          "count": 2119,
+          "min": 46.5,
+          "max": 100.0,
+          "mean": 82.25389334591789,
+          "p05": 46.5,
+          "median": 100.0,
+          "p95": 100.0,
+          "nonfinite": 0
+        },
+        "episode_000003": {
+          "count": 2040,
+          "min": 45.5,
+          "max": 100.0,
+          "mean": 80.48676470588235,
+          "p05": 45.5,
+          "median": 100.0,
+          "p95": 100.0,
+          "nonfinite": 0
+        },
+        "episode_000004": {
+          "count": 1848,
+          "min": 38.5,
+          "max": 100.0,
+          "mean": 77.66396103896103,
+          "p05": 38.5,
+          "median": 100.0,
+          "p95": 100.0,
+          "nonfinite": 0
+        },
+        "episode_000005": {
+          "count": 1844,
+          "min": 39.0,
+          "max": 100.0,
+          "mean": 77.0824295010846,
+          "p05": 39.0,
+          "median": 100.0,
+          "p95": 100.0,
+          "nonfinite": 0
+        },
+        "episode_000006": {
+          "count": 1790,
+          "min": 45.5,
+          "max": 100.0,
+          "mean": 81.25446927374301,
+          "p05": 45.5,
+          "median": 100.0,
+          "p95": 100.0,
+          "nonfinite": 0
+        },
+        "episode_000007": {
+          "count": 2242,
+          "min": 38.5,
+          "max": 100.0,
+          "mean": 75.14228367528992,
+          "p05": 38.5,
+          "median": 100.0,
+          "p95": 100.0,
+          "nonfinite": 0
+        },
+        "episode_000008": {
+          "count": 1986,
+          "min": 45.5,
+          "max": 100.0,
+          "mean": 79.9408358509567,
+          "p05": 45.5,
+          "median": 100.0,
+          "p95": 100.0,
+          "nonfinite": 0
+        },
+        "episode_000009": {
+          "count": 2552,
+          "min": 45.5,
+          "max": 100.0,
+          "mean": 84.81602664576802,
+          "p05": 45.5,
+          "median": 100.0,
+          "p95": 100.0,
+          "nonfinite": 0
+        },
+        "episode_000010": {
+          "count": 1806,
+          "min": 45.5,
+          "max": 100.0,
+          "mean": 79.43106312292359,
+          "p05": 45.5,
+          "median": 100.0,
+          "p95": 100.0,
+          "nonfinite": 0
+        },
+        "episode_000011": {
+          "count": 1940,
+          "min": 45.0,
+          "max": 100.0,
+          "mean": 76.79948453608247,
+          "p05": 45.0,
+          "median": 100.0,
+          "p95": 100.0,
+          "nonfinite": 0
+        },
+        "episode_000012": {
+          "count": 1738,
+          "min": 44.5,
+          "max": 100.0,
+          "mean": 82.25632911392405,
+          "p05": 44.5,
+          "median": 100.0,
+          "p95": 100.0,
+          "nonfinite": 0
+        },
+        "episode_000013": {
+          "count": 1801,
+          "min": 44.5,
+          "max": 100.0,
+          "mean": 78.85091615769018,
+          "p05": 44.5,
+          "median": 100.0,
+          "p95": 100.0,
+          "nonfinite": 0
+        },
+        "episode_000014": {
+          "count": 1792,
+          "min": 39.0,
+          "max": 100.0,
+          "mean": 76.77176339285714,
+          "p05": 39.0,
+          "median": 100.0,
+          "p95": 100.0,
+          "nonfinite": 0
+        },
+        "episode_000015": {
+          "count": 2068,
+          "min": 38.0,
+          "max": 100.0,
+          "mean": 74.92142166344294,
+          "p05": 38.0,
+          "median": 91.5,
+          "p95": 100.0,
+          "nonfinite": 0
+        },
+        "episode_000016": {
+          "count": 1810,
+          "min": 44.5,
+          "max": 100.0,
+          "mean": 81.55359116022099,
+          "p05": 44.5,
+          "median": 100.0,
+          "p95": 100.0,
+          "nonfinite": 0
+        },
+        "episode_000017": {
+          "count": 454,
+          "min": 100.0,
+          "max": 100.0,
+          "mean": 100.0,
+          "p05": 100.0,
+          "median": 100.0,
+          "p95": 100.0,
+          "nonfinite": 0
+        },
+        "episode_000018": {
+          "count": 1999,
+          "min": 46.0,
+          "max": 100.0,
+          "mean": 81.91720860430215,
+          "p05": 46.0,
+          "median": 100.0,
+          "p95": 100.0,
+          "nonfinite": 0
+        },
+        "episode_000019": {
+          "count": 1866,
+          "min": 38.5,
+          "max": 100.0,
+          "mean": 82.30332261521973,
+          "p05": 38.5,
+          "median": 100.0,
+          "p95": 100.0,
+          "nonfinite": 0
+        },
+        "episode_000020": {
+          "count": 1914,
+          "min": 38.5,
+          "max": 100.0,
+          "mean": 76.23119122257053,
+          "p05": 38.5,
+          "median": 100.0,
+          "p95": 100.0,
+          "nonfinite": 0
+        }
+      },
+      "master_trigger": {
+        "count": 5487,
+        "min": 0.0,
+        "max": 0.7,
+        "mean": 0.4553635866593767,
+        "p05": 0.0,
+        "median": 0.7,
+        "p95": 0.7,
+        "nonfinite": 0
+      },
+      "master_mapped_width_mm": {
+        "count": 5487,
+        "min": 0.0,
+        "max": 100.0,
+        "mean": 64.67264103553984,
+        "p05": 0.0,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "slave_goal_width_mm": {
+        "count": 5487,
+        "min": 0.0,
+        "max": 100.0,
+        "mean": 64.67264103553984,
+        "p05": 0.0,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "control_feedback_width_mm": {
+        "count": 5487,
+        "min": 38.0,
+        "max": 100.0,
+        "mean": 78.63531984691087,
+        "p05": 38.5,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "mapping_max_error_mm": 1.4210854715202004e-14,
+      "left_trigger_mapping_source_hash": "9a495b97af449f0a7eeaf9b4549d274611f07000bb5030ae79dbbc7092088cfc",
+      "mapping_matches_current_source": true,
+      "dataset_action_mm": {
+        "count": 2981,
+        "min": 0.0,
+        "max": 100.0,
+        "mean": 64.67688430549995,
+        "p05": 0.0,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "dataset_state_mm": {
+        "count": 2981,
+        "min": 38.0,
+        "max": 100.0,
+        "mean": 78.60952700436096,
+        "p05": 38.5,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "target_vs_measured_gap_mm": {
+        "count": 2981,
+        "min": 0.0,
+        "max": 83.92473118279571,
+        "mean": 16.771205688596478,
+        "p05": 0.0,
+        "median": 0.0,
+        "p95": 46.0,
+        "nonfinite": 0
+      },
+      "feedback_when_target_closed_mm": {
+        "count": 934,
+        "min": 38.0,
+        "max": 80.0,
+        "mean": 43.271413276231264,
+        "p05": 38.0,
+        "median": 44.5,
+        "p95": 46.0,
+        "nonfinite": 0
+      },
+      "stationary_feedback_when_target_closed_mm": {
+        "count": 813,
+        "min": 38.0,
+        "max": 46.0,
+        "mean": 42.39360393603936,
+        "p05": 38.0,
+        "median": 44.5,
+        "p95": 46.0,
+        "nonfinite": 0
+      },
+      "left_master_vs_latest_accepted_target_gap_mm_recent100ms": {
+        "count": 2961,
+        "min": 0.0,
+        "max": 30.107526881720446,
+        "mean": 0.08745713389959558,
+        "p05": 0.0,
+        "median": 0.0,
+        "p95": 0.0,
+        "nonfinite": 0
+      },
+      "traceability_checks": {
+        "raw_feedback_compared": 2981,
+        "raw_feedback_mismatches": 0,
+        "accepted_command_compared": 2981,
+        "command_mismatches": 0,
+        "latest_accepted_target_mismatches": 0
+      },
+      "configured_speed_mm_s": 60.0,
+      "right_side": {
+        "note": "Disabled side: state logs only, no right gripper raw stream or training dimension.",
+        "trigger": {
+          "count": 591,
+          "min": 0.7,
+          "max": 0.7,
+          "mean": 0.7000000000000001,
+          "p05": 0.7,
+          "median": 0.7,
+          "p95": 0.7,
+          "nonfinite": 0
+        },
+        "feedback_mm": {
+          "count": 591,
+          "min": 50.0,
+          "max": 50.0,
+          "mean": 50.0,
+          "p05": 50.0,
+          "median": 50.0,
+          "p95": 50.0,
+          "nonfinite": 0
+        },
+        "accepted_commands": 0
+      }
+    }
+  ],
+  "episodes": [
+    {
+      "bundle": "milk_left_20260930",
+      "episode": "episode_000002",
+      "split": "train",
+      "master_trigger": {
+        "count": 297,
+        "min": 0.0,
+        "max": 0.7,
+        "mean": 0.4340890385334831,
+        "p05": 0.007777777777777784,
+        "median": 0.7,
+        "p95": 0.7,
+        "nonfinite": 0
+      },
+      "action_mm": {
+        "count": 161,
+        "min": 0.0,
+        "max": 100.0,
+        "mean": 61.383824216923806,
+        "p05": 0.0,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "state_mm": {
+        "count": 161,
+        "min": 39.0,
+        "max": 100.0,
+        "mean": 74.35403726708074,
+        "p05": 39.0,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "raw_feedback_mm": {
+        "count": 1794,
+        "min": 39.0,
+        "max": 100.0,
+        "mean": 75.54598662207358,
+        "p05": 39.0,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "closed_target_fraction": 0.32298136645962733,
+      "open_target_fraction": 0.5403726708074534,
+      "intermediate_target_fraction": 0.13664596273291926
+    },
+    {
+      "bundle": "milk_left_20260930",
+      "episode": "episode_000003",
+      "split": "train",
+      "master_trigger": {
+        "count": 303,
+        "min": 0.0,
+        "max": 0.7,
+        "mean": 0.4183058305830584,
+        "p05": 0.0,
+        "median": 0.7,
+        "p95": 0.7,
+        "nonfinite": 0
+      },
+      "action_mm": {
+        "count": 164,
+        "min": 0.0,
+        "max": 100.0,
+        "mean": 59.50694990820877,
+        "p05": 0.0,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "state_mm": {
+        "count": 164,
+        "min": 39.5,
+        "max": 100.0,
+        "mean": 74.53048780487805,
+        "p05": 39.5,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "raw_feedback_mm": {
+        "count": 1800,
+        "min": 39.5,
+        "max": 100.0,
+        "mean": 74.28333333333333,
+        "p05": 39.5,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "closed_target_fraction": 0.34146341463414637,
+      "open_target_fraction": 0.5609756097560976,
+      "intermediate_target_fraction": 0.0975609756097561
+    },
+    {
+      "bundle": "milk_left_20260930",
+      "episode": "episode_000004",
+      "split": "train",
+      "master_trigger": {
+        "count": 299,
+        "min": 0.015555555555555567,
+        "max": 0.7,
+        "mean": 0.42036417688591604,
+        "p05": 0.015555555555555567,
+        "median": 0.7,
+        "p95": 0.7,
+        "nonfinite": 0
+      },
+      "action_mm": {
+        "count": 162,
+        "min": 0.0,
+        "max": 100.0,
+        "mean": 58.92849241116863,
+        "p05": 0.0,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "state_mm": {
+        "count": 162,
+        "min": 38.5,
+        "max": 100.0,
+        "mean": 73.23765432098766,
+        "p05": 38.5,
+        "median": 99.75,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "raw_feedback_mm": {
+        "count": 1794,
+        "min": 38.5,
+        "max": 100.0,
+        "mean": 74.52898550724638,
+        "p05": 38.5,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "closed_target_fraction": 0.3395061728395062,
+      "open_target_fraction": 0.5555555555555556,
+      "intermediate_target_fraction": 0.10493827160493827
+    },
+    {
+      "bundle": "milk_left_20260930",
+      "episode": "episode_000005",
+      "split": "validation",
+      "master_trigger": {
+        "count": 303,
+        "min": 0.023333333333333352,
+        "max": 0.7,
+        "mean": 0.3934323432343236,
+        "p05": 0.023333333333333352,
+        "median": 0.7,
+        "p95": 0.7,
+        "nonfinite": 0
+      },
+      "action_mm": {
+        "count": 165,
+        "min": 0.0,
+        "max": 100.0,
+        "mean": 55.037471489084396,
+        "p05": 0.0,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "state_mm": {
+        "count": 165,
+        "min": 45.5,
+        "max": 100.0,
+        "mean": 74.63939393939394,
+        "p05": 45.5,
+        "median": 90.5,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "raw_feedback_mm": {
+        "count": 1875,
+        "min": 45.5,
+        "max": 100.0,
+        "mean": 76.0112,
+        "p05": 45.5,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "closed_target_fraction": 0.41818181818181815,
+      "open_target_fraction": 0.5212121212121212,
+      "intermediate_target_fraction": 0.06060606060606061
+    },
+    {
+      "bundle": "milk_left_20260930",
+      "episode": "episode_000006",
+      "split": "train",
+      "master_trigger": {
+        "count": 389,
+        "min": 0.023333333333333352,
+        "max": 0.7,
+        "mean": 0.4554698657526422,
+        "p05": 0.023333333333333352,
+        "median": 0.7,
+        "p95": 0.7,
+        "nonfinite": 0
+      },
+      "action_mm": {
+        "count": 212,
+        "min": 0.0,
+        "max": 100.0,
+        "mean": 62.92351389734226,
+        "p05": 0.0,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "state_mm": {
+        "count": 212,
+        "min": 46.5,
+        "max": 100.0,
+        "mean": 78.96933962264151,
+        "p05": 46.5,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "raw_feedback_mm": {
+        "count": 2299,
+        "min": 46.5,
+        "max": 100.0,
+        "mean": 79.80230535015224,
+        "p05": 46.5,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "closed_target_fraction": 0.330188679245283,
+      "open_target_fraction": 0.5943396226415094,
+      "intermediate_target_fraction": 0.07547169811320754
+    },
+    {
+      "bundle": "milk_left_20260930",
+      "episode": "episode_000007",
+      "split": "train",
+      "master_trigger": {
+        "count": 320,
+        "min": 0.007777777777777784,
+        "max": 0.7,
+        "mean": 0.46800347222222227,
+        "p05": 0.015555555555555567,
+        "median": 0.7,
+        "p95": 0.7,
+        "nonfinite": 0
+      },
+      "action_mm": {
+        "count": 174,
+        "min": 0.0,
+        "max": 100.0,
+        "mean": 66.21863799283155,
+        "p05": 0.0,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "state_mm": {
+        "count": 174,
+        "min": 46.0,
+        "max": 100.0,
+        "mean": 81.1580459770115,
+        "p05": 46.0,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "raw_feedback_mm": {
+        "count": 1925,
+        "min": 46.0,
+        "max": 100.0,
+        "mean": 81.15558441558441,
+        "p05": 46.0,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "closed_target_fraction": 0.2988505747126437,
+      "open_target_fraction": 0.6379310344827587,
+      "intermediate_target_fraction": 0.06321839080459771
+    },
+    {
+      "bundle": "milk_left_20260930",
+      "episode": "episode_000008",
+      "split": "train",
+      "master_trigger": {
+        "count": 383,
+        "min": 0.007777777777777784,
+        "max": 0.7,
+        "mean": 0.33411952422396296,
+        "p05": 0.015555555555555567,
+        "median": 0.40444444444444444,
+        "p95": 0.7,
+        "nonfinite": 0
+      },
+      "action_mm": {
+        "count": 211,
+        "min": 0.0,
+        "max": 100.0,
+        "mean": 46.95425436137865,
+        "p05": 0.0,
+        "median": 57.526881720430104,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "state_mm": {
+        "count": 211,
+        "min": 39.0,
+        "max": 100.0,
+        "mean": 65.48104265402844,
+        "p05": 39.0,
+        "median": 61.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "raw_feedback_mm": {
+        "count": 2350,
+        "min": 39.0,
+        "max": 100.0,
+        "mean": 66.56297872340426,
+        "p05": 39.0,
+        "median": 62.5,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "closed_target_fraction": 0.4265402843601896,
+      "open_target_fraction": 0.33649289099526064,
+      "intermediate_target_fraction": 0.23696682464454977
+    },
+    {
+      "bundle": "milk_left_20260930",
+      "episode": "episode_000009",
+      "split": "validation",
+      "master_trigger": {
+        "count": 322,
+        "min": 0.0,
+        "max": 0.7,
+        "mean": 0.43661835748792277,
+        "p05": 0.0,
+        "median": 0.7,
+        "p95": 0.7,
+        "nonfinite": 0
+      },
+      "action_mm": {
+        "count": 174,
+        "min": 0.0,
+        "max": 100.0,
+        "mean": 61.965970419808016,
+        "p05": 0.0,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "state_mm": {
+        "count": 174,
+        "min": 46.0,
+        "max": 100.0,
+        "mean": 77.9396551724138,
+        "p05": 46.0,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "raw_feedback_mm": {
+        "count": 1958,
+        "min": 46.0,
+        "max": 100.0,
+        "mean": 79.04111338100103,
+        "p05": 46.0,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "closed_target_fraction": 0.3333333333333333,
+      "open_target_fraction": 0.5862068965517241,
+      "intermediate_target_fraction": 0.08045977011494253
+    },
+    {
+      "bundle": "milk_left_20260930",
+      "episode": "episode_000010",
+      "split": "train",
+      "master_trigger": {
+        "count": 335,
+        "min": 0.0,
+        "max": 0.7,
+        "mean": 0.41329021558872314,
+        "p05": 0.0,
+        "median": 0.7,
+        "p95": 0.7,
+        "nonfinite": 0
+      },
+      "action_mm": {
+        "count": 181,
+        "min": 0.0,
+        "max": 100.0,
+        "mean": 58.553634725440105,
+        "p05": 0.0,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "state_mm": {
+        "count": 181,
+        "min": 39.0,
+        "max": 100.0,
+        "mean": 73.98895027624309,
+        "p05": 39.0,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "raw_feedback_mm": {
+        "count": 2017,
+        "min": 39.0,
+        "max": 100.0,
+        "mean": 74.90356965790778,
+        "p05": 39.0,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "closed_target_fraction": 0.3756906077348066,
+      "open_target_fraction": 0.56353591160221,
+      "intermediate_target_fraction": 0.06077348066298342
+    },
+    {
+      "bundle": "milk_left_20260930",
+      "episode": "episode_000011",
+      "split": "train",
+      "master_trigger": {
+        "count": 295,
+        "min": 0.007777777777777784,
+        "max": 0.7,
+        "mean": 0.4468662900188325,
+        "p05": 0.015555555555555567,
+        "median": 0.7,
+        "p95": 0.7,
+        "nonfinite": 0
+      },
+      "action_mm": {
+        "count": 160,
+        "min": 0.0,
+        "max": 100.0,
+        "mean": 63.13844086021506,
+        "p05": 0.0,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "state_mm": {
+        "count": 160,
+        "min": 39.0,
+        "max": 100.0,
+        "mean": 75.04375,
+        "p05": 39.0,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "raw_feedback_mm": {
+        "count": 1800,
+        "min": 39.0,
+        "max": 100.0,
+        "mean": 75.42027777777778,
+        "p05": 39.0,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "closed_target_fraction": 0.3,
+      "open_target_fraction": 0.575,
+      "intermediate_target_fraction": 0.125
+    },
+    {
+      "bundle": "milk_left_20260930",
+      "episode": "episode_000012",
+      "split": "train",
+      "master_trigger": {
+        "count": 325,
+        "min": 0.023333333333333352,
+        "max": 0.7,
+        "mean": 0.4342393162393163,
+        "p05": 0.023333333333333352,
+        "median": 0.7,
+        "p95": 0.7,
+        "nonfinite": 0
+      },
+      "action_mm": {
+        "count": 177,
+        "min": 0.0,
+        "max": 100.0,
+        "mean": 61.04529898953081,
+        "p05": 0.0,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "state_mm": {
+        "count": 177,
+        "min": 38.5,
+        "max": 100.0,
+        "mean": 73.91242937853107,
+        "p05": 38.5,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "raw_feedback_mm": {
+        "count": 1953,
+        "min": 38.5,
+        "max": 100.0,
+        "mean": 74.1405529953917,
+        "p05": 38.5,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "closed_target_fraction": 0.3446327683615819,
+      "open_target_fraction": 0.5649717514124294,
+      "intermediate_target_fraction": 0.0903954802259887
+    },
+    {
+      "bundle": "milk_left_20260930_145800",
+      "episode": "episode_000001",
+      "split": "train",
+      "master_trigger": {
+        "count": 375,
+        "min": 0.015555555555555567,
+        "max": 0.7,
+        "mean": 0.39813925925925936,
+        "p05": 0.015555555555555567,
+        "median": 0.7,
+        "p95": 0.7,
+        "nonfinite": 0
+      },
+      "action_mm": {
+        "count": 204,
+        "min": 0.0,
+        "max": 100.0,
+        "mean": 56.63345983554713,
+        "p05": 0.0,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "state_mm": {
+        "count": 204,
+        "min": 39.0,
+        "max": 100.0,
+        "mean": 73.09803921568627,
+        "p05": 39.0,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "raw_feedback_mm": {
+        "count": 2333,
+        "min": 39.0,
+        "max": 100.0,
+        "mean": 73.1551650235748,
+        "p05": 39.0,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "closed_target_fraction": 0.3872549019607843,
+      "open_target_fraction": 0.5343137254901961,
+      "intermediate_target_fraction": 0.0784313725490196
+    },
+    {
+      "bundle": "milk_left_20260930_145800",
+      "episode": "episode_000002",
+      "split": "validation",
+      "master_trigger": {
+        "count": 342,
+        "min": 0.023333333333333352,
+        "max": 0.7,
+        "mean": 0.45156595191682924,
+        "p05": 0.023333333333333352,
+        "median": 0.6144444444444443,
+        "p95": 0.7,
+        "nonfinite": 0
+      },
+      "action_mm": {
+        "count": 185,
+        "min": 0.0,
+        "max": 100.0,
+        "mean": 64.03758597306984,
+        "p05": 0.0,
+        "median": 92.65232974910393,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "state_mm": {
+        "count": 185,
+        "min": 46.0,
+        "max": 100.0,
+        "mean": 79.05135135135136,
+        "p05": 46.0,
+        "median": 92.5,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "raw_feedback_mm": {
+        "count": 2157,
+        "min": 46.0,
+        "max": 100.0,
+        "mean": 79.68196569309225,
+        "p05": 46.0,
+        "median": 96.5,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "closed_target_fraction": 0.2918918918918919,
+      "open_target_fraction": 0.4756756756756757,
+      "intermediate_target_fraction": 0.23243243243243245
+    },
+    {
+      "bundle": "milk_left_20260930_145800",
+      "episode": "episode_000003",
+      "split": "train",
+      "master_trigger": {
+        "count": 385,
+        "min": 0.023333333333333352,
+        "max": 0.7,
+        "mean": 0.40135353535353535,
+        "p05": 0.023333333333333352,
+        "median": 0.5833333333333333,
+        "p95": 0.7,
+        "nonfinite": 0
+      },
+      "action_mm": {
+        "count": 210,
+        "min": 0.0,
+        "max": 100.0,
+        "mean": 57.10701484895033,
+        "p05": 0.0,
+        "median": 87.63440860215051,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "state_mm": {
+        "count": 210,
+        "min": 38.5,
+        "max": 100.0,
+        "mean": 71.96666666666667,
+        "p05": 38.5,
+        "median": 88.5,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "raw_feedback_mm": {
+        "count": 2418,
+        "min": 38.5,
+        "max": 100.0,
+        "mean": 72.27936311000828,
+        "p05": 38.5,
+        "median": 89.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "closed_target_fraction": 0.319047619047619,
+      "open_target_fraction": 0.3952380952380952,
+      "intermediate_target_fraction": 0.2857142857142857
+    },
+    {
+      "bundle": "milk_left_20260930_145800",
+      "episode": "episode_000004",
+      "split": "train",
+      "master_trigger": {
+        "count": 379,
+        "min": 0.007777777777777784,
+        "max": 0.7,
+        "mean": 0.4158340662562299,
+        "p05": 0.007777777777777784,
+        "median": 0.5988888888888888,
+        "p95": 0.7,
+        "nonfinite": 0
+      },
+      "action_mm": {
+        "count": 206,
+        "min": 0.0,
+        "max": 100.0,
+        "mean": 59.67045968611893,
+        "p05": 0.0,
+        "median": 90.14336917562723,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "state_mm": {
+        "count": 206,
+        "min": 46.0,
+        "max": 100.0,
+        "mean": 76.87135922330097,
+        "p05": 46.0,
+        "median": 90.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "raw_feedback_mm": {
+        "count": 2343,
+        "min": 46.0,
+        "max": 100.0,
+        "mean": 77.36918480580452,
+        "p05": 46.0,
+        "median": 90.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "closed_target_fraction": 0.3155339805825243,
+      "open_target_fraction": 0.4174757281553398,
+      "intermediate_target_fraction": 0.2669902912621359
+    },
+    {
+      "bundle": "milk_left_20260930_145800",
+      "episode": "episode_000005",
+      "split": "train",
+      "master_trigger": {
+        "count": 354,
+        "min": 0.0,
+        "max": 0.7,
+        "mean": 0.4315128688010045,
+        "p05": 0.0,
+        "median": 0.6922222222222222,
+        "p95": 0.7,
+        "nonfinite": 0
+      },
+      "action_mm": {
+        "count": 193,
+        "min": 0.0,
+        "max": 100.0,
+        "mean": 61.80102884097535,
+        "p05": 0.0,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "state_mm": {
+        "count": 193,
+        "min": 39.0,
+        "max": 100.0,
+        "mean": 75.38082901554404,
+        "p05": 39.0,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "raw_feedback_mm": {
+        "count": 2231,
+        "min": 39.0,
+        "max": 100.0,
+        "mean": 75.46100403406544,
+        "p05": 39.0,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "closed_target_fraction": 0.33678756476683935,
+      "open_target_fraction": 0.5699481865284974,
+      "intermediate_target_fraction": 0.09326424870466321
+    },
+    {
+      "bundle": "milk_left_20260930_145800",
+      "episode": "episode_000006",
+      "split": "train",
+      "master_trigger": {
+        "count": 429,
+        "min": 0.007777777777777784,
+        "max": 0.7,
+        "mean": 0.42734265734265736,
+        "p05": 0.015555555555555567,
+        "median": 0.7,
+        "p95": 0.7,
+        "nonfinite": 0
+      },
+      "action_mm": {
+        "count": 236,
+        "min": 0.0,
+        "max": 100.0,
+        "mean": 60.40641516311281,
+        "p05": 0.0,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "state_mm": {
+        "count": 236,
+        "min": 39.0,
+        "max": 100.0,
+        "mean": 73.65042372881356,
+        "p05": 39.0,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "raw_feedback_mm": {
+        "count": 2707,
+        "min": 39.0,
+        "max": 100.0,
+        "mean": 74.19190986331732,
+        "p05": 39.0,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "closed_target_fraction": 0.3347457627118644,
+      "open_target_fraction": 0.5508474576271186,
+      "intermediate_target_fraction": 0.11440677966101695
+    },
+    {
+      "bundle": "milk_left_20260930_145800",
+      "episode": "episode_000007",
+      "split": "train",
+      "master_trigger": {
+        "count": 401,
+        "min": 0.0,
+        "max": 0.7,
+        "mean": 0.40426988085342197,
+        "p05": 0.0,
+        "median": 0.6455555555555554,
+        "p95": 0.7,
+        "nonfinite": 0
+      },
+      "action_mm": {
+        "count": 219,
+        "min": 0.0,
+        "max": 100.0,
+        "mean": 58.67579908675798,
+        "p05": 0.0,
+        "median": 97.67025089605733,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "state_mm": {
+        "count": 219,
+        "min": 45.5,
+        "max": 100.0,
+        "mean": 76.79223744292237,
+        "p05": 45.5,
+        "median": 97.5,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "raw_feedback_mm": {
+        "count": 2516,
+        "min": 45.5,
+        "max": 100.0,
+        "mean": 77.08525437201908,
+        "p05": 45.5,
+        "median": 97.5,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "closed_target_fraction": 0.365296803652968,
+      "open_target_fraction": 0.3789954337899543,
+      "intermediate_target_fraction": 0.2557077625570776
+    },
+    {
+      "bundle": "milk_left_20260930_145800",
+      "episode": "episode_000008",
+      "split": "train",
+      "master_trigger": {
+        "count": 406,
+        "min": 0.0,
+        "max": 0.7,
+        "mean": 0.46858237547892717,
+        "p05": 0.0,
+        "median": 0.6611111111111111,
+        "p95": 0.7,
+        "nonfinite": 0
+      },
+      "action_mm": {
+        "count": 220,
+        "min": 0.0,
+        "max": 100.0,
+        "mean": 68.25268817204301,
+        "p05": 0.0,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "state_mm": {
+        "count": 220,
+        "min": 46.0,
+        "max": 100.0,
+        "mean": 82.56363636363636,
+        "p05": 46.0,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "raw_feedback_mm": {
+        "count": 2536,
+        "min": 46.0,
+        "max": 100.0,
+        "mean": 82.59660883280758,
+        "p05": 46.0,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "closed_target_fraction": 0.2909090909090909,
+      "open_target_fraction": 0.6090909090909091,
+      "intermediate_target_fraction": 0.1
+    },
+    {
+      "bundle": "milk_left_20260930_145800",
+      "episode": "episode_000009",
+      "split": "train",
+      "master_trigger": {
+        "count": 374,
+        "min": 0.007777777777777784,
+        "max": 0.7,
+        "mean": 0.47147058823529425,
+        "p05": 0.007777777777777784,
+        "median": 0.7,
+        "p95": 0.7,
+        "nonfinite": 0
+      },
+      "action_mm": {
+        "count": 202,
+        "min": 0.0,
+        "max": 100.0,
+        "mean": 67.15284431668974,
+        "p05": 0.0,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "state_mm": {
+        "count": 202,
+        "min": 39.0,
+        "max": 100.0,
+        "mean": 78.14108910891089,
+        "p05": 39.0,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "raw_feedback_mm": {
+        "count": 2353,
+        "min": 39.0,
+        "max": 100.0,
+        "mean": 78.50424989375266,
+        "p05": 39.0,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "closed_target_fraction": 0.28217821782178215,
+      "open_target_fraction": 0.6287128712871287,
+      "intermediate_target_fraction": 0.0891089108910891
+    },
+    {
+      "bundle": "milk_left_20260930_145800",
+      "episode": "episode_000010",
+      "split": "validation",
+      "master_trigger": {
+        "count": 352,
+        "min": 0.0,
+        "max": 0.7,
+        "mean": 0.4562815656565657,
+        "p05": 0.007777777777777784,
+        "median": 0.6766666666666666,
+        "p95": 0.7,
+        "nonfinite": 0
+      },
+      "action_mm": {
+        "count": 190,
+        "min": 0.0,
+        "max": 100.0,
+        "mean": 65.23108847387284,
+        "p05": 0.0,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "state_mm": {
+        "count": 190,
+        "min": 46.5,
+        "max": 100.0,
+        "mean": 80.15789473684211,
+        "p05": 46.5,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "raw_feedback_mm": {
+        "count": 2204,
+        "min": 46.5,
+        "max": 100.0,
+        "mean": 80.26066243194192,
+        "p05": 46.5,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "closed_target_fraction": 0.3105263157894737,
+      "open_target_fraction": 0.6105263157894737,
+      "intermediate_target_fraction": 0.07894736842105263
+    },
+    {
+      "bundle": "milk_left_20260930_145800",
+      "episode": "episode_000011",
+      "split": "train",
+      "master_trigger": {
+        "count": 362,
+        "min": 0.023333333333333352,
+        "max": 0.7,
+        "mean": 0.4691804788213629,
+        "p05": 0.023333333333333352,
+        "median": 0.6494444444444443,
+        "p95": 0.7,
+        "nonfinite": 0
+      },
+      "action_mm": {
+        "count": 197,
+        "min": 0.0,
+        "max": 100.0,
+        "mean": 67.25888324873095,
+        "p05": 0.0,
+        "median": 97.67025089605733,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "state_mm": {
+        "count": 197,
+        "min": 46.0,
+        "max": 100.0,
+        "mean": 81.37817258883248,
+        "p05": 46.0,
+        "median": 97.5,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "raw_feedback_mm": {
+        "count": 2311,
+        "min": 46.0,
+        "max": 100.0,
+        "mean": 82.0296408481177,
+        "p05": 46.0,
+        "median": 98.5,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "closed_target_fraction": 0.28426395939086296,
+      "open_target_fraction": 0.4517766497461929,
+      "intermediate_target_fraction": 0.2639593908629442
+    },
+    {
+      "bundle": "milk_left_20260930_154454",
+      "episode": "episode_000003",
+      "split": "train",
+      "master_trigger": {
+        "count": 342,
+        "min": 0.007777777777777784,
+        "max": 0.7,
+        "mean": 0.4635737491877844,
+        "p05": 0.015555555555555567,
+        "median": 0.7,
+        "p95": 0.7,
+        "nonfinite": 0
+      },
+      "action_mm": {
+        "count": 184,
+        "min": 0.0,
+        "max": 100.0,
+        "mean": 65.43945769050958,
+        "p05": 0.0,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "state_mm": {
+        "count": 184,
+        "min": 45.5,
+        "max": 100.0,
+        "mean": 80.1086956521739,
+        "p05": 45.5,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "raw_feedback_mm": {
+        "count": 2040,
+        "min": 45.5,
+        "max": 100.0,
+        "mean": 80.48676470588235,
+        "p05": 45.5,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "closed_target_fraction": 0.30978260869565216,
+      "open_target_fraction": 0.6304347826086957,
+      "intermediate_target_fraction": 0.059782608695652176
+    },
+    {
+      "bundle": "milk_left_20260930_154454",
+      "episode": "episode_000004",
+      "split": "train",
+      "master_trigger": {
+        "count": 308,
+        "min": 0.015555555555555567,
+        "max": 0.7,
+        "mean": 0.46179292929292937,
+        "p05": 0.015555555555555567,
+        "median": 0.7,
+        "p95": 0.7,
+        "nonfinite": 0
+      },
+      "action_mm": {
+        "count": 167,
+        "min": 0.0,
+        "max": 100.0,
+        "mean": 64.93786620307772,
+        "p05": 0.0,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "state_mm": {
+        "count": 167,
+        "min": 38.5,
+        "max": 100.0,
+        "mean": 77.02395209580838,
+        "p05": 38.5,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "raw_feedback_mm": {
+        "count": 1848,
+        "min": 38.5,
+        "max": 100.0,
+        "mean": 77.66396103896103,
+        "p05": 38.5,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "closed_target_fraction": 0.2994011976047904,
+      "open_target_fraction": 0.6107784431137725,
+      "intermediate_target_fraction": 0.08982035928143713
+    },
+    {
+      "bundle": "milk_left_20260930_154454",
+      "episode": "episode_000005",
+      "split": "train",
+      "master_trigger": {
+        "count": 300,
+        "min": 0.0,
+        "max": 0.7,
+        "mean": 0.43314444444444444,
+        "p05": 0.007777777777777784,
+        "median": 0.6688888888888888,
+        "p95": 0.7,
+        "nonfinite": 0
+      },
+      "action_mm": {
+        "count": 163,
+        "min": 0.0,
+        "max": 100.0,
+        "mean": 61.738900982914444,
+        "p05": 0.0,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "state_mm": {
+        "count": 163,
+        "min": 39.0,
+        "max": 100.0,
+        "mean": 75.51840490797547,
+        "p05": 39.0,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "raw_feedback_mm": {
+        "count": 1844,
+        "min": 39.0,
+        "max": 100.0,
+        "mean": 77.0824295010846,
+        "p05": 39.0,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "closed_target_fraction": 0.3067484662576687,
+      "open_target_fraction": 0.5521472392638037,
+      "intermediate_target_fraction": 0.1411042944785276
+    },
+    {
+      "bundle": "milk_left_20260930_154454",
+      "episode": "episode_000006",
+      "split": "train",
+      "master_trigger": {
+        "count": 297,
+        "min": 0.0,
+        "max": 0.7,
+        "mean": 0.45417508417508423,
+        "p05": 0.007777777777777784,
+        "median": 0.7,
+        "p95": 0.7,
+        "nonfinite": 0
+      },
+      "action_mm": {
+        "count": 163,
+        "min": 0.0,
+        "max": 100.0,
+        "mean": 64.31712733909448,
+        "p05": 0.0,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "state_mm": {
+        "count": 163,
+        "min": 45.5,
+        "max": 100.0,
+        "mean": 79.53680981595092,
+        "p05": 45.5,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "raw_feedback_mm": {
+        "count": 1790,
+        "min": 45.5,
+        "max": 100.0,
+        "mean": 81.25446927374301,
+        "p05": 45.5,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "closed_target_fraction": 0.32515337423312884,
+      "open_target_fraction": 0.6134969325153374,
+      "intermediate_target_fraction": 0.06134969325153374
+    },
+    {
+      "bundle": "milk_left_20260930_154454",
+      "episode": "episode_000007",
+      "split": "train",
+      "master_trigger": {
+        "count": 373,
+        "min": 0.0,
+        "max": 0.7,
+        "mean": 0.4292374143580578,
+        "p05": 0.0,
+        "median": 0.7,
+        "p95": 0.7,
+        "nonfinite": 0
+      },
+      "action_mm": {
+        "count": 202,
+        "min": 0.0,
+        "max": 100.0,
+        "mean": 61.397672025267035,
+        "p05": 0.0,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "state_mm": {
+        "count": 202,
+        "min": 38.5,
+        "max": 100.0,
+        "mean": 74.72772277227723,
+        "p05": 38.5,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "raw_feedback_mm": {
+        "count": 2242,
+        "min": 38.5,
+        "max": 100.0,
+        "mean": 75.14228367528992,
+        "p05": 38.5,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "closed_target_fraction": 0.3415841584158416,
+      "open_target_fraction": 0.5742574257425742,
+      "intermediate_target_fraction": 0.08415841584158416
+    },
+    {
+      "bundle": "milk_left_20260930_154454",
+      "episode": "episode_000008",
+      "split": "validation",
+      "master_trigger": {
+        "count": 326,
+        "min": 0.0,
+        "max": 0.7,
+        "mean": 0.4708657123381051,
+        "p05": 0.007777777777777784,
+        "median": 0.7,
+        "p95": 0.7,
+        "nonfinite": 0
+      },
+      "action_mm": {
+        "count": 178,
+        "min": 0.0,
+        "max": 100.0,
+        "mean": 67.15698119286375,
+        "p05": 0.0,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "state_mm": {
+        "count": 178,
+        "min": 45.5,
+        "max": 100.0,
+        "mean": 80.08988764044943,
+        "p05": 45.5,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "raw_feedback_mm": {
+        "count": 1986,
+        "min": 45.5,
+        "max": 100.0,
+        "mean": 79.9408358509567,
+        "p05": 45.5,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "closed_target_fraction": 0.2808988764044944,
+      "open_target_fraction": 0.6179775280898876,
+      "intermediate_target_fraction": 0.10112359550561797
+    },
+    {
+      "bundle": "milk_left_20260930_154454",
+      "episode": "episode_000009",
+      "split": "train",
+      "master_trigger": {
+        "count": 432,
+        "min": 0.0,
+        "max": 0.7,
+        "mean": 0.5063477366255144,
+        "p05": 0.0,
+        "median": 0.7,
+        "p95": 0.7,
+        "nonfinite": 0
+      },
+      "action_mm": {
+        "count": 235,
+        "min": 0.0,
+        "max": 100.0,
+        "mean": 71.8096545412949,
+        "p05": 0.0,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "state_mm": {
+        "count": 235,
+        "min": 45.5,
+        "max": 100.0,
+        "mean": 84.22127659574468,
+        "p05": 45.5,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "raw_feedback_mm": {
+        "count": 2552,
+        "min": 45.5,
+        "max": 100.0,
+        "mean": 84.81602664576802,
+        "p05": 45.5,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "closed_target_fraction": 0.26382978723404255,
+      "open_target_fraction": 0.6936170212765957,
+      "intermediate_target_fraction": 0.0425531914893617
+    },
+    {
+      "bundle": "milk_left_20260930_154454",
+      "episode": "episode_000010",
+      "split": "train",
+      "master_trigger": {
+        "count": 301,
+        "min": 0.0,
+        "max": 0.7,
+        "mean": 0.4467958656330751,
+        "p05": 0.007777777777777784,
+        "median": 0.7,
+        "p95": 0.7,
+        "nonfinite": 0
+      },
+      "action_mm": {
+        "count": 163,
+        "min": 0.0,
+        "max": 100.0,
+        "mean": 63.74980759504805,
+        "p05": 0.0,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "state_mm": {
+        "count": 163,
+        "min": 45.5,
+        "max": 100.0,
+        "mean": 79.40184049079754,
+        "p05": 45.5,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "raw_feedback_mm": {
+        "count": 1806,
+        "min": 45.5,
+        "max": 100.0,
+        "mean": 79.43106312292359,
+        "p05": 45.5,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "closed_target_fraction": 0.3312883435582822,
+      "open_target_fraction": 0.6073619631901841,
+      "intermediate_target_fraction": 0.06134969325153374
+    },
+    {
+      "bundle": "milk_left_20260930_154454",
+      "episode": "episode_000011",
+      "split": "train",
+      "master_trigger": {
+        "count": 323,
+        "min": 0.0,
+        "max": 0.7,
+        "mean": 0.4131131750945994,
+        "p05": 0.0,
+        "median": 0.6611111111111111,
+        "p95": 0.7,
+        "nonfinite": 0
+      },
+      "action_mm": {
+        "count": 177,
+        "min": 0.0,
+        "max": 100.0,
+        "mean": 59.6045197740113,
+        "p05": 0.0,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "state_mm": {
+        "count": 177,
+        "min": 45.0,
+        "max": 100.0,
+        "mean": 76.40112994350282,
+        "p05": 45.0,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "raw_feedback_mm": {
+        "count": 1940,
+        "min": 45.0,
+        "max": 100.0,
+        "mean": 76.79948453608247,
+        "p05": 45.0,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "closed_target_fraction": 0.3389830508474576,
+      "open_target_fraction": 0.5310734463276836,
+      "intermediate_target_fraction": 0.12994350282485875
+    },
+    {
+      "bundle": "milk_left_20260930_154454",
+      "episode": "episode_000012",
+      "split": "validation",
+      "master_trigger": {
+        "count": 288,
+        "min": 0.007777777777777784,
+        "max": 0.7,
+        "mean": 0.496130401234568,
+        "p05": 0.007777777777777784,
+        "median": 0.7,
+        "p95": 0.7,
+        "nonfinite": 0
+      },
+      "action_mm": {
+        "count": 156,
+        "min": 0.0,
+        "max": 100.0,
+        "mean": 70.61046778788715,
+        "p05": 0.0,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "state_mm": {
+        "count": 156,
+        "min": 44.5,
+        "max": 100.0,
+        "mean": 82.20192307692308,
+        "p05": 44.5,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "raw_feedback_mm": {
+        "count": 1738,
+        "min": 44.5,
+        "max": 100.0,
+        "mean": 82.25632911392405,
+        "p05": 44.5,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "closed_target_fraction": 0.2564102564102564,
+      "open_target_fraction": 0.6602564102564102,
+      "intermediate_target_fraction": 0.08333333333333333
+    },
+    {
+      "bundle": "milk_left_20260930_154454",
+      "episode": "episode_000013",
+      "split": "train",
+      "master_trigger": {
+        "count": 297,
+        "min": 0.007777777777777784,
+        "max": 0.7,
+        "mean": 0.4351365506921062,
+        "p05": 0.015555555555555567,
+        "median": 0.6766666666666666,
+        "p95": 0.7,
+        "nonfinite": 0
+      },
+      "action_mm": {
+        "count": 161,
+        "min": 0.0,
+        "max": 100.0,
+        "mean": 62.09621763618959,
+        "p05": 0.0,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "state_mm": {
+        "count": 161,
+        "min": 44.5,
+        "max": 100.0,
+        "mean": 78.74844720496894,
+        "p05": 44.5,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "raw_feedback_mm": {
+        "count": 1801,
+        "min": 44.5,
+        "max": 100.0,
+        "mean": 78.85091615769018,
+        "p05": 44.5,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "closed_target_fraction": 0.3416149068322981,
+      "open_target_fraction": 0.5838509316770186,
+      "intermediate_target_fraction": 0.07453416149068323
+    },
+    {
+      "bundle": "milk_left_20260930_154454",
+      "episode": "episode_000014",
+      "split": "train",
+      "master_trigger": {
+        "count": 292,
+        "min": 0.0,
+        "max": 0.7,
+        "mean": 0.43574200913242017,
+        "p05": 0.0,
+        "median": 0.7,
+        "p95": 0.7,
+        "nonfinite": 0
+      },
+      "action_mm": {
+        "count": 160,
+        "min": 0.0,
+        "max": 100.0,
+        "mean": 61.9668458781362,
+        "p05": 0.0,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "state_mm": {
+        "count": 160,
+        "min": 39.0,
+        "max": 100.0,
+        "mean": 75.6,
+        "p05": 39.0,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "raw_feedback_mm": {
+        "count": 1792,
+        "min": 39.0,
+        "max": 100.0,
+        "mean": 76.77176339285714,
+        "p05": 39.0,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "closed_target_fraction": 0.34375,
+      "open_target_fraction": 0.59375,
+      "intermediate_target_fraction": 0.0625
+    },
+    {
+      "bundle": "milk_left_20260930_154454",
+      "episode": "episode_000015",
+      "split": "train",
+      "master_trigger": {
+        "count": 348,
+        "min": 0.007777777777777784,
+        "max": 0.7,
+        "mean": 0.40741698595146875,
+        "p05": 0.007777777777777784,
+        "median": 0.595,
+        "p95": 0.7,
+        "nonfinite": 0
+      },
+      "action_mm": {
+        "count": 190,
+        "min": 0.0,
+        "max": 100.0,
+        "mean": 58.2427843803056,
+        "p05": 0.0,
+        "median": 89.51612903225805,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "state_mm": {
+        "count": 190,
+        "min": 38.0,
+        "max": 100.0,
+        "mean": 73.4421052631579,
+        "p05": 38.0,
+        "median": 90.5,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "raw_feedback_mm": {
+        "count": 2068,
+        "min": 38.0,
+        "max": 100.0,
+        "mean": 74.92142166344294,
+        "p05": 38.0,
+        "median": 91.5,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "closed_target_fraction": 0.3631578947368421,
+      "open_target_fraction": 0.42105263157894735,
+      "intermediate_target_fraction": 0.21578947368421053
+    },
+    {
+      "bundle": "milk_left_20260930_154454",
+      "episode": "episode_000016",
+      "split": "train",
+      "master_trigger": {
+        "count": 293,
+        "min": 0.0,
+        "max": 0.7,
+        "mean": 0.46255214258627236,
+        "p05": 0.0,
+        "median": 0.7,
+        "p95": 0.7,
+        "nonfinite": 0
+      },
+      "action_mm": {
+        "count": 158,
+        "min": 0.0,
+        "max": 100.0,
+        "mean": 65.62429109387053,
+        "p05": 0.0,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "state_mm": {
+        "count": 158,
+        "min": 44.5,
+        "max": 100.0,
+        "mean": 80.49683544303798,
+        "p05": 44.5,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "raw_feedback_mm": {
+        "count": 1810,
+        "min": 44.5,
+        "max": 100.0,
+        "mean": 81.55359116022099,
+        "p05": 44.5,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "closed_target_fraction": 0.31645569620253167,
+      "open_target_fraction": 0.6329113924050633,
+      "intermediate_target_fraction": 0.05063291139240506
+    },
+    {
+      "bundle": "milk_left_20260930_154454",
+      "episode": "episode_000018",
+      "split": "train",
+      "master_trigger": {
+        "count": 331,
+        "min": 0.0,
+        "max": 0.7,
+        "mean": 0.47094326955354154,
+        "p05": 0.007777777777777784,
+        "median": 0.7,
+        "p95": 0.7,
+        "nonfinite": 0
+      },
+      "action_mm": {
+        "count": 179,
+        "min": 0.0,
+        "max": 100.0,
+        "mean": 66.64764422017981,
+        "p05": 0.0,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "state_mm": {
+        "count": 179,
+        "min": 46.0,
+        "max": 100.0,
+        "mean": 80.82960893854748,
+        "p05": 46.0,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "raw_feedback_mm": {
+        "count": 1999,
+        "min": 46.0,
+        "max": 100.0,
+        "mean": 81.91720860430215,
+        "p05": 46.0,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "closed_target_fraction": 0.30726256983240224,
+      "open_target_fraction": 0.6424581005586593,
+      "intermediate_target_fraction": 0.05027932960893855
+    },
+    {
+      "bundle": "milk_left_20260930_154454",
+      "episode": "episode_000019",
+      "split": "train",
+      "master_trigger": {
+        "count": 313,
+        "min": 0.0,
+        "max": 0.7,
+        "mean": 0.5096059637912673,
+        "p05": 0.004666666666666682,
+        "median": 0.7,
+        "p95": 0.7,
+        "nonfinite": 0
+      },
+      "action_mm": {
+        "count": 170,
+        "min": 0.0,
+        "max": 100.0,
+        "mean": 72.63230023192074,
+        "p05": 0.0,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "state_mm": {
+        "count": 170,
+        "min": 38.5,
+        "max": 100.0,
+        "mean": 82.1470588235294,
+        "p05": 38.5,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "raw_feedback_mm": {
+        "count": 1866,
+        "min": 38.5,
+        "max": 100.0,
+        "mean": 82.30332261521973,
+        "p05": 38.5,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "closed_target_fraction": 0.24705882352941178,
+      "open_target_fraction": 0.7,
+      "intermediate_target_fraction": 0.052941176470588235
+    },
+    {
+      "bundle": "milk_left_20260930_154454",
+      "episode": "episode_000020",
+      "split": "validation",
+      "master_trigger": {
+        "count": 323,
+        "min": 0.023333333333333352,
+        "max": 0.7,
+        "mean": 0.4354351565187479,
+        "p05": 0.031111111111111135,
+        "median": 0.7,
+        "p95": 0.7,
+        "nonfinite": 0
+      },
+      "action_mm": {
+        "count": 175,
+        "min": 0.0,
+        "max": 100.0,
+        "mean": 60.32462877624168,
+        "p05": 0.0,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "state_mm": {
+        "count": 175,
+        "min": 38.5,
+        "max": 100.0,
+        "mean": 75.11714285714285,
+        "p05": 38.5,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "raw_feedback_mm": {
+        "count": 1914,
+        "min": 38.5,
+        "max": 100.0,
+        "mean": 76.23119122257053,
+        "p05": 38.5,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      },
+      "closed_target_fraction": 0.36,
+      "open_target_fraction": 0.5885714285714285,
+      "intermediate_target_fraction": 0.05142857142857143
+    }
+  ],
+  "source_mismatch_count": 0,
+  "all_exported": {
+    "frames": 7184,
+    "action_mm": {
+      "count": 7184,
+      "min": 0.0,
+      "max": 100.0,
+      "mean": 62.509828691397054,
+      "p05": 0.0,
+      "median": 100.0,
+      "p95": 100.0,
+      "nonfinite": 0
+    },
+    "state_mm": {
+      "count": 7184,
+      "min": 38.0,
+      "max": 100.0,
+      "mean": 77.09827394209354,
+      "p05": 38.5,
+      "median": 100.0,
+      "p95": 100.0,
+      "nonfinite": 0
+    },
+    "gap_mm": {
+      "count": 7184,
+      "min": 0.0,
+      "max": 83.92473118279571,
+      "mean": 17.071851725459204,
+      "p05": 0.0,
+      "median": 0.0,
+      "p95": 46.0,
+      "nonfinite": 0
+    }
+  },
+  "validation_gripper_by_command_range": {
+    "closed_le1mm": {
+      "windows": 335,
+      "fraction": 0.46984572230014027,
+      "mae_mm": 1.8170558214187622,
+      "error_over50mm": 3,
+      "measured_state_mm": {
+        "count": 335,
+        "min": 38.5,
+        "max": 71.5,
+        "mean": 45.04328358208955,
+        "p05": 38.5,
+        "median": 45.5,
+        "p95": 46.5,
+        "nonfinite": 0
+      }
+    },
+    "open_ge99mm": {
+      "windows": 304,
+      "fraction": 0.426367461430575,
+      "mae_mm": 1.0967342853546143,
+      "error_over50mm": 0,
+      "measured_state_mm": {
+        "count": 304,
+        "min": 55.5,
+        "max": 100.0,
+        "mean": 99.5,
+        "p05": 100.0,
+        "median": 100.0,
+        "p95": 100.0,
+        "nonfinite": 0
+      }
+    },
+    "intermediate_1to99mm": {
+      "windows": 74,
+      "fraction": 0.10378681626928471,
+      "mae_mm": 28.466073989868164,
+      "error_over50mm": 13,
+      "measured_state_mm": {
+        "count": 74,
+        "min": 38.5,
+        "max": 100.0,
+        "mean": 66.3108108108108,
+        "p05": 45.15,
+        "median": 62.75,
+        "p95": 99.175,
+        "nonfinite": 0
+      }
+    }
+  },
+  "worst_first_gripper_windows": [
+    {
+      "ref": [
+        2,
+        1738,
+        9,
+        "episode_000012"
+      ],
+      "target_mm": 91.3978500366211,
+      "prediction_mm": 1.5003982782363892,
+      "measured_mm": 48.5,
+      "abs_error_mm": 89.89745330810547
+    },
+    {
+      "ref": [
+        2,
+        1002,
+        5,
+        "episode_000008"
+      ],
+      "target_mm": 0.0,
+      "prediction_mm": 85.77809143066406,
+      "measured_mm": 45.5,
+      "abs_error_mm": 85.77809143066406
+    },
+    {
+      "ref": [
+        2,
+        1003,
+        5,
+        "episode_000008"
+      ],
+      "target_mm": 13.620072364807129,
+      "prediction_mm": 94.1563720703125,
+      "measured_mm": 45.5,
+      "abs_error_mm": 80.53630065917969
+    },
+    {
+      "ref": [
+        2,
+        1004,
+        5,
+        "episode_000008"
+      ],
+      "target_mm": 26.164875030517578,
+      "prediction_mm": 96.89271545410156,
+      "measured_mm": 45.5,
+      "abs_error_mm": 70.72784423828125
+    },
+    {
+      "ref": [
+        1,
+        339,
+        1,
+        "episode_000002"
+      ],
+      "target_mm": 67.5627212524414,
+      "prediction_mm": 1.0773580074310303,
+      "measured_mm": 55.0,
+      "abs_error_mm": 66.48536682128906
+    },
+    {
+      "ref": [
+        0,
+        535,
+        3,
+        "episode_000005"
+      ],
+      "target_mm": 32.43727493286133,
+      "prediction_mm": 95.77456665039062,
+      "measured_mm": 84.0,
+      "abs_error_mm": 63.3372917175293
+    },
+    {
+      "ref": [
+        2,
+        945,
+        5,
+        "episode_000008"
+      ],
+      "target_mm": 66.30824279785156,
+      "prediction_mm": 3.6179513931274414,
+      "measured_mm": 69.5,
+      "abs_error_mm": 62.69029235839844
+    },
+    {
+      "ref": [
+        2,
+        944,
+        5,
+        "episode_000008"
+      ],
+      "target_mm": 67.5627212524414,
+      "prediction_mm": 5.507469177246094,
+      "measured_mm": 74.5,
+      "abs_error_mm": 62.05525207519531
+    },
+    {
+      "ref": [
+        2,
+        946,
+        5,
+        "episode_000008"
+      ],
+      "target_mm": 62.5447998046875,
+      "prediction_mm": 1.6742002964019775,
+      "measured_mm": 67.0,
+      "abs_error_mm": 60.87059783935547
+    },
+    {
+      "ref": [
+        2,
+        1737,
+        9,
+        "episode_000012"
+      ],
+      "target_mm": 62.5447998046875,
+      "prediction_mm": 1.8652817010879517,
+      "measured_mm": 44.5,
+      "abs_error_mm": 60.67951965332031
+    },
+    {
+      "ref": [
+        1,
+        2003,
+        9,
+        "episode_000010"
+      ],
+      "target_mm": 71.32616424560547,
+      "prediction_mm": 12.851362228393555,
+      "measured_mm": 48.5,
+      "abs_error_mm": 58.47480010986328
+    },
+    {
+      "ref": [
+        1,
+        337,
+        1,
+        "episode_000002"
+      ],
+      "target_mm": 57.52688217163086,
+      "prediction_mm": 1.0229543447494507,
+      "measured_mm": 46.0,
+      "abs_error_mm": 56.503929138183594
+    },
+    {
+      "ref": [
+        2,
+        943,
+        5,
+        "episode_000008"
+      ],
+      "target_mm": 72.58064270019531,
+      "prediction_mm": 16.19391632080078,
+      "measured_mm": 80.5,
+      "abs_error_mm": 56.38672637939453
+    },
+    {
+      "ref": [
+        2,
+        947,
+        5,
+        "episode_000008"
+      ],
+      "target_mm": 55.017921447753906,
+      "prediction_mm": 1.193871259689331,
+      "measured_mm": 63.0,
+      "abs_error_mm": 53.82405090332031
+    },
+    {
+      "ref": [
+        2,
+        1001,
+        5,
+        "episode_000008"
+      ],
+      "target_mm": 0.0,
+      "prediction_mm": 51.99727249145508,
+      "measured_mm": 45.5,
+      "abs_error_mm": 51.99727249145508
+    },
+    {
+      "ref": [
+        2,
+        999,
+        5,
+        "episode_000008"
+      ],
+      "target_mm": 0.0,
+      "prediction_mm": 50.174869537353516,
+      "measured_mm": 45.5,
+      "abs_error_mm": 50.174869537353516
+    },
+    {
+      "ref": [
+        1,
+        2002,
+        9,
+        "episode_000010"
+      ],
+      "target_mm": 51.25448226928711,
+      "prediction_mm": 2.6519594192504883,
+      "measured_mm": 46.5,
+      "abs_error_mm": 48.60252380371094
+    },
+    {
+      "ref": [
+        1,
+        272,
+        1,
+        "episode_000002"
+      ],
+      "target_mm": 61.29032516479492,
+      "prediction_mm": 14.004965782165527,
+      "measured_mm": 84.0,
+      "abs_error_mm": 47.28535842895508
+    },
+    {
+      "ref": [
+        2,
+        1682,
+        9,
+        "episode_000012"
+      ],
+      "target_mm": 100.0,
+      "prediction_mm": 53.29692077636719,
+      "measured_mm": 100.0,
+      "abs_error_mm": 46.70307922363281
+    },
+    {
+      "ref": [
+        1,
+        1936,
+        9,
+        "episode_000010"
+      ],
+      "target_mm": 46.2365608215332,
+      "prediction_mm": 5.8615593910217285,
+      "measured_mm": 75.5,
+      "abs_error_mm": 40.375
+    }
+  ],
+  "training_first_action_range_distribution": {
+    "anchors": 3581,
+    "closed_le1mm": 1611,
+    "open_ge99mm": 1545,
+    "intermediate_1to99mm": 425,
+    "intermediate_fraction": 0.11868193242111143,
+    "future10_intermediate_fraction": 0.13085730242948898
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "status": "ready_for_user_operated_single_step",
+  "date": "2026-10-13",
+  "weights_updated": false,
+  "physical_motion_executed_by_agent": false,
+  "original_galbot_normalization_verified": false,
+  "real_three_position_scene_test_completed": false,
+  "regression_tests_passed": 58,
+  "final_step_tests_passed": 11,
+  "preview_report": "lerobot_runs/model_20261013_104328_1995509/report.json",
+  "accepted_preview_predictions": 26,
+  "preview_roundtrip_median_ms": 382.58213599328883,
+  "scope": "One bounded arm or gripper command; operator execution and stationary confirmation still pending",
+  "script_sha256": {
+    "lingbot_pretrain_g1/run_step.sh": "09df1e0120aa57d2bd9ae47f6e979a8517ed8f0e40a4439f1c647844370cf482",
+    "g1_policy_control/experimental.py": "ad92d3eafe998f04316612f7869262a089d5616c8bb5e4cec62033d91afebe47",
+    "g1_policy_control/client.py": "4d3a8c51978f93d10c47aa6dfeee22994c867d010cb79711d4878bafbd32bfe2"
+  }
+}

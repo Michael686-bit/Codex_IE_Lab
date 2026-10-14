@@ -1,0 +1,42 @@
+{
+  "A_checkpoint": "/mnt/data/VLA_data/smolvla_runs/smolvla-multimodal-train-20261008_141016-80070/checkpoints/step_003200/model_bundle",
+  "B_checkpoint": "/mnt/data/VLA_data/smolvla_runs/smolvla-multimodal-train-20261008_205126-212674/checkpoints/step_001300/model_bundle",
+  "primary_metric_macro7_two_seeds": {
+    "A": {
+      "std_mae": 0.4089039116400485,
+      "joint_mae_deg": 5.35078759003678,
+      "gripper_mae_mm": 24.957515521667087,
+      "first_joint_mae_deg": 3.433558174478056,
+      "first_gripper_mae_mm": 20.921676181316805
+    },
+    "B": {
+      "std_mae": 0.3524362399490846,
+      "joint_mae_deg": 4.72652307983905,
+      "gripper_mae_mm": 18.429424175705105,
+      "first_joint_mae_deg": 3.0004489325553476,
+      "first_gripper_mae_mm": 16.951143464491
+    }
+  },
+  "improvement_percent_positive_is_B_better": {
+    "std_mae": 13.8095210350229,
+    "joint_mae_deg": 11.666778015261087,
+    "gripper_mae_mm": 26.156815730694674,
+    "first_joint_mae_deg": 12.614006226603296,
+    "first_gripper_mae_mm": 18.978081308664535
+  },
+  "fixed56_loss": {
+    "A": 0.07600284683784204,
+    "B": 0.06699343947028476
+  },
+  "full713_loss": {
+    "A": 0.08057550530551527,
+    "B": 0.06867103691005147
+  },
+  "B_better_episodes": 7,
+  "bootstrap95_improvement_percent": [
+    8.904206937671718,
+    18.39067727048
+  ],
+  "range_gate": false,
+  "exploratory_gate": false
+}

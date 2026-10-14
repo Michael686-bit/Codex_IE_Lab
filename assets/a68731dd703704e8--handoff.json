@@ -1,0 +1,56 @@
+{
+  "status": "audit_completed",
+  "date": "2026-10-09",
+  "reason": "User is leaving work and requested continuation tomorrow",
+  "completed": [
+    "原始夹爪标签与SDK接受目标逐项一致，单位米，范围0至0.1",
+    "3581训练窗口重算均值和标准差与保存统计完全一致",
+    "夹爪原始索引7到统一槽位28，绝对宽度，不减观测状态",
+    "14个开闭样本编码解码往返最大误差0.000002822mm；BF16往返最大误差0.185mm",
+    "14样本完整前向/缓存推理对照及未使用动作维度约束未解释主要退化",
+    "查到SDK闭合命令接近0mm，但抓持时实测开度平均44.5mm，两者语义不同",
+    "sample_beta为幂变换均匀变量比值，不是标准Beta分布；仅t=0.5的loss验证覆盖有限"
+  ],
+  "pending": [
+    "用户决定是否实施新的500步受控训练对照"
+  ],
+  "sampler_checkpoints_finished": [
+    "12"
+  ],
+  "sampler_audit_status": "partial_or_not_written",
+  "available_files": [
+    "audit.json",
+    "g1_left7.yaml",
+    "gpu_audit.log",
+    "labels_and_stats_audit.json",
+    "manifest.json",
+    "norm_stats.json",
+    "predictions_step_000012_cached_native.npz",
+    "predictions_step_000012_cached_projected.npz",
+    "predictions_step_000012_full_native.npz",
+    "predictions_step_000012_full_projected.npz",
+    "predictions_step_005012_cached_native.npz",
+    "predictions_step_005012_cached_projected.npz",
+    "predictions_step_005012_full_native.npz",
+    "predictions_step_005012_full_projected.npz",
+    "projection_updates_audit.json",
+    "sampler_audit.json",
+    "sampler_audit.log",
+    "sampler_step_000012_fp32_grid_10.npz",
+    "sampler_step_000012_fp32_grid_50.npz",
+    "sampler_step_000012_seed_1729.npz",
+    "sampler_step_000012_seed_20261009.npz",
+    "sampler_step_000012_seed_42.npz",
+    "saved_predictions_audit.json",
+    "state_target_gap.json",
+    "time_distribution_audit.json",
+    "trainable_parameters.json"
+  ],
+  "preserved_training_run": "lingbot_finetune/runs/plateau_rank8_20261009",
+  "preserved_checkpoints": [
+    12,
+    5012
+  ],
+  "resumed_date": "2026-10-10",
+  "completed_date": "2026-10-10"
+}

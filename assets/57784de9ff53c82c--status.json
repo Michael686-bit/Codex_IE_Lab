@@ -1,0 +1,36 @@
+{
+  "status": "completed",
+  "step": 2000,
+  "steps": 2000,
+  "best_step": 1900,
+  "best_score": 1.3989254690982678,
+  "baseline": {
+    "step": 0,
+    "fm_loss": 0.20495280540651745,
+    "joint_mae_deg": 7.406183066191496,
+    "gripper_mae_mm": 22.29271348317464,
+    "first_joint_mae_deg": 5.804459355495594,
+    "first_gripper_mae_mm": 21.250205428512007,
+    "hold_state_joint_mae_deg": 1.8948642920564722,
+    "hold_state_gripper_mae_mm": 14.944444444444445,
+    "gripper_out_of_range_fraction": 0.0,
+    "windows": 27,
+    "selection_score": 8.161634229730677
+  },
+  "last_validation": {
+    "step": 2000,
+    "fm_loss": 0.05993191163159079,
+    "joint_mae_deg": 2.618674342279081,
+    "gripper_mae_mm": 0.8120750531002328,
+    "first_joint_mae_deg": 1.380056619644165,
+    "first_gripper_mae_mm": 0.7907918875140173,
+    "hold_state_joint_mae_deg": 1.8948642920564722,
+    "hold_state_gripper_mae_mm": 14.944444444444445,
+    "gripper_out_of_range_fraction": 0.4407407387539192,
+    "windows": 27,
+    "selection_score": 1.471752181759587
+  },
+  "real_robot_ready": false,
+  "peak_allocated_mib": 13763.68359375,
+  "peak_reserved_mib": 14054.0
+}

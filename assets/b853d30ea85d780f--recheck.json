@@ -1,0 +1,66 @@
+{
+  "driver_fps": {
+    "left_arm_camera(D405,SN:323622271465)": {
+      "samples": 14,
+      "min_hz": 15.0012016,
+      "median_hz": 15.00170135,
+      "max_hz": 15.0029211
+    },
+    "stereo_right": {
+      "samples": 13,
+      "min_hz": 14.968873,
+      "median_hz": 14.9699945,
+      "max_hz": 15.0608501
+    },
+    "stereo_left": {
+      "samples": 13,
+      "min_hz": 14.968873,
+      "median_hz": 14.9699945,
+      "max_hz": 15.0608501
+    },
+    "right_arm_camera(D405,SN:323622272123)": {
+      "samples": 13,
+      "min_hz": 15.0010309,
+      "median_hz": 15.001811,
+      "max_hz": 15.0028992
+    },
+    "surround_right_rear": {
+      "samples": 13,
+      "min_hz": 9.99998569,
+      "median_hz": 10.0001688,
+      "max_hz": 10.1122475
+    },
+    "surround_right_front": {
+      "samples": 13,
+      "min_hz": 9.99998569,
+      "median_hz": 10.0001688,
+      "max_hz": 10.1122475
+    },
+    "surround_left_rear": {
+      "samples": 13,
+      "min_hz": 9.99998569,
+      "median_hz": 10.0001688,
+      "max_hz": 10.1122475
+    },
+    "surround_left_front": {
+      "samples": 13,
+      "min_hz": 9.99998569,
+      "median_hz": 10.0001678,
+      "max_hz": 10.1122475
+    }
+  },
+  "clock": {
+    "valid_samples": 180,
+    "duration_s": 35.961840644,
+    "offset_min_ms": 5.681671,
+    "offset_median_ms": 6.372920000000001,
+    "offset_max_ms": 6.705648,
+    "offset_range_ms": 1.0239770000000004,
+    "startup_rule_windows_passed": 169,
+    "startup_rule_windows_total": 169,
+    "sensor_exposure_sync_verified": false
+  },
+  "rerun_9890_running": true,
+  "live_preview_8765_running": false,
+  "motion_called": false
+}

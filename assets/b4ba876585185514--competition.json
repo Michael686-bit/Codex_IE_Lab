@@ -1,0 +1,33 @@
+{
+  "competition_id": "532514",
+  "rules_source": "https://tianchi.aliyun.com/competition/entrance/532514/information",
+  "base_model": "robbyant/lingbot-vla-v2-6b",
+  "base_model_revision": "11c703bf6a5c1f45b3b69168482da11fdbba53d7",
+  "training": {
+    "embodiment": "Aloha-AgileX",
+    "setting": "clean",
+    "tasks": 50,
+    "episodes_per_task": 50,
+    "randomized_training_allowed": false
+  },
+  "evaluation": {
+    "settings": [
+      "clean",
+      "randomized"
+    ],
+    "tasks": 50,
+    "attempts_per_task_per_setting": 100,
+    "local_pipeline_precision": "bf16",
+    "submission_precision": null
+  },
+  "environment": {
+    "model_container": "lingbo-competition-model",
+    "simulation_container": "lingbo-competition-sim",
+    "lingbot_commit": "be969b8fd117fb70550c5d4bf4bc328211b5b1b6",
+    "robotwin_commit": "13c3c47ff4312dd62484bcd51be034af55c062d1",
+    "storage_root": "/home/lsy03/文档/ChatGPT/蚂蚁灵波具身大模型挑战赛",
+    "gpu_schedule": "preserve_existing_jobs; acceptance_only_when_free",
+    "first_stage_gpu": "local RTX 4090 24GB"
+  },
+  "status": "resources_downloading_and_images_building"
+}

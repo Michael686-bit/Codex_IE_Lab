@@ -1,0 +1,170 @@
+{
+  "status": "wrench_acquisition_budget_fixed_read_only_verified",
+  "time": "2026-10-10T09:15:47.024070+08:00",
+  "failed_run": "lerobot_runs/model_20261010_090910_825385",
+  "confirmed_findings": [
+    "Saved first startup observation had wrench age164.713178ms. Failed prediction used a second observation whose timing was not logged, so its exact source-age/inference split cannot be reconstructed.",
+    "Wrench acquisition originally accepted samples up to300ms old without reserving inference time; images/depth already reserved220ms. Such an accepted force sample could expire during otherwise ordinary inference.",
+    "Failure occurred in unarmed preflight before any motion API request. Three SDK clients cleaned up normally.",
+    "Current read-only baseline did not reproduce persistent sensor freeze or inference timeout; no competing GPU compute process was observed during this investigation."
+  ],
+  "fixes": [
+    "Include fresh wrench in the same bounded250ms readiness loop as camera selection, reserve220ms plus5ms collection margin, keep original force/torque values and source timestamp.",
+    "Keep final300ms wrench limit and all existing motion protection unchanged.",
+    "Record force source timestamp, acquisition age, elapsed time, final age and inference time, including failed preflight checks.",
+    "Extend existing feedback-only three-client diagnosis with optional inference timing; no motion-capable roles."
+  ],
+  "baseline_read_only": {
+    "path": "/home/lsy03/文档/ChatGPT/VLA G1 项目/lerobot_runs/model_20261010_091202_826707",
+    "wrench_ms": {
+      "sample_age_ms": {
+        "min": 1.7038929999999999,
+        "median": 7.419237000000001,
+        "max": 43.624081000000004
+      },
+      "elapsed_since_sample_ms": {
+        "min": 135.91158401686698,
+        "median": 142.09589100209996,
+        "max": 161.6779360047076
+      },
+      "final_age_ms": {
+        "min": 141.7433689895623,
+        "median": 150.97395399153007,
+        "max": 188.5083040020091
+      }
+    },
+    "samples": 43,
+    "report": {
+      "mode": "read_only_three_sdk_clients",
+      "passed": true,
+      "inference_enabled": true,
+      "age_rejections": 0,
+      "error": null,
+      "observations": 43,
+      "samples": {
+        "observer": 43,
+        "executor_read_only": 43,
+        "stopper_read_only": 43
+      },
+      "advances": {
+        "observer": 42,
+        "executor_read_only": 42,
+        "stopper_read_only": 42
+      },
+      "cleanup_confirmed": 3,
+      "motion_commands_sent": 0,
+      "scope": "Observer plus two feedback-only clients with actuator-client sensor initialization. No apply, stop, gripper, or controller-change RPCs."
+    }
+  },
+  "after_three_clients": {
+    "path": "/home/lsy03/文档/ChatGPT/VLA G1 项目/lerobot_runs/model_20261010_091350_827423",
+    "wrench_ms": {
+      "sample_age_ms": {
+        "min": 6.100562,
+        "median": 10.144089000000001,
+        "max": 35.306312999999996
+      },
+      "elapsed_since_sample_ms": {
+        "min": 136.34358000126667,
+        "median": 140.2732290152926,
+        "max": 166.91740599344485
+      },
+      "final_age_ms": {
+        "min": 145.19446799673247,
+        "median": 152.07935801645812,
+        "max": 202.22371899344486
+      }
+    },
+    "samples": 43,
+    "report": {
+      "mode": "read_only_three_sdk_clients",
+      "passed": true,
+      "inference_enabled": true,
+      "age_rejections": 0,
+      "error": null,
+      "observations": 43,
+      "samples": {
+        "observer": 43,
+        "executor_read_only": 43,
+        "stopper_read_only": 43
+      },
+      "advances": {
+        "observer": 42,
+        "executor_read_only": 42,
+        "stopper_read_only": 42
+      },
+      "cleanup_confirmed": 3,
+      "motion_commands_sent": 0,
+      "scope": "Observer plus two feedback-only clients with actuator-client sensor initialization. No apply, stop, gripper, or controller-change RPCs."
+    }
+  },
+  "after_preview": {
+    "path": "/home/lsy03/文档/ChatGPT/VLA G1 项目/lerobot_runs/model_20261010_091448_827892",
+    "wrench_ms": {
+      "sample_age_ms": {
+        "min": 1.604131,
+        "median": 7.480002000000001,
+        "max": 67.60446
+      },
+      "elapsed_since_sample_ms": {
+        "min": 134.33373798034154,
+        "median": 140.1924420206342,
+        "max": 193.75378199038096
+      },
+      "final_age_ms": {
+        "min": 138.24514999480456,
+        "median": 148.4394069889131,
+        "max": 216.0705940073217
+      }
+    },
+    "samples": 199,
+    "report": {
+      "log": "/home/lsy03/文档/ChatGPT/VLA G1 项目/lerobot_runs/model_20261010_091448_827892/events.jsonl",
+      "mode": "preview",
+      "channels": "arm",
+      "model": "milk-v2-best",
+      "execute_requested": false,
+      "sdk_attempts": 0,
+      "arm_command_attempts": 0,
+      "gripper_command_attempts": 0,
+      "acknowledged_commands": 0,
+      "prediction_rejections": 0,
+      "abort_count": 0,
+      "input_rejections": 0,
+      "cleanup_unconfirmed": 0,
+      "cleanup_confirmed": 1,
+      "session_completed": true,
+      "stationary_verified": false,
+      "stop_acknowledged": false,
+      "roundtrip_ms_median": 145.30102000571787,
+      "roundtrip_ms_max": 225.37480198661797,
+      "event_counts": {
+        "start": 1,
+        "sdk_startup_stage": 14,
+        "wrist_pair_unavailable": 11,
+        "startup_wait": 11,
+        "observation": 200,
+        "preview": 199,
+        "inference": 199,
+        "supervisor_stop": 1,
+        "stop": 1,
+        "sdk_cleanup_confirmed": 1,
+        "session_summary": 1,
+        "completed": 1
+      },
+      "preview_motion_api_calls_zero": true,
+      "input_and_prediction_accepted": true,
+      "preview_data_quality_passed": true,
+      "preview_validation_passed": true,
+      "preview_gate": "At least 10 accepted observations, full duration, zero input/prediction rejections; not motion certification",
+      "scope": "Evidence from this run only; SDK acknowledgement does not establish task success"
+    }
+  },
+  "offline_tests": {
+    "passed": 70,
+    "log": "/home/lsy03/文档/ChatGPT/VLA G1 项目/reports/g1_wrench_timing_20261010/all_tests.log",
+    "regression": "165ms force sample rejected for acquisition, replaced only by genuinely newer sample;165ms+150ms still rejected by final300ms gate."
+  },
+  "motion_commands_sent": false,
+  "remaining_uncertainty": "Exact cause of the historical transient165ms-old SDK force sample was not uniquely identified. Freshness selection now waits for a real newer sample instead of sending insufficient-budget input to the model."
+}

@@ -1,0 +1,15 @@
+{
+  "matched_validation_windows": 70,
+  "native_replay_max_error": {
+    "12": 0.0,
+    "5012": 0.0
+  },
+  "three_positive_seed_mean_first_gripper_mae_mm": {
+    "12": 9.582964299694313,
+    "5012": 17.768856923898316
+  },
+  "three_positive_seed_mean_first10_gripper_mae_mm": {
+    "12": 18.69443756690717,
+    "5012": 23.041905021527782
+  }
+}

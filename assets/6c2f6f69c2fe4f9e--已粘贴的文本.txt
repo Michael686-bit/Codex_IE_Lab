@@ -1,0 +1,382 @@
+我们要不加上六维力和深度图，重新对SmolVLA进行训练，如何？ 给我代码，我来执行
+
+
+
+
+
+
+
+12:19
+
+
+
+
+
+
+已处理 5分钟 30秒
+
+
+
+可以做一轮加入六维腕力和深度的对照实验。我会给你可执行的代码：输入增加六维腕力，深度保留真实数值和无效像素掩码，动作输出仍为 8 维；沿用同一训练／验证划分。代码准备好后由你启动，我先核对数据对齐和模型接入方式。
+
+
+
+
+加载了工具读取文件运行了命令
+已读取 train.py
+
+
+
+已读取 data.py
+
+
+
+已读取 modeling_smolvla.py
+
+
+
+已读取 modeling_smolvla.py
+
+
+
+已列出的文件
+
+
+
+已读取G1 Data Pipeline 技能
+
+
+
+已运行命令
+Shell
+$python3 - <<'PY'
+from pathlib import Path
+import json
+r=Path('/mnt/data/VLA_data/smolvla_runs/smolvla-milk-follow-20261008_111934-46832');m=json.loads((r/'split_and_sampling.json').read_text())
+for bi,b in enumerate(m['batches']):
+ ds=Path('/mnt/data/VLA_data')/b['bundle']/'lerobot/milk_left_v3';rows=[json.loads(x)['source_row'] for x in (ds/'source_rows.jsonl').open()];print(b['bundle'])
+ for split in ['train','validation']:
+  refs=[x for x in m[split] if x[0]==bi];good=[x for x in refs if rows[x[1]]['quality']['sensor_valid_LEFT_WRIST_FORCE'] and rows[x[1]]['quality']['sensor_valid_LEFT_ARM_DEPTH_CAMERA']];print(split,len(refs),'force-depth valid',len(good))
+ print('MATCH_FORCE',json.dumps(rows[0]['matches']['LEFT_WRIST_FORCE']));print('DEPTH_LOCATION',rows[0]['matches']['LEFT_ARM_DEPTH_CAMERA']['location'])
+PY
+sed -n '250,278p' .venv-lerobot/lib/python3.10/site-packages/lerobot/policies/smolvla/modeling_smolvla.py; rg -n 'def _save_pretrained|save_pretrained' .venv-lerobot/lib/python3.10/site-packages/lerobot/policies/pretrained.py | head -15; sed -n '130,175p' .venv-lerobot/lib/python3.10/site-packages/lerobot/policies/smolvla/configuration_smolvla.py; ls lerobot_deploy/scripts
+
+
+milk_left_20260930
+train 988 force-depth valid 988
+validation 202 force-depth valid 202
+MATCH_FORCE {"sequence": 1, "source_timestamp_ns": 1790749358197489066, "source_clock_domain": "sdk_left_wrist_force", "receive_monotonic_ns": 4292295802864, "receive_wall_ns": 1790749358204267611, "location": {"chunk": "chunk_000000.g1raw", "payload_offset": 2408232, "payload_bytes": 0}, "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", "data": {"timestamp_ns": 1790749358197489066, "force": {"x": 1.387418508529663, "y": -11.215370178222656, "z": 42.62948989868164}, "torque": {"x": -0.938511073589325, "y": -0.14879566431045532, "z": 0.4309912621974945}}, "delta_ns": 19544171, "apparent_age_ns": 6778545, "bracketing_gap_ns": 0, "selection_reason": "outside_stream_coverage", "receive_after_grid_ns": 26320794}
+DEPTH_LOCATION {'chunk': 'chunk_000000.g1raw', 'payload_offset': 2470596, 'payload_bytes': 1843200}
+milk_left_20260930_145800
+train 1185 force-depth valid 1183
+validation 240 force-depth valid 240
+MATCH_FORCE {"sequence": 1, "source_timestamp_ns": 1790751543396389108, "source_clock_domain": "sdk_left_wrist_force", "receive_monotonic_ns": 6477508869790, "receive_wall_ns": 1790751543417334185, "location": {"chunk": "chunk_000000.g1raw", "payload_offset": 2408314, "payload_bytes": 0}, "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", "data": {"timestamp_ns": 1790751543396389108, "force": {"x": 1.187904953956604, "y": -11.621635437011719, "z": 42.60686492919922}, "torque": {"x": -0.943407416343689, "y": -0.13932587206363678, "z": 0.42808660864830017}}, "delta_ns": 9777357, "apparent_age_ns": 20945077, "bracketing_gap_ns": 0, "selection_reason": "outside_stream_coverage", "receive_after_grid_ns": 30721789}
+DEPTH_LOCATION {'chunk': 'chunk_000000.g1raw', 'payload_offset': 301460, 'payload_bytes': 1843200}
+milk_left_20260930_154454
+train 1410 force-depth valid 1410
+validation 271 force-depth valid 271
+MATCH_FORCE {"sequence": 1, "source_timestamp_ns": 1790754400659061238, "source_clock_domain": "sdk_left_wrist_force", "receive_monotonic_ns": 9334753413235, "receive_wall_ns": 1790754400661877982, "location": {"chunk": "chunk_000000.g1raw", "payload_offset": 2395464, "payload_bytes": 0}, "payload_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", "data": {"timestamp_ns": 1790754400659061238, "force": {"x": 1.9455708265304565, "y": -11.610588073730469, "z": 42.394378662109375}, "torque": {"x": -0.9413267374038696, "y": -0.11536083370447159, "z": 0.42777177691459656}}, "delta_ns": 20737930, "apparent_age_ns": 2816744, "bracketing_gap_ns": 0, "selection_reason": "outside_stream_coverage", "receive_after_grid_ns": 23552751}
+DEPTH_LOCATION {'chunk': 'chunk_000000.g1raw', 'payload_offset': 2449975, 'payload_bytes': 1843200}
+        """This should be called whenever the environment is reset."""
+        self._queues = {
+            ACTION: deque(maxlen=self.config.n_action_steps),
+        }
+
+    def init_rtc_processor(self):
+        """Initialize RTC processor if RTC is enabled in config."""
+        self.rtc_processor = None
+
+        # Lets create processor if the config provided
+        # If RTC is not enabled - we still can track the denoising data
+        if self.config.rtc_config is not None:
+            self.rtc_processor = RTCProcessor(self.config.rtc_config)
+
+            # In case of calling init_rtc_processor after the model is created
+            # We need to set the rtc_processor to the model
+            # During the normal initialization process the model is not created yet
+            model_value = getattr(self, "model", None)
+            if model_value is not None:
+                model_value.rtc_processor = self.rtc_processor
+
+    def get_optim_params(self) -> dict:
+        return self.parameters()
+
+    def _get_action_chunk(
+        self, batch: dict[str, Tensor], noise: Tensor | None = None, **kwargs: Unpack[ActionSelectKwargs]
+    ) -> Tensor:
+        # TODO: Check if this for loop is needed.
+        # Context: In fact, self.queues contains only ACTION field, and in inference, we don't have action in the batch
+70:    def _save_pretrained(self, save_directory: Path) -> None:
+71:        self.config._save_pretrained(save_directory)
+225:                peft_model.save_pretrained(saved_path)
+226:                self.config.save_pretrained(saved_path)
+228:                self.save_pretrained(saved_path)  # Calls _save_pretrained and stores model tensors
+235:            cfg.save_pretrained(saved_path)  # Calls _save_pretrained and stores train config
+                type=FeatureType.VISUAL,
+                shape=(3, 480, 640),
+            )
+            self.input_features[key] = empty_camera
+
+    def get_optimizer_preset(self) -> AdamWConfig:
+        return AdamWConfig(
+            lr=self.optimizer_lr,
+            betas=self.optimizer_betas,
+            eps=self.optimizer_eps,
+            weight_decay=self.optimizer_weight_decay,
+            grad_clip_norm=self.optimizer_grad_clip_norm,
+        )
+
+    def get_scheduler_preset(self):
+        return CosineDecayWithWarmupSchedulerConfig(
+            peak_lr=self.optimizer_lr,
+            decay_lr=self.scheduler_decay_lr,
+            num_warmup_steps=self.scheduler_warmup_steps,
+            num_decay_steps=self.scheduler_decay_steps,
+        )
+
+    @property
+    def observation_delta_indices(self) -> list:
+        return [0]
+
+    @property
+    def action_delta_indices(self) -> list:
+        return list(range(self.chunk_size))
+
+    @property
+    def reward_delta_indices(self) -> None:
+        return None
+__pycache__
+benchmark.py
+check_env.py
+continue_milk_smolvla_2k.sh
+download_assets.py
+lerobot.sh
+make_fixture.py
+milk_training
+prepare_smolvla.py
+report.py
+train.py
+train_milk_smolvla.sh
+train_milk_smolvla_20k.sh
+validate_run.py
+
+
+
+
+
+
+成功
+
+
+
+
+
+
+
+
+
+
+
+已确认原件里有可用的六维腕力，加入时序检查后，现有样本预计只需剔除 2 个训练起点，验证集划分可以保持。
+这版会先使用原始深度，增加“深度＋无效掩码”的轻量编码器；腕力作为原始传感器观测参与训练。它的坐标系、清零和重力补偿仍未确认，因此代码会记录这些限制，不能把腕力解释成纯接触力。我也会提供 RGB、仅加力、仅加深度和两者都加的开关，方便对照。
+
+
+
+
+训练是否使用gpu进行？
+
+
+
+
+
+
+
+12:23
+
+
+
+
+
+
+已运行 mkdir -p lerobot_deploy/scripts/milk_multimodal
+cat > lerobot_deploy/scripts/milk_multimodal/model.py <<'PY'
+"""Explicit metric-depth/force adapter; use this loader for every inference."""
+import json
+from pathlib import Path
+import torch
+from torch import nn
+from safetensors.torch import save_file,load_file
+
+MODES=('rgb','force','depth','force-depth')
+class DepthEncoder(nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.net=nn.Sequential(nn.Conv2d(2,16,5,2,2),nn.GroupNorm(4,16),nn.SiLU(),
+            nn.Conv2d(16,32,3,2,1),nn.GroupNorm(8,32),nn.SiLU(),
+            nn.Conv2d(32,64,3,2,1),nn.GroupNorm(8,64),nn.SiLU(),
+            nn.AdaptiveAvgPool2d((4,4)),nn.Flatten(),nn.Linear(1024,128),nn.SiLU(),nn.Linear(128,18))
+        # Start with the pretrained state's unused padding slots at zero.
+        nn.init.zeros_(self.net[-1].weight);nn.init.zeros_(self.net[-1].bias)
+    def forward(self,x):return self.net(x)
+
+class DepthForcePolicy(nn.Module):
+    def __init__(self,policy,mode='force-depth',near=.07,far=1.0):
+        super().__init__()
+        if mode not in MODES or not 0<near<far:raise ValueError('Invalid modality/range')
+        self.policy=policy;self.mode=mode;self.near=near;self.far=far
+        self.depth_encoder=DepthEncoder() if 'depth' in mode else None
+        if policy.config.max_state_dim!=32:raise ValueError('Requires 32 internal state slots')
+    def fuse(self,batch):
+        state=batch['observation.state']
+        if state.ndim!=2 or state.shape[-1]!=14:raise ValueError('Expected normalized [B,14] state')
+        force=state[:,8:14] if 'force' in self.mode else torch.zeros_like(state[:,8:14])
+        if self.depth_encoder is not None:
+            depth=batch['observation.depth.left_wrist_m'];mask=batch['observation.depth.left_wrist_valid'].bool()
+            if depth.ndim==3:depth=depth[:,None]
+            if mask.ndim==3:mask=mask[:,None]
+            if depth.shape!=mask.shape or depth.shape[0]!=state.shape[0]:raise ValueError('Depth/mask mismatch')
+            mask=mask & torch.isfinite(depth) & (depth>=self.near) & (depth<=self.far)
+            safe=torch.where(mask,depth,torch.full_like(depth,self.near))
+            scaled=torch.log(safe/self.near)/torch.log(torch.tensor(self.far/self.near,device=depth.device))
+            features=torch.cat([torch.where(mask,scaled,torch.zeros_like(scaled)),mask.to(depth.dtype)],dim=1)
+            latent=self.depth_encoder(features.to(dtype=state.dtype))
+        else:latent=state.new_zeros((state.shape[0],18))
+        out=dict(batch);out['observation.state']=torch.cat([state[:,:8],force,latent],dim=-1)
+        return out
+    def forward(self,batch,**kwargs):return self.policy.forward(self.fuse(batch),**kwargs)
+    def predict_action_chunk(self,batch,**kwargs):return self.policy.predict_action_chunk(self.fuse(batch),**kwargs)
+    def reset(self):return self.policy.reset()
+    def save_bundle(self,folder,pre,post):
+        folder=Path(folder);folder.mkdir(parents=True,exist_ok=False)
+        # Base file is nested intentionally: standalone stock loader omits the adapter.
+        self.policy.save_pretrained(folder/'policy');pre.save_pretrained(folder/'policy');post.save_pretrained(folder/'policy')
+        spec={'format':'g1_smolvla_depth_force/1','mode':self.mode,'near_m':self.near,'far_m':self.far,'state_dim':14,'action_dim':8,'internal_fusion':'8 normalized joints/gripper + 6 normalized raw wrench + 18 learned depth latent','depth_resize_hw':[128,224],'force_units':['N']*3+['N*m']*3,'force_frame':'unverified SDK sensor frame','tare':'unknown','gravity_compensation':'unknown','requires_custom_loader':True,'training_ready_for_robot_deployment':False}
+        if self.depth_encoder is not None:save_file({k:v.detach().cpu().contiguous() for k,v in self.depth_encoder.state_dict().items()},folder/'depth_encoder.safetensors')
+        (folder/'multimodal_config.json').write_text(json.dumps(spec,indent=2)+'\n')
+    @classmethod
+    def load_bundle(cls,folder,device='cuda'):
+        from lerobot.configs.policies import PreTrainedConfig
+        from lerobot.policies.factory import get_policy_class,make_pre_post_processors
+        folder=Path(folder);spec=json.loads((folder/'multimodal_config.json').read_text())
+        if spec['format']!='g1_smolvla_depth_force/1':raise ValueError('Unknown adapter format')
+        cfg=PreTrainedConfig.from_pretrained(folder/'policy');cfg.device=device
+        policy=get_policy_class('smolvla').from_pretrained(folder/'policy',config=cfg,strict=True)
+        obj=cls(policy,spec['mode'],spec['near_m'],spec['far_m'])
+        if obj.depth_encoder is not None:obj.depth_encoder.load_state_dict(load_file(folder/'depth_encoder.safetensors'),strict=True)
+        obj.to(device)
+        pre,post=make_pre_post_processors(cfg,pretrained_path=folder/'policy',preprocessor_overrides={'device_processor':{'device':device}})
+        return obj,pre,post
+
+def preprocess(raw,pre,device):
+    # Keep depth fields outside stock LeRobot processors (which only know standard modalities).
+    depth=raw['observation.depth.left_wrist_m'];mask=raw['observation.depth.left_wrist_valid']
+    batch=pre({k:v for k,v in raw.items() if not k.startswith('observation.depth.')})
+    batch['observation.depth.left_wrist_m']=depth.to(device=device,dtype=torch.float32)
+    batch['observation.depth.left_wrist_valid']=mask.to(device=device,dtype=torch.bool)
+    return batch
+PY
+cat > lerobot_deploy/scripts/milk_multimodal/data.py <<'PY'
+"""Immutable RGB data + verified metric depth cache + six raw wrench observations."""
+import json,hashlib,os
+from pathlib import Path
+import numpy as np
+from base_data import prepare as prepare_rgb,sha,IMAGES
+FORCE_NAMES=['left_wrist_Fx','left_wrist_Fy','left_wrist_Fz','left_wrist_Tx','left_wrist_Ty','left_wrist_Tz']
+
+def wrench(match):
+    d=match['data'];x=[d[k][a] for k in ('force','torque') for a in ('x','y','z')]
+    a=np.array(x,dtype=np.float32)
+    if a.shape!=(6,) or not np.isfinite(a).all():raise ValueError('Invalid wrench')
+    return a
+
+def eligible(row):
+    q=row['quality'];m=row['matches']
+    return bool(q['temporal_match_valid'] and row['action_valid'] and q['sensor_valid_LEFT_ARM_DEPTH_CAMERA'] and q['sensor_valid_LEFT_WRIST_FORCE'] and m['LEFT_ARM_DEPTH_CAMERA']['source_timestamp_ns']==m['LEFT_ARM_CAMERA']['source_timestamp_ns'])
+
+def checked_depth(source,eid,match,byteorder):
+    from PIL import Image
+    loc=match['location'];data=match['data'];rawroot=(source/'raw'/eid).resolve();file=(rawroot/loc['chunk']).resolve()
+    if not file.is_relative_to(rawroot):raise ValueError('Unsafe raw path')
+    if data['format']!='16UC1' or data['depth_scale']!=10000 or [data['height'],data['width']]!=[720,1280]:raise ValueError('Unexpected depth encoding')
+    if loc['payload_offset']<0 or loc['payload_bytes']!=720*1280*2:raise ValueError('Invalid depth location')
+    with file.open('rb') as f:f.seek(loc['payload_offset']);payload=f.read(loc['payload_bytes'])
+    if hashlib.sha256(payload).hexdigest()!=match['payload_sha256']:raise ValueError('Depth payload hash mismatch')
+    raw=np.frombuffer(payload,dtype=('<' if byteorder=='little' else '>')+'u2').reshape(720,1280)
+    # Nearest-neighbor resizing preserves measured values and zero/65535 invalid codes.
+    return np.array(Image.fromarray(raw.astype(np.uint16)).resize((224,128),Image.Resampling.NEAREST),dtype=np.uint16)
+
+def build_cache(root,output,seed=42,test_limit=0):
+    root=Path(root);output=Path(output)
+    if output.exists():raise FileExistsError('Cache exists; do not overwrite')
+    base=prepare_rgb(root,seed=seed);output.mkdir(parents=True)
+    refs_by_batch={i:{} for i in range(len(base['batches']))}
+    for split in ('train','validation'):
+        for ref in base[split]:refs_by_batch[ref[0]][ref[1]]=(split,ref)
+    items=[];states=[];actions=[];excluded=[];plans={}
+    for bi,b in enumerate(base['batches']):
+        bundle=root/b['bundle'];dataset=bundle/'lerobot/milk_left_v3';proot=bundle/'alignment/source_nearest_v1';plan=json.loads((proot/'plan.json').read_text());source=(proot/plan['source_session']).resolve();plans[bi]=source
+        prov=json.loads((dataset/'capture_provenance.json').read_text())
+        if sha(proot/'plan.json')!=prov['source_plan_sha256']:raise ValueError('Plan hash changed')
+        order={};counts={'train':0,'validation':0}
+        for line in (dataset/'source_rows.jsonl').open():
+            side=json.loads(line);row=side['source_row'];local=side['dataset_frame_index'];epidx=side['dataset_episode_index'];epinfo=b['episodes'][epidx];index=epinfo['global_start']+local
+            if index not in refs_by_batch[bi]:continue
+            split,ref=refs_by_batch[bi][index]
+            if not eligible(row):excluded.append({'ref':ref,'reason':'depth/force temporal validity or exact wrist pairing'});continue
+            if test_limit and counts[split]>=test_limit:continue
+            force=wrench(row['matches']['LEFT_WRIST_FORCE']);state=np.r_[np.asarray(row['observation.state'],np.float32),force]
+            eid=ref[3]
+            if eid!=side['source_episode_id']:raise ValueError('Source identity mismatch')
+            if eid not in order:
+                rm=json.loads((source/'raw'/eid/'manifest.json').read_text())
+                if (rm['session_id'],rm['episode_id'])!=(b['session_id'],eid):raise ValueError('Raw identity mismatch')
+                order[eid]=rm['robot']['byteorder']
+            item={'ref':ref,'split':split,'state14':state.tolist(),'wrench_source':row['matches']['LEFT_WRIST_FORCE'],'depth_source':row['matches']['LEFT_ARM_DEPTH_CAMERA'],'wrist_rgb_timestamp_ns':row['matches']['LEFT_ARM_CAMERA']['source_timestamp_ns'],'byteorder':order[eid]}
+            items.append(item);counts[split]+=1
+            if split=='train':states.append(state);actions.append(row['action'])
+    if not items or not states:raise ValueError('No valid multimodal samples')
+    # Action scaling remains identical to the RGB baseline and uses training episodes only.
+    state=np.asarray(states,dtype=np.float64);stats=dict(base['stats']);stats['observation.state']={'mean':state.mean(0).tolist(),'std':np.maximum(state.std(0),1e-6).tolist(),'min':state.min(0).tolist(),'max':state.max(0).tolist(),'count':[len(state)]}
+    dep=np.lib.format.open_memmap(output/'depth_uint16.npy',mode='w+',dtype=np.uint16,shape=(len(items),128,224))
+    for i,item in enumerate(items):
+        bi,_,_,eid=item['ref'];dep[i]=checked_depth(plans[bi],eid,item['depth_source'],item['byteorder'])
+        if (i+1)%100==0 or i+1==len(items):print(f'Depth cache {i+1}/{len(items)}',flush=True)
+    dep.flush();del dep
+    np.save(output/'state14.npy',np.asarray([i['state14'] for i in items],dtype=np.float32))
+    manifest={'format':'g1_rgb_depth_force_cache/1','base':base,'items':items,'excluded':excluded,'stats':stats,'state_names':base['state_names']+FORCE_NAMES,'depth_scale_divisor':10000,'depth_hw':[128,224],'sampling':'Same episode split as RGB baseline; current RGB/depth/wrench temporal checks; exact wrist RGB/depth source stamp; complete 50-action windows. All ablation modes use this common subset.','force_semantics':'Raw SDK sensor-frame wrench, N and N*m; frame calibration/tare/gravity compensation unknown. No contact-force or force-control claim.','source_root_at_creation':str(root),'test_only':bool(test_limit),'files_sha256':{n:sha(output/n) for n in ('depth_uint16.npy','state14.npy')}}
+    (output/'manifest.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n')
+    print(json.dumps({'cache':str(output),'train':sum(i['split']=='train' for i in items),'validation':sum(i['split']=='validation' for i in items),'excluded':len(excluded),'test_only':bool(test_limit)}),flush=True)
+    return manifest
+
+def load_cache(cache,root,verify_sources=True):
+    cache=Path(cache);root=Path(root);m=json.loads((cache/'manifest.json').read_text())
+    if m['format']!='g1_rgb_depth_force_cache/1':raise ValueError('Cache format mismatch')
+    for name,h in m['files_sha256'].items():
+        if sha(cache/name)!=h:raise ValueError('Cache hash mismatch '+name)
+    if verify_sources:
+        for b in m['base']['batches']:
+            ds=root/b['bundle']/'lerobot/milk_left_v3'
+            for rel,h in b['dataset_sha256'].items():
+                if sha(ds/rel)!=h:raise ValueError('Source dataset changed '+b['bundle']+'/'+rel)
+    return m
+
+class Windows:
+    def __init__(self,cache,root,manifest,split):
+        import torch
+        from lerobot.datasets.lerobot_dataset import LeRobotDataset
+        self.torch=torch;self.m=manifest;self.refs=[i for i,x in enumerate(manifest['items']) if x['split']==split];self.depth=np.load(Path(cache)/'depth_uint16.npy',mmap_mode='r');self.states=np.load(Path(cache)/'state14.npy',mmap_mode='r')
+        self.datasets=[LeRobotDataset(b['repo_id'],root=Path(root)/b['bundle']/'lerobot/milk_left_v3',video_backend='torchcodec',download_videos=False,delta_timestamps={'action':[i/10 for i in range(50)]}) for b in manifest['base']['batches']]
+    def __len__(self):return len(self.refs)
+    def __getitem__(self,i):
+        j=self.refs[i];item=self.m['items'][j];bi,index,ep,_=item['ref'];r=self.datasets[bi][index]
+        if int(r['episode_index'])!=ep or r['action_is_pad'].any():raise ValueError('Episode boundary violation')
+        out={k:r[k] for k in ['action','task','action_is_pad',*('observation.images.'+n for n in IMAGES)]};out['observation.state']=self.torch.from_numpy(np.array(self.states[j],copy=True))
+        d=np.array(self.depth[j],copy=True);out['observation.depth.left_wrist_m']=self.torch.from_numpy(d.astype(np.float32)/10000);out['observation.depth.left_wrist_valid']=self.torch.from_numpy((d>0)&(d<65535))
+        return out
+PY
+
+
+
+
+是的，这版训练使用 RTX 4090 GPU：SmolVLA 动作专家、状态投影和新增深度编码器都在 CUDA 上运行；数据读取、对齐和缓存准备主要由 CPU 完成。
+仍按你的要求只准备代码供你执行，目前没有启动正式训练。我继续完成脚本和验证。

@@ -1,0 +1,58 @@
+{
+  "status": "passed_for_800ms_shadow_window",
+  "latest": {
+    "mode": "async-shadow",
+    "passed": true,
+    "fault": null,
+    "ticks": 600,
+    "tick_interval_ms": {
+      "min": 43.48033299902454,
+      "median": 50.00022996682674,
+      "p95": 50.13949505519122,
+      "max": 56.63826200179756
+    },
+    "lateness_ms": {
+      "min": 0.004458008334040642,
+      "median": 0.09264209074899554,
+      "p95": 0.27319806395098567,
+      "max": 6.7024718737229705
+    },
+    "candidate_messages_built": 600,
+    "sdk_publish_calls": 0,
+    "arm_command_attempts": 0,
+    "gripper_command_attempts": 0,
+    "workers_joined": true,
+    "reference_stop_steps": 9,
+    "reference_stop_error": null,
+    "reference_stop_settled": true,
+    "execution_period_s": 0.05,
+    "action_dt_s": 0.1,
+    "plan_horizon_s": 0.8,
+    "admission_max_age_s": 0.5,
+    "physical_motion_verified": false,
+    "sdk_override_continuity_verified": false,
+    "cleanup_confirmed": 2,
+    "run": "lerobot_runs/model_20261012_162908_1804117",
+    "events_sha256": "556fb67e6254eee7d9ca83de86a69217d0cf60d35c4d3624b690e3bc388a370d",
+    "admitted": 193,
+    "rejected": 22,
+    "inference_ms": {
+      "median": 137.45739095611498,
+      "max": 186.47562799742445
+    }
+  },
+  "comparison_500ms": "20261012_162753: stopped after126 ticks when plan deadline exceeded, constrained stop settled and both read-only clients cleaned up",
+  "sensor_limits_unchanged": {
+    "rgb_s": 0.6,
+    "depth_s": 0.3,
+    "wrench_s": 0.3,
+    "feedback_s": 0.3
+  },
+  "result_admission_max_age_s": 0.5,
+  "future_plan_window_s": 0.8,
+  "tests_passed": 91,
+  "motion_allowed": false,
+  "g1_files_modified": false,
+  "host_system_settings_modified": false,
+  "scope": "Fresh sensor and feedback read-only pipeline plus continuous reference generation. No physical motion, actual SDK publishing/override continuity or task success verified."
+}

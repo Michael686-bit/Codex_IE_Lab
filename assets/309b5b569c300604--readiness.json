@@ -1,0 +1,31 @@
+{
+  "checked_at": "2026-10-14T10:01:11.927946+08:00",
+  "status": "software_network_and_read_only_preview_passed",
+  "motion_command_tested": "bash lingbot_pretrain_g1/run_step.sh arm",
+  "motion_executed": false,
+  "artifacts_match": true,
+  "model_files_present_and_expected_sizes": 23,
+  "required_images_available": true,
+  "sdk_and_token_available": true,
+  "docker_user_group_available": true,
+  "control_locks_available_before_check": true,
+  "initial_gpu_free_mib": 20992,
+  "preview_report": "lerobot_runs/model_20261014_095915_2076002/report.json",
+  "preview_validation_passed": true,
+  "accepted_predictions": 26,
+  "prediction_rejections": 0,
+  "roundtrip_median_ms": 381.840668967925,
+  "roundtrip_max_ms": 406.60323097836226,
+  "final_clock_offset_ms": -180.735758,
+  "urdf_verified": true,
+  "initial_clock_instability_observed": true,
+  "clock_rechecks_passed": 3,
+  "thresholds_relaxed": false,
+  "temporary_model_service_stopped": true,
+  "operator_checks_pending": [
+    "local interactive terminal",
+    "arm vicinity clear of people/obstacles",
+    "physical emergency stop available"
+  ],
+  "scope": "Snapshot only; run_step repeats current preflight and may reject later instability."
+}

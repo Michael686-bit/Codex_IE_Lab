@@ -1,0 +1,163 @@
+{
+  "_id": "6a63bff01258ef1584e3f987",
+  "id": "robbyant/lingbot-vla-v2-6b-robotwin",
+  "private": false,
+  "tags": [
+    "safetensors",
+    "region:us"
+  ],
+  "downloads": 0,
+  "likes": 3,
+  "modelId": "robbyant/lingbot-vla-v2-6b-robotwin",
+  "author": "robbyant",
+  "sha": "0451855729ec904f970600e0aec8b84661423afe",
+  "lastModified": "2026-07-24T19:46:53.000Z",
+  "gated": false,
+  "disabled": false,
+  "config": {},
+  "siblings": [
+    {
+      "rfilename": ".gitattributes",
+      "blobId": "10cac9caf2fac9d41417be221b8fe9c9eb2de9a0",
+      "size": 1678
+    },
+    {
+      "rfilename": "README.md",
+      "blobId": "898cb0f4c6e606ea19e926891b8ea0ef607b053f",
+      "size": 2752
+    },
+    {
+      "rfilename": "assets/lingbot_vla2_framework.png",
+      "blobId": "e786eea5480acf72be6cc055e0212e2f1db8d2eb",
+      "size": 234893,
+      "lfs": {
+        "sha256": "5e7fccb501606ae27383bbb0c5e6d6824a5cdcaa9a2534488b5af059bb7e13d7",
+        "size": 234893,
+        "pointerSize": 131
+      }
+    },
+    {
+      "rfilename": "checkpoints/global_step_50000/hf_ckpt/added_tokens.json",
+      "blobId": "b54f9135e44c1e81047e8d05cb027af8bc039eed",
+      "size": 707
+    },
+    {
+      "rfilename": "checkpoints/global_step_50000/hf_ckpt/chat_template.jinja",
+      "blobId": "124386803f142761528f710e77ae483f5f8c4fc4",
+      "size": 5292
+    },
+    {
+      "rfilename": "checkpoints/global_step_50000/hf_ckpt/config.json",
+      "blobId": "69c8d69fb69ea6ef5740c524ade3ffdd1409b4c4",
+      "size": 31
+    },
+    {
+      "rfilename": "checkpoints/global_step_50000/hf_ckpt/model-00001-of-00006.safetensors",
+      "blobId": "ac471e59568d7ddca9b4406c534309fa0d9e2fed",
+      "size": 4947507248,
+      "lfs": {
+        "sha256": "514801684e0f23aaa4bb64a4fd81e420b97e094331499852d5f2cc567750b360",
+        "size": 4947507248,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "checkpoints/global_step_50000/hf_ckpt/model-00002-of-00006.safetensors",
+      "blobId": "dc861740538a854479ee13d0e0f8dbdeacc26be5",
+      "size": 4944315304,
+      "lfs": {
+        "sha256": "e7b00cf59b21c2f5e9f76f7687ba423c6fe24bfa9fa8e313ef346bb081e73c9f",
+        "size": 4944315304,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "checkpoints/global_step_50000/hf_ckpt/model-00003-of-00006.safetensors",
+      "blobId": "bebc8f3fea4377e113af736f3995fd2e4a70218c",
+      "size": 4944315360,
+      "lfs": {
+        "sha256": "ace74f6d5214059b6387b5728c570a452d51b5950dd9904fe29607dbfa41447b",
+        "size": 4944315360,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "checkpoints/global_step_50000/hf_ckpt/model-00004-of-00006.safetensors",
+      "blobId": "6335e9b851d1c9176daf34e365088d5eecc88151",
+      "size": 4992858968,
+      "lfs": {
+        "sha256": "1f1cb6b4099e264b202eae0244f3730e1ced910c0b34355fff2a719993d0cbe5",
+        "size": 4992858968,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "checkpoints/global_step_50000/hf_ckpt/model-00005-of-00006.safetensors",
+      "blobId": "12f4c354afa3cea24132c953f5bab75a5a65afcf",
+      "size": 4963062048,
+      "lfs": {
+        "sha256": "1316d6fe054253650dc65bae416ae6cf9afa283aad82a9712b02b0dd7029394b",
+        "size": 4963062048,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "checkpoints/global_step_50000/hf_ckpt/model-00006-of-00006.safetensors",
+      "blobId": "1c273cf6223bf6255841fd1eab6148ee1a741407",
+      "size": 711830844,
+      "lfs": {
+        "sha256": "0e1dfc6a23c43f3c387276e2389799867dfa90dc9727bb8e21250c73bfe7dd23",
+        "size": 711830844,
+        "pointerSize": 134
+      }
+    },
+    {
+      "rfilename": "checkpoints/global_step_50000/hf_ckpt/model.safetensors.index.json",
+      "blobId": "0c2e110c1ca2d3d4d3e97091ace15f8cbfe58b24",
+      "size": 207389
+    },
+    {
+      "rfilename": "checkpoints/global_step_50000/hf_ckpt/preprocessor_config.json",
+      "blobId": "2fa6553554f69b4e3a6b742a75264ff9dff90ad0",
+      "size": 782
+    },
+    {
+      "rfilename": "checkpoints/global_step_50000/hf_ckpt/special_tokens_map.json",
+      "blobId": "ac23c0aaa2434523c494330aeb79c58395378103",
+      "size": 613
+    },
+    {
+      "rfilename": "checkpoints/global_step_50000/hf_ckpt/tokenizer.json",
+      "blobId": "cd71f61a15a522601badb3dc960d800d9cb3766c",
+      "size": 11422654,
+      "lfs": {
+        "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+        "size": 11422654,
+        "pointerSize": 133
+      }
+    },
+    {
+      "rfilename": "checkpoints/global_step_50000/hf_ckpt/tokenizer_config.json",
+      "blobId": "35d32052b3bc1bc9493b6cc3d8b0f22acf33dc83",
+      "size": 5472
+    },
+    {
+      "rfilename": "checkpoints/global_step_50000/hf_ckpt/video_preprocessor_config.json",
+      "blobId": "e32b1d90356f74457edbfca27aa1e121dab7cdc7",
+      "size": 817
+    },
+    {
+      "rfilename": "checkpoints/global_step_50000/hf_ckpt/vocab.json",
+      "blobId": "4783fe10ac3adce15ac8f358ef5462739852c569",
+      "size": 2776833
+    },
+    {
+      "rfilename": "lingbotvla_cli.yaml",
+      "blobId": "37a2dabdd1a4ab0d651227a4b8b02bebc64f7045",
+      "size": 6263
+    }
+  ],
+  "spaces": [],
+  "createdAt": "2026-07-24T19:41:36.000Z",
+  "usedStorage": 25515547319
+}

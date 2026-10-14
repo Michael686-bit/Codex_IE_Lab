@@ -1,0 +1,13 @@
+{
+  "status": "completed",
+  "updates": 500,
+  "source_step": 12,
+  "best_checkpoint": {
+    "updates": 400,
+    "path": "/output/checkpoints/update_000400",
+    "score": 7.681402985909157
+  },
+  "rank": 8,
+  "frozen_unchanged": true,
+  "physical_deployment_certified": false
+}

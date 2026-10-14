@@ -1,0 +1,32 @@
+{
+  "log": "/home/lsy03/文档/ChatGPT/VLA G1 项目/lerobot_runs/model_20261009_162904_638020/events.jsonl",
+  "mode": "preview",
+  "channels": "arm",
+  "model": "milk-v2-best",
+  "execute_requested": false,
+  "sdk_attempts": 0,
+  "arm_command_attempts": 0,
+  "gripper_command_attempts": 0,
+  "acknowledged_commands": 0,
+  "prediction_rejections": 0,
+  "abort_count": 1,
+  "input_rejections": 0,
+  "cleanup_unconfirmed": 0,
+  "session_completed": false,
+  "stationary_verified": false,
+  "stop_acknowledged": false,
+  "roundtrip_ms_median": null,
+  "roundtrip_ms_max": null,
+  "event_counts": {
+    "start": 1,
+    "sdk_startup_stage": 1525,
+    "supervisor_stop": 1,
+    "session_summary": 1,
+    "abort": 1
+  },
+  "preview_motion_api_calls_zero": true,
+  "input_and_prediction_accepted": false,
+  "preview_data_quality_passed": false,
+  "preview_gate": "At least 10 accepted observations, full duration, zero input/prediction rejections; not motion certification",
+  "scope": "Evidence from this run only; SDK acknowledgement does not establish task success"
+}

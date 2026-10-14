@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "checkpoint_updates": 400,
+  "windows": 713,
+  "coverage": "exact ordered validation indices",
+  "shape": [
+    713,
+    50,
+    8
+  ],
+  "previous_70_windows_max_prediction_error_per_seed": {
+    "20261009": 0.0,
+    "42": 0.0,
+    "1729": 0.0,
+    "9": 0.0
+  },
+  "all_part_hashes_valid": true,
+  "independent_metric_recalculation": "passed",
+  "closed_targets": 354,
+  "closed_false_open_count": 2,
+  "shell_syntax": "passed",
+  "wrapper_tail_exit_error": "Launcher edited while foreground invocation was running; evaluator completed and saved all results; current launcher syntax passes."
+}

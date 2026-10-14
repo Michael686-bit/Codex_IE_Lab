@@ -1,0 +1,42 @@
+{
+  "status": "passed",
+  "date": "2026-10-09",
+  "scope": "G1 real-data action-only LoRA capability acceptance on one RTX 4090; task success untested",
+  "image": "lingbot-vla-v2:4144e9c-g1-lora-v1",
+  "final_image_id": "sha256:f65ac78c1d9984da0ba8bbc597cbbb3b362337edeb46bd3407f1dda57510086e",
+  "dataset_windows": {
+    "train": 3581,
+    "validation": 713
+  },
+  "dataset_episodes": {
+    "train": 32,
+    "validation": 7
+  },
+  "trainable_parameters": 3962167,
+  "lora_rank": 8,
+  "lora_alpha": 16,
+  "lora_target_modules": 144,
+  "optimizer_updates": 12,
+  "resume_from_step": 10,
+  "reload_max_error_step_10": 0.0,
+  "reload_max_error_step_12": 0.0,
+  "optimizer_and_sampler_resume_audited": true,
+  "frozen_parameters_unchanged": true,
+  "prediction_shape": [
+    1,
+    50,
+    8
+  ],
+  "peak_torch_allocated_mib": 14553.0263671875,
+  "peak_torch_reserved_mib": 14700.0,
+  "observed_whole_gpu_used_max_mib": 18414,
+  "observed_whole_gpu_free_min_mib": 5661,
+  "mean_update_compute_seconds_after_first": 0.27162716155807076,
+  "update_timing_excludes_data_loading": true,
+  "existing_robot_validation_service_unchanged": true,
+  "base_weight_shards_verified": 6,
+  "inference_backend": "stable sorted grouped GEMM; highest FP32 matmul precision",
+  "latest_checkpoint": "checkpoints/step_000012",
+  "physical_deployment_certified": false,
+  "full_teacher_training_verified": false
+}

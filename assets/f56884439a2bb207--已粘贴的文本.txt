@@ -1,0 +1,119 @@
+lsy03@lsy03-System-Product-Name:~/文档/ChatGPT/VLA G1 项目$ bash g1_policy_control/run_pc.sh --mode preview --channels arm --seconds 10
+{"urdf_verified": true, "g1_minus_pc_ms": 103.975464, "runtime": "lerobot_runs/model_20261009_162904_638020/runtime.json"}
+SDK observe: worker_entered (0.00s)
+SDK observe: backend_constructing (0.00s)
+SDK observe: sdk_import_begin (0.02s)
+SDK observe: sdk_import_complete (0.03s)
+SDK observe: robot_construct_begin (0.03s)
+SDK observe: robot_construct_complete (0.03s)
+SDK observe: sdk_init_begin (0.03s)
+A new version 1.10.0 is available. Visit https://github.com/GalaxyGeneralRobotics/GalbotSDK/releases for upgrade instructions
+SDK observe: sdk_init_complete (4.10s)
+SDK observe: feedback_wait_begin (4.10s)
+SDK observe: feedback_rejected (4.10s)
+SDK observe: controller_read_begin (4.60s)
+SDK observe: feedback_rejected (4.60s)
+SDK observe: controller_read_begin (5.11s)
+SDK observe: feedback_rejected (5.11s)
+SDK observe: controller_read_begin (5.61s)
+SDK observe: feedback_rejected (5.61s)
+SDK observe: controller_read_begin (6.12s)
+SDK observe: feedback_rejected (6.12s)
+SDK observe: controller_read_begin (6.62s)
+SDK observe: feedback_rejected (6.62s)
+SDK observe: controller_read_begin (7.13s)
+SDK observe: feedback_rejected (7.13s)
+SDK observe: controller_read_begin (7.63s)
+SDK observe: feedback_rejected (7.63s)
+SDK observe: controller_read_begin (8.14s)
+SDK observe: feedback_rejected (8.14s)
+SDK observe: controller_read_begin (8.64s)
+SDK observe: feedback_rejected (8.64s)
+SDK observe: controller_read_begin (9.15s)
+SDK observe: feedback_rejected (9.15s)
+SDK observe: controller_read_begin (9.65s)
+SDK observe: feedback_rejected (9.65s)
+SDK observe: controller_read_begin (10.15s)
+SDK observe: feedback_rejected (10.15s)
+SDK observe: controller_read_begin (10.66s)
+SDK observe: feedback_rejected (10.66s)
+SDK observe: controller_read_begin (11.16s)
+SDK observe: feedback_rejected (11.16s)
+SDK observe: controller_read_begin (11.67s)
+SDK observe: feedback_rejected (11.67s)
+SDK observe: controller_read_begin (12.17s)
+SDK observe: feedback_rejected (12.17s)
+SDK observe: controller_read_begin (12.67s)
+SDK observe: feedback_rejected (12.67s)
+SDK observe: controller_read_begin (13.18s)
+SDK observe: feedback_rejected (13.18s)
+SDK observe: controller_read_begin (13.69s)
+SDK observe: feedback_rejected (13.69s)
+SDK observe: controller_read_begin (14.19s)
+SDK observe: feedback_rejected (14.19s)
+SDK observe: controller_read_begin (14.70s)
+SDK observe: feedback_rejected (14.70s)
+SDK observe: controller_read_begin (15.20s)
+SDK observe: feedback_rejected (15.20s)
+SDK observe: controller_read_begin (15.71s)
+SDK observe: feedback_rejected (15.71s)
+SDK observe: controller_read_begin (16.21s)
+SDK observe: feedback_rejected (16.21s)
+SDK observe: controller_read_begin (16.72s)
+SDK observe: feedback_rejected (16.72s)
+SDK observe: controller_read_begin (17.22s)
+SDK observe: feedback_rejected (17.22s)
+SDK observe: controller_read_begin (17.72s)
+SDK observe: feedback_rejected (17.72s)
+SDK observe: controller_read_begin (18.23s)
+SDK observe: feedback_rejected (18.23s)
+SDK observe: controller_read_begin (18.73s)
+SDK observe: feedback_rejected (18.73s)
+Current thread 0x00007ff933bf7480 (most recent call first):
+  File "/opt/conda/lib/python3.11/multiprocessing/connection.py", line 384 in _send
+  File "/opt/conda/lib/python3.11/multiprocessing/connection.py", line 427 in _send_bytes
+  File "/opt/conda/lib/python3.11/multiprocessing/connection.py", line 206 in send
+  File "/workspace/g1_policy_control/process_robot.py", line 22 in record
+  File "/workspace/g1_policy_control/robot.py", line 109 in read_feedback
+  File "/workspace/g1_policy_control/robot.py", line 79 in connect
+  File "/workspace/g1_policy_control/process_robot.py", line 32 in sdk_worker
+  File "/opt/conda/lib/python3.11/multiprocessing/process.py", line 108 in run
+  File "/opt/conda/lib/python3.11/multiprocessing/process.py", line 314 in _bootstrap
+  File "/opt/conda/lib/python3.11/multiprocessing/spawn.py", line 135 in _main
+  File "/opt/conda/lib/python3.11/multiprocessing/spawn.py", line 122 in spawn_main
+  File "<string>", line 1 in <module>
+STOPPED: SDK observe timed out at joint_feedback_read_begin; late responses disabled
+{
+  "log": "/home/lsy03/文档/ChatGPT/VLA G1 项目/lerobot_runs/model_20261009_162904_638020/events.jsonl",
+  "mode": "preview",
+  "channels": "arm",
+  "model": "milk-v2-best",
+  "execute_requested": false,
+  "sdk_attempts": 0,
+  "arm_command_attempts": 0,
+  "gripper_command_attempts": 0,
+  "acknowledged_commands": 0,
+  "prediction_rejections": 0,
+  "abort_count": 1,
+  "input_rejections": 0,
+  "cleanup_unconfirmed": 0,
+  "session_completed": false,
+  "stationary_verified": false,
+  "stop_acknowledged": false,
+  "roundtrip_ms_median": null,
+  "roundtrip_ms_max": null,
+  "event_counts": {
+    "start": 1,
+    "sdk_startup_stage": 1525,
+    "supervisor_stop": 1,
+    "session_summary": 1,
+    "abort": 1
+  },
+  "preview_motion_api_calls_zero": true,
+  "input_and_prediction_accepted": false,
+  "preview_data_quality_passed": false,
+  "preview_gate": "At least 10 accepted observations, full duration, zero input/prediction rejections; not motion certification",
+  "scope": "Evidence from this run only; SDK acknowledgement does not establish task success"
+}
+Run report: /home/lsy03/文档/ChatGPT/VLA G1 项目/lerobot_runs/model_20261009_162904_638020/report.json
+lsy03@lsy03-System-Product-Name:~/文档/ChatGPT/VLA G1 项目$

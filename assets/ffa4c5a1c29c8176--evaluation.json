@@ -1,0 +1,481 @@
+{
+  "first_joint_mae_deg": 0.611337651669574,
+  "first_gripper_mae_mm": 4.350666216914875,
+  "short_joint_mae_deg": 1.7958221511152948,
+  "short_gripper_mae_mm": 6.417853173572533,
+  "raw_first_joint_mae_deg": 0.6180260901234137,
+  "raw_short_joint_mae_deg": 1.8014686437322733,
+  "raw_joint_excess_max_deg": 8.063947491718784,
+  "raw_first_joint_violating_windows": 74,
+  "gripper_prediction_range_mm": [
+    0.5449562072753906,
+    99.83551025390625
+  ],
+  "first_joint_abs_error_p95_deg_by_dim": [
+    2.204898445220338,
+    1.9868002597380758,
+    1.78830932755144,
+    2.1723730843927376,
+    1.168220529222807,
+    0.8490065157203833,
+    0.8208310248987288
+  ],
+  "first_gripper_abs_error_p95_mm": 26.899103075265877,
+  "hold_measured_state_short_joint_mae_deg": 2.2488759312040236,
+  "hold_measured_state_short_gripper_mae_mm": 27.579160281267608,
+  "joint_mae_deg_by_horizon": [
+    0.6113376516695742,
+    0.8581910619000086,
+    1.2369205002770094,
+    1.5566797094956621,
+    1.879748277050676,
+    1.9523155602140498,
+    2.1696216962570847,
+    2.3558998524806816,
+    2.543309773213689,
+    2.79419742859451
+  ],
+  "gripper_mae_mm_by_horizon": [
+    4.350666216914875,
+    4.637529995232993,
+    5.135888587843449,
+    5.724683911265312,
+    6.29149028638882,
+    6.659339084521819,
+    6.814362939060529,
+    7.336309679612768,
+    8.132241469243644,
+    9.096019565641127
+  ],
+  "selection_score": 2.421421153712693,
+  "experimental_goals_met": false,
+  "validation_loss": 0.7027555091925707,
+  "loss_components": {
+    "joint_flow7": 0.5783966267625129,
+    "gripper_regression": 0.05103360796134288,
+    "gripper_extreme_bce": 0.11145832844886427
+  },
+  "validation_windows": 713,
+  "optimizer_updates": 0,
+  "robot_commands_sent": false,
+  "training_ready_for_robot_deployment": false,
+  "per_episode": {
+    "milk_left_20260930/episode_000005": {
+      "first_joint_mae_deg": 0.7454658783230411,
+      "first_gripper_mae_mm": 2.7536994250035507,
+      "short_joint_mae_deg": 1.7602461771792952,
+      "short_gripper_mae_mm": 7.2098202410183765,
+      "raw_first_joint_mae_deg": 0.7454658783230411,
+      "raw_short_joint_mae_deg": 1.760514199822858,
+      "raw_joint_excess_max_deg": 1.4429260348485025,
+      "raw_first_joint_violating_windows": 0,
+      "gripper_prediction_range_mm": [
+        0.5449562072753906,
+        99.83370208740234
+      ],
+      "first_joint_abs_error_p95_deg_by_dim": [
+        2.6658808896639217,
+        1.4758698371772938,
+        1.9092196414278502,
+        2.5297087742192117,
+        0.8768374021540696,
+        0.9859060463117,
+        0.8381305840574323
+      ],
+      "first_gripper_abs_error_p95_mm": 6.080376566387709,
+      "hold_measured_state_short_joint_mae_deg": 2.3765567476539076,
+      "hold_measured_state_short_gripper_mae_mm": 29.881228185556036,
+      "joint_mae_deg_by_horizon": [
+        0.7454658783230412,
+        1.0390344201459312,
+        1.505178751014446,
+        1.85111797687609,
+        2.139595145531132,
+        1.9834984472513324,
+        1.9165728005946152,
+        2.0626663224322073,
+        2.0130131553880326,
+        2.346318874236125
+      ],
+      "gripper_mae_mm_by_horizon": [
+        2.7536994250035507,
+        3.6528085598702287,
+        4.520640345637072,
+        5.44395330832637,
+        6.420590777935936,
+        7.463199957744516,
+        8.631779600499554,
+        9.491723001701757,
+        11.085392620558157,
+        12.634414812906625
+      ],
+      "selection_score": 2.2312929148716876,
+      "experimental_goals_met": true
+    },
+    "milk_left_20260930/episode_000009": {
+      "first_joint_mae_deg": 0.7335325742893244,
+      "first_gripper_mae_mm": 2.874827080328638,
+      "short_joint_mae_deg": 2.0601069375256476,
+      "short_gripper_mae_mm": 5.74429767169662,
+      "raw_first_joint_mae_deg": 0.7335325742893244,
+      "raw_short_joint_mae_deg": 2.0601069375256476,
+      "raw_joint_excess_max_deg": 0.0,
+      "raw_first_joint_violating_windows": 0,
+      "gripper_prediction_range_mm": [
+        0.5480631589889526,
+        99.83551025390625
+      ],
+      "first_joint_abs_error_p95_deg_by_dim": [
+        2.528964625109136,
+        2.4491963825851233,
+        2.3242428955408405,
+        1.6886310835968354,
+        1.5753742528175199,
+        0.9856846628052269,
+        0.8007015396080315
+      ],
+      "first_gripper_abs_error_p95_mm": 18.66420512087638,
+      "hold_measured_state_short_joint_mae_deg": 2.9059800671490055,
+      "hold_measured_state_short_gripper_mae_mm": 29.557683001513833,
+      "joint_mae_deg_by_horizon": [
+        0.733532574289324,
+        0.9252655390957831,
+        1.3201191584924121,
+        1.6712915271050177,
+        2.03250791405234,
+        2.17296495070565,
+        2.4539187261102393,
+        2.8000604412384855,
+        3.0116885779933695,
+        3.4797199661738545
+      ],
+      "gripper_mae_mm_by_horizon": [
+        2.874827080328638,
+        3.46467172979222,
+        4.460894114648302,
+        5.39397433964984,
+        6.086956157728478,
+        6.465269568488346,
+        7.014765810001538,
+        7.034471641721514,
+        7.452528684990722,
+        7.1946175896165965
+      ],
+      "selection_score": 2.202863782888601,
+      "experimental_goals_met": true
+    },
+    "milk_left_20260930_145800/episode_000002": {
+      "first_joint_mae_deg": 0.5265363129495714,
+      "first_gripper_mae_mm": 3.4022926003672183,
+      "short_joint_mae_deg": 1.5898837315365308,
+      "short_gripper_mae_mm": 5.949353425530717,
+      "raw_first_joint_mae_deg": 0.5265363129495714,
+      "raw_short_joint_mae_deg": 1.5898837315365308,
+      "raw_joint_excess_max_deg": 0.0,
+      "raw_first_joint_violating_windows": 0,
+      "gripper_prediction_range_mm": [
+        0.5693646669387817,
+        99.83390808105469
+      ],
+      "first_joint_abs_error_p95_deg_by_dim": [
+        1.5845188515877915,
+        2.106280075870192,
+        1.5948746136526355,
+        1.5604461913675403,
+        0.667025858304961,
+        0.5171727031979858,
+        0.6594822131874581
+      ],
+      "first_gripper_abs_error_p95_mm": 22.40238897502422,
+      "hold_measured_state_short_joint_mae_deg": 1.5521096889468868,
+      "hold_measured_state_short_gripper_mae_mm": 25.543862062816817,
+      "joint_mae_deg_by_horizon": [
+        0.5265363129495714,
+        0.7444781895018581,
+        1.0254091042559526,
+        1.2426819749594056,
+        1.5260653278319307,
+        1.5960143486177272,
+        1.9191675499775964,
+        2.0814044717734577,
+        2.4582515648283056,
+        2.7788284706695046
+      ],
+      "gripper_mae_mm_by_horizon": [
+        3.4022926003672183,
+        3.6676466993715926,
+        4.201762065349612,
+        5.078871611719175,
+        5.849579907468676,
+        6.375772274138096,
+        6.473874892496194,
+        7.059694258108114,
+        8.008398755434124,
+        9.375641190854367
+      ],
+      "selection_score": 2.068623262946811,
+      "experimental_goals_met": false
+    },
+    "milk_left_20260930_145800/episode_000010": {
+      "first_joint_mae_deg": 0.6209132529813137,
+      "first_gripper_mae_mm": 4.726743674837053,
+      "short_joint_mae_deg": 1.9453244526632794,
+      "short_gripper_mae_mm": 5.196198789635673,
+      "raw_first_joint_mae_deg": 0.6294324991460052,
+      "raw_short_joint_mae_deg": 1.9475728501114455,
+      "raw_joint_excess_max_deg": 0.6316020142885378,
+      "raw_first_joint_violating_windows": 24,
+      "gripper_prediction_range_mm": [
+        0.5477048754692078,
+        99.80545043945312
+      ],
+      "first_joint_abs_error_p95_deg_by_dim": [
+        2.051165913419525,
+        1.7203764368212224,
+        1.7218107765469253,
+        2.5828811138888437,
+        0.9846253858423226,
+        0.6576077104584303,
+        0.8163390869580464
+      ],
+      "first_gripper_abs_error_p95_mm": 29.43816566839813,
+      "hold_measured_state_short_joint_mae_deg": 2.140758953789248,
+      "hold_measured_state_short_gripper_mae_mm": 27.12417021393776,
+      "joint_mae_deg_by_horizon": [
+        0.6209132529813135,
+        0.983594151532208,
+        1.455638726396366,
+        1.8387562746187434,
+        2.1672257102681116,
+        2.2169643664643854,
+        2.3810078875252745,
+        2.522616554294184,
+        2.6764513981615368,
+        2.590076204390669
+      ],
+      "gripper_mae_mm_by_horizon": [
+        4.726743674837053,
+        4.951734664306666,
+        5.453741623690196,
+        5.625759736964635,
+        5.591408220061567,
+        5.238986743885714,
+        4.831905576672095,
+        4.57979586693303,
+        5.061451425717678,
+        5.9004603632881
+      ],
+      "selection_score": 2.428875813541129,
+      "experimental_goals_met": false
+    },
+    "milk_left_20260930_154454/episode_000008": {
+      "first_joint_mae_deg": 0.5413317587144294,
+      "first_gripper_mae_mm": 10.983371869280326,
+      "short_joint_mae_deg": 1.662500224881647,
+      "short_gripper_mae_mm": 8.961597228671263,
+      "raw_first_joint_mae_deg": 0.5536650725800845,
+      "raw_short_joint_mae_deg": 1.6692695362378305,
+      "raw_joint_excess_max_deg": 2.6311740447556207,
+      "raw_first_joint_violating_windows": 21,
+      "gripper_prediction_range_mm": [
+        0.5527228116989136,
+        99.83102416992188
+      ],
+      "first_joint_abs_error_p95_deg_by_dim": [
+        1.9670755271887246,
+        1.722242444502467,
+        1.490767760417561,
+        2.2650730948270645,
+        1.1993280281560776,
+        0.5246407466591133,
+        0.7344538486451265
+      ],
+      "first_gripper_abs_error_p95_mm": 69.0933402627706,
+      "hold_measured_state_short_joint_mae_deg": 2.196935640165761,
+      "hold_measured_state_short_gripper_mae_mm": 26.802588096604897,
+      "joint_mae_deg_by_horizon": [
+        0.5413317587144294,
+        0.772564236825248,
+        1.1152358863825367,
+        1.4129552044105436,
+        1.737382630705924,
+        1.8542925030200117,
+        2.099970704456734,
+        2.1882787638128685,
+        2.384760780917618,
+        2.518229779570549
+      ],
+      "gripper_mae_mm_by_horizon": [
+        10.983371869280326,
+        10.010122129572734,
+        9.045155796159703,
+        8.634864488647928,
+        8.338217580435762,
+        8.284138913530533,
+        7.840695602890964,
+        8.406214146816637,
+        8.565857120489595,
+        9.507334638888446
+      ],
+      "selection_score": 3.9260898117591774,
+      "experimental_goals_met": false
+    },
+    "milk_left_20260930_154454/episode_000012": {
+      "first_joint_mae_deg": 0.5536854937416004,
+      "first_gripper_mae_mm": 3.9758638319839794,
+      "short_joint_mae_deg": 1.6408859458807965,
+      "short_gripper_mae_mm": 7.684665809320386,
+      "raw_first_joint_mae_deg": 0.5750661156876751,
+      "raw_short_joint_mae_deg": 1.6701879589302009,
+      "raw_joint_excess_max_deg": 8.063947491718784,
+      "raw_first_joint_violating_windows": 17,
+      "gripper_prediction_range_mm": [
+        0.5736460089683533,
+        99.82980346679688
+      ],
+      "first_joint_abs_error_p95_deg_by_dim": [
+        1.3690922945993793,
+        1.8762515989646675,
+        1.7883093275514401,
+        1.7904166116651175,
+        1.3481190034697497,
+        0.8472132495537961,
+        0.9940512603403496
+      ],
+      "first_gripper_abs_error_p95_mm": 24.580541625618842,
+      "hold_measured_state_short_joint_mae_deg": 2.427394703452215,
+      "hold_measured_state_short_gripper_mae_mm": 25.596284978492285,
+      "joint_mae_deg_by_horizon": [
+        0.5536854937416003,
+        0.778350291190525,
+        1.0935641756513261,
+        1.3912609711292212,
+        1.7147185360480521,
+        1.833185514733106,
+        2.049419425786427,
+        2.213414260552682,
+        2.278349666699858,
+        2.5029111232751644
+      ],
+      "gripper_mae_mm_by_horizon": [
+        3.9758638319839794,
+        5.044801362229371,
+        6.17904936261375,
+        7.240066866225172,
+        8.466284792189317,
+        8.684269587574427,
+        8.498619660429696,
+        8.853176537330352,
+        9.655939719905096,
+        10.248586372722702
+      ],
+      "selection_score": 2.4079017248160723,
+      "experimental_goals_met": false
+    },
+    "milk_left_20260930_154454/episode_000020": {
+      "first_joint_mae_deg": 0.5554490989029404,
+      "first_gripper_mae_mm": 0.6106159220311187,
+      "short_joint_mae_deg": 1.9289068294459286,
+      "short_gripper_mae_mm": 3.968591401211892,
+      "raw_first_joint_mae_deg": 0.5618745664003965,
+      "raw_short_joint_mae_deg": 1.9329859080809753,
+      "raw_joint_excess_max_deg": 3.076399925802902,
+      "raw_first_joint_violating_windows": 12,
+      "gripper_prediction_range_mm": [
+        0.5671661496162415,
+        99.82474517822266
+      ],
+      "first_joint_abs_error_p95_deg_by_dim": [
+        2.3586813496662744,
+        1.7489717068003974,
+        1.408979105248372,
+        2.0091023641707304,
+        1.1031662217182907,
+        0.8743594949005531,
+        0.7313274789629409
+      ],
+      "first_gripper_abs_error_p95_mm": 1.1613643495365973,
+      "hold_measured_state_short_joint_mae_deg": 2.2815284633821267,
+      "hold_measured_state_short_gripper_mae_mm": 29.38903417136218,
+      "joint_mae_deg_by_horizon": [
+        0.5554490989029407,
+        0.7323023619461118,
+        1.1142284430720766,
+        1.4770386026165034,
+        1.8415700151575947,
+        2.0267811719008972,
+        2.388448532344853,
+        2.6695728656795477,
+        3.0111928310040708,
+        3.472484371834692
+      ],
+      "gripper_mae_mm_by_horizon": [
+        0.6106159220311187,
+        0.6008830182631878,
+        1.0968050007028758,
+        1.7771743492827423,
+        2.668217387730004,
+        3.856219689525362,
+        4.421096732462379,
+        6.547478349357088,
+        8.029116311337095,
+        10.078307251427072
+      ],
+      "selection_score": 1.444248243754603,
+      "experimental_goals_met": false
+    }
+  },
+  "v1_cumulative6400_same_horizon_comparison": {
+    "first_joint_mae_deg": 3.5817600125335014,
+    "first_gripper_mae_mm": 16.104590773404816,
+    "short_joint_mae_deg": 3.5779983348431306,
+    "short_gripper_mae_mm": 15.33332287123607,
+    "raw_first_joint_mae_deg": 3.5923137824461073,
+    "raw_short_joint_mae_deg": 3.5844157556056873,
+    "raw_joint_excess_max_deg": 3.7805924292312163,
+    "raw_first_joint_violating_windows": 38,
+    "gripper_prediction_range_mm": [
+      0.0,
+      100.0
+    ],
+    "first_joint_abs_error_p95_deg_by_dim": [
+      8.548631297261023,
+      7.741940194015077,
+      13.29487169489494,
+      10.41101966126731,
+      5.226070749092147,
+      6.1944146715004536,
+      9.3532677088499
+    ],
+    "first_gripper_abs_error_p95_mm": 46.33979871869087,
+    "hold_measured_state_short_joint_mae_deg": 2.2488759312040236,
+    "hold_measured_state_short_gripper_mae_mm": 27.579160281267608,
+    "joint_mae_deg_by_horizon": [
+      3.5817600125335036,
+      3.5489567086333658,
+      3.1929289547526687,
+      3.2908106479797214,
+      3.365605320211934,
+      3.400327645371935,
+      3.4478418218212434,
+      3.5865410447525727,
+      4.1029352466009374,
+      4.262275945773429
+    ],
+    "gripper_mae_mm_by_horizon": [
+      16.104590773404816,
+      15.108953220939568,
+      13.909015171020847,
+      13.60582771121954,
+      14.526153047311775,
+      15.035381548493307,
+      14.662363340485147,
+      16.13440364207367,
+      16.724753599786325,
+      17.521786657625714
+    ],
+    "selection_score": 7.745212584896186,
+    "experimental_goals_met": false
+  },
+  "comparison_note": "Same713 windows and first10 demonstrated targets. Both raw joint errors and bounded outputs are reported. V1 gripper is clipped for the bounded comparison; architectures/initial-noise representations differ, so this is offline action matching, not a controlled task-success test."
+}

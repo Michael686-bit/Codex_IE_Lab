@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-30T16:18:37.466408+08:00",
+  "generated_at": "2026-10-14T10:03:28.998277+08:00",
   "assets": [
     {
       "source": "2026/08/22/01a02731-e698-7092-ae82-d3144a0993e8/s1-urdf-joints.html",
@@ -115,7 +115,49 @@
       "asset_id": "6973e0db11cb1ff3",
       "path": "assets/6973e0db11cb1ff3--roller-screw-motion.html",
       "filename": "6973e0db11cb1ff3--roller-screw-motion.html"
+    },
+    {
+      "source": "2026/10/09/01a12065-8f5f-7363-bd8c-ce3066171596/act-gripper-curves.html",
+      "asset_id": "31de220aa9a982f2",
+      "path": "assets/31de220aa9a982f2--act-gripper-curves.html",
+      "filename": "31de220aa9a982f2--act-gripper-curves.html"
+    },
+    {
+      "source": "2026/10/09/01a12065-8f5f-7363-bd8c-ce3066171596/act-joint-curves.html",
+      "asset_id": "e44b7037938173b6",
+      "path": "assets/e44b7037938173b6--act-joint-curves.html",
+      "filename": "e44b7037938173b6--act-joint-curves.html"
+    },
+    {
+      "source": "2026/10/09/01a120ad-0adb-7533-8af6-fc3d066f5dd2/reference-prediction-trajectory.png",
+      "asset_id": "93245f7c8b5cd315",
+      "path": "assets/93245f7c8b5cd315--reference-prediction-trajectory.png",
+      "filename": "93245f7c8b5cd315--reference-prediction-trajectory.png"
+    },
+    {
+      "source": "2026/10/09/01a120ad-0adb-7533-8af6-fc3d066f5dd2/trajectory-comparison-summary.json",
+      "asset_id": "bf6ca26988e2eb68",
+      "path": "assets/bf6ca26988e2eb68--trajectory-comparison-summary.json",
+      "filename": "bf6ca26988e2eb68--trajectory-comparison-summary.json"
+    },
+    {
+      "source": "2026/10/09/01a120ad-0adb-7533-8af6-fc3d066f5dd2/validation-error-profile.png",
+      "asset_id": "991ef2ae6a420945",
+      "path": "assets/991ef2ae6a420945--validation-error-profile.png",
+      "filename": "991ef2ae6a420945--validation-error-profile.png"
+    },
+    {
+      "source": "2026/10/13/01a134d2-03de-7ac2-b1f0-2302cd467dbe/robotwin-data-compare.html",
+      "asset_id": "05e84bda0819c21a",
+      "path": "assets/05e84bda0819c21a--robotwin-data-compare.html",
+      "filename": "05e84bda0819c21a--robotwin-data-compare.html"
+    },
+    {
+      "source": "2026/10/14/01a13808-5028-7582-99b9-b1fb76d3ebf8/fdp-orin-comparison.html",
+      "asset_id": "e3c6928b71c2fc89",
+      "path": "assets/e3c6928b71c2fc89--fdp-orin-comparison.html",
+      "filename": "e3c6928b71c2fc89--fdp-orin-comparison.html"
     }
   ],
-  "unassociated_pasted_attachment_count": 19
+  "unassociated_pasted_attachment_count": 22
 }

@@ -1,0 +1,74 @@
+{
+  "status": "diagnosis_complete",
+  "first_target_vs_measured_joint_mae_deg": 0.4171382016873597,
+  "first_target_vs_measured_gripper_mae_mm": 24.061623124763642,
+  "loss_components": {
+    "status": "passed",
+    "windows": 56,
+    "internal_action_dims": 32,
+    "physical_action_dims": 8,
+    "official_mean32": 0.07600284683784204,
+    "physical_action_mean8": 0.2903718948364258,
+    "padded_slots_mean24": 0.004546493757516146,
+    "physical_per_dimension_flow_loss": [
+      0.17485125362873077,
+      0.2643727958202362,
+      0.20159806311130524,
+      0.327167809009552,
+      0.3217097222805023,
+      0.2575550973415375,
+      0.32123735547065735,
+      0.4544830918312073
+    ],
+    "physical_contribution_to_official_scalar": 0.07259297370910645,
+    "padding_contribution_to_official_scalar": 0.003409870434552431,
+    "interpretation": "Averaging padded coordinates changes scalar scale and relative optimization weights. This observation alone does not establish padding as the cause of inaccurate physical predictions. Flow loss is not denoised action MAE.",
+    "optimizer_updates": 0
+  },
+  "sampling_steps_comparison": {
+    "status": "passed",
+    "fixed_windows": 56,
+    "prediction_seed": 1729,
+    "results": {
+      "10": {
+        "full_chunk_joint_mae_deg": 5.755260705390331,
+        "full_chunk_gripper_mae_mm": 24.78731482322993,
+        "first_action_joint_mae_deg": 3.6733408750772756,
+        "first_action_gripper_mae_mm": 17.45074997389955
+      },
+      "20": {
+        "full_chunk_joint_mae_deg": 5.898156521586932,
+        "full_chunk_gripper_mae_mm": 24.872783627028443,
+        "first_action_joint_mae_deg": 3.9246587724068984,
+        "first_action_gripper_mae_mm": 17.597217478656344
+      },
+      "50": {
+        "full_chunk_joint_mae_deg": 5.921673449375895,
+        "full_chunk_gripper_mae_mm": 24.801086886187218,
+        "first_action_joint_mae_deg": 4.093454486444981,
+        "first_action_gripper_mae_mm": 17.757855455524155
+      }
+    },
+    "optimizer_updates": 0,
+    "scope": "Numerical sampling-step comparison only; same inputs and initial noise, no physical execution."
+  },
+  "confirmed_findings": [
+    "Predicted absolute-action chunks have no hard requirement to start exactly at measured state or accepted target.",
+    "Measured state and accepted joint targets differ about 0.42deg on average; this cannot explain most of the 3.59deg first-action prediction error.",
+    "Current inference outputs are unbounded before downstream control limits.",
+    "Flow matching objective averages 32 slots, while only 8 are physical actions.",
+    "Increasing inference integration from 10 to 20/50 steps did not improve the selected 56-window diagnostic.",
+    "Raw gripper commands include many near-0/100mm targets and intermediate targets; measured opening while grasping an object is not the commanded target."
+  ],
+  "hypotheses_requiring_experiments": [
+    "Long 50-step horizon and single-time observation make grasp/release timing uncertain.",
+    "Limited demonstrations and stage variation can limit policy accuracy.",
+    "Metric-depth/force extension benefit is not established without controlled ablations."
+  ],
+  "proposed_changes_not_applied": [
+    "Track actual 8D loss and physical-unit short-horizon errors; assess gripper separately.",
+    "Test a bounded gripper output with dedicated supervision that preserves intermediate openings.",
+    "Compare shorter action horizons/observation histories on same episode split."
+  ],
+  "weights_updated": false
+}

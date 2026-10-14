@@ -1,0 +1,15 @@
+{
+  "status": "prepared",
+  "episode_counts": {
+    "train": 40,
+    "validation": 9,
+    "test": 9,
+    "excluded": 1
+  },
+  "window_counts": {
+    "train": 5726,
+    "validation": 1255,
+    "test": 1321
+  },
+  "optimizer_updates": 0
+}
