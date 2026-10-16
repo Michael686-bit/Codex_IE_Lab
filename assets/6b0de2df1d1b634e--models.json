@@ -1,0 +1,138 @@
+{
+  "defaults": {
+    "device": "cuda",
+    "action_semantics": "absolute_rad_m",
+    "action_names": [
+      "left_arm_joint1",
+      "left_arm_joint2",
+      "left_arm_joint3",
+      "left_arm_joint4",
+      "left_arm_joint5",
+      "left_arm_joint6",
+      "left_arm_joint7",
+      "left_gripper.width"
+    ],
+    "camera_map": {
+      "observation.images.head_left_camera": "head_left_camera",
+      "observation.images.left_arm_camera": "left_arm_camera",
+      "observation.images.right_front_surround_camera": "right_front_surround_camera"
+    },
+    "state_dim": 8,
+    "depth_source": "none",
+    "g1_task_weights": false
+  },
+  "models": {
+    "milk-v2-best": {
+      "adapter": "smolvla_v2",
+      "checkpoint": "/mnt/data/VLA_data/smolvla_runs/smolvla-retrain-v2-continue-20261008_161604-149225/checkpoints/step_000400/model_bundle",
+      "state_dim": 14,
+      "depth_source": "raw_sensor",
+      "g1_task_weights": true,
+      "seed": 1729,
+      "note": "Cumulative 2200; real robot closed-loop success not verified"
+    },
+    "milk-v2-1800": {
+      "adapter": "smolvla_v2",
+      "checkpoint": "/mnt/data/VLA_data/smolvla_runs/smolvla-retrain-v2-train-20261008_155613-141874/checkpoints/step_001800/model_bundle",
+      "state_dim": 14,
+      "depth_source": "raw_sensor",
+      "g1_task_weights": true
+    },
+    "milk-rgb-best": {
+      "adapter": "lerobot",
+      "policy_type": "smolvla",
+      "checkpoint": "/mnt/data/VLA_data/smolvla_runs/smolvla-milk-follow-20261008_111934-46832/checkpoints/step_001200/pretrained_model",
+      "g1_task_weights": true
+    },
+    "milk-depth-force-best": {
+      "adapter": "smolvla_v1",
+      "checkpoint": "/mnt/data/VLA_data/smolvla_runs/smolvla-multimodal-train-20261008_141016-80070/checkpoints/step_003200/model_bundle",
+      "state_dim": 14,
+      "depth_source": "raw_sensor",
+      "g1_task_weights": true
+    },
+    "milk-lingbot-depth-best": {
+      "adapter": "smolvla_v1",
+      "checkpoint": "/mnt/data/VLA_data/smolvla_runs/smolvla-multimodal-train-20261008_205126-212674/checkpoints/step_001300/model_bundle",
+      "state_dim": 14,
+      "depth_source": "lingbot_full",
+      "g1_task_weights": true,
+      "note": "Online full-depth transformer required; built-in adapter refuses raw fallback"
+    },
+    "act-g1": {
+      "adapter": "lerobot",
+      "policy_type": "act",
+      "checkpoint": null,
+      "note": "Set an ACT checkpoint trained with G1 8D actions, matching cameras and saved processors"
+    },
+    "pi05-g1": {
+      "adapter": "lerobot",
+      "policy_type": "pi05",
+      "checkpoint": null,
+      "note": "Use G1 task checkpoint and actual saved normalization in the PI05 image; base synthetic fixture is not compatible"
+    },
+    "lingbot-g1": {
+      "adapter": "lingbot",
+      "checkpoint": null,
+      "robot_name": "galbot_g1",
+      "horizon": 25,
+      "lingbot_state_fields": null,
+      "action_indices": null,
+      "camera_map": {
+        "observation.images.cam_high": "head_left_camera",
+        "observation.images.cam_left_wrist": "left_arm_camera",
+        "observation.images.cam_right_wrist": "right_front_surround_camera"
+      },
+      "note": "Camera map is a template, not calibrated equivalence. Fill from G1 post-training configuration; RoboTwin 14D is not a G1 mapping."
+    },
+    "lingbot-pretrain-g1-preview": {
+      "adapter": "lingbot",
+      "checkpoint": "/workspace/lingbot_pretrain_g1/checkpoints/global_step_0/hf_ckpt",
+      "robot_name": "galbot_g1",
+      "horizon": 25,
+      "state_dim": 8,
+      "depth_source": "none",
+      "g1_task_weights": false,
+      "model_revision": "11c703bf6a5c1f45b3b69168482da11fdbba53d7",
+      "experimental_motion_scope": "single_command",
+      "inference_seed": 20261013,
+      "stable_moe": false,
+      "original_galbot_normalization_verified": false,
+      "preflight_inference_reserve_s": 0.45,
+      "preflight_max_inference_attempts": 3,
+      "lingbot_state_fields": [
+        "left_arm_joint1",
+        "left_arm_joint2",
+        "left_arm_joint3",
+        "left_arm_joint4",
+        "left_arm_joint5",
+        "left_arm_joint6",
+        "left_arm_joint7",
+        "left_gripper.width"
+      ],
+      "action_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "camera_map": {
+        "observation.images.head_left_camera": "head_left_camera",
+        "observation.images.left_arm_camera": "left_arm_camera",
+        "observation.images.right_front_surround_camera": "right_front_surround_camera"
+      },
+      "note": "Unchanged pretrained weights with local G1 calibration. Original Galbot calibration unavailable; dedicated opt-in permits one bounded command only, not task certification.",
+      "artifact_sha256": {
+        "/workspace/lingbot_pretrain_g1/lingbotvla_cli.yaml": "32093a43395c3e12dbd798cdf765092b4277ac0559c0bff1c1288ba0117da023",
+        "/workspace/configs/robot_configs/galbot_g1.yaml": "eaf13070aafe756d1f4f67a9b9fcb367c175d951f06eb4f271d89d5b371d38fd",
+        "/workspace/lingbot_pretrain_g1/norm_stats.json": "aa8b8543a1306cad6f9980c4ee7d01a44a2bf3e94f93adafb8869e63f55ce52a",
+        "/workspace/lingbot_pretrain_g1/source_manifest.json": "6077db3957b172fe745d4bfa9f77a0addeb4c42451bf210b01986ea04f87bd19",
+        "/workspace/models/lingbot-vla-v2-6b/model.safetensors.index.json": "5a753ec331c51925d064e1e76e921a7eb3dca9770d2a6a91dac5e0e4162d676a"
+      }
+    }
+  }
+}

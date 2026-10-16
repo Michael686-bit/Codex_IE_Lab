@@ -1,0 +1,229 @@
+lsy03@lsy03-System-Product-Name:~/文档/ChatGPT/VLA G1 项目$ cd '/home/lsy03/文档/ChatGPT/VLA G1 项目'
+bash lingbot_pretrain_g1/run_motion.sh execute
+LingBot VLA 2.0 original weights: execute; left arm only; 5s control window.
+Joint speed <=0.05rad/s; displacement from start <=5deg per joint; gripper held.
+Each fresh prediction supplies one 100ms segment; holds between predictions; no milk-grasp certification.
+execute first runs a 5s read-only preview; only a passing preview enters real motion automatically.
+[1/5] 启动 LingBot VLA 2.0 原始权重；首次加载通常需要几十秒。
+ede83e11f637f5eded6987d3cb493c4a4dab7736aced8c37dc6048678a52d1da
+[2/5] 等待本机模型服务就绪并预热 GPU。
+正在等待本机模型服务启动，首次加载通常需要几十秒；最长等待 90 秒。
+模型仍在启动：已等待 6 秒 / 90 秒。此阶段不启动机器人运动入口。
+模型仍在启动：已等待 12 秒 / 90 秒。此阶段不启动机器人运动入口。
+模型仍在启动：已等待 18 秒 / 90 秒。此阶段不启动机器人运动入口。
+模型仍在启动：已等待 24 秒 / 90 秒。此阶段不启动机器人运动入口。
+模型仍在启动：已等待 30 秒 / 90 秒。此阶段不启动机器人运动入口。
+模型服务已就绪，正在预热 GPU 推理；预热完成后，单步脚本才进入机器人预检。
+正在等待：GPU 推理预热，首次可能需要编译内核。
+GPU 推理预热，首次可能需要编译内核完成（1.9 秒）。
+{"status": "warmed", "profile_id": "6b72892d99d5e95279bb37c36d55f0e88d945f6ab8074cd2abd5c93d925fe6e0", "roundtrip_ms": 1933.180088060908, "action_rows": 25, "robot_commands_sent": false}
+[3/5] 进行5秒只读预览及独立反馈监测；不发送运动或停止指令。
+正在核对机器人部署 URDF 和 PC/G1 时钟；网络连接较慢时需要等待。
+正在等待：读取机器人部署文件哈希，单次最长 15 秒。
+读取机器人部署文件哈希，单次最长 15 秒完成（0.2 秒）。
+正在等待：建立机器人时钟采样连接，最长 15 秒。
+建立机器人时钟采样连接，最长 15 秒完成（0.3 秒）。
+{"urdf_verified": true, "g1_minus_pc_ms": 72.641904, "runtime": "lerobot_runs/model_20261015_175536_2431361/runtime.json"}
+URDF 与时钟预检通过，正在启动 SDK 程序并等待实时反馈。
+正在等待：G1 SDK [observe] 初始化。
+SDK observe: worker_entered (0.00s)
+SDK observe: backend_constructing (0.00s)
+SDK observe: sdk_import_begin (0.02s)
+SDK observe: sdk_import_complete (0.04s)
+SDK observe: robot_construct_begin (0.04s)
+SDK observe: robot_construct_complete (0.04s)
+SDK observe: sdk_init_begin (0.04s)
+SDK observe: sdk_init_complete (2.60s)
+SDK observe: feedback_wait_begin (2.60s)
+SDK observe: backend_ready (2.61s)
+SDK observe: metadata_feedback_read (2.61s)
+G1 SDK [observe] 初始化完成（2.6 秒）。
+正在等待：G1 SDK [feedback] 初始化。
+SDK feedback: worker_entered (0.00s)
+SDK feedback: backend_constructing (0.00s)
+SDK feedback: sdk_import_begin (0.02s)
+SDK feedback: sdk_import_complete (0.03s)
+SDK feedback: robot_construct_begin (0.03s)
+SDK feedback: robot_construct_complete (0.03s)
+SDK feedback: sdk_init_begin (0.03s)
+SDK feedback: sdk_init_complete (2.44s)
+SDK feedback: feedback_wait_begin (2.45s)
+SDK feedback: feedback_rejected (2.45s)
+SDK feedback: backend_ready (2.61s)
+SDK feedback: metadata_feedback_read (2.61s)
+G1 SDK [feedback] 初始化完成（2.6 秒）。
+正在等待：G1 SDK [feedback] 初始化。
+SDK feedback: worker_entered (0.00s)
+SDK feedback: backend_constructing (0.00s)
+SDK feedback: sdk_import_begin (0.02s)
+SDK feedback: sdk_import_complete (0.03s)
+SDK feedback: robot_construct_begin (0.03s)
+SDK feedback: robot_construct_complete (0.03s)
+SDK feedback: sdk_init_begin (0.03s)
+SDK feedback: sdk_init_complete (2.08s)
+SDK feedback: feedback_wait_begin (2.08s)
+SDK feedback: backend_ready (2.08s)
+SDK feedback: metadata_feedback_read (2.08s)
+G1 SDK [feedback] 初始化完成（2.1 秒）。
+正在等待三客户端初始化后的连续新鲜反馈；此阶段没有运动。
+正在等待更新的相机画面：当前最旧 172.6 ms，需为推理预留 450 ms。尚未发送动作。
+READY PREVIEW | 原始权重 | 左臂 | 5秒 | 速度≤0.05rad/s | 起点偏移≤5° | 夹爪保持
+每次仅执行新预测的首个100ms动作段；两次预测之间保持，不重复旧预测。
+5秒只读预览验证：0.0/5.0秒，已接受1次新预测。
+5秒只读预览验证：0.5/5.0秒，已接受2次新预测。
+5秒只读预览验证：1.0/5.0秒，已接受3次新预测。
+正在等待更新的相机画面：当前最旧 228.5 ms，需为推理预留 450 ms。本次预测尚未执行。
+5秒只读预览验证：1.5/5.0秒，已接受4次新预测。
+5秒只读预览验证：2.0/5.0秒，已接受5次新预测。
+5秒只读预览验证：2.5/5.0秒，已接受7次新预测。
+5秒只读预览验证：3.0/5.0秒，已接受8次新预测。
+5秒只读预览验证：3.5/5.0秒，已接受9次新预测。
+5秒只读预览验证：4.0/5.0秒，已接受10次新预测。
+5秒只读预览验证：4.5/5.0秒，已接受12次新预测。
+正在等待更新的相机画面：当前最旧 154.6 ms，需为推理预留 450 ms。本次预测尚未执行。
+正在等待：G1 SDK [feedback] 清理与退出。
+G1 SDK [feedback] 清理与退出完成（0.9 秒）。
+正在等待：G1 SDK [feedback] 清理与退出。
+G1 SDK [feedback] 清理与退出完成（0.9 秒）。
+正在等待：G1 SDK [observe] 清理与退出。
+G1 SDK [observe] 清理与退出完成（0.9 秒）。
+{
+  "control_completed": true,
+  "control_elapsed_s": 5.009558295016177,
+  "accepted_predictions": 13,
+  "late_predictions_discarded": 0,
+  "planner_joined": true,
+  "error": null,
+  "mode": "pretrained-motion-preview",
+  "passed": true,
+  "execute_requested": false,
+  "g1_task_weights": false,
+  "seconds": 5.0,
+  "max_speed_rad_s": 0.05,
+  "max_origin_displacement_deg": 5.0,
+  "acknowledged_commands": 0,
+  "gripper_command_attempts": 0,
+  "stop_acknowledged": false,
+  "stationary_verified": false,
+  "motion_observed": false,
+  "max_measured_displacement_deg": null,
+  "final_gripper_change_mm": 0.0,
+  "cleanup_confirmed": 3,
+  "cleanup_unconfirmed": 0,
+  "scope": "5s control window with fresh first-action predictions and 100ms segments; holds between predictions. Does not certify visible motion duration, collision avoidance or milk grasp."
+}
+本轮报告：/workspace/lerobot_runs/model_20261015_175536_2431361/pretrained_motion_report.json
+Pretrained 5s motion report: /home/lsy03/文档/ChatGPT/VLA G1 项目/lerobot_runs/model_20261015_175536_2431361/pretrained_motion_report.json
+[4/5] 只读预览通过；正在重新预检，随后自动开始5秒真实左臂运动验证。
+保持手臂附近净空、现场急停可用；输入 STOP 并回车或 Ctrl+C 停止。
+正在核对机器人部署 URDF 和 PC/G1 时钟；网络连接较慢时需要等待。
+正在等待：读取机器人部署文件哈希，单次最长 15 秒。
+读取机器人部署文件哈希，单次最长 15 秒完成（0.2 秒）。
+正在等待：建立机器人时钟采样连接，最长 15 秒。
+建立机器人时钟采样连接，最长 15 秒完成（0.3 秒）。
+{"urdf_verified": true, "g1_minus_pc_ms": 71.940861, "runtime": "lerobot_runs/model_20261015_175554_2431686/runtime.json"}
+URDF 与时钟预检通过，正在启动 SDK 程序并等待实时反馈。
+正在等待：G1 SDK [observe] 初始化。
+SDK observe: worker_entered (0.00s)
+SDK observe: backend_constructing (0.00s)
+SDK observe: sdk_import_begin (0.02s)
+SDK observe: sdk_import_complete (0.03s)
+SDK observe: robot_construct_begin (0.03s)
+SDK observe: robot_construct_complete (0.03s)
+SDK observe: sdk_init_begin (0.03s)
+SDK observe: sdk_init_complete (1.48s)
+SDK observe: feedback_wait_begin (1.48s)
+SDK observe: backend_ready (1.48s)
+SDK observe: metadata_feedback_read (1.48s)
+G1 SDK [observe] 初始化完成（1.5 秒）。
+正在等待：G1 SDK [execute] 初始化。
+SDK execute: worker_entered (0.00s)
+SDK execute: backend_constructing (0.00s)
+SDK execute: sdk_import_begin (0.02s)
+SDK execute: sdk_import_complete (0.03s)
+SDK execute: robot_construct_begin (0.03s)
+SDK execute: robot_construct_complete (0.03s)
+SDK execute: sdk_init_begin (0.03s)
+A new version 1.10.0 is available. Visit https://github.com/GalaxyGeneralRobotics/GalbotSDK/releases for upgrade instructions
+A new version 1.10.0 is available. Visit https://github.com/GalaxyGeneralRobotics/GalbotSDK/releases for upgrade instructions
+SDK execute: sdk_init_complete (2.75s)
+SDK execute: feedback_wait_begin (2.75s)
+SDK execute: backend_ready (2.75s)
+SDK execute: metadata_feedback_read (2.75s)
+G1 SDK [execute] 初始化完成（2.8 秒）。
+正在等待：G1 SDK [stop] 初始化。
+SDK stop: worker_entered (0.00s)
+SDK stop: backend_constructing (0.00s)
+SDK stop: sdk_import_begin (0.02s)
+SDK stop: sdk_import_complete (0.03s)
+SDK stop: robot_construct_begin (0.03s)
+SDK stop: robot_construct_complete (0.03s)
+SDK stop: sdk_init_begin (0.03s)
+SDK stop: sdk_init_complete (3.12s)
+SDK stop: feedback_wait_begin (3.12s)
+SDK stop: backend_ready (3.13s)
+SDK stop: metadata_feedback_read (3.13s)
+G1 SDK [stop] 初始化完成（3.2 秒）。
+正在等待三客户端初始化后的连续新鲜反馈；此阶段没有运动。
+READY EXECUTE | 原始权重 | 左臂 | 5秒 | 速度≤0.05rad/s | 起点偏移≤5° | 夹爪保持
+每次仅执行新预测的首个100ms动作段；两次预测之间保持，不重复旧预测。
+5秒运动验证：0.0/5.0秒，已接受1次新预测。
+5秒运动验证：0.5/5.0秒，已接受2次新预测。
+正在等待更新的相机画面：当前最旧 220.0 ms，需为推理预留 450 ms。本次预测尚未执行。
+5秒运动验证：1.0/5.0秒，已接受3次新预测。
+正在等待更新的相机画面：当前最旧 163.4 ms，需为推理预留 450 ms。本次预测尚未执行。
+5秒运动验证：1.5/5.0秒，已接受4次新预测。
+5秒运动验证：2.0/5.0秒，已接受5次新预测。
+5秒运动验证：2.5/5.0秒，已接受7次新预测。
+5秒运动验证：3.0/5.0秒，已接受8次新预测。
+正在等待更新的相机画面：当前最旧 152.9 ms，需为推理预留 450 ms。本次预测尚未执行。
+5秒运动验证：3.5/5.0秒，已接受9次新预测。
+5秒运动验证：4.0/5.0秒，已接受10次新预测。
+正在等待更新的相机画面：当前最旧 160.0 ms，需为推理预留 450 ms。本次预测尚未执行。
+5秒运动验证：4.5/5.0秒，已接受11次新预测。
+正在等待更新的相机画面：当前最旧 220.5 ms，需为推理预留 450 ms。本次预测尚未执行。
+正在等待连续反馈确认停稳，请稍候。
+停稳反馈已确认。
+正在等待：G1 SDK [stop] 清理与退出。
+G1 SDK [stop] 清理与退出完成（1.0 秒）。
+正在等待：G1 SDK [observe] 清理与退出。
+G1 SDK [observe] 清理与退出完成（0.9 秒）。
+{
+  "control_completed": true,
+  "control_elapsed_s": 5.009875524090603,
+  "accepted_predictions": 13,
+  "late_predictions_discarded": 0,
+  "planner_joined": true,
+  "error": null,
+  "mode": "pretrained-motion-execute",
+  "passed": true,
+  "execute_requested": true,
+  "g1_task_weights": false,
+  "seconds": 5.0,
+  "max_speed_rad_s": 0.05,
+  "max_origin_displacement_deg": 5.0,
+  "acknowledged_commands": 13,
+  "gripper_command_attempts": 0,
+  "stop_acknowledged": true,
+  "stationary_verified": true,
+  "motion_observed": true,
+  "max_measured_displacement_deg": [
+    3.159901642141774,
+    0.29939451207833895,
+    3.6337016195818035,
+    0.33230236349946035,
+    1.0381994260125162,
+    0.004100034492711717,
+    0.916000084684995
+  ],
+  "final_gripper_change_mm": 0.0,
+  "cleanup_confirmed": 2,
+  "cleanup_unconfirmed": 0,
+  "scope": "5s control window with fresh first-action predictions and 100ms segments; holds between predictions. Does not certify visible motion duration, collision avoidance or milk grasp."
+}
+本轮报告：/workspace/lerobot_runs/model_20261015_175554_2431686/pretrained_motion_report.json
+Pretrained 5s motion report: /home/lsy03/文档/ChatGPT/VLA G1 项目/lerobot_runs/model_20261015_175554_2431686/pretrained_motion_report.json
+[5/5] 本轮验证结束，请查看 pretrained_motion_report.json；通过范围仅为本轮运动验证。
+[清理] 正在保存模型日志并关闭本轮模型服务，请稍候。
+Model service log: /home/lsy03/文档/ChatGPT/VLA G1 项目/lingbot_pretrain_g1/service_runs/lingbot_vla_2_0-motion-5s-20261015_175458-2430967/model_service.log
+lsy03@lsy03-System-Product-Name:~/文档/ChatGPT/VLA G1 项目$

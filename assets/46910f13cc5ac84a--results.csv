@@ -1,0 +1,2 @@
+setting,task,status,successes,episodes,success_rate,seconds,attempt_dir,error
+clean,click_bell,paused,,,,25.14701832900755,/home/lsy03/文档/ChatGPT/蚂蚁灵波具身大模型挑战赛/outputs/evaluation/expert_fm_step003000_local4090_quick_v1/attempts/clean/click_bell_attempt01,

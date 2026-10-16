@@ -1,0 +1,16 @@
+{
+  "period_s": 0.1,
+  "max_speed_rad_s": 0.5,
+  "max_acceleration_rad_s2": 0.3,
+  "max_target_lead_rad": 0.15,
+  "max_tracking_error_rad": 0.1,
+  "gripper_speed_m_s": 0.02,
+  "gripper_effort": 5.0,
+  "max_prediction_age_s": 0.5,
+  "watchdog_s": 0.6,
+  "feedback_max_age_s": 0.3,
+  "rgb_max_age_s": 0.6,
+  "depth_max_age_s": 0.3,
+  "wrench_max_age_s": 0.3,
+  "inference_reserve_s": 0.22
+}

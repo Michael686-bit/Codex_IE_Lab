@@ -1,0 +1,23 @@
+{
+  "status": "complete",
+  "evaluation_minutes": 55.38,
+  "acceptance_status": "pass",
+  "episodes": 50,
+  "successes": 17,
+  "precision": "BF16 autocast, FP32 LoRA and updated projections",
+  "inference_chunks_including_warmup": 477,
+  "steady_inference_median_seconds": 0.4966452775001926,
+  "steady_inference_p95_seconds": 0.5154401679992588,
+  "policy_peak_torch_allocated_mib": 12422.10107421875,
+  "minimum_sampled_free_mib": {
+    "0": 16436,
+    "1": 11146
+  },
+  "maximum_sampled_used_mib": {
+    "0": 7648,
+    "1": 12937
+  },
+  "formal_video_bytes": 5935639,
+  "runtime_errors": 0,
+  "all_cases_first_attempt": true
+}

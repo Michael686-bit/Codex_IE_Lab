@@ -1,0 +1,33 @@
+{
+  "control_completed": true,
+  "control_elapsed_s": 5.003683444001581,
+  "accepted_predictions": 13,
+  "late_predictions_discarded": 0,
+  "planner_joined": true,
+  "error": null,
+  "mode": "pretrained-motion-execute",
+  "passed": true,
+  "execute_requested": true,
+  "g1_task_weights": false,
+  "seconds": 5.0,
+  "max_speed_rad_s": 0.05,
+  "max_origin_displacement_deg": 5.0,
+  "acknowledged_commands": 13,
+  "gripper_command_attempts": 0,
+  "stop_acknowledged": true,
+  "stationary_verified": true,
+  "motion_observed": true,
+  "max_measured_displacement_deg": [
+    3.54860087761803,
+    0.5245995093919994,
+    3.7215993240106977,
+    0.7182012214160107,
+    1.598499907309349,
+    0.06319995383353955,
+    0.8899002243190838
+  ],
+  "final_gripper_change_mm": 0.0,
+  "cleanup_confirmed": 2,
+  "cleanup_unconfirmed": 0,
+  "scope": "5s control window with fresh first-action predictions and 100ms segments; holds between predictions. Does not certify visible motion duration, collision avoidance or milk grasp."
+}

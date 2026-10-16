@@ -1,0 +1,102 @@
+{
+  "date": "2026-10-15",
+  "scope": "Read-only robot observations, local GPU inference and own SDK client cleanup; no motion or robot stop RPCs.",
+  "motion_commands_sent": 0,
+  "preflight": {
+    "report": "/home/lsy03/文档/ChatGPT/VLA G1 项目/lerobot_runs/model_20261015_143319_2312057/sdk_preflight.json",
+    "requested_rounds": 8,
+    "completed_rounds": 8,
+    "passed_rounds": 8,
+    "passed": true,
+    "baseline_rgb_age_ms": {
+      "head_left_camera": {
+        "count": 39,
+        "min": 57.659802991855685,
+        "median": 89.86706204564226,
+        "p95": 119.04178165003299,
+        "max": 122.29204997732234
+      },
+      "left_arm_camera": {
+        "count": 39,
+        "min": 23.824431005028426,
+        "median": 55.17936097025877,
+        "p95": 84.33081919065128,
+        "max": 85.88076008588743
+      },
+      "right_front_surround_camera": {
+        "count": 39,
+        "min": 126.15515906332547,
+        "median": 170.87758500081463,
+        "p95": 215.74215452230544,
+        "max": 222.74935596993595
+      }
+    },
+    "inference_ms": {
+      "count": 8,
+      "min": 380.02128701191396,
+      "median": 385.65289601683617,
+      "p95": 401.2877653061878,
+      "max": 405.6052330415696
+    },
+    "frame_wait_events": 7,
+    "expired_predictions": 0,
+    "max_final_image_age_ms_rounded": 546.282,
+    "rgb_limit_ms": 600
+  },
+  "lifecycle_cases": [
+    {
+      "report": "/home/lsy03/文档/ChatGPT/VLA G1 项目/lerobot_runs/model_20261015_142401_2306335/sdk_lifecycle.json",
+      "transition": "keep",
+      "inference_enabled": false,
+      "passed": true,
+      "motion_commands_sent": 0,
+      "rejections": 0,
+      "intentional_read_pause_s": null
+    },
+    {
+      "report": "/home/lsy03/文档/ChatGPT/VLA G1 项目/lerobot_runs/model_20261015_142834_2307308/sdk_lifecycle.json",
+      "transition": "terminate",
+      "inference_enabled": false,
+      "passed": true,
+      "motion_commands_sent": 0,
+      "rejections": 0,
+      "intentional_read_pause_s": null
+    },
+    {
+      "report": "/home/lsy03/文档/ChatGPT/VLA G1 项目/lerobot_runs/model_20261015_143019_2309718/sdk_lifecycle.json",
+      "transition": "close",
+      "inference_enabled": false,
+      "passed": true,
+      "motion_commands_sent": 0,
+      "rejections": 0,
+      "intentional_read_pause_s": null
+    },
+    {
+      "report": "/home/lsy03/文档/ChatGPT/VLA G1 项目/lerobot_runs/model_20261015_143707_2314471/sdk_lifecycle.json",
+      "transition": "terminate",
+      "inference_enabled": true,
+      "passed": true,
+      "motion_commands_sent": 0,
+      "rejections": 0,
+      "intentional_read_pause_s": 0.0
+    },
+    {
+      "report": "/home/lsy03/文档/ChatGPT/VLA G1 项目/lerobot_runs/model_20261015_143843_2316746/sdk_lifecycle.json",
+      "transition": "terminate",
+      "inference_enabled": true,
+      "passed": true,
+      "motion_commands_sent": 0,
+      "rejections": 0,
+      "intentional_read_pause_s": 0.85
+    }
+  ],
+  "regression_tests": {
+    "count": 92,
+    "passed": true
+  },
+  "conclusion": {
+    "image_expiry": "Fresh-frame wait verified in 8 read-only rounds; safety limits unchanged.",
+    "stop_feedback": "Historical 849 ms stale feedback not reproduced. Actual motion/stop path remains unvalidated; no causal root established."
+  },
+  "temporary_model_container": "stopped; existing 8091 service remains running"
+}

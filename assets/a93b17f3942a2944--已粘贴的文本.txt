@@ -1,0 +1,376 @@
+你现在这个任务，实际上就是一个典型的 VLA 后训练（Post-training）+ 跨场景泛化（Generalization） 问题。
+
+结合 LingBot-VLA 2.0 官方代码和你之前关注的天池机器人比赛，我建议按照 Clean-only SFT（监督微调）→ 仿真闭环评测 → 泛化优化 这条路线做。
+
+## 一、首先明确：你们究竟需要训练什么？
+
+我查到赛事要求是：
+
+- 指定基础模型：LingBot-VLA 2.0 6B 预训练权重。
+- 使用 RoboTwin 2.0 的 Aloha-AgileX 双臂机器人。
+- 训练任务：50 个。
+- 每个任务允许使用 50 条 Clean 示教轨迹。
+- 禁止使用 Randomized 数据参与训练。
+
+也就是最多：
+
+# 2,500
+
+条 Clean 专家示教轨迹
+
+50 个任务 × 每任务 50 条；不是 2,500 帧，而是 2,500 条完整的机器人操作轨迹。
+
+官方 LingBot-VLA 2.0 提供的 RoboTwin 训练样例，默认混合了 Clean 和 Randomized 数据，因此不能直接照搬官方数据清单用于本次比赛。训练入口可以复用，但必须重新配置数据来源。
+
+[image](https://www.google.com/s2/favicons?domain=https://tianchi.aliyun.com\&sz=32)
+
+tianchi.aliyun.com
+
++1
+
+
+
+## 二、整个后训练流程应该长什么样？
+
+LingBot-VLA 2.0 6B 预训练模型
+
+包含视觉语言理解与 MoE Action Expert 的基础能力
+
+RoboTwin Clean 数据集
+
+50 Tasks × 50 Episodes
+
+图像 + 机器人状态 + 语言指令 + 专家动作
+
+SFT 后训练（核心）
+
+Flow Matching 动作监督损失 + 必要的辅助损失
+
+VLM Backbone
+
+冻结或低学习率更新
+
+MoE Action Expert
+
+重点适配 RoboTwin 动作
+
+Clean-only Post-trained Checkpoint
+
+只使用合规训练轨迹获得的模型
+
+Clean 仿真评测
+
+检查任务学习效果
+
+Randomized 仿真评测
+
+检查未见场景的泛化能力
+
+这里最重要的区别是：
+
+Clean 是允许学习的示教数据分布，Randomized 是需要泛化到的场景分布。 Randomized 场景能否用于本地模型选择、反复调参或查看评测细节，还要遵守赛事对验证和测试集的具体规定；即使允许进行推理评测，也不代表允许使用其中的专家动作进行监督训练。
+
+## 三、具体怎么操作：从数据到训练
+
+### Step 1：准备 Clean 数据并转换格式
+
+LingBot-VLA 2.0 官方支持 LeRobot v2.1 / v3.0 数据格式。如果你们拿到的是 RoboTwin 原始数据，需要先转换；如果已经是 LeRobot，则可以直接使用。
+
+单条训练样本应该包含：
+
+| 数据字段              | 具体内容                       |
+| ----------------- | -------------------------- |
+| Observation Image | 头部相机、左腕相机、右腕相机             |
+| Robot State       | 左右机械臂关节状态、夹爪状态             |
+| Language          | 任务指令，例如 Pick up the bottle |
+| Action            | 对应时刻之后的专家动作序列              |
+| Episode           | 完整的示教轨迹及其时间索引              |
+
+RoboTwin 的 Aloha-AgileX 数据是双臂 14 维状态/动作表示：左右臂各 6 维关节，加上左右夹爪各 1 维。LingBot-VLA 2.0 会通过 `robotwin.yaml` 映射到统一的 55 维模型表示，未使用的维度做填充或掩码。官方 RoboTwin 配置学习的是绝对动作（`subtract_state: False`）。
+
+[image](https://www.google.com/s2/favicons?domain=https://github.com\&sz=32)
+
+GitHub
+
++1
+
+
+
+训练时并不是一次输入完整的 Episode，而是从 Episode 中采样时间步及其后续动作块，例如：
+
+\\[ (o_t,l)\rightarrow [a_t,a\_{t+1},\ldots,a\_{t+49}] \\]
+
+这里的 `50` 是官方默认的 Action Chunk 长度，可以作为第一版基线。
+
+原始数据转换可参考 [LingBot-VLA 2.0 官方 RoboTwin 数据准备教程](https://github.com/Robbyant/lingbot-vla-v2/blob/main/experiment/robotwin/README.md)。官方还提供与其评测一致的 RoboTwin Git 提交版本，建议先固定版本再处理数据。
+
+### Step 2：创建 Clean-only 数据清单
+
+假设你把 50 个任务分别转换成了 50 个 LeRobot 数据目录，并且全部放在 `/data/lerobot_clean/` 下。
+
+可以创建以下文件：
+
+`assets/training_data/robotwin_clean.txt`
+
+其格式为每行一个数据集：
+
+```
+robotwin /data/lerobot_clean/adjust_bottle
+robotwin /data/lerobot_clean/beat_block_hammer
+robotwin /data/lerobot_clean/click_bell
+```
+
+这里仅展示了 3 行，实际要包含全部 50 个任务。
+
+官方 `MultiVLADataset` 可以按照这个清单加载多任务数据，不需要先把 50 个 LeRobot Dataset 物理合并。
+
+需要重点检查两个地方： 这 50 个目录各自都只有合规的 50 条 Clean 轨迹；训练清单、数据缓存与任何额外的 dataloader 中都不存在 Randomized 示教轨迹。
+
+[image](https://www.google.com/s2/favicons?domain=https://github.com\&sz=32)
+
+GitHub
+
++1
+
+
+
+### Step 3：重新计算动作归一化统计量
+
+这一步非常重要。
+
+LingBot-VLA 2.0 原始官方文件：
+
+`assets/norm_stats/robotwin.json`
+
+对应官方混合训练配方，不能未经核实就当成 Clean-only 统计量使用。
+
+建议针对自己的 Clean 训练划分重新计算：
+
+```
+bash train.sh scripts/compute_norm_stats.py \
+  ./configs/vla/norm_compute/post_data.yaml \
+  --data.data_name multi \
+  --data.robot_name robotwin \
+  --data.train_path assets/training_data/robotwin_clean.txt \
+  --data.norm_path assets/norm_stats/robotwin_clean.json
+```
+
+训练和推理必须使用同一套状态、动作映射与 Normalization Stats。
+
+对于 RoboTwin，官方使用 `bounds_99_woclip`，而不是通常在部分真机数据上使用的 `meanstd`。
+
+[image](https://www.google.com/s2/favicons?domain=https://github.com\&sz=32)
+
+GitHub
+
++1
+
+
+
+## 四、微调时，到底应该训练哪些模块？
+
+你们有 2,500 条专家轨迹，数据量远小于模型预训练规模。我建议先做不同训练范围的对照，而不是一开始就反复修改网络结构。
+
+| 方法                 | 更新参数                              | 适用情况             |
+| ------------------ | --------------------------------- | ---------------- |
+| Expert-only SFT    | 冻结 VLM，训练 Action Expert 及未冻结的适配模块 | 第一组对照实验          |
+| Action Expert LoRA | 仅训练专家部分的低秩适配参数                    | 显存有限，需要修改或适配训练实现 |
+| 联合微调               | VLM + Action Expert               | 多卡资源充足，基础方案验证后   |
+| 联合微调 + 数据增强        | 同上，配合 Clean 图像增强                  | 重点优化跨场景泛化        |
+
+官方已经提供 `train_expert_only` 相关参数。LoRA 可以作为备选，但不要假设官方发布的训练脚本无需修改就可以直接通过一个 LoRA 参数运行。
+
+[image](https://www.google.com/s2/favicons?domain=https://github.com\&sz=32)
+
+GitHub
+
++1
+
+
+
+### Action Expert 学习什么？
+
+这里的 SFT 不是让语言模型做普通文本的 Cross-Entropy 训练。
+
+LingBot-VLA 2.0 的动作专家使用 Flow Matching。在 RoboTwin 官方配置中，采用的是 `L1_fm` 损失。
+
+直观来说：
+
+Clean 专家动作
+
+正确双臂关节序列
+
+构造 Flow 训练样本
+
+随机时间与噪声插值
+
+MoE Action Expert
+
+根据图像、语言、机器人状态和 Flow 时间预测动作速度场
+
+L1 Flow Matching Loss
+
+\\(\mathcal L\_{\mathrm{FM}}=\mathbb E\left[\left\\|v\_\theta(x_t,t,o)-v\_{\mathrm{target}}\right\\|\_1\right]\\)
+
+让模型学习如何生成符合专家示教的连续动作轨迹
+
+简而言之，你们是在用 Clean 示教做行为克隆（Behavior Cloning），只不过输出不是单个离散 Action Token，而是通过 Flow Matching 生成连续 Action Chunk。
+
+## 五、官方训练命令应该怎么改？
+
+以官方仓库为基础：
+
+[Robbyant / lingbot-vla-v2](https://github.com/Robbyant/lingbot-vla-v2)
+
+首先下载赛事指定的基础权重，而不是官方已经做过 RoboTwin 后训练的模型。
+
+```
+git clone https://github.com/Robbyant/lingbot-vla-v2.git
+cd lingbot-vla-v2
+
+bash tools/create_train_env.sh
+
+python3 scripts/download_hf_model.py \
+  --repo_id robbyant/lingbot-vla-v2-6b \
+  --local_dir /data/models/lingbot-vla-v2-6b
+```
+
+官方训练还依赖 Qwen3-VL-4B-Instruct、MoGe-2、LingBot-Depth 和 DINO-VIDEO 的对应模型文件。路径和版本要按 `Training_Config.md` 配齐。
+
+之后可以尝试第一组 Expert-only 对照：
+
+```
+bash train.sh tasks/vla/train_lingbotvla.py \
+  ./configs/vla/robotwin/robotwin.yaml \
+  --model.model_path /data/models/lingbot-vla-v2-6b/checkpoints/<step>/hf_ckpt \
+  --model.tokenizer_path /data/models/Qwen3-VL-4B-Instruct \
+  --data.data_name multi \
+  --data.train_path assets/training_data/robotwin_clean.txt \
+  --data.norm_stats_file assets/norm_stats/robotwin_clean.json \
+  --train.output_dir output/clean_expert_only \
+  --train.train_expert_only true \
+  --train.freeze_vision_encoder true \
+  --train.loss_type L1_fm \
+  --train.optimizer adamw \
+  --train.lr 5e-5 \
+  --train.max_steps 3000 \
+  --train.save_steps 500 \
+  --train.enable_gradient_checkpointing true
+```
+
+这是一组建议的起步参数，不是官方验证过的 Clean-only 最优配方。`<step>` 要替换成下载的基础模型实际 checkpoint 位置，并根据 GPU 数量配置 micro batch、global batch 和梯度累积。训练前需确保 YAML 内其他权重路径、55 维动作配置及模型架构与基础 checkpoint 匹配。
+
+这里建议先保存 500、1000、1500 等阶段性 Checkpoint，检查是否出现过拟合。
+
+官方示例配置的 `max_steps=30000` 面向的是混合数据训练，不能直接认为仅有 2,500 条 Clean 轨迹时也是最优步数。
+
+[image](https://www.google.com/s2/favicons?domain=https://github.com\&sz=32)
+
+GitHub
+
++1
+
+
+
+## 六、Clean-only 训练，如何让 Randomized 表现更好？
+
+这是你们应该重点研究的方向。
+
+Randomized 测试会改变场景条件，例如灯光、背景、物体摆放以及桌面环境。所以仅让模型记住 Clean 的固定观测很容易出现泛化问题。
+
+我建议安排以下实验：
+
+| 实验 | 修改内容                         | 目标          |
+| -- | ---------------------------- | ----------- |
+| A0 | 原始 Clean-only SFT            | 建立基线        |
+| A1 | Clean 图片加入亮度、颜色、对比度扰动        | 降低对光照和纹理的依赖 |
+| A2 | 任务均衡采样，控制学习率和训练步数            | 降低小数据过拟合    |
+| A3 | 比较 Expert-only 与联合微调         | 确定最适合的训练范围  |
+| A4 | 比较不同 Action Chunk 执行长度和重规划频率 | 降低闭环误差累积    |
+
+注意：图像增强不等于使用 Randomized 训练数据。 可以优先尝试基于 Clean 图片的轻量外观增强，且要保证训练目标仍然来自允许的 Clean 示教。涉及物体位置、相机几何关系的增强不能直接改变图像却保留不一致的动作标签。
+
+这一组实验里，我认为 A1 和 A4 特别值得优先尝试，因为它们主要针对视觉域偏移和动作执行误差，而不需要额外的 Randomized 专家轨迹。
+
+## 七、训练完后怎么判断有没有效果？
+
+必须区分两个指标：动作误差与仿真成功率。
+
+开环评测只是在已有观测下预测动作，与 Clean 专家动作进行比较；闭环评测则让预测动作真正控制 RoboTwin 机器人，观察能否完成任务。
+
+正式评测要求每个任务在 Clean 和 Randomized 两种设置下分别运行 100 次，也就是全部 50 个任务合计 10,000 次闭环测试。
+
+[image](https://www.google.com/s2/favicons?domain=https://tianchi.aliyun.com\&sz=32)
+
+tianchi.aliyun.com
+
++1
+
+
+
+官方提供了评测入口，例如：
+
+```
+QWEN3VL_PATH=/data/models/Qwen3-VL-4B-Instruct \
+EVAL_WORKDIR=/data/RoboTwin \
+bash experiment/robotwin/start_robotwin_infer_and_eval.sh \
+  --model_path /data/output/<exported_checkpoint>/hf_ckpt \
+  --output_base ./eval_clean \
+  --task_config demo_clean \
+  --num_gpus 1 \
+  --num_per_gpu 1
+```
+
+把 `--task_config` 改成 `demo_randomized` 就是 Randomized 测试。上述路径需要替换为实际导出的 checkpoint 和 RoboTwin 环境路径。
+
+模型成功率建议同时统计：
+
+\\[ SR\_{\text{clean}}=\frac{\text{Clean成功次数}}{\text{Clean测试次数}} \\]
+
+\\[ SR\_{\text{rand}}=\frac{\text{Random成功次数}}{\text{Random测试次数}} \\]
+
+重点还要看两者差距：
+
+\\[ \Delta SR = SR\_{\text{clean}}-SR\_{\text{rand}} \\]
+
+当 Clean 成功率很高，而 Randomized 明显偏低时，应优先检查视觉域偏移、任务条件泛化和动作重规划，而不是只继续增加训练步数。
+
+官方 93.52% Clean、92.80% Randomized 的结果来自 Clean + Randomized 联合后训练，不能直接当作此次 Clean-only 规则下应达到的基线。
+
+[image](https://www.google.com/s2/favicons?domain=https://github.com\&sz=32)
+
+GitHub
+
++1
+
+
+
+## 八、结合训练资源，我建议这样安排
+
+官方文档举出的全量微调资源是 4×A6000，单卡显存需求约 49GB 级别，单张 RTX 4090 24GB 不适合直接照搬这套全参数训练配方。
+
+[image](https://www.google.com/s2/favicons?domain=https://github.com\&sz=32)
+
+GitHub
+
+
+
+因此按资源分层：
+
+| 资源               | 建议                                                   |
+| ---------------- | ---------------------------------------------------- |
+| 单张 4090 24GB     | 优先完成数据转换、模型推理和评测链路；考虑定制 LoRA / CPU Offload 方案，但需实测显存 |
+| 多张 4090 24GB     | 尝试 FSDP2、梯度检查点，仍需要验证模型分片和峰值显存                        |
+| 4×48GB 或更大显存 GPU | 优先完整复现官方后训练，然后开展消融实验                                 |
+
+另外，本次赛事线上初赛提交截止时间为 2026 年 10 月 26 日 24:00。建议先把完整闭环跑通，再投入时间优化，不要一开始就更换核心模型结构。
+
+[image](https://www.google.com/s2/favicons?domain=https://tianchi.aliyun.com\&sz=32)
+
+tianchi.aliyun.com
+
+
+
+最终建议： 先用全部 50 个 Clean 任务完成统一 LeRobot 数据加载与 Clean-only 归一化，选取一小部分轨迹做独立验证，完成 Expert-only 的第一版模型；确认闭环评测没有接口问题后，再对比全量微调、LoRA 和图像增强。
+
+如果目标是比赛成绩，最值得优先解决的并不只是训练 Loss 下降，而是 在只见过 Clean 示教的情况下，让模型面对 Randomized 场景仍能稳定执行双臂操作。这才是本次后训练任务的核心难点。

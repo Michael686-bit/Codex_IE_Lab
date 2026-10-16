@@ -3,7 +3,7 @@
 - 归档编号：`01a134d2-03de-7ac2-b1f0-2302cd467dbe`
 - 项目：蚂蚁灵波具身大模型挑战赛
 - 创建时间：2026-10-13T18:32:21.220000+08:00
-- 更新时间：2026-10-14T10:03:09.473000+08:00
+- 更新时间：2026-10-14T16:55:16.039000+08:00
 - 状态：活动
 - 导出范围：用户可见消息与助手可见回复；不含隐藏推理和工具原始输出
 
@@ -58,7 +58,7 @@ _工具输出图片（原始工具文本未纳入归档）。_
 
 注意：randomized 当前展示的是评测录像，本地尚无完整 randomized 演示集。[Rerun](https://rerun.io/docs/getting-started) 也适合后续做完整连续回放；上面可以先直接查看，无需安装。
 
-[附件：05e84bda0819c21a--robotwin-data-compare.html](../../assets/05e84bda0819c21a--robotwin-data-compare.html)
+[附件：4be0f511629c8840--robotwin-data-compare.html](../../assets/4be0f511629c8840--robotwin-data-compare.html)
 
 ## 11. 用户
 
@@ -76,8 +76,131 @@ randomized 是不是没有下载下来？现在在我给你的链接里面能找
 
 确认了：此前确实只下载了 clean，randomized 没在下载清单中。原数据仓库里能看到 `aloha-agilex_randomized_500.zip`；我先取三个任务各两条演示，接到查看器里。这样能直接比较两种演示数据。
 
-## 15. 助手
+## 15. 助手（进展）
+
+三个任务都有 randomized 包。下载接口支持按范围读取 ZIP，我正在取出选定演示的 HDF5、视频和指令，并做完整性校验。样本会单独保存，不会加入现有 clean 训练数据。
+
+## 16. 助手（进展）
+
+样本已下载并校验通过：按铃、叠积木、双臂交接各两条 randomized 演示，共约 117 MB。每条都包含 HDF5、视频和指令，三个源包各有 500 条演示。查看器现在会用这些下载下来的演示做对比。
+
+## 17. 助手
+
+_工具输出图片（原始工具文本未纳入归档）。_
+
+![da80562daa878c9d--image-da80562daa87.png](../../assets/da80562daa878c9d--image-da80562daa87.png)
+
+## 18. 助手
+
+是的，之前只下载了 **clean**。你此前的 [RoboTwin2.0 数据链接](https://huggingface.co/datasets/TianxingChen/RoboTwin2.0/tree/main/dataset)里有 `aloha-agilex_randomized_500.zip`，每个任务包含 500 条演示。
+
+现在已下载**按铃、叠积木、双臂交接各两条 randomized 演示**，约 **117 MB**，包含 HDF5、视频和指令，校验已通过。目前取的是样本，没有下载完整包。
+
+下面已更新为真实演示对比：切换 **clean / randomized**，可以选择任务、相机并拖动进度查看。
+
+visualize{"path":"/home/lsy03/.codex/visualizations/2026/10/13/01a134d2-03de-7ac2-b1f0-2302cd467dbe/robotwin-data-compare.html"}
+
+[附件：4be0f511629c8840--robotwin-data-compare.html](../../assets/4be0f511629c8840--robotwin-data-compare.html)
+
+## 19. 用户
+
+意思就是 clean 的任务和 randomized 的任务完全不同？
+
+## 20. 助手
+
+不是，**clean 和 randomized 是同一批任务，在不同场景条件下的数据。**
+
+例如 `handover_block` 都要求“左臂抓取积木，交给右臂，再放到目标垫上”：
+
+- **clean**：背景和光照固定，没有额外杂物；任务物体的位置仍可能随机变化。
+- **randomized**：目标相同，但加入随机纹理、杂物、光照和桌面高度变化。
+
+所以，**任务目标相同，具体场景和动作轨迹可能不同**。查看器中两边的 `episode 0` 是各自独立采集的第一条演示，并不是同一个场景只换了背景。
+
+## 21. 用户
+
+<external_codex_apps_open_page>{"page_id":null}</external_codex_apps_open_page>
+
+## 22. 用户
+
+现在的这些roboTwin 的仿真环境到底有没有完整的仿真视频或者好查看一些的可视化环境或者平台可以运行？你给我看的这几个跳变的画面说实话真的不太直观
+
+## 23. 助手（进展）
+
+你说得对，之前每条只抽了 8 帧，动作看起来会跳。数据里已有完整演示视频，我先把它们做成可以连续播放的对比，并检查本地能否运行 RoboTwin 的交互仿真窗口。
+
+## 24. 助手（进展）
+
+本地有两种更直观的方式：完整 MP4 可以连续看动作；RoboTwin 自带的 SAPIEN 三维窗口可以旋转、缩放视角，查看场景和专家动作。仿真镜像和桌面显示条件都已具备，我会打开播放对比，并验证三维窗口是否能正常启动。
+
+## 25. 助手（进展）
+
+完整视频已逐帧检查通过，都是 30 fps 的连续录像，按铃约 3 秒，叠积木和双臂交接约 10 秒。三维窗口也支持本地显示；我正在加上“播放专家动作、切换任务、切换 clean/randomized”的按钮，方便直接操作。
+
+## 26. 助手（进展）
+
+连续视频已经验证能正常播放、慢放和切换任务。三维窗口也已成功显示在桌面上，我还在检查专家动作播放；下面会提供完整视频播放器，便于直接看动作过程。
+
+## 27. 助手
+
+_工具输出图片（原始工具文本未纳入归档）。_
+
+![d16e4e08eca1f798--image-d16e4e08eca1.png](../../assets/d16e4e08eca1f798--image-d16e4e08eca1.png)
+
+![ae45cdf7092b6bb9--image-ae45cdf7092b.png](../../assets/ae45cdf7092b6bb9--image-ae45cdf7092b.png)
+
+## 28. 助手（进展）
+
+三维查看器已跑通，按铃专家动作执行成功。窗口里可以重播动作、切换三个任务和 clean/randomized，也能自由调整视角；我还关掉了默认的相机辅助线，让场景更清楚。
+
+## 29. 助手
+
+有。之前的跳变是因为我只抽了 8 帧，**原始数据有完整连续视频，RoboTwin 也有真正的三维仿真窗口**。
+
+我已经在桌面打开 **SAPIEN 三维窗口**，并验证按铃专家动作执行成功。在 `RoboTwin Expert Demo` 面板中：
+
+- **Play / Replay Expert**：播放、重播专家动作。
+- **Next Task**：切换按铃、叠积木、双臂交接。
+- **Clean / Randomized**：切换场景条件。
+
+可以用鼠标和滚轮调整视角。关闭后，可通过[启动脚本](/home/lsy03/文档/ChatGPT/蚂蚁灵波具身大模型挑战赛/scripts/run_robotwin_3d_viewer.sh)重新打开。
+
+下面是完整连续录像，支持播放、慢放和全屏：
+
+visualize{"path":"/home/lsy03/.codex/visualizations/2026/10/13/01a134d2-03de-7ac2-b1f0-2302cd467dbe/robotwin-continuous-video.html"}
+
+[附件：5187b38da6296e2f--robotwin-continuous-video.html](../../assets/5187b38da6296e2f--robotwin-continuous-video.html)
+
+## 30. 用户
+
+这个 RoboTwin 是否还占用 GPU？ 如果有的话，给我命令我先停一下
+
+## 31. 助手（进展）
+
+我确认一下三维查看器是否还在运行、是否仍占用 GPU，再给你对应的停止命令。
+
+## 32. 助手
+
+是的，RoboTwin 三维查看器还在运行，其 Python 进程占用约 **3.8 GiB GPU 显存**。
+
+执行下面命令即可停止：
+
+```bash
+docker stop lingbo-robotwin-3d-viewer
+```
+
+只停止这个查看器，不影响其他容器。聊天里的视频播放器不占用这部分仿真显存。
+
+## 33. 助手
 
 _历史投影中的图片引用（用于补全本地对话资源）。_
 
-![cfaa0d3450d8c0a6--robotwin-demo-preview.png](../../assets/cfaa0d3450d8c0a6--robotwin-demo-preview.png)
+![f0e16dd78e906a03--robotwin_3d_viewer.png](../../assets/f0e16dd78e906a03--robotwin_3d_viewer.png)
+
+> 资源未归档：`/tmp/robotwin-demo-preview.png`（missing）
+
+> 资源未归档：`/tmp/robotwin-comparison-preview.png`（missing）
+
+> 资源未归档：`/tmp/robotwin-randomized-compare.png`（missing）
+
+> 资源未归档：`/tmp/robotwin-continuous-playback.png`（missing）

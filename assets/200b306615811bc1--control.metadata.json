@@ -1,0 +1,137 @@
+{
+  "schema_version": 1,
+  "joint_names": [
+    "leg_joint1",
+    "leg_joint2",
+    "leg_joint3",
+    "leg_joint4",
+    "leg_joint5",
+    "head_joint1",
+    "head_joint2",
+    "left_arm_joint1",
+    "left_arm_joint2",
+    "left_arm_joint3",
+    "left_arm_joint4",
+    "left_arm_joint5",
+    "left_arm_joint6",
+    "left_arm_joint7",
+    "right_arm_joint1",
+    "right_arm_joint2",
+    "right_arm_joint3",
+    "right_arm_joint4",
+    "right_arm_joint5",
+    "right_arm_joint6",
+    "right_arm_joint7"
+  ],
+  "arm_slices": {
+    "left_arm": [
+      7,
+      14
+    ],
+    "right_arm": [
+      14,
+      21
+    ]
+  },
+  "args": {
+    "execute": true,
+    "seconds": 3600.0,
+    "port": "/dev/ttyACM0",
+    "profile": "teleoperation/dual_arm_direct_profile.json",
+    "output": "lerobot_runs/dual_arm_capture_20261009_103445_482236/control.jsonl",
+    "g1_clock_offset_ms": 23.41424,
+    "speed_rad_s": 1.0,
+    "sensor_profile": "left7",
+    "active_arm": "left",
+    "target_episodes": 40,
+    "task": "Pick up the milk bottle from the table and place it into the blue bin.",
+    "capture_socket": "/tmp/g1-capture.sock",
+    "capture_root": "lerobot_runs/dual_arm_capture_20261009_103445_482236",
+    "capture_contract": "acquisition/lerobot_capture/capture_contract.left7.json",
+    "gripper_speed_m_s": 0.06,
+    "one_press": true,
+    "align_speed_rad_s": 1.0
+  },
+  "resolved_speeds": {
+    "left_arm": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "right_arm": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "source_sha256": {
+    "/workspace/teleoperation/dual_arm_direct.py": "51810ea3639f3262afb68e0e8300a8e97859db6910223274dc3756fb61642655",
+    "/workspace/teleoperation/arm7_follow_collision.py": "c261b739701624c85fd446e14959c1e48bf22b3d9142f852b915bd2755e909d1",
+    "/workspace/teleoperation/left_trigger_gripper.py": "9a495b97af449f0a7eeaf9b4549d274611f07000bb5030ae79dbbc7092088cfc",
+    "/workspace/teleoperation/arm7_recorder.py": "16221d638729bfaba5574cd2f4ab21900467987c9ce0bafa2265e29d47ccfa75",
+    "teleoperation/dual_arm_direct_profile.json": "7c24e9920004f63309de9fe159602e51b79f79e5fc4681de8d7099a7a9ba6a20",
+    "/workspace/teleoperation/dual_arm_one_press.py": "5bb661046725415d1af7d86570d88024655a0455250be5aeda8ef9e8113df290",
+    "/workspace/teleoperation/run_dual_arm_one_press.sh": "6487c0f2a1f41ab6eb0d49f4c4d50320c7350ef956ac4346395d0d4b14282d29",
+    "/workspace/teleoperation/dual_arm_capture.py": "1191008b31b70b50d681db82193dee3e2365ab707f731708d4eeee0021a949ac",
+    "/workspace/teleoperation/run_dual_arm_capture.sh": "0a6c8ad1b418f7ea015b40250764d8714132658de51772a521685a66597ddee3",
+    "acquisition/lerobot_capture/__init__.py": "edaf144a8fc9b0c667940f8ba5a877a01a5ec029406958835590f666ce997cde",
+    "acquisition/lerobot_capture/action_alignment.py": "52f7e1891d277268d81d61e494e3a7faedb5e43d10f1cbbfd13cd5183669f090",
+    "acquisition/lerobot_capture/align_left7.py": "e6e26939c29e9a49cf45206f6ebd1b086bcfb8981e34cced64bdb79e099951c9",
+    "acquisition/lerobot_capture/alignment.py": "990254863aba0e73ef461a9ffc82a9bdb452be3a92ca53ce6a762f00b328f84e",
+    "acquisition/lerobot_capture/audit_left7.py": "947a1f1fc68af90a469b5b31bc9f99f0202a3323d6d82f052c79a20ba5f450a0",
+    "acquisition/lerobot_capture/buttons.py": "2429d7ba8e0f5a192a38fc39d6313e8f43add86c16b44dcf44be4e216b04840a",
+    "acquisition/lerobot_capture/clock.py": "cc39bc7b6171bb479d92c2caf80a8cbb150e8a59b42506ead71b39d2a20c930d",
+    "acquisition/lerobot_capture/contract.py": "76664027575f23234e162dceb2528f34c0b06e34a545690b92f9d1fe18b79f63",
+    "acquisition/lerobot_capture/episode.py": "0405f4dda4bc503ca866fd59e972805b312653fcaad628ce009be43eee50d871",
+    "acquisition/lerobot_capture/export_actions.py": "f77805ef98b7a4505a4bd43b6620251e27c3a407981ee3573599812c9d58d2d6",
+    "acquisition/lerobot_capture/export_all_streams.py": "0b7df42f3fe8eef8b4e9929fe8f6bda4e3d877b4f4aaf34b0d22d4455929ef39",
+    "acquisition/lerobot_capture/export_left7.py": "a8a746f245c925b413cdf8a2e04c52501f04a7aea5e7b02d8adbc75363e790d3",
+    "acquisition/lerobot_capture/export_preview.py": "a26cedf27b83eccddb191bd24e9aff473228d3e84aced2c427ec6d5900178bf6",
+    "acquisition/lerobot_capture/fetch.py": "6d478b0a09717e2fcc6e359035de65a1cc6439eea92df86f4220c6a0eb8e0909",
+    "acquisition/lerobot_capture/pipeline.py": "960d7e760ce85cee6577e90a11452bccde101bcf6ce2ed199093b3272cec4583",
+    "acquisition/lerobot_capture/pipeline_archive.py": "a7a704a250cc10baa293a564d0c8cb0421b9e84046a9d8569420c9ce7c1f2855",
+    "acquisition/lerobot_capture/prepared.py": "953343c1fd154cd85bb5de588ebb6a10fb9337acc87159ac9b0ba90e7279035c",
+    "acquisition/lerobot_capture/progress.py": "3cb7760cb76f85e3586ef008cc589b98401d09c0c62a19b79faaef31864f653d",
+    "acquisition/lerobot_capture/smoke.py": "b364c01fbe965f3b37d9772d424800bcf2297b4aa3bb5b8e9088224f4c381e66",
+    "acquisition/lerobot_capture/time_map.py": "c69e006c7b44b7f479feed6daeabaa6ae09ab03380945e6c1dda898d3e90b29a",
+    "acquisition/lerobot_capture/transport.py": "f87b8a4a8893d81354a24463a133550d00fa804d429a93efb32e0a674b2ecf69",
+    "acquisition/lerobot_capture/validate_left7_dataset.py": "21c86f13a0123d7117f942244053771e7a5fbb413c8980b78513eb50be7b70cf",
+    "acquisition/lerobot_capture/video_roundtrip.py": "9c97441ee642939a0d3fae1b183845a4cad7688ff24695d7bed0e601a09682de",
+    "acquisition/lerobot_capture/visual_check.py": "2901a72f8d6194a2655644723ba530bf84429aa5781d09343500708f4eb48006",
+    "acquisition/lerobot_capture/visualize_all17.py": "fb8222e511cb5346a0b13cf767aa6ff6f189361975d1f7ff3ccb751dc138762e",
+    "acquisition/lerobot_capture/visualize_lerobot.py": "133bc2cbdb737680a68b94613fbee16c77c0e80d9cbbda3fa4de7f66ce584790",
+    "acquisition/lerobot_capture/visualize_raw.py": "c88dae7d2efe45fc70b30b3ebd2d375b24ae750b0be914a3ea68b606c54fd1a5",
+    "acquisition/lerobot_capture/capture_contract.left7.json": "10970f44e9a102d2860563ab0bb64ef968e86c8517617468de1a45c5737f8509"
+  },
+  "clock_notes": {
+    "monotonic_ns": "PC monotonic clock; durations/intervals use this clock.",
+    "timestamps_ns": "G1 wall ns; subtract g1_clock_offset_ms*1e6 to compare with PC wall ns.",
+    "gp_timestamp_raw": "Unknown device clock domain; use gp_received_monotonic_ns.",
+    "publish": "Times bracket SDK call, not observed hardware execution times."
+  },
+  "capture": {
+    "enabled": true,
+    "task": "Pick up the milk bottle from the table and place it into the blue bin.",
+    "session_id": "c02ac1d2-3264-4df0-b2c8-38f7b728477f",
+    "session_root": "lerobot_runs/dual_arm_capture_20261009_103445_482236",
+    "contract": "g1_lerobot_capture/1",
+    "episode_controls": {
+      "record_left": 1,
+      "record_right": 10,
+      "cancel_left": 8,
+      "cancel_right": 17,
+      "source": "teleoperation/GP001_IDENTIFICATION_20260910.md",
+      "status": "candidate mapping; verify read-only before first physical capture"
+    },
+    "raw_sensor_capture": "managed G1 7-stream recorder via host broker",
+    "clock_mapping": "unverified; legacy control offset is not an alignment result"
+  }
+}

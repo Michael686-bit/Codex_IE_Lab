@@ -1,0 +1,3112 @@
+{
+  "schema": "s1.charuco13.board_reference.v1",
+  "created_from": "/home/lsy03/文档/ChatGPT/S1/experiments/20260915_charuco_comparison/detector_v3/results.json",
+  "reference_policy": "freeze before reading V5/FDP result files; unavailable rows remain N/A",
+  "dataset_count": 13,
+  "available_count": 11,
+  "unavailable_count": 2,
+  "T_board_from_box": [
+    [
+      1.0,
+      0.0,
+      0.0,
+      0.1714464
+    ],
+    [
+      0.0,
+      1.0,
+      0.0,
+      0.05943030099999999
+    ],
+    [
+      0.0,
+      0.0,
+      1.0,
+      0.072
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "rows": [
+    {
+      "capture": "L01_wrist_charuco_20260915_093818_877801116",
+      "camera_arm": "left",
+      "camera_frame": "left_arm_camera_color_optical_frame",
+      "status": "unavailable",
+      "selected": {
+        "scale": 4,
+        "clahe": true,
+        "decoded": 9,
+        "corners": 4,
+        "ids": [
+          41,
+          40,
+          39,
+          24,
+          16,
+          10,
+          2,
+          45,
+          29
+        ],
+        "accepted": false,
+        "reason": "fewer_than_6_chessboard_corners",
+        "rmse_px": null,
+        "max_error_px": null,
+        "board_span_fraction": null
+      },
+      "source": {
+        "capture_result_sha256": "d159cb0d97d69f04d853b25e94a5d90a4e9c3c9ce240f6640a824fced1425813",
+        "rgb_sha256": "c0b5609cffa4582adab6595189659924c17efe2ab3447cd75d8d689e1c3fbe65",
+        "intrinsics_sha256": "7bad7ecc5026b1c2891b06f145326bdf2b56b4f1aaadbf7e81a7ae713569f04c",
+        "base_from_camera_sha256": "8539e331f1a6f7ff20e83f16eba3f9e455c545bf844ea954721288337ad1cf99",
+        "detector_results_sha256": "53f7ae20fb0668c0de41f0a980c59a9301fb506953b79cd233774a137594ba4f",
+        "opencv": "4.5.4",
+        "dictionary_policy": "V3 saved result; 5X5_1000 superset with default 14x9 layout"
+      },
+      "frames": {
+        "base": "base_link",
+        "camera": "left_arm_camera_color_optical_frame",
+        "board": "charuco_board_print_face",
+        "box": "4317_length_width_height_center"
+      },
+      "installation": {
+        "version": "latest_measured_height_only_20260917",
+        "board_square_m": 0.02,
+        "board_marker_m": 0.015,
+        "board_grid_squares": [
+          9,
+          14
+        ],
+        "board_outer_size_m": [
+          0.3,
+          0.2
+        ],
+        "board_thickness_m": 0.002,
+        "box_outer_height_m": 0.172,
+        "box_center_above_board_print_face_m": 0.072,
+        "horizontal_mounting": "nominal red long edge/front and blue short edge/left, zero gap",
+        "T_board_from_box": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.1714464
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.05943030099999999
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.072
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      "T_base_link_from_camera": [
+        [
+          -0.14439357264422248,
+          -0.8793558313438451,
+          0.453744220966629,
+          0.35305446213852004
+        ],
+        [
+          -0.9496823920108458,
+          -0.005649744923216904,
+          -0.3131635909342928,
+          0.42612833201584277
+        ],
+        [
+          0.277945768961494,
+          -0.4761317068457822,
+          -0.834292962485317,
+          1.2612921337930594
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "intrinsics_K": [
+        [
+          911.9766235351562,
+          0.0,
+          648.1232299804688
+        ],
+        [
+          0.0,
+          911.7081909179688,
+          360.41265869140625
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "unavailable_reason": "fewer_than_6_chessboard_corners",
+      "quality": {
+        "reference_is_ground_truth": false,
+        "reference_caveat": "insufficient saved V3 ChArUco pose; no box reference inferred"
+      }
+    },
+    {
+      "capture": "L02_wrist_charuco_20260915_100236_358935353",
+      "camera_arm": "left",
+      "camera_frame": "left_arm_camera_color_optical_frame",
+      "status": "available",
+      "selected": {
+        "scale": 4,
+        "clahe": false,
+        "decoded": 37,
+        "corners": 47,
+        "ids": [
+          57,
+          58,
+          59,
+          60,
+          54,
+          43,
+          44,
+          45,
+          46,
+          47,
+          38,
+          39,
+          40,
+          41,
+          29,
+          30,
+          32,
+          23,
+          24,
+          20,
+          19,
+          16,
+          15,
+          13,
+          12,
+          9,
+          2,
+          51,
+          52,
+          55,
+          48,
+          34,
+          27,
+          17,
+          10,
+          61,
+          62
+        ],
+        "accepted": true,
+        "reason": null,
+        "rmse_px": 0.3802954852581024,
+        "max_error_px": 0.9923667311668396,
+        "board_span_fraction": [
+          0.6428571151835577,
+          0.777777781089147
+        ]
+      },
+      "source": {
+        "capture_result_sha256": "1f4976860c2394e4f207d3425611b11b9902bb27e308440dd11df799d6be776c",
+        "rgb_sha256": "c83e6f8721bfb3996bda5cdb456c9d2313f14b59cb98c90139bcd03e06f65ff9",
+        "intrinsics_sha256": "7bad7ecc5026b1c2891b06f145326bdf2b56b4f1aaadbf7e81a7ae713569f04c",
+        "base_from_camera_sha256": "a61d8ef46e2113691285e4521f8e146f29350c928b6e2b7bd3a05b8112b21d9a",
+        "detector_results_sha256": "53f7ae20fb0668c0de41f0a980c59a9301fb506953b79cd233774a137594ba4f",
+        "opencv": "4.5.4",
+        "dictionary_policy": "V3 saved result; 5X5_1000 superset with default 14x9 layout"
+      },
+      "frames": {
+        "base": "base_link",
+        "camera": "left_arm_camera_color_optical_frame",
+        "board": "charuco_board_print_face",
+        "box": "4317_length_width_height_center"
+      },
+      "installation": {
+        "version": "latest_measured_height_only_20260917",
+        "board_square_m": 0.02,
+        "board_marker_m": 0.015,
+        "board_grid_squares": [
+          9,
+          14
+        ],
+        "board_outer_size_m": [
+          0.3,
+          0.2
+        ],
+        "board_thickness_m": 0.002,
+        "box_outer_height_m": 0.172,
+        "box_center_above_board_print_face_m": 0.072,
+        "horizontal_mounting": "nominal red long edge/front and blue short edge/left, zero gap",
+        "T_board_from_box": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.1714464
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.05943030099999999
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.072
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      "T_base_link_from_camera": [
+        [
+          -0.1443933053350921,
+          -0.8793523165156334,
+          0.4537511176988947,
+          0.353048192259331
+        ],
+        [
+          -0.9496793700720692,
+          -0.005657663462799611,
+          -0.31317261199482255,
+          0.4261291113158284
+        ],
+        [
+          0.2779562329467084,
+          -0.47613810421214037,
+          -0.8342858252921141,
+          1.261292094210134
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "intrinsics_K": [
+        [
+          911.9766235351562,
+          0.0,
+          648.1232299804688
+        ],
+        [
+          0.0,
+          911.7081909179688,
+          360.41265869140625
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "T_camera_from_board": [
+        [
+          0.9492069602856653,
+          -0.17152811306594984,
+          0.26378827300181684,
+          -0.0038396669890943163
+        ],
+        [
+          -0.01600464454159721,
+          -0.8635826015133918,
+          -0.5039533130325262,
+          0.0674629561123519
+        ],
+        [
+          0.314245123905437,
+          0.4741341548458589,
+          -0.8224638626166256,
+          0.9133266636147997
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "T_base_link_from_board": [
+        [
+          0.019603667013459808,
+          0.9992997750474114,
+          0.03186935565426807,
+          0.708701902170301
+        ],
+        [
+          -0.9997646854795583,
+          0.01929673838877838,
+          0.00991007343633607,
+          0.14336498429266525
+        ],
+        [
+          0.009288159536954443,
+          -0.03205613011185027,
+          0.9994429121338888,
+          0.46612766149502716
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "T_base_link_from_4317_semantic": [
+        [
+          0.019603667013459808,
+          0.9992997750474114,
+          0.03186935565426807,
+          0.7737461603339647
+        ],
+        [
+          -0.9997646854795583,
+          0.01929673838877838,
+          0.00991007343633607,
+          -0.02618073562175774
+        ],
+        [
+          0.009288159536954443,
+          -0.03205613011185027,
+          0.9994429121338888,
+          0.5377748672224613
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "quality": {
+        "rotation_determinant": 0.9999999999999992,
+        "rotation_orthogonality_error_fro": 1.3954214194440801e-15,
+        "positive_board_translation_z_in_camera": true,
+        "reference_is_ground_truth": false,
+        "reference_caveat": "horizontal board-to-box translation and axis mapping remain nominal"
+      }
+    },
+    {
+      "capture": "L03_00_wrist_charuco_20260915_104002_497962253",
+      "camera_arm": "left",
+      "camera_frame": "left_arm_camera_color_optical_frame",
+      "status": "available",
+      "selected": {
+        "scale": 3,
+        "clahe": false,
+        "decoded": 44,
+        "corners": 65,
+        "ids": [
+          57,
+          58,
+          59,
+          60,
+          61,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          44,
+          45,
+          46,
+          47,
+          37,
+          38,
+          39,
+          40,
+          30,
+          31,
+          32,
+          23,
+          24,
+          25,
+          15,
+          16,
+          17,
+          18,
+          9,
+          10,
+          1,
+          3,
+          2,
+          5,
+          4,
+          62,
+          43,
+          41,
+          29,
+          34,
+          26,
+          19,
+          12
+        ],
+        "accepted": true,
+        "reason": null,
+        "rmse_px": 0.36852946877479553,
+        "max_error_px": 1.0100975036621094,
+        "board_span_fraction": [
+          0.7142856717109679,
+          0.777777781089147
+        ]
+      },
+      "source": {
+        "capture_result_sha256": "f471db3f18c90a181a12436c9a35ef8122f17421ccb71029cc17028a88c5e8e2",
+        "rgb_sha256": "22f3fe91490c80f2696dfe3d57a1975b393eb16bb08c789390ca7734468f1cf8",
+        "intrinsics_sha256": "7bad7ecc5026b1c2891b06f145326bdf2b56b4f1aaadbf7e81a7ae713569f04c",
+        "base_from_camera_sha256": "90d961707ac7c80c4a7557e7900b83d34be69af47012127373086995270c4803",
+        "detector_results_sha256": "53f7ae20fb0668c0de41f0a980c59a9301fb506953b79cd233774a137594ba4f",
+        "opencv": "4.5.4",
+        "dictionary_policy": "V3 saved result; 5X5_1000 superset with default 14x9 layout"
+      },
+      "frames": {
+        "base": "base_link",
+        "camera": "left_arm_camera_color_optical_frame",
+        "board": "charuco_board_print_face",
+        "box": "4317_length_width_height_center"
+      },
+      "installation": {
+        "version": "latest_measured_height_only_20260917",
+        "board_square_m": 0.02,
+        "board_marker_m": 0.015,
+        "board_grid_squares": [
+          9,
+          14
+        ],
+        "board_outer_size_m": [
+          0.3,
+          0.2
+        ],
+        "board_thickness_m": 0.002,
+        "box_outer_height_m": 0.172,
+        "box_center_above_board_print_face_m": 0.072,
+        "horizontal_mounting": "nominal red long edge/front and blue short edge/left, zero gap",
+        "T_board_from_box": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.1714464
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.05943030099999999
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.072
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      "T_base_link_from_camera": [
+        [
+          -0.14439615215505697,
+          -0.8793365531286327,
+          0.45378075937028123,
+          0.3530507788207175
+        ],
+        [
+          -0.9496817004269958,
+          -0.005661184803371189,
+          -0.31316548159194013,
+          0.4261318083639344
+        ],
+        [
+          0.27794679188093413,
+          -0.4761671737094836,
+          -0.8342723797205678,
+          1.2612979136797784
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "intrinsics_K": [
+        [
+          911.9766235351562,
+          0.0,
+          648.1232299804688
+        ],
+        [
+          0.0,
+          911.7081909179688,
+          360.41265869140625
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "T_camera_from_board": [
+        [
+          0.9500735752620844,
+          -0.15827345618645206,
+          0.2689046571845026,
+          -0.003484446545945714
+        ],
+        [
+          -0.0020288402299739605,
+          -0.8649174832517428,
+          -0.5019099829379691,
+          0.1656964943957959
+        ],
+        [
+          0.31201936702076827,
+          0.476305847363085,
+          -0.8220563571749158,
+          0.8390703681322952
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "T_base_link_from_board": [
+        [
+          0.006185450147549815,
+          0.9995460656338111,
+          0.02948563857950731,
+          0.5886049240630193
+        ],
+        [
+          -0.9999696981852445,
+          0.006043312641444559,
+          0.004907248070750325,
+          0.16573500908301297
+        ],
+        [
+          0.004726829569838775,
+          -0.029515098649452398,
+          0.9995531581831607,
+          0.4814169587360939
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "T_base_link_from_4317_semantic": [
+        [
+          0.006185450147549815,
+          0.9995460656338111,
+          0.02948563857950731,
+          0.6511916867449039
+        ],
+        [
+          -0.9999696981852445,
+          0.006043312641444559,
+          0.004907248070750325,
+          -0.00499371802952156
+        ],
+        [
+          0.004726829569838775,
+          -0.029515098649452398,
+          0.9995531581831607,
+          0.5524410928416622
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "quality": {
+        "rotation_determinant": 0.9999999999999998,
+        "rotation_orthogonality_error_fro": 1.098902166291936e-15,
+        "positive_board_translation_z_in_camera": true,
+        "reference_is_ground_truth": false,
+        "reference_caveat": "horizontal board-to-box translation and axis mapping remain nominal"
+      }
+    },
+    {
+      "capture": "L03_10_wrist_charuco_20260915_103928_398335507",
+      "camera_arm": "left",
+      "camera_frame": "left_arm_camera_color_optical_frame",
+      "status": "available",
+      "selected": {
+        "scale": 4,
+        "clahe": false,
+        "decoded": 41,
+        "corners": 55,
+        "ids": [
+          57,
+          58,
+          59,
+          51,
+          52,
+          53,
+          54,
+          44,
+          37,
+          39,
+          41,
+          15,
+          17,
+          18,
+          9,
+          10,
+          3,
+          5,
+          60,
+          61,
+          62,
+          50,
+          55,
+          43,
+          45,
+          46,
+          47,
+          38,
+          40,
+          30,
+          31,
+          32,
+          23,
+          25,
+          26,
+          16,
+          1,
+          19,
+          11
+        ],
+        "accepted": true,
+        "reason": null,
+        "rmse_px": 0.40626585483551025,
+        "max_error_px": 0.9735727906227112,
+        "board_span_fraction": [
+          0.7142856717109679,
+          0.777777781089147
+        ]
+      },
+      "source": {
+        "capture_result_sha256": "30f97c744c5647006e10d963865e046f2915ce8be860627f6cd42b0340601cef",
+        "rgb_sha256": "e45ef5840666707605ee115d65831b17cb1ade67c38e85b66d62e25e023fb51c",
+        "intrinsics_sha256": "7bad7ecc5026b1c2891b06f145326bdf2b56b4f1aaadbf7e81a7ae713569f04c",
+        "base_from_camera_sha256": "8902a45c8c7c3bf7bfad41455db63cd63116d59d810bf2526f3d65d07b4e3895",
+        "detector_results_sha256": "53f7ae20fb0668c0de41f0a980c59a9301fb506953b79cd233774a137594ba4f",
+        "opencv": "4.5.4",
+        "dictionary_policy": "V3 saved result; 5X5_1000 superset with default 14x9 layout"
+      },
+      "frames": {
+        "base": "base_link",
+        "camera": "left_arm_camera_color_optical_frame",
+        "board": "charuco_board_print_face",
+        "box": "4317_length_width_height_center"
+      },
+      "installation": {
+        "version": "latest_measured_height_only_20260917",
+        "board_square_m": 0.02,
+        "board_marker_m": 0.015,
+        "board_grid_squares": [
+          9,
+          14
+        ],
+        "board_outer_size_m": [
+          0.3,
+          0.2
+        ],
+        "board_thickness_m": 0.002,
+        "box_outer_height_m": 0.172,
+        "box_center_above_board_print_face_m": 0.072,
+        "horizontal_mounting": "nominal red long edge/front and blue short edge/left, zero gap",
+        "T_board_from_box": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.1714464
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.05943030099999999
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.072
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      "T_base_link_from_camera": [
+        [
+          -0.1443911629839718,
+          -0.8793464973766772,
+          0.45376307650965364,
+          0.3530570409800029
+        ],
+        [
+          -0.9496759465398396,
+          -0.0056700770415012425,
+          -0.31318276898642344,
+          0.4261341494170261
+        ],
+        [
+          0.27796904254933874,
+          -0.4761487034296252,
+          -0.8342755082144575,
+          1.2612978093562401
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "intrinsics_K": [
+        [
+          911.9766235351562,
+          0.0,
+          648.1232299804688
+        ],
+        [
+          0.0,
+          911.7081909179688,
+          360.41265869140625
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "T_camera_from_board": [
+        [
+          0.9501714029872464,
+          -0.15839632256896333,
+          0.2684863310149645,
+          -0.0035685800395221816
+        ],
+        [
+          -0.0017969414523890115,
+          -0.8640529517859379,
+          -0.5033977229899083,
+          0.16557325694045266
+        ],
+        [
+          0.31172275493884766,
+          0.47783166649630565,
+          -0.8212830343716461,
+          0.8387881032260752
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "T_base_link_from_board": [
+        [
+          0.0058320565598249385,
+          0.9994953329721588,
+          0.031226054556358573,
+          0.588587119111836
+        ],
+        [
+          -0.9999709332583511,
+          0.005675779945962606,
+          0.005090988158308052,
+          0.16589035015978565
+        ],
+        [
+          0.004911186690202851,
+          -0.03125483784758282,
+          0.9994993823692018,
+          0.4816879918614021
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "T_base_link_from_4317_semantic": [
+        [
+          0.0058320565598249385,
+          0.9994953329721588,
+          0.031226054556358573,
+          0.6512355886283028
+        ],
+        [
+          -0.9999709332583511,
+          0.005675779945962606,
+          0.005090988158308052,
+          -0.004847201994002404
+        ],
+        [
+          0.004911186690202851,
+          -0.03125483784758282,
+          0.9994993823692018,
+          0.5526364682487598
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "quality": {
+        "rotation_determinant": 1.0000000000000007,
+        "rotation_orthogonality_error_fro": 8.550644000944667e-16,
+        "positive_board_translation_z_in_camera": true,
+        "reference_is_ground_truth": false,
+        "reference_caveat": "horizontal board-to-box translation and axis mapping remain nominal"
+      }
+    },
+    {
+      "capture": "L04_00_wrist_charuco_20260915_104435_858773771",
+      "camera_arm": "left",
+      "camera_frame": "left_arm_camera_color_optical_frame",
+      "status": "available",
+      "selected": {
+        "scale": 4,
+        "clahe": false,
+        "decoded": 53,
+        "corners": 78,
+        "ids": [
+          57,
+          60,
+          61,
+          50,
+          51,
+          55,
+          43,
+          44,
+          45,
+          46,
+          47,
+          38,
+          39,
+          40,
+          30,
+          31,
+          22,
+          24,
+          25,
+          26,
+          17,
+          9,
+          8,
+          13,
+          12,
+          10,
+          5,
+          4,
+          2,
+          58,
+          59,
+          62,
+          52,
+          53,
+          54,
+          36,
+          37,
+          41,
+          29,
+          32,
+          34,
+          27,
+          15,
+          16,
+          18,
+          20,
+          19,
+          11,
+          6,
+          3,
+          1
+        ],
+        "accepted": true,
+        "reason": null,
+        "rmse_px": 0.31868693232536316,
+        "max_error_px": 0.8847412467002869,
+        "board_span_fraction": [
+          0.7142856717109679,
+          0.777777781089147
+        ]
+      },
+      "source": {
+        "capture_result_sha256": "1c35eabe2c8ff59d6408568df70a100f71b79b20401c78d98006e93df59e8182",
+        "rgb_sha256": "fc8d9ed4f2d9c5740fd3ec7594abc4977e005f04802a5d0d3f4b9ee58b1723fe",
+        "intrinsics_sha256": "7bad7ecc5026b1c2891b06f145326bdf2b56b4f1aaadbf7e81a7ae713569f04c",
+        "base_from_camera_sha256": "b781d9ef9c26188fb7093567ce2cbcbe21f48d6abc143334ff553fc1a6160645",
+        "detector_results_sha256": "53f7ae20fb0668c0de41f0a980c59a9301fb506953b79cd233774a137594ba4f",
+        "opencv": "4.5.4",
+        "dictionary_policy": "V3 saved result; 5X5_1000 superset with default 14x9 layout"
+      },
+      "frames": {
+        "base": "base_link",
+        "camera": "left_arm_camera_color_optical_frame",
+        "board": "charuco_board_print_face",
+        "box": "4317_length_width_height_center"
+      },
+      "installation": {
+        "version": "latest_measured_height_only_20260917",
+        "board_square_m": 0.02,
+        "board_marker_m": 0.015,
+        "board_grid_squares": [
+          9,
+          14
+        ],
+        "board_outer_size_m": [
+          0.3,
+          0.2
+        ],
+        "board_thickness_m": 0.002,
+        "box_outer_height_m": 0.172,
+        "box_center_above_board_print_face_m": 0.072,
+        "horizontal_mounting": "nominal red long edge/front and blue short edge/left, zero gap",
+        "T_board_from_box": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.1714464
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.05943030099999999
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.072
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      "T_base_link_from_camera": [
+        [
+          -0.14439623060714357,
+          -0.8793475147515105,
+          0.453759492337947,
+          0.35305225411942676
+        ],
+        [
+          -0.9496811210468864,
+          -0.00565451950500262,
+          -0.31316735898924264,
+          0.426128139243549
+        ],
+        [
+          0.27794873072848947,
+          -0.4761470095564081,
+          -0.8342832422965909,
+          1.2613022035834733
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "intrinsics_K": [
+        [
+          911.9766235351562,
+          0.0,
+          648.1232299804688
+        ],
+        [
+          0.0,
+          911.7081909179688,
+          360.41265869140625
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "T_camera_from_board": [
+        [
+          0.9501942096093777,
+          -0.15873990562661364,
+          0.2682025473153869,
+          -0.04016179662108476
+        ],
+        [
+          -0.002996662852325499,
+          -0.8651794401705462,
+          -0.5014534438189947,
+          0.13334277888368296
+        ],
+        [
+          0.31164400208660853,
+          0.47567444609505144,
+          -0.8225641843015096,
+          0.8585354165334882
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "T_base_link_from_board": [
+        [
+          0.00684206999639797,
+          0.9995566297257144,
+          0.028978096030212785,
+          0.6311654197048788
+        ],
+        [
+          -0.9999612865838468,
+          0.006678755527872865,
+          0.005728835673662391,
+          0.19464978094334692
+        ],
+        [
+          0.005532758059169085,
+          -0.029016171283799075,
+          0.9995636299867501,
+          0.4703868068454473
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "T_base_link_from_4317_semantic": [
+        [
+          0.00684206999639797,
+          0.9995566297257144,
+          0.028978096030212785,
+          0.6938288422596294
+        ],
+        [
+          -0.9999612865838468,
+          0.006678755527872865,
+          0.005728835673662391,
+          0.024019414839008685
+        ],
+        [
+          0.005532758059169085,
+          -0.029016171283799075,
+          0.9995636299867501,
+          0.5415795198625452
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "quality": {
+        "rotation_determinant": 1.0000000000000002,
+        "rotation_orthogonality_error_fro": 1.5792218368426185e-15,
+        "positive_board_translation_z_in_camera": true,
+        "reference_is_ground_truth": false,
+        "reference_caveat": "horizontal board-to-box translation and axis mapping remain nominal"
+      }
+    },
+    {
+      "capture": "L04_10_wrist_charuco_20260915_104717_786588568",
+      "camera_arm": "left",
+      "camera_frame": "left_arm_camera_color_optical_frame",
+      "status": "available",
+      "selected": {
+        "scale": 4,
+        "clahe": false,
+        "decoded": 50,
+        "corners": 77,
+        "ids": [
+          58,
+          59,
+          60,
+          62,
+          50,
+          51,
+          52,
+          55,
+          43,
+          44,
+          45,
+          48,
+          36,
+          38,
+          41,
+          29,
+          31,
+          32,
+          26,
+          15,
+          17,
+          16,
+          18,
+          13,
+          12,
+          10,
+          9,
+          8,
+          6,
+          5,
+          4,
+          57,
+          53,
+          54,
+          46,
+          47,
+          37,
+          39,
+          40,
+          22,
+          23,
+          24,
+          25,
+          27,
+          20,
+          19,
+          11,
+          3,
+          1,
+          30
+        ],
+        "accepted": true,
+        "reason": null,
+        "rmse_px": 0.322224885225296,
+        "max_error_px": 0.8382436037063599,
+        "board_span_fraction": [
+          0.7142856717109679,
+          0.777777781089147
+        ]
+      },
+      "source": {
+        "capture_result_sha256": "05cb8e8b9c4133699b112c4756fae8d0536f60cec72929897b163e46c3611046",
+        "rgb_sha256": "fc141b1ca1f41773308e0ae4b058b191a98b096ed43ef7be498f3221b8c88638",
+        "intrinsics_sha256": "7bad7ecc5026b1c2891b06f145326bdf2b56b4f1aaadbf7e81a7ae713569f04c",
+        "base_from_camera_sha256": "12c6c3407f6b39af90a2dfd8d1dfd6e6f0193bf929a6569e74626358250269fb",
+        "detector_results_sha256": "53f7ae20fb0668c0de41f0a980c59a9301fb506953b79cd233774a137594ba4f",
+        "opencv": "4.5.4",
+        "dictionary_policy": "V3 saved result; 5X5_1000 superset with default 14x9 layout"
+      },
+      "frames": {
+        "base": "base_link",
+        "camera": "left_arm_camera_color_optical_frame",
+        "board": "charuco_board_print_face",
+        "box": "4317_length_width_height_center"
+      },
+      "installation": {
+        "version": "latest_measured_height_only_20260917",
+        "board_square_m": 0.02,
+        "board_marker_m": 0.015,
+        "board_grid_squares": [
+          9,
+          14
+        ],
+        "board_outer_size_m": [
+          0.3,
+          0.2
+        ],
+        "board_thickness_m": 0.002,
+        "box_outer_height_m": 0.172,
+        "box_center_above_board_print_face_m": 0.072,
+        "horizontal_mounting": "nominal red long edge/front and blue short edge/left, zero gap",
+        "T_board_from_box": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.1714464
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.05943030099999999
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.072
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      "T_base_link_from_camera": [
+        [
+          -0.14436840438985432,
+          -0.8793631086530503,
+          0.45373812596471497,
+          0.35305850900440156
+        ],
+        [
+          -0.9496895201186834,
+          -0.005662267377204211,
+          -0.31314174762381064,
+          0.4261349190161029
+        ],
+        [
+          0.27793448722796676,
+          -0.4761181175592808,
+          -0.8343044761603133,
+          1.2612899899386056
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "intrinsics_K": [
+        [
+          911.9766235351562,
+          0.0,
+          648.1232299804688
+        ],
+        [
+          0.0,
+          911.7081909179688,
+          360.41265869140625
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "T_camera_from_board": [
+        [
+          0.9501993139522326,
+          -0.15676450327439734,
+          0.2693439330629826,
+          -0.03999437048308958
+        ],
+        [
+          -0.0010869526151258552,
+          -0.8659330195839473,
+          -0.5001587989111452,
+          0.13339789296996774
+        ],
+        [
+          0.31164095093347005,
+          0.4749577835001322,
+          -0.8229793567240457,
+          0.8588401268883322
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "T_base_link_from_board": [
+        [
+          0.005180448273391952,
+          0.9996078477870602,
+          0.027519331354674936,
+          0.631215756283394
+        ],
+        [
+          -0.9999759678745177,
+          0.005051639801177399,
+          0.004748116335920594,
+          0.19442312072681778
+        ],
+        [
+          0.004607236602018783,
+          -0.027543267377725,
+          0.9996099948445157,
+          0.4701268592301202
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "T_base_link_from_4317_semantic": [
+        [
+          0.005180448273391952,
+          0.9996078477870602,
+          0.027519331354674936,
+          0.693492312623737
+        ],
+        [
+          -0.9999759678745177,
+          0.005051639801177399,
+          0.004748116335920594,
+          0.02362292579832989
+        ],
+        [
+          0.004607236602018783,
+          -0.027543267377725,
+          0.9996099948445157,
+          0.541251768317508
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "quality": {
+        "rotation_determinant": 0.9999999999999999,
+        "rotation_orthogonality_error_fro": 1.6309934617313062e-15,
+        "positive_board_translation_z_in_camera": true,
+        "reference_is_ground_truth": false,
+        "reference_caveat": "horizontal board-to-box translation and axis mapping remain nominal"
+      }
+    },
+    {
+      "capture": "L04_wrist_charuco_20260915_104358_532673829",
+      "camera_arm": "left",
+      "camera_frame": "left_arm_camera_color_optical_frame",
+      "status": "available",
+      "selected": {
+        "scale": 4,
+        "clahe": false,
+        "decoded": 49,
+        "corners": 71,
+        "ids": [
+          57,
+          58,
+          59,
+          60,
+          61,
+          50,
+          51,
+          53,
+          55,
+          43,
+          45,
+          47,
+          48,
+          39,
+          41,
+          31,
+          34,
+          22,
+          23,
+          24,
+          25,
+          27,
+          15,
+          16,
+          17,
+          20,
+          8,
+          12,
+          11,
+          10,
+          9,
+          5,
+          4,
+          3,
+          2,
+          1,
+          62,
+          52,
+          54,
+          44,
+          46,
+          36,
+          40,
+          29,
+          32,
+          18,
+          19,
+          13,
+          6
+        ],
+        "accepted": true,
+        "reason": null,
+        "rmse_px": 0.324135959148407,
+        "max_error_px": 0.9050562381744385,
+        "board_span_fraction": [
+          0.7142856717109679,
+          0.777777781089147
+        ]
+      },
+      "source": {
+        "capture_result_sha256": "a3bf1864dde531f69b2c10137b403c30f5d80ffbe6800a48e34a891ae56c24b3",
+        "rgb_sha256": "591dde3f09c577b98ea166bfe7fcff745e5b9bda8845bd66aec4457856c095d4",
+        "intrinsics_sha256": "7bad7ecc5026b1c2891b06f145326bdf2b56b4f1aaadbf7e81a7ae713569f04c",
+        "base_from_camera_sha256": "2fc5b375e2e6c48a08107361bf7adda5b2cb787558b468a9314fbef340b8c1b5",
+        "detector_results_sha256": "53f7ae20fb0668c0de41f0a980c59a9301fb506953b79cd233774a137594ba4f",
+        "opencv": "4.5.4",
+        "dictionary_policy": "V3 saved result; 5X5_1000 superset with default 14x9 layout"
+      },
+      "frames": {
+        "base": "base_link",
+        "camera": "left_arm_camera_color_optical_frame",
+        "board": "charuco_board_print_face",
+        "box": "4317_length_width_height_center"
+      },
+      "installation": {
+        "version": "latest_measured_height_only_20260917",
+        "board_square_m": 0.02,
+        "board_marker_m": 0.015,
+        "board_grid_squares": [
+          9,
+          14
+        ],
+        "board_outer_size_m": [
+          0.3,
+          0.2
+        ],
+        "board_thickness_m": 0.002,
+        "box_outer_height_m": 0.172,
+        "box_center_above_board_print_face_m": 0.072,
+        "horizontal_mounting": "nominal red long edge/front and blue short edge/left, zero gap",
+        "T_board_from_box": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.1714464
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.05943030099999999
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.072
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      "T_base_link_from_camera": [
+        [
+          -0.14444576239796092,
+          -0.8793427254050836,
+          0.45375300880813063,
+          0.35304059864037973
+        ],
+        [
+          -0.9496776290285547,
+          -0.005605242422259016,
+          -0.3131788341827885,
+          0.42611314128768774
+        ],
+        [
+          0.277934925203679,
+          -0.4761564370399159,
+          -0.8342824610510986,
+          1.2612898717425578
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "intrinsics_K": [
+        [
+          911.9766235351562,
+          0.0,
+          648.1232299804688
+        ],
+        [
+          0.0,
+          911.7081909179688,
+          360.41265869140625
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "T_camera_from_board": [
+        [
+          0.9497577305432057,
+          -0.1581725731972679,
+          0.27007719333844765,
+          -0.04017041261669247
+        ],
+        [
+          -0.0025094330423600653,
+          -0.866725524900596,
+          -0.498779076577589,
+          0.13334002549396848
+        ],
+        [
+          0.31297596715918014,
+          0.4730415431798157,
+          -0.8235761910150355,
+          0.8582801695102652
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "T_base_link_from_board": [
+        [
+          0.007031958992132659,
+          0.9996401666792509,
+          0.02588607181888236,
+          0.6310386724088242
+        ],
+        [
+          -0.9999670522354104,
+          0.006924561958872533,
+          0.004236140377814723,
+          0.1947194974416921
+        ],
+        [
+          0.004055366365173618,
+          -0.025915007296103687,
+          0.9996559240060987,
+          0.4705863075721388
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "T_base_link_from_4317_semantic": [
+        [
+          0.007031958992132659,
+          0.9996401666792509,
+          0.02588607181888236,
+          0.6935169896313705
+        ],
+        [
+          -0.9999670522354104,
+          0.006924561958872533,
+          0.004236140377814723,
+          0.02399527712603064
+        ],
+        [
+          0.004055366365173618,
+          -0.025915007296103687,
+          0.9996559240060987,
+          0.5417166753805434
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "quality": {
+        "rotation_determinant": 0.9999999999999993,
+        "rotation_orthogonality_error_fro": 1.2477694820834464e-15,
+        "positive_board_translation_z_in_camera": true,
+        "reference_is_ground_truth": false,
+        "reference_caveat": "horizontal board-to-box translation and axis mapping remain nominal"
+      }
+    },
+    {
+      "capture": "R01_wrist_charuco_20260915_093900_967150252",
+      "camera_arm": "left",
+      "camera_frame": "left_arm_camera_color_optical_frame",
+      "status": "unavailable",
+      "selected": {
+        "scale": 4,
+        "clahe": true,
+        "decoded": 8,
+        "corners": 3,
+        "ids": [
+          47,
+          39,
+          29,
+          24,
+          16,
+          10,
+          44,
+          30
+        ],
+        "accepted": false,
+        "reason": "fewer_than_6_chessboard_corners",
+        "rmse_px": null,
+        "max_error_px": null,
+        "board_span_fraction": null
+      },
+      "source": {
+        "capture_result_sha256": "c36d63e1fae9779916a4c57a2ca4d831ab4237e752f21e65e9c06520bff9f769",
+        "rgb_sha256": "4ef3107a591e1b97f1d297583fa15168f3e9088bf5033d5f622eb24985e2d7dc",
+        "intrinsics_sha256": "7bad7ecc5026b1c2891b06f145326bdf2b56b4f1aaadbf7e81a7ae713569f04c",
+        "base_from_camera_sha256": "4c3ea29506245069242d4e27180afd484a031ddeb5bd804e44371945e8486885",
+        "detector_results_sha256": "53f7ae20fb0668c0de41f0a980c59a9301fb506953b79cd233774a137594ba4f",
+        "opencv": "4.5.4",
+        "dictionary_policy": "V3 saved result; 5X5_1000 superset with default 14x9 layout"
+      },
+      "frames": {
+        "base": "base_link",
+        "camera": "left_arm_camera_color_optical_frame",
+        "board": "charuco_board_print_face",
+        "box": "4317_length_width_height_center"
+      },
+      "installation": {
+        "version": "latest_measured_height_only_20260917",
+        "board_square_m": 0.02,
+        "board_marker_m": 0.015,
+        "board_grid_squares": [
+          9,
+          14
+        ],
+        "board_outer_size_m": [
+          0.3,
+          0.2
+        ],
+        "board_thickness_m": 0.002,
+        "box_outer_height_m": 0.172,
+        "box_center_above_board_print_face_m": 0.072,
+        "horizontal_mounting": "nominal red long edge/front and blue short edge/left, zero gap",
+        "T_board_from_box": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.1714464
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.05943030099999999
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.072
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      "T_base_link_from_camera": [
+        [
+          -0.14439407314074293,
+          -0.8793514616580697,
+          0.45375253004434274,
+          0.35305325174592034
+        ],
+        [
+          -0.949675790392441,
+          -0.005663477578915277,
+          -0.3131833618891745,
+          0.4261343507256924
+        ],
+        [
+          0.2779680643245161,
+          -0.4761396138755202,
+          -0.8342810217871146,
+          1.2612937579453325
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "intrinsics_K": [
+        [
+          911.9766235351562,
+          0.0,
+          648.1232299804688
+        ],
+        [
+          0.0,
+          911.7081909179688,
+          360.41265869140625
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "unavailable_reason": "fewer_than_6_chessboard_corners",
+      "quality": {
+        "reference_is_ground_truth": false,
+        "reference_caveat": "insufficient saved V3 ChArUco pose; no box reference inferred"
+      }
+    },
+    {
+      "capture": "R01_wrist_charuco_20260915_094033_680788016",
+      "camera_arm": "right",
+      "camera_frame": "right_arm_camera_color_optical_frame",
+      "status": "available",
+      "selected": {
+        "scale": 4,
+        "clahe": true,
+        "decoded": 12,
+        "corners": 9,
+        "ids": [
+          6,
+          20,
+          27,
+          26,
+          32,
+          31,
+          41,
+          40,
+          39,
+          48,
+          46,
+          45
+        ],
+        "accepted": true,
+        "reason": null,
+        "rmse_px": 0.3059366047382355,
+        "max_error_px": 0.5540130734443665,
+        "board_span_fraction": [
+          0.35714283585548395,
+          0.3333333258827528
+        ]
+      },
+      "source": {
+        "capture_result_sha256": "261ba5e4e081e7c35daae480631f193d4d5dff56dfccbcf8977963e23805a1f2",
+        "rgb_sha256": "a58cdcc5ad65efc8f86ec5fc7322a8052488e50a8624a304cc75a2ef4fccdf3d",
+        "intrinsics_sha256": "0d7554b837d90016c02ac7959b0d48be3524f44a4fd0aa074305906032d283ff",
+        "base_from_camera_sha256": "ee3480f5a758450880c7037d07828a6ab7072e39ecebfc95d6106bce7b975df4",
+        "detector_results_sha256": "53f7ae20fb0668c0de41f0a980c59a9301fb506953b79cd233774a137594ba4f",
+        "opencv": "4.5.4",
+        "dictionary_policy": "V3 saved result; 5X5_1000 superset with default 14x9 layout"
+      },
+      "frames": {
+        "base": "base_link",
+        "camera": "right_arm_camera_color_optical_frame",
+        "board": "charuco_board_print_face",
+        "box": "4317_length_width_height_center"
+      },
+      "installation": {
+        "version": "latest_measured_height_only_20260917",
+        "board_square_m": 0.02,
+        "board_marker_m": 0.015,
+        "board_grid_squares": [
+          9,
+          14
+        ],
+        "board_outer_size_m": [
+          0.3,
+          0.2
+        ],
+        "board_thickness_m": 0.002,
+        "box_outer_height_m": 0.172,
+        "box_center_above_board_print_face_m": 0.072,
+        "horizontal_mounting": "nominal red long edge/front and blue short edge/left, zero gap",
+        "T_board_from_box": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.1714464
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.05943030099999999
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.072
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      "T_base_link_from_camera": [
+        [
+          -0.11479117348396373,
+          0.8530672120140748,
+          0.509017994059845,
+          0.35005329375274163
+        ],
+        [
+          0.9485885536921113,
+          -0.05801543278016741,
+          0.3111494261020561,
+          -0.445527877929888
+        ],
+        [
+          0.29496227266293484,
+          0.5185658505396048,
+          -0.8025501332375775,
+          1.2897307717597446
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "intrinsics_K": [
+        [
+          907.18701171875,
+          0.0,
+          641.8344116210938
+        ],
+        [
+          0.0,
+          906.6185913085938,
+          382.5001220703125
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "T_camera_from_board": [
+        [
+          -0.9527634638284194,
+          -0.11128319341342036,
+          0.28259128234498593,
+          0.2582002559877938
+        ],
+        [
+          0.05961379409013586,
+          0.843831561773366,
+          0.5332864998378459,
+          0.004617414707191302
+        ],
+        [
+          -0.2978052678309287,
+          0.5249422313158214,
+          -0.7973378683050966,
+          1.1202989306603395
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "T_base_link_from_board": [
+        [
+          0.00863516913580939,
+          0.999824407754136,
+          0.01663092039208336,
+          0.8946054628971348
+        ],
+        [
+          -0.9999009744032561,
+          0.00881825727052829,
+          -0.010967211410851607,
+          0.14771041748565472
+        ],
+        [
+          -0.011111941388232044,
+          -0.016534569779786512,
+          0.9998015466885328,
+          0.4691884835856135
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "T_base_link_from_4317_semantic": [
+        [
+          0.00863516913580939,
+          0.999824407754136,
+          0.01663092039208336,
+          0.9567032233270655
+        ],
+        [
+          -0.9999009744032561,
+          0.00881825727052829,
+          -0.010967211410851607,
+          -0.02398457246997407
+        ],
+        [
+          -0.011111941388232044,
+          -0.016534569779786512,
+          0.9998015466885328,
+          0.5382864381402462
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "quality": {
+        "rotation_determinant": 1.0000000000000009,
+        "rotation_orthogonality_error_fro": 1.0451717722376087e-15,
+        "positive_board_translation_z_in_camera": true,
+        "reference_is_ground_truth": false,
+        "reference_caveat": "horizontal board-to-box translation and axis mapping remain nominal"
+      }
+    },
+    {
+      "capture": "R02_wrist_charuco_20260915_100308_809523978",
+      "camera_arm": "right",
+      "camera_frame": "right_arm_camera_color_optical_frame",
+      "status": "available",
+      "selected": {
+        "scale": 3,
+        "clahe": false,
+        "decoded": 52,
+        "corners": 77,
+        "ids": [
+          6,
+          5,
+          4,
+          2,
+          1,
+          13,
+          12,
+          11,
+          10,
+          9,
+          8,
+          20,
+          19,
+          18,
+          17,
+          16,
+          15,
+          14,
+          27,
+          26,
+          25,
+          24,
+          23,
+          22,
+          21,
+          34,
+          32,
+          31,
+          30,
+          29,
+          28,
+          41,
+          40,
+          39,
+          38,
+          37,
+          36,
+          35,
+          48,
+          47,
+          46,
+          45,
+          44,
+          43,
+          42,
+          55,
+          54,
+          53,
+          52,
+          51,
+          50,
+          49
+        ],
+        "accepted": true,
+        "reason": null,
+        "rmse_px": 0.3641881048679352,
+        "max_error_px": 0.9653557538986206,
+        "board_span_fraction": [
+          0.8571428379842212,
+          0.6666666517655055
+        ]
+      },
+      "source": {
+        "capture_result_sha256": "cbedc6d90b9946cabeccb1e05c265662cfd69072b20ed8c78974fc19f616818a",
+        "rgb_sha256": "7a7d578beb88bb60f6dc4286ff0cf9c45e008fe56c0022d2f0ed210b7e8192d9",
+        "intrinsics_sha256": "0d7554b837d90016c02ac7959b0d48be3524f44a4fd0aa074305906032d283ff",
+        "base_from_camera_sha256": "baf6c446877b07b017d37b4dbb26e165a66c6700ea8d081577cafdd914c6b2be",
+        "detector_results_sha256": "53f7ae20fb0668c0de41f0a980c59a9301fb506953b79cd233774a137594ba4f",
+        "opencv": "4.5.4",
+        "dictionary_policy": "V3 saved result; 5X5_1000 superset with default 14x9 layout"
+      },
+      "frames": {
+        "base": "base_link",
+        "camera": "right_arm_camera_color_optical_frame",
+        "board": "charuco_board_print_face",
+        "box": "4317_length_width_height_center"
+      },
+      "installation": {
+        "version": "latest_measured_height_only_20260917",
+        "board_square_m": 0.02,
+        "board_marker_m": 0.015,
+        "board_grid_squares": [
+          9,
+          14
+        ],
+        "board_outer_size_m": [
+          0.3,
+          0.2
+        ],
+        "board_thickness_m": 0.002,
+        "box_outer_height_m": 0.172,
+        "box_center_above_board_print_face_m": 0.072,
+        "horizontal_mounting": "nominal red long edge/front and blue short edge/left, zero gap",
+        "T_board_from_box": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.1714464
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.05943030099999999
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.072
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      "T_base_link_from_camera": [
+        [
+          -0.11480947699441524,
+          0.8530678526839848,
+          0.5090127922846386,
+          0.35005101884680956
+        ],
+        [
+          0.9485878345863659,
+          -0.05799663479100037,
+          0.3111551227726601,
+          -0.4455219593294068
+        ],
+        [
+          0.29495746145337415,
+          0.518566899319707,
+          -0.8025512238249513,
+          1.28973149838423
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "intrinsics_K": [
+        [
+          907.18701171875,
+          0.0,
+          641.8344116210938
+        ],
+        [
+          0.0,
+          906.6185913085938,
+          382.5001220703125
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "T_camera_from_board": [
+        [
+          -0.9567128485054593,
+          -0.11116582428017188,
+          0.26896595512569993,
+          0.2900506815215667
+        ],
+        [
+          0.06016094890944518,
+          0.8286732721752721,
+          0.5564901330739321,
+          -0.15333323343897418
+        ],
+        [
+          -0.2847475824847074,
+          0.5485825074630412,
+          -0.7861145252281485,
+          1.0212947912387522
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "T_base_link_from_board": [
+        [
+          0.01622091121551897,
+          0.9989129329387014,
+          0.04370165268202647,
+          0.7057989130387613
+        ],
+        [
+          -0.999615970854576,
+          0.017183447799247076,
+          -0.021740283673278626,
+          0.1562905062714915
+        ],
+        [
+          -0.02246759559459635,
+          -0.04333222276242904,
+          0.9988080524398397,
+          0.47612918707683016
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "T_base_link_from_4317_semantic": [
+        [
+          0.01622091121551897,
+          0.9989129329387014,
+          0.04370165268202647,
+          0.7710921451418273
+        ],
+        [
+          -0.999615970854576,
+          0.017183447799247076,
+          -0.021740283673278626,
+          -0.015634136263579512
+        ],
+        [
+          -0.02246759559459635,
+          -0.04333222276242904,
+          0.9988080524398397,
+          0.541616131429379
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "quality": {
+        "rotation_determinant": 1.000000000000001,
+        "rotation_orthogonality_error_fro": 1.291174150373155e-15,
+        "positive_board_translation_z_in_camera": true,
+        "reference_is_ground_truth": false,
+        "reference_caveat": "horizontal board-to-box translation and axis mapping remain nominal"
+      }
+    },
+    {
+      "capture": "R03_wrist_charuco_20260915_103743_184821162",
+      "camera_arm": "right",
+      "camera_frame": "right_arm_camera_color_optical_frame",
+      "status": "available",
+      "selected": {
+        "scale": 4,
+        "clahe": true,
+        "decoded": 62,
+        "corners": 100,
+        "ids": [
+          6,
+          5,
+          4,
+          3,
+          2,
+          1,
+          0,
+          12,
+          10,
+          11,
+          13,
+          8,
+          9,
+          7,
+          14,
+          16,
+          15,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          27,
+          26,
+          28,
+          29,
+          30,
+          31,
+          32,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          48
+        ],
+        "accepted": true,
+        "reason": null,
+        "rmse_px": 0.375729501247406,
+        "max_error_px": 0.777705192565918,
+        "board_span_fraction": [
+          0.8571428379842212,
+          0.777777781089147
+        ]
+      },
+      "source": {
+        "capture_result_sha256": "411b8915996b800165200acbcbac14b372cf3c7a649c296b8d8180c7d8c82a22",
+        "rgb_sha256": "183811c4bf28ee56d02181a18b7ac04b175a552a4fe246c29b9d9c5e1c9b2c65",
+        "intrinsics_sha256": "0d7554b837d90016c02ac7959b0d48be3524f44a4fd0aa074305906032d283ff",
+        "base_from_camera_sha256": "2a9c02f502122ae0056dec111d5fad4f381c1a4cda1aeb65510c32806880520c",
+        "detector_results_sha256": "53f7ae20fb0668c0de41f0a980c59a9301fb506953b79cd233774a137594ba4f",
+        "opencv": "4.5.4",
+        "dictionary_policy": "V3 saved result; 5X5_1000 superset with default 14x9 layout"
+      },
+      "frames": {
+        "base": "base_link",
+        "camera": "right_arm_camera_color_optical_frame",
+        "board": "charuco_board_print_face",
+        "box": "4317_length_width_height_center"
+      },
+      "installation": {
+        "version": "latest_measured_height_only_20260917",
+        "board_square_m": 0.02,
+        "board_marker_m": 0.015,
+        "board_grid_squares": [
+          9,
+          14
+        ],
+        "board_outer_size_m": [
+          0.3,
+          0.2
+        ],
+        "board_thickness_m": 0.002,
+        "box_outer_height_m": 0.172,
+        "box_center_above_board_print_face_m": 0.072,
+        "horizontal_mounting": "nominal red long edge/front and blue short edge/left, zero gap",
+        "T_board_from_box": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.1714464
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.05943030099999999
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.072
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      "T_base_link_from_camera": [
+        [
+          -0.11478051442861847,
+          0.8530660048715597,
+          0.5090224207635433,
+          0.35005278304334386
+        ],
+        [
+          0.9485852105002348,
+          -0.058033502819046845,
+          0.31115624848422513,
+          -0.4455354924114402
+        ],
+        [
+          0.29497717187559935,
+          0.5185658144180233,
+          -0.802544680494018,
+          1.2897329350945286
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "intrinsics_K": [
+        [
+          907.18701171875,
+          0.0,
+          641.8344116210938
+        ],
+        [
+          0.0,
+          906.6185913085938,
+          382.5001220703125
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "T_camera_from_board": [
+        [
+          -0.9615720078033206,
+          -0.12305748919212753,
+          0.24543049558443233,
+          -0.051925512880983044
+        ],
+        [
+          0.03724796646058511,
+          0.8271921156541373,
+          0.5606833266596972,
+          -0.2332866080305212
+        ],
+        [
+          -0.27201445329916163,
+          0.5482791790259439,
+          -0.7908211422584726,
+          0.8270358803833803
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "T_base_link_from_board": [
+        [
+          0.0036832481529348315,
+          0.9988604702381287,
+          0.04758355470863351,
+          0.5779837513122152
+        ],
+        [
+          -0.998933612221895,
+          0.005865122203071171,
+          -0.045795618948318434,
+          -0.22391544505125408
+        ],
+        [
+          -0.04602251684078609,
+          -0.047364135558549125,
+          0.9978169003411552,
+          0.489708387891172
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "T_base_link_from_4317_semantic": [
+        [
+          0.0036832481529348315,
+          0.9988604702381287,
+          0.04758355470863351,
+          0.6414038252906177
+        ],
+        [
+          -0.998933612221895,
+          0.005865122203071171,
+          -0.045795618948318434,
+          -0.3981277352920426
+        ],
+        [
+          -0.04602251684078609,
+          -0.047364135558549125,
+          0.9978169003411552,
+          0.5508459450515937
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "quality": {
+        "rotation_determinant": 1.0000000000000007,
+        "rotation_orthogonality_error_fro": 1.4828630219658554e-15,
+        "positive_board_translation_z_in_camera": true,
+        "reference_is_ground_truth": false,
+        "reference_caveat": "horizontal board-to-box translation and axis mapping remain nominal"
+      }
+    },
+    {
+      "capture": "R04_00_wrist_charuco_20260915_104526_910331328",
+      "camera_arm": "right",
+      "camera_frame": "right_arm_camera_color_optical_frame",
+      "status": "available",
+      "selected": {
+        "scale": 3,
+        "clahe": true,
+        "decoded": 62,
+        "corners": 100,
+        "ids": [
+          6,
+          5,
+          4,
+          3,
+          2,
+          1,
+          0,
+          13,
+          12,
+          11,
+          10,
+          9,
+          8,
+          7,
+          20,
+          19,
+          18,
+          17,
+          16,
+          15,
+          14,
+          27,
+          26,
+          25,
+          24,
+          23,
+          21,
+          22,
+          34,
+          32,
+          31,
+          30,
+          28,
+          29,
+          38,
+          39,
+          40,
+          41,
+          36,
+          37,
+          35,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62
+        ],
+        "accepted": true,
+        "reason": null,
+        "rmse_px": 0.3214550018310547,
+        "max_error_px": 1.0179774761199951,
+        "board_span_fraction": [
+          0.8571428379842212,
+          0.777777781089147
+        ]
+      },
+      "source": {
+        "capture_result_sha256": "afeed3287e8c82389ac7e5eb5741bf04324f0e185efc596b122e463d2de306a1",
+        "rgb_sha256": "478194fc63fe94c089e7e8a529d8ab04cb5a056c2921a3ec87c6d30fbcd63707",
+        "intrinsics_sha256": "0d7554b837d90016c02ac7959b0d48be3524f44a4fd0aa074305906032d283ff",
+        "base_from_camera_sha256": "a639726e4da9907d9b4571f84b9029d156af0081a27e6236fc85e7404a34d8d8",
+        "detector_results_sha256": "53f7ae20fb0668c0de41f0a980c59a9301fb506953b79cd233774a137594ba4f",
+        "opencv": "4.5.4",
+        "dictionary_policy": "V3 saved result; 5X5_1000 superset with default 14x9 layout"
+      },
+      "frames": {
+        "base": "base_link",
+        "camera": "right_arm_camera_color_optical_frame",
+        "board": "charuco_board_print_face",
+        "box": "4317_length_width_height_center"
+      },
+      "installation": {
+        "version": "latest_measured_height_only_20260917",
+        "board_square_m": 0.02,
+        "board_marker_m": 0.015,
+        "board_grid_squares": [
+          9,
+          14
+        ],
+        "board_outer_size_m": [
+          0.3,
+          0.2
+        ],
+        "board_thickness_m": 0.002,
+        "box_outer_height_m": 0.172,
+        "box_center_above_board_print_face_m": 0.072,
+        "horizontal_mounting": "nominal red long edge/front and blue short edge/left, zero gap",
+        "T_board_from_box": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.1714464
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.05943030099999999
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.072
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      "T_base_link_from_camera": [
+        [
+          -0.11477819235828068,
+          0.8530756414829099,
+          0.5090067941270403,
+          0.3500527063555213
+        ],
+        [
+          0.9485952330894891,
+          -0.05801248740033538,
+          0.3111296113608022,
+          -0.44552960238804373
+        ],
+        [
+          0.29494584302692484,
+          0.5185523129002007,
+          -0.8025649185374284,
+          1.2897270445835183
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "intrinsics_K": [
+        [
+          907.18701171875,
+          0.0,
+          641.8344116210938
+        ],
+        [
+          0.0,
+          906.6185913085938,
+          382.5001220703125
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "T_camera_from_board": [
+        [
+          -0.9551877955705271,
+          -0.12541599216939042,
+          0.2681177056840601,
+          0.34963875859822763
+        ],
+        [
+          0.048456623093633085,
+          0.8273281550530102,
+          0.5596249454187545,
+          -0.21768934843929996
+        ],
+        [
+          -0.2920072445530735,
+          0.5475389965698789,
+          -0.7841765211760499,
+          0.9847658995765523
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "T_base_link_from_board": [
+        [
+          0.0023382219561420836,
+          0.9988695867663124,
+          0.04747716663176027,
+          0.6254688546104628
+        ],
+        [
+          -0.9997497793324781,
+          0.0033912187116421355,
+          -0.0221105938479991,
+          0.2051545895217073
+        ],
+        [
+          -0.022246605195966024,
+          -0.04741358738743501,
+          0.9986275783735943,
+          0.4896296638941303
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "T_base_link_from_4317_semantic": [
+        [
+          0.0023382219561420836,
+          0.9988695867663124,
+          0.04747716663176027,
+          0.6886512105459985
+        ],
+        [
+          -0.9997497793324781,
+          0.0033912187116421355,
+          -0.0221105938479991,
+          0.0323606673460933
+        ],
+        [
+          -0.022246605195966024,
+          -0.04741358738743501,
+          0.9986275783735943,
+          0.5548989453940344
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "quality": {
+        "rotation_determinant": 1.0,
+        "rotation_orthogonality_error_fro": 3.5980826682138624e-16,
+        "positive_board_translation_z_in_camera": true,
+        "reference_is_ground_truth": false,
+        "reference_caveat": "horizontal board-to-box translation and axis mapping remain nominal"
+      }
+    },
+    {
+      "capture": "R04_10_wrist_charuco_20260915_105839_488564574",
+      "camera_arm": "right",
+      "camera_frame": "right_arm_camera_color_optical_frame",
+      "status": "available",
+      "selected": {
+        "scale": 4,
+        "clahe": false,
+        "decoded": 62,
+        "corners": 100,
+        "ids": [
+          5,
+          4,
+          3,
+          2,
+          1,
+          0,
+          13,
+          12,
+          11,
+          10,
+          9,
+          8,
+          20,
+          19,
+          18,
+          17,
+          16,
+          15,
+          14,
+          27,
+          26,
+          25,
+          23,
+          24,
+          21,
+          32,
+          34,
+          31,
+          30,
+          29,
+          28,
+          35,
+          36,
+          37,
+          39,
+          38,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          6,
+          7,
+          22
+        ],
+        "accepted": true,
+        "reason": null,
+        "rmse_px": 0.2696314752101898,
+        "max_error_px": 0.6958925724029541,
+        "board_span_fraction": [
+          0.8571428379842212,
+          0.777777781089147
+        ]
+      },
+      "source": {
+        "capture_result_sha256": "9b42ddf69059fad20167f7dcb699cc823731961febc02d559c0f92f11e2b3312",
+        "rgb_sha256": "ffdbff03eaedf21f4d1015e0cc7939b97f42b01fddc408631cde1a065c7d196e",
+        "intrinsics_sha256": "0d7554b837d90016c02ac7959b0d48be3524f44a4fd0aa074305906032d283ff",
+        "base_from_camera_sha256": "6a5365146b20aef5beaa0605fc6c8fad8dedd66ce2c62f62363006b1d8ab833b",
+        "detector_results_sha256": "53f7ae20fb0668c0de41f0a980c59a9301fb506953b79cd233774a137594ba4f",
+        "opencv": "4.5.4",
+        "dictionary_policy": "V3 saved result; 5X5_1000 superset with default 14x9 layout"
+      },
+      "frames": {
+        "base": "base_link",
+        "camera": "right_arm_camera_color_optical_frame",
+        "board": "charuco_board_print_face",
+        "box": "4317_length_width_height_center"
+      },
+      "installation": {
+        "version": "latest_measured_height_only_20260917",
+        "board_square_m": 0.02,
+        "board_marker_m": 0.015,
+        "board_grid_squares": [
+          9,
+          14
+        ],
+        "board_outer_size_m": [
+          0.3,
+          0.2
+        ],
+        "board_thickness_m": 0.002,
+        "box_outer_height_m": 0.172,
+        "box_center_above_board_print_face_m": 0.072,
+        "horizontal_mounting": "nominal red long edge/front and blue short edge/left, zero gap",
+        "T_board_from_box": [
+          [
+            1.0,
+            0.0,
+            0.0,
+            0.1714464
+          ],
+          [
+            0.0,
+            1.0,
+            0.0,
+            0.05943030099999999
+          ],
+          [
+            0.0,
+            0.0,
+            1.0,
+            0.072
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            1.0
+          ]
+        ]
+      },
+      "T_base_link_from_camera": [
+        [
+          -0.11479387278814834,
+          0.8530876884588612,
+          0.508983067076122,
+          0.35005307698903343
+        ],
+        [
+          0.9485950293902246,
+          -0.05798863017950007,
+          0.311134679818989,
+          -0.44552024573388416
+        ],
+        [
+          0.2949403956504739,
+          0.5185351623273226,
+          -0.8025780014700876,
+          1.2897193233834714
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "intrinsics_K": [
+        [
+          907.18701171875,
+          0.0,
+          641.8344116210938
+        ],
+        [
+          0.0,
+          906.6185913085938,
+          382.5001220703125
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "T_camera_from_board": [
+        [
+          -0.9554433252313286,
+          -0.12596833068302787,
+          0.2669457471768992,
+          0.34961537711609914
+        ],
+        [
+          0.047299725874631375,
+          0.8273407655806825,
+          0.5597052738187792,
+          -0.21883593872965024
+        ],
+        [
+          -0.2913602378552818,
+          0.5473931286317916,
+          -0.7845189446556484,
+          0.9840500194144133
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "T_base_link_from_board": [
+        [
+          0.0017324258564078987,
+          0.9988684473121753,
+          0.04752708348737983,
+          0.6240979257788506
+        ],
+        [
+          -0.9997239098069293,
+          0.0028436957777801253,
+          -0.023324183901493212,
+          0.2049852472341872
+        ],
+        [
+          -0.023432943925151217,
+          -0.047473554306453336,
+          0.9985975960217979,
+          0.4895839940951314
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "T_base_link_from_4317_semantic": [
+        [
+          0.0017324258564078987,
+          0.9988684473121753,
+          0.04752708348737983,
+          0.6871799464494552
+        ],
+        [
+          -0.9997239098069293,
+          0.0028436957777801253,
+          -0.023324183901493212,
+          0.03207584235898289
+        ],
+        [
+          -0.023432943925151217,
+          -0.047473554306453336,
+          0.9985975960217979,
+          0.5546441595093594
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "quality": {
+        "rotation_determinant": 1.0000000000000009,
+        "rotation_orthogonality_error_fro": 1.3580835340164982e-15,
+        "positive_board_translation_z_in_camera": true,
+        "reference_is_ground_truth": false,
+        "reference_caveat": "horizontal board-to-box translation and axis mapping remain nominal"
+      }
+    }
+  ],
+  "motion_commands_sent": false
+}

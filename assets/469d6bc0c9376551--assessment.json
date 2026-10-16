@@ -1,0 +1,31 @@
+{
+  "status": "reference_published_but_physical_tracking_failed",
+  "run": "/home/lsy03/文档/ChatGPT/VLA G1 项目/lerobot_runs/model_20261014_110456_2096537",
+  "confirmed": {
+    "sdk_confirmed_publications": 18,
+    "rpc_attempts": 19,
+    "period_ms": {
+      "min": 49.63900800794363,
+      "median": 49.99816091731191,
+      "p95": 50.113086006604135,
+      "max": 50.113086006604135
+    },
+    "last_confirmed_elapsed_s": 0.850287868,
+    "last_reference_J7_delta_deg": 0.4990988305091781,
+    "last_measured_J7_delta_deg": 0.001399761893029488,
+    "max_measured_J7_displacement_deg": 0.004099821049300153,
+    "stop_acknowledged": true,
+    "stationary_verified": true,
+    "model_inference_used": false,
+    "fault_guard_deg": 0.5
+  },
+  "primary_hypothesis": "Compatibility/interpretation of quintic spline override messages with explicit q/v/a and100ms segments; prior moving path used linear interpolation. Not proven by sender SUCCESS.",
+  "uncertainties": [
+    "Current control-side accept/execute status not captured",
+    "Remote SingoriX logs found are old and do not establish a cause for this run",
+    "Cannot distinguish unsupported interpolation, override semantics, delivery or command arbitration without controlled comparison"
+  ],
+  "next_diagnostic": "User-run same bounded trajectory using known linear sampling, preserving50ms cadence and all budgets/guards; first prepare and verify the variant without motion.",
+  "motion_commands_sent_by_assistant": 0,
+  "g1_files_modified": false
+}

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-14T10:03:28.998277+08:00",
+  "generated_at": "2026-10-16T16:30:03.819131+08:00",
   "links": [
     {
       "url": "http://10.34.216.11:7861",
@@ -596,7 +596,12 @@
       "references": [
         {
           "thread_id": "01a12f39-9b78-7d52-b841-83cc19db6f83",
-          "turn_id": "asset:6d0618425642788a",
+          "turn_id": "01a1383a-5b2a-7c33-a290-a989a7de2c92",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a12f39-9b78-7d52-b841-83cc19db6f83",
+          "turn_id": "asset:93acaba299e1edc3",
           "role": "asset"
         }
       ],
@@ -1467,6 +1472,25 @@
       "detail": ""
     },
     {
+      "url": "https://arxiv.org/abs/2307.15818",
+      "references": [
+        {
+          "thread_id": "01a13822-7af5-7663-bd95-da16dffb2989",
+          "turn_id": "01a1382a-dd23-7322-9321-5b3019fed58c",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a13861-1fb6-7da1-a965-78f8f46818cf",
+          "turn_id": "01a13861-af2c-7e30-906c-d453083fc1e2",
+          "role": "user"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
       "url": "https://arxiv.org/abs/2309.16221",
       "references": [
         {
@@ -1570,11 +1594,30 @@
       "detail": ""
     },
     {
+      "url": "https://arxiv.org/html/2607.06403v1#S4.SS1",
+      "references": [
+        {
+          "thread_id": "01a1386e-c1bc-7a20-bfcf-be18823fd812",
+          "turn_id": "01a13870-3052-72f3-abe7-30cc9a9ac3d4",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
       "url": "https://arxiv.org/html/2607.06403v1#S4.SS2",
       "references": [
         {
           "thread_id": "01a12372-6a74-70c0-b77b-266a7ec6299a",
           "turn_id": "01a12373-345b-7f51-93be-142489a7e97d",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a1386e-c1bc-7a20-bfcf-be18823fd812",
+          "turn_id": "01a13870-3052-72f3-abe7-30cc9a9ac3d4",
           "role": "assistant"
         }
       ],
@@ -1674,17 +1717,17 @@
         },
         {
           "thread_id": "01a134d2-03de-7ac2-b1f0-2302cd467dbe",
-          "turn_id": "asset:05e84bda0819c21a",
-          "role": "asset"
-        },
-        {
-          "thread_id": "visualizations",
-          "turn_id": "asset:05e84bda0819c21a",
+          "turn_id": "asset:4be0f511629c8840",
           "role": "asset"
         },
         {
           "thread_id": "visualizations",
           "turn_id": "asset:212e0f737956b2ff",
+          "role": "asset"
+        },
+        {
+          "thread_id": "visualizations",
+          "turn_id": "asset:4be0f511629c8840",
           "role": "asset"
         },
         {
@@ -3980,6 +4023,20 @@
       "detail": ""
     },
     {
+      "url": "https://developer.nvidia.com/cuda/gpus",
+      "references": [
+        {
+          "thread_id": "01a139af-0dbf-73d1-b696-fa0dc6eb2099",
+          "turn_id": "asset:a149e9f046b673d3",
+          "role": "asset"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
       "url": "https://developer.nvidia.com/tensorrt",
       "references": [
         {
@@ -4249,6 +4306,11 @@
           "thread_id": "01a06710-9ce5-75d1-95c5-6beb503bf8ae",
           "turn_id": "01a06a70-0aa9-7ca0-9de2-d87c7eb0dbd5",
           "role": "user"
+        },
+        {
+          "thread_id": "01a139af-0dbf-73d1-b696-fa0dc6eb2099",
+          "turn_id": "asset:a149e9f046b673d3",
+          "role": "asset"
         }
       ],
       "status": "not_checked",
@@ -4428,6 +4490,11 @@
           "thread_id": "01a0947a-003f-7140-97c1-79d100f5cd1f",
           "turn_id": "01a09486-00b9-7452-a5ec-c0b056a9cf5e",
           "role": "user"
+        },
+        {
+          "thread_id": "01a139af-0dbf-73d1-b696-fa0dc6eb2099",
+          "turn_id": "asset:a149e9f046b673d3",
+          "role": "asset"
         }
       ],
       "status": "not_checked",
@@ -4455,6 +4522,20 @@
         {
           "thread_id": "01a12569-9fbc-78a2-8bc2-766d4e0d1aec",
           "turn_id": "01a12f3e-4b97-7643-819d-9551e9ad9ce6",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://docs.nvidia.com/deeplearning/frameworks/pytorch-release-notes/rel-26-05.html#known-issues",
+      "references": [
+        {
+          "thread_id": "01a13e59-1106-7740-87a7-dea589c1dc9f",
+          "turn_id": "01a13e5b-695e-7d01-97ba-e56840b44afb",
           "role": "assistant"
         }
       ],
@@ -4597,12 +4678,45 @@
       "detail": ""
     },
     {
+      "url": "https://docs.pytorch.org/docs/stable/accelerator/amp.html",
+      "references": [
+        {
+          "thread_id": "01a13e25-6792-7e31-b1cb-71a090893b34",
+          "turn_id": "01a13e6e-3a05-7b73-81c3-8e15b7a6ec7b",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
       "url": "https://docs.pytorch.org/docs/stable/generated/torch.optim.lr_scheduler.ReduceLROnPlateau.html",
       "references": [
         {
           "thread_id": "01a119bc-6791-7603-9b66-d8fecaa5bde1",
           "turn_id": "01a11a25-7b47-7673-a7cd-bbc56ab8ae41",
           "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://docs.pytorch.org/tutorials/beginner/basics/intro.html",
+      "references": [
+        {
+          "thread_id": "01a13822-7af5-7663-bd95-da16dffb2989",
+          "turn_id": "01a1382a-dd23-7322-9321-5b3019fed58c",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a13861-1fb6-7da1-a965-78f8f46818cf",
+          "turn_id": "01a13861-af2c-7e30-906c-d453083fc1e2",
+          "role": "user"
         }
       ],
       "status": "not_checked",
@@ -4842,6 +4956,11 @@
           "thread_id": "01a06710-9ce5-75d1-95c5-6beb503bf8ae",
           "turn_id": "01a06a12-99b0-7632-aefe-e547cf4d4d0a",
           "role": "user"
+        },
+        {
+          "thread_id": "01a139af-0dbf-73d1-b696-fa0dc6eb2099",
+          "turn_id": "asset:a149e9f046b673d3",
+          "role": "asset"
         }
       ],
       "status": "not_checked",
@@ -4861,6 +4980,11 @@
           "thread_id": "01a06710-9ce5-75d1-95c5-6beb503bf8ae",
           "turn_id": "01a06a12-99b0-7632-aefe-e547cf4d4d0a",
           "role": "user"
+        },
+        {
+          "thread_id": "01a139af-0dbf-73d1-b696-fa0dc6eb2099",
+          "turn_id": "asset:a149e9f046b673d3",
+          "role": "asset"
         }
       ],
       "status": "not_checked",
@@ -5352,6 +5476,20 @@
       "detail": ""
     },
     {
+      "url": "https://github.com/Dao-AILab/flash-attention/releases/tag/v2.8.3",
+      "references": [
+        {
+          "thread_id": "01a139af-0dbf-73d1-b696-fa0dc6eb2099",
+          "turn_id": "asset:a149e9f046b673d3",
+          "role": "asset"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
       "url": "https://github.com/GalaxyGeneralRobotics/GalbotSDK",
       "references": [
         {
@@ -5578,6 +5716,31 @@
           "role": "user"
         },
         {
+          "thread_id": "01a124e6-24ff-7b90-8ca1-7504b9d57a04",
+          "turn_id": "01a1385f-42ba-7892-93f4-7bac2ec7b724",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a12f39-9b78-7d52-b841-83cc19db6f83",
+          "turn_id": "01a14379-eba6-7702-9334-8234d279622f",
+          "role": "user"
+        },
+        {
+          "thread_id": "01a12f39-9b78-7d52-b841-83cc19db6f83",
+          "turn_id": "asset:120e4ecfafc48d60",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a12f39-9b78-7d52-b841-83cc19db6f83",
+          "turn_id": "asset:13e6372176d7c5dd",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a12f39-9b78-7d52-b841-83cc19db6f83",
+          "turn_id": "asset:237c4253597a560a",
+          "role": "asset"
+        },
+        {
           "thread_id": "unknown-attachment",
           "turn_id": "asset:0fc04430abbd3875",
           "role": "asset"
@@ -5782,6 +5945,11 @@
           "thread_id": "01a09332-12d3-7b91-970d-c2e04a7232fc",
           "turn_id": "01a0f163-f9ac-7dc0-b7b2-37cc97ef4583",
           "role": "assistant"
+        },
+        {
+          "thread_id": "01a09332-12d3-7b91-970d-c2e04a7232fc",
+          "turn_id": "01a13825-ddaf-7ae2-806b-421cadf2338a",
+          "role": "assistant"
         }
       ],
       "status": "not_checked",
@@ -5861,6 +6029,48 @@
         {
           "thread_id": "01a0c187-680b-7ae3-a679-749fa82119d9",
           "turn_id": "asset:42b495b7015a23a2",
+          "role": "asset"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/NVlabs/FoundationPose/blob/main/learning/models/refine_network.py",
+      "references": [
+        {
+          "thread_id": "01a13808-5028-7582-99b9-b1fb76d3ebf8",
+          "turn_id": "01a13d3e-6f06-78a2-aec7-bcf4bb5e73f4",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/NVlabs/FoundationPose/blob/main/learning/models/score_network.py",
+      "references": [
+        {
+          "thread_id": "01a13808-5028-7582-99b9-b1fb76d3ebf8",
+          "turn_id": "01a13d3e-6f06-78a2-aec7-bcf4bb5e73f4",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/NVlabs/curobo",
+      "references": [
+        {
+          "thread_id": "01a139af-0dbf-73d1-b696-fa0dc6eb2099",
+          "turn_id": "asset:a149e9f046b673d3",
           "role": "asset"
         }
       ],
@@ -6026,6 +6236,30 @@
           "thread_id": "01a11a35-fab0-75a3-8f38-2d81d26a5b86",
           "turn_id": "asset:cd975f20f7358aee",
           "role": "asset"
+        },
+        {
+          "thread_id": "01a1390e-7450-77d0-a5aa-e09d3b8ffb78",
+          "turn_id": "01a1391b-61e9-7372-892f-8c9d5dbf6220",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a1390e-7450-77d0-a5aa-e09d3b8ffb78",
+          "turn_id": "asset:df2e46596d0c6997",
+          "role": "asset"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/Robbyant/lingbot-vla#performance",
+      "references": [
+        {
+          "thread_id": "01a1390e-7450-77d0-a5aa-e09d3b8ffb78",
+          "turn_id": "01a1391b-61e9-7372-892f-8c9d5dbf6220",
+          "role": "assistant"
         }
       ],
       "status": "not_checked",
@@ -6080,6 +6314,21 @@
           "thread_id": "01a12372-6a74-70c0-b77b-266a7ec6299a",
           "turn_id": "01a12373-345b-7f51-93be-142489a7e97d",
           "role": "assistant"
+        },
+        {
+          "thread_id": "01a13838-1f94-72b1-a8fc-996c0f826089",
+          "turn_id": "01a13841-9ac9-74e2-aa9b-6f8f5f88f5a9",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a139af-0dbf-73d1-b696-fa0dc6eb2099",
+          "turn_id": "asset:a149e9f046b673d3",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a13d07-14dc-78f3-9a0a-c77877150687",
+          "turn_id": "asset:a93b17f3942a2944",
+          "role": "asset"
         }
       ],
       "status": "not_checked",
@@ -6102,6 +6351,20 @@
       "detail": ""
     },
     {
+      "url": "https://github.com/Robbyant/lingbot-vla-v2#performance",
+      "references": [
+        {
+          "thread_id": "01a13838-1f94-72b1-a8fc-996c0f826089",
+          "turn_id": "01a13855-0beb-7a11-81ad-90941936c83f",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
       "url": "https://github.com/Robbyant/lingbot-vla-v2#post-training-example",
       "references": [
         {
@@ -6112,6 +6375,21 @@
         {
           "thread_id": "01a12f39-9b78-7d52-b841-83cc19db6f83",
           "turn_id": "01a12f3b-5d3a-7141-a76d-8afd0b916c8c",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a13838-1f94-72b1-a8fc-996c0f826089",
+          "turn_id": "01a13855-0beb-7a11-81ad-90941936c83f",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a1386e-c1bc-7a20-bfcf-be18823fd812",
+          "turn_id": "01a13870-3052-72f3-abe7-30cc9a9ac3d4",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a1390e-7450-77d0-a5aa-e09d3b8ffb78",
+          "turn_id": "01a13921-e6b0-79e1-bcd0-82e74017e880",
           "role": "assistant"
         }
       ],
@@ -6132,6 +6410,11 @@
           "thread_id": "01a0947a-003f-7140-97c1-79d100f5cd1f",
           "turn_id": "01a09486-00b9-7452-a5ec-c0b056a9cf5e",
           "role": "user"
+        },
+        {
+          "thread_id": "01a13e59-1106-7740-87a7-dea589c1dc9f",
+          "turn_id": "01a13e5b-695e-7d01-97ba-e56840b44afb",
+          "role": "assistant"
         }
       ],
       "status": "not_checked",
@@ -6199,6 +6482,11 @@
           "thread_id": "01a12372-6a74-70c0-b77b-266a7ec6299a",
           "turn_id": "01a12373-345b-7f51-93be-142489a7e97d",
           "role": "assistant"
+        },
+        {
+          "thread_id": "01a13861-1fb6-7da1-a965-78f8f46818cf",
+          "turn_id": "01a13965-8566-7531-840c-d7b6e646d571",
+          "role": "assistant"
         }
       ],
       "status": "not_checked",
@@ -6213,6 +6501,53 @@
           "thread_id": "01a0addb-959b-7433-adb3-4b36c3df088c",
           "turn_id": "asset:9d5f7b0c0cfdd677",
           "role": "asset"
+        },
+        {
+          "thread_id": "01a13d07-14dc-78f3-9a0a-c77877150687",
+          "turn_id": "asset:a93b17f3942a2944",
+          "role": "asset"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/Robbyant/lingbot-vla-v2/blob/4144e9c35c7ab490927cc3743e777f95433f953d/lingbotvla/models/vla/lingbot_vla/modeling_lingbot_vla_v2.py",
+      "references": [
+        {
+          "thread_id": "01a13978-5abf-7282-bb30-4dabd99c84fe",
+          "turn_id": "01a13d85-d084-7e53-a3e8-8adeeaa5d624",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/Robbyant/lingbot-vla-v2/blob/be969b8fd117fb70550c5d4bf4bc328211b5b1b6/experiment/robotwin/README.md",
+      "references": [
+        {
+          "thread_id": "01a139af-0dbf-73d1-b696-fa0dc6eb2099",
+          "turn_id": "asset:a149e9f046b673d3",
+          "role": "asset"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/Robbyant/lingbot-vla-v2/blob/main/assets/lingbot_vla2_framework.png",
+      "references": [
+        {
+          "thread_id": "01a1386e-c1bc-7a20-bfcf-be18823fd812",
+          "turn_id": "01a13870-3052-72f3-abe7-30cc9a9ac3d4",
+          "role": "assistant"
         }
       ],
       "status": "not_checked",
@@ -6241,6 +6576,21 @@
         {
           "thread_id": "01a12372-6a74-70c0-b77b-266a7ec6299a",
           "turn_id": "01a12373-345b-7f51-93be-142489a7e97d",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a13d07-14dc-78f3-9a0a-c77877150687",
+          "turn_id": "01a13d07-afb3-7f61-bf80-8e93e91e4449",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a13d07-14dc-78f3-9a0a-c77877150687",
+          "turn_id": "01a13d14-18c4-7a70-8d2e-1d768e892376",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a13e59-1106-7740-87a7-dea589c1dc9f",
+          "turn_id": "01a13e5b-695e-7d01-97ba-e56840b44afb",
           "role": "assistant"
         }
       ],
@@ -6295,6 +6645,25 @@
           "thread_id": "01a12372-6a74-70c0-b77b-266a7ec6299a",
           "turn_id": "01a12373-345b-7f51-93be-142489a7e97d",
           "role": "assistant"
+        },
+        {
+          "thread_id": "01a1386e-c1bc-7a20-bfcf-be18823fd812",
+          "turn_id": "01a13870-3052-72f3-abe7-30cc9a9ac3d4",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/Robbyant/lingbot-vla-v2/blob/main/configs/vla/robotwin/robotwin.yaml#L34",
+      "references": [
+        {
+          "thread_id": "01a1386e-c1bc-7a20-bfcf-be18823fd812",
+          "turn_id": "01a13870-3052-72f3-abe7-30cc9a9ac3d4",
+          "role": "assistant"
         }
       ],
       "status": "not_checked",
@@ -6314,6 +6683,11 @@
           "thread_id": "01a0947a-003f-7140-97c1-79d100f5cd1f",
           "turn_id": "01a09486-00b9-7452-a5ec-c0b056a9cf5e",
           "role": "user"
+        },
+        {
+          "thread_id": "01a13861-1fb6-7da1-a965-78f8f46818cf",
+          "turn_id": "01a13965-8566-7531-840c-d7b6e646d571",
+          "role": "assistant"
         }
       ],
       "status": "not_checked",
@@ -6347,6 +6721,11 @@
           "thread_id": "01a12079-1017-77d1-bb8f-4df9033ca979",
           "turn_id": "01a12080-14f3-7010-bf8c-5d81d7e885f4",
           "role": "assistant"
+        },
+        {
+          "thread_id": "01a13d07-14dc-78f3-9a0a-c77877150687",
+          "turn_id": "01a13d14-18c4-7a70-8d2e-1d768e892376",
+          "role": "assistant"
         }
       ],
       "status": "not_checked",
@@ -6361,6 +6740,11 @@
           "thread_id": "01a12375-ec8b-7910-a3fb-d76005404aec",
           "turn_id": "01a12377-07e4-7c82-a719-bbbda0f0f055",
           "role": "assistant"
+        },
+        {
+          "thread_id": "01a13d07-14dc-78f3-9a0a-c77877150687",
+          "turn_id": "asset:a93b17f3942a2944",
+          "role": "asset"
         }
       ],
       "status": "not_checked",
@@ -6393,6 +6777,34 @@
       "detail": ""
     },
     {
+      "url": "https://github.com/Robbyant/lingbot-vla-v2/blob/main/lingbotvla/models/vla/lingbot_vla/modeling_lingbot_vla.py#L1239",
+      "references": [
+        {
+          "thread_id": "01a1386e-c1bc-7a20-bfcf-be18823fd812",
+          "turn_id": "01a13870-3052-72f3-abe7-30cc9a9ac3d4",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/Robbyant/lingbot-vla-v2/blob/main/lingbotvla/models/vla/lingbot_vla/modeling_lingbot_vla.py#L790",
+      "references": [
+        {
+          "thread_id": "01a1386e-c1bc-7a20-bfcf-be18823fd812",
+          "turn_id": "01a13870-3052-72f3-abe7-30cc9a9ac3d4",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
       "url": "https://github.com/Robbyant/lingbot-vla-v2/blob/main/lingbotvla/models/vla/lingbot_vla/modeling_lingbot_vla_v2.py",
       "references": [
         {
@@ -6407,11 +6819,95 @@
       "detail": ""
     },
     {
+      "url": "https://github.com/Robbyant/lingbot-vla-v2/blob/main/lingbotvla/models/vla/lingbot_vla/modeling_lingbot_vla_v2.py#L197",
+      "references": [
+        {
+          "thread_id": "01a1386e-c1bc-7a20-bfcf-be18823fd812",
+          "turn_id": "01a13870-3052-72f3-abe7-30cc9a9ac3d4",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
       "url": "https://github.com/Robbyant/lingbot-vla-v2/blob/main/lingbotvla/models/vla/lingbot_vla/qwen2_action_expert.py",
       "references": [
         {
           "thread_id": "01a12372-6a74-70c0-b77b-266a7ec6299a",
           "turn_id": "01a12373-345b-7f51-93be-142489a7e97d",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/Robbyant/lingbot-vla-v2/blob/main/lingbotvla/models/vla/vision_models/dino_video/teacher.py#L60",
+      "references": [
+        {
+          "thread_id": "01a1386e-c1bc-7a20-bfcf-be18823fd812",
+          "turn_id": "01a13870-3052-72f3-abe7-30cc9a9ac3d4",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/Robbyant/lingbot-vla-v2/blob/main/lingbotvla/models/vla/vision_models/module_utils.py#L71",
+      "references": [
+        {
+          "thread_id": "01a1386e-c1bc-7a20-bfcf-be18823fd812",
+          "turn_id": "01a13870-3052-72f3-abe7-30cc9a9ac3d4",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/Robbyant/lingbot-vla-v2/blob/main/requirements.txt",
+      "references": [
+        {
+          "thread_id": "01a13e59-1106-7740-87a7-dea589c1dc9f",
+          "turn_id": "01a13e5b-695e-7d01-97ba-e56840b44afb",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/Robbyant/lingbot-vla-v2/blob/main/tasks/vla/train_lingbotvla.py#L120",
+      "references": [
+        {
+          "thread_id": "01a1386e-c1bc-7a20-bfcf-be18823fd812",
+          "turn_id": "01a13870-3052-72f3-abe7-30cc9a9ac3d4",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/Robbyant/lingbot-vla-v2/blob/main/tasks/vla/train_lingbotvla.py#L763",
+      "references": [
+        {
+          "thread_id": "01a1386e-c1bc-7a20-bfcf-be18823fd812",
+          "turn_id": "01a13870-3052-72f3-abe7-30cc9a9ac3d4",
           "role": "assistant"
         }
       ],
@@ -6465,6 +6961,11 @@
           "thread_id": "01a0addb-959b-7433-adb3-4b36c3df088c",
           "turn_id": "01a0bd5e-1fa7-7041-9e41-fba1328c72eb",
           "role": "assistant"
+        },
+        {
+          "thread_id": "01a139af-0dbf-73d1-b696-fa0dc6eb2099",
+          "turn_id": "asset:a149e9f046b673d3",
+          "role": "asset"
         }
       ],
       "status": "not_checked",
@@ -6681,6 +7182,20 @@
           "thread_id": "01a0c17b-036c-7113-8f5e-a0374a7f78c0",
           "turn_id": "asset:3cbe34de68616d66",
           "role": "asset"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://github.com/huggingface/transformers/blob/main/src/transformers/models/vit/modeling_vit.py",
+      "references": [
+        {
+          "thread_id": "01a13978-5abf-7282-bb30-4dabd99c84fe",
+          "turn_id": "01a13d93-a357-7531-8268-3313a09f638e",
+          "role": "assistant"
         }
       ],
       "status": "not_checked",
@@ -7152,6 +7667,20 @@
       "detail": ""
     },
     {
+      "url": "https://hub.docker.com/r/nvidia/cuda",
+      "references": [
+        {
+          "thread_id": "01a139af-0dbf-73d1-b696-fa0dc6eb2099",
+          "turn_id": "asset:a149e9f046b673d3",
+          "role": "asset"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
       "url": "https://huggingface.co/HuggingFaceTB/SmolVLM2-500M-Video-Instruct",
       "references": [
         {
@@ -7166,11 +7695,39 @@
       "detail": ""
     },
     {
+      "url": "https://huggingface.co/Qwen/Qwen3-VL-4B-Instruct",
+      "references": [
+        {
+          "thread_id": "01a139af-0dbf-73d1-b696-fa0dc6eb2099",
+          "turn_id": "asset:a149e9f046b673d3",
+          "role": "asset"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
       "url": "https://huggingface.co/Qwen/Qwen3-VL-4B-Instruct/blob/main/config.json",
       "references": [
         {
           "thread_id": "01a12372-6a74-70c0-b77b-266a7ec6299a",
           "turn_id": "01a12373-345b-7f51-93be-142489a7e97d",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://huggingface.co/api/models/robbyant/lingbot-vla-v2-6b",
+      "references": [
+        {
+          "thread_id": "01a13e59-1106-7740-87a7-dea589c1dc9f",
+          "turn_id": "01a13e5b-695e-7d01-97ba-e56840b44afb",
           "role": "assistant"
         }
       ],
@@ -7210,6 +7767,11 @@
           "thread_id": "01a12330-1faa-7241-90f5-84f78a093b4a",
           "turn_id": "asset:60a8cc6c4d60b384",
           "role": "asset"
+        },
+        {
+          "thread_id": "01a13e2a-b4f9-70f3-ac18-4749c515ebf1",
+          "turn_id": "asset:3b15bfed59afca11",
+          "role": "asset"
         }
       ],
       "status": "not_checked",
@@ -7224,6 +7786,11 @@
           "thread_id": "01a12375-ec8b-7910-a3fb-d76005404aec",
           "turn_id": "01a12416-1e30-7250-8590-925fbe4480d8",
           "role": "assistant"
+        },
+        {
+          "thread_id": "01a139af-0dbf-73d1-b696-fa0dc6eb2099",
+          "turn_id": "asset:a149e9f046b673d3",
+          "role": "asset"
         }
       ],
       "status": "not_checked",
@@ -7252,6 +7819,11 @@
         {
           "thread_id": "01a1240d-43ef-7c10-b4de-a25c7ad7d3ee",
           "turn_id": "01a1249b-43b4-7743-b652-a94a2e9e1017",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a134d2-03de-7ac2-b1f0-2302cd467dbe",
+          "turn_id": "01a13821-adb5-7cb3-919e-a50268f1444d",
           "role": "assistant"
         }
       ],
@@ -7804,11 +8376,39 @@
       "detail": ""
     },
     {
+      "url": "https://huggingface.co/docs/transformers/model_doc/qwen3_vl",
+      "references": [
+        {
+          "thread_id": "01a13978-5abf-7282-bb30-4dabd99c84fe",
+          "turn_id": "01a13d93-a357-7531-8268-3313a09f638e",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
       "url": "https://huggingface.co/docs/transformers/model_doc/sam3",
       "references": [
         {
           "thread_id": "01a06123-a835-7ff0-8331-c96af77a78b6",
           "turn_id": "01a06126-5b41-7b02-b30b-5eb438f6bab2",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://huggingface.co/docs/transformers/model_doc/vit",
+      "references": [
+        {
+          "thread_id": "01a13978-5abf-7282-bb30-4dabd99c84fe",
+          "turn_id": "01a13d93-a357-7531-8268-3313a09f638e",
           "role": "assistant"
         }
       ],
@@ -7824,6 +8424,25 @@
           "thread_id": "01a12330-1faa-7241-90f5-84f78a093b4a",
           "turn_id": "01a12410-8515-7b32-b424-403b95c4dcf0",
           "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://huggingface.co/learn/robotics-course/unit0/1",
+      "references": [
+        {
+          "thread_id": "01a13822-7af5-7663-bd95-da16dffb2989",
+          "turn_id": "01a1382a-dd23-7322-9321-5b3019fed58c",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a13861-1fb6-7da1-a965-78f8f46818cf",
+          "turn_id": "01a13861-af2c-7e30-906c-d453083fc1e2",
+          "role": "user"
         }
       ],
       "status": "not_checked",
@@ -7879,12 +8498,40 @@
       "detail": ""
     },
     {
+      "url": "https://huggingface.co/robbyant/lingbot-vla-v2-6b",
+      "references": [
+        {
+          "thread_id": "01a139af-0dbf-73d1-b696-fa0dc6eb2099",
+          "turn_id": "asset:a149e9f046b673d3",
+          "role": "asset"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
       "url": "https://huggingface.co/robbyant/lingbot-vla-v2-6b-robotwin",
       "references": [
         {
           "thread_id": "01a0947a-003f-7140-97c1-79d100f5cd1f",
           "turn_id": "01a0a92d-99e4-7031-abb0-3fcf5c08d551",
           "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://huggingface.co/robbyant/lingbot-vla-v2-6b-robotwin#performance-on-robotwin-20",
+      "references": [
+        {
+          "thread_id": "01a13838-1f94-72b1-a8fc-996c0f826089",
+          "turn_id": "01a13920-6d8c-76d3-8dab-8455dd1aa16f",
+          "role": "user"
         }
       ],
       "status": "not_checked",
@@ -7913,6 +8560,11 @@
         {
           "thread_id": "01a12375-ec8b-7910-a3fb-d76005404aec",
           "turn_id": "asset:2ce6a255093a1500",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a13e2a-b4f9-70f3-ac18-4749c515ebf1",
+          "turn_id": "asset:3b15bfed59afca11",
           "role": "asset"
         }
       ],
@@ -8174,6 +8826,20 @@
       "detail": ""
     },
     {
+      "url": "https://learn.chatgpt.com/docs/permission-modes",
+      "references": [
+        {
+          "thread_id": "01a14334-cf3e-7891-9eb7-6e4a1633bd10",
+          "turn_id": "01a14334-fe4b-7c00-b962-7adbff51b3d4",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
       "url": "https://learn.chatgpt.com/docs/projects",
       "references": [
         {
@@ -8184,6 +8850,20 @@
         {
           "thread_id": "01a06a65-b80d-7ee2-9d02-37b6e1d2177e",
           "turn_id": "01a06a65-b8ca-7893-8cd4-daa8b764e6d6",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://learn.chatgpt.com/docs/reference/troubleshooting#approve-for-me-is-missing-or-disabled",
+      "references": [
+        {
+          "thread_id": "01a14334-cf3e-7891-9eb7-6e4a1633bd10",
+          "turn_id": "01a14334-fe4b-7c00-b962-7adbff51b3d4",
           "role": "assistant"
         }
       ],
@@ -8270,6 +8950,11 @@
           "thread_id": "01a11fd1-8292-75e0-8706-b3a598275e6f",
           "turn_id": "asset:82fa4ff9065b52bc",
           "role": "asset"
+        },
+        {
+          "thread_id": "01a14393-7e90-74a2-b205-596d176950b2",
+          "turn_id": "asset:82fa4ff9065b52bc",
+          "role": "asset"
         }
       ],
       "status": "not_checked",
@@ -8340,6 +9025,11 @@
           "thread_id": "01a12330-1faa-7241-90f5-84f78a093b4a",
           "turn_id": "asset:3b15bfed59afca11",
           "role": "asset"
+        },
+        {
+          "thread_id": "01a13e2a-b4f9-70f3-ac18-4749c515ebf1",
+          "turn_id": "asset:3b15bfed59afca11",
+          "role": "asset"
         }
       ],
       "status": "not_checked",
@@ -8352,6 +9042,11 @@
       "references": [
         {
           "thread_id": "01a0d220-8747-75a3-b4d4-55d923654640",
+          "turn_id": "asset:df2e46596d0c6997",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a1390e-7450-77d0-a5aa-e09d3b8ffb78",
           "turn_id": "asset:df2e46596d0c6997",
           "role": "asset"
         }
@@ -8515,6 +9210,11 @@
           "thread_id": "01a06710-9ce5-75d1-95c5-6beb503bf8ae",
           "turn_id": "asset:48ad1afb5a2fe0f7",
           "role": "asset"
+        },
+        {
+          "thread_id": "01a139af-0dbf-73d1-b696-fa0dc6eb2099",
+          "turn_id": "asset:a149e9f046b673d3",
+          "role": "asset"
         }
       ],
       "status": "not_checked",
@@ -8538,6 +9238,11 @@
         {
           "thread_id": "01a06710-9ce5-75d1-95c5-6beb503bf8ae",
           "turn_id": "asset:48ad1afb5a2fe0f7",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a139af-0dbf-73d1-b696-fa0dc6eb2099",
+          "turn_id": "asset:a149e9f046b673d3",
           "role": "asset"
         }
       ],
@@ -8798,6 +9503,34 @@
         {
           "thread_id": "01a041e0-a6bc-7fc3-9f55-075e9a1ad893",
           "turn_id": "01a041e1-0f74-77b2-a8dc-46107fbbb723",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://pdf.hanspub.org/AE20190200000_26368652.pdf",
+      "references": [
+        {
+          "thread_id": "01a1437c-7611-7de3-9950-df9dcd2e53d2",
+          "turn_id": "01a1437c-c2fc-7a71-923d-02e6c53ee0bd",
+          "role": "assistant"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
+      "url": "https://physcourse.thu.edu.tw/st109/",
+      "references": [
+        {
+          "thread_id": "01a1437c-7611-7de3-9950-df9dcd2e53d2",
+          "turn_id": "01a1437c-c2fc-7a71-923d-02e6c53ee0bd",
           "role": "assistant"
         }
       ],
@@ -9159,6 +9892,20 @@
       "detail": ""
     },
     {
+      "url": "https://robotwin-platform.github.io/doc/usage/robotwin-install.html",
+      "references": [
+        {
+          "thread_id": "01a139af-0dbf-73d1-b696-fa0dc6eb2099",
+          "turn_id": "asset:a149e9f046b673d3",
+          "role": "asset"
+        }
+      ],
+      "status": "not_checked",
+      "http_status": null,
+      "final_url": null,
+      "detail": ""
+    },
+    {
       "url": "https://say-can.github.io/",
       "references": [
         {
@@ -9219,6 +9966,11 @@
       "references": [
         {
           "thread_id": "01a12330-1faa-7241-90f5-84f78a093b4a",
+          "turn_id": "asset:3b15bfed59afca11",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a13e2a-b4f9-70f3-ac18-4749c515ebf1",
           "turn_id": "asset:3b15bfed59afca11",
           "role": "asset"
         }
@@ -9298,6 +10050,16 @@
         {
           "thread_id": "01a132fe-231b-76f2-ad91-bb57915ad417",
           "turn_id": "01a132fe-5ba0-7773-aa29-9a9db46817d8",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a13838-1f94-72b1-a8fc-996c0f826089",
+          "turn_id": "01a13841-9ac9-74e2-aa9b-6f8f5f88f5a9",
+          "role": "assistant"
+        },
+        {
+          "thread_id": "01a13e2a-b4f9-70f3-ac18-4749c515ebf1",
+          "turn_id": "01a13e2b-fb80-7703-917c-14aed8716c44",
           "role": "assistant"
         }
       ],
@@ -9733,6 +10495,11 @@
           "thread_id": "01a12330-1faa-7241-90f5-84f78a093b4a",
           "turn_id": "asset:60a8cc6c4d60b384",
           "role": "asset"
+        },
+        {
+          "thread_id": "01a13d07-14dc-78f3-9a0a-c77877150687",
+          "turn_id": "asset:a93b17f3942a2944",
+          "role": "asset"
         }
       ],
       "status": "not_checked",
@@ -9746,6 +10513,11 @@
         {
           "thread_id": "01a12330-1faa-7241-90f5-84f78a093b4a",
           "turn_id": "asset:60a8cc6c4d60b384",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a13d07-14dc-78f3-9a0a-c77877150687",
+          "turn_id": "asset:a93b17f3942a2944",
           "role": "asset"
         }
       ],
@@ -9797,6 +10569,11 @@
         },
         {
           "thread_id": "01a11fd1-8292-75e0-8706-b3a598275e6f",
+          "turn_id": "asset:82fa4ff9065b52bc",
+          "role": "asset"
+        },
+        {
+          "thread_id": "01a14393-7e90-74a2-b205-596d176950b2",
           "turn_id": "asset:82fa4ff9065b52bc",
           "role": "asset"
         }
@@ -10178,10 +10955,10 @@
     }
   ],
   "summary": {
-    "total": 496,
+    "total": 534,
     "checked": 0,
     "status_counts": {
-      "not_checked": 496
+      "not_checked": 534
     }
   }
 }

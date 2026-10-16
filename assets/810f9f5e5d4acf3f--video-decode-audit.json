@@ -1,0 +1,308 @@
+{
+  "status": "pass",
+  "checked_at": 1792129050.1604605,
+  "videos_checked": 50,
+  "method": "FFmpeg full video decode with -xerror",
+  "videos": [
+    {
+      "path": "attempts/clean/click_bell_attempt01/click_bell/episode0_success.mp4",
+      "status": "pass",
+      "seconds": 0.028691065001112293,
+      "error": ""
+    },
+    {
+      "path": "attempts/clean/click_bell_attempt01/click_bell/episode1_success.mp4",
+      "status": "pass",
+      "seconds": 0.02652936100093939,
+      "error": ""
+    },
+    {
+      "path": "attempts/clean/click_bell_attempt01/click_bell/episode2_success.mp4",
+      "status": "pass",
+      "seconds": 0.025292272999649867,
+      "error": ""
+    },
+    {
+      "path": "attempts/clean/click_bell_attempt01/click_bell/episode3_success.mp4",
+      "status": "pass",
+      "seconds": 0.024718652000956354,
+      "error": ""
+    },
+    {
+      "path": "attempts/clean/click_bell_attempt01/click_bell/episode4_success.mp4",
+      "status": "pass",
+      "seconds": 0.025012111000251025,
+      "error": ""
+    },
+    {
+      "path": "attempts/clean/handover_mic_attempt01/handover_mic/episode0_failure.mp4",
+      "status": "pass",
+      "seconds": 0.04399117499997374,
+      "error": ""
+    },
+    {
+      "path": "attempts/clean/handover_mic_attempt01/handover_mic/episode1_failure.mp4",
+      "status": "pass",
+      "seconds": 0.05243190299916023,
+      "error": ""
+    },
+    {
+      "path": "attempts/clean/handover_mic_attempt01/handover_mic/episode2_failure.mp4",
+      "status": "pass",
+      "seconds": 0.04923225000129605,
+      "error": ""
+    },
+    {
+      "path": "attempts/clean/handover_mic_attempt01/handover_mic/episode3_failure.mp4",
+      "status": "pass",
+      "seconds": 0.045981630000824225,
+      "error": ""
+    },
+    {
+      "path": "attempts/clean/handover_mic_attempt01/handover_mic/episode4_failure.mp4",
+      "status": "pass",
+      "seconds": 0.049182225000549806,
+      "error": ""
+    },
+    {
+      "path": "attempts/clean/open_laptop_attempt01/open_laptop/episode0_success.mp4",
+      "status": "pass",
+      "seconds": 0.024660229000801337,
+      "error": ""
+    },
+    {
+      "path": "attempts/clean/open_laptop_attempt01/open_laptop/episode1_failure.mp4",
+      "status": "pass",
+      "seconds": 0.054207127999688964,
+      "error": ""
+    },
+    {
+      "path": "attempts/clean/open_laptop_attempt01/open_laptop/episode2_success.mp4",
+      "status": "pass",
+      "seconds": 0.05418064600053185,
+      "error": ""
+    },
+    {
+      "path": "attempts/clean/open_laptop_attempt01/open_laptop/episode3_failure.mp4",
+      "status": "pass",
+      "seconds": 0.050902171000416274,
+      "error": ""
+    },
+    {
+      "path": "attempts/clean/open_laptop_attempt01/open_laptop/episode4_failure.mp4",
+      "status": "pass",
+      "seconds": 0.05329151799924148,
+      "error": ""
+    },
+    {
+      "path": "attempts/clean/place_a2b_left_attempt01/place_a2b_left/episode0_failure.mp4",
+      "status": "pass",
+      "seconds": 0.039245103998837294,
+      "error": ""
+    },
+    {
+      "path": "attempts/clean/place_a2b_left_attempt01/place_a2b_left/episode1_success.mp4",
+      "status": "pass",
+      "seconds": 0.04015763200004585,
+      "error": ""
+    },
+    {
+      "path": "attempts/clean/place_a2b_left_attempt01/place_a2b_left/episode2_failure.mp4",
+      "status": "pass",
+      "seconds": 0.04925534100038931,
+      "error": ""
+    },
+    {
+      "path": "attempts/clean/place_a2b_left_attempt01/place_a2b_left/episode3_failure.mp4",
+      "status": "pass",
+      "seconds": 0.03907993800021359,
+      "error": ""
+    },
+    {
+      "path": "attempts/clean/place_a2b_left_attempt01/place_a2b_left/episode4_failure.mp4",
+      "status": "pass",
+      "seconds": 0.04082333699989249,
+      "error": ""
+    },
+    {
+      "path": "attempts/clean/stack_blocks_two_attempt01/stack_blocks_two/episode0_failure.mp4",
+      "status": "pass",
+      "seconds": 0.08258040900000196,
+      "error": ""
+    },
+    {
+      "path": "attempts/clean/stack_blocks_two_attempt01/stack_blocks_two/episode1_failure.mp4",
+      "status": "pass",
+      "seconds": 0.05473091800013208,
+      "error": ""
+    },
+    {
+      "path": "attempts/clean/stack_blocks_two_attempt01/stack_blocks_two/episode2_failure.mp4",
+      "status": "pass",
+      "seconds": 0.059082443000079365,
+      "error": ""
+    },
+    {
+      "path": "attempts/clean/stack_blocks_two_attempt01/stack_blocks_two/episode3_failure.mp4",
+      "status": "pass",
+      "seconds": 0.05399391600076342,
+      "error": ""
+    },
+    {
+      "path": "attempts/clean/stack_blocks_two_attempt01/stack_blocks_two/episode4_failure.mp4",
+      "status": "pass",
+      "seconds": 0.054015690000596805,
+      "error": ""
+    },
+    {
+      "path": "attempts/randomized/click_bell_attempt01/click_bell/episode0_success.mp4",
+      "status": "pass",
+      "seconds": 0.035704321999219246,
+      "error": ""
+    },
+    {
+      "path": "attempts/randomized/click_bell_attempt01/click_bell/episode1_success.mp4",
+      "status": "pass",
+      "seconds": 0.032693681998352986,
+      "error": ""
+    },
+    {
+      "path": "attempts/randomized/click_bell_attempt01/click_bell/episode2_success.mp4",
+      "status": "pass",
+      "seconds": 0.03728457100078231,
+      "error": ""
+    },
+    {
+      "path": "attempts/randomized/click_bell_attempt01/click_bell/episode3_success.mp4",
+      "status": "pass",
+      "seconds": 0.035856894000971806,
+      "error": ""
+    },
+    {
+      "path": "attempts/randomized/click_bell_attempt01/click_bell/episode4_success.mp4",
+      "status": "pass",
+      "seconds": 0.030694032999235787,
+      "error": ""
+    },
+    {
+      "path": "attempts/randomized/handover_mic_attempt01/handover_mic/episode0_failure.mp4",
+      "status": "pass",
+      "seconds": 0.05152294199979224,
+      "error": ""
+    },
+    {
+      "path": "attempts/randomized/handover_mic_attempt01/handover_mic/episode1_failure.mp4",
+      "status": "pass",
+      "seconds": 0.056153014998926665,
+      "error": ""
+    },
+    {
+      "path": "attempts/randomized/handover_mic_attempt01/handover_mic/episode2_failure.mp4",
+      "status": "pass",
+      "seconds": 0.059146191999388975,
+      "error": ""
+    },
+    {
+      "path": "attempts/randomized/handover_mic_attempt01/handover_mic/episode3_failure.mp4",
+      "status": "pass",
+      "seconds": 0.05295852100061893,
+      "error": ""
+    },
+    {
+      "path": "attempts/randomized/handover_mic_attempt01/handover_mic/episode4_failure.mp4",
+      "status": "pass",
+      "seconds": 0.05719850899913581,
+      "error": ""
+    },
+    {
+      "path": "attempts/randomized/open_laptop_attempt01/open_laptop/episode0_failure.mp4",
+      "status": "pass",
+      "seconds": 0.05642753600113792,
+      "error": ""
+    },
+    {
+      "path": "attempts/randomized/open_laptop_attempt01/open_laptop/episode1_success.mp4",
+      "status": "pass",
+      "seconds": 0.02383919100066123,
+      "error": ""
+    },
+    {
+      "path": "attempts/randomized/open_laptop_attempt01/open_laptop/episode2_success.mp4",
+      "status": "pass",
+      "seconds": 0.026832509000087157,
+      "error": ""
+    },
+    {
+      "path": "attempts/randomized/open_laptop_attempt01/open_laptop/episode3_failure.mp4",
+      "status": "pass",
+      "seconds": 0.06198742000015045,
+      "error": ""
+    },
+    {
+      "path": "attempts/randomized/open_laptop_attempt01/open_laptop/episode4_success.mp4",
+      "status": "pass",
+      "seconds": 0.02371437900001183,
+      "error": ""
+    },
+    {
+      "path": "attempts/randomized/place_a2b_left_attempt01/place_a2b_left/episode0_success.mp4",
+      "status": "pass",
+      "seconds": 0.026165708999542403,
+      "error": ""
+    },
+    {
+      "path": "attempts/randomized/place_a2b_left_attempt01/place_a2b_left/episode1_failure.mp4",
+      "status": "pass",
+      "seconds": 0.05972057300095912,
+      "error": ""
+    },
+    {
+      "path": "attempts/randomized/place_a2b_left_attempt01/place_a2b_left/episode2_failure.mp4",
+      "status": "pass",
+      "seconds": 0.0487744379988726,
+      "error": ""
+    },
+    {
+      "path": "attempts/randomized/place_a2b_left_attempt01/place_a2b_left/episode3_failure.mp4",
+      "status": "pass",
+      "seconds": 0.039201300000058836,
+      "error": ""
+    },
+    {
+      "path": "attempts/randomized/place_a2b_left_attempt01/place_a2b_left/episode4_failure.mp4",
+      "status": "pass",
+      "seconds": 0.04001727900140395,
+      "error": ""
+    },
+    {
+      "path": "attempts/randomized/stack_blocks_two_attempt01/stack_blocks_two/episode0_failure.mp4",
+      "status": "pass",
+      "seconds": 0.055087197999455384,
+      "error": ""
+    },
+    {
+      "path": "attempts/randomized/stack_blocks_two_attempt01/stack_blocks_two/episode1_failure.mp4",
+      "status": "pass",
+      "seconds": 0.061220727999170776,
+      "error": ""
+    },
+    {
+      "path": "attempts/randomized/stack_blocks_two_attempt01/stack_blocks_two/episode2_failure.mp4",
+      "status": "pass",
+      "seconds": 0.05998472899955232,
+      "error": ""
+    },
+    {
+      "path": "attempts/randomized/stack_blocks_two_attempt01/stack_blocks_two/episode3_failure.mp4",
+      "status": "pass",
+      "seconds": 0.05698582400145824,
+      "error": ""
+    },
+    {
+      "path": "attempts/randomized/stack_blocks_two_attempt01/stack_blocks_two/episode4_failure.mp4",
+      "status": "pass",
+      "seconds": 0.07387212899993756,
+      "error": ""
+    }
+  ]
+}

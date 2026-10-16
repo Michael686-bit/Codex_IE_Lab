@@ -1,0 +1,146 @@
+{
+  "scope": "GPU inference and one shared simulator episode per model; not 500-episode scores",
+  "status": {
+    "status": "complete",
+    "profile": "smoke",
+    "started_at": 1792111898.2458968,
+    "completed_stages": [
+      "expert",
+      "lora"
+    ],
+    "phase": "finished",
+    "updated_at": 1792112230.380952,
+    "finished_at": 1792112230.3809514
+  },
+  "comparison": {
+    "status": "complete",
+    "profile": "smoke",
+    "episodes_per_model": 1,
+    "results": {
+      "expert": {
+        "clean": {
+          "cases": 1,
+          "episodes": 1,
+          "successes": 0,
+          "success_rate": 0.0
+        },
+        "overall": {
+          "cases": 1,
+          "episodes": 1,
+          "successes": 0,
+          "success_rate": 0.0
+        }
+      },
+      "lora": {
+        "clean": {
+          "cases": 1,
+          "episodes": 1,
+          "successes": 0,
+          "success_rate": 0.0
+        },
+        "overall": {
+          "cases": 1,
+          "episodes": 1,
+          "successes": 0,
+          "success_rate": 0.0
+        }
+      }
+    }
+  },
+  "models": {
+    "expert": {
+      "policy": {
+        "status": "loaded",
+        "step": 10000,
+        "kind": "expert",
+        "weight_sha256": "de17cf135343524158ff79245f8e07fee105e5a817732005669ea4c48e376fd0",
+        "norm_sha256": "3d49bb2687c368f5fba998b908441953ba41f2c6673d1b4a4834877e177d8c06",
+        "precision": "BF16 autocast, FP32 updated weights",
+        "input_resolution": [
+          256,
+          256
+        ],
+        "updated_tensors": 871,
+        "warmup_pass": true,
+        "warmup_seconds": 2.6275566190015525,
+        "cache_environment": {
+          "XDG_CACHE_HOME": "/competition/cache/pro5000-eval10k-v2/xdg",
+          "TRITON_CACHE_DIR": "/competition/cache/pro5000-eval10k-v2/triton",
+          "TORCHINDUCTOR_CACHE_DIR": "/competition/cache/pro5000-eval10k-v2/inductor",
+          "TORCH_EXTENSIONS_DIR": "/competition/cache/pro5000-eval10k-v2/extensions",
+          "CUDA_CACHE_PATH": "/competition/cache/pro5000-eval10k-v2/cuda",
+          "TORCH_HOME": "/competition/cache/pro5000-eval10k-v2/torch",
+          "MPLCONFIGDIR": "/competition/cache/pro5000-eval10k-v2/matplotlib"
+        },
+        "gpu_allocated_mib": 15677.58837890625
+      },
+      "summary": {
+        "status": "complete",
+        "overall": {
+          "cases": 1,
+          "episodes": 1,
+          "successes": 0,
+          "success_rate": 0.0
+        },
+        "settings": {
+          "clean": {
+            "cases": 1,
+            "episodes": 1,
+            "successes": 0,
+            "success_rate": 0.0
+          }
+        },
+        "expected_episodes": 1,
+        "error": null,
+        "updated_at": 1792112128.253471
+      }
+    },
+    "lora": {
+      "policy": {
+        "status": "loaded",
+        "step": 10000,
+        "kind": "lora",
+        "weight_sha256": "c6bdcae505a147a52cbfb786a8a7d56a1f11eaa85b334b7f3a81dc83863680df",
+        "norm_sha256": "3d49bb2687c368f5fba998b908441953ba41f2c6673d1b4a4834877e177d8c06",
+        "precision": "BF16 autocast, FP32 updated weights",
+        "input_resolution": [
+          256,
+          256
+        ],
+        "updated_tensors": 294,
+        "warmup_pass": true,
+        "warmup_seconds": 0.9042764450132381,
+        "cache_environment": {
+          "XDG_CACHE_HOME": "/competition/cache/pro5000-eval10k-v2/xdg",
+          "TRITON_CACHE_DIR": "/competition/cache/pro5000-eval10k-v2/triton",
+          "TORCHINDUCTOR_CACHE_DIR": "/competition/cache/pro5000-eval10k-v2/inductor",
+          "TORCH_EXTENSIONS_DIR": "/competition/cache/pro5000-eval10k-v2/extensions",
+          "CUDA_CACHE_PATH": "/competition/cache/pro5000-eval10k-v2/cuda",
+          "TORCH_HOME": "/competition/cache/pro5000-eval10k-v2/torch",
+          "MPLCONFIGDIR": "/competition/cache/pro5000-eval10k-v2/matplotlib"
+        },
+        "gpu_allocated_mib": 12271.1298828125
+      },
+      "summary": {
+        "status": "complete",
+        "overall": {
+          "cases": 1,
+          "episodes": 1,
+          "successes": 0,
+          "success_rate": 0.0
+        },
+        "settings": {
+          "clean": {
+            "cases": 1,
+            "episodes": 1,
+            "successes": 0,
+            "success_rate": 0.0
+          }
+        },
+        "expected_episodes": 1,
+        "error": null,
+        "updated_at": 1792112229.9704912
+      }
+    }
+  }
+}

@@ -1,0 +1,119 @@
+lsy03@lsy03-System-Product-Name:~/文档/ChatGPT/VLA G1 项目$ cd '/home/lsy03/文档/ChatGPT/VLA G1 项目'
+bash lingbot_pretrain_g1/run_step.sh arm
+Real-motion experiment: arm; one command; <=0.5deg per joint / 2mm gripper; <=5s.
+This tests one bounded model action; it does not perform a milk grasp.
+[1/4] 正在启动本机 GPU 模型容器；首次加载通常需要几十秒。
+ce072157cb688d5ef03b348b398d9b5c32ded108f4bef3254dad05640e84d8aa
+[2/4] 等待模型服务就绪并预热 GPU；此阶段尚未进入机器人运动入口。
+正在等待本机模型服务启动，首次加载通常需要几十秒；最长等待 90 秒。
+模型仍在启动：已等待 6 秒 / 90 秒。此阶段不启动机器人运动入口。
+模型仍在启动：已等待 12 秒 / 90 秒。此阶段不启动机器人运动入口。
+模型仍在启动：已等待 18 秒 / 90 秒。此阶段不启动机器人运动入口。
+模型仍在启动：已等待 24 秒 / 90 秒。此阶段不启动机器人运动入口。
+模型仍在启动：已等待 30 秒 / 90 秒。此阶段不启动机器人运动入口。
+模型仍在启动：已等待 36 秒 / 90 秒。此阶段不启动机器人运动入口。
+模型服务已就绪，正在预热 GPU 推理；预热完成后，单步脚本才进入机器人预检。
+正在等待：GPU 推理预热，首次可能需要编译内核。
+GPU 推理预热，首次可能需要编译内核完成（2.0 秒）。
+{"status": "warmed", "profile_id": "a29c03c4e7282f5253bd2869b384f5b00341ae455ad1bb4580fbbf74891dbdf6", "roundtrip_ms": 2042.7253770176321, "action_rows": 25, "robot_commands_sent": false}
+[3/4] 正在进行机器人预检及 SDK 初始化；通过后将发送一次受限动作。
+正在核对机器人部署 URDF 和 PC/G1 时钟；网络连接较慢时需要等待。
+正在等待：读取机器人部署文件哈希，单次最长 15 秒。
+读取机器人部署文件哈希，单次最长 15 秒完成（0.2 秒）。
+正在等待：建立机器人时钟采样连接，最长 15 秒。
+建立机器人时钟采样连接，最长 15 秒完成（0.3 秒）。
+{"urdf_verified": true, "g1_minus_pc_ms": 12.222811, "runtime": "lerobot_runs/model_20261014_164455_2164077/runtime.json"}
+URDF 与时钟预检通过，正在启动 SDK 程序并等待实时反馈。
+正在连接 G1 SDK，等待控制器、关节与相机反馈稳定。
+正在等待：G1 SDK [observe] 初始化。
+SDK observe: worker_entered (0.00s)
+SDK observe: backend_constructing (0.00s)
+SDK observe: sdk_import_begin (0.02s)
+SDK observe: sdk_import_complete (0.04s)
+SDK observe: robot_construct_begin (0.04s)
+SDK observe: robot_construct_complete (0.04s)
+SDK observe: sdk_init_begin (0.04s)
+SDK observe: sdk_init_complete (1.30s)
+SDK observe: feedback_wait_begin (1.30s)
+SDK observe: feedback_rejected (1.30s)
+SDK observe: backend_ready (1.34s)
+SDK observe: metadata_feedback_read (1.34s)
+G1 SDK [observe] 初始化完成（1.4 秒）。
+正在等待：G1 SDK [execute] 初始化。
+SDK execute: worker_entered (0.00s)
+SDK execute: backend_constructing (0.00s)
+SDK execute: sdk_import_begin (0.02s)
+SDK execute: sdk_import_complete (0.03s)
+SDK execute: robot_construct_begin (0.03s)
+SDK execute: robot_construct_complete (0.03s)
+SDK execute: sdk_init_begin (0.03s)
+A new version 1.10.0 is available. Visit https://github.com/GalaxyGeneralRobotics/GalbotSDK/releases for upgrade instructions
+SDK execute: sdk_init_complete (1.86s)
+SDK execute: feedback_wait_begin (1.86s)
+SDK execute: backend_ready (1.86s)
+SDK execute: metadata_feedback_read (1.86s)
+G1 SDK [execute] 初始化完成（1.9 秒）。
+正在等待：G1 SDK [stop] 初始化。
+SDK stop: worker_entered (0.00s)
+SDK stop: backend_constructing (0.00s)
+SDK stop: sdk_import_begin (0.02s)
+SDK stop: sdk_import_complete (0.04s)
+SDK stop: robot_construct_begin (0.04s)
+SDK stop: robot_construct_complete (0.04s)
+SDK stop: sdk_init_begin (0.04s)
+A new version 1.10.0 is available. Visit https://github.com/GalaxyGeneralRobotics/GalbotSDK/releases for upgrade instructions
+SDK stop: sdk_init_complete (1.68s)
+SDK stop: feedback_wait_begin (1.68s)
+SDK stop: backend_ready (1.68s)
+SDK stop: metadata_feedback_read (1.68s)
+G1 SDK [stop] 初始化完成（1.7 秒）。
+实时输入已就绪，正在获取本次模型预测并核对动作范围与时效。
+A new version 1.10.0 is available. Visit https://github.com/GalaxyGeneralRobotics/GalbotSDK/releases for upgrade instructions
+正在等待：G1 SDK [execute] 清理与退出。
+G1 SDK [execute] 清理与退出完成（0.9 秒）。
+正在等待：G1 SDK [stop] 清理与退出。
+G1 SDK [stop] 清理与退出完成（0.9 秒）。
+正在等待：G1 SDK [observe] 清理与退出。
+G1 SDK [observe] 清理与退出完成（0.9 秒）。
+STOPPED: RGB right_front_surround_camera observation became stale during inference: sample=180.2ms + elapsed=421.5ms = 601.8ms > 600.0ms
+{
+  "log": "/home/lsy03/文档/ChatGPT/VLA G1 项目/lerobot_runs/model_20261014_164455_2164077/events.jsonl",
+  "mode": "step",
+  "channels": "arm",
+  "execution_scope": "experimental_pretrained_single_command",
+  "model": "lingbot-pretrain-g1-preview",
+  "execute_requested": true,
+  "sdk_attempts": 0,
+  "arm_command_attempts": 0,
+  "gripper_command_attempts": 0,
+  "acknowledged_commands": 0,
+  "prediction_rejections": 0,
+  "abort_count": 1,
+  "input_rejections": 0,
+  "cleanup_unconfirmed": 0,
+  "stationary_feedback_rejections": 0,
+  "cleanup_confirmed": 3,
+  "session_completed": false,
+  "stationary_verified": false,
+  "stop_acknowledged": false,
+  "roundtrip_ms_median": null,
+  "roundtrip_ms_max": null,
+  "event_counts": {
+    "start": 1,
+    "sdk_startup_stage": 43,
+    "preflight_observation_timing": 1,
+    "preflight_inference_timing": 1,
+    "supervisor_stop": 1,
+    "stop": 3,
+    "sdk_cleanup_confirmed": 3,
+    "session_summary": 1,
+    "abort": 1
+  },
+  "single_step_validation_passed": false,
+  "single_step_gate": "One acknowledged command, fresh feedback, confirmed stop/stationary and SDK cleanup; not task certification",
+  "scope": "Evidence from this run only; SDK acknowledgement does not establish task success"
+}
+Run report: /home/lsy03/文档/ChatGPT/VLA G1 项目/lerobot_runs/model_20261014_164455_2164077/report.json
+[清理] 正在保存模型日志并关闭本轮模型服务，请稍候。
+Model service log: /home/lsy03/文档/ChatGPT/VLA G1 项目/lingbot_pretrain_g1/service_runs/g1-pretrain-step-arm-20261014_164414-2163530/model_service.log
+lsy03@lsy03-System-Product-Name:~/文档/ChatGPT/VLA G1 项目$

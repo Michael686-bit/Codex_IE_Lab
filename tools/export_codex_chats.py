@@ -200,6 +200,21 @@ def redact(text: str) -> tuple[str, int]:
     result = text.replace("\x00", "")
     result = re.sub(r"github\\?_pat\\?_[A-Za-z0-9_\\-]+", "[REDACTED GITHUB TOKEN]", result)
     total = 0
+    # Pasted Markdown can escape underscores in environment variable names.
+    assignments = re.compile(
+        r"(?P<key>[A-Za-z][A-Za-z0-9_\\-]*)(?P<sep>\s*[:=]\s*[\"']?)"
+        r"(?P<value>[A-Za-z0-9_+/@.=-]{12,})"
+    )
+
+    def redact_assignment(match: re.Match[str]) -> str:
+        nonlocal total
+        key = match.group("key").replace("\\_", "_").lower()
+        if key.endswith(("app_secret", "client_secret", "secret_key", "api_key", "access_token", "refresh_token", "password")):
+            total += 1
+            return match.group("key") + match.group("sep") + "[REDACTED]"
+        return match.group(0)
+
+    result = assignments.sub(redact_assignment, result)
     for pattern, replacement in REDACTION_PATTERNS:
         result, count = pattern.subn(replacement, result)
         total += count

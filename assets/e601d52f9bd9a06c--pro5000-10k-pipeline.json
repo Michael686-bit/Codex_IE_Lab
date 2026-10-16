@@ -1,0 +1,35 @@
+{
+  "name": "expert_6k_to10k_then_expert10k_lora10k_v1",
+  "train_config": "configs/robotwin50-expert-fm-6000-to10000.json",
+  "output_dir": "/competition/outputs/pro5000_10k_pipeline_v1",
+  "lora_checkpoint": "/competition/outputs/imports/lora_step010000_v1",
+  "lora_weight_sha256": "c6bdcae505a147a52cbfb786a8a7d56a1f11eaa85b334b7f3a81dc83863680df",
+  "lora_metadata_sha256": "2bef1daf13282bd4e3afeff0f2df12a32ca4528f4c1a3ba98ffe9e9777bbf634",
+  "lora_identity": "ee134c16ac4f627527f721421e24893f0e192945766b19612ce84685edad2a21",
+  "evaluation": {
+    "tasks": 50,
+    "settings": [
+      "clean",
+      "randomized"
+    ],
+    "episodes": 5,
+    "seed_group": 0,
+    "torch_seed_per_reset": 42,
+    "precision": "BF16 autocast, FP32 updated weights",
+    "resolution": [
+      256,
+      256
+    ],
+    "action_chunk": 50,
+    "instruction_type": "unseen",
+    "denoiser": "none",
+    "raytracing_samples_per_pixel": 32,
+    "case_timeout_seconds": 3600,
+    "minimum_gpu_free_mib": 3072,
+    "max_attempts_per_start": 2
+  },
+  "model_image": "lingbo-competition-model-train:be969b8",
+  "model_image_id": "sha256:5eacc8bb2a81954789b82ea3ae6614ce0755fd1c1ea46fda2ac3925f1705e90a",
+  "sim_image": "lingbo-competition-sim-pro5000:13c3c47-cu128",
+  "sim_image_id": "sha256:55d81bf3194bc574ca1e928c585a4a876b42e3b63ab24c62e0f16a6a9f921733"
+}

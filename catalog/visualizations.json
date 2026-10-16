@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-10-14T10:03:28.998277+08:00",
+  "generated_at": "2026-10-16T16:30:03.819131+08:00",
   "assets": [
     {
       "source": "2026/08/22/01a02731-e698-7092-ae82-d3144a0993e8/s1-urdf-joints.html",
@@ -147,10 +147,16 @@
       "filename": "991ef2ae6a420945--validation-error-profile.png"
     },
     {
+      "source": "2026/10/13/01a134d2-03de-7ac2-b1f0-2302cd467dbe/robotwin-continuous-video.html",
+      "asset_id": "5187b38da6296e2f",
+      "path": "assets/5187b38da6296e2f--robotwin-continuous-video.html",
+      "filename": "5187b38da6296e2f--robotwin-continuous-video.html"
+    },
+    {
       "source": "2026/10/13/01a134d2-03de-7ac2-b1f0-2302cd467dbe/robotwin-data-compare.html",
-      "asset_id": "05e84bda0819c21a",
-      "path": "assets/05e84bda0819c21a--robotwin-data-compare.html",
-      "filename": "05e84bda0819c21a--robotwin-data-compare.html"
+      "asset_id": "4be0f511629c8840",
+      "path": "assets/4be0f511629c8840--robotwin-data-compare.html",
+      "filename": "4be0f511629c8840--robotwin-data-compare.html"
     },
     {
       "source": "2026/10/14/01a13808-5028-7582-99b9-b1fb76d3ebf8/fdp-orin-comparison.html",
